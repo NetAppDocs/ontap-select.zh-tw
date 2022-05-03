@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_overview.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, overview, functionality 
+summary: VMware vCenter Plug-in ONTAP Select for VMware Deploy專為ONTAP Select 在VMware環境中工作的管理員所設計。它提供原生部署使用者介面的替代方案。 
+---
+= 部署vCenter外掛程式總覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+VMware vCenter Plug-in ONTAP Select for VMware Deploy專為ONTAP Select 在VMware環境中工作的管理員所設計。它提供原生部署使用者介面的替代方案。
+
+
+
+== 隨附部署
+
+部署vCenter外掛程式隨附於部署管理公用程式。使用部署使用者介面將外掛程式安裝至vCenter伺服器之後、您可以透過vSphere Web介面存取外掛程式。
+
+
+
+== 與VMware整合
+
+對於許多企業而言、VMware vCenter是管理虛擬化資料中心和雲端資源的中央平台。由於部署外掛程式與vCenter緊密整合、因此系統管理員可以在ONTAP Select VMware和vCenter網域之間快速移動、以充分發揮各種資源之間的關係。
+
+
+
+== 部署vCenter外掛程式所提供的功能
+
+安裝部署vCenter外掛程式之後、vSphere的「*全域庫存清單*」窗格中有兩個主要選項可供使用。
+
+
+
+==== 叢集ONTAP Select
+
+「叢集」選項大致相當於原生部署Web使用者介面中的「*叢集*」索引標籤。ONTAP Select它提供下表所述的功能。
+
+[cols="30,70"]
+|===
+| 您執行此作業... | 這樣做... 
+
+
+| 部署ONTAP Select 一個叢集 | 按一下「新ONTAP Select 增功能」。 
+
+
+| 檢視叢集詳細資料 | 選取叢集、按一下「摘要」、然後按一下「詳細資料」。 
+
+
+| 檢視叢集事件訊息 | 選取叢集、按一下「摘要」、然後按一下「事件」。 
+
+
+| 線上或離線移動叢集、或刪除叢集 | 選取叢集、按一下「動作」、然後按一下所需的動作。 
+
+
+| 啟動System Manager | 選取叢集、按一下「摘要」、按一下「詳細資料」、然後按一下「啟動系統管理員」。 
+
+
+| 檢視叢集所使用的ESXi主機 | 選取叢集、按一下「更多物件」、然後按一下「主機」。選取主機以取得更多詳細資料和進一步行動。 
+
+
+| 檢視ONTAP 叢集所使用的哪些功能不全的VM | 選取叢集、按一下「更多物件」、然後按ONTAP 一下「不支援VM」。選取VM以取得更多詳細資料和進一步行動。 
+
+
+| 檢視叢集所使用的資料存放區 | 選取叢集、按一下「更多物件」、然後按一下「資料存放區」。選取資料存放區以取得更多詳細資料和進一步行動。 
+
+
+| 檢視叢集所使用的網路 | 選取叢集、按一下「更多物件」、然後按一下「網路」。選取網路以取得更多詳細資料和進一步行動。 
+|===
+
+
+==== 部署ONTAP Select
+
+此「本地部署」網頁使用者介面中的「* Hypervisor hosts*」和「* Administration *」索引標籤、大致相當於ONTAP Select 此選項。它透過頁面頂端的三個索引標籤提供功能、如下表所述。
+
+[cols="15,85"]
+|===
+| 索引標籤 | 說明 
+
+
+| 摘要 | 說明部署執行個體的特性、包括主機名稱和IP位址。 
+
+
+| 主機 | 顯示有關以ONTAP Select ESXeploy登錄的ESXi主機資訊。您可以新增或移除主機。 
+
+
+| 系統管理 | 可讓您透過部署公用程式執行管理工作。此功能相當於ONTAP Select 使用者介面進行的「本地化」、但外掛程式無法使用*認證*和*外掛程式*選項。 
+|===
+
+
+== 比較vCenter外掛程式與原生部署使用者介面
+
+vCenter外掛程式透過vSphere提供的功能相當於原生部署使用者介面。不過、外掛程式並未隨附幾項功能、只有部署使用者介面才提供這些功能。
+
+
+
+==== 管理vCenter外掛程式
+
+您無法使用vCenter外掛程式來安裝、更新、移除或驗證vCenter外掛程式。您必須透過原生部署使用者介面執行這些管理工作。
+
+
+
+==== 管理vCenter認證資料
+
+安裝vCenter外掛程式之前、您必須先新增必要的vCenter認證、才能使用原生部署使用者介面進行部署。
+
+
+
+==== 叢集必須由同一個vCenter伺服器控制ONTAP Select
+
+您只能部署及支援ONTAP Select 由安裝外掛程式的單一vCenter伺服器所管理的VMware vCenter叢集。您無法使用外掛程式來存取ONTAP Select 由獨立ESXi或KVM主機上執行的其他vCenter伺服器或叢集所管理的VMware vCenter叢集。

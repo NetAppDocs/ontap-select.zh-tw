@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_clusters.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, clusters 
+summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。 
+---
+= 叢集ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以執行多項相關工作來管理ONTAP Select 一個叢集。
+
+
+
+== 將ONTAP Select 一個叢集移至離線和線上狀態
+
+建立叢集之後、您可以視需要將其狀態變更為離線或線上。
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的*《叢集*》。
+. 在所需的叢集上按一下滑鼠右鍵、即可顯示可用的動作。
+. 按一下「*離線*」或「*上線*」、然後按一下「*是*」確認申請。
+
+
+
+
+== 刪除ONTAP Select 一個叢集
+
+您可以在ONTAP Select 不再需要時刪除一個不需要的叢集。
+
+叢集必須處於離線狀態。
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的*《叢集*》。
+. 在所需的叢集上按一下滑鼠右鍵、即可顯示可用的動作。
+. 按一下*刪除叢集*、然後按一下*是*以確認申請。
++
+如果刪除選項無法使用、則叢集不會處於離線狀態。
+
+

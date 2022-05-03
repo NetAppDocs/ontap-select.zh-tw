@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_plugin.html 
+keywords: plan, planning, vcenter plug-in, deploy plug-in 
+summary: 在ONTAP Select VMware環境中部署VMware vCenter時、您可以使用VMware vCenter外掛程式、而非部署管理公用程式。 
+---
+= VMware vCenter外掛程式
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在ONTAP Select VMware環境中部署VMware vCenter時、您可以使用VMware vCenter外掛程式、而非部署管理公用程式。
+
+VMware vCenter外掛程式隨附於部署管理公用程式。若要使用外掛程式、您必須安裝部署公用程式、然後使用部署使用者介面將外掛程式安裝到vCenter伺服器。安裝外掛程式之後、您可以使用vSphere Web使用者介面來部署及管理ONTAP Select VMware叢集。除了管理外掛程式本身（安裝、移除、更新）、外掛程式所提供的功能相當於部署公用程式使用者介面。
+
+請參閱 link:concept_vpi_overview.html["與vCenter整合"] 一節中的需求與限制、以及安裝與使用外掛程式的相關資訊。

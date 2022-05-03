@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_supported_configs.html 
+keywords: ontap select, supported network configurations 
+summary: 選取最佳的硬體、並設定網路以最佳化效能和恢復能力。 
+---
+= 支援的網路組態
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+選取最佳的硬體、並設定網路以最佳化效能和恢復能力。
+
+伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。從VMware ESX開始ONTAP Select 、支援25GB/s和40Gb/s NIC介面卡。
+
+由於VMware的效能ONTAP Select 與基礎硬體的特性直接相關、因此選擇速度較快的NIC來增加VM的處理量、會導致叢集效能較高、整體使用者體驗也較佳。可使用四個10Gb NIC或兩個較高速NIC（25/40 GB/s）來實現高效能網路配置。還有許多其他組態也受到支援。對於雙節點叢集、支援4個1Gb連接埠或1個10Gb連接埠。對於單一節點叢集、支援2個1Gb連接埠。
+
+*網路最低和建議的組態*
+
+[cols="3*"]
+|===
+|  | 最低要求 | 建議 
+
+
+| 單一節點叢集 | 2 x 1Gb | 2 x 10Gb 
+
+
+| 兩個節點叢集/ MetroCluster SDS | 4 x 1Gb或1 x 10Gb | 2 x 10Gb 
+
+
+| 4/6/8節點叢集 | 2 x 10Gb | 4 x 10Gb或2 x 25/40Gb 
+|===
+*使用多個實體交換器的網路組態*當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。
+
+image:BP_02.jpg["使用多個實體交換器進行網路組態"]

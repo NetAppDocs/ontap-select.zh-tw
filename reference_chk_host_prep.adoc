@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_host_prep.html 
+keywords: ontap select, pre-installation checklist, host preparation 
+summary: 準備ONTAP Select 每個部署了一個節點的Hypervisor主機。在準備主機時、請仔細評估部署環境、確保主機設定正確、並準備好支援ONTAP Select 部署一個VMware叢集。 
+---
+= 主機組態與準備檢查清單
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+準備ONTAP Select 每個部署了一個節點的Hypervisor主機。在準備主機時、請仔細評估部署環境、確保主機設定正確、並準備好支援ONTAP Select 部署一個VMware叢集。
+
+
+NOTE: 此功能不需要執行Hypervisor主機所需的網路和儲存組態。ONTAP Select您必須先手動準備每部主機、再部署ONTAP Select 一個叢集。
+
+
+
+== 一般Hypervisor準備
+
+您必須準備Hypervisor主機。
+
+每台主機必須設定下列項目：
+
+* 預先安裝且支援的Hypervisor
+* VMware vSphere授權
+
+
+此外、同一個vCenter伺服器必須能夠管理ONTAP Select 叢集中部署了某個節點的所有主機。
+
+此外、您應該確定防火牆連接埠已設定為允許存取vSphere。這些連接埠必須是開放的、才能支援序列連接埠連線ONTAP Select 至VMware虛擬機器。
+
+根據預設、VMware允許存取下列連接埠：
+
+* 連接埠22和連接埠1024–65535(傳入流量)
+* 連接埠0–6555（傳出流量）
+
+
+NetApp建議開啟下列防火牆連接埠、以允許存取vSphere：
+
+* 連接埠7200–7400（輸入與輸出流量）
+
+
+您也應該熟悉所需的vCenter權限。請參閱 link:reference_plan_ots_vcenter.html["VMware vCenter伺服器"] 以取得更多資訊。
+
+
+
+== 叢集網路準備ONTAP Select
+
+您可以將ONTAP Select 不完整的功能部署為多節點叢集或單節點叢集。在許多情況下、由於額外的儲存容量和HA功能、所以最好使用多節點叢集。
+
+
+
+=== 圖示：ONTAP Select 「示例」：「示例」
+
+下圖說明單節點叢集和四節點叢集所使用的網路。
+
+
+
+==== 顯示一個網路的單節點叢集
+
+下圖說明單節點叢集。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。
+
+image:CHK_01.jpg["顯示一個網路的單節點叢集"]
+
+
+
+==== 顯示兩個網路的四節點叢集
+
+下圖說明四節點叢集。內部網路可在節點之間進行通訊、以支援ONTAP 叢集網路服務。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。
+
+image:CHK_02.jpg["顯示兩個網路的四節點叢集"]
+
+
+
+==== 四節點叢集內的單一節點
+
+下圖說明ONTAP Select 四節點叢集內單一物件叢集虛擬機器的典型網路組態。有兩個獨立的網路：ONTAP內部和ONTAP外部。
+
+image:CHK_03.jpg["四節點叢集內的單一節點"]
+
+
+
+=== Hypervisor主機上的vSwitch組態
+
+vSwitch是核心Hypervisor元件、用於支援內部和外部網路的連線能力。在設定每個Hypervisor vSwitch時、您應該考量幾件事。
+
+
+
+==== 具有兩個實體連接埠的主機的vSwitch組態（2x10Gb）
+
+當每個主機包含兩個10Gb連接埠時、您應該依照下列方式設定vSwitch：
+
+* 設定vSwitch並將兩個連接埠指派給vSwitch。使用兩個連接埠建立NIC群組。
+* 將負載平衡原則設定為「根據來源虛擬連接埠ID進行路由」。
+* 將兩個介面卡標示為「作用中」。
+* 將「容錯回復」設定設為「是」。image:CHK_04.jpg["vSwitch屬性）"]
+* 設定vSwitch使用巨型框架（9000 MTU）。
+* 在vSwitch上設定內部流量的連接埠群組（ONTAP內部）：
++
+** 連接埠群組指派給ONTAP Select 用於叢集、HA互連和鏡射流量的E0c-e0g虛擬網路介面卡。
+** 連接埠群組應位於不可路由的VLAN上、因為此網路應為私有網路。您應該將適當的VLAN標記新增至連接埠群組、以納入考量。
+** 連接埠群組的負載平衡、容錯回復及容錯移轉順序設定應與vSwitch相同。
+
+
+* 在vSwitch上設定外部流量的連接埠群組（ONTAP外部）：
++
+** 連接埠群組指派給ONTAP Select 用於資料和管理流量的E0A-e0c虛擬網路介面卡。
+** 連接埠群組可以位於可路由的VLAN上。此外、視網路環境而定、您應該新增適當的VLAN標記、或設定連接埠群組以進行VLAN主幹連線。
+** 連接埠群組的負載平衡、容錯回復及容錯移轉順序設定應與vSwitch相同。
+
+
+
+
+以上vSwitch組態適用於一般網路環境中具有2個10Gb連接埠的主機。

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: reference_additional_info.html 
+keywords: community, forums, help, support, blogs, videos, imt, release notes, bugs, limitations, known issues 
+summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更多關於下列項目的資訊。 
+---
+= 何處可取得協助及尋找更多資訊
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以存取更多資源、以取得協助並尋找ONTAP Select 更多關於下列項目的資訊。
+
+
+
+=== 產品資源ONTAP Select
+
+下列產品頁面提供各種ONTAP Select 不同的支援資源連結。
+
+* https://www.netapp.com/data-management/software-defined-storage-ontap-select/documentation["NetApp ONTAP Select 技術資源"^]
+* https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["NetApp ONTAP Select 產品頁面"^]
+
+
+
+
+=== 支援支援支援ONTAP
+
+* https://docs.netapp.com/us-en/ontap/["供應說明文件ONTAP"^]
++
+提供ONTAP 有關支援功能的文件（CLI命令除外）。
+
+* https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"^]
++
+提供ONTAP 有關支援功能的文件、以供參考。
+
+
+
+
+
+=== 部落格
+
+我們提供一系列部落格文章、內容涵蓋ONTAP Select 各種不同層面。
+
+* https://blog.netapp.com/tag/ontap-select/["NetApp ONTAP Select 產品資訊部落格"^]
+
+
+
+
+=== 社群
+
+您可以與其他使用者聯絡、詢問問題並協助NetApp ONTAP Select 解決方案社群。
+
+* http://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select["NetApp社群ONTAP Select"^]
+
+
+
+
+=== NetApp 互通性對照表工具
+
+互通性對照表工具包含詳細的組態與產品支援資訊。
+
+* https://mysupport.netapp.com/matrix/["NetApp IMT"^]
+

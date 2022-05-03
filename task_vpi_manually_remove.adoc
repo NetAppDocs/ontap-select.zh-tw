@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_manually_remove.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, vcenter, remove, removing, manually removing 
+summary: 您可以從vCenter伺服器手動移除部署外掛程式。 
+---
+= 從vCenter手動移除部署外掛程式
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以從vCenter伺服器手動移除部署外掛程式。
+
+
+
+== 開始之前
+
+您應該一律從使用VMware託管物件瀏覽器（MOB）移除外掛程式開始、然後從vCenter伺服器內部的vSphere目錄中移除外掛程式。
+
+有數個執行個體必須手動移除外掛程式：
+
+* 已使用部署公用程式原生使用者介面移除外掛程式、但vCenter伺服器無法重新開機。
+* 部署公用程式已停用、但未移除外掛程式。
+
+
+
+
+== 使用VMware MOB移除外掛程式
+
+MOB是VMware應用程式、可讓您檢視及管理VMware vCenter伺服器上的物件。您可以使用MOB移除部署vCenter外掛程式。
+
+.步驟
+. 使用瀏覽器存取vCenter伺服器上的MOB並登入：
++
+https://<FQDN_or_IP-address>/mob`
+
+. 按一下* content*、然後按一下* ExtensionManager*。
+. 確認要移除的副檔名是以全名為基礎：
++
+com.netapp.selectdeploy`
+
+. 按一下*取消註冊擴充*。
+. 輸入副檔名、然後按一下* InvokeMethod*。
+
+
+外掛程式會從副檔名清單中移除。
+
+
+
+== 從vSphere UI資料夾移除外掛程式
+
+您應該檢查vCenter伺服器上的vSphere UI目錄、並移除部署外掛程式（若有）。
+
+您必須在vCenter伺服器上擁有root帳戶的密碼。您應該使用vSphere MOB移除外掛程式。
+
+.步驟
+. 使用SSH存取vCenter伺服器並登入：
++
+「sh root@<FQDN或IP位址>」
+
+. 鍵入* Shell *並按* Enter鍵以啟動Bash Shell。
+. 瀏覽至vSphere-UI服務的「vSphere-client-nvity（vSphere-client-n影片）目錄：
++
+「CD /etc/VMware/vSphere-ui/vC-packages/vSphere-client-revity」
+
+. 判斷是否有「com.netapp.selectdeploy`」格式的目錄必須移除：
++
+《ls -al》
+
+. 停止HTML5 vSphere-UI Web用戶端：
++
+「服務控制-停止vSphere-UI」
+
+. 移除包含UI副檔名的目錄：
++
+《Rm -RF com.netapp.selectdeploy-1.0.0`》
+
+. 重新啟動HTML5 vSphere-UI Web用戶端：
++
+「服務控制-啟動vSphere-UI」
+
+
+
+部署外掛程式可能需要數分鐘的時間才能重新啟動並可供使用。
+
+
+
+== 從vSphere用戶端資料夾移除外掛程式
+
+您應該檢查vCenter伺服器上的vSphere Client目錄、並移除部署外掛程式（若有）。雖然部署外掛程式並未使用Flash、但最佳做法是在外掛程式移除程序中檢查此目錄。
+
+您必須在vCenter伺服器上擁有root帳戶的密碼。您應該使用vSphere MOB移除外掛程式、然後從vSphere UI目錄移除外掛程式。
+
+.步驟
+. 使用SSH存取vCenter伺服器並登入：
++
+「sh root@<FQDN或IP位址>」
+
+. 鍵入* Shell *並按* Enter鍵以啟動Bash Shell。
+. 瀏覽至vSphere用戶端服務的「vSphere-client-n影片」目錄：
++
+「CD /etc/VMware/vSphere-client/vC-packages/vSphere-client-sitreity」
+
+. 判斷是否有「com.netapp.selectdeploy`」格式的目錄必須移除：
++
+《ls -al》
+
+. 停止HTML5 vSphere-UI Web用戶端：
++
+「服務控制-停止vSphere-Client」
+
+. 移除包含用戶端副檔名的目錄：
++
+《Rm -RF com.netapp.selectdeploy-1.0.0`》
+
+. 重新啟動HTML5 vSphere-UI Web用戶端：
++
+「服務控制-啟動vSphere-Client」
+
+
+
+部署外掛程式可能需要數分鐘的時間才能重新啟動並可供使用。

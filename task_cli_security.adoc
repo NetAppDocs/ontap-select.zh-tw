@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task_cli_security.html 
+keywords: administer, administering, cli, security 
+summary: 您可以執行多項相關工作、以確保ONTAP Select 實現一套完整的功能部署。 
+---
+= 安全性
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以執行多項相關工作、以確保ONTAP Select 實現一套完整的功能部署。
+
+
+
+= 變更部署管理員密碼
+
+您可以使用命令列介面、視需要變更部署虛擬機器管理員帳戶的密碼。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式CLI。
+. 變更密碼：「密碼修改」
+. 根據您的環境回應所有提示。
+

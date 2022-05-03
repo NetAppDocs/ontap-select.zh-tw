@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_platforms.html 
+keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
+summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不含任何功能的功能區層級或容量資源池授權。這些授權產品決定了部署ONTAP Select 的主機功能。 
+---
+= 瞭解平台授權方案
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在ONTAP Select 三種平台容量層級之一購買一個不含任何功能的功能區層級或容量資源池授權。這些授權產品決定了部署ONTAP Select 的主機功能。
+
+
+
+=== 平台授權方案提供的功能
+
+特定授權方案可定義並限制Hypervisor主機在以下兩個領域的功能：
+
+* 執行個體類型（CPU、記憶體）
+* 其他功能
+
+
+授權方案會依照從標準到優質XL的功能遞增順序排列。一般而言、您選擇的授權選項會授予您該層級和所有較低層級的功能。例如、高級層級提供優質和標準的功能。
+
+
+
+=== 標準
+
+標準服務提供下列功能：
+
+* 僅小型執行個體類型
+* 僅限硬碟機（HDD）
+* 僅限本機硬體RAID控制器
+* vNAS
+
+
+
+
+=== 優質
+
+優質產品提供下列功能：
+
+* 小型或中型執行個體類型
+* 硬碟（HDD）或固態硬碟（SSD）
+* 本機硬體RAID控制器或軟體RAID
+* vNAS
+* 部分SDS MetroCluster
+
+
+
+
+=== 優質XL
+
+優質XL產品提供下列功能：
+
+* 小型、中型或大型執行個體類型。
+* 硬碟（HDD）或固態硬碟（SSD）
+* 本機硬體RAID控制器或軟體RAID。
+* vNAS
+* 部分SDS MetroCluster
+
+
+
+NOTE: 大型執行個體類型（使用優質XL授權）僅在VMware ESXi上支援。

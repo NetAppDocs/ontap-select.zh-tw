@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_general.html 
+keywords: plan, planning, general requirements 
+summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾項一般需求。 
+---
+= 一般需求與規劃考量
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+規劃ONTAP Select 一套功能完整的部署時、您應該考量幾項一般需求。
+
+
+
+== 叢集大小及相關考量
+
+有幾個規劃問題與叢集大小有關、您應該考慮這些問題。
+
+叢集中的節點數:: 一個由一個、兩個、四個、六個或八個節點組成的叢集。ONTAP Select您應該根據應用程式需求來判斷叢集的大小。例如、如果企業部署需要HA功能、則應使用多節點叢集。
+專屬與組合式:: 根據應用程式類型、您應該判斷部署是否遵循專屬或組合的模式。請注意、由於工作負載多元性和更緊密的整合、組合模式可能會更為複雜。
+
+
+
+
+== Hypervisor主機
+
+有幾個與Hypervisor主機相關的規劃問題、您應該考慮。
+
+
+CAUTION: 除非NetApp支援部門指示、否則您不應直接修改ONTAP Select 某個物件虛擬機器的組態。只能透過部署管理公用程式來設定及修改虛擬機器。若在ONTAP Select 部署公用程式之外變更不需NetApp支援人員協助的情況下、可能會導致虛擬機器故障、使其無法使用。
+
+Hypervisor不受限制:: 支援不受Hypervisor限制的支援、包括不受支援的支援功能。ONTAP Select ONTAP Select這兩種系統管理程式均支援下列Hypervisor。
++
+--
+* VMware ESXi
+* 核心型虛擬機器（KVM）
+
+
+--
+
+
+
+NOTE: 從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select您仍可將KVM搭配先前支援的版本使用。
+
+如需支援平台的其他詳細資料、請參閱Hypervisor專屬規劃資訊和版本說明。
+
+Hypervisor、適用於ONTAP Select 節點與管理公用程式:: 部署管理公用程式和ONTAP Select VMware節點都會以虛擬機器的形式執行。您選擇部署公用程式的Hypervisor與ONTAP Select 您選擇的適用於各個節點的Hypervisor無關。您可以在配對兩種產品時、享有完全的靈活度：
++
+--
+* 部署在VMware ESXi上執行的公用程式、可在ONTAP Select VMware ESXi或KVM上建立及管理各種功能的叢集
+* 在KVM上執行的部署公用程式可在ONTAP Select VMware ESXi或KVM上建立及管理各種功能
+
+
+--
+每個主機一個或多個ONTAP Select 節點的實例:: 每ONTAP Select 個支援節點都會以專屬虛擬機器的形式執行。您可以在相同的Hypervisor主機上建立多個節點、但有下列限制：
++
+--
+* 來自單ONTAP Select 一支援中心叢集的多個節點無法在同一部主機上執行。特定主機上的所有節點都必須來自不同ONTAP Select 的叢集。
+* 您必須使用外部儲存設備。
+* 如果您使用軟體RAID、則只能在ONTAP Select 主機上部署一個支援節點。
+
+
+--
+叢集內節點的Hypervisor一致性:: 在一個叢集內的所有主機ONTAP Select 必須在Hypervisor軟體的相同版本和版本上執行。
+每個主機上的實體連接埠數目:: 您必須設定每個主機使用一個、兩個或四個實體連接埠。雖然您在設定網路連接埠時具有靈活度、但您應該盡可能遵循下列建議：
++
+--
+* 單節點叢集中的主機應該有兩個實體連接埠。
+* 多節點叢集中的每個主機都應有四個實體連接埠
+
+
+--
+整合ONTAP Select 以ONTAP 硬體為基礎的叢集的功能:: 您無法ONTAP Select 直接將某個節點新增至ONTAP 以硬體為基礎的叢集。不過、您可以選擇性地在ONTAP Select 一個叢集與一個硬體型ONTAP 的故障叢集之間建立叢集對等關係。
+
+
+
+
+== 儲存設備
+
+您應該考慮幾個與主機儲存有關的規劃問題。
+
+RAID 類型:: 在ESXi上使用直接附加儲存設備（DAS）時、您應該決定使用本機硬體RAID控制器、還是ONTAP Select 使用隨附於VMware的軟體RAID功能。如果您使用軟體RAID、請參閱 link:reference_plan_ots_storage.html["儲存與RAID考量"] 以取得更多資訊。
+本機儲存設備:: 使用由RAID控制器管理的本機儲存設備時、您必須決定下列事項：
++
+--
+* 是否使用一或多個RAID群組
+* 是否使用一個或多個LUN
+
+
+--
+外部儲存設備:: 使用ONTAP Select 此解決方案時、您必須決定遠端資料存放區的位置及存取方式。支援下列組態：ONTAP Select
++
+--
+* VMware vSAN
+* 一般外部儲存陣列
+
+
+--
+預估所需的儲存容量:: 您應該決定ONTAP Select 哪些儲存空間是用於不必要的節點。取得具有儲存容量的已購買授權時、必須提供此資訊。如需詳細資訊、請參閱儲存容量限制。
+
+
+
+NOTE: 此功能可與連接到該虛擬機器的資料磁碟總允許大小相對應。ONTAP Select ONTAP Select
+
+正式作業部署的授權模式:: 您必須針對ONTAP Select 部署在正式作業環境中的每個叢集、選擇容量層級或容量資源池授權模式。如需詳細資訊、請參閱_License一節。
+
+
+.相關資訊
+* link:reference_plan_ots_storage.html["儲存與RAID考量"]
+

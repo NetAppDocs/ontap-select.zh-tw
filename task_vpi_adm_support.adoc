@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_support.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, diagnostics, support 
+summary: 您可以執行多項相關的診斷與支援工作、作為執行ONTAP Select 功能的一部分。 
+---
+= 診斷與支援
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以執行多項相關的診斷與支援工作、作為執行ONTAP Select 功能的一部分。
+
+
+
+== 顯示系統設定
+
+您可以透過vCenter外掛程式檢視部署管理公用程式的基本設定。
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的「*」「*「*」「部署*」。
+. 單擊*管理*選項卡。
+. 展開* System*選項、然後按一下* Settings*。
+. 視需要更新系統組態、然後按一下「*儲存*」。
+
+
+
+
+== 顯示事件訊息
+
+部署管理公用程式包含事件記錄功能、可提供系統活動的相關資訊。您可以透過部署外掛程式來檢視事件記錄的內容、以偵錯任何問題、或是在支援人員指示的情況下進行偵錯。
+
+您可以根據多項特性來篩選事件訊息清單、包括：
+
+* 類別
+* 類型
+* 層級
+* 執行個體
+
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的「*」「*「*」「部署*」。
+. 單擊*管理*選項卡。
+. 展開「*事件*」選項、然後按一下「*部署*」。
+. 或者、按一下「篩選」並建立篩選器、以限制顯示的事件訊息。
+
+
+
+
+== 啟用AutoSupport 功能
+
+NetApp用來支援解決方案的主要疑難排解工具。AutoSupport ONTAP Select您可以視AutoSupport 需要啟用或停用此功能。
+
+部署新叢集之後、您應該確定AutoSupport 啟用了「支援功能」。您只能在AutoSupport 必要時停用不穩定功能。如果停用AutoSupport 靜態、資料仍會收集、但不會傳輸到NetApp。
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的「*」「*「*」「部署*」。
+. 單擊*管理*選項卡。
+. 展開* AutoSupport 《*》*選項、然後按一下「*設定*」
+. 視AutoSupport 需要啟用或停用功能。
+
+
+
+
+== 產生AutoSupport 一個包裹
+
+部署vCenter外掛程式可產生AutoSupport 一套功能不全的套件。您應該產生一個套件來偵錯問題、或是在支援人員的指示下產生問題。
+
+您可以產生下列AutoSupport 的整套功能：
+
+* 部署ONTAP Select 由整合資訊功能所建立的記錄檔
+* 疑難排解疑難排解與偵錯有關Hypervisor主機與ONTAP Select 節點的資訊
+* 關於Hypervisor主機與ONTAP Select 節點的效能資訊
+
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的「*」「*「*」「部署*」。
+. 單擊*管理*選項卡。
+. 展開* AutoSupport 《*》*選項、然後按一下「*產生*」。
+. 選取套件類型並提供說明、或提供個案編號、然後按一下*產生AutoSupport *。
+. 在左側窗格中、按一下「* AutoSupport 」下的「*歷史*」、然後找出套件。
++
+您可以視需要按一下*重新整理*。
+
+
+
+您可以AutoSupport 使用原生部署公用程式的使用者介面、將這個更新套件下載到您的工作站。您無法使用部署vCenter外掛程式下載套件。

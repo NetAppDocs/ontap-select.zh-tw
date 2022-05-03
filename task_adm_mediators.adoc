@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task_adm_mediators.html 
+keywords: administer, administering, web, mediators 
+summary: 每ONTAP Select 個包含兩個節點的叢集都由中介服務監控、這有助於管理節點所共享的HA功能。 
+---
+= 管理部署協調器服務
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+每ONTAP Select 個包含兩個節點的叢集都由中介服務監控、這有助於管理節點所共享的HA功能。
+
+
+
+== 檢視中介服務的狀態
+
+您可以針對定義為ONTAP Select 「整合部署公用程式」的每個雙節點叢集、檢視協調器服務的狀態。
+
+您可以檢視每個中介器的組態、包括目前狀態、兩ONTAP Select 個支援節點、以及儲存HA控制資訊的iSCSI目標。將游標暫留在頁面上的物件上、以顯示詳細資訊。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 按一下頁面頂端的「*管理*」索引標籤、然後按一下「*協調器*」。
+. （可選）單擊* Filter（篩選器）*以自定義由中介服務監視的雙節點叢集視圖。
+

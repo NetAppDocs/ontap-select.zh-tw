@@ -1,0 +1,407 @@
+---
+sidebar: sidebar 
+permalink: reference_api_workflow01.html 
+keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
+summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署單節點的VMware ESXi叢集。叢集是以評估授權所建立。 
+---
+= 工作流程1：在ESXi上建立單節點評估叢集
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署單節點的VMware ESXi叢集。叢集是以評估授權所建立。
+
+叢集建立工作流程在下列情況下有所不同：
+
+* ESXi主機並非由vCenter（獨立主機）管理
+* 叢集內使用多個節點或主機
+* 叢集部署於已購買授權的正式作業環境中
+* 使用KVM Hypervisor而非VMware ESXi（KVM不再支援、從ONTAP Select 版本號《支援》（從版本號：VMware ESXi）開始）
+
+
+
+
+== 1.登錄vCenter伺服器認證
+
+部署至由vCenter伺服器管理的ESXi主機時、您必須先新增認證、才能登錄主機。然後、部署管理公用程式就可以使用認證來驗證vCenter。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 部署 | 貼文 | /安全性/認證 
+|===
+捲髮::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+----
+Json輸入（步驟01）::
+
+
+[source, json]
+----
+{
+  "hostname": "vcenter.company-demo.com",
+  "type": "vcenter",
+  "username": "misteradmin@vsphere.local",
+  "password": "mypassword"
+}
+----
+處理類型:: 非同步
+輸出::
++
+--
+* 位置回應標頭中的認證ID
+* 工作物件
+
+
+--
+
+
+
+
+== 2.註冊Hypervisor主機
+
+您必須新增Hypervisor主機、以便ONTAP Select 執行包含此節點的虛擬機器。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 貼文 | /主機 
+|===
+捲髮::
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+----
+Json輸入（步驟02）::
+
+
+[source, json]
+----
+{
+  "hosts": [
+    {
+      "hypervisor_type": "ESX",
+      "management_server": "vcenter.company-demo.com",
+      "name": "esx1.company-demo.com"
+    }
+  ]
+}
+----
+處理類型:: 非同步
+輸出::
++
+--
+* 位置回應標頭中的主機ID
+* 工作物件
+
+
+--
+
+
+
+
+== 3.建立叢集
+
+當您建立ONTAP Select 一個叢集時、系統會登錄基本的叢集組態、並透過部署自動產生節點名稱。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 貼文 | /叢集 
+|===
+捲髮:: 單一節點叢集的查詢參數node_count應設為1。
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+----
+Json輸入（步驟03）::
+
+
+[source, json]
+----
+{
+  "name": "my_cluster"
+}
+----
+處理類型:: 同步
+輸出::
++
+--
+* 位置回應標頭中的叢集ID
+
+
+--
+
+
+
+
+== 4.設定叢集
+
+在設定叢集時、您必須提供幾項屬性。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 修補程式 | 叢集/｛cluster｝ 
+|===
+捲髮:: 您必須提供叢集ID。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+----
+Json輸入（步驟04）::
+
+
+[source, json]
+----
+{
+  "dns_info": {
+    "domains": ["lab1.company-demo.com"],
+    "dns_ips": ["10.206.80.135", "10.206.80.136"]
+    },
+    "ontap_image_version": "9.5",
+    "gateway": "10.206.80.1",
+    "ip": "10.206.80.115",
+    "netmask": "255.255.255.192",
+    "ntp_servers": {"10.206.80.183"}
+}
+----
+處理類型:: 同步
+輸出:: 無
+
+
+
+
+== 5.擷取節點名稱
+
+當建立叢集時、部署管理公用程式會自動產生節點識別碼和名稱。您必須先擷取指派的ID、才能設定節點。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 取得 | 叢集/｛cluster｝/節點 
+|===
+捲髮:: 您必須提供叢集ID。
+
+
+[source, curl]
+----
+curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+----
+處理類型:: 同步
+輸出::
++
+--
+* 陣列會記錄每個以唯一ID和名稱描述單一節點的資料
+
+
+--
+
+
+
+
+== 6.設定節點
+
+您必須提供節點的基本組態、這是用來設定節點的三個API呼叫中的第一個。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 路徑 | 叢集/｛cluster｝/節點/｛node_id｝ 
+|===
+捲髮:: 您必須提供叢集ID和節點ID。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+----
+Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機ID。
+
+
+[source, json]
+----
+{
+  "host": {
+    "id": "HOSTID"
+    },
+  "instance_type": "small",
+  "ip": "10.206.80.101",
+  "passthrough_disks": false
+}
+----
+處理類型:: 同步
+輸出:: 無
+
+
+
+
+== 7.擷取節點網路
+
+您必須識別單節點叢集中節點所使用的資料和管理網路。內部網路不適用於單一節點叢集。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 取得 | 叢集/｛cluster｝/節點/｛node_id｝/網路 
+|===
+捲髮:: 您必須提供叢集ID和節點ID。
+
+
+[source, curl]
+----
+curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+----
+處理類型:: 同步
+輸出::
++
+--
+* 兩筆記錄的陣列、每筆記錄分別說明節點的單一網路、包括唯一ID和用途
+
+
+--
+
+
+
+
+== 8.設定節點網路
+
+您必須設定資料和管理網路。內部網路不適用於單一節點叢集。
+
+
+NOTE: 發出下列API呼叫兩次、每個網路一次。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 修補程式 | 叢集/｛cluster｝/節點/｛node_id｝/網路/｛network_id｝ 
+|===
+捲髮:: 您必須提供叢集ID、節點ID和網路ID。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+----
+Json輸入（步驟08）:: 您需要提供網路名稱。
+
+
+[source, json]
+----
+{
+  "name": "sDOT_Network"
+}
+----
+處理類型:: 同步
+輸出:: 無
+
+
+
+
+== 9.設定節點儲存資源池
+
+設定節點的最後一步是附加儲存資源池。您可以透過vSphere Web用戶端或透過部署REST API（選用）來判斷可用的儲存資源池。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 修補程式 | 叢集/｛cluster｝/節點/｛node_id｝/網路/｛network_id｝ 
+|===
+捲髮:: 您必須提供叢集ID、節點ID和網路ID。
+
+
+[source, curl]
+----
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+----
+Json輸入（步驟09）:: 集區容量為2 TB。
+
+
+[source, json]
+----
+{
+  "pool_array": [
+    {
+      "name": "sDOT-01",
+      "capacity": 2147483648000
+    }
+  ]
+}
+----
+處理類型:: 同步
+輸出:: 無
+
+
+
+
+== 10.部署叢集
+
+設定叢集和節點之後、即可部署叢集。
+
+[cols="15,15,70"]
+|===
+| 類別 | HTTP動詞 | 路徑 
+
+
+| 叢集 | 貼文 | 叢集/｛cluster｝/部署 
+|===
+捲髮:: 您必須提供叢集ID。
+
+
+[source, curl]
+----
+curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+----
+Json輸入（步驟10）:: 您必須提供ONTAP 該管理員帳戶的密碼。
+
+
+[source, json]
+----
+{
+  "ontap_credentials": {
+    "password": "mypassword"
+  }
+}
+----
+處理類型:: 非同步
+輸出::
++
+--
+* 工作物件
+
+
+--
+

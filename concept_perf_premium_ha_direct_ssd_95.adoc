@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_95.html 
+keywords: ontap select, performance 
+summary: FAS9.5效能：頂級HA直接附加SSD儲存設備。ONTAP Select 
+---
+= S9.5效能：優質HA直接附加SSD儲存設備ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+提供優異的HA直接附加SSD儲存設備、提供9.5效能。ONTAP Select
+
+
+
+== 參考平台
+
+S9.5（Premium）硬體（每個節點）ONTAP Select ：
+
+* Cisco UCS C240 M4SX：
++
+** Intel Xeon CPU E5-2620、2.1GHz
+** 2個插槽；每個插槽16個CPU
+** 128GB RAM
+** VMware ESXi 6.5
+** 每個主機的磁碟機：24個900GB SSD
+
+
+
+
+用戶端硬體：
+
+* 5個NFSv3 IBM 3550m4用戶端
+
+
+組態資訊：
+
+* 1、500 MTU用於用戶端與Select叢集之間的資料路徑
+* 沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）
+
+
+下表列出使用ONTAP Select 軟體RAID和硬體RAID、在HA配對的一組支援中心節點上、針對讀寫工作負載所測得的處理量。效能測量是使用SIO負載產生工具進行。
+
+* ONTAP Select 使用軟體RAID和硬體RAID*、在DAS（SSD）上執行單一節點（四節點中型執行個體的一部分）的效能結果
+
+[cols="6*"]
+|===
+| 說明 | 連續讀取64KiB | 連續寫入64KiB | 隨機讀取8KiB | 隨機寫入8KiB | 隨機WR/ RD（50/50）8KiB 
+
+
+| 支援DAS（SSD）硬體RAID的支援範例9.5 ONTAP | 1、733億次 | 412億次 | 391MiBps | 1251MiBps | 309MiBps 
+
+
+| 支援DAS（SSD）軟體RAID的支援範例9.5 ONTAP | 1、674MiBps | 360MiBps | 451MiBps | 223MiBps | 293MiBps 
+|===
+
+
+=== 64K循序讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（8TB軟體RAID）
+* 64個SIO處理程序、每個處理程序1個執行緒
+* 每個節點32個磁碟區
+* 每個處理器1個檔案；每個檔案為12000MB
+
+
+
+
+=== 64K循序寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 128個SIO處理程序、每個處理程序1個執行緒
+* 每節點32個磁碟區（硬體RAID）、16個（軟體RAID）
+* 每個處理器1個檔案；每個檔案30720MB
+
+
+
+
+=== 8K隨機讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 64個SIO處理程序、每個處理程序8個執行緒
+* 每個節點的磁碟區32
+* 每個處理器1個檔案；每個檔案12228MB
+
+
+
+
+=== 8K隨機寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 64個SIO處理程序、每個處理程序8個執行緒
+* 每個節點的磁碟區32
+* 每個處理器1個檔案；每個檔案為819MB
+
+
+
+
+=== 8K隨機50%寫入50%讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 64個SIO處理程序、每個處理程序20個執行緒
+* 每個節點的磁碟區32
+* 每個處理器1個檔案；每個檔案12228MB
+

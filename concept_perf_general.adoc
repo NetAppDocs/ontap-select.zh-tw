@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_general.html 
+keywords: ontap select, performance 
+summary: 效能會因硬體組態而異。 
+---
+= 效能一般考量
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+效能會因硬體組態而異。
+
+本節所述的效能數據、是對ONTAP Select VMware叢集效能的粗略估計、並非效能保證。
+
+由於基礎硬體和組態的特性、所以無法大幅改變VMware叢集的效能ONTAP Select 。事實上、特定硬體組態是特定ONTAP Select 執行個體效能的最大因素。以下是影響特定ONTAP Select 執行個體效能的一些因素：
+
+* *核心頻率*。一般而言、較高的頻率較為理想。
+* *單插槽與多插槽*。雖然不使用多插槽功能、但支援多插槽組態的Hypervisor負荷會在整體效能方面造成一定程度的差異。ONTAP Select
+* * RAID卡組態及相關Hypervisor驅動程式*。Hypervisor提供的預設驅動程式可能需要由硬體廠商驅動程式取代。
+* * RAID群組中的磁碟機類型和磁碟機數目*。
+* * Hypervisor版本與修補程式層級*。
+
+
+本節僅包含在完全相同的測試平台上執行測試時的效能比較、以強調特定功能的影響。一般而言、我們會記錄硬體環境、並在該平台上執行可能的最高效能組態。

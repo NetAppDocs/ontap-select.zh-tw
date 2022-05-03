@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_evaluation.html 
+keywords: license, licensing, evaluation, upgrade license 
+summary: 如果您想要在ONTAP Select 決定購買之前先評估一下「版本」、就可以使用評估授權。評估版授權隨附ONTAP Select 於EView部署管理公用程式、並會在ONTAP Select 評估部署中自動套用至每個節點。 
+---
+= 評估授權
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您想要在ONTAP Select 決定購買之前先評估一下「版本」、就可以使用評估授權。評估版授權隨附ONTAP Select 於EView部署管理公用程式、並會在ONTAP Select 評估部署中自動套用至每個節點。
+
+
+
+== 授權特性
+
+本產品的功能特性如下：ONTAP Select
+
+* 不需要具備儲存容量的正式作業授權
+* 節點序號為二十位數、ONTAP Select 由還原部署自動產生
++
+（您不直接從NetApp取得）
+
+* 授權所提供的評估期間最多可達90天
+* 每個節點所配置的最大儲存容量與正式作業授權相同
+
+
+
+
+== 升級至正式作業授權
+
+您可以升級ONTAP Select 一套用作正式作業授權的功能。您應注意下列限制：
+
+* 您必須使用部署管理公用程式來執行授權升級
+* 僅ONTAP Select 使用Deploy 2.11或更新版本的不支援使用許可升級
+* 可以使用容量層授權、但不支援容量資源池授權
+* 每個節點都必須配置足夠的儲存空間、以根據叢集大小來支援正式作業授權所需的最低需求
+
+
+link:task_adm_licenses.html["將評估授權轉換成正式作業授權"] 以取得更多資訊。

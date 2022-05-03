@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_vnas.html 
+keywords: plan, planning, vnas 
+summary: 有幾個規劃問題與ONTAP Select 使用功能不相關、您應該考量這些問題。 
+---
+= VNAS需求ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+藉由使用物件vNAS解決方案、可將不支援的資料存放區置於執行此虛擬機器的Hypervisor主機之外。ONTAP Select ONTAP Select ONTAP Select這些遠端資料存放區可透過VMware vSAN或一般外部儲存陣列存取。
+
+
+
+==== 基本要求與限制
+
+此解決方案可搭配任何規模的不二叢集使用。ONTAP Select ONTAP Select
+
+所有相關的儲存元件、包括硬體、軟體和功能需求、都必須符合中所述的要求link:https://mysupport.netapp.com/matrix/["VMware相容性指南"]。此外ONTAP Select 、支援《VMware Storage/SAN相容性指南》中所述的所有外部儲存陣列、包括iSCSI、NAS（NFSv3）、Fibre Channel和Fibre Channel over Ethernet。外部陣列支援受ONTAP Select 支援ESXi版本的限制。如需詳細資訊、請參閱_NetApp互通性對照表工具_。
+
+部署使用ONTAP Select VMware vCenter的叢集時、支援下列VMware功能：
+
+* vMotion
+* 高可用度（HA）
+* 分散式資源排程器（DRS）
+
+
+
+NOTE: 單節點ONTAP Select 和多節點的VMware叢集支援這些VMware功能。部署多節點叢集時、您應該確定同一個叢集的兩個或多個節點不會在同一個Hypervisor主機上執行。
+
+不支援下列VMware功能：
+
+* 容錯（FT）
+* 虛擬資料存放區（VVOL）
+
+
+
+
+==== 組態需求
+
+如果您打算在外部儲存陣列（iSCSI、Fibre Channel、Fibre Channel over Ethernet）上使用VMFS資料存放區、則必須先建立VMFS儲存池、然後再設定ONTAP Select 使用儲存區的功能。如果使用NFS資料存放區、則不需要建立個別的VMFS資料存放區。所有vSAN資料存放區都必須在相同的ESXi叢集中定義。
+
+
+CAUTION: 設定主機或執行儲存新增作業時、您必須為VMware vSAN或外部儲存陣列上的每個資料存放區提供容量限制。您指定的容量必須在外部儲存設備允許的儲存限制內。如果您在磁碟建立作業期間未提供容量限制、或外部儲存設備空間不足、就會發生錯誤。
+
+
+
+==== 最佳實務做法
+
+請參閱可用的VMware文件、並遵循針對ESXi主機所識別的適用最佳實務做法。此外：
+
+* 針對ONTAP Select VMware vSAN和外部儲存設備定義專屬的網路連接埠、頻寬和vSwitch組態（使用iSCSI或NFS時為VMware vSAN和一般儲存陣列流量）
+* 設定容量選項以限制儲存使用率（ONTAP Select 無法使用外部vNAS資料存放區的全部容量）
+* 確保所有一般的外部儲存陣列盡可能使用可用的備援和HA功能
+

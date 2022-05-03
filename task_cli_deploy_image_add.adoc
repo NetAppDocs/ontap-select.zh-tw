@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_image_add.html 
+keywords: administer, administering, cli, deploy, ontap select image, add 
+summary: 您可以在ONTAP Select 部署管理公用程式的執行個體中新增一個鏡像。安裝映像之後、您可以在部署ONTAP Select 一個叢集時使用它。 
+---
+= 新增ONTAP Select 要部署的鏡像
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在ONTAP Select 部署管理公用程式的執行個體中新增一個鏡像。安裝映像之後、您可以在部署ONTAP Select 一個叢集時使用它。
+
+
+
+== 開始之前
+
+從較高層級來看、用來在ONTAP Select 部署執行個體中新增支援影像的程序包含四個步驟：
+
+. 正在下載安裝映像
+. 將安裝映像上傳至部署虛擬機器
+. 新增安裝映像
+. 顯示可用的安裝映像
+
+
+在新增ONTAP Select 任何要部署的更新版影像之前、您應該先移除任何不需要的影像。
+
+
+NOTE: 您只能使用ONTAP Select 比部署公用程式執行個體隨附的原始版本更早的版本來新增一個版本的不一致映像。在ONTAP Select NetApp提供更新版本的支援時、新增更新版本的功能並不受支援。
+
+
+
+== 正在下載安裝映像
+
+若要開始在ONTAP Select Deploy公用程式執行個體中新增ImageImage的程序、您必須從NetApp支援網站下載安裝映像。將此鏡像格式化為ONTAP Select 單一壓縮檔案。
+
+.步驟
+. 使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。
+. 按一下「*熱門工作*」下的「*下載軟體*」、然後登入網站。
+. 按一下*尋找您的產品*。
+. 向下捲動並按一下* ONTAP Select 《*》。
+. 在*其他可用的Select Software*下、按一下*部署升級、節點升級、映像安裝*。
+. 選取所需的升級套件版本。
+. 檢閱終端使用者授權合約（EULA）、然後按一下*「Accept & Continue（接受並繼續）」*。
+. 選取並下載適當的套件、視環境需求回應所有提示。
+
+
+
+
+== 上傳要部署的安裝映像
+
+擷取ONTAP Select 完鏡像後、您必須將檔案上傳至部署虛擬機器。
+
+您必須在本機工作站上提供安裝映像檔。您也必須擁有部署系統管理員使用者帳戶的密碼。
+
+此工作說明將檔案上傳至部署虛擬機器的一種方法。可能還有其他更適合您環境的選項。
+
+.步驟
+. 在本機工作站的命令Shell中、將映像檔上傳至部署虛擬機器。
++
+範例
+
++
+....
+scp image_v_93_install_esx.tgz admin@10.234.81.101:/home/admin (provide password when prompted)
+....
++
+範例
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put image_v_93_install_esx.tgz
+exit
+....
+
+
+節點安裝檔案儲存在管理使用者的主目錄中。
+
+
+
+== 新增安裝映像
+
+您可以將ONTAP Select 安裝映像新增至Deploy映像目錄、以便在部署新叢集時使用。
+
+您必須知道安裝映像檔位於Deploy公用程式虛擬機器的哪個目錄。假設檔案位於系統管理員的主目錄中。
+
+.步驟
+. 使用SSH以系統管理員（admin）帳戶登入部署公用程式CLI。
+. 啟動Bash Shell：
++
+"死了"
+
+. 將安裝映像檔放入映像目錄。
++
+範例「tar -xf image_v_93_install_esx.tgz -C /opt/netapp/imes/」
+
+
+
+
+
+== 顯示可用的安裝映像
+
+您可以顯示ONTAP Select 在部署新叢集時可用的功能區影像。
+
+.步驟
+. 存取部署公用程式虛擬機器的線上文件網頁、然後使用系統管理員（admin）帳戶登入：
++
+http://<FQDN|IP_ADDRESS>/api/ui`
+
++
+使用部署虛擬機器的網域名稱或IP位址。
+
+. 瀏覽至頁面底部、按一下「*部署*」、然後按一下「*取得/images"。
+. 按一下*試用！*以顯示可用ONTAP Select 的圖片。
+. 確認所需的映像可用。
+

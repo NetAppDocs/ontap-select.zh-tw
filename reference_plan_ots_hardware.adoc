@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_hardware.html 
+keywords: plan, planning, vmware, hardware, hardware requirements 
+summary: 您應該考量幾項與VMware環境相關的硬體需求與規劃問題。 
+---
+= VMware Hypervisor與硬體考量
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該考量幾項與VMware環境相關的硬體需求與規劃問題。
+
+
+
+== Hypervisor需求
+
+有幾項需求與ONTAP Select 執行效能不均的Hypervisor有關。
+
+
+NOTE: 您應該檢閱ONTAP Select 目前版本的《更新說明》、以瞭解任何其他已知限制或限制。
+
+
+
+==== VMware授權
+
+若要部署ONTAP Select 一個VMware叢集、貴組織必須擁有有效的VMware vSphere授權、以供執行ONTAP Select VMware的Hypervisor主機使用。您應該使用適合部署的授權。
+
+
+
+==== 軟體相容性
+
+下列Hypervisor可部署下列項目：ONTAP Select
+
+* VMware ESXi 6.5 U2（版本號294253或更新版本）
+* VMware ESXi 6.7 GA（建置8169922或更新版本）、包括6.7 U1、U2和U3
+* VMware ESXi 7.0 GA（建置編號為15843807或更新版本）、包括7.0 U1和U2
+
+
+
+NOTE: 只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識別的ESXi版本上提供支援。
+
+
+
+==== 升級至VMware ESXi 6.5 U2或更新版本
+
+如果您目前在ONTAP Select VMware ESXi 6.5 U1上部署了VMware ESXi、則應盡快升級至ESXi 6.5 U2或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。
+
+
+
+==== VMware vCenter和獨立式ESXi主機
+
+如果ESXi Hypervisor主機是由vCenter伺服器管理、您必須使用vCenter認證將主機登錄至部署管理公用程式。您無法使用ESXi認證將主機登錄為獨立主機。
+
+
+
+== 核心硬體需求
+
+您部署ONTAP Select 的實體Hypervisor主機必須符合多項硬體需求。只要符合最低硬體需求、您就可以選擇Hypervisor主機的任何平台。下列廠商提供支援的硬體平台：Cisco、Dell、HP、Fujitsu、Lenovo、 和Supermmicro.
+
+
+NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更新版本為基礎的CPU機型。
+
+請參閱 https://mysupport.netapp.com/matrix["NetApp互通性對照表工具、window=_blank"] 以取得更多資訊。
+
+
+
+==== 基本硬體需求
+
+無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。
+
+* 處理器
++
+** 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
+
+
+* 乙太網路連接埠
++
+** 4個10GbE（建議）
+** 2個10GbE
+** 1個10GbE
+** 4 x 1GbE（僅適用於雙節點ROBO叢集）
+** 2 x 1GbE（僅適用於單節點叢集）
+
+
+
+
+
+
+==== 根據執行個體類型的其他硬體需求
+
+根據節點執行個體類型、有多項額外的硬體需求。
+
+請參閱 link:concept_lic_platforms.html["瞭解平台授權方案"] 以取得更多資訊。
+
+小::
++
+--
+* CPU核心六個或更多實體核心、四個保留供ONTAP Select 作
+* 記憶體24GB以上、保留16GB以供ONTAP Select 支援。
+* 提供Standard、Premium或Premium XL的必要平台授權
+
+
+--
+中::
++
+--
+* CPU核心10個或更多實體核心、8個保留供ONTAP Select 作
+* 記憶體72 GB以上、保留64GB ONTAP Select 以供使用
+* 提供Premium或Premium XL的必要平台授權
+
+
+--
+大::
++
+--
+* CPU核心擁有18個或更多實體核心、其中16個保留供ONTAP Select 作
+* 記憶體136GB或更高、128 GB保留供ONTAP Select 不穩定使用
+* 提供優質XL的必要平台授權
+
+
+--
+
+
+
+NOTE: 根據平台授權、還有額外的磁碟需求。請參閱 link:reference_plan_ots_storage.html["儲存與RAID"] 以取得更多資訊。

@@ -1,0 +1,226 @@
+---
+sidebar: sidebar 
+permalink: task_cli_upgrade_esxi65.html 
+keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
+summary: 如果您是在ONTAP Select VMware ESXi上執行VMware ESXi、可以將ESXi軟體從先前支援的版本升級至ESXi 6.5或6.7。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。 
+---
+= 將VMware ESXi升級至6.5版及更高版本
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您是在ONTAP Select VMware ESXi上執行VMware ESXi、可以將ESXi軟體從先前支援的版本升級至ESXi 6.5或6.7。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。
+
+
+
+== 開始之前
+
+在裝載ONTAP Select 某個叢集的Hypervisor上升級ESXi軟體之前、您應該先準備並選擇適合您環境的升級程序。
+
+
+CAUTION: 如果您選擇升級至VMware ESXi 6.5、則應升級至ESXi U2（版本號是82253）或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。
+
+
+
+=== 熟悉如何升級VMware ESXi
+
+升級ESXi軟體是VMware所說明及支援的程序。Hypervisor升級程序是使用ONTAP Select 過程中較大規模升級的一部分。如需詳細資訊、請參閱VMware文件升級ESXi主機。
+
+
+
+=== 選擇升級程序
+
+有多種升級程序可供使用。您應根據下列條件選擇適用的程序：
+
+* 支援單節點和多節點叢集的叢集大小。ONTAP Select
+* 無論是否使用部署公用程式、都能使用ONTAP Select VMware部署升級。
+
+
+
+TIP: 您應該選取使用部署管理公用程式的升級程序。
+
+使用部署管理公用程式執行ESXi升級是較為一般且彈性的選項。不過、部署無法使用或無法使用時、可能會有一些執行個體。例如ONTAP Select 、舊版的VMware ESXi和Deploy管理公用程式不支援升級至ESXi 6.5。
+
+如果您使用這些較早版本並嘗試升級、ONTAP Select 則無法將該虛擬機器開機的狀態也會保留下來。在此情況下、您必須選取不使用Deploy的升級程序。如需詳細資訊、請參閱* 1172198*。
+
+
+
+=== 升級部署管理公用程式
+
+在使用Deploy公用程式執行升級程序之前、您可能需要升級部署執行個體。一般而言、您應該升級至最新版的部署。至少您必須使用部署2.5或更新版本。Deploy公用程式必須支援ONTAP Select 您所使用的版本。如ONTAP Select 需詳細資訊、請參閱《發行說明》。
+
+
+
+=== 更新程序完成後
+
+如果您選取使用Deploy公用程式的升級程序、則應該在所有節點升級後、使用Deploy執行叢集重新整理作業。如需詳細資訊、請參閱重新整理部署叢集組態。
+
+
+
+== 使用Deploy升級單節點叢集
+
+您可以將部署管理公用程式當作程序的一部分、來升級裝載ONTAP Select 一個VMware單節點叢集的VMware ESXi Hypervisor。
+
+您必須使用部署2.5版或更新版本。
+
+.步驟
+. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
+. 將節點移至離線狀態。
++
+範例「節點停止-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
+
+. 使用ONTAP Select VMware提供的程序、將執行VMware的Hypervisor主機升級至ESXi 6.5或6.7。
++
+如需詳細資訊、請參閱「開始前_」。
+
+. 將節點移至線上狀態。
++
+範例「節點啟動-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
+
+. 節點出現後、請確認叢集正常運作。
++
+範例
+
++
+....
+ESX-1N::> cluster show
+Node Health Eligibility
+--------------------- ------- ------------
+sdot-d200-011d true true
+....
+
+
+您應該使用部署管理公用程式來執行叢集重新整理作業。
+
+
+
+== 使用Deploy升級多節點叢集
+
+您可以將部署管理公用程式當作程序的一部分、來升級裝載ONTAP Select 一個VMware多節點叢集的VMware ESXi Hypervisor。
+
+您必須使用部署2.5版或更新版本。
+
+您必須為叢集中的每個節點執行此升級程序、一次只能執行一個節點。如果叢集包含四個以上的節點、您應該先依序升級每個HA配對中的節點、然後再繼續下一個HA配對。
+
+.步驟
+. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
+. 將節點移至離線狀態。
++
+範例「節點停止-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
+
+. 使用ONTAP Select VMware提供的程序、將執行VMware的Hypervisor主機升級至ESXi 6.5或6.7。
++
+如需詳細資訊、請參閱準備升級VMware ESXi。
+
+. 將節點移至線上狀態。
++
+範例「節點啟動-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
+
+. 節點啟動後、請確認已啟用儲存容錯移轉、而且叢集正常運作。
++
+範例
+
++
+....
+ESX-2N_I2_N11N12::> storage failover show
+Takeover
+Node Partner Possible State Description
+-------------- -------------- -------- ---------------------------
+sdot-d200-011d sdot-d200-012d true Connected to sdot-d200-012d
+sdot-d200-012d sdot-d200-011d true Connected to sdot-d200-011d
+2 entries were displayed.
+ESX-2N_I2_N11N12::> cluster show
+Node Health Eligibility
+--------------------- ------- ------------
+sdot-d200-011d true true
+sdot-d200-012d true true
+2 entries were displayed.
+....
+
+
+您必須為ONTAP Select 使用於叢集中的每個主機執行升級程序。升級所有ESXi主機之後、您應該使用部署管理公用程式來執行叢集重新整理作業。
+
+
+
+== 無需部署即可升級單節點叢集
+
+您無需ONTAP Select 使用部署管理公用程式、即可升級VMware ESXi Hypervisor、將其裝載於一個單節點叢集。
+
+.步驟
+. 登入ONTAP 到畫面上的指令行介面、然後停止節點。
+. 使用VMware vSphere、確認ONTAP Select 已關閉VMware vCenter虛擬機器。
+. 使用ONTAP Select VMware提供的程序、將執行VMware的Hypervisor主機升級至ESXi 6.5或6.7。
++
+如需詳細資訊、請參閱準備升級VMware ESXi。
+
+. 使用VMware vSphere存取vCenter並執行下列動作：
++
+.. 將磁碟機新增至ONTAP Select 物件虛擬機器。
+.. 開啟ONTAP Select 支援的物件虛擬機器。
+.. 以系統管理員帳戶使用SSH登入ONTAP SNetApp CLI。
+
+
+. 節點出現後、請確認叢集正常運作。
++
+範例
+
+
+
+....
+ESX-1N::> cluster show
+Node Health Eligibility
+--------------------- ------- ------------
+sdot-d200-011d true true
+....
+您應該使用部署管理公用程式來執行叢集重新整理作業。
+
+
+
+== 無需部署即可升級多節點叢集
+
+無需ONTAP Select 使用部署管理公用程式、您就能升級裝載一個包含VMware ESXi多節點叢集的VMware ESXi Hypervisor。
+
+您必須為叢集中的每個節點執行此升級程序、一次只能執行一個節點。如果叢集包含四個以上的節點、您應該先依序升級每個HA配對中的節點、然後再繼續下一個HA配對。
+
+.步驟
+. 登入ONTAP 到畫面上的指令行介面、然後停止節點。
+. 使用VMware vSphere、確認ONTAP Select 已關閉VMware vCenter虛擬機器。
+. 使用ONTAP Select VMware提供的程序、將執行VMware的Hypervisor主機升級至ESXi 6.5或6.7。
++
+如需詳細資訊、請參閱「開始前_」。
+
+. 使用VMware vSphere存取vCenter並執行下列動作：
++
+.. 將磁碟機新增至ONTAP Select 物件虛擬機器。
+.. 開啟ONTAP Select 支援的物件虛擬機器。
+.. 以系統管理員帳戶使用SSH登入ONTAP SNetApp CLI。
+
+
+. 節點啟動後、請確認已啟用儲存容錯移轉、而且叢集正常運作。
++
+範例
+
++
+....
+ESX-2N_I2_N11N12::> storage failover show
+Takeover
+Node Partner Possible State Description
+-------------- -------------- -------- ---------------------------
+sdot-d200-011d sdot-d200-012d true Connected to sdot-d200-012d
+sdot-d200-012d sdot-d200-011d true Connected to sdot-d200-011d
+2 entries were displayed.
+ESX-2N_I2_N11N12::> cluster show
+Node Health Eligibility
+--------------------- ------- ------------
+sdot-d200-011d true true
+sdot-d200-012d true true
+2 entries were displayed.
+....
+
+
+您必須為ONTAP Select 使用於叢集中的每個主機執行升級程序。

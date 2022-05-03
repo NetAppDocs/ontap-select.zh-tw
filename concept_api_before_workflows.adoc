@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_workflows.html 
+keywords: rest api, deploy rest api, rest, workflows, before you begin 
+summary: 您應該準備好檢閱及使用工作流程程序。 
+---
+= 使用API工作流程之前
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該準備好檢閱及使用工作流程程序。
+
+
+
+=== 瞭解工作流程中使用的API呼叫
+
+《支援》線上文件頁面包含每次REST API呼叫的詳細資料。ONTAP Select工作流程範例中使用的每個API呼叫都只包含您在文件頁面上找到呼叫所需的資訊、而非在此重複這些詳細資料。找到特定API呼叫之後、您可以檢閱通話的完整詳細資料、包括輸入參數、輸出格式、HTTP狀態代碼及要求處理類型。
+
+工作流程中的每個API呼叫都包含下列資訊、可協助您在文件頁面上找到呼叫：
+
+* 類別API呼叫會在文件頁面上組織成功能相關的區域或類別。若要尋找特定的API呼叫、請捲動至頁面底部、然後按一下適用的API類別。
+* HTTP動詞HTTP動詞可識別在資源上執行的動作。每個API呼叫都是透過單一HTTP動詞來執行。
+* 路徑路徑會決定動作在執行通話時套用到的特定資源。路徑字串會附加至核心URL、以構成識別資源的完整URL。
+
+
+
+
+=== 建構URL以直接存取REST API
+
+除了「支援資訊」文件頁面、您也可以直接透過編程語言（例如Python）存取「部署REST API」ONTAP Select 。在此情況下、核心URL與存取線上文件頁面時所使用的URL略有不同。直接存取API時、您必須將/API附加至網域和連接埠字串。例如：「http://deploy.mycompany.com/api`」

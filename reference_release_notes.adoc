@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference_release_notes.html 
+keywords:  
+summary:  
+---
+= 發行說明ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+發行說明ONTAP Select for the Release Notes提供特定版本的資訊、包括新功能、支援的組態、升級說明、已知問題、 修正問題及已知限制。
+
+
+NOTE: 您需要帳戶登入NetApp支援網站、才能存取版本資訊。
+
+
+
+===== 目前版本ONTAP Select 的
+
+您可以存取 https://library.netapp.com/ecm/ecm_download_file/ECMLP2879854["《》（英文）ONTAP Select"^] 可查看當前版本的詳情。
+
+
+
+===== 過去版本ONTAP Select 的不一樣
+
+若要存取產品先前版本的版本資訊、請參閱 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]。

@@ -1,0 +1,108 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_vcenter.html 
+keywords: plan, planning, vmware vcenter, vcenter server, vcenter 
+summary: 您應該考慮幾項與VMware vCenter相關的規劃需求。 
+---
+= VMware vCenter伺服器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該考慮幾項與VMware vCenter相關的規劃需求。
+
+
+
+== 存取vCenter伺服器
+
+您必須能夠存取管理部署ONTAP Select 了VMware的ESXi Hypervisor主機的vCenter伺服器。
+
+
+
+==== 位置
+
+您必須擁有vCenter伺服器的完整網域名稱或IP位址。
+
+
+
+==== 管理權限
+
+您必須定義vCenter伺服器帳戶、並將其與包含必要管理權限的角色建立關聯。建立及管理ONTAP Select 一個叢集所需的最低管理權限如下：
+
+
+
+===== 資料存放區
+
+* 配置空間
+* 瀏覽資料存放區
+* 低層級檔案作業
+* 更新虛擬機器檔案
+* 更新虛擬機器中繼資料
+
+
+
+
+===== 主機
+
+
+
+===== 組態
+
+* 網路組態
+* 系統管理
+
+
+
+
+===== 本地營運
+
+* 建立虛擬機器
+* 刪除虛擬機器
+* 重新設定虛擬機器
+
+
+
+
+===== 網路
+
+* 指派網路
+
+
+
+
+===== 虛擬機器
+
+
+
+===== 組態
+
+類別中的所有權限。
+
+
+
+===== 互動
+
+類別中的所有權限。
+
+
+
+===== 庫存
+
+類別中的所有權限。
+
+
+
+===== 資源配置
+
+類別中的所有權限。
+
+
+
+===== vApp
+
+類別中的所有權限。

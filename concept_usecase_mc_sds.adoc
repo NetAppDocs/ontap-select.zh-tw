@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: concept_usecase_mc_sds.html 
+keywords: ontap select, metrocluster software defined storage, mc sds storage 
+summary: 支援升級的保護功能和具成本效益的實作。ONTAP Select MetroCluster 
+---
+= 以軟體定義的儲存設備MetroCluster
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+支援升級的保護功能和具成本效益的實作。ONTAP Select MetroCluster
+
+如果符合特定的最低需求、則可在兩個位置之間延伸雙節點叢集。這種架構可在硬體MetroCluster 式的功能區和單一資料中心叢集（硬體定義或軟體定義）之間、完美融入其中。對「不完整」SDS的要求ONTAP Select MetroCluster 強調軟體定義儲存解決方案的一般靈活度、以及它與硬體型MetroCluster 的「不一致」SDS之間的差異。不需要專屬硬體。
+
+與MetroCluster 之不同的ONTAP Select 是、不只使用現有的網路基礎架構、還能支援高達5ms的RTT網路延遲、最大不穩定性可達5ms、最大延遲可達10ms。雖然延遲設定檔較為重要、但也需要最大距離10公里。市場空間的分隔需求與實體分隔的關係比實際距離還要多。在某些情況下、這可能代表不同的建築物。在其他情況下、這可能意味著同一棟建築內的不同房間。無論實際放置的實體位置為何、將雙節點叢集定義為MetroCluster 「物件SDS」的是每個節點都使用獨立的上行鏈路交換器。
+
+在雙節點HA組態中、需要使用中介器來在容錯移轉期間正確識別作用中節點、並避免發生任何在網路分割期間兩個節點都保持獨立作用的腦分割案例。此作業與先前可用的一般雙節點HA組態相同。為了在站台故障期間提供適當的保護和容錯移轉、中介器應位於不同於兩個HA節點的站台。中介器與每ONTAP Select 個節點之間的最大延遲不得超過125毫秒。
+
+有了這套解決方案、企業客戶就能放心地在市售硬體上運用軟體定義儲存解決方案的靈活度。他們可以安心部署、因為他們知道自己的資料受到企業級零RPO解決方案的保護。
+
+支援下列功能：ONTAP Select MetroCluster
+
+* 支援的另一個層面（從資料中心到資料中心）是針對功能的保護。MetroCluster ONTAP Select客戶現在除了能充分發揮軟體定義儲存設備和ONTAP 功能之外、還能享有更高層級的保護。
+* 利用0 RPO和自動容錯移轉功能、支援關鍵業務資料保護。MetroCluster資料儲存設備和應用程式存取點都會自動切換至正常運作的資料中心或節點、而不會受到IT部門的任何介入。
+* 以符合成本效益的方式提供SDS。MetroCluster它利用現有的網路基礎架構、在HA配對之間實現延伸恢復能力、而且不需要額外的硬體。它也能在同一個叢集中提供主動/主動式資料存取和資料中心備援。
+
+
+*《SSD*》MetroCluster
+
+image:MCSDS_01.jpg["以DAS為基礎的私有雲"]
+
+如需更多最佳實務做法和其他要求、請參閱各節 link:concept_ha_config.html#two-node-ha-versus-multi-node-ha["雙節點HA與多節點HA的比較"] 和 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["雙節點延伸HA MetroCluster （簡稱「架構SDS」）最佳實務做法"]。

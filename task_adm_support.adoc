@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: task_adm_support.html 
+keywords: administer, administering, web, diagnostics, support 
+summary: 您可以執行多項相關的診斷與支援工作、作為執行ONTAP Select 功能的一部分。 
+---
+= 診斷與支援
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以執行多項相關的診斷與支援工作、作為執行ONTAP Select 功能的一部分。
+
+
+
+== 設定部署系統
+
+您應該設定影響部署公用程式運作方式的基本系統組態參數。
+
+Deploy組態資料由AutoSupport 整個過程中使用。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 按一下頁面頂端的*管理*索引標籤。
+. 按一下*「設定與AutoSupport 更新*」、然後按一下 image:icon_pencil.gif["編輯"]。
+. 根據您的環境提供適當的組態資料、然後按一下*修改*。
++
+如果使用Proxy伺服器、您可以設定Proxy URL如下：「http://USERNAME:PASSWORD@<FQDN|IP>:PORT`」
+
++
+例如：http://user1:mypassword@proxy.company-demo.com:80`
+
+
+
+
+
+== 顯示ONTAP Select 「功能不整」事件訊息
+
+此功能包括事件記錄功能、可提供系統活動的相關資訊。ONTAP Select您應該檢視事件記錄的內容、以偵錯任何問題、或是在支援人員指示的情況下進行偵錯。
+
+您可以根據多項特性來篩選事件訊息清單、包括：
+
+* 狀態
+* 類型
+* 類別
+* 執行個體
+* 時間
+* 說明
+
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 按一下頁面頂端的*管理*索引標籤。
+. 按一下*事件與工作*、然後按一下*事件*。
+. （可選）單擊* Filter（篩選器）*並建立篩選器、以限制顯示的事件訊息。
+
+
+
+
+== 啟用AutoSupport 功能
+
+您可以視AutoSupport 需要啟用和停用此功能。
+
+NetApp使用支援功能的主要疑難排解工具：AutoSupport ONTAP Select因此AutoSupport 、除非絕對必要、否則請勿停用不穩定功能。如果您停用AutoSupport 了功能不整、資料仍會收集、但不會傳輸到NetApp。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 按一下頁面頂端的*管理*索引標籤。
+. 按一下*「設定與AutoSupport 更新*」、然後按一下 image:icon_kebab.gif["選項"]。
+. 視AutoSupport 需要啟用或停用功能。
+
+
+
+
+== 產生及下載AutoSupport 一個更新套件
+
+包含產生一套功能不整的功能。ONTAP Select AutoSupport您應該產生一個套件來偵錯任何問題、或是在支援人員的指示下進行偵錯。
+
+您可以在AutoSupport NetApp支援的指導和指導下、產生下列的整套功能：
+
+* 部署ONTAP Select 由整合資訊功能所建立的記錄檔
+* 疑難排解疑難排解與偵錯有關Hypervisor主機與ONTAP Select 節點的資訊
+* 關於Hypervisor主機與ONTAP Select 節點的效能資訊
+
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 按一下頁面頂端的*管理*索引標籤。
+. 按一下*「設定與AutoSupport 更新*」、然後按一下 image:icon_kebab.gif["選項"]。
+. 按一下*產生*。
+. 選取類型並提供套件說明、您可以選擇性地提供個案編號。
+. 按一下*產生*。
++
+每AutoSupport 個支援套件都會指派一個獨特的序號。
+
+. 您也可以在* AutoSupport 《*》雜誌*下、選擇正確的套件、然後按一下下載圖示、將AutoSupport 此檔案儲存到您的本機工作站。
+

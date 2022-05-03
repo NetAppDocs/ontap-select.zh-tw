@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: concept_automate_ansible.html 
+keywords: ansible, automation, configuration management, ontap, ontap select, na_ots_deploy, na_ots_cluster, ansible roles, ansible playbook 
+summary: 使用Ansible角色來自動化ONTAP Select 執行各項部署。 
+---
+= 利用ONTAP Select Ansible將執行的功能自動化
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用Ansible角色和方針來自動化ONTAP Select 執行各項功能部署。
+
+Ansible角色是標準化檔案結構中的工作、範本、處理常式和變數邏輯集合。使用這些角色來推動、重複使用和模組化功能、以便獨立使用。將角色及您要執行的主機清單納入執行方針。安裝Ansible之後、請更新必要的模組、並瞭解教戰手冊、您可以從ONTAP Select NetApp GitHub下載各種職務、以建立並執行自己的教戰手冊來部署ONTAP Select 各種不同的叢集。
+
+
+
+== 角色
+
+有兩種角色ONTAP Select 可供選擇：
+
+
+
+=== na_no_deploy
+
+此角色會將ONTAP Select 安裝檔案下載至vCenter或ESXi主機、以供進行VMware vCenter或ESXi部署。然後建立並執行部署VM。
+
+此角色使用下列輸入值：
+
+* vCenter或ESXi主機認證資料
+* 部署虛擬機器建立、包括下列資訊：
++
+** IP 位址
+** 主機名稱
+** 登入
+** 密碼
+** 資料存放區
+** 網路
+
+
+* OVA檔案的本機路徑
++
+在執行包括角色在內的方針之前、請先確定安裝檔案可用。
+
+
+
+
+NOTE: 提供這些輸入值最簡單的方法是透過YML格式的全域變數檔案。將此YML檔案傳入教戰手冊。
+
+此角色只需執行一項工作、即可將部署OVA檔案匯入主機、建立VM並執行。您可以從NetApp Ansible GitHub存取及下載此角色： link:https://github.com/netapp-automation/na_ots_deploy["na_no_deploy"^]
+
+
+
+=== na_no_nOs_cluster
+
+此角色使用ONTAP Select RESUDeploy API來建立及部署ONTAP Select 叢集。它假設已建立部署VM、且已手動啟動並執行、或是使用* na_ros_deploy *角色。此外、此角色也假設Select主機已適當設定ONTAP Select 為使用叢集所需的網路和儲存設備。
+
+此角色會使用vCenter或ESXi認證的輸入值、並部署VM認證、以存取API及建立ONTAP Select 叢集和節點VM所需的所有相關資訊。
+
+此角色執行下列工作：
+
+* 新增（vCenter或ESXi）主機認證
+* 取得和登錄主機ID
+* 驗證內部網路（適用於多節點叢集）
+* 建立叢集
+* 設定節點
+* 設定網路和儲存資源池
+* 部署叢集
+
+
+因此、當叢集VM啟動並執行、ONTAP Select 且整個叢集均已部署完畢、角色即告完成。您可以從NetApp Ansible GitHub存取及下載此角色： link:https://github.com/NetApp-Automation/na_ots_cluster["na_no_nOs_cluster"^]
+
+
+
+== 教戰手冊範例
+
+以下是一本名列ONTAP Select 這兩個「樣例」的教戰手冊。請注意、輸入變數是在YML檔案中定義、並透過「vars_Files」傳入。您可以在每個角色的README檔案中找到更多詳細資料。
+
+[listing]
+----
+—
+
+– name: Create ONTAP Select deploy from OVA (ESXi)
+
+vars_files:
+
+– vars_deploy.yml                              # All Variables
+
+– vars_deploy_pwd.yml                          # host_password & deploy_password
+
+hosts: “{{ target_vcenter_or_esxi_host }}”     # Entry in Ansible ‘hosts’ file
+
+gather_facts: false
+
+connection: ‘local’
+
+roles:
+
+– na_ots_deploy
+
+– name: Create ONTAP Select Cluster
+
+vars_files:
+
+– vars_cluster_test.yml
+
+– vars_cluster_pwd.yml
+
+hosts: “localhost”
+
+gather_facts: false
+
+roles:
+
+– na_ots_cluster
+
+----
+使用上述角色建立及執行叢集之後ONTAP Select 、您可以運用豐富ONTAP 的功能組合、進一步自動化ONTAP 各項功能。您ONTAP 可以存取可用的功能 link:https://github.com/NetApp/ansible["請按這裡"]。總而言之ONTAP Select 、利用「不可行」角色和ONTAP 「不可行」角色、您可以將端點對端點工作流程完全自動化、以便使用ONTAP Select 「不可行」管理儲存設備。

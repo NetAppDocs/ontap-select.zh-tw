@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: concept_ots_deploy.html 
+keywords: ontap select deploy, deploy administration utility, deploy utility, functionality, accessing 
+summary: 使用「部署」管理公用程式來部署及管理各種叢集。ONTAP Select ONTAP Select 
+---
+= 部署ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用「部署」管理公用程式來部署及管理各種叢集。ONTAP Select ONTAP Select部署是以Linux虛擬機器的形式進行封裝、您必須先安裝此虛擬機器、才能建立ONTAP Select 一套物件叢集。
+
+
+
+== 核心功能
+
+部署管理公用程式會執行下列核心功能：
+
+* 記錄ONTAP Select 每個部署了支援此功能的Hypervisor主機的詳細資料
+* 設定主機並安裝所需的授權
+* 部署及管理ONTAP Select 叢集
+* 維護ONTAP Select 一份有關叢集和主機的詳細目錄
+* 收集AutoSupport 並傳送不徵資料給NetApp
+* 維護一組ONTAP Select 內部的鏡像節點映像
+* 支援Hypervisor專屬的命令格式和傳輸協定
+
+
+
+
+== 存取部署公用程式的方法
+
+存取部署管理公用程式時、您可以使用多個選項。所有的外部介面在功能上都相當。您應該選取最符合您特定部署目標和需求的存取選項。在所有情況下、您都必須使用具有有效密碼的系統管理員帳戶登入。
+
+
+
+===== Web圖形化使用者介面
+
+您可以透過現代化的網頁瀏覽器存取部署公用程式。Web GUI提供直覺易用的介面、在大多數情況下、使用公用程式時、都是您的主要介面。
+
+
+
+===== 命令列介面
+
+可透過管理Shell使用文字型命令列介面。您可以使用下列方式存取CLI管理Shell：
+
+* 安全Shell（SSH）
+* 虛擬機器主控台
+
+
+您通常會將虛擬機器主控台作為安裝與初始組態程序的一部分。不過、在大多數情況下、SSH提供更靈活、更方便的選項。
+
+
+
+===== REST Web服務API
+
+連接至部署公用程式時、外部用戶端所使用的REST Web服務API提供了另一個選項。您可以使用任何支援REST Web服務的主流程式設計語言或工具來存取API。熱門選項包括：
+
+* Python
+* Java
+* 捲髮
+
+
+使用程式設計或指令碼語言、可以自動化ONTAP Select 部署和管理等叢集。
+
+
+
+===== 線上文件網頁ONTAP Select
+
+在Deploy公用程式中顯示線上文件網頁、是存取REST Web服務API的替代方法。不過、您不需要使用程式設計語言、而是使用瀏覽器透過頁面存取管理API。提供下列功能：
+
+* REST Web服務API中每個通話的詳細說明
+* 手動發出任何API呼叫的能力
+
+
+您可以使用部署虛擬機器的IP或網域名稱來存取線上文件頁面。若要顯示頁面、請在瀏覽器中輸入下列格式的URL（將適當的IP位址或網域名稱取代為部署VM執行個體）：「\http://<ip_address>/api/ui`」

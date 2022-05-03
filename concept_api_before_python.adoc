@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_python.html 
+keywords: rest api, deploy rest api, rest, python, before you begin 
+summary: 在執行範例Python指令碼之前、您必須先準備環境。 
+---
+= 使用Python存取API之前
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在執行範例Python指令碼之前、您必須先準備環境。
+
+在執行Python指令碼之前、您必須確定環境設定正確：
+
+* 必須安裝最新適用版本的Python2。樣本代碼已使用Python2進行測試。它們也應可攜至Python3、但尚未經過相容性測試。
+* 必須安裝要求和urllib3程式庫。您可以根據環境使用pip或其他Python管理工具。
+* 執行指令碼的用戶端工作站必須能夠透過網路存取ONTAP Select 到該物件部署虛擬機器。
+
+
+此外、您必須具備下列資訊：
+
+* 部署虛擬機器的IP位址
+* 部署系統管理員帳戶的使用者名稱和密碼
+

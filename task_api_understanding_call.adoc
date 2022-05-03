@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task_api_understanding_call.html 
+keywords: rest api, deploy rest api, rest, understanding, executing 
+summary: 所有API呼叫的詳細資料均以通用格式記錄及顯示在ONTAP Select 「更新」線上文件網頁上。只要瞭解單一API呼叫、即可存取及解譯所有API呼叫的詳細資料。 
+---
+= 瞭解並執行API呼叫
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+所有API呼叫的詳細資料均以通用格式記錄及顯示在ONTAP Select 「更新」線上文件網頁上。只要瞭解單一API呼叫、即可存取及解譯所有API呼叫的詳細資料。
+
+您必須登入ONTAP Select 到「Webdeploy線上文件」網頁。建立叢集時、您必須將唯一識別碼指派給ONTAP Select 您的叢集。
+
+您可以ONTAP Select 使用獨特的識別碼來擷取描述某個叢集的組態資訊。在此範例中、會傳回所有歸類為「廉價」的欄位。不過、最佳實務做法是、您只能要求所需的特定欄位。
+
+.步驟
+. 在主頁面上、捲動至底部、然後按一下「*叢集*」。
+. 按一下「* Get /cluster /｛cluster _id｝*」以顯示API呼叫的詳細資料、該API呼叫用於傳回ONTAP Select 有關某個叢集的資訊。
+

@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: concept_workflow_deploy.html 
+keywords: plan, planning, cluster deployment workflow, deployment workflow, workflow, deployment steps 
+summary: 您可以使用工作流程程序來部署ONTAP Select 一個叢集。 
+---
+= 安裝與部署工作流程ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用下列工作流程來部署及管理ONTAP Select 一個叢集。
+
+image:deploy_workflow2.png["說明部署ONTAP Select 一個叢集所需的完整工作流程。"]

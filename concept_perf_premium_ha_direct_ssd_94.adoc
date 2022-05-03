@@ -1,0 +1,132 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_94.html 
+keywords: ontap select, performance 
+summary: 效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。 
+---
+= 發揮作用：頂級HA直接附加SSD儲存設備ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+提供優異的HA直接附加SSD儲存設備、提供9.4效能。ONTAP Select
+
+
+
+== 參考平台
+
+《》（頂級）硬體（每個節點）ONTAP Select ：
+
+* Cisco UCS C240 M4S2：
++
+** Intel Xeon CPU E5-2697、2.60GHz
+** 2個插槽；每個插槽14個CPU
+** 56個邏輯CPU（啟用HT）
+** 256GB RAM
+** VMware ESXi 6.5
+** 每部主機磁碟機：24個X371A NetApp 960GB SSD
+
+
+
+
+用戶端硬體：
+
+* 4個NFSv3 IBM 3550m4用戶端
+
+
+組態資訊：
+
+* 1、500 MTU用於用戶端與Select叢集之間的資料路徑
+* 沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）
+
+
+下表列出針對HA配對ONTAP Select 的某個精選節點上的讀寫工作負載所測得的處理量。效能測量是使用SIO負載產生工具進行。
+
+* ONTAP Select 單一節點（四節點中型執行個體的一部分）的效能結果：DAS（SSD）*上的S59.4叢集
+
+[cols="6*"]
+|===
+| 說明 | 連續讀取64KiB | 連續寫入64KiB | 隨機讀取8KiB | 隨機寫入8KiB | 隨機WR/ RD（50/50）8KiB 
+
+
+| 供應DAS（SSD）的精選中型執行個體ONTAP | 1045MBps 16、712 IOPS | 251MBps 4016 IOPS | 492MBps 62,912 IOPS | 141MBps 18、048 IOPS | 218MBps 27、840 IOPS 
+|===
+
+
+=== 64K循序讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個資料NIC
+* 1個資料Aggregate（2TB）
+* 64個磁碟區；64個SIO處理程序/執行緒
+* 每個節點32個磁碟區（總共64個）
+* 每個磁碟區1個SIO程序；每個檔案1個SIO執行緒
+* 每個磁碟區1個檔案；每個檔案為12000MB
+
+
+
+
+=== 64K循序寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個資料NIC
+* 1個資料Aggregate（2TB）：
+* 64個磁碟區；128個SIO處理程序/執行緒
+* 每個節點32個磁碟區（總共64個）
+* 每個磁碟區2個SIO程序；每個檔案1個SIO執行緒
+* 每個磁碟區2個檔案、每個檔案30720MB
+
+
+
+
+=== 8K隨機讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個資料NIC
+* 1個資料Aggregate（2TB）：
+* 64個磁碟區；64個SIO處理程序/執行緒
+* 每個節點32個磁碟區（總共64個）
+* 每個磁碟區1個SIO程序；每個檔案8個SIO執行緒
+* 每個磁碟區1個檔案、每個檔案12228MB
+
+
+
+
+=== 8K隨機寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個資料NIC
+* 1個資料Aggregate（2TB）
+* 64個磁碟區；64個SIO處理程序/執行緒
+* 每個節點32個磁碟區（總共64個）
+* 每個磁碟區1個SIO程序；每個檔案8個SIO執行緒
+* 每個磁碟區1個檔案、每個檔案819MB
+
+
+
+
+== 8K隨機50%寫入50%讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個資料NIC
+* 1個資料Aggregate（2TB）
+* 64個磁碟區；64個SIO處理程序/執行緒
+* 每個節點32個磁碟區（總共64個）
+* 每個磁碟區1個SIO程序；每個檔案20個SIO執行緒
+* 每個磁碟區1個檔案、每個檔案12228MB
+

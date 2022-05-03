@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: reference_vpi_troubleshooting.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, troubleshooting 
+summary: 您應該瞭解可用的疑難排解技術和常見錯誤、這是支援部署vCenter外掛程式的一部分。 
+---
+= 疑難排解
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該瞭解可用的疑難排解技術和常見錯誤、這是支援部署vCenter外掛程式的一部分。
+
+
+
+== 安裝、解除安裝及更新錯誤
+
+如果在安裝、解除安裝或更新程序期間發生錯誤、API會傳回用於初始化程序的部署介面（Web使用者介面或CLI）所顯示的錯誤訊息。
+
+常見錯誤包括：
+
+* 不良認證（使用者名稱或密碼）
+* 指定用於安裝的外掛程式無效或遺失
+* vCenter伺服器離線或無法連線
+
+
+如需錯誤的其他資訊、請檢查下列記錄：
+
+* 部署伺服器記錄
+* vCenter伺服器記錄
+
+
+
+
+== vCenter中的外掛程式錯誤
+
+如果在與vCenter的工作階段期間發生錯誤、則會顯示錯誤訊息。常見錯誤包括：
+
+* 無法從部署伺服器載入vCenter內嵌內容、因為瀏覽器不接受部署伺服器的SSL憑證。
+* 部署伺服器無法為嘗試存取部署vCenter外掛程式的vCenter使用者授權工作階段ID。工作階段逾時。
+* 權限不足、無法存取部署vCenter外掛程式。
+* 部署伺服器離線或無法連線。
+
+
+如需錯誤的其他資訊、請查看下列記錄：
+
+* vCenter伺服器記錄
+* 部署伺服器記錄
+

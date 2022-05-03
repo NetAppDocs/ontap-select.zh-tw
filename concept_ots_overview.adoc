@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: concept_ots_overview.html 
+keywords: overview, software defined storage, sds, typical deployment, ontap 9 
+summary: 支援僅軟體版本的功能、可在Hypervisor主機上部署為虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。 
+---
+= 概述ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。
+
+
+
+== 軟體定義儲存設備
+
+透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（SDI）架構、最寶貴的IT資產可與基礎實體基礎架構分開、提供靈活度、擴充性及可程式化性。
+
+在資料分散於直接附加儲存設備（DAS）的零散環境中、資料移動性和管理變得更加複雜。軟體定義儲存設備（SDS）已成為「軟體定義基礎架構」領域的重要一環、可解決這些及其他問題。
+
+NetApp解決方案適用於SDS市場。ONTAP SelectNetApp將企業級儲存管理功能帶入軟體定義的資料中心、並將NetApp Data Fabric架構延伸至極端邊緣使用案例、包括物聯網（IoT）和戰術伺服器。ONTAP Select
+
+
+
+== 兩個軟體元件
+
+包含兩個主要的軟體元件：ONTAP Select
+
+
+
+===== 節點ONTAP Select
+
+一個由一個、兩個、四個、六個或八個節點組成的叢集。ONTAP Select每個叢集節點都會部署為獨立的虛擬機器、並執行ONTAP 特別設計的版本的更新版本。
+
+
+
+===== 部署管理公用程式ONTAP Select
+
+部署管理公用程式是以獨立的Linux虛擬機器進行封裝與安裝。您必須使用公用程式、在ONTAP Select 正式作業環境中部署叢集。Deploy公用程式隨附目前版本ONTAP Select 的ImageNode映像。
+
+
+NOTE: 從功能更新至功能更新階段開始ONTAP Select 、部署管理公用程式將不再指派個別的版本編號。Deploy的版本編號與相關ONTAP Select 的版本編號相同。不過、特定ONTAP Select 版本的每個Deploy公用程式更新都有一個獨特的建置編號。
+
+
+
+== 典型部署的圖例
+
+下圖說明ONTAP Select 用於部署和支援四節點ONTAP Select 的整套系統管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。
+
+image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立的一個由四節點組成的叢集。"]
+
+
+
+== 比較功能與功能ONTAP Select ONTAP
+
+以硬體為基礎ONTAP 的供應功能可提供ONTAP Select 企業級的儲存解決方案。不過、由於設計和實作方式各異、因此每個方案都能因應不同的業務需求和使用情境。在規劃ONTAP Select 一套解決方法部署之前、您應該先熟悉平台之間的主要差異。
+
+
+
+===== 不同的HA架構
+
+根據您在叢集中定義的節點數量、ONTAP Select 功能可提供HA功能。例如、四節點叢集由兩個HA配對組成。搭配使用的HA架構ONTAP Select 是以非共享儲存模式為基礎。也就是HA配對中的一個節點無法直接存取另一個節點所擁有的儲存設備。此設計可能會影響ONTAP Select 某些功能特性。
+
+
+
+===== 容量授權
+
+介紹消費型授權模式。ONTAP Select在ONTAP Select 正式作業環境中部署一個叢集時、您必須為每個節點或共享容量資源池購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。
+
+
+
+===== 功能授權ONTAP
+
+在一個叢集中的每個節點ONTAP Select 都會自動獲得使用數ONTAP 個功能的授權。您不需要手動安裝或套用這些功能授權。
+
+
+
+===== 不支援的支援功能ONTAP ONTAP Select
+
+不支援多項支援的功能。ONTAP ONTAP Select在大多數情況下、這些功能都需要虛擬ONTAP Select 化的故障環境中無法使用的特殊硬體。
+
+* 不支援Fibre Channel Fibre Channel和Fibre Channel over Ethernet。
+* 不支援介面群組介面群組（IFGRPs）。
+* 健全狀況監控傳統的健全狀況監控功能、搭配硬體架ONTAP 構的內部部署、僅適用於基礎硬體元件。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。
+* NIC卸載支援由於ONTAP Select 搭配使用的虛擬化環境、不支援NIC卸載功能。
+* 叢集IPspace不支援任何對叢集IPspace的修改、包括新增或移除連接埠。
+* 不支援使用支援的資料交換埠屬性修改不支援的連接埠屬性、包括速度、雙工和流程控制。ONTAP ONTAP
+* 服務處理器
+* NetApp儲存加密磁碟機
+
+
+.相關資訊
+* link:reference_lic_ontap_features.html["預設啟用的支援功能ONTAP"]
+

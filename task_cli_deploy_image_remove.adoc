@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_image_remove.html 
+keywords: administer, administering, cli, deploy, ontap select image, remove 
+summary: 您可以在ONTAP Select 不再需要時、從部署管理公用程式的執行個體中移除不必要的影像。 
+---
+= 從ONTAP Select 部署中移除鏡像
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在ONTAP Select 不再需要時、從部署管理公用程式的執行個體中移除不必要的影像。
+
+
+CAUTION: 您不應移除ONTAP Select 叢集所使用的任何非影像。
+
+您可以移除ONTAP Select 目前未由叢集使用或計畫用於未來叢集部署的舊版不含任何資訊的影像。
+
+.步驟
+. 使用SSH以系統管理員（admin）帳戶登入部署公用程式CLI。
+. 顯示由部署管理的叢集、並記錄ONTAP 使用中的不實影像：
++
+「叢集展示」
+
++
+請注意每種情況下的版本編號和Hypervisor平台。
+
+. 啟動Bash Shell：
++
+"死了"
+
+. 顯示所有可用ONTAP Select 的圖片：
++
+「ls -lh /opt/NetApp/images/映 像」
+
+. 選擇性地移除ESXi映像。
++
+範例「rm -r /opt/NetApp/images/DataONTAPv-9.3RC1-vidConsole -esx.ova」
+
+. 使用版本ONTAP Select 低於版本的版本時、可選擇性地移除KVM映像。
++
+範例「rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar」
+
+

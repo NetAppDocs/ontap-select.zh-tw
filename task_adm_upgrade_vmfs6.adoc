@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task_adm_upgrade_vmfs6.html 
+keywords: administer, administering, web, storage vmotion, upgrade vmfs6 
+summary: VMware不支援從VMFS 5就地升級至VMFS 6。您可以使用Storage VMotion、將現有ONTAP Select 的VMware節點從VMFS 5資料存放區移轉至VMFS 6資料存放區。 
+---
+= 使用Storage VMotion升級至VMFS6
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+VMware不支援從VMFS 5就地升級至VMFS 6。您可以使用Storage VMotion、將現有ONTAP Select 的VMware節點從VMFS 5資料存放區移轉至VMFS 6資料存放區。
+
+對於VMware虛擬機器、Storage VMotion可用於單一節點和多節點叢集。ONTAP Select它既可用於純儲存設備、也可用於運算和儲存設備移轉。
+
+image:ST_10.jpg["移轉"]
+
+確認新主機可支援ONTAP Select 此節點。例如、如果原始主機使用RAID控制器和DAS儲存設備、則新主機上應該會有類似的組態。
+
+
+CAUTION: 如果在不適當的環境中重新託管了不適當的VMware VM、可能會導致嚴重的效能問題ONTAP Select 。
+
+.步驟
+. 關閉ONTAP Select 這個現象虛擬機器。
++
+如果節點是HA配對的一部分、請先執行儲存容錯移轉。
+
+. 清除「* CD/DVD drive*」選項。
++
+如果您在安裝ONTAP Select 時未使用ONTAP 「整合」功能、則不適用此步驟。
+
++
+image:ST_11.jpg["編輯設定"]
+
+. Storage vMotion作業完成後、請開啟ONTAP Select 支援該功能的虛擬機器。
++
+如果此節點是HA配對的一部分、您可以執行手動恢復。
+
+. 使用Deploy公用程式執行「叢集重新整理」作業、並確認是否成功。
+. 備份部署公用程式資料庫。
+
+
+當Storage VMotion作業完成時、您應該使用Deploy公用程式來執行「叢集重新整理」作業。「叢集更新」功能會以ONTAP 全新的節點位置來更新「還原部署」資料庫ONTAP Select 。

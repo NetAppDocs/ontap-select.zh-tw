@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept_usecase_overview.html 
+keywords: ontap select, business use case overview, deployment, storage, development and testing 
+summary: 根據Hypervisor虛擬化所提供的固有靈活度、適用於多種不同類型的應用程式。ONTAP Select 
+---
+= 業務需求與使用情境
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+根據Hypervisor虛擬化所提供的固有靈活度、適用於多種不同類型的應用程式。ONTAP Select
+
+
+
+== 部署
+
+從較高層級來ONTAP Select 看、您可以在Hypervisor主機伺服器上以兩種不同的方式部署有關工作負載的功能。
+
+
+
+=== 專屬部署
+
+有了專屬的部署模式、ONTAP Select 單一的執行個體即可在主機伺服器上執行。同一個Hypervisor主機上沒有其他重要的處理作業。
+
+
+
+=== 組合式部署
+
+利用配置在一起的部署模式ONTAP Select 、將主機與其他工作負載共享。具體而言、還有額外的虛擬機器、每個虛擬機器通常都會執行運算應用程式。這些運算工作負載是ONTAP Select 以本地方式提供給整個叢集。此模式支援特殊的應用程式與部署需求。如同專屬部署模式、每ONTAP Select 部支援的虛擬機器都必須在獨立且專屬的Hypervisor主機上執行。
+
+
+
+== 儲存設備
+
+根據您的業務需求、可用作主要或次要儲存設備。ONTAP Select
+
+
+
+=== 主儲存設備
+
+在某些情況下、您可以選擇部署ONTAP Select 以供主儲存平台使用的功能。這些類型的實作方式各不相同、取決於應用程式的工作負載特性、以及您的業務目標。
+
+
+
+=== 災難恢復與二線儲存設備
+
+您可以使用ONTAP Select 產品介紹來實作額外的儲存設備、以擴充您的主要儲存功能。額外的儲存設備可用來支援貴組織的災難恢復工作和資料備份計畫。
+
+
+
+== 開發與測試
+
+當您在組織內部署各種應用程式時、ONTAP Select 可以將NetApp做為整體應用程式開發與測試程序的一部分。例如、您可能需要暫用儲存設備來保存測試輸入或輸出資料。這些部署類型的長度可能會因應用程式特性和需求而異。

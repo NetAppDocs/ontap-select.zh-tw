@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_licenses.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, licenses, licensing 
+summary: 管理ONTAP Select 多方面的相關工作可讓您執行、包括執行多方面的功能。 
+---
+= 不需要授權ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+管理ONTAP Select 多方面的相關工作可讓您執行、包括執行多方面的功能。
+
+
+
+== 管理授權
+
+您可以視ONTAP Select 需要新增、編輯及刪除功能不均的層級授權。
+
+.步驟
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的「*」「*「*」「部署*」。
+. 單擊*管理*選項卡。
+. 展開「*授權*」選項、然後按一下「*容量層級*」或「*容量資源池*」以選取授權類型。
++
+此時會顯示目前的授權和任何問題。
+
+. 或者、按一下*篩選*並建立篩選器、以限制顯示的授權。
+. 執行所需的工作：
++
+.. 若要新增授權、請按一下「*+新增*」、按一下「*上傳授權*」、然後選取授權檔案。
+.. 若要刪除現有授權、請按一下授權右側的垃圾桶圖示。
+
+
+

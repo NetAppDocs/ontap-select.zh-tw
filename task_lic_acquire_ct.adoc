@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task_lic_acquire_ct.html 
+keywords: license, licensing, acquire, capacity tiers 
+summary: 使用容量層授權時、您需要為每ONTAP Select 個節點取得授權檔案。授權檔案會定義節點的儲存容量、並透過NetApp指派的獨特九位數序號鎖定至節點。 
+---
+= 取得容量層級授權
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用容量層授權時、您需要為每ONTAP Select 個節點取得授權檔案。授權檔案會定義節點的儲存容量、並透過NetApp指派的獨特九位數序號鎖定至節點。
+
+您必須擁有由NetApp指派給節點的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。
+
+您必須為ONTAP Select 每個需要容量層授權的節點執行此工作。
+
+.步驟
+. 使用網頁瀏覽器存取ONTAP Select 此功能：
++
+https://register.netapp.com/register/getlicensefile`
+
+. 使用您的NetApp帳戶認證登入。
+. 在「*授權產生器*」頁面上、從下拉式方塊中選取所需的授權項目。
+. 填寫同一頁的其餘欄位、包括*產品序號#* ONTAP Select 、這是適用於此節點的序號。
+. 按一下*提交*。
+. 驗證申請後、請選擇授權的交付方法。
++
+您可以按一下*下載授權*或*電子郵件授權*。
+
+. 確認您已根據所選的交付方法收到授權檔案。
+
+
+您必須先將授權檔案上傳至部署管理公用程式、才能將其套用至ONTAP Select 某個節點。

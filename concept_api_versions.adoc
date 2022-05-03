@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: concept_api_versions.html 
+keywords: rest api, deploy rest api, rest, version, versioning 
+summary: 隨附於Rashdeploy的REST API ONTAP Select 會指派版本編號。API版本編號與部署版本編號無關。您應該注意部署版本隨附的API版本、以及這會如何影響API的使用。 
+---
+= 部署API版本管理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+隨附於Rashdeploy的REST API ONTAP Select 會指派版本編號。API版本編號與部署版本編號無關。您應該注意部署版本隨附的API版本、以及這會如何影響API的使用。
+
+部署管理公用程式的目前版本包含REST API的第3版。舊版的部署公用程式包括下列API版本：
+
+部署2.8及更新版本:: 包含REST API第3版的更新版本。ONTAP Select
+部署2.7.2及更早版本:: 包含REST API第2版的更新版本。ONTAP Select
+
+
+
+NOTE: REST API的第2版和第3版不相容。如果您從包含API第2版的舊版升級至部署2.8或更新版本、則必須更新任何直接存取API的現有程式碼、以及使用命令列介面的任何指令碼。

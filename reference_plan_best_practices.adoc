@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_best_practices.html 
+keywords: plan, planning, best practices, recommendations 
+summary: 在規劃ONTAP Select 一套功能完整的部署時、您應該考慮採用最佳實務做法。 
+---
+= 最佳實務做法摘要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在規劃ONTAP Select 一套功能完整的部署時、您應該考慮採用最佳實務做法。
+
+
+
+== 儲存設備
+
+請考慮下列儲存最佳實務做法。
+
+
+
+===== All Flash或通用Flash陣列
+
+使用All Flash VSAN或一般Flash陣列進行的虛擬NAS（vNAS）部署、應遵循非SSD DAS儲存設備的最佳實務做法。ONTAP Select ONTAP Select
+
+
+
+===== Hypervisor核心硬體
+
+單ONTAP Select 一資訊區集合體中的所有磁碟機都應為相同類型。例如、您不應該在相同的集合體中混用HDD和SSD磁碟機。
+
+
+
+===== RAID控制器
+
+伺服器RAID控制器應設定為以回寫模式運作。如果發現寫入工作負載效能問題、請檢查控制器設定、確定未啟用寫入或寫入。
+
+如果實體伺服器包含管理所有本機附加磁碟的單一RAID控制器、則NetApp建議為伺服器作業系統建立獨立的LUN、並為ONTAP Select 一個或多個LUN進行支援。在開機磁碟毀損的情況下、此最佳實務做法可讓管理員重新建立OS LUN、而不會影響ONTAP Select 到效益。
+
+RAID控制器快取用於儲存所有傳入區塊變更、而不只是針對NVRAM分割區的變更。因此、在選擇RAID控制器時、請選取可用的最大快取。較大的快取可減少磁碟排清的頻率、並提升ONTAP Select 伺服器上配置的所有運算VM的效能。
+
+* RAID群組*
+
+最佳RAID群組大小為八到十二個磁碟機。每個RAID群組的磁碟機數量上限為24個。
+
+每ONTAP Select 個支援的NVMe磁碟機數量上限為14個。
+
+備援磁碟是選用的、但建議使用。NetApp也建議每個RAID群組使用一個備援磁碟機；不過、所有RAID群組都可以使用全域備援磁碟機。例如、您可以每三個RAID群組使用兩個備援磁碟機、每個RAID群組包含八到十二個磁碟機。
+
+增加RAID群組中的LUN數量、並不會獲得任何效能效益。ONTAP Select多個LUN只能用於遵循SATA/NL-SAS組態的最佳實務做法、或是略過Hypervisor檔案系統限制。
+
+
+
+===== VMware ESXi主機
+
+NetApp建議使用ESX 6.5 U2或更新版本、以及NVMe磁碟來裝載系統磁碟的資料存放區。此組態可為NVRAM分割區提供最佳效能。
+
+
+NOTE: 在ESX 6.5 U2及更高版本上安裝ONTAP Select 時、無論系統磁碟位於SSD或NVMe磁碟上、均使用vNVME驅動程式。這會將VM硬體層級設為13、與ESX 6.5及更新版本相容。
+
+針對ONTAP Select VMware vSAN和外部儲存設備定義專用的網路連接埠、頻寬和vSwitch組態（使用iSCSI或NFS時為VMware vSAN和一般儲存陣列流量）。
+
+設定容量選項以限制儲存使用率（ONTAP Select 無法使用外部VNAS資料存放區的全部容量）。
+
+確保所有一般的外部儲存陣列盡可能使用可用的備援和HA功能。
+
+
+
+===== VMware Storage VMotion
+
+決定是否搭配ONTAP Select 使用VMware Storage VMotion搭配使用VMware節點時、新主機上的可用容量並非唯一的考量因素。基礎儲存類型、主機組態和網路功能應能維持與原始主機相同的工作負載。
+
+
+
+== 網路
+
+請考慮下列網路最佳實務做法。
+
+
+
+===== 重複的MAC位址
+
+為了避免多個部署執行個體指派重複的MAC位址、每個第2層網路應使用一個部署執行個體來建立或管理ONTAP Select 一個叢集或節點。
+
+
+
+===== EMS訊息
+
+應仔細監控不含EMS訊息的雙節點叢集、以指出儲存容錯移轉已停用。ONTAP Select這些訊息表示無法連線至中介服務、應立即修正。
+
+
+
+===== 負載平衡
+
+若要最佳化內部ONTAP Select 和外部的各個支援網路之間的負載平衡、請使用根據來源虛擬連接埠負載平衡原則的路由。
+
+
+
+===== 多個第2層網路
+
+如果資料流量跨越多個第2層網路、且需要使用VLAN連接埠、或是使用多個IPspace、則應使用VGT。
+
+
+
+===== 實體交換器組態
+
+VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFast。若未將交換器連接埠上的STP設為PortFast、ONTAP Select 可能會影響容許上行鏈路故障的功能。使用LACP時、LACP定時器應設定為快速（1秒）。負載平衡原則應根據連接埠群組的IP雜湊、以及LAG上的來源和目的地IP位址、以及TCP/IP連接埠和VLAN、設定為「路由」。
+
+
+
+== HA
+
+請考慮下列HA最佳實務做法。
+
+
+
+===== 部署備份
+
+最佳做法是定期備份部署組態資料、包括在建立叢集之後。這對雙節點叢集而言特別重要、因為備份中包含了中介組態資料。
+
+建立或部署叢集之後、您應該備份ONTAP Select 「還原部署」組態資料。
+
+
+
+===== 鏡射Aggregate
+
+雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。在主要Aggregate中、空間不足的情況可能會導致ONTAP 使用通用的NetApp Snapshot™複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。監控Aggregate空間使用率的良好基準高達85%。
+
+
+
+===== NIC集合體、群組和容錯移轉
+
+支援雙節點叢集的單一10Gb連結；不過、NetApp最佳實務做法是透過內部和外部網路上的NIC集合體或NIC群組來提供硬體備援。ONTAP Select ONTAP Select
+
+如果NIC具有多個應用程式專屬的整合式電路（ASIC）、請在透過內部和外部網路的NIC群組建網路架構時、從每個ASIC選取一個網路連接埠。
+
+NetApp建議在ESX和實體交換器上同時使用LACP模式。此外、在實體交換器、連接埠、連接埠通道介面和vmnics上、LACP定時器應設定為快速（1秒）。
+
+在搭配LACP使用分散式vSwitch時、NetApp建議您根據連接埠群組上的IP雜湊、來源與目的地IP位址、TCP/IP連接埠及LAG上的VLAN、來設定負載平衡原則以進行路由。
+
+
+
+===== 雙節點延伸HA MetroCluster （簡稱「架構SDS」）最佳實務做法
+
+在您建立MetroCluster Sf2 SDS之前、請使用ONTAP 「支援功能」連線檢查工具、確保兩個資料中心之間的網路延遲處於可接受的範圍內。
+
+使用虛擬來賓標記（VGT）和雙節點叢集時、會有額外的警告。在雙節點叢集組態中、節點管理IP位址是用來在ONTAP 完全可用之前、及早建立與中介器的連線。因此、對應至節點管理LIF（連接埠e0a）的連接埠群組僅支援外部交換器標記（EST）和虛擬交換器標記（VST）標記。此外、如果管理和資料流量都使用相同的連接埠群組、則整個雙節點叢集僅支援EST和VST。

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task_cli_signing_in.html 
+keywords: administer, administering, cli, deploy, sign in, signing in 
+summary: 您需要使用SSH登入部署管理Shell。登入後、您可以發出CLI命令來建立ONTAP Select 一個故障叢集、並執行相關的管理程序。 
+---
+= 使用SSH登入部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您需要使用SSH登入部署管理Shell。登入後、您可以發出CLI命令來建立ONTAP Select 一個故障叢集、並執行相關的管理程序。
+
+您必須擁有部署管理員（admin）帳戶的目前密碼。如果您是第一次登入、並使用vCenter來安裝部署虛擬機器、則應在安裝期間使用設定的密碼。
+
+.步驟
+. 使用部署虛擬機器的系統管理員帳戶和管理IP位址登入、例如：
++
+「sh admin@<10.235.82.22>'」
+
+. 如果這是第一次登入、但您並未使用vCenter提供的精靈安裝部署、請在出現提示時提供下列組態資訊：
++
+** 系統管理員帳戶的新密碼（必填）
+** 公司名稱（必填）
+** Proxy URL（選用）
+
+
+. 鍵入*？*並按* Enter鍵以顯示可用的管理Shell命令清單。
+

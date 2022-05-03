@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_workflow.html 
+keywords: license, licensing, purchase, purchasing, workflow 
+summary: 您可以依照工作流程來購買及套用授權以進行ONTAP Select 您的NetApp部署。 
+---
+= 購買授權時的工作流程
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+下列工作流程說明了購買及套用授權以進行ONTAP Select 支援的程序。購買授權時、您必須選擇授權模式和儲存容量。
+
+確切的程序會因使用容量層級或容量集區授權而有所不同：
+
+九位數授權序號:: 序號適用於節點（容量層級）或儲存資源池（容量資源池）
+授權鎖定ID:: 使用容量集區授權時、您必須擁有部署執行個體的授權鎖定ID
+授權網站:: 您可以在不同的網站取得容量層級和容量資源池授權
+
+
+image:purchased_license_workflow.png["說明用於購買及安裝正式作業ONTAP Select 的儲存授權部署程序。"]

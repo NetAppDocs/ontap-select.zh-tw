@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_vcenter_integration.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, vcenter integration 
+summary: 部署外掛程式與vCenter伺服器緊密整合。由於這項整合、您可以輕鬆瀏覽由部署公用程式和vCenter伺服器管理的資源。以下提供這項整合的幾個範例。 
+---
+= 部署外掛程式與vCenter整合
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+部署外掛程式與vCenter伺服器緊密整合。由於這項整合、您可以輕鬆瀏覽由部署公用程式和vCenter伺服器管理的資源。以下提供這項整合的幾個範例。
+
+
+
+== 分配給ONTAP Select 某個VMware叢集的VMware資源
+
+一個由一或多個節點組成的VMware執行的VMware叢集。ONTAP Select每個節點都是位於不同ESXi主機上的專屬虛擬機器。一個VMware叢集與下列VMware資源相關聯：ONTAP Select
+
+* 主機
+* 支援虛擬機器ONTAP
+* 資料存放區
+* 網路
+
+
+有幾種方法可以檢視特定ONTAP Select 的VMware叢集所使用的VMware資源。
+
+
+
+== 透過外掛程式檢視叢集的VMware資源
+
+您可以ONTAP Select 透過部署外掛程式來檢視指派給某個VMware叢集的VMware資源。
+
+.步驟
+. 使用瀏覽器透過vSphere HTML5登入vCenter伺服器。
+. 按ONTAP Select 一下「*全域庫存清單*」窗格中的*《叢集*》。
+. 在右側清單中按一下所需的叢集。
+. 按一下*更多物件*索引標籤、然後在頁面頂端選取所需的資源類別。
+. 選取特定的VMware資源以顯示其他資訊。
+
+
+
+
+== 透過ONTAP Select ESXi虛擬機器檢視VMware叢集
+
+您可以存取VMware虛擬機器來檢視ONTAP Select VMware叢集資源和相關的叢集資源。
+
+.步驟
+. 使用瀏覽器透過vSphere HTML5登入vCenter伺服器。
+. 按一下頂端的「*功能表*」、然後按一下「* VM與範本*」。
+. 在左側清單中選取所需的虛擬機器。
+. 按一下*更多物件*索引標籤、即可檢視ONTAP Select 在VM中執行的物件叢集。
+. 若要查看與叢集相關的所有VMware資源集合、請按一下ONTAP Select 「VMware叢集」、然後按一下「*更多物件*」索引標籤。
+
+
+
+
+== 在ESXi主機上建立單節點叢集
+
+您可以透過vSphere介面選取ESXi Hypervisor主機、並部署ONTAP Select 一個VMware單節點叢集。
+
+.步驟
+. 使用瀏覽器透過vSphere HTML5登入vCenter伺服器。
+. 按一下頂端的*功能表*、然後按一下*主機與叢集*。
+. 在左邊想要的Hypervisor主機上按一下滑鼠右鍵、選取* ONTAP Select 《*》（*）、然後按一下「*新ONTAP Select 增*」。
+. 依照中的步驟完成部署程序 link:task_deploy_cluster.html["部署ONTAP Select 一個不必要的叢集"]。
+

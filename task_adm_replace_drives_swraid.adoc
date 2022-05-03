@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_adm_replace_drives_swraid.html 
+keywords: administer, administering, web, software raid, replace drive 
+summary: 使用軟體RAID時、ONTAP Select 當磁碟機故障時、使用備用磁碟機（如果有）並自動開始重建程序。這類似ONTAP 於《關於FAS 功能的資訊與AFF 技術的資訊之用」。不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。 
+---
+= 使用SW RAID時更換故障磁碟機
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用軟體RAID時、ONTAP Select 當磁碟機故障時、使用備用磁碟機（如果有）並自動開始重建程序。這類似ONTAP 於《關於FAS 功能的資訊與AFF 技術的資訊之用」。不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。
+
+
+NOTE: 移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都必須透過ONTAP 「還原部署」來執行。不支援使用vSphere將磁碟機附加ONTAP Select 至VMware。
+
+
+
+== 識別故障磁碟機
+
+磁碟機故障後、請使用Deploy公用程式CLI識別故障的磁碟。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式CLI。
+. 識別故障的磁碟。
++
+[listing]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+
+
+== 移除故障磁碟機
+
+識別出故障的磁碟機後、請取出磁碟。
+
+.步驟
+. 使用系統管理員帳戶登入部署Web使用者介面。
+. 按一下「*叢集*」索引標籤、然後選取相關的叢集。
++
+image:ST_22.jpg["節點詳細資料"]
+
+. 按一下「*+*」以展開儲存檢視。
++
+image:ST_23.jpg["編輯節點儲存設備"]
+
+. 按一下*編輯*以變更附加磁碟、然後取消核取故障磁碟機。
++
+image:ST_24.jpg["儲存磁碟詳細資料"]
+
+. 提供叢集認證資料、然後按一下*編輯儲存設備*。
++
+image:ST_25.jpg["身分證明ONTAP"]
+
+. 確認作業。
++
+image:ST_26.jpg["警告"]
+
+
+
+
+
+== 新增備用磁碟機
+
+移除故障磁碟機之後、請新增備用磁碟。
+
+.步驟
+. 使用系統管理員帳戶登入部署Web使用者介面。
+. 按一下「*叢集*」索引標籤、然後選取相關的叢集。
++
+image:ST_27.jpg["HA配對"]
+
+. 按一下「*+*」以展開儲存檢視。
++
+image:ST_28.jpg["編輯節點儲存設備"]
+
+. 按一下*編輯*、確認新磁碟機可用、然後選取該磁碟機。
++
+image:ST_29.jpg["儲存磁碟詳細資料"]
+
+. 提供叢集認證資料、然後按一下*編輯儲存設備*。
++
+image:ST_30.jpg["儲存磁碟詳細資料"]
+
+. 確認作業。
++
+image:ST_31.jpg["儲存磁碟詳細資料"]
+
+

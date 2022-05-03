@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: reference_earlier_versions.html 
+keywords: earlier versions, earlier documentation 
+summary: 如果ONTAP Select 您未執行最新版本、則可取得先前版本的更新文件。 
+---
+= 舊版ONTAP Select 的版本的不適用資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果ONTAP Select 您未執行最新版本、則可取得先前版本的更新文件。您也可以在使用KVM Hypervisor搭配先前支援的版本時、存取所需的文件。
+
+
+
+===== 更新版本ONTAP Select
+
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]
+

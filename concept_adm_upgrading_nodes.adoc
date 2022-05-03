@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: concept_adm_upgrading_nodes.html 
+keywords: administer, administering, web, upgrading nodes 
+summary: 部署ONTAP Select 完一個叢集後、您可以ONTAP 使用標準ONTAP 的更新程序、視需要升級每個節點的ImageImage。 
+---
+= 升級ONTAP Select 節點
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+部署ONTAP Select 完一個叢集後、您可以ONTAP 視需要在叢集中的每個節點上升級該鏡像。
+
+
+CAUTION: 您無法使用部署管理公用程式來升級現有ONTAP Select 的各個節點。部署公用程式只能用來建立新ONTAP Select 的叢集。
+
+
+
+== 一般程序
+
+在較高層級、您應該使用下列步驟來升級現有ONTAP Select 的節點。
+
+. 瀏覽至NetApp支援網站的下載頁面。
++
+https://mysupport.netapp.com/site/downloads["NetApp支援下載"^]
+
+. 按一下「* ONTAP Select 不含節點升級*」。
+. 選取並下載適當的升級映像、視需要回應所有提示。
+. 在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。您可以在ONTAP Select 產品庫頁面存取版本的《發行說明》。
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]
+
+. 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。
++
+https://docs.netapp.com/us-en/ontap/["部分9文件ONTAP"^]
+
+
+
+
+
+== 還原ONTAP Select 節點
+
+您無法將ONTAP Select 某個版本還原為原先安裝的版本之前的版本。例如：
+
+最初安裝的是版本9.4 ONTAP Select:: 您可以將節點升級至9.5版、然後視需要回復至9.4版。
+最初安裝的是S9.5 ONTAP Select:: 您無法回復至9.4版、因為此版本早於原先安裝的版本。
+
+
+
+
+== 使用VMXNET3網路驅動程式
+
+從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將現有ONTAP Select 的節點升級至9.5版、網路驅動程式不會自動升級。您必須手動升級至VMXNET3。如需升級協助、請聯絡NetApp支援部門。

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_vmware.html 
+keywords: plan, planning, ontap select deploy, vmware requirements 
+summary: 在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。 
+---
+= VMware Hypervisor環境
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。
+
+
+
+== ESXi主機伺服器硬體需求
+
+ESXi Hypervisor主機必須滿足幾項最低資源需求。您應確保ONTAP Select 部署了Sure的主機符合下列基本需求：
+
+* ESXi伺服器：
++
+** 硬體與軟體必須為64位元
+** 必須遵循ONTAP Select 針對某個節點所定義的相同支援版本
+
+
+* 虛擬CPU（2個）
+* 虛擬記憶體（4 GB）
+* 儲存設備（40 GB）
+* 已啟用DHCP（也可以指派靜態IP位址）
+
+
+
+
+== 網路連線能力
+
+您必須確定ONTAP Select 已設定好「物件部署」虛擬機器網路介面、並有單一管理IP位址。您可以使用DHCP動態指派IP位址、或手動設定靜態IP位址。
+
+根據您的部署決策、部署VM必須能夠連線至vCenter伺服器、ESXi Hypervisor主機及ONTAP Select 其管理的各個節點。您必須設定防火牆以允許所需的流量。
+
+部署使用VMware VIX API與vCenter伺服器和ESXi主機進行通訊。一開始、它會在TCP連接埠443上使用SOAP over SSL建立連線。之後、會在連接埠902上使用SSL開啟連線。此外、部署也會發出ping命令、以驗證您指定的IP位址是否有ESXi主機。
+
+部署也必須能夠ONTAP Select 使用下列傳輸協定、與支援的節點和叢集管理IP位址通訊：
+
+* Ping命令（ICMP）
+* SSH（連接埠22）
+* SSL（連接埠443）
+
+
+
+
+== 支援IP版本4
+
+僅支援IP第4版（IPV4）ONTAP Select 。不支援IP版本6（IPv6）。此限制會以ONTAP Select 下列方式影響到流通：
+
+* 您必須為部署虛擬機器的管理LIF指派一個IPV4位址。
+* 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
+
+
+
+
+== VMware vCenter語言限制
+
+如果您使用ONTAP Select VMware部署在Windows Server上的ESXi和vCenter上建立執行的叢集、則必須使用英文版本。非英文版Windows不支援vCenter的支援。ONTAP Select

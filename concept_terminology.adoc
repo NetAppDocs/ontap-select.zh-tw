@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: concept_terminology.html 
+keywords: terminology, key concepts, concepts 
+summary: 當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語和關鍵概念是很有幫助的。 
+---
+= 術語和主要概念
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語和關鍵概念是很有幫助的。
+
+部署ONTAP Select:: 「部署」是用來部署叢集的管理公用程式。ONTAP Select ONTAP Select部署公用程式可在專屬的Linux虛擬機器上執行。您可以透過Web使用者介面、CLI管理Shell和REST API來存取部署公用程式。
+Hypervisor主機與ONTAP Select 非節點:: Hypervisor主機_是裝載ONTAP Select 一個整套虛擬機器的核心硬體平台。當在Hypervisor主機上部署及啟用某部虛擬機器時、該虛擬機器被視為_節點_。ONTAP Select ONTAP Select
+叢集ONTAP Select:: 您可以建立一個由ONTAP Select 一個、兩個、四個、六個或八個節點組成的_實體叢集_。多節點叢集永遠包含一或多個HA配對。例如、四節點叢集由兩個HA配對組成。單一節點叢集無法提供HA功能。
+準備Hypervisor主機環境:: 在使用部署管理公用程式部署ONTAP Select 一個orised叢集之前、您必須先準備執行ONTAP Select 該程序的Hypervisor主機、包括儲存設備和網路環境。根據ONTAP Select 目前的需求和限制、此主機的預先組態是在不包括整個產品的情況下進行。
+評估與正式作業部署的比較:: 每ONTAP Select 個支援節點都會使用_評估版授權_或_購買的授權_來執行。評估授權可讓您在ONTAP Select 將其部署到正式作業環境之前、先評估其效能。評估授權會自動產生並套用。如果您在正式作業環境中部署叢集、則必須購買涉及選擇下列項目的授權：
++
+--
+* 授權模式
+* 儲存容量
+* 平台授權方案
+
+
+--
+容量層授權模式:: 容量層授權模式是將儲存設備授權給ONTAP Select 某個部署項目的原始選項。它是以ONTAP NetApp AFF 的《關於NetApp的資料與FAS 資料的資料與資料的資料」為基礎。每個節點都需要個別的授權。儲存容量會鎖定至節點且永久（不需續約）。
+容量資源池授權模式:: 容量資源池授權模式是ONTAP Select 透過使用Deploy 2.1隨附於《S動地9.5：每個儲存容量資源池都需要個別授權。容量集區授權會鎖定至授權管理員執行個體（即部署執行個體）、而且必須根據購買條款進行續約。您可以授權及使用組織中任意數量的容量集區。不過ONTAP Select 、由於資源池是由支援資源的節點共享、因此通常所需的授權比授權容量層級還要少。
+授權管理員:: 授權管理員是支援容量集區授權的軟體元件。它目前是部署管理公用程式的一部分。LM會將儲存設備從ONTAP Select 其管理的共享資源池租賃給各個節點。_License Lock ID_是唯一識別每個LM執行個體的數字字串、因此是每個部署執行個體。您必須同時使用容量資源池授權序號和LLID來產生授權檔案。
+平台授權方案:: 我們提供三種授權方案、可在ONTAP Select 您購買授權時判斷出該虛擬機器的大小功能：
++
+--
+* 標準
+* 優質
+* 優質XL
+
+
+--
+
+
+如需詳細資訊、請參閱_Plan _和_Licens__兩節。
+
+儲存資源池與資料存放區的比較:: SURE_storage Pool_是一個邏輯資料容器、設計用於抽象化及隱藏基礎實體儲存設備。ONTAP Select儲存資源池與Hypervisor無關。當部署在ESXi Hypervisor主機上時、ONTAP Select 此功能可與VMware _datastor__同義。
+叢集MTU:: 叢集MTU是一項功能、可讓您設定ONTAP Select 內部網路上使用的MTU大小、以搭配使用於一個多節點叢集。當您設定HA配對以配合網路環境時、部署管理公用程式會調整MTU大小。您也可以手動設定值。
+vsvNAS ONTAP Select:: 利用VMware vCenter解決方案、可讓一個節點存取外部儲存設備上的VMware資料存放區。ONTAP Select ONTAP Select利用此功能、不再需要本機RAID控制器；RAID功能假設是由遠端儲存設備提供。ONTAP Select可透過下列方式設定VNAS：ONTAP Select
++
+--
+* VMware vSAN
+* 一般外部儲存陣列
+
+
+--
+
+
+在這兩種情況下、必須先設定外部儲存設備、再建立ONTAP Select 一個叢集或擴充現有節點的儲存容量。
+
+節點重新託管:: 當您部署叢集時、如果叢集使用ONTAP Select 透過VMware vCenter解決方案（VMware vSAN或一般外部儲存陣列）提供的外部儲存設備、則可ONTAP Select 利用下列VMware功能、透過各種行動來移動裝載此節點的ESXi虛擬機器：
++
+--
+* vMotion
+* 高可用度（HA）
+* 分散式資源排程器（DRS）
++
+利用此功能可偵測虛擬機器的移動情況、做為在叢集上執行作業的一部分、例如：ONTAP Select
+
+* 叢集連線
+* 叢集離線
+* 儲存設備新增
++
+移動虛擬機器時、部署公用程式會更新其內部資料庫、並設定新的ESXi主機。在物件節點上執行的所有動作ONTAP Select 都會遭到封鎖、直到虛擬機器的移動和部署更新完成為止。
+
+
+
+--
+中介服務:: 此解決方案ONTAP Select 包含一個連接至作用中雙節點叢集節點的中介服務。此服務會監控每個HA配對、並協助管理故障。
+
+
+
+CAUTION: 如果您有一個或多個作用中的雙節點叢集、ONTAP Select 則管理叢集的「部署」虛擬機器必須隨時執行。如果部署虛擬機器停止、中介服務將無法使用、且雙節點叢集的HA功能將會遺失。
+
+部分SDS MetroCluster:: 在部署雙節點的叢集時、使用支援支援額外組態選項的功能。MetroCluster ONTAP Select不像一般的雙節點ROBO部署、MetroCluster 可將「現象」SDS節點分隔得遠許多。這種實體隔離可提供額外的使用案例、例如災難恢復。您必須擁有優質授權或更高版本、才能使用MetroCluster 不必要的SDS。此外、節點之間的網路必須支援最低延遲需求。
+認證儲存區:: 部署認證存放區是一個安全的資料庫、擁有帳戶認證資料。主要用於將Hypervisor主機登錄為建立新叢集的一部分。如需詳細資訊、請參閱_計畫_一節。
+儲存效率:: 提供的儲存效率選項類似於介紹在功能性和功能性上的儲存效率選項。ONTAP Select FAS AFF從概念上來ONTAP Select 說、使用直接附加儲存（DAS）SSD（使用優質授權）的功能不只是AFF 功能類似於功能性陣列。使用DAS搭配HDD和所有vNAS組態的組態、應視為類似FAS 於一個示例陣列。這兩種組態的主要差異在於ONTAP Select 、採用DAS SSD的支援即時集合體層級的重複資料刪除技術、以及集合層級的背景重複資料刪除技術。其餘的儲存效率選項適用於這兩種組態。
++
+--
+vNAS預設組態可啟用寫入最佳化功能、稱為單一執行個體資料記錄（SIDL）。利用支援SIDL的版本、即可享有支援SIDL的幕後不二儲存效率功能。ONTAP Select ONTAP如需詳細資訊、請參閱_深入探討_一節。
+
+--
+叢集更新:: 建立叢集之後、您可以使用ONTAP VMware或Hypervisor管理工具、在Deploy公用程式之外變更叢集或虛擬機器組態。您也可以移轉導致組態變更的虛擬機器。發生這些變更時、部署公用程式不會自動更新、而且可能會與叢集狀態不同步。您可以使用叢集重新整理功能來更新部署組態資料庫。叢集更新可透過部署Web使用者介面、CLI管理Shell及REST API取得。
+軟體RAID:: 使用直接附加儲存設備（DAS）時、RAID功能通常是透過本機硬體RAID控制器提供。您可以改為將節點設定為使用_softwareRAID_、ONTAP Select 以便讓該節點提供RAID功能。如果您使用軟體RAID、則不再需要硬體RAID控制器。
+安裝鏡像ONTAP Select:: 從ONTAP Select 部署2.8開始、部署管理公用程式只包含ONTAP Select 單一版本的資訊。所含版本是發行時最新的版本。例如、Deploy 2.8包含ONTAP Select 示例9.4。利用此功能、您可以在部署公用程式的執行個體中新增舊版的支援功能、以便在部署支援叢集時使用。ONTAP Select ONTAP Select ONTAP Select請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 圖片以取得更多資訊"]。
+
+
+
+NOTE: 您只能使用ONTAP Select 比部署執行個體所含原始版本更早的版本來新增一個版本不含任何資訊的鏡像。不ONTAP Select 支援新增更新版本的更新版本的不支援。
+
+部署後再管理ONTAP Select 一個叢集:: 部署ONTAP Select 完一個故障叢集之後、您可以像設定硬體型ONTAP 的故障叢集一樣設定叢集。例如、您可以ONTAP Select 使用System Manager或標準ONTAP 的指令行介面來設定一個靜態叢集。
+
+
+link:task_cli_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"]

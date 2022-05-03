@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_api_access_doc_page.html 
+keywords: rest api, deploy rest api, rest, deploy documentation, access, accessing 
+summary: 您必須存取ONTAP Select 「更新版本」線上文件頁面、才能顯示API文件、以及手動發出API呼叫。 
+---
+= 存取部署文件頁面
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須存取ONTAP Select 「更新版本」線上文件頁面、才能顯示API文件、以及手動發出API呼叫。
+
+您必須具備下列條件：
+
+* 物件部署虛擬機器的IP位址或網域名稱ONTAP Select
+* 系統管理員的使用者名稱和密碼
+
+
+.步驟
+. 在瀏覽器中輸入URL、然後按* Enter *：
++
+https://<ip_address>/api/ui`
+
+. 使用管理員使用者名稱和密碼登入。
+
+
+「部署」文件網頁會顯示、頁面底部會顯示依類別排列的通話。
