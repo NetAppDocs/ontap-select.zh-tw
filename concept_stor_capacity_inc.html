@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>增加儲存容量</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="增加儲存容量" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_capacity_inc.html" />
+	<meta property="og:description" content="使用「部署」可為叢集中的每個節點新增及授權額外的儲存空間。ONTAP ONTAP Select" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/ontap-select/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="使用「部署」可為叢集中的每個節點新增及授權額外的儲存空間。ONTAP ONTAP Select">
+  <meta name="keywords" content=" ontap select, deploy, increase storage"><!-- Icons -->
+  <link rel="icon" href="/zh-tw/ontap-select/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-select/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-select/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-select/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-select/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/zh-tw/ontap-select/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/zh-tw/ontap-select/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/ontap-select/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/ontap-select/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/ontap-select/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/zh-tw/ontap-select/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/ontap-select/js/na-search.js'></script><script src='/zh-tw/ontap-select/js/na-pagenav.js'></script><link rel='stylesheet' href='/zh-tw/ontap-select/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-tw/ontap-select/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/zh-tw/ontap-select/js/na-utility.js'></script>
+  <script src='/zh-tw/ontap-select/js/clouddocs.js'></script>
+  <script src='/zh-tw/ontap-select/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/zh-tw/ontap-select/js/toc.js'></script>
+  <script src='/zh-tw/ontap-select/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/zh-tw/ontap-select/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/ontap-select/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/ontap-select/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/ontap-select/js/jszip.min.js'></script>
+  <script src='/zh-tw/ontap-select/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/issues/new?body=Page%3A%20[增加儲存容量](https://docs.netapp.com/zh-tw/ontap-select/concept_stor_capacity_inc.html)" class="page-nav-contribute-link" role="button"><img src="/zh-tw/ontap-select/images/discuss-sm.svg" class="github-icon" />要求變更文件</a><a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/concept_stor_capacity_inc.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-tw/ontap-select/images/edit-sm.svg" class="github-icon" />編輯此頁面</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-tw/ontap-select/images/article-sm.svg" class="github-icon" />瞭解如何作出貢獻</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">在此頁面上</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">產品與解決方案</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">支援與訓練</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">社群</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">部落格</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">客戶成功案例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">聯絡人</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">聯絡人</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/zh-tw/ontap-select/search.html"
+          data-type="widget" 
+          data-placeholder="搜尋文件" 
+          data-no-results-found="找不到符合 {query} 的相關結果。" 
+          data-did-you-mean="搜尋 {suggestion}。" 
+          data-no-results-found-did-you-mean="找不到符合 {query} 的相關結果。您是否要找的是{suggestion}？" 
+          data-results-found="找到 {hitCount} 筆結果"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">繁體中文</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/ontap-select/concept_stor_capacity_inc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/ontap-select/concept_stor_capacity_inc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/ontap-select/concept_stor_capacity_inc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-select/concept_stor_capacity_inc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_capacity_inc.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>可用的 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/zh-tw/ontap-select/pdfs/fullsite-sidebar/本文檔ONTAP_Select.pdf" >
+          <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/商業使用案例.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            商業使用案例
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/規劃.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            規劃
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/ONTAP_Select.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            ONTAP Select
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/部署ONTAP_Select.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            部署ONTAP Select
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/授權.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            授權
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/選項.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            選項
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/容量資源池授權模式.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            容量資源池授權模式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/購買.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            購買
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/安裝.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            安裝
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/安裝前檢查清單.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            安裝前檢查清單
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/管理.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/節點和主機.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            節點和主機
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/深入探討.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            深入探討
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/儲存設備.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            儲存設備
+          </a>
+          
+
+
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-tw/ontap-select/pdfs/pages/concept_stor_capacity_inc.pdf" >
+    <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/網路.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            網路
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/高可用度架構.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            高可用度架構
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/效能.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            效能
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/與vCenter整合.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            與vCenter整合
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/快速入門.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            快速入門
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/管理外掛程式.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            管理外掛程式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/管理.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用REST自動化.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            使用REST自動化
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用瀏覽器存取.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            使用瀏覽器存取
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/工作流程程序.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            工作流程程序
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用Python存取.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            使用Python存取
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/Python程式碼範例.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            Python程式碼範例
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用CLI.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            使用CLI
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/節點和主機.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            節點和主機
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/部署公用程式.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf.png" width="16" height="16"/>
+            部署公用程式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/zh-tw/ontap-select/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別 PDF 文件的集合<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/index.html">
+        零點9.10.1文件ONTAP Select
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_release_notes.html">
+        版本資訊
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_ots_overview.html">
+        產品總覽
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_ots_deploy.html">
+        部署ONTAP Select
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 商業使用案例</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_usecase_overview.html">
+        業務需求與使用情境
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_usecase_robo.html">
+        遠端與分公司
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_usecase_private_cloud.html">
+        私有雲端與資料中心
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_usecase_mc_sds.html">
+        部分SDS MetroCluster
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_terminology.html">
+        術語
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 規劃</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_workflow_deploy.html">
+        部署工作流程
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP Select</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_general.html">
+        一般要求
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_hardware.html">
+        Hypervisor與硬體
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_storage.html">
+        儲存與RAID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_vnas.html">
+        vsvNAS ONTAP Select
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_networking.html">
+        網路
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_two_node.html">
+        雙節點叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_robo.html">
+        遠端辦公室和分公司
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_mcc_sds.html">
+        部分SDS MetroCluster
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_vcenter.html">
+        VMware vCenter
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_ots_plugin.html">
+        VMware vCenter外掛程式
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 部署ONTAP Select</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_dep_general.html">
+        一般要求
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_dep_vmware.html">
+        VMware環境
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_plan_best_practices.html">
+        最佳實務做法
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 授權</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 選項</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_evaluation.html">
+        評估授權
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_production.html">
+        正式作業授權
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_platforms.html">
+        平台授權方案
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 容量資源池授權模式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_cp_operation.html">
+        營運詳細資料
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_cp_serial_number.html">
+        節點序號
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_cp_restrictions.html">
+        限制
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_cp_compare_ct.html">
+        容量集區與容量層
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_cp_benefits.html">
+        效益摘要
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 購買</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_lic_workflow.html">
+        授權工作流程
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_lic_acquire_ct.html">
+        容量階層
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_lic_acquire_cp.html">
+        容量資源池
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_lic_ontap_features.html">
+        功能ONTAP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 安裝</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 安裝前檢查清單</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_chk_host_prep.html">
+        主機準備檢查清單
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_chk_deploy_req_info.html">
+        部署公用程式所需資訊
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_chk_select_req_info.html">
+        必填資訊ONTAP Select
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_chk_nvme_configure.html">
+        NVMe主機組態
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_install_deploy.html">
+        安裝ONTAP Select 部署
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_deploy_cluster.html">
+        部署叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_initial_state.html">
+        初始叢集狀態
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_adm_before.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_adm_upgrading_nodes.html">
+        升級節點
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_support.html">
+        診斷與支援
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_security.html">
+        安全性
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_connectivity.html">
+        網路連線能力
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_mediators.html">
+        協調員
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_clusters.html">
+        叢集
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 節點和主機</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_video_console.html">
+        VM視訊主控台
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_resize.html">
+        調整叢集節點的大小
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_replace_drives_swraid.html">
+        更換故障的SW RAID磁碟機
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_upgrade_vmfs6.html">
+        升級至VMFS6
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_adm_licenses.html">
+        授權
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 深入探討</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 儲存設備</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_concepts_chars.html">
+        一般概念與特性
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_hwraid_local.html">
+        本機附加儲存設備的硬體RAID服務
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_swraid_local.html">
+        本機附加儲存設備的軟體RAID服務
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_vsan_external.html">
+        vSAN與外部陣列組態
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_capacity_inc.html">
+        增加儲存容量
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_stor_eff_support.html">
+        儲存效率支援
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 網路</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_concepts_chars.html">
+        一般概念與特性
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_single_multi_node.html">
+        單節點和多節點組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_internal_external.html">
+        內部和外部網路
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_supported_configs.html">
+        支援的組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_vsphere_vswitch_config.html">
+        VMware vSphere vSwitch組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_physical_switch_config.html">
+        實體交換器組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_nw_data_mgmt_separation.html">
+        資料與管理分離
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 高可用度架構</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_ha_config.html">
+        HA組態
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_ha_mirroring.html">
+        同步複寫與鏡射Aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_ha_other.html">
+        其他高可用度功能
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 效能</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_perf_general.html">
+        一般考量
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_perf_premium_ha_direct_ssd_94.html">
+        9.4優質HA直接附加SSD儲存設備
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_perf_premium_ha_direct_ssd_95.html">
+        9.5優質HA直接附加SSD儲存設備
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_perf_premium_ha_direct_ssd_96.html">
+        9.6優質HA直接附加SSD儲存設備
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 與vCenter整合</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 快速入門</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_vpi_overview.html">
+        總覽
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_vpi_architecture.html">
+        架構
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_vpi_planning.html">
+        規劃
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理外掛程式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_vpi_manage_before.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_install.html">
+        安裝
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_access.html">
+        存取
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_upgrade.html">
+        升級與移除
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_manually_remove.html">
+        手動移除外掛程式
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_deploy_cluster.html">
+        部署叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_vpi_vcenter_integration.html">
+        vCenter整合
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 管理</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_adm_support.html">
+        診斷與支援
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_adm_network.html">
+        網路
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_adm_clusters.html">
+        叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_vpi_adm_licenses.html">
+        授權
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_vpi_troubleshooting.html">
+        疑難排解
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用REST自動化</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_rest.html">
+        REST Web服務
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_how_access.html">
+        存取部署API
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_versions.html">
+        部署API版本管理
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_operation.html">
+        基本操作
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_transaction.html">
+        要求與回應交易
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_async_proc.html">
+        非同步處理
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用瀏覽器存取</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_before_browser.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_api_access_doc_page.html">
+        存取文件頁面
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_api_understanding_call.html">
+        瞭解API呼叫
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 工作流程程序</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_before_workflows.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_workflow01.html">
+        工作流程1：建立叢集
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用Python存取</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_before_python.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_api_understanding_scripts.html">
+        瞭解指令碼
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Python程式碼範例</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_script_cc.html">
+        建立叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_json_cc.html">
+        Json來建立叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_script_anl.html">
+        新增節點授權
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_script_dc.html">
+        刪除叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_script_common.html">
+        通用支援模組
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_api_script_resize.html">
+        調整叢集節點大小
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_automate_ansible.html">
+        使用Ansible進行自動化
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 使用CLI</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/concept_cli_before.html">
+        開始之前
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_signing_in.html">
+        使用SSH登入
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_deploy_cluster.html">
+        部署叢集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_security.html">
+        安全性
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_connectivity.html">
+        網路連線能力
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_clusters.html">
+        叢集
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 節點和主機</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_upgrade_esxi65.html">
+        將ESXi升級至6.5及更高版本
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 部署公用程式</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_upgrade_deploy.html">
+        升級部署執行個體
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_migrate_deploy.html">
+        移轉部署執行個體
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_deploy_image_add.html">
+        新增ONTAP Select 功能圖片
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_deploy_image_remove.html">
+        移除ONTAP Select 鏡像
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/task_cli_deploy_recover_two_node.html">
+        恢復雙節點叢集的部署
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_faq.html">
+        常見問題集
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_additional_info.html">
+        取得更多資訊
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_earlier_versions.html">
+        舊版
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_legal_notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/zh-tw/ontap-select/">ONTAP&nbsp;Select</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">增加儲存容量</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>使用「部署」可為叢集中的每個節點新增及授權額外的儲存空間。ONTAP ONTAP Select</p>
+</div>
+<div class="paragraph">
+<p>在支援的情況下、只有使用支援的儲存新增功能ONTAP 才能增加管理中的儲存容量、而且ONTAP Select 不支援直接修改此功能。下圖顯示啟動儲存新增精靈的「+」圖示。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_05.jpg" alt="叢集與節點詳細資料"></span></p>
+</div>
+<div class="paragraph">
+<p>下列考量對於容量擴充作業的成功非常重要。新增容量需要現有授權來涵蓋總空間量（現有加上新的）。導致節點超過授權容量的儲存新增作業會失敗。應先安裝具有足夠容量的新授權。</p>
+</div>
+<div class="paragraph">
+<p>如果額外的容量已新增至現有ONTAP Select 的VMware Aggregate、則新的儲存資源池（資料存放區）應有類似於現有儲存資源池（資料存放區）的效能設定檔。請注意、無法將非SSD儲存設備新增至ONTAP Select 安裝有AFF特性（啟用Flash）的支援節點。也不支援混合DAS與外部儲存設備。</p>
+</div>
+<div class="paragraph">
+<p>如果將本機附加儲存設備新增至系統以提供額外的本機（DAS）儲存池、則您必須建置額外的RAID群組和LUN（或LUN）。就像FAS 使用VMware系統一樣、如果您要在同一個集合體中新增空間、請務必確保新的RAID群組效能與原始RAID群組的效能相似。如果您要建立新的Aggregate、如果新的RAID群組配置對新Aggregate的效能影響已充分瞭解、則新的RAID群組配置可能會有所不同。</p>
+</div>
+<div class="paragraph">
+<p>如果資料存放區的總大小未超過ESX支援的最大資料存放區大小、則可將新空間新增至該資料存放區、做為範圍。將資料存放區範圍新增至ONTAP Select 已安裝了資源庫的資料存放區、可以動態執行、不會影響ONTAP Select 到該節點的作業。</p>
+</div>
+<div class="paragraph">
+<p>如果ONTAP Select 此節點是HA配對的一部分、則應考慮一些其他問題。</p>
+</div>
+<div class="paragraph">
+<p>在HA配對中、每個節點都包含來自其合作夥伴的資料鏡射複本。若要將空間新增至節點1、必須將相同的空間新增至其合作夥伴節點2、才能將節點1的所有資料複寫至節點2。換句話說、在節點2上、新增至節點2的空間是節點1容量新增作業的一部分、因此無法在節點2上看到或存取。此空間會新增至節點2、以便在HA事件期間完全保護節點1資料。</p>
+</div>
+<div class="paragraph">
+<p>效能還有其他考量。節點1上的資料會同步複寫至節點2。因此、節點1上新空間（資料存放區）的效能必須符合節點2上新空間（資料存放區）的效能。換句話說、在兩個節點上新增空間、但使用不同的磁碟機技術或不同的RAID群組大小、可能會導致效能問題。這是因為使用RAID SyncMirror 功能來維護合作夥伴節點上的資料複本。</p>
+</div>
+<div class="paragraph">
+<p>若要增加HA配對中兩個節點的使用者存取容量、必須執行兩項儲存新增作業、每個節點各執行一項。每項儲存新增作業都需要在兩個節點上增加空間。每個節點所需的總空間等於節點1所需的空間、加上節點2所需的空間。</p>
+</div>
+<div class="paragraph">
+<p>初始設定包含兩個節點、每個節點都有兩個資料存放區、每個資料存放區有30TB的空間。藉由使用者可在資料存放區1中使用10TB的空間、藉由使用者可利用此功能來建立雙節點叢集。ONTAP利用每個節點5TB的使用中空間、即可設定各個節點的部署。ONTAP</p>
+</div>
+<div class="paragraph">
+<p>下圖顯示節點1單一儲存新增作業的結果。在每個節點上、仍然使用相同的儲存容量（15TB）ONTAP Select 。不過、節點1的主動式儲存設備（10TB）比節點2（5TB）多。當每個節點託管另一個節點的資料複本時、這兩個節點都受到完整保護。資料存放區1中還有額外的可用空間、而且資料存放區2仍完全可用。</p>
+</div>
+<div class="paragraph">
+<p><strong>容量分配：單一儲存新增作業後的配置與可用空間</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_06.jpg" alt="容量分配：在單一儲存新增作業之後、即可分配及釋出空間"></span></p>
+</div>
+<div class="paragraph">
+<p>節點1上的兩項額外儲存新增作業會消耗資料存放區1的其餘部分和資料存放區2的一部分（使用容量上限）。第一項儲存新增作業會佔用資料存放區1中的15TB可用空間。下圖顯示第二次儲存新增作業的結果。此時、節點1管理的作用中資料量為50TB、節點2則為原始5TB。</p>
+</div>
+<div class="paragraph">
+<p>*容量發佈：在節點1*執行兩次額外的儲存新增作業之後、再進行配置與可用空間</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_07.jpg" alt="容量分配：在節點1執行兩次額外的儲存新增作業之後、分配和可用空間"></span></p>
+</div>
+<div class="paragraph">
+<p>容量新增作業期間使用的VMDK大小上限為16TB。叢集建立作業期間所使用的VMDK大小上限仍為8TB。根據您的組態（單節點或多節點叢集）和新增的容量量、使用VMware部署可建立大小正確的VMDK。ONTAP不過、在叢集建立作業期間、每個VMDK的最大大小不得超過8TB、在儲存新增作業期間、大小不得超過16TB。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="利用ontap-select-軟體raid提升功能">利用ONTAP Select 軟體RAID提升功能</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>儲存新增精靈也可以使用ONTAP Select 軟體RAID來增加支援支援支援的支援能力。此精靈僅顯示可用的DAS SDD磁碟機、並可將其對應為RDM至ONTAP Select 該VM。</p>
+</div>
+<div class="paragraph">
+<p>雖然容量授權可以增加單一TB、但在使用軟體RAID時、無法實際增加單一TB的容量。與將磁碟新增至FAS 某個實體或AFF 非實體陣列類似、某些因素決定了單一作業中可新增的最低儲存容量。</p>
+</div>
+<div class="paragraph">
+<p>請注意、在HA配對中、若要將儲存設備新增至節點1、則節點的HA配對（節點2）上也需要相同數量的磁碟機。本機磁碟機和遠端磁碟都是由節點1上的單一儲存新增作業所使用。也就是說、遠端磁碟機可用來確保節點1上的新儲存設備在節點2上進行複寫和保護。為了在節點2上新增本機可用的儲存設備、兩個節點上必須分別執行儲存新增作業和相同數量的磁碟機。</p>
+</div>
+<div class="paragraph">
+<p>此功能可將任何新磁碟分割成與現有磁碟機相同的根磁碟、資料和資料分割區。ONTAP Select分割作業會在建立新的Aggregate期間或在現有Aggregate上擴充期間執行。每個磁碟上的根分割區等量磁碟區大小會設定為符合現有磁碟上現有的根分割區大小。因此、兩個等量資料分割區大小中的每一個都可以計算為磁碟總容量減去根分割區大小除以兩個。根分割區等量磁碟區大小是可變的、在初始叢集設定期間會依照下列方式進行計算。所需的根空間總計（單節點叢集為68GB、HA配對為136GB）會分成初始磁碟數、減去任何備用磁碟和同位元磁碟。根分割區等量磁碟區大小會維持不變、以固定於要新增至系統的所有磁碟機上。</p>
+</div>
+<div class="paragraph">
+<p>如果您要建立新的Aggregate、所需的磁碟機數量下限會因RAID類型和ONTAP Select 該節點是否屬於HA配對的一部分而有所不同。</p>
+</div>
+<div class="paragraph">
+<p>如果要將儲存設備新增至現有的Aggregate、則必須考量其他事項。假設RAID群組尚未達到最大限制、您可以將磁碟機新增至現有的RAID群組。在FAS 現有RAID群組中新增磁碟的傳統功能僅供使用、AFF 因此在新磁碟上建立熱點是可能的考量。此外、只能將資料分割區大小等於或大於相同的磁碟機新增至現有的RAID群組。如上所述、資料分割區大小與磁碟機原始大小不同。如果要新增的資料分割區大於現有的分割區、則新磁碟機的大小是適當的。換句話說、每個新磁碟機的一部分容量仍未使用。</p>
+</div>
+<div class="paragraph">
+<p>也可以使用新磁碟機建立新的RAID群組、作為現有Aggregate的一部分。在此情況下、RAID群組大小應與現有的RAID群組大小相符。</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">cookie-settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">對我們的網站有任何意見或要求？</span>
+              <a target="_self" href="javascript:netapp_mailto()">請與我們聯絡</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/zh-tw/announcements/">公告</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/ontap-select/js/www-ntap.js'></script>
+    <script src='/zh-tw/ontap-select/js/tabbed-blocks.js'></script>
+  </body></html>
