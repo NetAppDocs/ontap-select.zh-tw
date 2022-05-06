@@ -39,7 +39,7 @@ NOTE: 您應該檢閱ONTAP Select 目前版本的《更新說明》、以瞭解�
 
 * VMware ESXi 6.5 U2（版本號294253或更新版本）
 * VMware ESXi 6.7 GA（建置8169922或更新版本）、包括6.7 U1、U2和U3
-* VMware ESXi 7.0 GA（建置編號為15843807或更新版本）、包括7.0 U1和U2
+* VMware ESXi 7.0 GA（建置編號：15843807或更新版本）、包括7.0 U1、U2和U3C
 
 
 

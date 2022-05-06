@@ -274,11 +274,7 @@
   <block id="7436b418bed093768e360d32105591d2" category="doc">本文檔ONTAP Select</block>
   <block id="8a7497698e274b257189171d812c4134" category="paragraph">NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。</block>
   <block id="1fde0727b387439572ade83eecff4f68" category="section-title">瞭解新功能</block>
-  <block id="a893ac072bb3f2961f7b5dcbc0425fdd" category="inline-link-macro">更新功能ONTAP Select</block>
-  <block id="3fdd80ed88fcff5c2bcd2d7da641336b" category="list-text"><block ref="3fdd80ed88fcff5c2bcd2d7da641336b" category="inline-link-macro-rx"></block></block>
-  <block id="2380ad5ce6796e080b2fcb896e8b4d72" category="admonition">從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集。ONTAP Select不過、如果您將叢集從舊版升級至9.10.1、您仍可使用部署公用程式來管理叢集。</block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">瀏覽產品文件</block>
-  <block id="7c5a8b0739d1a57c8b5e1392f49b5d35" category="paragraph">VMware ESXi可部署VMware 9.10.1。ONTAP Select本網站包含ONTAP Select VMware ESXi上執行的RESH9.10.1、9.9.1、9.8及9.7文件、以及Hypervisor無關文件（例如REST API）。</block>
   <block id="fa0fa8503380df9df5c58ad57a531ff5" category="inline-link">產品庫ONTAP Select</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">您可以在上找到KVM版本產品的版本資訊、以及先前版本所支援的文件<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>。</block>
   <block id="a753bf5f3b9313fdceb106b5c3e89d3f" category="section-title">取得更多資訊並與同儕交流</block>
@@ -295,7 +291,6 @@
   <block id="f2df12ffd4f2520acaaeab11317642da" category="paragraph">下列Hypervisor可部署下列項目：ONTAP Select</block>
   <block id="cb09cc9a7c5645adef2952e42c8113a4" category="list-text">VMware ESXi 6.5 U2（版本號294253或更新版本）</block>
   <block id="6d49558f2efead8b9c52640d24baa9c6" category="list-text">VMware ESXi 6.7 GA（建置8169922或更新版本）、包括6.7 U1、U2和U3</block>
-  <block id="fc84e925fad10253070ade41348b5b0a" category="list-text">VMware ESXi 7.0 GA（建置編號為15843807或更新版本）、包括7.0 U1和U2</block>
   <block id="3522298772b42c1feed00428b1765cfd" category="admonition">只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識別的ESXi版本上提供支援。</block>
   <block id="b4d68fa6f7a2f05a7861fc01bd7d54df" category="section-title">升級至VMware ESXi 6.5 U2或更新版本</block>
   <block id="10e25613e6e661d9225b8b8847992335" category="paragraph">如果您目前在ONTAP Select VMware ESXi 6.5 U1上部署了VMware ESXi、則應盡快升級至ESXi 6.5 U2或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。</block>
@@ -350,8 +345,6 @@
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">開放原始碼</block>
   <block id="531245fe0415d5f672afee491f44b87a" category="paragraph">通知檔案提供有關NetApp軟體所使用之協力廠商版權與授權的資訊。</block>
-  <block id="bd07337ccf7d6246b22445470850a71d" category="inline-link-macro">關於本產品的注意事項ONTAP Select 9.10.1</block>
-  <block id="3e39688b7514b3c2ffa40690402efd27" category="list-text"><block ref="3e39688b7514b3c2ffa40690402efd27" category="inline-link-macro-rx"></block></block>
   <block id="9356992dec47ad3cff6c85c52b7d7e61" category="summary">當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。</block>
   <block id="dbadd117fcffc5e2fbcbb08c9edd1a14" category="doc">本機附加儲存設備的硬體RAID服務</block>
   <block id="2414b45e14afeaaa0816f032bf126e4d" category="admonition">由於實體RAID控制器為基礎磁碟機提供RAID分段功能、因此將支援使用RAID 0的實體資料集合體進行設定。ONTAP Select不支援其他RAID層級。</block>
@@ -437,7 +430,6 @@
   <block id="31b7bb22df4e14e27e8d94676de87687" category="list-text">ESXi主機並非由vCenter（獨立主機）管理</block>
   <block id="7f99b6195696eb3b2dd6306108e31199" category="list-text">叢集內使用多個節點或主機</block>
   <block id="23792fd2201db7e4a90f1bb62205da33" category="list-text">叢集部署於已購買授權的正式作業環境中</block>
-  <block id="f6caae73592c829ae0d34701246f1d75" category="list-text">使用KVM Hypervisor而非VMware ESXi（KVM不再支援、從ONTAP Select 版本號《支援》（從版本號：VMware ESXi）開始）</block>
   <block id="02a3feeefaee61409aecc3199ba633fd" category="section-title">1.登錄vCenter伺服器認證</block>
   <block id="9769928a2568daa5e0ec428f55c04f89" category="paragraph">部署至由vCenter伺服器管理的ESXi主機時、您必須先新增認證、才能登錄主機。然後、部署管理公用程式就可以使用認證來驗證vCenter。</block>
   <block id="4c57667deb9cc4427f7e6a777e3de812" category="cell">HTTP動詞</block>
@@ -841,8 +833,6 @@
   <block id="12f423cf4aa4ff75a7ca9220c1c56cd8" category="paragraph">發行說明ONTAP Select for the Release Notes提供特定版本的資訊、包括新功能、支援的組態、升級說明、已知問題、 修正問題及已知限制。</block>
   <block id="e1060dc2ca9dac04bf54c9156ff74480" category="admonition">您需要帳戶登入NetApp支援網站、才能存取版本資訊。</block>
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="section-title">目前版本ONTAP Select 的</block>
-  <block id="42acb5fcb485ea4569bd64087871ab4f" category="inline-link">《》（英文）ONTAP Select</block>
-  <block id="f3a9d50ac32498dc8de07aa962e21bc8" category="paragraph">您可以存取<block ref="156307e111a81316adb7c6860522bbd8" category="inline-link-rx"></block> 可查看當前版本的詳情。</block>
   <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="section-title">過去版本ONTAP Select 的不一樣</block>
   <block id="301cae0dab6f1962deb22d0753769128" category="paragraph">若要存取產品先前版本的版本資訊、請參閱<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>。</block>
   <block id="e94fcecbba43e9dc52109bded1878e47" category="summary">探索高可用度選項、為您的環境選擇最佳HA組態。</block>
@@ -923,7 +913,6 @@
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="section-title">授權</block>
   <block id="b06ea299e97a88792e784ae5e265bc85" category="paragraph">每個節點都必須擁有優質或更高ONTAP Select 版本的不含功能的授權。</block>
   <block id="58af1c2597d085d648724676529071f9" category="section-title">Hypervisor平台</block>
-  <block id="bf3007c0073cf0eb34e66b112442d0ee" category="paragraph">在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援、從版本資訊的版本僅從版本資訊的版本9.10.1開始。</block>
   <block id="f2f4f127985b8989606d460ea282483e" category="paragraph">參與站台之間需要第2層連線。同時支援10GbE和1GbE、包括下列組態：</block>
   <block id="6d65990d18745957b36e9a7d3e937d03" category="list-text">4 x 1GbE</block>
   <block id="b4e75c4079fb22b826131cbb4df746e8" category="admonition">資料服務連接埠和互連連接埠必須連接至同一台交換器。</block>
@@ -2135,8 +2124,6 @@
   <block id="f71bd299279ae929e22ae20c531b3f74" category="list-text">使用通用支援模組：通用支援模組_Deploy _requests.p__包含單一類別。每個指令碼都會匯入並使用此指令碼。</block>
   <block id="b64e2f96d46281df4a5271bb1d831855" category="section-title">建立叢集</block>
   <block id="760f03544eb4b2b91f56abddab79a76a" category="paragraph">您可以ONTAP Select 使用指令碼叢集.py來建立一個不穩定叢集。根據Json輸入檔的CLI參數和內容、您可以將指令碼修改為部署環境、如下所示：</block>
-  <block id="4799fc3e383defae7faf34dbc8d855ef" category="admonition">從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select您仍可將KVM搭配先前支援的版本使用。</block>
-  <block id="56604b8e2d77b886d8365b994af30957" category="list-text">您可以部署至ESXi或KVM的Hypervisor。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。</block>
   <block id="cedae47753ff0de17bdaf98b12774e30" category="list-text">叢集大小您可以部署單一節點或多節點叢集。</block>
   <block id="d27666ce040cf738c8c777bc858da479" category="list-text">評估或正式作業授權您可以使用試用版或購買正式作業授權來部署叢集。</block>
   <block id="acc90e8d6f746df313ee42d6b4de8519" category="paragraph">指令碼的CLI輸入參數包括：</block>
@@ -2333,10 +2320,6 @@
   <block id="27918c15d26a489a97622613b0f53097" category="summary">目前版本ONTAP Select 的推出版的更新功能與變更功能有多種。</block>
   <block id="6536ba690a368bc5eb96e1579c795e23" category="doc">更新功能ONTAP Select</block>
   <block id="5986999240906508e3084d84dd2552d8" category="section-title">支援VMware NSxT-T</block>
-  <block id="5d591e45f8eab37ab8bdb818733107f9" category="paragraph">符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSX T搭配ONTAP Select 以OVA檔案和ONTAP Select 支援此功能的「支援部署」管理公用程式部署的單節點叢集、並無功能問題或不足之處。不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意下列需求和限制：</block>
-  <block id="ad136d3e5fb5acdd03500618ef8e1a95" category="list-text">您必須手動將叢集MTU大小調整為8800、才能部署叢集以因應額外的負荷。VMware指南是在使用NSX T時允許使用200位元組的緩衝區</block>
-  <block id="be4edc608044981ff1193ab01e2a80a8" category="list-text">網路4x10Gb組態</block>
-  <block id="e3f9b3ee4bd0f7a9715c1acd839cb82b" category="list-text">針對配置有四個NIC的VMware ESXi主機上的VMware ESXi部署、部署公用程式會提示您遵循最佳實務做法、在兩個不同的連接埠群組之間分割內部流量、以及在兩個不同的連接埠群組之間分割外部流量。ONTAP Select不過、使用重疊網路時、此組態無法運作、您應該忽略建議。在這種情況下、您應該只使用一個內部連接埠群組和一個外部連接埠群組。</block>
   <block id="97ba2ef50ca50de240503a53bf0d9347" category="list-text">網路連線檢查工具</block>
   <block id="9272e0dade1877b24e5ef4ad453f2c08" category="list-text">在NSX T型網路上執行時、透過部署CLI提供的網路連線檢查程式會失敗。</block>
   <block id="51e3f7647537ef4a51cd74ad4edcb9c6" category="section-title">不再支援KVM Hypervisor</block>
@@ -2375,7 +2358,6 @@
   <block id="c9a9a8f627d1d803e2e94b0b16e265f3" category="section-title">ESXi上的單節點叢集</block>
   <block id="70771ca4958d1b97175631c548e5b806" category="section-title">使用vCenter在ESXi上使用單節點叢集</block>
   <block id="fa7d26728677ccb514c43b50b7837b1f" category="section-title">KVM上的單節點叢集</block>
-  <block id="690bfd7947f7127a8af9c7274fde696c" category="admonition">從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select以下範例適用於支援KVM的早期版本。</block>
   <block id="6fad90e28618e0a28b3096e32fc10067" category="summary">使用容量層授權時、您需要為每ONTAP Select 個節點取得授權檔案。授權檔案會定義節點的儲存容量、並透過NetApp指派的獨特九位數序號鎖定至節點。</block>
   <block id="6d1a0d7c1d5f3f225d0b6d9969fd7d36" category="doc">取得容量層級授權</block>
   <block id="b83de81d9df2daba7b299079440e4a70" category="paragraph">您必須擁有由NetApp指派給節點的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。</block>
@@ -2455,7 +2437,6 @@
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署叢集之後</block>
   <block id="1457153d67772d3f9c4bf60a210172dc" category="section-title">建立單節點叢集</block>
   <block id="3a4abd9eeeda413a4bf9956a7ec34228" category="paragraph">您可以使用ONTAP Select 「功能不全」網路使用者介面來部署單節點ONTAP Select 的功能不全的叢集。</block>
-  <block id="0565b53a378763b72b2f36fb9cd7e98e" category="paragraph">請參閱 <block ref="e559ac7e82f005f616afeb5e37e466ee" category="inline-link-macro-rx"></block> 以準備部署叢集。必須先安裝並設定部署管理（密碼AutoSupport 、VMware vCenter）。</block>
   <block id="25ba26f357a31d39960ce1746018e712" category="paragraph">建立一個含有一個節點的整個叢集、以進行正式作業部署。ONTAP Select</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用系統管理員帳戶（admin）透過Web介面登入部署公用程式。</block>
   <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">如果ONTAP Select 顯示*歡迎使用S還原*快顯視窗、請確認您已符合組態先決條件、然後按一下*確定*。</block>
@@ -2543,7 +2524,6 @@
   <block id="eb8c8438fe90ea288c2bae7d06ad8446" category="list-text">或者、執行網路連線檢查程式、以測試內部叢集網路上節點之間的連線能力。</block>
   <block id="44c3d61a6cd78f834dce18458a846592" category="summary">尋找ONTAP Select 有關資訊的常見問題解答。</block>
   <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">常見問題集</block>
-  <block id="9c45ca5469e5d468a08d32c41ddb256f" category="admonition">從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select涉及KVM的問題僅適用於支援KVM的早期版本。</block>
   <block id="0db377921f4ce762c62526131097968f" category="section-title">一般</block>
   <block id="765cd9e9991cada43c9b9d9159809b2a" category="paragraph">瀏覽一些常見問題與解答。</block>
   <block id="7bd99abd8b8356e930247cbe6676d400" category="section-title">什麼是ONTAP 「不二次部署」與ONTAP Select 「不二次部署」之間的差異？</block>
@@ -2592,7 +2572,6 @@
   <block id="4e0891be88802b935c566dc6245269b2" category="section-title">軟體RAID與硬體RAID組態有何不同？</block>
   <block id="22e0f3c76aa3f16b504047703ee442db" category="paragraph">軟體RAID是ONTAP 整個過程中的一層。軟體RAID提供更多管理控制、因為實體磁碟機已分割成ONTAP Select 實體磁碟、並可作為支援該虛擬機器的原始磁碟使用。雖然使用硬體RAID時、通常只有一個大型LUN可供使用、然後再將其分割出來、以建立ONTAP Select 在VMware內部可見的VMDISK。軟體RAID可作為選項使用、而不需使用硬體RAID。</block>
   <block id="6ec2a86943d66b46f70e5d87ac537fd4" category="paragraph">軟體RAID的部分需求如下：</block>
-  <block id="b74ce4eae578d8c2c381398102112755" category="list-text">支援KVM和ESX</block>
   <block id="daa9446dd725dfc008580c725c26e90b" category="list-text">支援的實體磁碟大小：200GB–32TB</block>
   <block id="94615c9042eb14ee228868c999ca7b3b" category="list-text">僅在DAS組態上受支援</block>
   <block id="103ab2c767b1be091ad46e82ec44d53c" category="list-text">僅支援SSD</block>
@@ -3547,7 +3526,6 @@
   <block id="be1192e22ed4b2278c16d618bdfb26db" category="list-text">連接埠群組可以位於可路由的VLAN上。此外、視網路環境而定、您應該新增適當的VLAN標記、或設定連接埠群組以進行VLAN主幹連線。</block>
   <block id="aeb674f30505441361603daaf231026f" category="list-text">連接埠群組的負載平衡、容錯回復及容錯移轉順序設定應與vSwitch相同。</block>
   <block id="6b59ceccf3ee7910ade2c094fe636bb7" category="paragraph">以上vSwitch組態適用於一般網路環境中具有2個10Gb連接埠的主機。</block>
-  <block id="09bb2fd29a003b5d0aef3f769cb9afba" category="sidebar">零點9.10.1文件ONTAP Select</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">版本資訊</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="4b983fff716674f120176e09551dd445" category="sidebar">產品總覽</block>
@@ -3642,4 +3620,30 @@
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常見問題集</block>
   <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="sidebar">取得更多資訊</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">舊版</block>
+  <block id="71d4b54f0c3f31371ccbff3189f7515e" category="inline-link-macro">更新功能ONTAP Select</block>
+  <block id="9c714c0377048955032a0d4ac05768a9" category="list-text"><block ref="9c714c0377048955032a0d4ac05768a9" category="inline-link-macro-rx"></block></block>
+  <block id="eb1d813ea715b64863d0af3529b1d443" category="admonition">從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集。ONTAP Select再加上ONTAP Select 使用更新版本的功能、除了「離線」和「刪除」功能之外、現有的KVM叢集和主機不再提供所有的管理功能。</block>
+  <block id="8db26cba39c72c35a0f54f9a465fa3a2" category="paragraph">VMware ESXi可部署VMware 9.11.1。ONTAP Select本網站包含ONTAP Select VMware ESXi上執行的VMware 9.11.1、9.10.1、9.9.1、9.8及9.7文件、以及Hypervisor無關文件（例如REST API）。</block>
+  <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA（建置編號：15843807或更新版本）、包括7.0 U1、U2和U3C</block>
+  <block id="1ff0d4093fc891e95ebf937fc719f313" category="inline-link-macro">關於本產品的注意事項ONTAP Select 9.11.1</block>
+  <block id="b21133b863e352c7e380ae8974198a75" category="list-text"><block ref="b21133b863e352c7e380ae8974198a75" category="inline-link-macro-rx"></block></block>
+  <block id="d36f4205c301fa0311580c2426a17881" category="list-text">使用KVM Hypervisor而非VMware ESXi（建立ONTAP Select 使用VMware 9.10.1及更新版本的新叢集時、不再支援KVM）</block>
+  <block id="91f528f33d4be79010000f66d8e7792c" category="inline-link">《》（英文）ONTAP Select</block>
+  <block id="035f3963e6805da6ba00f69f4e5ea8fd" category="paragraph">您可以存取<block ref="7ed889202f2b282e8463fa03128c4ef2" category="inline-link-rx"></block> 可查看當前版本的詳情。</block>
+  <block id="b25679a7bebb3b9795d3926792d8c9a9" category="paragraph">在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援版本不支援。9.10.1及更新版本。</block>
+  <block id="0ec7f2d003cb42f9464107b0ad854843" category="admonition">從ONTAP Select 功能更新9.10.1開始、在部署新ONTAP Select 的支援叢集時、KVM Hypervisor將不再受支援。您仍可將KVM搭配先前支援的版本使用。</block>
+  <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">Hypervisor可部署至ESXi或KVM（視部署版本而定）。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。</block>
+  <block id="aacb1ad8ec74092a13074108a4e20c02" category="section-title">增強VMware ESXi支援</block>
+  <block id="aa46a81eb495f6cb92e19c98c6d7383a" category="paragraph">支援VMware ESXi 7.0 U3C的VMware ESXi 9.11.1。ONTAP Select</block>
+  <block id="f25b903f1c04994aeb9659893008d29f" category="paragraph">符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSX T搭配ONTAP Select 以OVA檔案和ONTAP Select 支援此功能的「支援部署」管理公用程式部署的單節點叢集、並無功能問題或不足之處。</block>
+  <block id="2274fb2127a3a8f7f5aa9544b4f66acd" category="paragraph">不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意ONTAP Select 下列有關《支援不支援使用者的支援要求和限制：</block>
+  <block id="cd89fb70ae3399d9a889b581a0f642f8" category="paragraph">不再支援KVM Hypervisor。</block>
+  <block id="ac55843b389d08df5493481d397627ff" category="paragraph">從ONTAP Select 發行版本《停止使用》（更新版本）開始、您將無法再使用部署公用程式建立新的KVM型叢集或新增KVM型主機。此外、9.10.1是支援管理功能的最後一版、例如讓現有KVM叢集和主機上線。</block>
+  <block id="903c9574703487544d2aede2d7c2ccfd" category="paragraph">然後從ONTAP Select 發行版本更新至更新版本、除了「離線」和「刪除」功能之外、現有KVM叢集和主機不再提供所有的管理功能。</block>
+  <block id="4a2f121824a056475165660b79eefb58" category="admonition">從ONTAP Select 功能更新9.10.1開始、建立新叢集時、不再支援KVM Hypervisor。以下範例適用於支援KVM的早期版本。</block>
+  <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">請參閱 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以準備部署叢集。必須先安裝並設定部署管理（密碼AutoSupport 、VMware vCenter）。</block>
+  <block id="e0ee96bc61e04ad9674df96fc5014e12" category="admonition">從ONTAP Select 功能更新9.10.1開始、建立新叢集時、不再支援KVM Hypervisor。涉及KVM的問題僅適用於支援KVM的早期版本。</block>
+  <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）</block>
+  <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">從ONTAP Select 功能更新9.10.1開始、KVM Hypervisor在部署新叢集時不再受支援。您仍可將KVM搭配先前支援的版本使用。</block>
+  <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">文件ONTAP Select</block>
 </blocks>

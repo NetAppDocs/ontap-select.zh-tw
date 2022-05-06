@@ -46,7 +46,7 @@ Hypervisor不受限制:: 支援不受Hypervisor限制的支援、包括不受支
 
 
 
-NOTE: 從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select您仍可將KVM搭配先前支援的版本使用。
+NOTE: 從ONTAP Select 功能更新9.10.1開始、KVM Hypervisor在部署新叢集時不再受支援。您仍可將KVM搭配先前支援的版本使用。
 
 如需支援平台的其他詳細資料、請參閱Hypervisor專屬規劃資訊和版本說明。
 

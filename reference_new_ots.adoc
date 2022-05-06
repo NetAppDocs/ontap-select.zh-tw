@@ -18,12 +18,18 @@ summary: 目前版本ONTAP Select 的推出版的更新功能與變更功能有�
 
 
 
+== 增強VMware ESXi支援
+
+支援VMware ESXi 7.0 U3C的VMware ESXi 9.11.1。ONTAP Select
+
+
+
 == 支援VMware NSxT-T
 
-符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSX T搭配ONTAP Select 以OVA檔案和ONTAP Select 支援此功能的「支援部署」管理公用程式部署的單節點叢集、並無功能問題或不足之處。不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意下列需求和限制：
+符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSX T搭配ONTAP Select 以OVA檔案和ONTAP Select 支援此功能的「支援部署」管理公用程式部署的單節點叢集、並無功能問題或不足之處。
 
-叢集MTU:: 您必須手動將叢集MTU大小調整為8800、才能部署叢集以因應額外的負荷。VMware指南是在使用NSX T時允許使用200位元組的緩衝區
-網路4x10Gb組態:: 針對配置有四個NIC的VMware ESXi主機上的VMware ESXi部署、部署公用程式會提示您遵循最佳實務做法、在兩個不同的連接埠群組之間分割內部流量、以及在兩個不同的連接埠群組之間分割外部流量。ONTAP Select不過、使用重疊網路時、此組態無法運作、您應該忽略建議。在這種情況下、您應該只使用一個內部連接埠群組和一個外部連接埠群組。
+不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意ONTAP Select 下列有關《支援不支援使用者的支援要求和限制：
+
 網路連線檢查工具:: 在NSX T型網路上執行時、透過部署CLI提供的網路連線檢查程式會失敗。
 
 
@@ -31,4 +37,8 @@ summary: 目前版本ONTAP Select 的推出版的更新功能與變更功能有�
 
 == 不再支援KVM Hypervisor
 
-從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集。ONTAP Select不過、如果您將叢集從舊版升級至9.10.1、您仍可使用部署公用程式來管理叢集。
+不再支援KVM Hypervisor。
+
+從ONTAP Select 發行版本《停止使用》（更新版本）開始、您將無法再使用部署公用程式建立新的KVM型叢集或新增KVM型主機。此外、9.10.1是支援管理功能的最後一版、例如讓現有KVM叢集和主機上線。
+
+然後從ONTAP Select 發行版本更新至更新版本、除了「離線」和「刪除」功能之外、現有KVM叢集和主機不再提供所有的管理功能。

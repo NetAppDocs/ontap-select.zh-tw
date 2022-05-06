@@ -28,7 +28,7 @@ summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluste
 
 ===== Hypervisor平台
 
-在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援、從版本資訊的版本僅從版本資訊的版本9.10.1開始。
+在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援版本不支援。9.10.1及更新版本。
 
 
 

@@ -21,7 +21,7 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 * ESXi主機並非由vCenter（獨立主機）管理
 * 叢集內使用多個節點或主機
 * 叢集部署於已購買授權的正式作業環境中
-* 使用KVM Hypervisor而非VMware ESXi（KVM不再支援、從ONTAP Select 版本號《支援》（從版本號：VMware ESXi）開始）
+* 使用KVM Hypervisor而非VMware ESXi（建立ONTAP Select 使用VMware 9.10.1及更新版本的新叢集時、不再支援KVM）
 
 
 

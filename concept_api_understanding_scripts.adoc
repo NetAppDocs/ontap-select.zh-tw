@@ -35,9 +35,9 @@ Python指令碼範例可讓您執行多項不同的工作。您應該先瞭解�
 您可以ONTAP Select 使用指令碼叢集.py來建立一個不穩定叢集。根據Json輸入檔的CLI參數和內容、您可以將指令碼修改為部署環境、如下所示：
 
 
-NOTE: 從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select您仍可將KVM搭配先前支援的版本使用。
+NOTE: 從ONTAP Select 功能更新9.10.1開始、在部署新ONTAP Select 的支援叢集時、KVM Hypervisor將不再受支援。您仍可將KVM搭配先前支援的版本使用。
 
-* 您可以部署至ESXi或KVM的Hypervisor。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。
+* Hypervisor可部署至ESXi或KVM（視部署版本而定）。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。
 * 叢集大小您可以部署單一節點或多節點叢集。
 * 評估或正式作業授權您可以使用試用版或購買正式作業授權來部署叢集。
 

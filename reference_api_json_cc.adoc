@@ -168,7 +168,7 @@ summary: 使用ONTAP Select Python程式碼範例建立或刪除一個故障叢�
 == KVM上的單節點叢集
 
 
-NOTE: 從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select以下範例適用於支援KVM的早期版本。
+NOTE: 從ONTAP Select 功能更新9.10.1開始、建立新叢集時、不再支援KVM Hypervisor。以下範例適用於支援KVM的早期版本。
 
 [source, json]
 ----

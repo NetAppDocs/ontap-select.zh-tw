@@ -17,7 +17,7 @@ summary: 尋找ONTAP Select 有關資訊的常見問題解答。
 尋找ONTAP Select 有關資訊的常見問題解答。
 
 
-NOTE: 從功能支援的版本起、KVM Hypervisor已不再受支援。ONTAP Select涉及KVM的問題僅適用於支援KVM的早期版本。
+NOTE: 從ONTAP Select 功能更新9.10.1開始、建立新叢集時、不再支援KVM Hypervisor。涉及KVM的問題僅適用於支援KVM的早期版本。
 
 
 
@@ -156,7 +156,7 @@ NOTE: 不ONTAP 支援變更不支援的靜態部署VM IP位址。
 
 軟體RAID的部分需求如下：
 
-* 支援KVM和ESX
+* 支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）
 * 支援的實體磁碟大小：200GB–32TB
 * 僅在DAS組態上受支援
 * 僅支援SSD
