@@ -3629,7 +3629,6 @@
   <block id="b21133b863e352c7e380ae8974198a75" category="list-text"><block ref="b21133b863e352c7e380ae8974198a75" category="inline-link-macro-rx"></block></block>
   <block id="d36f4205c301fa0311580c2426a17881" category="list-text">使用KVM Hypervisor而非VMware ESXi（建立ONTAP Select 使用VMware 9.10.1及更新版本的新叢集時、不再支援KVM）</block>
   <block id="91f528f33d4be79010000f66d8e7792c" category="inline-link">《》（英文）ONTAP Select</block>
-  <block id="035f3963e6805da6ba00f69f4e5ea8fd" category="paragraph">您可以存取<block ref="7ed889202f2b282e8463fa03128c4ef2" category="inline-link-rx"></block> 可查看當前版本的詳情。</block>
   <block id="b25679a7bebb3b9795d3926792d8c9a9" category="paragraph">在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援版本不支援。9.10.1及更新版本。</block>
   <block id="0ec7f2d003cb42f9464107b0ad854843" category="admonition">從ONTAP Select 功能更新9.10.1開始、在部署新ONTAP Select 的支援叢集時、KVM Hypervisor將不再受支援。您仍可將KVM搭配先前支援的版本使用。</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">Hypervisor可部署至ESXi或KVM（視部署版本而定）。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。</block>
@@ -3646,4 +3645,5 @@
   <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）</block>
   <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">從ONTAP Select 功能更新9.10.1開始、KVM Hypervisor在部署新叢集時不再受支援。您仍可將KVM搭配先前支援的版本使用。</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">文件ONTAP Select</block>
+  <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以存取<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
 </blocks>
