@@ -1582,7 +1582,6 @@
   <block id="3e7e570e683be353e09e19562e3196f3" category="paragraph">從較高層級來看、這項工作由三個部分組成。您必須重新產生並安裝部署執行個體所使用的所有容量集區授權。將所有授權重新安裝至新的部署執行個體之後、您可以視需要重設序號。最後、如果部署IP位址已變更、您必須更新ONTAP Select 使用容量資源池授權的每個節點。</block>
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">請聯絡NetApp支援部門、讓原始部署執行個體的所有容量資源池授權不受限制且未經註冊。</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">為每個容量集區授權取得並下載新的授權檔案。</block>
-  <block id="345c5eb90afb9e2e8ee266e94ccbe0f1" category="paragraph">如需詳細資訊、請參閱_取得容量資源池授權_。</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新的部署執行個體安裝容量資源池授權：</block>
   <block id="99683d4e14f8df30b153000825273e2d" category="list-text">按一下「*授權*」、然後按一下「*容量資源池*」。</block>
   <block id="095bb96ffb3551a58960c96316107d76" category="list-text">按一下「*新增*」、然後按*「上傳授權*」以選取並上傳授權。</block>
@@ -3646,4 +3645,5 @@
   <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">從ONTAP Select 功能更新9.10.1開始、KVM Hypervisor在部署新叢集時不再受支援。您仍可將KVM搭配先前支援的版本使用。</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">文件ONTAP Select</block>
   <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以存取<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
+  <block id="88d96915de77c1959098b364119959de" category="paragraph">請參閱 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
 </blocks>
