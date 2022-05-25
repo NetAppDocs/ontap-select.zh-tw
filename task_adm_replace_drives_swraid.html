@@ -1835,7 +1835,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-05-25 16:12:21 +0000">05/25/2022</time>
     
   
 
@@ -1845,7 +1845,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>使用軟體RAID時、ONTAP Select 當磁碟機故障時、使用備用磁碟機（如果有）並自動開始重建程序。這類似ONTAP 於《關於FAS 功能的資訊與AFF 技術的資訊之用」。不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。</p>
+<p>當使用軟體RAID的磁碟機故障時、ONTAP Select 如果有備用磁碟機可用、則會指派備用磁碟機、並自動開始重建程序。這類似ONTAP 於關於FAS 功能的介紹、AFF不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1854,7 +1854,7 @@
 <img src="/us-en/ontap-select/images/note.svg" alt="附註">
 </td>
 <td class="content">
-移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都必須透過ONTAP 「還原部署」來執行。不支援使用vSphere將磁碟機附加ONTAP Select 至VMware。
+移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都必須透過ONTAP Select 「還原部署」來執行。不支援使用vSphere將磁碟機附加ONTAP Select 至VMware。
 </td>
 </tr>
 </table>
@@ -1865,16 +1865,16 @@
 <h2 id="識別故障磁碟機">識別故障磁碟機</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>磁碟機故障後、請使用Deploy公用程式CLI識別故障的磁碟。</p>
+<p>當磁碟機故障時、您需要使用ONTAP CLI來識別故障磁碟。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步驟</div>
 <ol class="arabic">
 <li>
-<p>使用系統管理員帳戶登入部署公用程式CLI。</p>
+<p>使用系統管理員帳戶登入ONTAP CLI。</p>
 </li>
 <li>
-<p>識別故障的磁碟。</p>
+<p>識別故障的磁碟機。</p>
 <div class="listingblock">
 <div class="content">
 <pre>&lt;cluster name&gt;::&gt; storage disk show -container-type broken
