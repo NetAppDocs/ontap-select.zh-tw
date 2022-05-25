@@ -730,10 +730,6 @@
   <block id="f3c1a1c8717be55597746058712a8a41" category="paragraph">部署單節點叢集時、您不需要內部網路、而且應該移除內部網路。</block>
   <block id="c2f2bd4587b8c71cf8e299f386400e66" category="list-text">顯示節點的組態：</block>
   <block id="733447df59e9b9f51345490bc3341e5d" category="paragraph">「節點show -name nodename -cluster-name clustername -detailed」</block>
-  <block id="9a71b3cdddddadb8fe576b697592d9b1" category="section-title">將儲存設備附加ONTAP Select 至節點</block>
-  <block id="d76b42af4750ab47db6807261ff568d9" category="paragraph">您必須設定ONTAP Select 由整個叢集中的每個節點所使用的儲存設備。每個節點必須至少指派一個儲存資源池。</block>
-  <block id="ae494932199568deba5542920a6c52e0" category="paragraph">您必須已使用VMware vSphere建立儲存池。</block>
-  <block id="8cc64aa381816d6fe67efbffa850dced" category="paragraph">此程序假設使用本機硬體RAID控制器。您應該在ONTAP Select 叢集中的每個節點上設定儲存設備。</block>
   <block id="d07e64799eaa81c2e7811d55f1faaaf1" category="list-text">顯示主機上可用的儲存資源池：</block>
   <block id="9646f070282208e61d267e28e7ef6bb1" category="paragraph">「主機儲存資源池show -host-name &lt;FQDN：ip&gt;'</block>
   <block id="3457f038144b809169e1a74a423ab6b6" category="paragraph">您也可以透過VMware vSphere取得可用的儲存資源池。</block>
@@ -2693,10 +2689,6 @@
   <block id="db781aeeef6aa8bda07bc2e256b6ba49" category="paragraph">登出後重新登入會重新整理vCenter組態資訊。</block>
   <block id="891e037d102decc49c1996392c1e5e0a" category="list-text">按一下*全域庫存清單*。</block>
   <block id="f1d6fcc0b0a73d8f970dd075367e8cbe" category="paragraph">選項* ONTAP Select 《叢集* ONTAP Select 》和*《*》《*》《部署*》可在左側窗格中找到。如果未顯示、您應該先登出再重新登入。</block>
-  <block id="672f48d2ec82ec522a85cf3df49eb607" category="summary">除了具有硬體相依性的功能之外、支援大部分的功能。ONTAP Select ONTAP</block>
-  <block id="24c73c70fff103725b0dc81f21473d67" category="paragraph">當您部署叢集時、系統會自動為每個節點授權數項功能。ONTAP Select</block>
-  <block id="4c174b0c4d6417356173383c959c14a8" category="section-title">隨附功能</block>
-  <block id="f7cc5fa2aa671dbb06fcdd7df278e0e6" category="paragraph">依預設、系統會隨附並授權下列功能：</block>
   <block id="c6546b53840ec8245dd4d4d70fcdbc26" category="list-text">CIFS</block>
   <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="list-text">iSCSI</block>
   <block id="794cb725c5631ad99b5b7c000307f0df" category="list-text">SnapMirror</block>
@@ -2707,8 +2699,6 @@
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">重複資料刪除與壓縮</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">支援多租戶共享ONTAP</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp Volume Encryption（僅限非受限國家/地區）</block>
-  <block id="dee52e4036e8b3203de4ad54ebf51957" category="section-title">獨立授權的功能</block>
-  <block id="fe1bc1414ac4d3ff24ab13de6ded84ae" category="paragraph">您必須取得其他任何功能的個別授權、包括：</block>
   <block id="8fe0c9f8f23d1eb8317ecbfc3412e145" category="list-text">企業版SnapLock</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="cd4d0565c73e994a0df5b7c0a072acc6" category="list-text">資料可用度服務</block>
@@ -2935,10 +2925,7 @@
   <block id="2bf177abb469873688866ee6cceff120" category="doc">新增節點授權的指令碼</block>
   <block id="acd7d62c9b810f0d5861712e738fb732" category="summary">使用軟體RAID時、ONTAP Select 當磁碟機故障時、使用備用磁碟機（如果有）並自動開始重建程序。這類似ONTAP 於《關於FAS 功能的資訊與AFF 技術的資訊之用」。不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。</block>
   <block id="aeb7169d045185953deed3c0de3865f8" category="doc">使用SW RAID時更換故障磁碟機</block>
-  <block id="22e35b7624c291099f06269e559eb73a" category="admonition">移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都必須透過ONTAP 「還原部署」來執行。不支援使用vSphere將磁碟機附加ONTAP Select 至VMware。</block>
   <block id="d790a7cfad60ef9c4cf133fdbf5d8644" category="section-title">識別故障磁碟機</block>
-  <block id="c6451675a58dba4a0d99c6ccf691cb92" category="paragraph">磁碟機故障後、請使用Deploy公用程式CLI識別故障的磁碟。</block>
-  <block id="a9f7dbddb14939c805024201a3e1b090" category="list-text">識別故障的磁碟。</block>
   <block id="307bdb5a979a863911e3c77799901dec" category="section-title">移除故障磁碟機</block>
   <block id="0ab4ad97846d3de95e1f2d091028d9ed" category="paragraph">識別出故障的磁碟機後、請取出磁碟。</block>
   <block id="eecedba88893e3e14bfd8006f68186d1" category="list-text">使用系統管理員帳戶登入部署Web使用者介面。</block>
@@ -3646,4 +3633,25 @@
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">文件ONTAP Select</block>
   <block id="0f4660890a6410bffddf8509d2c29d15" category="paragraph">您可以存取<block ref="192e9fbc4335e2d8900d363693ade117" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
   <block id="88d96915de77c1959098b364119959de" category="paragraph">請參閱 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="d0730ff14b2f6fb53d9e49978a76660e" category="summary">支援大部分的功能。ONTAP Select ONTAP部署叢集時、會自動為每個節點授權許多功能。ONTAP不過、有些功能需要另一份授權。</block>
+  <block id="0deac5caf37785bb3c3ce0d80f8d8d18" category="admonition">通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select</block>
+  <block id="8132b1f57834df621ea1aedaa548729e" category="section-title">根據預設會自動啟用的支援功能ONTAP</block>
+  <block id="d4370df695508d400d73750728248ebe" category="paragraph">下列功能已隨ONTAP Select 附於根據預設授權的功能中：</block>
+  <block id="1716834171e243de0f898a67621b6624" category="list-text">SS3 ONTAP</block>
+  <block id="a56a12489213d10b531398efee448f95" category="section-title">個別授權的功能ONTAP</block>
+  <block id="585f4a038bba40a29999437c007446e9" category="paragraph">您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：</block>
+  <block id="6dec3523c85f378f79fcf83c82e21868" category="paragraph">當使用軟體RAID的磁碟機故障時、ONTAP Select 如果有備用磁碟機可用、則會指派備用磁碟機、並自動開始重建程序。這類似ONTAP 於關於FAS 功能的介紹、AFF不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。</block>
+  <block id="483b2bdf1e13fa583e93f86544ae9ee4" category="admonition">移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都必須透過ONTAP Select 「還原部署」來執行。不支援使用vSphere將磁碟機附加ONTAP Select 至VMware。</block>
+  <block id="04985546e9771cbfe818d7c08949cb4e" category="paragraph">當磁碟機故障時、您需要使用ONTAP CLI來識別故障磁碟。</block>
+  <block id="76b45a86afe9ddfec423de5caad088a5" category="list-text">使用系統管理員帳戶登入ONTAP CLI。</block>
+  <block id="56f32587956bc806f4ffe1823a1a1872" category="list-text">識別故障的磁碟機。</block>
+  <block id="562e70611d61b3bdd5fa02c1473d7fb3" category="section-title">將儲存設備附加ONTAP Select 至節點</block>
+  <block id="866ece73832a5308b812e48e59ba8a4f" category="paragraph">您必須設定ONTAP Select 由叢集中每個節點使用的儲存設備。每個節點必須一律至少指派一個儲存資源池。使用軟體RAID時、也必須為每個節點指派至少一個磁碟機。</block>
+  <block id="f31242a3b10d57ca87f84e612994d57c" category="paragraph">您必須使用VMware vSphere建立儲存池。如果您使用的是軟體RAID、也需要至少一個可用的磁碟機。</block>
+  <block id="2976fb0a07ffd25ea274d2cc9bc187be" category="paragraph">使用本機硬體RAID控制器時、您需要執行步驟1至4。使用軟體RAID時、您需要執行步驟1至6。</block>
+  <block id="cc6982c020bc97509cfd68e72db0524e" category="list-text">使用SSH以系統管理員帳戶認證登入部署公用程式CLI。</block>
+  <block id="1d0fd2b207143cd0cbfe1f1eca67206a" category="list-text">如果您使用的是軟體RAID、請連接可用的磁碟機：</block>
+  <block id="477b4fc07bc021818bf99ca0a2f9a370" category="paragraph">「節點儲存磁碟附加- node-name nodename -cluster-name clustername -disks list_of_drives」（節點儲存磁碟附加-節點名稱節點名稱-叢集名稱-磁碟list_of_drives）</block>
+  <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是軟體RAID、請顯示附加至節點的磁碟：</block>
+  <block id="f1efe358bd22df5ef0bdf73fc9e8d10b" category="paragraph">「節點儲存磁碟show -node-name nodename -cluster-name clustername」</block>
 </blocks>

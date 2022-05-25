@@ -24,7 +24,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 
 
-===== 準備將儲存設備附加ONTAP Select 至節點
+=== 準備將儲存設備附加ONTAP Select 至節點
 
 如果您使用本機硬體RAID控制器、則必須在每個節點上為系統資料以及根和資料集合體建立至少一個儲存資源池。您必須附加儲存資源池、作為設定ONTAP Select 節點的一部分。
 
@@ -32,13 +32,13 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 
 
-===== 提供ONTAP Select 的版本
+=== 提供ONTAP Select 的版本
 
 部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_adm_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"] 以取得更多資訊。
 
 
 
-===== 正式ONTAP Select 作業部署的授權功能
+=== 正式ONTAP Select 作業部署的授權功能
 
 在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用_capsityleap__模型在每個節點上授權儲存設備、或使用_capsityPools_模型授權共用資源池。
 
@@ -240,14 +240,14 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 == 將儲存設備附加ONTAP Select 至節點
 
-您必須設定ONTAP Select 由整個叢集中的每個節點所使用的儲存設備。每個節點必須至少指派一個儲存資源池。
+您必須設定ONTAP Select 由叢集中每個節點使用的儲存設備。每個節點必須一律至少指派一個儲存資源池。使用軟體RAID時、也必須為每個節點指派至少一個磁碟機。
 
-您必須已使用VMware vSphere建立儲存池。
+您必須使用VMware vSphere建立儲存池。如果您使用的是軟體RAID、也需要至少一個可用的磁碟機。
 
-此程序假設使用本機硬體RAID控制器。您應該在ONTAP Select 叢集中的每個節點上設定儲存設備。
+使用本機硬體RAID控制器時、您需要執行步驟1至4。使用軟體RAID時、您需要執行步驟1至6。
 
 .步驟
-. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
+. 使用SSH以系統管理員帳戶認證登入部署公用程式CLI。
 . 顯示主機上可用的儲存資源池：
 +
 「主機儲存資源池show -host-name <FQDN：ip>'
@@ -290,6 +290,30 @@ node-name test-cluster-01 -capacity-limit 500GB
 [listing]
 ----
 node storage pool show -cluster-name test-cluster -node-name testcluster-01
+----
+. 如果您使用的是軟體RAID、請連接可用的磁碟機：
++
+「節點儲存磁碟附加- node-name nodename -cluster-name clustername -disks list_of_drives」（節點儲存磁碟附加-節點名稱節點名稱-叢集名稱-磁碟list_of_drives）
+
++
+範例
+
++
+[listing]
+----
+node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000:66:00.0 0000:67:00.0 0000:68:00.0
+----
+. 如果您使用的是軟體RAID、請顯示附加至節點的磁碟：
++
+「節點儲存磁碟show -node-name nodename -cluster-name clustername」
+
++
+範例
+
++
+[listing]
+----
+node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 ----
 
 

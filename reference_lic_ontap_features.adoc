@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_lic_ontap_features.html 
 keywords: license, licensing, ontap features, default ontap features 
-summary: 除了具有硬體相依性的功能之外、支援大部分的功能。ONTAP Select ONTAP 
+summary: 支援大部分的功能。ONTAP Select ONTAP部署叢集時、會自動為每個節點授權許多功能。ONTAP不過、有些功能需要另一份授權。 
 ---
-= 預設啟用的支援功能ONTAP
+= 功能ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,16 @@ summary: 除了具有硬體相依性的功能之外、支援大部分的功能�
 
 
 [role="lead"]
-除了具有硬體相依性的功能之外、支援大部分的功能。ONTAP Select ONTAP
-
-當您部署叢集時、系統會自動為每個節點授權數項功能。ONTAP Select
+支援大部分的功能。ONTAP Select ONTAP部署叢集時、會自動為每個節點授權許多功能。ONTAP不過、有些功能需要另一份授權。
 
 
+NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
-===== 隨附功能
 
-依預設、系統會隨附並授權下列功能：
+
+== 根據預設會自動啟用的支援功能ONTAP
+
+下列功能已隨ONTAP Select 附於根據預設授權的功能中：
 
 * NFS
 * CIFS
@@ -34,14 +35,15 @@ summary: 除了具有硬體相依性的功能之外、支援大部分的功能�
 * NetApp Volume Encryption
 * 重複資料刪除與壓縮
 * 支援多租戶共享ONTAP
+* SS3 ONTAP
 * NetApp Volume Encryption（僅限非受限國家/地區）
 
 
 
 
-===== 獨立授權的功能
+=== 個別授權的功能ONTAP
 
-您必須取得其他任何功能的個別授權、包括：
+您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：
 
 * 企業版SnapLock
 * FabricPool
