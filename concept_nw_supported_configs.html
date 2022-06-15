@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-select/concept_nw_supported_configs.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-select/concept_nw_supported_configs.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-select/concept_nw_supported_configs.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-select/concept_nw_supported_configs.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-select/concept_nw_supported_configs.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-select/concept_nw_supported_configs.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-select/concept_nw_supported_configs.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-select/concept_nw_supported_configs.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-select/concept_nw_supported_configs.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-select/concept_nw_supported_configs.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -1430,7 +1422,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/index.html">
         文件ONTAP Select
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_release_notes.html">
@@ -1835,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-15 18:48:15 +0000">06/15/2022</time>
     
   
 
@@ -1852,41 +1844,39 @@
 <p>由於VMware的效能ONTAP Select 與基礎硬體的特性直接相關、因此選擇速度較快的NIC來增加VM的處理量、會導致叢集效能較高、整體使用者體驗也較佳。可使用四個10Gb NIC或兩個較高速NIC（25/40 GB/s）來實現高效能網路配置。還有許多其他組態也受到支援。對於雙節點叢集、支援4個1Gb連接埠或1個10Gb連接埠。對於單一節點叢集、支援2個1Gb連接埠。</p>
 </div>
 <div class="paragraph">
-<p><strong>網路最低和建議的組態</strong></p>
+<p>根據叢集大小、有多種支援的乙太網路組態。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 30%;">
+<col style="width: 35%;">
+<col style="width: 35%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">最低要求</th>
-<th class="tableblock halign-left valign-top">建議</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">單一節點叢集</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 1Gb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 10Gb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">叢集大小</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最低要求</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">建議</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">兩個節點叢集/ MetroCluster SDS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4 x 1Gb或1 x 10Gb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 10Gb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">單節點叢集</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 1GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雙節點叢集或MetroCluster 不含任何功能的SDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 x 1GbE或1 x 10GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4/6/8節點叢集</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 10Gb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4 x 10Gb或2 x 25/40Gb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4個10GbE或2個25/40GbE</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>*使用多個實體交換器的網路組態*當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。</p>
+<p>當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/BP_02.jpg" alt="使用多個實體交換器進行網路組態"></span></p>
@@ -2037,4 +2027,5 @@
     </script>
     <script src='/zh-tw/ontap-select/js/www-ntap.js'></script>
     <script src='/zh-tw/ontap-select/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/ontap-select/js/sidebar.js'></script>
   </body></html>

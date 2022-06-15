@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/ontap-select/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-select/reference_plan_ots_hardware.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-select/reference_plan_ots_hardware.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-select/reference_plan_ots_hardware.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-select/reference_plan_ots_hardware.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-select/reference_plan_ots_hardware.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-select/reference_plan_ots_hardware.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-select/reference_plan_ots_hardware.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-select/reference_plan_ots_hardware.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-select/reference_plan_ots_hardware.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-select/reference_plan_ots_hardware.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -1430,7 +1422,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/index.html">
         文件ONTAP Select
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-select/reference_release_notes.html">
@@ -1835,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-06 18:24:01 +0000">05/06/2022</time>
+    <time datetime="2022-06-15 18:48:15 +0000">06/15/2022</time>
     
   
 
@@ -1944,10 +1936,9 @@
 <div class="paragraph">
 <p>無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>處理器</p>
+<div class="paragraph">
+<p>支援的微處理器包括：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1955,31 +1946,38 @@
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>乙太網路連接埠</p>
-<div class="ulist">
-<ul>
-<li>
-<p>4個10GbE（建議）</p>
-</li>
-<li>
-<p>2個10GbE</p>
-</li>
-<li>
-<p>1個10GbE</p>
-</li>
-<li>
-<p>4 x 1GbE（僅適用於雙節點ROBO叢集）</p>
-</li>
-<li>
-<p>2 x 1GbE（僅適用於單節點叢集）</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>根據叢集大小、有多種支援的乙太網路組態。</p>
 </div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 35%;">
+<col style="width: 35%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">叢集大小</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">最低要求</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">建議</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">單節點叢集</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 x 1GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">雙節點叢集或MetroCluster 不含任何功能的SDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 x 1GbE或1 x 10GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4/6/8節點叢集</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2個10GbE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4個10GbE或2個25/40GbE</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="根據執行個體類型的其他硬體需求">根據執行個體類型的其他硬體需求</h4>
@@ -2214,4 +2212,5 @@
     </script>
     <script src='/zh-tw/ontap-select/js/www-ntap.js'></script>
     <script src='/zh-tw/ontap-select/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/ontap-select/js/sidebar.js'></script>
   </body></html>
