@@ -159,7 +159,7 @@ NOTE: 不ONTAP 支援變更不支援的靜態部署VM IP位址。
 * 支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）
 * 支援的實體磁碟大小：200GB–32TB
 * 僅在DAS組態上受支援
-* 僅支援SSD
+* 支援SSD或NVMe
 * 需要Premium或Premium XL ONTAP Select 不含授權
 * 硬體RAID控制器應不存在或停用、或應以SAS HBA模式運作
 * 以專用LUN為基礎的LVM儲存資源池或資料存放區必須用於系統磁碟：核心傾印、開機/NVRAM和資料中心。

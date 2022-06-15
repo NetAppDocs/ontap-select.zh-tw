@@ -74,22 +74,28 @@ NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更�
 
 無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。
 
-* 處理器
-+
-** 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
+支援的微處理器包括：
+
+* 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
 
 
-* 乙太網路連接埠
-+
-** 4個10GbE（建議）
-** 2個10GbE
-** 1個10GbE
-** 4 x 1GbE（僅適用於雙節點ROBO叢集）
-** 2 x 1GbE（僅適用於單節點叢集）
+根據叢集大小、有多種支援的乙太網路組態。
+
+[cols="30,35,35"]
+|===
 
 
+| 叢集大小 | 最低要求 | 建議 
 
 
+| 單節點叢集 | 2 x 1GbE | 2個10GbE 
+
+
+| 雙節點叢集或MetroCluster 不含任何功能的SDS | 4 x 1GbE或1 x 10GbE | 2個10GbE 
+
+
+| 4/6/8節點叢集 | 2個10GbE | 4個10GbE或2個25/40GbE 
+|===
 
 
 ==== 根據執行個體類型的其他硬體需求

@@ -303,15 +303,10 @@
   <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">請參閱<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬體需求</block>
   <block id="6e789a662664596fd2f867b83af8955a" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
-  <block id="e22b6495595f2c4ad67a830d1be05c6e" category="list-text">處理器</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon處理器、window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">適用於伺服器的Intel Xeon處理器（請參閱 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 以取得更多資訊）</block>
-  <block id="1d6cab2018d0973fc42f97393441359e" category="list-text">乙太網路連接埠</block>
-  <block id="f165a91cf573cd6d747aacd35dfe0df9" category="list-text">4個10GbE（建議）</block>
   <block id="7538c6fd2c1f96ec16f31ff621c5090f" category="list-text">2個10GbE</block>
   <block id="e7fea67b35768c83fc1eee5ad2800c96" category="list-text">1個10GbE</block>
-  <block id="48eb25fbf1bf64862fe4e24ffa80f025" category="list-text">4 x 1GbE（僅適用於雙節點ROBO叢集）</block>
-  <block id="b40ce30b0ea7008987849cf8b3de219c" category="list-text">2 x 1GbE（僅適用於單節點叢集）</block>
   <block id="d55a9ba430190ded23c2d10278bfb65d" category="section-title">根據執行個體類型的其他硬體需求</block>
   <block id="bfc8cbb02384bbb523227067dcadb07e" category="paragraph">根據節點執行個體類型、有多項額外的硬體需求。</block>
   <block id="7e64fd00098cc9d082a7cbbea21dc2a5" category="inline-link-macro">瞭解平台授權方案</block>
@@ -2569,7 +2564,6 @@
   <block id="6ec2a86943d66b46f70e5d87ac537fd4" category="paragraph">軟體RAID的部分需求如下：</block>
   <block id="daa9446dd725dfc008580c725c26e90b" category="list-text">支援的實體磁碟大小：200GB–32TB</block>
   <block id="94615c9042eb14ee228868c999ca7b3b" category="list-text">僅在DAS組態上受支援</block>
-  <block id="103ab2c767b1be091ad46e82ec44d53c" category="list-text">僅支援SSD</block>
   <block id="aba50a4db4f2d357e877595c641130a5" category="list-text">需要Premium或Premium XL ONTAP Select 不含授權</block>
   <block id="6bc864440af96dd0ce3cfac81f642cc2" category="list-text">硬體RAID控制器應不存在或停用、或應以SAS HBA模式運作</block>
   <block id="f249bf8d9e4b8c7b417b66fb9c6c3c90" category="list-text">以專用LUN為基礎的LVM儲存資源池或資料存放區必須用於系統磁碟：核心傾印、開機/NVRAM和資料中心。</block>
@@ -3272,15 +3266,6 @@
   <block id="3ad46bc4202506ae104cdd08943bdf18" category="paragraph">伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。從VMware ESX開始ONTAP Select 、支援25GB/s和40Gb/s NIC介面卡。</block>
   <block id="1ff04d941ae1b8262465779276105e05" category="paragraph">由於VMware的效能ONTAP Select 與基礎硬體的特性直接相關、因此選擇速度較快的NIC來增加VM的處理量、會導致叢集效能較高、整體使用者體驗也較佳。可使用四個10Gb NIC或兩個較高速NIC（25/40 GB/s）來實現高效能網路配置。還有許多其他組態也受到支援。對於雙節點叢集、支援4個1Gb連接埠或1個10Gb連接埠。對於單一節點叢集、支援2個1Gb連接埠。</block>
   <block id="523bd57fcc837e7be7bc3b0cd4b52afa" category="cell">最低要求</block>
-  <block id="5259ae4afb5996ff48788b2fa720114c" category="cell">建議</block>
-  <block id="27a08f8dae649f80b5adc97cf7ed216e" category="cell">單一節點叢集</block>
-  <block id="c427a9a2fab6b24f6b7ff4100579a75c" category="cell">2 x 1Gb</block>
-  <block id="bb81903d791182b6c510f5328e456c82" category="cell">2 x 10Gb</block>
-  <block id="37fcdf053dd0dacaa320af1b91afcf77" category="cell">兩個節點叢集/ MetroCluster SDS</block>
-  <block id="d65313238bf052bcd4da75255bc1229a" category="cell">4 x 1Gb或1 x 10Gb</block>
-  <block id="cb3b967446da7c765f29874d3af83439" category="cell">4/6/8節點叢集</block>
-  <block id="b3923a8eb8f81681199fa22056cdedc2" category="cell">4 x 10Gb或2 x 25/40Gb</block>
-  <block id="cc781d9852a683d49b415b4724ced3f1" category="paragraph">*使用多個實體交換器的網路組態*當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。</block>
   <block id="d08307744845f9100511e47ff88bc61a" category="paragraph"><block ref="d08307744845f9100511e47ff88bc61a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8e8fc289580557ae031c599be7e92e29" category="section-title">刪除ONTAP Select 一個叢集</block>
   <block id="b6f79329088da6ccdb0fc3183dbc7d37" category="paragraph">您可以使用ONTAP Select 命令列介面刪除不再需要的叢集。</block>
@@ -3654,4 +3639,16 @@
   <block id="477b4fc07bc021818bf99ca0a2f9a370" category="paragraph">「節點儲存磁碟附加- node-name nodename -cluster-name clustername -disks list_of_drives」（節點儲存磁碟附加-節點名稱節點名稱-叢集名稱-磁碟list_of_drives）</block>
   <block id="10d4b2d6f8c74f79bcce5324cfbda150" category="list-text">如果您使用的是軟體RAID、請顯示附加至節點的磁碟：</block>
   <block id="f1efe358bd22df5ef0bdf73fc9e8d10b" category="paragraph">「節點儲存磁碟show -node-name nodename -cluster-name clustername」</block>
+  <block id="1a4f0dd8a8bf6109c981c282ef6e87c9" category="paragraph">支援的微處理器包括：</block>
+  <block id="9adc1cc3490cf88dcf6538833825d06d" category="paragraph">根據叢集大小、有多種支援的乙太網路組態。</block>
+  <block id="28f29271814291e43be7deaba751046b" category="cell">叢集大小</block>
+  <block id="c76e3867213cff8946148c6510af0736" category="cell">建議</block>
+  <block id="b57920e2838d0b8c1570a84513bd3391" category="cell">單節點叢集</block>
+  <block id="84b6dad36f332d459c3cbbff61102611" category="cell">2 x 1GbE</block>
+  <block id="76d2b682f134359232d4f4b954c5e1a3" category="cell">雙節點叢集或MetroCluster 不含任何功能的SDS</block>
+  <block id="0ea5b2cd33e45a6a2df81dcad2a5045d" category="cell">4 x 1GbE或1 x 10GbE</block>
+  <block id="f2f0116ae4525605fa023e57cc038a7e" category="cell">4/6/8節點叢集</block>
+  <block id="aabad23ff55f6490dcedde7b5fc7b430" category="cell">4個10GbE或2個25/40GbE</block>
+  <block id="e329a903fac418f23c3deeab45b989ff" category="paragraph">當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。</block>
+  <block id="cf3d9f4201951d721713f10886d41ddb" category="list-text">支援SSD或NVMe</block>
 </blocks>
