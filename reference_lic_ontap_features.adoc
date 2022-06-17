@@ -41,7 +41,7 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 
 
-=== 個別授權的功能ONTAP
+== 個別授權的功能ONTAP
 
 您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：
 

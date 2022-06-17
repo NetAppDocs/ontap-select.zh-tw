@@ -19,14 +19,10 @@ summary:
 
 NOTE: 您需要帳戶登入NetApp支援網站、才能存取版本資訊。
 
-
-
-===== 目前版本ONTAP Select 的
-
 您可以存取 https://library.netapp.com/ecm/ecm_download_file/ECMLP2882082["《》（英文）ONTAP Select"^] 可查看有關當前版本的詳情。
 
+若要存取舊版產品的版本資訊、請參閱：
 
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["產品庫歸檔ONTAP Select"^]
 
-===== 過去版本ONTAP Select 的不一樣
-
-若要存取產品先前版本的版本資訊、請參閱 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]。

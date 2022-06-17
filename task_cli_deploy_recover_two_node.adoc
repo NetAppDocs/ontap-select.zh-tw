@@ -22,51 +22,19 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 
 您應該先做好準備、再嘗試恢復部署公用程式的執行個體、以確保成功。
 
-
-
-===== 所需技能與資訊
-
 您應該熟悉幾個管理程序、並擁有必要的資訊。
-
-
-
-===== 安裝部署虛擬機器
 
 您必須能夠在ONTAP Select Hypervisor環境中安裝新的更新版的更新版的更新版本。
 
-
-
-===== 指令行介面ONTAP
-
 您必須能夠登入ONTAP 到該叢集的CLI、ONTAP Select 並使用Shell介面。
-
-
-
-===== 部署公用程式組態備份的可用度
 
 您必須判斷是否有來自故障部署公用程式執行個體的組態資料備份、該執行個體包含ONTAP Select 了雙節點叢集。您的備份可能不包含叢集。
 
-
-
-===== 還原部署組態的備份
-
 您應該能夠還原部署組態資料的備份、視所使用的還原程序而定。
-
-
-
-===== 原始部署虛擬機器的IP位址
 
 您必須知道故障的原始部署公用程式虛擬機器的IP位址。
 
-
-
-===== 儲存容量授權
-
 您必須判斷是否使用容量資源池或容量層授權。如果您使用容量集區授權、則必須在還原或還原部署執行個體之後、重新安裝每個容量集區授權。
-
-
-
-===== 決定要使用的恢復程序
 
 您必須決定恢復ONTAP Select 某個執行個體時要使用的程序。您的決定取決於您是否備份來自原始故障部署公用程式的組態資料、該公用程式包含ONTAP Select 了雙節點叢集。
 
@@ -227,6 +195,8 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量集區授權。
 
-link:task_install_deploy.html["安裝ONTAP Select 部署功能"]
-link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["將部署組態資料還原至新的虛擬機器"]
-link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝容量資源池授權"]
+.相關資訊
+* link:task_install_deploy.html["安裝ONTAP Select 部署功能"]
+* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["將部署組態資料還原至新的虛擬機器"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝容量資源池授權"]
+

@@ -36,7 +36,7 @@ VMware vCenter Plug-in ONTAP Select for VMware Deploy專為ONTAP Select 在VMwar
 
 
 
-==== 叢集ONTAP Select
+=== 叢集ONTAP Select
 
 「叢集」選項大致相當於原生部署Web使用者介面中的「*叢集*」索引標籤。ONTAP Select它提供下表所述的功能。
 
@@ -73,7 +73,7 @@ VMware vCenter Plug-in ONTAP Select for VMware Deploy專為ONTAP Select 在VMwar
 |===
 
 
-==== 部署ONTAP Select
+=== 部署ONTAP Select
 
 此「本地部署」網頁使用者介面中的「* Hypervisor hosts*」和「* Administration *」索引標籤、大致相當於ONTAP Select 此選項。它透過頁面頂端的三個索引標籤提供功能、如下表所述。
 
@@ -98,18 +98,18 @@ vCenter外掛程式透過vSphere提供的功能相當於原生部署使用者介
 
 
 
-==== 管理vCenter外掛程式
+=== 管理vCenter外掛程式
 
 您無法使用vCenter外掛程式來安裝、更新、移除或驗證vCenter外掛程式。您必須透過原生部署使用者介面執行這些管理工作。
 
 
 
-==== 管理vCenter認證資料
+=== 管理vCenter認證資料
 
 安裝vCenter外掛程式之前、您必須先新增必要的vCenter認證、才能使用原生部署使用者介面進行部署。
 
 
 
-==== 叢集必須由同一個vCenter伺服器控制ONTAP Select
+=== 叢集必須由同一個vCenter伺服器控制ONTAP Select
 
 您只能部署及支援ONTAP Select 由安裝外掛程式的單一vCenter伺服器所管理的VMware vCenter叢集。您無法使用外掛程式來存取ONTAP Select 由獨立ESXi或KVM主機上執行的其他vCenter伺服器或叢集所管理的VMware vCenter叢集。

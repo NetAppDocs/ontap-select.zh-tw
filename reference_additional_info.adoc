@@ -18,7 +18,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 
 
-=== 產品資源ONTAP Select
+== 產品資源ONTAP Select
 
 下列產品頁面提供各種ONTAP Select 不同的支援資源連結。
 
@@ -28,7 +28,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 
 
-=== 支援支援支援ONTAP
+== 支援支援支援ONTAP
 
 * https://docs.netapp.com/us-en/ontap/["供應說明文件ONTAP"^]
 +
@@ -42,7 +42,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 
 
-=== 部落格
+== 部落格
 
 我們提供一系列部落格文章、內容涵蓋ONTAP Select 各種不同層面。
 
@@ -51,7 +51,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 
 
-=== 社群
+== 社群
 
 您可以與其他使用者聯絡、詢問問題並協助NetApp ONTAP Select 解決方案社群。
 
@@ -60,7 +60,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 
 
-=== NetApp 互通性對照表工具
+== NetApp 互通性對照表工具
 
 互通性對照表工具包含詳細的組態與產品支援資訊。
 
