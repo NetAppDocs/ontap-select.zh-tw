@@ -744,17 +744,11 @@
   <block id="a1b2fc65ee3382a95ecb29d66110e2ad" category="paragraph">您應該備份ONTAP Select 「不再部署」組態資料。</block>
   <block id="7807c1892c85ba4af2d3c779c7823c25" category="summary">使用容量資源池授權模式時適用的限制如下所示。</block>
   <block id="12a600320f268cb8d694ea9ca7d2f40b" category="doc">容量集區授權的部署限制</block>
-  <block id="06be3d2851694a8ac21502e41f3e4305" category="section-title">每個叢集的授權模式一致</block>
   <block id="3e786bde6715be4e14e3475dd6ed4cce" category="paragraph">單ONTAP Select 一資料叢集內的所有節點都必須使用相同的授權模式、例如容量層級或容量資源池。您無法在單一叢集內混合使用節點的授權類型。</block>
-  <block id="4b0e422dcf415e37a99fb9240372b2e7" category="section-title">叢集中的所有節點都使用相同的授權管理員執行個體</block>
   <block id="1698dae6a4f7df9ce924018053e98157" category="paragraph">所有在一個叢集中具有容量集區授權的節點ONTAP Select 、都必須使用相同的授權管理員執行個體。由於每個部署執行個體中都有一個授權管理員執行個體、因此此限制重新說明叢集中所有節點必須由同一個部署執行個體管理的現有需求。</block>
-  <block id="02adb22963ca335394cfa32d81eb77c1" category="section-title">每個節點一個容量資源池</block>
   <block id="44f8a5fada3e18e6f15ff271b3edc087" category="paragraph">每個節點都可以從一個容量資源池租用儲存設備。節點無法使用兩個以上的資源池。</block>
-  <block id="b738a2037fc94e2290be56df30341770" category="section-title">HA配對中節點的相同資源池</block>
   <block id="9f9dee89e91dda6c0bed11a752b85182" category="paragraph">單一HA配對中的兩個節點都必須從相同的容量資源池租用儲存設備。不過、同一個叢集內的不同HA配對可以從同一個授權管理員所管理的不同資源池租用儲存設備。</block>
-  <block id="affb254e2447d7a107f972ff759efbb0" category="section-title">儲存授權期間</block>
   <block id="ae060de04aca5e325886869d3119eab9" category="paragraph">從NetApp取得儲存授權時、您必須選擇授權期間。例如、授權的有效時間可能為一年。</block>
-  <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="section-title">資料Aggregate租用期間</block>
   <block id="3684db008f18e1ffdeda56bf51708696" category="paragraph">當某個節點要求資料Aggregate的儲存租賃時、授權管理員會根據容量集區的組態、提供特定期間的租賃。ONTAP Select您可以設定每個資源池在一小時到七天之間的租用期間。預設的租用期間為24小時。</block>
   <block id="c56f96d077c10fb4c4d1ce83cf5edfaa" category="section-title">指派給部署的靜態IP位址</block>
   <block id="987ded954f3b3c95296c03ab6b45ec09" category="paragraph">使用容量集區授權時、您必須為部署管理公用程式指派靜態IP位址。</block>
@@ -1611,7 +1605,6 @@
   <block id="9dd37a863a3425f3f1c4f538142509e4" category="admonition">您也可以使用命令列介面來管理ONTAP Select 功能。如需詳細資訊、請參閱「使用CLI」一節。</block>
   <block id="c4d963c19242b00c1072fff4f0eea04d" category="section-title">執行其他ONTAP 的功能組態</block>
   <block id="0fb174aac34fc88ecff0007976e876b6" category="paragraph">部署完一個叢集之後、您就可以設定及管理叢集、就像使用硬體型的作業系統一樣。ONTAP Select ONTAP例如OnCommand 、您可以使用「列舉系統管理程式」或ONTAP 「參考資料」CLI來設定ONTAP Select 這個叢集。</block>
-  <block id="f2d299d92bba14c1b1251b504639222c" category="section-title">NetApp用戶端軟體</block>
   <block id="da70b9ce263d0deac21a9bdc090db697" category="paragraph">您可以ONTAP Select 使用下列支援的NetApp用戶端軟體連線至支援的解決方案：</block>
   <block id="d9c98a8b6e04d84858048370d4a88105" category="list-text">系統管理程式OnCommand</block>
   <block id="9504a3fa6a28404c323a25da156b03a2" category="list-text">統一化管理程式OnCommand</block>
@@ -1623,12 +1616,10 @@
   <block id="189d1cb951ac55dbbc9b4e50417cce4a" category="paragraph">若要識別支援的用戶端軟體版本、請檢閱_NetApp互通性對照表工具_。如果用戶端軟體支援ONTAP SJ9、ONTAP Select 則相同版本也可支援該功能。</block>
   <block id="b3e69561c86e401b4332c1e91fa71151" category="admonition">使用不必要的程式集和對應的外掛程式時、需要伺服器型授權。SnapCenter目前不支援使用支援的儲存系統SnapCenter 授權功能。ONTAP Select</block>
   <block id="aef13422544b986f17fc92f060a8874e" category="paragraph">不支援任何其他未列入清單的NetApp用戶端軟體ONTAP Select 。</block>
-  <block id="91aa06ef59aa905f170919b05e594df9" category="section-title">可能的組態選項</block>
   <block id="8959cdd9b2a6cd26717de49f0b4bbbb0" category="paragraph">在設定叢集時、有幾種可用的選項、包括：</block>
   <block id="620e81c66c131f0b1e414614fed0e418" category="list-text">建立網路組態</block>
   <block id="cea548261425f3d897f63b97e936d640" category="list-text">配置您的集合體</block>
   <block id="fbe12f72d0ac5802617b4f23c55e5e59" category="list-text">建立資料儲存虛擬機器（SVM）</block>
-  <block id="42cac712a9acf93c75659c9fa981f95f" category="section-title">購買具有儲存容量的授權</block>
   <block id="c644c0897d8dc8d07dc010b0a5d1b341" category="paragraph">如果您決定不安裝儲存容量的授權檔案、作為部署ONTAP Select 此叢集的一部分、則必須在使用購買授權執行的叢集寬限期到期之前、取得並安裝授權檔案。</block>
   <block id="92d7efa0a9c4eca7052897e58341d0b6" category="paragraph">部署管理公用程式會從ONTAP Select 可用的資料存放區空間（例如Pool0和Pool1）、在每個節點上建立資料備援磁碟。若要在多節點叢集上實作資料的高可用度、您必須使用這些備援磁碟來建立鏡射Aggregate。</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">您可以使用命令列介面、就地升級現有的部署公用程式虛擬機器。</block>
@@ -1894,7 +1885,6 @@
   <block id="fc33e5682a7d6ccc0d64dac217fb6d25" category="summary">如果ONTAP Select 您未執行最新版本、則可取得先前版本的更新文件。</block>
   <block id="245ffbb9d9e1af7e4e1bfde85cc60e07" category="doc">舊版ONTAP Select 的版本的不適用資料</block>
   <block id="8a088d567fa6e887a32f49c59fcc4049" category="paragraph">如果ONTAP Select 您未執行最新版本、則可取得先前版本的更新文件。您也可以在使用KVM Hypervisor搭配先前支援的版本時、存取所需的文件。</block>
-  <block id="8981745d05aab5e343666492d376dd4c" category="section-title">更新版本ONTAP Select</block>
   <block id="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="list-text"><block ref="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="inline-link-rx"></block></block>
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">所有Python指令碼都會在單一模組中使用通用的Python類別。</block>
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支援模組</block>
@@ -2557,7 +2547,6 @@
   <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="section-title">ESX上的vCenter是否需要ONTAP Select 執行？</block>
   <block id="b4d2427e0e7f2bd7b89ea60f5ad063d9" category="paragraph">如果ESX主機獲得適當授權、則不需要由vCenter Server管理ESX主機。不過、如果主機是由vCenter伺服器管理、則您必須設定ONTAP 使用該vCenter Server的VMware vCenter Deploy。換句話說、ONTAP 如果ESX主機正由vCenter Server主動管理、則無法在VMware部署中將其設定為獨立主機。請注意ONTAP 、由於ONTAP Select VMotion或VMware HA事件、所以使用vCenter來追蹤ESXi主機之間的所有VMware移轉。</block>
   <block id="3690bfca39d229721656be52d6e38df1" category="section-title">什麼是軟體RAID？</block>
-  <block id="45a5b2791e77165a65a09eb1c8ab39be" category="paragraph">無需RAID控制器、即可使用伺服器。ONTAP Select軟體RAID僅支援SSD。不支援其他磁碟機類型（包括NVMe）。此功能必須仍位於虛擬化分割區（儲存資源池或資料存放區）內、ONTAP Select 才能執行此功能。使用RD2（根資料資料分割）分割SSD。ONTAP Select因此ONTAP Select 、這個實體磁碟分割位於用於資料集合體的同一個實體磁碟上。不過、根Aggregate、開機磁碟和核心虛擬化磁碟並不會計入容量授權。</block>
   <block id="e9004de7dd880f639c21be0197d03eb6" category="paragraph">所有AFF/FAS上可用的RAID方法也可供ONTAP Select VMware使用。這包括RAID 4 RAID DP 、效能不均和RAID-TEC 不含SSD的最小數量視所選的RAID組態類型而定。最佳實務做法至少需要一部備援磁碟機。備用磁碟和同位元檢查磁碟不會計入容量授權。</block>
   <block id="4e0891be88802b935c566dc6245269b2" category="section-title">軟體RAID與硬體RAID組態有何不同？</block>
   <block id="22e0f3c76aa3f16b504047703ee442db" category="paragraph">軟體RAID是ONTAP 整個過程中的一層。軟體RAID提供更多管理控制、因為實體磁碟機已分割成ONTAP Select 實體磁碟、並可作為支援該虛擬機器的原始磁碟使用。雖然使用硬體RAID時、通常只有一個大型LUN可供使用、然後再將其分割出來、以建立ONTAP Select 在VMware內部可見的VMDISK。軟體RAID可作為選項使用、而不需使用硬體RAID。</block>
@@ -3651,4 +3640,8 @@
   <block id="aabad23ff55f6490dcedde7b5fc7b430" category="cell">4個10GbE或2個25/40GbE</block>
   <block id="e329a903fac418f23c3deeab45b989ff" category="paragraph">當有足夠的硬體可用時、NetApp建議使用下圖所示的多重交換器組態、因為新增了實體交換器故障防護功能。</block>
   <block id="cf3d9f4201951d721713f10886d41ddb" category="list-text">支援SSD或NVMe</block>
+  <block id="962977c7a55570a3e19ef88b744147a7" category="paragraph">提供三種平台授權方案。</block>
+  <block id="20f809b70a876834d72604dfbfe98104" category="section-title">不含更新版本ONTAP Select</block>
+  <block id="9b80340c4530b90196798dcf94e75bd0" category="list-text"><block ref="c067844a81e7c795b1a0cf80bc733e0a" category="inline-link-rx"></block></block>
+  <block id="ce069f22ea6686ee5804f79668ad2604" category="paragraph">不需硬體RAID控制器、即可使用伺服器。ONTAP Select在這種情況下、RAID功能會在軟體中實作。使用軟體RAID時、支援SSD和NVMe磁碟機。此功能必須仍位於虛擬化分割區（儲存資源池或資料存放區）內、ONTAP Select 才能執行此功能。使用RD2（根資料資料分割）分割SSD。ONTAP Select因此ONTAP Select 、這個實體磁碟分割位於用於資料集合體的同一個實體磁碟上。不過、根Aggregate、開機磁碟和核心虛擬化磁碟並不會計入容量授權。</block>
 </blocks>

@@ -18,7 +18,7 @@ summary: 如果ONTAP Select 您未執行最新版本、則可取得先前版本�
 
 
 
-===== 更新版本ONTAP Select
+===== 不含更新版本ONTAP Select
 
-* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["產品庫ONTAP Select"^]
 

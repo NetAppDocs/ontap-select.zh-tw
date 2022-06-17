@@ -34,13 +34,13 @@ NetApp解決方案適用於SDS市場。ONTAP SelectNetApp將企業級儲存管�
 
 
 
-===== 節點ONTAP Select
+=== 節點ONTAP Select
 
 一個由一個、兩個、四個、六個或八個節點組成的叢集。ONTAP Select每個叢集節點都會部署為獨立的虛擬機器、並執行ONTAP 特別設計的版本的更新版本。
 
 
 
-===== 部署管理公用程式ONTAP Select
+=== 部署管理公用程式ONTAP Select
 
 部署管理公用程式是以獨立的Linux虛擬機器進行封裝與安裝。您必須使用公用程式、在ONTAP Select 正式作業環境中部署叢集。Deploy公用程式隨附目前版本ONTAP Select 的ImageNode映像。
 
@@ -63,25 +63,25 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 
 
-===== 不同的HA架構
+=== 不同的HA架構
 
 根據您在叢集中定義的節點數量、ONTAP Select 功能可提供HA功能。例如、四節點叢集由兩個HA配對組成。搭配使用的HA架構ONTAP Select 是以非共享儲存模式為基礎。也就是HA配對中的一個節點無法直接存取另一個節點所擁有的儲存設備。此設計可能會影響ONTAP Select 某些功能特性。
 
 
 
-===== 容量授權
+=== 容量授權
 
 介紹消費型授權模式。ONTAP Select在ONTAP Select 正式作業環境中部署一個叢集時、您必須為每個節點或共享容量資源池購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。
 
 
 
-===== 功能授權ONTAP
+=== 功能授權ONTAP
 
 在一個叢集中的每個節點ONTAP Select 都會自動獲得使用數ONTAP 個功能的授權。您不需要手動安裝或套用這些功能授權。
 
 
 
-===== 不支援的支援功能ONTAP ONTAP Select
+=== 不支援的支援功能ONTAP ONTAP Select
 
 不支援多項支援的功能。ONTAP ONTAP Select在大多數情況下、這些功能都需要虛擬ONTAP Select 化的故障環境中無法使用的特殊硬體。
 
