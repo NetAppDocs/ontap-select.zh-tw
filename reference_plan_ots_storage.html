@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:40:43 +0000">06/17/2022</time>
     
   
 
@@ -1916,8 +1916,8 @@
 <div class="paragraph">
 <p>在ONTAP Select VMware ESXi Hypervisor上部署VMware ESXi叢集時、您可以使用ONTAP Select 由VMware提供的軟體RAID功能、而非使用本機硬體RAID控制器。在使用軟體RAID部署叢集之前、您必須先瞭解幾項需求與限制。</p>
 </div>
-<div class="sect3">
-<h4 id="一般要求">一般要求</h4>
+<div class="sect2">
+<h3 id="一般要求">一般要求</h3>
 <div class="paragraph">
 <p>VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：</p>
 </div>
@@ -1982,7 +1982,7 @@
 <img src="/us-en/ontap-select/images/note.svg" alt="附註">
 </td>
 <td class="content">
-如果有硬體RAID控制器、請參閱 <a href="concept_stor_concepts_chars.html">"儲存設備"</a> 有關其他組態需求、請參閱_深入探討_下的一節。
+如果有硬體RAID控制器、請參閱 <a href="concept_stor_concepts_chars.html">"深度儲存"</a> 一節以瞭解其他組態需求。
 </td>
 </tr>
 </table>
@@ -1995,8 +1995,8 @@
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="節點組態ontap-select">節點組態ONTAP Select</h4>
+<div class="sect2">
+<h3 id="節點組態ontap-select">節點組態ONTAP Select</h3>
 <div class="paragraph">
 <p>您必須依照ONTAP Select 下列方式設定每個節點和Hypervisor主機、以將系統磁碟與根磁碟和資料集合體分開：</p>
 </div>
@@ -2034,14 +2034,14 @@
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="正在計算原始儲存容量">正在計算原始儲存容量</h4>
+<div class="sect2">
+<h3 id="正在計算原始儲存容量">正在計算原始儲存容量</h3>
 <div class="paragraph">
 <p>此功能對應於連接到該虛擬機器的虛擬資料和根磁碟的總允許大小。ONTAP Select ONTAP Select在分配容量時、您應該考慮這一點。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="單節點叢集的最小儲存容量">單節點叢集的最小儲存容量</h4>
+<div class="sect2">
+<h3 id="單節點叢集的最小儲存容量">單節點叢集的最小儲存容量</h3>
 <div class="paragraph">
 <p>在單一節點叢集中分配給節點的儲存資源池大小下限為：</p>
 </div>
@@ -2059,8 +2059,8 @@
 <p>正式作業部署的最低配置為1 TB的使用者資料、加上各種ONTAP Select 內部流程所使用的約266 GB資料、這被視為必要的例行成本。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="多節點叢集的最低儲存容量">多節點叢集的最低儲存容量</h4>
+<div class="sect2">
+<h3 id="多節點叢集的最低儲存容量">多節點叢集的最低儲存容量</h3>
 <div class="paragraph">
 <p>為多節點叢集中的每個節點配置的儲存資源池大小下限為：</p>
 </div>
@@ -2090,8 +2090,8 @@ HA配對中的每個節點都必須具有相同的儲存容量。
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="儲存容量與多個儲存資源池">儲存容量與多個儲存資源池</h4>
+<div class="sect2">
+<h3 id="儲存容量與多個儲存資源池">儲存容量與多個儲存資源池</h3>
 <div class="paragraph">
 <p>使用本機直接附加儲存設備、VMware vSAN或外部儲存陣列時、您可以將每ONTAP Select 個節點設定為使用高達400 TB的儲存容量。不過、使用直接附加儲存設備或外部儲存陣列時、單一儲存資源池的最大容量為64 TB。因此、如果您計畫在這些情況下使用超過64 TB的儲存設備、則必須依照下列方式配置多個儲存資源池：</p>
 </div>
@@ -2118,14 +2118,14 @@ HA配對中的每個節點都必須具有相同的儲存容量。
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="儲存容量與vmware-vsan">儲存容量與VMware vSAN</h4>
+<div class="sect2">
+<h3 id="儲存容量與vmware-vsan">儲存容量與VMware vSAN</h3>
 <div class="paragraph">
 <p>使用VMware vSAN時、資料存放區可能大於64 TB。不過、建立ONTAP Select 這個叢集時、您一開始最多只能配置64 TB。建立叢集之後、您可以從現有的vSAN資料存放區分配額外的儲存空間。可由ONTAP Select 功能區使用的vSAN資料存放區容量、是以VM儲存原則集為基礎。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="最佳實務做法">最佳實務做法</h4>
+<div class="sect2">
+<h3 id="最佳實務做法">最佳實務做法</h3>
 <div class="paragraph">
 <p>您應該考慮下列有關Hypervisor核心硬體的建議：</p>
 </div>
@@ -2157,27 +2157,16 @@ HA配對中的每個節點都必須具有相同的儲存容量。
 </tr>
 </table>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">標準</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">標準</div>
 <ul>
 <li>
 <p>8至60個內部HDD（NL-SAS、SATA、10K SAS）</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">優質</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">優質</div>
 <ul>
 <li>
 <p>8至60個內部HDD（NL-SAS、SATA、10K SAS）</p>
@@ -2187,14 +2176,8 @@ HA配對中的每個節點都必須具有相同的儲存容量。
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">優質XL</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">優質XL</div>
 <ul>
 <li>
 <p>8至60個內部HDD（NL-SAS、SATA、10K SAS）</p>
@@ -2206,11 +2189,6 @@ HA配對中的每個節點都必須具有相同的儲存容量。
 <p>4至14個內部NVMe</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</dd>
-</dl>
 </div>
 <div class="admonitionblock note">
 <table>

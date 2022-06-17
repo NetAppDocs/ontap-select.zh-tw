@@ -1827,15 +1827,13 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:40:43 +0000">06/17/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>提供的儲存效率選項類似於介紹在功能性和功能性上的儲存效率選項。ONTAP Select FAS AFF</p>
 </div>
@@ -1911,9 +1909,6 @@ Cross Volume Background Deduplication:  true</pre>
 </div>
 <div class="paragraph">
 <p>下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視ONTAP Select 乎版本和媒體類型而定。</p>
-</div>
-<div class="paragraph">
-<p><strong>不適用儲存效率組態</strong> ONTAP Select</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2028,19 +2023,19 @@ Cross Volume Background Deduplication:  true</pre>
 <div class="paragraph">
 <p>DAS SSD上的[Small（小型）<mark>1^ONTAP Select 9.4（需要Premium授權）允許使用Aggregate層級背景跨Volume掃描器來刪除Aggregate中的現有資料。這項一次性作業是針對在DAS SSD上建立9.4之前的磁碟區手動執行的。</mark>[Small ]<mark><sup>2</sup>ONTAP Select 9.3（需要Premium授權）支援集合體層級的背景重複資料刪除；不過、建立集合體之後必須啟用此功能。</mark>[Small ]<mark><sup>3</sup>ONTAP Select 9.5 vNAS預設不支援任何儲存效率原則。請參閱vNAS一節、以取得單一執行個體資料記錄（SIDL）的詳細資料。</mark>[Small（小）<mark><sup>4</sup>ONTAP Select 9.6支援新的授權（Premium XL）和新的VM大小（大）。不過、大型VM僅支援使用軟體RAID的DAS組態。目前ONTAP Select 版本中的大型版不支援硬體RAID和vNAS組態。</mark></p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="das-ssd組態的升級行為注意事項">DAS SSD組態的升級行為注意事項</h4>
 <div class="paragraph">
 <p>升級ONTAP Select 至版本S區時、請等待「系統節點升級還原show」命令、表示升級已完成、然後再驗證現有磁碟區的儲存效率值。</p>
 </div>
 <div class="paragraph">
 <p>在升級至ONTAP Select 版本為NetApp 9.5或更新版本的系統上、在現有集合體或新建立的集合體上建立的新磁碟區、其行為與在全新部署上建立的磁碟區相同。進行ONTAP Select 程式碼更新的現有磁碟區、與新建立的磁碟區具有大部分相同的儲存效率原則、但有一些差異：</p>
 </div>
-<div class="paragraph">
-<p>*案例1*如果在升級前未在磁碟區上啟用儲存效率原則、則：</p>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">案例1</dt>
+<dd>
+<p>如果在升級之前未在磁碟區上啟用任何儲存效率原則、則：</p>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -2054,9 +2049,14 @@ Cross Volume Background Deduplication:  true</pre>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>*案例2 *如果在升級之前某個磁碟區已啟用部分儲存效率、則：</p>
 </div>
+</div>
+</dd>
+<dt class="hdlist1">案例2</dt>
+<dd>
+<p>如果在升級之前、某個磁碟區已啟用部分儲存效率、則：</p>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -2074,11 +2074,12 @@ Cross Volume Background Deduplication:  true</pre>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="das-hdd組態的升級行為注意事項">DAS HDD組態的升級行為注意事項</h4>
+</div>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
 <p>升級至ONTAP Select 版本S9.5或更新版本之後、將保留升級之前啟用的儲存效率功能。如果在升級之前未啟用儲存效率、則不會在升級後啟用儲存效率。</p>
-</div>
 </div>
 
     </article>

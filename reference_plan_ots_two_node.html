@@ -1827,22 +1827,16 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:40:43 +0000">06/17/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>部署具有HA的雙節點叢集時、必須使用與其他叢集節點組態相同的規劃與組態。不過、在建立雙節點叢集時、您應該注意幾個差異。</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="目標環境">目標環境</h4>
 <div class="paragraph">
 <p>雙節點叢集由一組HA配對組成、專為遠端辦公室和分公司部署所設計。</p>
 </div>
@@ -1858,15 +1852,9 @@
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="授權">授權</h4>
 <div class="paragraph">
 <p>您可以使用任何VMware vSphere授權來部署雙節點叢集。不過、VMware ROBO標準與進階授權是遠端與分公司部署的理想選擇。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="中介服務">中介服務</h4>
 <div class="paragraph">
 <p>當叢集由兩個節點組成時、當節點故障或失去通訊時、就無法達到所需的仲裁量。為了解決這些類型的腦分割情況、ONTAP Select 每個執行個體的示例都包含一個中介服務。此服務會連線至作用中雙節點叢集中的每個節點、以監控HA配對並協助管理故障。中介服務會在每個雙節點叢集相關的專用iSCSI目標上維護HA狀態資訊。</p>
 </div>
@@ -1882,24 +1870,14 @@
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="叢集和中介服務的位置">叢集和中介服務的位置</h4>
 <div class="paragraph">
 <p>由於雙節點叢集通常部署在遠端或分公司、因此它們可以遠端從公司資料中心部署、而部署公用程式則提供管理支援。使用此組態、部署公用程式與叢集之間的管理流量會透過WAN傳輸。如需限制與限制的詳細資訊、請參閱版本說明。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="備份部署組態資料">備份部署組態資料</h4>
 <div class="paragraph">
 <p>最佳做法是定期備份部署組態資料、包括在建立叢集之後。這對雙節點叢集而言特別重要、因為備份中包含了中介組態資料。</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="指派給部署的靜態ip位址">指派給部署的靜態IP位址</h4>
 <div class="paragraph">
 <p>您必須為部署管理公用程式指派靜態IP位址。此需求適用於管理一ONTAP Select 或多個雙節點叢集的所有部署執行個體。</p>
-</div>
 </div>
 
     </article>

@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 19:40:43 +0000">06/17/2022</time>
     
   
 
@@ -1841,8 +1841,9 @@
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="虛擬交換器選項">虛擬交換器選項</h4>
+<div class="sect1">
+<h2 id="虛擬交換器選項">虛擬交換器選項</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>您必須在ONTAP Select 每個支援外部網路和內部網路的各個支援主機上設定虛擬交換器（僅限多節點叢集）。在部署多節點叢集時、您應該測試內部叢集網路上的網路連線能力。</p>
 </div>
@@ -1859,8 +1860,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="升級至vmxnet3">升級至VMXNET3</h4>
+</div>
+<div class="sect1">
+<h2 id="升級至vmxnet3">升級至VMXNET3</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將現有ONTAP Select 的S還原 節點升級至9.5版或更新版本、則不會自動升級驅動程式。</p>
 </div>
@@ -1877,8 +1880,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="叢集mtu">叢集MTU</h4>
+</div>
+<div class="sect1">
+<h2 id="叢集mtu">叢集MTU</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>另有一個內部網路可用來連接ONTAP Select 多節點叢集中的各個節點。此網路的MTU大小通常為9000。然而、在某些情況下、此MTU尺寸太大、無法連接ONTAP Select 到連接到各個節點的網路。為了容納較小的框架、ONTAP Select 內部網路上使用的MTU大小可以介於7500-9000位元組之間。</p>
 </div>
@@ -1911,8 +1916,10 @@
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="採用標準vswitch的雙nic主機">採用標準vSwitch的雙NIC主機</h4>
+</div>
+<div class="sect1">
+<h2 id="採用標準vswitch的雙nic主機">採用標準vSwitch的雙NIC主機</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>為了在ONTAP Select 雙NIC組態中改善效能、您應該使用兩個連接埠群組來隔離內部和外部網路流量。本建議適用於下列特定組態：</p>
 </div>
@@ -1932,13 +1939,8 @@
 <div class="paragraph">
 <p>在此環境中、您應該使用下列兩個連接埠群組來設定流量：</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">連接埠群組1</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組1</div>
 <ul>
 <li>
 <p>內部網路（叢集、RSM、HA-IC流量）</p>
@@ -1951,14 +1953,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">連接埠群組2.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組2.</div>
 <ul>
 <li>
 <p>外部網路（資料與管理流量）</p>
@@ -1971,17 +1967,14 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
-<p>如需雙NIC部署的詳細資訊、請參閱_深入探討_一節。</p>
+<p>請參閱 <a href="concept_nw_concepts_chars.html">"深入探討網路"</a> 一節以取得有關雙NIC部署的詳細資訊。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="配備標準vswitch的四個nic主機">配備標準vSwitch的四個NIC主機</h4>
+</div>
+<div class="sect1">
+<h2 id="配備標準vswitch的四個nic主機">配備標準vSwitch的四個NIC主機</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>為了在ONTAP Select 四NIC組態中改善效能、您應該使用四個連接埠群組來隔離內部和外部網路流量。本建議適用於下列特定組態：</p>
 </div>
@@ -2001,13 +1994,8 @@
 <div class="paragraph">
 <p>在此環境中、您應該使用下列四個連接埠群組來設定流量：</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">連接埠群組1</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組1</div>
 <ul>
 <li>
 <p>內部網路（叢集、RSM流量）</p>
@@ -2020,14 +2008,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">連接埠群組2.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組2.</div>
 <ul>
 <li>
 <p>內部網路（叢集、HA-IC流量）</p>
@@ -2040,14 +2022,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">連接埠群組3.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組3.</div>
 <ul>
 <li>
 <p>外部網路（資料與管理流量）</p>
@@ -2060,14 +2036,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">連接埠群組4.</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
+<div class="title">連接埠群組4.</div>
 <ul>
 <li>
 <p>外部網路（資料流量）</p>
@@ -2080,27 +2050,20 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
-<p>如需四NIC部署的詳細資訊、請參閱_深入探討_一節。</p>
+<p>請參閱 <a href="concept_nw_concepts_chars.html">"深入探討網路"</a> 一節以取得有關四個NIC部署的詳細資訊。</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="網路流量需求">網路流量需求</h4>
+</div>
+<div class="sect1">
+<h2 id="網路流量需求">網路流量需求</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>您必須確保防火牆設定正確、以便讓網路流量能在ONTAP Select 整個部署環境的各個參與者之間流通。</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">參與者</dt>
-<dd>
+<div class="paragraph">
 <p>有幾位參與者或實體在ONTAP Select 進行內部部署時、會交換網路流量。這些內容將會介紹、然後用於網路流量需求的摘要說明中。</p>
-<div class="openblock">
-<div class="content">
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2123,14 +2086,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">網路流量需求摘要</dt>
-<dd>
+<div class="paragraph">
 <p>下表說明ONTAP Select 進行不完整部署的網路流量需求。</p>
-</dd>
-</dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2188,6 +2145,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
     </article>
