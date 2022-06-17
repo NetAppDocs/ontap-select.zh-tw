@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:38:40 +0000">06/17/2022</time>
     
   
 
@@ -1841,14 +1841,17 @@
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="hypervisor主機與ontap-select-非節點">Hypervisor主機與ONTAP Select 非節點</h5>
+<div class="sect1">
+<h2 id="hypervisor主機與ontap-select-非節點">Hypervisor主機與ONTAP Select 非節點</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Hypervisor主機_是裝載ONTAP Select 一個整套虛擬機器的核心硬體平台。當在Hypervisor主機上部署及啟用某部支援的虛擬機器時、該虛擬機器被視為_這個節點_。ONTAP Select ONTAP Select在部署REST API的第3版中、主機和節點物件是分開且獨立的。這可建立一對多關係、讓一或多ONTAP Select 個支援節點可在同一個Hypervisor主機上執行。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="物件識別碼">物件識別碼</h5>
+</div>
+<div class="sect1">
+<h2 id="物件識別碼">物件識別碼</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>每個資源執行個體或物件在建立時都會指派一個唯一的識別碼。這些識別碼在ONTAP Select 特定的例子中是全域唯一的。在發出API呼叫以建立新的物件執行個體之後、相關的ID值會傳回HTTP回應的「位置」標頭中的呼叫者。您可以擷取識別碼、並在參照資源執行個體時用於後續通話。</p>
 </div>
@@ -1865,14 +1868,18 @@
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="要求識別碼">要求識別碼</h5>
+</div>
+<div class="sect1">
+<h2 id="要求識別碼">要求識別碼</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>每個成功的API要求都會指派一個唯一的識別碼。該識別碼會傳回相關HTTP回應的「quale-id」標頭中。您可以使用要求識別碼、統稱為單一特定API要求回應交易的活動。例如、您可以根據要求ID擷取交易的所有事件訊息。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="同步和非同步呼叫">同步和非同步呼叫</h5>
+</div>
+<div class="sect1">
+<h2 id="同步和非同步呼叫">同步和非同步呼叫</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>伺服器執行從用戶端接收的HTTP要求的主要方法有兩種：</p>
 </div>
@@ -1887,8 +1894,10 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="確認已完成長期執行的工作">確認已完成長期執行的工作</h5>
+</div>
+<div class="sect1">
+<h2 id="確認已完成長期執行的工作">確認已完成長期執行的工作</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>一般而言、任何可能需要很長時間才能完成的作業、都會使用伺服器的背景工作、以非同步方式處理。使用部署REST API時、每個背景工作都會以工作物件來鎖定、此工作物件會追蹤工作並提供資訊、例如目前狀態。工作物件（包括其唯一識別碼）會在建立背景工作之後、傳回HTTP回應中。</p>
 </div>
@@ -1909,8 +1918,10 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="安全性">安全性</h5>
+</div>
+<div class="sect1">
+<h2 id="安全性">安全性</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>部署API使用下列安全技術：</p>
 </div>
@@ -1923,6 +1934,7 @@
 <p>HTTP驗證基本驗證適用於每個API交易。每個要求都會新增一個HTTP標頭、其中包含基礎64字串中的使用者名稱和密碼。</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 

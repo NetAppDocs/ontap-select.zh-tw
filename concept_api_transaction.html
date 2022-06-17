@@ -1827,7 +1827,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+    <time datetime="2022-06-17 11:38:40 +0000">06/17/2022</time>
     
   
 
@@ -1847,8 +1847,8 @@
 <div class="paragraph">
 <p>您可以透過HTTP要求中設定的參數來控制API呼叫的處理方式。</p>
 </div>
-<div class="sect4">
-<h5 id="要求標頭">要求標頭</h5>
+<div class="sect2">
+<h3 id="要求標頭">要求標頭</h3>
 <div class="paragraph">
 <p>您必須在HTTP要求中包含多個標頭、包括：</p>
 </div>
@@ -1866,8 +1866,8 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="申請本文">申請本文</h5>
+<div class="sect2">
+<h3 id="申請本文">申請本文</h3>
 <div class="paragraph">
 <p>申請本文的內容會因特定通話而有所不同。HTTP要求本文包含下列其中一項：</p>
 </div>
@@ -1882,8 +1882,8 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="篩選物件">篩選物件</h5>
+<div class="sect2">
+<h3 id="篩選物件">篩選物件</h3>
 <div class="paragraph">
 <p>發出使用Get的API呼叫時、您可以根據任何屬性來限制或篩選傳回的物件。例如、您可以指定要符合的確切值：</p>
 </div>
@@ -1943,8 +1943,8 @@
 <p>您也可以使用null關鍵字或其否定（！null）做為查詢的一部分、根據是否設定特定欄位來傳回一組物件。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="選取物件欄位">選取物件欄位</h5>
+<div class="sect2">
+<h3 id="選取物件欄位">選取物件欄位</h3>
 <div class="paragraph">
 <p>根據預設、使用Get發出API呼叫時、只會傳回唯一識別物件的屬性。這組最小欄位可做為每個物件的金鑰、而且會根據物件類型而有所不同。您可以使用「欄位查詢」參數、以下列方式選取其他物件屬性：</p>
 </div>
@@ -1974,8 +1974,8 @@
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="排序輸出集中的物件">排序輸出集中的物件</h5>
+<div class="sect2">
+<h3 id="排序輸出集中的物件">排序輸出集中的物件</h3>
 <div class="paragraph">
 <p>資源集合中的記錄會以物件定義的預設順序傳回。您可以使用order_by查詢參數、以下列欄位名稱和排序方向來變更順序：「order_bid=&lt;field name&gt; asc|desc」</p>
 </div>
@@ -1986,8 +1986,8 @@
 <p>包含多個參數時、您必須以逗號分隔欄位。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="分頁">分頁</h5>
+<div class="sect2">
+<h3 id="分頁">分頁</h3>
 <div class="paragraph">
 <p>使用Get存取同一類型物件的集合時發出API呼叫、預設會傳回所有相符的物件。如有需要、您可以使用main_Records查詢參數搭配要求來限制傳回的記錄數。例如：「ax_Records=20」</p>
 </div>
@@ -2006,8 +2006,8 @@
 <div class="paragraph">
 <p>每個API要求都會對用戶端產生回應。您可以檢查回應、判斷回應是否成功、並視需要擷取其他資料。</p>
 </div>
-<div class="sect4">
-<h5 id="http狀態代碼">HTTP狀態代碼</h5>
+<div class="sect2">
+<h3 id="http狀態代碼">HTTP狀態代碼</h3>
 <div class="paragraph">
 <p>部署REST API所使用的HTTP狀態代碼如下所述。</p>
 </div>
@@ -2078,8 +2078,8 @@
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="回應標頭">回應標頭</h5>
+<div class="sect2">
+<h3 id="回應標頭">回應標頭</h3>
 <div class="paragraph">
 <p>部署伺服器產生的HTTP回應中包含數個標頭、包括：</p>
 </div>
@@ -2094,8 +2094,8 @@
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="回應本文">回應本文</h5>
+<div class="sect2">
+<h3 id="回應本文">回應本文</h3>
 <div class="paragraph">
 <p>與API要求相關的回應內容會因物件、處理類型、以及要求的成功或失敗而有所不同。回應本文會以Json呈現。</p>
 </div>
