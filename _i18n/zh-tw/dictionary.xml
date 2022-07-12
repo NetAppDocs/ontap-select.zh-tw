@@ -2468,32 +2468,23 @@
   <block id="44c3d61a6cd78f834dce18458a846592" category="summary">尋找ONTAP Select 有關資訊的常見問題解答。</block>
   <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">常見問題集</block>
   <block id="0db377921f4ce762c62526131097968f" category="section-title">一般</block>
-  <block id="c6b782c04b8d8291349e195a70bb1261" category="paragraph">使用「部署」公用程式來建立叢集。ONTAP ONTAP Select目前ONTAP 、僅有使用「整合」功能來建立正式作業叢集。此外、也可使用「部署」功能來建立評估選擇叢集、讓用戶端能夠測試及記錄正式作業部署的實際步驟。ONTAP使用適當的容量層授權、且容量足以涵蓋評估期間所耗用的空間、即可將評估叢集轉換成正式作業叢集。ONTAP</block>
-  <block id="2e5fd46c08f1e360e7244898f93658b8" category="paragraph">「物件部署」是一部虛擬機器、內含一個影像：ONTAP ONTAP Select在叢集安裝期間ONTAP 、由於執行多項檢查、因此利用本功能可確保ONTAP Select 滿足不必要的要求。可分別升級「部署VM」和ONTAP 「選擇叢集」。</block>
   <block id="4bb58627c56be70a8962dc013fdfb0ff" category="paragraph">就像ONTAP 在FAS VMware上執行的一樣、效能資料應該使用perfstat公用程式來收集。以下是一個命令範例：</block>
-  <block id="2becc48369e0dbaa24ee48f84b0058db" category="section-title">如何存取Swagger API頁面ONTAP 以進行功能整合？</block>
   <block id="1b3537665f74d77bd14a7f35ea69a8f6" category="inline-link">Field Portal</block>
   <block id="fe31e162adece14e947931ec395b0f76" category="admonition">API v3版本與舊版API不相容。新的API指南可在上取得<block ref="8abbc2033805a13177ac70a4f745bc5f" category="inline-link-rx"></block>。</block>
   <block id="8574c34cb89a7035153d7bb68d64bc11" category="paragraph">不可以該VMware使用獨立的持續磁碟機、ONTAP Select 這些磁碟機不受VMware快照的限制。唯一支援ONTAP Select 的備份方法是SnapMirror、SnapVault SnapMirror或SVM DR（如適用）。</block>
   <block id="e94690a6bd2e3a6afb833fa13d4537cf" category="inline-link-macro">ng-ses-ontap-select@netapp.com</block>
   <block id="0376d45a7aa4df2f496c766df2ba6138" category="paragraph">聯絡人 <block ref="6ee1a7abfb73acadae70dd28dd795163" category="inline-link-macro-rx"></block>。</block>
-  <block id="a60184972c204a21558d6c041bcb25c7" category="paragraph">是的。可將此程式與無法更新的叢集分開升級。ONTAP ONTAP Select同樣地、Select叢集也可與ONTAP 整合式部署公用程式分開升級。</block>
   <block id="949d67eea88cdebc2a99963b2b02178d" category="paragraph">是的、Select叢集的升級程序與FAS 升級版的更新版的介紹完全相同、不過ONTAP Select 升級版的二進位檔則是從ONTAP 更新FAS 版的更新版二進位檔上的版本從無法更新的版本中下載的版本。</block>
   <block id="aa51945d1870dd55304c887631cab7dc" category="paragraph">是的、ONTAP Select 還原程序與FAS 還原程序幾乎相同、適用於一個叢集。但有幾個差異：</block>
   <block id="d7a59cd36e2f7dfae40f95771a024421" category="list-text">只有升級ONTAP Select 的版本無法還原、而且只能還原至原始安裝版本。新安裝無法還原至舊版程式碼、即使ONTAP Select 通常情況下、僅支援舊版的版本。</block>
   <block id="85e233caf564642a5e155bc4aac7d67a" category="list-text">對於使用軟體RAID的VMware（KVM）和VMware（ESX）、無法還原至不支援軟體RAID的舊版。ONTAP Select ONTAP Select此外ONTAP Select 、在ESX上新安裝的更新版本使用VMXNET3網路驅動程式、並在可能的情況下使用vNVE驅動程式。這些新安裝無法還原至ONTAP Select 舊版的更新版本。</block>
   <block id="52ecd883835a7af5f8d256d58d2abe6e" category="list-text">如果ONTAP Select 還升級到大型執行個體（使用Premium XL授權）、則不支援還原至9.6之前的舊版、因為舊版不提供大型執行個體功能。</block>
   <block id="b127099c71415d532da3a26ed73eb041" category="paragraph">是的。</block>
-  <block id="cd499bce08bf4664c44733ed843e8cf5" category="paragraph">使用GUI、CLI或REST API提供的叢集重新整理作業、即可透過下列功能識別出對下列功能的變更：ONTAP Select ONTAP</block>
   <block id="bbb35a1e775c0757714d8b256538794e" category="list-text">網路組態（IP位址、DNS、NTP、網路遮罩和閘道）</block>
   <block id="568db67896a68d00d01c4318b9923a4f" category="list-text">叢集、節點名稱和版本ONTAP Select</block>
   <block id="2512f4a6ef0d48270b57d0cdb82d209d" category="paragraph">下列的不一致VM變更也會被辨識：ONTAP Select</block>
   <block id="b9da6bd39757894ad2e3c186e8c36ea3" category="list-text">列舉虛擬機器名稱和狀態變更（例如線上或離線）ONTAP Select</block>
   <block id="8aa44dba68f081d2ac92bd3c8bd38375" category="list-text">主機網路名稱和儲存資源池名稱會變更</block>
-  <block id="490926f34ba2e91605a13dd0ab04babc" category="admonition">不ONTAP 支援變更不支援的靜態部署VM IP位址。</block>
-  <block id="a4d1732d8414a16110ff0dde392fb2be" category="paragraph">升級ONTAP 至支援使用支援這些變更的功能、適用於ONTAP Select 已部署但尚未變更原始組態的任何叢集。換句話說、如果ONTAP Select 使用System Manager或vCenter變更上述的VMware叢集屬性、則升級ONTAP 至VMware部署2.6將無法修正這些不一致的問題。必須先回復此功能的更新以供還原、才能將其獨特的中繼資料新增至每個支援功能VM。ONTAP Select ONTAP ONTAP Select</block>
-  <block id="0d8dc860287bf5742a796d9836676b4e" category="paragraph">是的。可在KVM或ESX上安裝支援、兩種安裝都能在任一Hypervisor上建立支援功能的叢集。ONTAP ONTAP Select</block>
-  <block id="b4d2427e0e7f2bd7b89ea60f5ad063d9" category="paragraph">如果ESX主機獲得適當授權、則不需要由vCenter Server管理ESX主機。不過、如果主機是由vCenter伺服器管理、則您必須設定ONTAP 使用該vCenter Server的VMware vCenter Deploy。換句話說、ONTAP 如果ESX主機正由vCenter Server主動管理、則無法在VMware部署中將其設定為獨立主機。請注意ONTAP 、由於ONTAP Select VMotion或VMware HA事件、所以使用vCenter來追蹤ESXi主機之間的所有VMware移轉。</block>
   <block id="e9004de7dd880f639c21be0197d03eb6" category="paragraph">所有AFF/FAS上可用的RAID方法也可供ONTAP Select VMware使用。這包括RAID 4 RAID DP 、效能不均和RAID-TEC 不含SSD的最小數量視所選的RAID組態類型而定。最佳實務做法至少需要一部備援磁碟機。備用磁碟和同位元檢查磁碟不會計入容量授權。</block>
   <block id="22e0f3c76aa3f16b504047703ee442db" category="paragraph">軟體RAID是ONTAP 整個過程中的一層。軟體RAID提供更多管理控制、因為實體磁碟機已分割成ONTAP Select 實體磁碟、並可作為支援該虛擬機器的原始磁碟使用。雖然使用硬體RAID時、通常只有一個大型LUN可供使用、然後再將其分割出來、以建立ONTAP Select 在VMware內部可見的VMDISK。軟體RAID可作為選項使用、而不需使用硬體RAID。</block>
   <block id="6ec2a86943d66b46f70e5d87ac537fd4" category="paragraph">軟體RAID的部分需求如下：</block>
@@ -2509,14 +2500,9 @@
   <block id="a2f6b74c2700adf79d2359dceccee7cf" category="paragraph">所有其他錯誤均由ONTAP 不含節點或四節點叢集的情形下由NetApp資源管理系統處理。如果Hypervisor伺服器需要更換、ONTAP Select 而需使用新伺服器重新組裝、請聯絡NetApp技術支援部門。</block>
   <block id="5328a869dd2ed37e5be32f4f227e54d6" category="paragraph">包括vSAN在內的所有組態均可支援每ONTAP Select 個節點400TB的儲存容量。</block>
   <block id="4906d0b814c398d1e0b3d033c584f66b" category="paragraph">在大於支援最大大小的資料存放區上安裝時、您必須在產品設定期間使用容量上限。</block>
-  <block id="d48125b82eab88f8f97d3cbd934f9020" category="paragraph">支援在一個節點上進行容量擴充作業的儲存新增工作流程。ONTAP ONTAP Select您可以使用相同資料存放區的空間（如果仍有可用空間）來擴充管理中的儲存設備、或是從個別的資料存放區新增空間。不支援將本機資料存放區與遠端資料存放區混合在同一個集合體中。</block>
   <block id="867e236daae335162d347f2d0854e90c" category="paragraph">儲存新增功能也支援軟體RAID。不過、在軟體RAID的情況下、ONTAP Select 必須將額外的實體磁碟機新增至該功能。在這種情況下、儲存設備的新增功能與管理FAS 一個堆集區或AFF 一個堆集區類似。使用ONTAP Select 軟體RAID將儲存設備新增至節點時、必須考慮RAID群組大小和磁碟機大小。</block>
-  <block id="e0ef569d3b92f974e287c6487419fc33" category="paragraph">適用於ESX的VMware部署與支援使用vSAN或外部陣列類型的資料存放區來設定用於其儲存集區的VMware ESX支援VMware單節點叢集。ONTAP ONTAP Select ONTAP Select</block>
-  <block id="b2e82bb6ebf7a285db78b37ec5279faf" category="paragraph">適用於KVM的支援使用共享邏輯儲存資源池類型、在外部陣列上設定支援使用一套功能的不支援任何功能的單節點叢集。ONTAP ONTAP Select ONTAP Select儲存資源池可以以iSCSI或FC/FCoE為基礎。不支援其他類型的儲存資源池。</block>
   <block id="b2cebb33547ec7cd6d45325915182e33" category="paragraph">支援共享儲存設備上的多節點HA叢集。</block>
   <block id="1c4bcbdad17c3e6c5160a856e917c777" category="paragraph">ESX和KVM均支援使用外部儲存設備（多節點vNAS）的多節點叢集。不支援在同一個叢集中混用Hypervisor。共享儲存設備上的HA架構仍暗示HA配對中的每個節點都有其合作夥伴資料的鏡射複本。然而、多節點叢集卻能帶來ONTAP 不中斷營運的好處、而非依賴VMware HA或KVM Live Motion的單節點叢集。</block>
-  <block id="451c47de1c3f6334f9423c8da1bbfe96" category="paragraph">儘管ONTAP 在ONTAP Select 同一部主機上支援多個支援的支援功能、但在ONTAP Select 建立叢集期間、不允許這些執行個體成為同一個支援叢集的一部分。對於ESX環境、NetApp建議建立VM反關聯規則、使VMware HA不會嘗試將多ONTAP Select 個VMware VM從同ONTAP Select 一個VMware叢集移轉到單一ESX主機上。此外、ONTAP 如果Sfor Deploy偵測到管理（使用者啟動）vMotion或ONTAP Select 即時移轉某個物件VM、導致違反我們的最佳實務做法、例如兩ONTAP Select 個以相同實體主機結尾的物件節點、 部署在部署GUI和記錄中張貼警示。ONTAP唯有透過叢集更新作業、才能讓非功能性部署人員知道其所在的位置、這是由更新叢集管理員手動執行的作業。ONTAP ONTAP Select ONTAP在支援主動監控的情況下、無法使用ONTAP 功能進行非功能性部署、而且警示只能透過部署GUI或記錄顯示。換句話說、此警示無法轉送到集中式監控基礎架構。</block>
-  <block id="e2c4fe906e93615ec189c955c0d4838b" category="paragraph">支援NSX-V VXLAN連接埠群組。若為多節點HA（包括ONTAP MetroCluster SfingSDS）、請務必將內部網路MTU設定在7500到8900之間（而非9000）、以因應VXLAN的負荷。內部網路MTU可在ONTAP 叢集部署期間以「功能不整合」進行設定。</block>
   <block id="68ab9deb89c2074e632b904895a25447" category="paragraph">在外部陣列儲存資源池上執行的支援虛擬機器可支援虛擬即時移轉。ONTAP Select</block>
   <block id="21805aa29c0279006893a37fa10cb7a0" category="paragraph">否、無論外部陣列或vSAN組態是否全部為Flash、均可支援所有版本。</block>
   <block id="b71c323c02a503e916ed60dc691b1996" category="paragraph">Select VM會繼承vSAN資料存放區儲存原則、而且不會限制FT/FTM設定。不過請注意ONTAP Select 、根據FTT/FTM設定、不只能大幅大於設定期間所設定的容量。使用設定期間建立的密集、零化VMDK。ONTAP Select為了避免影響使用相同共享資料存放區的其他VM、請務必在資料存放區中提供足夠的可用容量、以容納從Select容量和FTT/FTM設定衍生的真正Select VM大小。</block>
@@ -2524,17 +2510,10 @@
   <block id="203a7e4e4588684221382cfb5312ef84" category="paragraph">您可以使用單一10GE連接埠來連線至外部網路。不過、NetApp建議您僅在受限制的小型環境中使用此功能。ESX和KVM均支援此功能。</block>
   <block id="41fd632619fae4aba953abf6d07d3df1" category="paragraph">您必須在參與即時移轉的每個主機上安裝並執行開放原始碼CLVM和心臟起搏器（PC）元件。這是存取每個主機上相同磁碟區群組的必要條件。</block>
   <block id="e10ca1adb349a5228f7573a244805247" category="section-title">vCenter</block>
-  <block id="f267847c9d10a3da2620f3fd7257f49b" category="paragraph">利用VMware VIX API與vCenter和/或ESX主機進行通訊。ONTAPVMware文件指出、與vCenter Server或ESX主機的初始連線是使用TCP連接埠443上的HTTPS / SOAP來完成。這是透過TLS/SSL進行安全HTTP的連接埠。其次、會在TCP連接埠902的套接字上開啟ESX主機的連線。透過此連線傳輸的資料會以SSL加密。此外ONTAP 、支援功能可發出「ping」命令、驗證是否有ESX主機在您指定的IP位址上回應。</block>
-  <block id="750c22382ff5b5ed1b5f9c5f621bfcdd" category="paragraph">此外、還必須能夠與下列的節點和叢集管理IP位址進行通訊：ONTAP ONTAP Select</block>
-  <block id="829552de5af4841d069c0c97e16fdf26" category="paragraph">針對雙節點叢集、ONTAP 將叢集信箱託管在功能上。每ONTAP Select 個支援節點都必須ONTAP 能夠透過iSCSI（連接埠3260）進行支援。</block>
   <block id="9c4271cae508c2547495fd0674b419a9" category="paragraph">對於多節點叢集、內部網路必須完全開啟（無NAT或防火牆）。</block>
   <block id="a7e7272f62fd6ddeec2a8fce21757dbf" category="paragraph">此處提供所需的vCenter權限清單： <block ref="b5bc3984b5dc3be4e25e9aa47658f334" category="inline-link-macro-rx"></block>。</block>
-  <block id="78e81167cc2cdb113daa03a4b79cad3c" category="paragraph">您可以將ONTAP vCenter伺服器中的「VMware vCenter部署」功能與ONTAP 「VMware vCenter部署」外掛程式整合。請注意、外掛程式並不會取代ONTAP 「更新部署」。而ONTAP 非在背景中部署、vCenter管理員可利用ONTAP 外掛程式來叫用大部分的「VMware部署」功能。部分ONTAP 的功能部署作業只能使用CLI進行。</block>
-  <block id="dd77a72e33f72c895ec7720495c250e6" category="paragraph">只有一個ONTAP VMware vCenter部署VM可以在特定的vCenter伺服器上登錄其外掛程式。</block>
   <block id="9ec851379feeef4ed1ab5a6dc43d9043" category="paragraph">外掛程式可讓vCenter管理員和IT通才使用ONTAP Select vCenter HTML5 GUI來建立VMware叢集。請注意、不支援Flash vCenter GUI。</block>
-  <block id="ca918a509129a10753aef8ddaf9d4298" category="paragraph">此外ONTAP 、它也允許使用vCenter RBAC進行驗證。獲授予vCenter使用ONTAP 此功能的使用者、其vCenter帳戶會對應ONTAP 至該部署管理使用者。下列檔案可做為基本稽核記錄、以記錄每項作業的使用者ID：ONTAP</block>
   <block id="8aeec027b27415f6c0c3d1335de4508f" category="section-title">HA和叢集</block>
-  <block id="e14ff882f491987861548736abc771c5" category="paragraph">不像ONTAP 以供選擇的四節點、六節點和八節點叢集、以供選擇使用以整合虛擬機器來建立叢集、雙節點叢集會持續仰賴ONTAP 以供HA仲裁使用的功能為基礎的功能來部署虛擬機器。如果ONTAP 無法使用此功能、就會停用容錯移轉服務。</block>
   <block id="a6bd8e6869506e1e1f9d1c161d200e90" category="paragraph">不只是NetApp的「恢復營運不中斷」解決方案、更低成本的同步複寫選項。MetroCluster MetroCluster不像NetApp的《混合式Flash》、《支援雲端的NetApp私有儲存設備》、《NetApp支援雲端的私有儲存設備》、以及《NetApp支援》（NetApp）技術、這項功能只能搭配ONTAP Select 使用。MetroCluster FAS AFF FlexArray</block>
   <block id="f782a001664af23a9a479ac7f8af14db" category="paragraph">支援同步複寫解決方案的不只是NetApp的解決方案、MetroCluster MetroCluster然而、主要差異在於所支援的距離（約10公里與300公里）、以及連線類型（僅支援IP網路、而非FC與IP）。</block>
   <block id="e390fc325e0e3f48a60a9e0c68c6a1b2" category="paragraph">雙節點叢集定義為叢集、其中兩個節點位於同一個資料中心、彼此相距300公尺以內。一般而言、兩個節點都有上行鏈路可連至同一個網路交換器、或是透過交換器間連結連線的一組網路交換器。</block>
@@ -2545,20 +2524,12 @@
   <block id="07c54da58acb4aa2357d4d3f120a2439" category="paragraph">是的、雖然需要Premium授權、但此授權同時支援中小型VM、SSD和旋轉式媒體。</block>
   <block id="1490bd5ed0a28c21500eff09d45ae2c7" category="paragraph">否、只能將具有「內建器」的雙節點叢集設定為MetroCluster 「僅限」。</block>
   <block id="6596d8aee024f01bd6f7082e0f3f3510" category="paragraph">要求如下：</block>
-  <block id="e650fbdda78f050dd63013871de9f005" category="list-text">三個資料中心（一個用於ONTAP 「支援程式」、一個用於每個節點）。</block>
   <block id="d197104ead309ddefff131940caf98cb" category="list-text">5毫秒RTT和5毫秒的抖動、最大總長度為10毫秒、ONTAP Select 而整個實體距離則為10公里。</block>
-  <block id="af68dbff9b15dc3d9d049bbfe171ec66" category="list-text">125MS RTT、ONTAP 以及介於兩端部署調解器和ONTAP Select 每個節點之間的最低5Mbps頻寬。</block>
   <block id="662b3058ddf7c74b83c16f281c0f67ff" category="list-text">Premium或Premium XL授權。</block>
   <block id="78a6c1f8409fb1b96accc51e1971fbdb" category="paragraph">執行於vSAN資料存放區或外部陣列資料存放區（也就是vNAS部署）的VMware vCenter可支援VMotion、DRS及VMware HA功能。ONTAP Select</block>
-  <block id="34f8a8d7941722d10288c5eb02f7e59a" category="paragraph">所有組態均支援Storage VMotion、包括單節點和多節點ONTAP Select 的支援、以及ONTAP 部署虛擬機器的支援。Storage VMotion可用於在ONTAP Select 不同的VMFS版本（例如VMFS 5到VMFS 6）之間移轉功能不全ONTAP 或功能不全的虛擬機器、但不受此使用案例限制。最佳實務做法是在啟動Storage VMotion作業之前先關閉VM。完成Storage VMotion作業後、必須執行下列作業：ONTAP</block>
   <block id="be981f18ef1a7672e602f82794cff80f" category="paragraph">請注意、不支援在不同類型的資料存放區之間執行Storage VMotion作業。換句話說、不支援NFS類型資料存放區與VMFS資料存放區之間的Storage VMotion作業。一般而言、不支援外部資料存放區與DAS資料存放區之間的Storage VMotion作業。</block>
   <block id="afa6b88639bcd7ceb6bf277254bb384e" category="paragraph">不支援這些組態。不知道實體網路上行鏈路傳輸用戶端流量的狀態。ONTAP Select因此ONTAP Select 、利用HA活動訊號來確保用戶端和同儕可同時存取VM。當實體連線中斷時、HA活動訊號遺失會自動容錯移轉至其他節點、這是所需的行為。</block>
   <block id="a8237ab48294323805ebcd87b5ac5e8f" category="paragraph">在個別實體基礎架構上隔離HA流量、可能會導致Select VM能夠與其對等端點通訊、但無法與其用戶端通訊。如此可避免自動HA程序、並在呼叫手動容錯移轉之前導致資料無法使用。</block>
-  <block id="effa34838640cb1230713033bb735834" category="paragraph">雙節點叢集持續仰賴ONTAP 以需求為基礎的功能來部署VM、以達到HA仲裁的要求。參與雙節點HA仲裁協商的功能為「部署虛擬機器」、標示為「協調器虛擬機器」ONTAP 。</block>
-  <block id="dfc55eb09b146b564f0b81c05961c3b9" category="paragraph">是的。充當兩節點HA配對的「內建工具」的「部署」可支援高達500ms RTT的WAN延遲、且最低頻寬必須為5Mbps。ONTAP</block>
-  <block id="d947b7dcf9daf77f3ac2695571823e80" category="paragraph">中保流量是iSCSI、來源於ONTAP Select 不支援節點管理IP位址、並終止ONTAP 於不支援的IP位址上。請注意ONTAP Select 、使用雙節點叢集時、您無法將IPv6用於靜態節點管理IP位址。</block>
-  <block id="2bf021e57bed6ed775317b8de3e7bf38" category="paragraph">是的。每ONTAP 個部署虛擬機器都能做為通用的調解器服務、最多可容納100 ONTAP Select 個雙節點的叢集。</block>
-  <block id="efe328813ad5b27a594c2d589548edb0" category="paragraph">是的。您可以使用另一個ONTAP 支援功能的虛擬機器來裝載「資訊管理器」服務。</block>
   <block id="117d84c5d2c4c5d0965e55b844c0e46d" category="paragraph">在延伸的HA部署模式中、只支援使用「媒體工具」的雙節點叢集。</block>
   <block id="545d5da191e6a6ba8756e03d9e72b5d9" category="summary">您可以依照工作流程來購買及套用授權以進行ONTAP Select 您的NetApp部署。</block>
   <block id="6bf97a07b409df8a63f240116f097a26" category="doc">購買授權時的工作流程</block>
@@ -3568,4 +3539,33 @@
   <block id="ad09a727e87d60924d41059bc2e3512d" category="paragraph">您必須定義vCenter伺服器帳戶、並將其與包含必要管理權限的角色建立關聯。</block>
   <block id="6a176bf972e6c312a20100e72c6e9221" category="admonition">您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之vCenter伺服器的完整網域名稱或IP位址。</block>
   <block id="3489d6dd43de51b350987805580dc94e" category="paragraph">建立及管理ONTAP Select 一個叢集所需的最低管理權限如下所示。</block>
+  <block id="e4589ea7e5e170e58bd51acf4be0ddc1" category="paragraph">使用「部署」公用程式來建立叢集。ONTAP Select ONTAP Select目前ONTAP Select 、僅有使用「整合」功能來建立正式作業叢集。此外、也可使用「部署」功能來建立評估選擇叢集、讓用戶端能夠測試及記錄正式作業部署的實際步驟。ONTAP Select使用適當的容量層授權、且容量足以涵蓋評估期間所耗用的空間、即可將評估叢集轉換成正式作業叢集。ONTAP Select</block>
+  <block id="44e02585603e7fcc790e0ab829ef1024" category="paragraph">「物件部署」是一部虛擬機器、內含一個影像：ONTAP Select ONTAP Select在叢集安裝期間ONTAP Select 、由於執行多項檢查、因此利用本功能可確保ONTAP Select 滿足不必要的要求。可分別升級「部署VM」和ONTAP Select 「選擇叢集」。</block>
+  <block id="aae4f232f5ffb9e9721fd019ba8b1efe" category="listing-title">如何存取Swagger API頁面ONTAP Select 以進行功能整合？</block>
+  <block id="40a60db1cb196f556dfa7fc31b0fc0de" category="paragraph">是的。可將此程式與無法更新的叢集分開升級。ONTAP Select ONTAP Select同樣地、Select叢集也可與ONTAP Select 整合式部署公用程式分開升級。</block>
+  <block id="59515ed968b51f31e5dba26d6fd648ce" category="paragraph">使用GUI、CLI或REST API提供的叢集重新整理作業、即可透過下列功能識別出對下列功能的變更：ONTAP Select ONTAP Select</block>
+  <block id="0505613d75e769b75ece38e7cd9acbeb" category="admonition">不ONTAP Select 支援變更不支援的靜態部署VM IP位址。</block>
+  <block id="1c1b6371821b57c0181e5ac9c60110dd" category="paragraph">升級ONTAP Select 至支援使用支援這些變更的功能、適用於ONTAP Select 已部署但尚未變更原始組態的任何叢集。換句話說、如果ONTAP Select 使用System Manager或vCenter變更上述的VMware叢集屬性、則升級ONTAP Select 至VMware部署2.6將無法修正這些不一致的問題。必須先回復此功能的更新以供還原、才能將其獨特的中繼資料新增至每個支援功能VM。ONTAP Select ONTAP Select ONTAP Select</block>
+  <block id="19e3b046872155951a88cbd2e790b7e6" category="paragraph">是的。可在KVM或ESX上安裝支援、兩種安裝都能在任一Hypervisor上建立支援功能的叢集。ONTAP Select ONTAP Select</block>
+  <block id="5a1db0789444e54a1e8a26c422380d57" category="paragraph">如果ESX主機獲得適當授權、則不需要由vCenter Server管理ESX主機。不過、如果主機是由vCenter伺服器管理、則您必須設定ONTAP Select 使用該vCenter Server的VMware vCenter Deploy。換句話說、ONTAP Select 如果ESX主機正由vCenter Server主動管理、則無法在VMware部署中將其設定為獨立主機。請注意ONTAP Select 、由於ONTAP Select VMotion或VMware HA事件、所以使用vCenter來追蹤ESXi主機之間的所有VMware移轉。</block>
+  <block id="c18d02964afefd62e8842192dcbd79b4" category="paragraph">支援在一個節點上進行容量擴充作業的儲存新增工作流程。ONTAP Select ONTAP Select您可以使用相同資料存放區的空間（如果仍有可用空間）來擴充管理中的儲存設備、或是從個別的資料存放區新增空間。不支援將本機資料存放區與遠端資料存放區混合在同一個集合體中。</block>
+  <block id="007a3aa807452417b6230146b6781e19" category="paragraph">適用於ESX的VMware部署與支援使用vSAN或外部陣列類型的資料存放區來設定用於其儲存集區的VMware ESX支援VMware單節點叢集。ONTAP Select ONTAP Select ONTAP Select</block>
+  <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">適用於KVM的支援使用共享邏輯儲存資源池類型、在外部陣列上設定支援使用一套功能的不支援任何功能的單節點叢集。ONTAP Select ONTAP Select ONTAP Select儲存資源池可以以iSCSI或FC/FCoE為基礎。不支援其他類型的儲存資源池。</block>
+  <block id="7941c39c5fa9506f9466dead024a9800" category="paragraph">儘管ONTAP Select 在ONTAP Select 同一部主機上支援多個支援的支援功能、但在ONTAP Select 建立叢集期間、不允許這些執行個體成為同一個支援叢集的一部分。對於ESX環境、NetApp建議建立VM反關聯規則、使VMware HA不會嘗試將多ONTAP Select 個VMware VM從同ONTAP Select 一個VMware叢集移轉到單一ESX主機上。此外、ONTAP Select 如果Sfor Deploy偵測到管理（使用者啟動）vMotion或ONTAP Select 即時移轉某個物件VM、導致違反我們的最佳實務做法、例如兩ONTAP Select 個以相同實體主機結尾的物件節點、 部署在部署GUI和記錄中張貼警示。ONTAP Select唯有透過叢集更新作業、才能讓非功能性部署人員知道其所在的位置、這是由更新叢集管理員手動執行的作業。ONTAP Select ONTAP Select ONTAP Select在支援主動監控的情況下、無法使用ONTAP Select 功能進行非功能性部署、而且警示只能透過部署GUI或記錄顯示。換句話說、此警示無法轉送到集中式監控基礎架構。</block>
+  <block id="efc2e6333a58c7723007fa20d72bb37d" category="paragraph">支援NSX-V VXLAN連接埠群組。若為多節點HA（包括ONTAP MetroCluster SfingSDS）、請務必將內部網路MTU設定在7500到8900之間（而非9000）、以因應VXLAN的負荷。內部網路MTU可在ONTAP Select 叢集部署期間以「功能不整合」進行設定。</block>
+  <block id="f6d275cbcd3f49d01c3fb09afa8f2a58" category="paragraph">利用VMware VIX API與vCenter和/或ESX主機進行通訊。ONTAP SelectVMware文件指出、與vCenter Server或ESX主機的初始連線是使用TCP連接埠443上的HTTPS / SOAP來完成。這是透過TLS/SSL進行安全HTTP的連接埠。其次、會在TCP連接埠902的套接字上開啟ESX主機的連線。透過此連線傳輸的資料會以SSL加密。此外ONTAP Select 、支援功能可發出「ping」命令、驗證是否有ESX主機在您指定的IP位址上回應。</block>
+  <block id="38f6621fec19ff801692cfd74b3d8e9a" category="paragraph">此外、還必須能夠與下列的節點和叢集管理IP位址進行通訊：ONTAP Select ONTAP Select</block>
+  <block id="fc46f3e8b95ad7a4187367a3d699fabf" category="paragraph">針對雙節點叢集、ONTAP Select 將叢集信箱託管在功能上。每ONTAP Select 個支援節點都必須ONTAP Select 能夠透過iSCSI（連接埠3260）進行支援。</block>
+  <block id="a13c983c950918de4bdf2dc705e4e969" category="paragraph">您可以將ONTAP Select vCenter伺服器中的「VMware vCenter部署」功能與ONTAP Select 「VMware vCenter部署」外掛程式整合。請注意、外掛程式並不會取代ONTAP Select 「更新部署」。而ONTAP Select 非在背景中部署、vCenter管理員可利用ONTAP Select 外掛程式來叫用大部分的「VMware部署」功能。部分ONTAP Select 的功能部署作業只能使用CLI進行。</block>
+  <block id="ac26f60a7619287bbdbc6ab9451444b6" category="paragraph">只有一個ONTAP Select VMware vCenter部署VM可以在特定的vCenter伺服器上登錄其外掛程式。</block>
+  <block id="a944ad840aea1c9b9cbeff06bbcd7a41" category="paragraph">此外ONTAP Select 、它也允許使用vCenter RBAC進行驗證。獲授予vCenter使用ONTAP Select 此功能的使用者、其vCenter帳戶會對應ONTAP Select 至該部署管理使用者。下列檔案可做為基本稽核記錄、以記錄每項作業的使用者ID：ONTAP Select</block>
+  <block id="81cd6c8ef1512058861a9e8233376fb2" category="paragraph">不像ONTAP Select 以供選擇的四節點、六節點和八節點叢集、以供選擇使用以整合虛擬機器來建立叢集、雙節點叢集會持續仰賴ONTAP Select 以供HA仲裁使用的功能為基礎的功能來部署虛擬機器。如果ONTAP Select 無法使用此功能、就會停用容錯移轉服務。</block>
+  <block id="a6224d6ddba5805f1ff843d43f7d2f9d" category="list-text">三個資料中心（一個用於ONTAP Select 「支援程式」、一個用於每個節點）。</block>
+  <block id="62b01fa16ed3db055815d577d15770ac" category="list-text">125MS RTT、ONTAP Select 以及介於兩端部署調解器和ONTAP Select 每個節點之間的最低5Mbps頻寬。</block>
+  <block id="c910c71c4b422ef218f60c5531913d8b" category="paragraph">所有組態均支援Storage VMotion、包括單節點和多節點ONTAP Select 的支援、以及ONTAP Select 部署虛擬機器的支援。Storage VMotion可用於在ONTAP Select 不同的VMFS版本（例如VMFS 5到VMFS 6）之間移轉功能不全ONTAP Select 或功能不全的虛擬機器、但不受此使用案例限制。最佳實務做法是在啟動Storage VMotion作業之前先關閉VM。完成Storage VMotion作業後、必須執行下列作業：ONTAP Select</block>
+  <block id="409b8f72bddc57a6bd095f134c6d8275" category="paragraph">雙節點叢集持續仰賴ONTAP Select 以需求為基礎的功能來部署VM、以達到HA仲裁的要求。參與雙節點HA仲裁協商的功能為「部署虛擬機器」、標示為「協調器虛擬機器」ONTAP Select 。</block>
+  <block id="3e528ff9b4c46aed11941383fa6d2f9e" category="paragraph">是的。充當兩節點HA配對的「內建工具」的「部署」可支援高達500ms RTT的WAN延遲、且最低頻寬必須為5Mbps。ONTAP Select</block>
+  <block id="28abf93f8fe8302ba488797b5f941425" category="paragraph">中保流量是iSCSI、來源於ONTAP Select 不支援節點管理IP位址、並終止ONTAP Select 於不支援的IP位址上。請注意ONTAP Select 、使用雙節點叢集時、您無法將IPv6用於靜態節點管理IP位址。</block>
+  <block id="b39698e69e296e70cec153c53b590841" category="paragraph">是的。每ONTAP Select 個部署虛擬機器都能做為通用的調解器服務、最多可容納100 ONTAP Select 個雙節點的叢集。</block>
+  <block id="9fb59ca6cf972183dcb06f8acae8ff15" category="paragraph">是的。您可以使用另一個ONTAP Select 支援功能的虛擬機器來裝載「資訊管理器」服務。</block>
 </blocks>
