@@ -2495,8 +2495,6 @@
   <block id="f249bf8d9e4b8c7b417b66fb9c6c3c90" category="list-text">以專用LUN為基礎的LVM儲存資源池或資料存放區必須用於系統磁碟：核心傾印、開機/NVRAM和資料中心。</block>
   <block id="98188cc87f947a659e62ebdc6dab134c" category="paragraph">在KVM上安裝時、您必須使用單一連結和單一橋接器。具有兩個或四個實體連接埠的主機應具有相同連結中的所有連接埠。</block>
   <block id="56bf9f6724c0961bfe3efdd9a5936afd" category="paragraph">使用硬體RAID控制器時ONTAP Select 、大部分情況下不知道底層伺服器的問題。如果伺服器是根據我們的最佳實務做法進行設定、則應該存在一定數量的備援。我們建議使用RAID 5/6來防止磁碟機故障。對於軟體RAID組態、ONTAP 由於有備用磁碟機、所以由支援團隊負責發出磁碟故障警示、並開始重建磁碟機。</block>
-  <block id="908a6644c79f2bc9e82d8777e36f7cd0" category="inline-link-macro">網路組態最佳實務做法</block>
-  <block id="a0543dd1ad93ec7f733c7d2af9d3c7fd" category="paragraph">您至少應使用兩個實體NIC、以避免網路層發生單點故障。NetApp建議資料、管理及內部連接埠群組採用NIC群組和連結、並在群組或連結中設定兩個以上的上行鏈路。此類組態可確保在發生上行鏈路故障時、虛擬交換器會將流量從故障上行鏈路移至NIC群組中的正常上行鏈路。如需建議網路組態的詳細資訊、請參閱 <block ref="839f4923aa784429d01d1b8b212d4b5c" category="inline-link-macro-rx"></block>。</block>
   <block id="a2f6b74c2700adf79d2359dceccee7cf" category="paragraph">所有其他錯誤均由ONTAP 不含節點或四節點叢集的情形下由NetApp資源管理系統處理。如果Hypervisor伺服器需要更換、ONTAP Select 而需使用新伺服器重新組裝、請聯絡NetApp技術支援部門。</block>
   <block id="5328a869dd2ed37e5be32f4f227e54d6" category="paragraph">包括vSAN在內的所有組態均可支援每ONTAP Select 個節點400TB的儲存容量。</block>
   <block id="4906d0b814c398d1e0b3d033c584f66b" category="paragraph">在大於支援最大大小的資料存放區上安裝時、您必須在產品設定期間使用容量上限。</block>
@@ -3568,4 +3566,6 @@
   <block id="28abf93f8fe8302ba488797b5f941425" category="paragraph">中保流量是iSCSI、來源於ONTAP Select 不支援節點管理IP位址、並終止ONTAP Select 於不支援的IP位址上。請注意ONTAP Select 、使用雙節點叢集時、您無法將IPv6用於靜態節點管理IP位址。</block>
   <block id="b39698e69e296e70cec153c53b590841" category="paragraph">是的。每ONTAP Select 個部署虛擬機器都能做為通用的調解器服務、最多可容納100 ONTAP Select 個雙節點的叢集。</block>
   <block id="9fb59ca6cf972183dcb06f8acae8ff15" category="paragraph">是的。您可以使用另一個ONTAP Select 支援功能的虛擬機器來裝載「資訊管理器」服務。</block>
+  <block id="4eccac51b0adbf20af102f091873b54b" category="inline-link-macro">最佳實務做法摘要：網路</block>
+  <block id="8a820df1b1697eba16442acc38af08cd" category="paragraph">您至少應使用兩個實體NIC、以避免網路層發生單點故障。NetApp建議資料、管理及內部連接埠群組採用NIC群組和連結、並在群組或連結中設定兩個以上的上行鏈路。此類組態可確保在發生上行鏈路故障時、虛擬交換器會將流量從故障上行鏈路移至NIC群組中的正常上行鏈路。如需建議網路組態的詳細資訊、請參閱 <block ref="705c0997f8d64d5d2f3905a67e67034f" category="inline-link-macro-rx"></block>。</block>
 </blocks>
