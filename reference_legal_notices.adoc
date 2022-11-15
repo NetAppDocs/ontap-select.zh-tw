@@ -50,5 +50,5 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 通知檔案提供有關NetApp軟體所使用之協力廠商版權與授權的資訊。
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2882083["關於本產品的注意事項ONTAP Select 9.11.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["關於此功能的注意事項ONTAP Select 9.12.1.1"^]
 

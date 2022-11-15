@@ -2,9 +2,10 @@
 sidebar: sidebar 
 permalink: reference_new_ots.html 
 keywords: new features 
-summary: 目前版本ONTAP Select 的推出版的更新功能與變更功能有多種。 
+// summary: The current release includes several new features and improvements specific to ONTAP Select. 
+summary: 目前的版本不包含ONTAP Select 任何特定於功能的新功能或改進。 
 ---
-= 更新功能ONTAP Select
+= 此版本的新功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,31 +15,10 @@ summary: 目前版本ONTAP Select 的推出版的更新功能與變更功能有�
 
 
 [role="lead"]
-目前版本ONTAP Select 的推出版的更新功能與變更功能有多種。
+目前的版本不包含ONTAP Select 任何特定於功能的新功能或改進。
 
 
 
-== 增強VMware ESXi支援
+== 發行說明 ONTAP
 
-支援VMware ESXi 7.0 U3C的VMware ESXi 9.11.1。ONTAP Select
-
-
-
-== 支援VMware NSxT-T
-
-符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSX T搭配ONTAP Select 以OVA檔案和ONTAP Select 支援此功能的「支援部署」管理公用程式部署的單節點叢集、並無功能問題或不足之處。
-
-不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意ONTAP Select 下列有關《支援不支援使用者的支援要求和限制：
-
-網路連線檢查工具:: 在NSX T型網路上執行時、透過部署CLI提供的網路連線檢查程式會失敗。
-
-
-
-
-== 不再支援KVM Hypervisor
-
-不再支援KVM Hypervisor。
-
-從ONTAP Select 發行版本《停止使用》（更新版本）開始、您將無法再使用部署公用程式建立新的KVM型叢集或新增KVM型主機。此外、9.10.1是支援管理功能的最後一版、例如讓現有KVM叢集和主機上線。
-
-然後從ONTAP Select 發行版本更新至更新版本、除了「離線」和「刪除」功能之外、現有KVM叢集和主機不再提供所有的管理功能。
+從目前發行的核心產品中、大部分的新發展中獲益。ONTAP Select ONTAP請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["發行說明 ONTAP"^] 以瞭ONTAP 解每個版本的更新功能或改進功能。
