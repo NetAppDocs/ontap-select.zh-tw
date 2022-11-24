@@ -2881,7 +2881,6 @@
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">提供的儲存效率選項類似於介紹在功能性和功能性上的儲存效率選項。ONTAP Select FAS AFF</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">儲存效率支援</block>
   <block id="1f111941ef490bbd54082392c8d7d5bb" category="paragraph">使用All Flash VSAN或一般Flash陣列進行的虛擬NAS（vNAS）部署、應遵循非SSD DAS儲存設備的最佳實務做法。ONTAP Select ONTAP Select</block>
-  <block id="969781b66db59786314019d03efd76a2" category="paragraph">只要您有具備SSD磁碟機和Premium授權的DAS儲存設備、就會在新安裝中自動啟用AFF型特性設定。</block>
   <block id="49932c189a1a728df81d679633c219ad" category="paragraph">有了AFF般的特性設定、下列即時SE功能會在安裝期間自動啟用：</block>
   <block id="f50eca1bbe0727a0ae492a37d9a67341" category="list-text">即時零模式偵測</block>
   <block id="bdf3d88111488b006ff78f64841f7388" category="list-text">Volume內嵌重複資料刪除技術</block>
@@ -2891,19 +2890,10 @@
   <block id="181a300bfda94fa49239b8a84b279718" category="list-text">集合體即時重複資料刪除技術</block>
   <block id="88a926c88a9b371d22327f343c745ee5" category="list-text">Aggregate背景資料刪除技術</block>
   <block id="1054ae451e201d93ff68b5fbde92dded" category="paragraph">若要驗ONTAP Select 證是否已啟用所有預設的儲存效率原則、請在新建立的磁碟區上執行下列命令：</block>
-  <block id="bfd3f6691384baf34cdf17419cb0e78c" category="admonition">若要從9.4升級、您必須在具有Premium授權的DAS SSD儲存設備上安裝才能使用的更新版本。ONTAP Select ONTAP Select此外、在使用ONTAP 「支援」功能進行叢集初始安裝期間、必須勾選「*啟用儲存效率*」核取方塊。如果在未符合先前條件的情況下啟用AFF型特性設定ONTAP後升級、則需要手動建立開機引數和節點重新開機。如需詳細資訊、請聯絡技術支援部門。</block>
-  <block id="3bc7377fef3090d09722c97053d94bb8" category="paragraph">下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視ONTAP Select 乎版本和媒體類型而定。</block>
-  <block id="3a06677d57bafe5f93316fd203140cec" category="cell">功能ONTAP Select</block>
-  <block id="4ddd372db4137397986851a36755d62b" category="cell">9.6 / 9.5 Premium或Premium XL^4^（DAS SSD）</block>
-  <block id="99bd414e50c66dbb85a360543a8724df" category="cell">9.4^1^/ 9.3^2^高級版（DAS SSD）</block>
-  <block id="4075cc803e896778b25727ceeb07e4a7" category="cell">9.6 / 9.5 / 9.4 / 1^/ 9.3 / 2^所有授權（DAS HDD）</block>
-  <block id="984fe899b528b40d37d811cdfc614800" category="cell">9.6所有授權（vNAS）</block>
-  <block id="31174df2fdbdd2be052e12c615c7307f" category="cell">9.5 / 9.4^1^/ 9.3^2^高級版或標準版（vNAS）^3^</block>
   <block id="d0a10dc848c7f164cb7f367fc2ea6eca" category="cell">即時零偵測</block>
   <block id="7aae22088072740b827e9f671e64d38c" category="cell">是（預設）</block>
   <block id="97206f3375e25c7ad628adbd0ede2481" category="cell">是、由使用者以每個磁碟區為基礎來啟用</block>
   <block id="aa7f77e663b832d5b0e544c5511e680c" category="cell">不支援</block>
-  <block id="649f2af3727e1d3e6b8443c426591936" category="cell">是（建議）由使用者以每個Volume為基礎來啟用</block>
   <block id="2d25c72c1b18e562f6654fff8e11711e" category="cell">無法使用</block>
   <block id="8c2a1d946295997fcc7ffd5ff081383e" category="cell">32K即時壓縮（二線壓縮）</block>
   <block id="0ee764ea898e833d7247cd7c2bff2bb6" category="cell">是、由使用者在每個磁碟區基礎上啟用。</block>
@@ -2912,12 +2902,7 @@
   <block id="29f702ba72033eac319c19bb994679d1" category="cell">背景壓縮</block>
   <block id="6535e9c5f49b7cb87395689e840b7921" category="cell">壓縮掃描儀</block>
   <block id="c63eff507592c9cb40454ec64c57e654" category="cell">壓實掃描器</block>
-  <block id="e723e4513197f2aa8ae3faf74f9b455b" category="cell">是（建議）、由使用者以每個磁碟區為單位啟用、空間保證=無）</block>
   <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">不適用</block>
-  <block id="b155b6b4f561bbefa57bcbe381aa7293" category="cell">是（建議）</block>
-  <block id="f3bd89de8243a3f6af6ddfd8f57c51d2" category="paragraph">DAS SSD上的[Small（小型）#1^ONTAP Select 9.4（需要Premium授權）允許使用Aggregate層級背景跨Volume掃描器來刪除Aggregate中的現有資料。這項一次性作業是針對在DAS SSD上建立9.4之前的磁碟區手動執行的。#[Small ]#^2^ONTAP Select 9.3（需要Premium授權）支援集合體層級的背景重複資料刪除；不過、建立集合體之後必須啟用此功能。#[Small ]#^3^ONTAP Select 9.5 vNAS預設不支援任何儲存效率原則。請參閱vNAS一節、以取得單一執行個體資料記錄（SIDL）的詳細資料。#[Small（小）#^4^ONTAP Select 9.6支援新的授權（Premium XL）和新的VM大小（大）。不過、大型VM僅支援使用軟體RAID的DAS組態。目前ONTAP Select 版本中的大型版不支援硬體RAID和vNAS組態。#</block>
-  <block id="2bb65eec7b863bd298a37f91f01bc93b" category="paragraph">升級ONTAP Select 至版本S區時、請等待「系統節點升級還原show」命令、表示升級已完成、然後再驗證現有磁碟區的儲存效率值。</block>
-  <block id="deed1cb925849f0f3e45d21a73322805" category="paragraph">在升級至ONTAP Select 版本為NetApp 9.5或更新版本的系統上、在現有集合體或新建立的集合體上建立的新磁碟區、其行為與在全新部署上建立的磁碟區相同。進行ONTAP Select 程式碼更新的現有磁碟區、與新建立的磁碟區具有大部分相同的儲存效率原則、但有一些差異：</block>
   <block id="29a9d0505777c34dba7f61853452be5d" category="list-text">具有「最快保證= Volume」的磁碟區並未啟用即時資料壓縮、集合式即時重複資料刪除、以及集合式背景重複資料刪除功能。這些選項可在升級後啟用。</block>
   <block id="35fbb1bb20290d891a137d1fcbd0e239" category="list-text">具有「sh步調 保證=無」的Volume並未啟用背景壓縮。此選項可在升級後啟用。</block>
   <block id="1dee9382dee8939942474aa4d9a34277" category="list-text">現有磁碟區上的儲存效率原則會設定為在升級後自動執行。</block>
@@ -2925,7 +2910,6 @@
   <block id="ef178eb460204113beba1cbd28432807" category="list-text">具有「最快保證=無」的磁碟區會開啟Aggregate背景重複資料刪除功能。</block>
   <block id="3779f0db6c726f0073ea96bd58344c7c" category="list-text">具有「僅限即時原則」的磁碟區會將其原則設為自動。</block>
   <block id="f32e9c7c29189d660541b511be781cbb" category="list-text">使用者定義儲存效率原則的磁碟區在原則上沒有變更、但「最快保證=無」的磁碟區除外。這些磁碟區已啟用Aggregate背景重複資料刪除功能。</block>
-  <block id="d0b68a1323470e4c9310c26b4ee1c585" category="paragraph">升級至ONTAP Select 版本S9.5或更新版本之後、將保留升級之前啟用的儲存效率功能。如果在升級之前未啟用儲存效率、則不會在升級後啟用儲存效率。</block>
   <block id="62c2ae9d858d747f01fc9f0c73fe1973" category="doc">確認ONTAP Select 各個節點之間的網路連線能力</block>
   <block id="c22f5328485b16ad5528583107191857" category="list-text">顯示網路連線檢查程式目前的執行、並確認沒有任何執行活動：</block>
   <block id="0b540229e0d5850cb4e1461eb0676deb" category="paragraph">「網路連線檢查秀」</block>
@@ -3559,4 +3543,17 @@
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">此版本的新功能</block>
   <block id="626a7cbe056796bcb1c158b143866230" category="section-title">發行說明 ONTAP</block>
   <block id="ee7c32e022645197b08ad79344b7cea5" category="paragraph">從目前發行的核心產品中、大部分的新發展中獲益。ONTAP Select ONTAP請參閱<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block> 以瞭ONTAP 解每個版本的更新功能或改進功能。</block>
+  <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">使用All Flash VSAN或一般Flash陣列進行的虛擬NAS（vNAS）部署、應遵循非SSD直接附加儲存設備（DAS）的最佳實務做法ONTAP Select ONTAP Select 。</block>
+  <block id="56d7a71de46feea406be8535cec9562b" category="paragraph">只要您有具備SSD磁碟機和優質授權的DAS儲存設備、就會在新安裝中自動啟用AFF型特性設定。</block>
+  <block id="c9f8761a361c6711a9ed57ab4856d50e" category="admonition">若要從9.6版或更新版本升級、您必須在具有優質授權的DAS SSD儲存設備上安裝支援功能ONTAP Select ONTAP Select 。此外、您必須在執行ONTAP 初始叢集安裝時勾選*啟用儲存效率*核取方塊、以使用「整合」功能進行叢集安裝。如果在未符合先前條件的情況下啟用AFF型特性設定ONTAP後升級、則需要手動建立開機引數和節點重新開機。如需詳細資訊、請聯絡技術支援部門。</block>
+  <block id="351b67a1c9ed30f55beb4efb9008c75e" category="inline-link">TR-4517</block>
+  <block id="57d9bfd04afc415045de434b6511e231" category="paragraph">下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視媒體類型和軟體授權而定。下表中的資訊適用於ONTAP Select 更新版本的資訊。如需先前版本的資訊、請參閱ONTAP Select 中的「_SURFITY Support_」一節<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>。</block>
+  <block id="01ff2713f71d1a077e5cd9476bafae04" category="cell">功能ONTAP Select</block>
+  <block id="1454e3c114972f47f44938bc14cf6784" category="cell">DAS SSD（優質或優質xL1^）</block>
+  <block id="8aede28fe0ef40efaea43ec1bbfb9a33" category="cell">DAS HDD（所有授權）</block>
+  <block id="c7f594218b673d842d21f54f543fb19c" category="cell">VNAS（所有授權）</block>
+  <block id="d670b307adcbd20c75b779bb62ae10bc" category="paragraph">[small）#1^ONTAP Select 9.6支援新的授權（優質XL）和新的VM大小（大型）。不過、大型VM僅支援使用軟體RAID的DAS組態。9.6 ONTAP Select 版的大型版不支援硬體RAID和vNAS組態。#</block>
+  <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">升級ONTAP Select 至32．6或更高版本後，請等待<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> 命令指出升級已完成、然後再驗證現有磁碟區的儲存效率值。</block>
+  <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升級至ONTAP Select S菜 系9.6或更新版本的系統上、在現有集合體或新建立的集合體上建立的新磁碟區、其行為與在全新部署中建立的磁碟區相同。進行ONTAP Select 程式碼更新的現有磁碟區、與新建立的磁碟區具有大部分相同的儲存效率原則、但有一些差異：</block>
+  <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升級至ONTAP Select 版本4、9.6或更新版本後、將保留升級前啟用的儲存效率功能。如果在升級之前未啟用儲存效率、則不會在升級後啟用儲存效率。</block>
 </blocks>
