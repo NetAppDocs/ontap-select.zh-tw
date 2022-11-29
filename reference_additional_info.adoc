@@ -22,7 +22,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 下列產品頁面提供各種ONTAP Select 不同的支援資源連結。
 
-* https://www.netapp.com/data-management/software-defined-storage-ontap-select/documentation["NetApp ONTAP Select 技術資源"^]
+* https://www.netapp.com/data-management/ontap-select/documentation["NetApp ONTAP Select 技術資源"^]
 * https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["NetApp ONTAP Select 產品頁面"^]
 
 

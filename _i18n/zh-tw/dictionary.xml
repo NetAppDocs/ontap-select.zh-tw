@@ -3075,7 +3075,6 @@
   <block id="9b0fbf172f51b4a5abce0857edfab0f9" category="section-title">產品資源ONTAP Select</block>
   <block id="c49e76269f99b6773f9b3a78f408edb0" category="paragraph">下列產品頁面提供各種ONTAP Select 不同的支援資源連結。</block>
   <block id="a8880942f614154c0bef5b881090cda1" category="inline-link">NetApp ONTAP Select 技術資源</block>
-  <block id="4dbedeedb10d03b7a8ed66a0dda3941d" category="list-text"><block ref="4dbedeedb10d03b7a8ed66a0dda3941d" category="inline-link-rx"></block></block>
   <block id="bb0cd218d1754229c2a730e5e27f5a5b" category="inline-link">NetApp ONTAP Select 產品頁面</block>
   <block id="e2e78aa3752db107a66c2193b8f739a3" category="list-text"><block ref="e2e78aa3752db107a66c2193b8f739a3" category="inline-link-rx"></block></block>
   <block id="f372ae3b2fda116fe4b7463cbac902c0" category="section-title">支援支援支援ONTAP</block>
@@ -3556,4 +3555,5 @@
   <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">升級ONTAP Select 至32．6或更高版本後，請等待<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> 命令指出升級已完成、然後再驗證現有磁碟區的儲存效率值。</block>
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升級至ONTAP Select S菜 系9.6或更新版本的系統上、在現有集合體或新建立的集合體上建立的新磁碟區、其行為與在全新部署中建立的磁碟區相同。進行ONTAP Select 程式碼更新的現有磁碟區、與新建立的磁碟區具有大部分相同的儲存效率原則、但有一些差異：</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升級至ONTAP Select 版本4、9.6或更新版本後、將保留升級前啟用的儲存效率功能。如果在升級之前未啟用儲存效率、則不會在升級後啟用儲存效率。</block>
+  <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
 </blocks>
