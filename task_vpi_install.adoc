@@ -30,6 +30,7 @@ Deploy vCenter外掛程式與ONTAP Select VMware View部署管理公用程式搭
 
 
 
+.關於這項工作
 假設vCenter管理伺服器已新增至部署。如果尚未新增vCenter伺服器、請參閱 link:task_adm_security.html["新增管理伺服器帳戶"] 以取得更多資訊。
 
 .步驟

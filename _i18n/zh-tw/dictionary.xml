@@ -270,7 +270,6 @@
   <block id="ae6ece3040d8e73c3c76bc342db2a5b5" category="summary">歡迎使用ONTAP Select 適用於此的文件入口網站。</block>
   <block id="7436b418bed093768e360d32105591d2" category="doc">本文檔ONTAP Select</block>
   <block id="8a7497698e274b257189171d812c4134" category="paragraph">NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">瞭解新功能</block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">瀏覽產品文件</block>
   <block id="fa0fa8503380df9df5c58ad57a531ff5" category="inline-link">產品庫ONTAP Select</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">您可以在上找到KVM版本產品的版本資訊、以及先前版本所支援的文件<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>。</block>
@@ -3556,4 +3555,99 @@
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">在升級至ONTAP Select S菜 系9.6或更新版本的系統上、在現有集合體或新建立的集合體上建立的新磁碟區、其行為與在全新部署中建立的磁碟區相同。進行ONTAP Select 程式碼更新的現有磁碟區、與新建立的磁碟區具有大部分相同的儲存效率原則、但有一些差異：</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">升級至ONTAP Select 版本4、9.6或更新版本後、將保留升級前啟用的儲存效率功能。如果在升級之前未啟用儲存效率、則不會在升級後啟用儲存效率。</block>
   <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
+  <block id="201d6cf1ba171c49bcdcb0766d20f3f9" category="paragraph-title">所需技能與資訊</block>
+  <block id="7322a68bf06479e293387c20bf0f3e8e" category="paragraph-title">安裝部署虛擬機器</block>
+  <block id="816d0d92458bc1f7a68303a845228dde" category="paragraph-title">指令行介面ONTAP</block>
+  <block id="fe8a09bfef8f50e4e72bec1b0f9c18db" category="paragraph-title">部署公用程式組態備份的可用度</block>
+  <block id="8fbcf0a0690f2df2d9b37ca23e0733f5" category="paragraph-title">還原部署組態的備份</block>
+  <block id="d929d228dc7d6e05fe2b30f1a5826c49" category="paragraph-title">原始部署虛擬機器的IP位址</block>
+  <block id="b957b13a65ee2e9c4a639a76b0b7cce7" category="paragraph-title">儲存容量授權</block>
+  <block id="ed67f205040bfaf568fb57e318f22a15" category="paragraph-title">決定要使用的恢復程序</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="801333bc71ada3c7b40aa384a24d7978" category="paragraph-title">網路最低和建議的組態</block>
+  <block id="7e9f6a3ecc2e8ef83d7c15d09d7343f7" category="paragraph-title">使用NetApp功能的雙節點叢集ONTAP Select ONTAP</block>
+  <block id="918565c2d0e9439ff8f11d84c548453a" category="paragraph-title">支援VMware的單節點叢集ONTAP Select</block>
+  <block id="e22b6495595f2c4ad67a830d1be05c6e" category="paragraph-title">處理器</block>
+  <block id="aca8e861c6f30fe2d42d0310a387312b" category="paragraph-title">乙太網路組態</block>
+  <block id="bfa10f7c5e846fdab9228aa316c04549" category="paragraph-title">生命</block>
+  <block id="642223473862db290604321fe2ebe763" category="paragraph-title">SVM</block>
+  <block id="d5350d8759b1ec84607e47908809058e" category="paragraph-title">集合體</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="paragraph-title">功能</block>
+  <block id="60311a7026f3d48f88b9518fc315cec6" category="paragraph-title">目標環境</block>
+  <block id="0b9c6eef4e3d3a222eb04e910d252339" category="paragraph-title">授權</block>
+  <block id="dff5ebd3a9adcb736da925d0da3936b9" category="paragraph-title">叢集和中介服務的位置</block>
+  <block id="c56f96d077c10fb4c4d1ce83cf5edfaa" category="paragraph-title">指派給部署的靜態IP位址</block>
+  <block id="8b85794e07760e9397de8eb59192abb9" category="paragraph-title">儲存效率組態ONTAP Select</block>
+  <block id="47228ec57373d626b6ba8033642aa844" category="paragraph-title">DAS SSD組態的升級行為注意事項</block>
+  <block id="2ebe501f9076f748c335cf335b5e07aa" category="paragraph-title">DAS HDD組態的升級行為注意事項</block>
+  <block id="06be3d2851694a8ac21502e41f3e4305" category="paragraph-title">每個叢集的授權模式一致</block>
+  <block id="4b0e422dcf415e37a99fb9240372b2e7" category="paragraph-title">叢集中的所有節點都使用相同的授權管理員執行個體</block>
+  <block id="02adb22963ca335394cfa32d81eb77c1" category="paragraph-title">每個節點一個容量資源池</block>
+  <block id="b738a2037fc94e2290be56df30341770" category="paragraph-title">HA配對中節點的相同資源池</block>
+  <block id="affb254e2447d7a107f972ff759efbb0" category="paragraph-title">儲存授權期間</block>
+  <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="paragraph-title">資料Aggregate租用期間</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">瞭解最新資訊</block>
+  <block id="510a8cb711495bfdd04c792d2fc4b0fe" category="paragraph-title">參與者</block>
+  <block id="4bf581a821f13c0335aed161abdd6607" category="paragraph-title">網路流量需求摘要</block>
+  <block id="711926301465cde3461f5fc265229189" category="paragraph-title">什麼是ONTAP Select 功能不相同的功能呢ONTAP Select ？</block>
+  <block id="2cafb84adddb7f33d640fbedf4b9e1ed" category="paragraph-title">如何使用ONTAP Select VMware解決效能問題？</block>
+  <block id="2a07e658b19b1a46502dcaa156304d77" category="paragraph-title">是否可以ONTAP Select 使用VMware或其他協力廠商快照來備份VMware的不完整資料？</block>
+  <block id="9b837fd67d580207d87f58b37e1fefed" category="paragraph-title">對於本常見問題集未涵蓋的問題、我該如何釐清？</block>
+  <block id="676e5b6258c8aedd468f71142c59be64" category="paragraph-title">是否能個別升級使用者的選購功能ONTAP Select ONTAP Select ？</block>
+  <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">是否可以ONTAP Select 使用FAS 與叢集相同的程序來升級呢？</block>
+  <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">是否能ONTAP Select 使用FAS 與叢集相同的程序來還原呢？</block>
+  <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">不需要取得進階授權嗎？ONTAP MetroCluster</block>
+  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">安裝完成後、ONTAP Select 是否ONTAP Select 可以變更功能不完整的部署IP位址、以及叢集與節點管理功能？</block>
+  <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">單ONTAP Select 一的VMware部署執行個體是否能在ESX和KVM上建立叢集？</block>
+  <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">ESX上的vCenter是否需要ONTAP Select 執行？</block>
+  <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">什麼是軟體RAID？</block>
+  <block id="4e0891be88802b935c566dc6245269b2" category="paragraph-title">軟體RAID與硬體RAID組態有何不同？</block>
+  <block id="d0093f68bddcefc4d27db886e2488615" category="paragraph-title">支援KVM的支援多個NIC綁定嗎？ONTAP Select</block>
+  <block id="baf467f7c147f366ee1e95629aa35ddb" category="paragraph-title">如何針對Hypervisor主機中故障的實體磁碟或NIC回報或警示功能？ONTAP Select此資訊是從Hypervisor擷取、還是應該在Hypervisor層級設定監控？ONTAP Select</block>
+  <block id="c7b611d510bc619ec380a5444620746f" category="paragraph-title">支援哪些最大資料存放區大小ONTAP Select ？</block>
+  <block id="4bb81c896f6353933a5f144d4f155bba" category="paragraph-title">如何增加ONTAP Select 一個節點的容量？</block>
+  <block id="5e9f8d0ad5095acd00ef1ca82d1d0612" category="paragraph-title">支援vSAN或外部陣列類型的資料存放區嗎？ONTAP Select</block>
+  <block id="e9939028b5812a609cc9ffa930082fba" category="paragraph-title">支援vSAN上的多節點叢集或其他共享外部儲存設備（包括部分HCI堆疊）嗎？ONTAP Select</block>
+  <block id="8f45fcba53179b19aa4b7255218edbff" category="paragraph-title">此功能是否支援VMware的NSX VXLAN？ONTAP Select</block>
+  <block id="2b759707434dfe6525eb57ceb25c887f" category="paragraph-title">支援KVM即時移轉嗎？ONTAP Select</block>
+  <block id="ce777469b9f51fcc7f290822407d49c8" category="paragraph-title">vSAN自動對焦是否需要ONTAP Select 使用功能升級版？</block>
+  <block id="8835ca2abfedf3bf3f774e0cbc020504" category="paragraph-title">支援哪些vSAN FTT/FTM設定？</block>
+  <block id="f13bfc8565d5515f3a1d879c5ecc3e18" category="paragraph-title">如果多ONTAP Select 個支援的節點是不同Select叢集的一部分、是否可以在同一部主機上執行？</block>
+  <block id="0599d62f7e6320d42cfbeebf39e88a84" category="paragraph-title">您是否可以讓一部具備單一10GE連接埠執行ONTAP Select 功能的主機同時執行ESX和KVM？</block>
+  <block id="935a7d198067fd5cc94997a307675cd6" category="paragraph-title">您還需要執行哪些其他程序、才能在KVM上執行即時移轉？</block>
+  <block id="217b7fb2555068ab584db913a7aea017" category="paragraph-title">如何與vCenter進行通訊、以及應開啟哪些防火牆連接埠ONTAP Select ？</block>
+  <block id="60789e3f721edfada82e8544b0181a42" category="paragraph-title">什麼vCenter權限ONTAP Select 可讓您部署以建立ONTAP Select VMware叢集？</block>
+  <block id="cb5e1276bf07a1471cf95cbe7e0aacac" category="paragraph-title">什麼是vCenter部署外掛程式？</block>
+  <block id="27239a2d535b7aad4fede1afbfc975ce" category="paragraph-title">有多少ONTAP Select 個可在一個vCenter伺服器上註冊外掛程式的VMware vCenter部署VM？</block>
+  <block id="214da09e3e95b0ef18f3b1348583230d" category="paragraph-title">什麼是ONTAP Select VMware vCenter插件的優勢？</block>
+  <block id="b622687ba14734f3e63b4781b7e16324" category="paragraph-title">四節點、六節點或八節點叢集與雙節點ONTAP Select 的不二之處為何？</block>
+  <block id="22d02cab0c9108f9f86736e68a4be2de" category="paragraph-title">什麼是MetroCluster SDS？</block>
+  <block id="5c13f1d93ecc5cc8fc37b87a8fedb3b7" category="paragraph-title">不只是NetApp的功能、哪些地方的不一樣？MetroCluster MetroCluster</block>
+  <block id="1092371194caad84c750464b682a97f5" category="paragraph-title">雙節點ONTAP Select 的不二叢集與雙節點ONTAP MetroCluster 的不二化SDS有何不同？</block>
+  <block id="8cfa2d102770158dc8e70d7e66b373c1" category="paragraph-title">不需要本機儲存（DAS）才能使用此功能？ONTAP MetroCluster</block>
+  <block id="f631c65fafafcb98d092145300c095ee" category="paragraph-title">支援軟體RAID嗎ONTAP MetroCluster ？</block>
+  <block id="d36cfdb5417305fbac63c342a62834bb" category="paragraph-title">支援SSD和轉動媒體的不支援使用支援的不支援？ONTAP MetroCluster</block>
+  <block id="8b331b2a82b49d9dafa0973ccc6ec8bf" category="paragraph-title">支援四節點和較大叢集大小的支援嗎？ONTAP MetroCluster</block>
+  <block id="2643662b1523cd419f3e1a430c3d5ca5" category="paragraph-title">什麼是ONTAP MetroCluster 關於「介紹SDS」的要求？</block>
+  <block id="17a218f1a33ec9a62075f6e806d197be" category="paragraph-title">支援VMotion或VMware HA嗎ONTAP Select ？</block>
+  <block id="32c62abec281fb2b058ef0af1f973abc" category="paragraph-title">支援Storage VMotion嗎ONTAP Select ？</block>
+  <block id="d89c5456578e0bb5466c0194a63dbf13" category="paragraph-title">在不同的vSwitch和/或隔離的實體連接埠上、ONTAP Select 以及/或使用ESX主機之間的點對點IP纜線、可以在不同時節點之間執行HA流量嗎？</block>
+  <block id="02134a14eda4b0c0557ac5e897c7ad16" category="paragraph-title">什麼是「中保」服務？</block>
+  <block id="4d400d9f529e89c20ecab9cde4405a26" category="paragraph-title">「訊務員」服務是否可以遠端進行？</block>
+  <block id="5c3d06658ad9d8eaedefa625da8a9c54" category="paragraph-title">「訊務員」服務使用什麼傳輸協定？</block>
+  <block id="dbeee071e162d66777e5e130dcd67249" category="paragraph-title">我可以在多個雙節點HA叢集上使用一項內建程式服務嗎？</block>
+  <block id="ecf49f01e42124f2d85776c522feaa41" category="paragraph-title">部署後、能否變更「資訊管理器」服務位置？</block>
+  <block id="40910d9d6a3231bdd6eae7aec77b73aa" category="paragraph-title">支援使用（或不使用）媒體器的延伸叢集嗎？ONTAP Select</block>
+  <block id="bd609b0252eeccc3bcce74e0c9234a88" category="paragraph-title">每ONTAP Select 個叢集的公用程式執行個體</block>
+  <block id="6c7ded8cf41b50f61e1af82df9af57eb" category="paragraph-title">一個公用程式執行個體可用於多ONTAP Select 個實體叢集</block>
+  <block id="dfe55bfdf78bf686c853c934cacca8aa" category="paragraph-title">認證類型</block>
+  <block id="f2d299d92bba14c1b1251b504639222c" category="paragraph-title">NetApp用戶端軟體</block>
+  <block id="91aa06ef59aa905f170919b05e594df9" category="paragraph-title">可能的組態選項</block>
+  <block id="42cac712a9acf93c75659c9fa981f95f" category="paragraph-title">購買具有儲存容量的授權</block>
+  <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">Hypervisor平台</block>
+  <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">節點之間的延遲</block>
+  <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">目前版本ONTAP Select 的</block>
+  <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">過去版本ONTAP Select 的不一樣</block>
+  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">關於此工作</block>
 </blocks>

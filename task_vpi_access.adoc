@@ -11,6 +11,7 @@ summary: 您可以透過vSphere Web用戶端存取部署vCenter外掛程式。
 [role="lead"]
 您可以透過vSphere Web用戶端存取部署vCenter外掛程式。
 
+.開始之前
 必須安裝vCenter外掛程式。此外、您在登入vSphere時使用的vCenter帳戶必須具有下列權限：
 
 * NetApp
@@ -33,4 +34,5 @@ summary: 您可以透過vSphere Web用戶端存取部署vCenter外掛程式。
 . 按一下*全域庫存清單*。
 
 
+.結果
 選項* ONTAP Select 《叢集* ONTAP Select 》和*《*》《*》《部署*》可在左側窗格中找到。如果未顯示、您應該先登出再重新登入。

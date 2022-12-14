@@ -22,6 +22,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 
 您可以ONTAP Select 從NetApp支援網站下載此解決方案。
 
+.關於這項工作
 根據開放式虛擬化格式（OVF）標準、將此支援公用程式封裝成虛擬機器。ONTAP Select單一壓縮檔案的字尾為「ova」。
 
 .步驟
@@ -40,6 +41,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 
 您必須使用ONTAP Select OVF虛擬機器映像來安裝及啟動「物件部署」虛擬機器。在安裝程序中、您必須將網路介面設定為使用DHCP或靜態IP組態。
 
+.開始之前
 您必須準備好部署ONTAP Select 這個功能完善的虛擬機器：
 
 * 安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能
@@ -56,6 +58,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 * DNS搜尋網域
 
 
+.關於這項工作
 如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署虛擬機器的主控台來設定網路。
 
 .步驟
@@ -111,4 +114,5 @@ https://<ip_address>/`
 
 
 
+.相關資訊
 link:task_cli_signing_in.html["使用SSH登入部署"]

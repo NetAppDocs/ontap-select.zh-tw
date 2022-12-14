@@ -55,8 +55,10 @@ summary: 您可以透過vSphere Web使用者介面使用部署vCenter外掛程�
 
 您可以將Hypervisor主機新增至部署公用程式、ONTAP Select 以便在部署叢集之前執行各個節點。如果需要、您可以改為將主機新增為叢集建立對話框的一部分。
 
+.開始之前
 您應該檢閱「準備部署ONTAP Select 一個叢集」。
 
+.關於這項工作
 您可以根據叢集大小新增一或多個主機。
 
 .步驟
@@ -73,6 +75,7 @@ summary: 您可以透過vSphere Web使用者介面使用部署vCenter外掛程�
 
 您可以透過vSphere Web用戶端使用VMware vCenter外掛程式來部署ONTAP Select 由單一節點組成的VMware叢集。
 
+.開始之前
 您應該檢閱「準備部署ONTAP Select 一個不支援的叢集並新增Hypervisor主機」。您可以在ONTAP Select 建立叢集之前或建立單節點叢集時、新增執行此節點的主機。
 
 .步驟
@@ -122,8 +125,10 @@ TIP: 如果叢集建立作業已啟動但無法完成、ONTAP 您定義的整套
 
 您可以透過vSphere Web用戶端使用VMware vCenter外掛程式來部署ONTAP Select 由多個節點組成的VMware叢集。
 
+.開始之前
 您應該檢閱「準備部署ONTAP Select 一個不支援的叢集並新增Hypervisor主機」。您可以在ONTAP Select 建立叢集之前或建立多節點叢集時、新增執行不完整節點的主機。
 
+.關於這項工作
 由偶數個節點組成的一個支援多節點叢集。ONTAP Select節點一律以HA配對的形式連接。
 
 .步驟

@@ -18,10 +18,13 @@ summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluste
 
 在部署MetroCluster 不含SDS的產品之前、您必須確保符合下列要求。
 
+.授權
 每個節點都必須擁有優質或更高ONTAP Select 版本的不含功能的授權。
 
+.Hypervisor平台
 在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster請注意ONTAP Select 、KVM不再支援版本不支援。9.10.1及更新版本。
 
+.網路組態
 參與站台之間需要第2層連線。同時支援10GbE和1GbE、包括下列組態：
 
 * 1個10GbE
@@ -31,13 +34,17 @@ summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluste
 
 NOTE: 資料服務連接埠和互連連接埠必須連接至同一台交換器。
 
+.節點之間的延遲
 兩個節點之間的網路必須支援平均延遲5毫秒、並額外提供5毫秒的週期性不穩定性。在部署叢集之前、您必須使用中所述的程序來測試網路 link:concept_nw_concepts_chars.html["深入探討網路"] 區段。
 
+.中介服務
 如同所有雙節點ONTAP Select 的物件叢集、部署虛擬機器中也包含獨立的中介服務、可監控節點並協助管理故障。藉由MetroCluster 使用不中斷SDS的增強距離、可在網路拓撲中建立三個不同的站台。中介器與節點之間的連結延遲應為往返125毫秒或更短。
 
+.儲存設備
 直接附加儲存設備（DAS）可使用HDD和SSD磁碟來支援。也支援VNAS、包括VMware環境中的外部儲存陣列和vSAN。
 
 
 NOTE: 部署MetroCluster 完ESDS時、您無法在分散式或「延伸」拓撲中使用vSAN。
 
+.指派給部署的靜態IP位址
 您必須為部署管理公用程式指派靜態IP位址。此需求適用於管理一ONTAP Select 或多個雙節點叢集的所有部署執行個體。

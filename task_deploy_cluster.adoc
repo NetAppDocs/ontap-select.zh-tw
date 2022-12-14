@@ -77,8 +77,10 @@ NOTE: 您可以按一下頁面頂端的索引標籤（叢集、Hypervisor主機�
 
 您可以使用ONTAP Select 「功能不全」網路使用者介面來部署單節點ONTAP Select 的功能不全的叢集。
 
+.開始之前
 請參閱 link:task_deploy_cluster.html#before-you-begin["開始之前"] 以準備部署叢集。必須先安裝並設定部署管理（密碼AutoSupport 、VMware vCenter）。
 
+.關於這項工作
 建立一個含有一個節點的整個叢集、以進行正式作業部署。ONTAP Select
 
 .步驟
@@ -128,4 +130,5 @@ TIP: 如果叢集建立作業已啟動但無法完成、ONTAP 則您定義的整
 
 
 
+.完成後
 您應該確認ONTAP Select AutoSupport 已設定好「還原」功能、並備份ONTAP Select 「還原部署」組態資料。

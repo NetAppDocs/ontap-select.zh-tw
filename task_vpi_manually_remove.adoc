@@ -48,6 +48,7 @@ com.netapp.selectdeploy`
 . 輸入副檔名、然後按一下* InvokeMethod*。
 
 
+.結果
 外掛程式會從副檔名清單中移除。
 
 
@@ -56,6 +57,7 @@ com.netapp.selectdeploy`
 
 您應該檢查vCenter伺服器上的vSphere UI目錄、並移除部署外掛程式（若有）。
 
+.開始之前
 您必須在vCenter伺服器上擁有root帳戶的密碼。您應該使用vSphere MOB移除外掛程式。
 
 .步驟
@@ -86,6 +88,7 @@ com.netapp.selectdeploy`
 
 
 
+.完成後
 部署外掛程式可能需要數分鐘的時間才能重新啟動並可供使用。
 
 
@@ -94,6 +97,7 @@ com.netapp.selectdeploy`
 
 您應該檢查vCenter伺服器上的vSphere Client目錄、並移除部署外掛程式（若有）。雖然部署外掛程式並未使用Flash、但最佳做法是在外掛程式移除程序中檢查此目錄。
 
+.開始之前
 您必須在vCenter伺服器上擁有root帳戶的密碼。您應該使用vSphere MOB移除外掛程式、然後從vSphere UI目錄移除外掛程式。
 
 .步驟
@@ -124,4 +128,5 @@ com.netapp.selectdeploy`
 
 
 
+.完成後
 部署外掛程式可能需要數分鐘的時間才能重新啟動並可供使用。

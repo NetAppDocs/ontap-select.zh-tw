@@ -18,6 +18,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 
 在NVMe裝置上使用VMDirectPath I/O傳遞、以最大化資料效率。此設定可將磁碟機展示給ONTAP Select 整個物件虛擬機器、ONTAP 使其能夠直接透過PCI存取裝置。
 
+.開始之前
 確保您的部署環境符合下列最低需求：
 
 * 包含相關部署管理公用程式的更新版本ONTAP Select
@@ -28,6 +29,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 
 請依照 link:reference_chk_host_prep.html["主機準備檢查清單"]、檢閱 link:reference_chk_deploy_req_info.html["部署公用程式安裝所需的資訊"]和 link:reference_chk_select_req_info.html["安裝所需的資訊ONTAP Select"] 主題以取得更多資訊。
 
+.關於這項工作
 此程序設計為在建立新ONTAP Select 的叢集之前執行。您也可以執行程序、為現有的SW-RAID NVMe叢集設定額外的NVMe磁碟機。在這種情況下、設定磁碟機之後、您必須透過部署來新增磁碟機、如同使用其他SSD磁碟機一樣。主要差異在於部署會偵測NVMe磁碟機並重新開機節點。將NVMe磁碟機新增至現有叢集時、請注意下列關於重新開機程序的資訊：
 
 * 部署可處理重新開機協調作業。
@@ -67,6 +69,7 @@ image:nvme_03.png["重新啟動此主機"]
 
 
 
+.完成後
 準備好主機之後、您就可以安裝ONTAP Select 此功能。部署可引導您在ONTAP Select 新準備的主機上建立功能完善的儲存叢集。在此過程中、部署會偵測到設定為傳遞的NVMe磁碟機、並自動選取這些磁碟機做ONTAP 為參考資料磁碟。您可以視需要調整預設選項。
 
 

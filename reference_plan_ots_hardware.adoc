@@ -74,11 +74,13 @@ NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更�
 
 無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。
 
+.處理器
 支援的微處理器包括：
 
 * 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
 
 
+.乙太網路組態
 根據叢集大小、有多種支援的乙太網路組態。
 
 [cols="30,35,35"]

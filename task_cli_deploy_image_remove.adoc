@@ -19,6 +19,7 @@ summary: 您可以在ONTAP Select 不再需要時、從部署管理公用程式�
 
 CAUTION: 您不應移除ONTAP Select 叢集所使用的任何非影像。
 
+.關於這項工作
 您可以移除ONTAP Select 目前未由叢集使用或計畫用於未來叢集部署的舊版不含任何資訊的影像。
 
 .步驟

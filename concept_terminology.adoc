@@ -102,4 +102,5 @@ NOTE: 您只能使用ONTAP Select 比部署執行個體所含原始版本更早�
 部署後再管理ONTAP Select 一個叢集:: 部署ONTAP Select 完一個故障叢集之後、您可以像設定硬體型ONTAP 的故障叢集一樣設定叢集。例如、您可以ONTAP Select 使用System Manager或標準ONTAP 的指令行介面來設定一個靜態叢集。
 
 
+.相關資訊
 link:task_cli_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"]

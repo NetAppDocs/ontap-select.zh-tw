@@ -43,6 +43,7 @@ summary: 您可以使用ONTAP Select VMware vCenter部署Web使用者介面來�
 . 出現提示時、請提供vCenter認證資料。
 
 
+.完成後
 如果您移除外掛程式、則必須執行下列其中一項工作、才能完成從vCenter伺服器移除外掛程式：
 
 * 重新啟動vCenter伺服器

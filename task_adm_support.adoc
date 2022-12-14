@@ -22,6 +22,7 @@ summary: 您可以執行多項相關的診斷與支援工作、作為執行ONTAP
 
 您應該設定影響部署公用程式運作方式的基本系統組態參數。
 
+.關於這項工作
 Deploy組態資料由AutoSupport 整個過程中使用。
 
 .步驟
@@ -43,6 +44,7 @@ Deploy組態資料由AutoSupport 整個過程中使用。
 
 此功能包括事件記錄功能、可提供系統活動的相關資訊。ONTAP Select您應該檢視事件記錄的內容、以偵錯任何問題、或是在支援人員指示的情況下進行偵錯。
 
+.關於這項工作
 您可以根據多項特性來篩選事件訊息清單、包括：
 
 * 狀態
@@ -66,6 +68,7 @@ Deploy組態資料由AutoSupport 整個過程中使用。
 
 您可以視AutoSupport 需要啟用和停用此功能。
 
+.關於這項工作
 NetApp使用支援功能的主要疑難排解工具：AutoSupport ONTAP Select因此AutoSupport 、除非絕對必要、否則請勿停用不穩定功能。如果您停用AutoSupport 了功能不整、資料仍會收集、但不會傳輸到NetApp。
 
 .步驟
@@ -81,6 +84,7 @@ NetApp使用支援功能的主要疑難排解工具：AutoSupport ONTAP Select�
 
 包含產生一套功能不整的功能。ONTAP Select AutoSupport您應該產生一個套件來偵錯任何問題、或是在支援人員的指示下進行偵錯。
 
+.關於這項工作
 您可以在AutoSupport NetApp支援的指導和指導下、產生下列的整套功能：
 
 * 部署ONTAP Select 由整合資訊功能所建立的記錄檔

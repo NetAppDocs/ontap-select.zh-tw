@@ -20,6 +20,7 @@ VMware不支援從VMFS 5就地升級至VMFS 6。您可以使用Storage VMotion�
 
 image:ST_10.jpg["移轉"]
 
+.開始之前
 確認新主機可支援ONTAP Select 此節點。例如、如果原始主機使用RAID控制器和DAS儲存設備、則新主機上應該會有類似的組態。
 
 
@@ -45,4 +46,5 @@ image:ST_11.jpg["編輯設定"]
 . 備份部署公用程式資料庫。
 
 
+.完成後
 當Storage VMotion作業完成時、您應該使用Deploy公用程式來執行「叢集重新整理」作業。「叢集更新」功能會以ONTAP 全新的節點位置來更新「還原部署」資料庫ONTAP Select 。
