@@ -22,71 +22,7 @@
   <block id="f4e7ce7ba166f67f662306fe747a596e" category="paragraph">您可以使用下列工作流程來部署及管理ONTAP Select 一個叢集。</block>
   <block id="2c3df213abea0ad1cb494572704542f9" category="inline-image-macro">說明部署ONTAP Select 一個叢集所需的完整工作流程。</block>
   <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。</block>
-  <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">FAS9.6效能：優質HA直接附加SSD儲存設備ONTAP Select</block>
-  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">參考平台的效能資訊。</block>
-  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">參考平台</block>
-  <block id="e4a309f15020053335305c42e7ab8866" category="paragraph">Data ONTAP 9.6（Premium XL）硬體（每節點）ONTAP Select</block>
-  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">Fujitsu PRIMERGY RX2540 M4：</block>
-  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">Intel（R）Xeon（R）Gold 6142b CPU、速度為2.6 GHz</block>
-  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32個實體核心（16 x 2個插槽）、64個邏輯核心</block>
-  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB RAM</block>
-  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">每個主機的磁碟機：24個960GB SSD</block>
-  <block id="54b588a0a73b1fd4e80bea0b52b66a5c" category="list-text">ESX 6.5U1.</block>
-  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">用戶端硬體</block>
-  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5個NFSv3 IBM 3550m4用戶端</block>
-  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">組態資訊</block>
-  <block id="644583ef81af3657d263540fe36659df" category="list-text">軟體RAID 1 x 9 + 2 RAID-DP（11個磁碟機）</block>
-  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5（ONTAP 位於EASEID中的RAID-0）/ RAID快取NVRAM</block>
-  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）</block>
-  <block id="d906eb9f16fe5d1f0efd1b7177d61563" category="paragraph">下表列出使用ONTAP Select 軟體RAID和硬體RAID、在HA配對的一組支援中心節點上、針對讀寫工作負載所測得的處理量。效能測量是使用SIO負載產生工具進行。</block>
-  <block id="98e524c388d1dc4bc579ff68a03fac92" category="paragraph">* ONTAP Select 使用軟體RAID和硬體RAID*、在DAS（SSD）上執行單一節點（四節點中型執行個體的一部分）的效能結果</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
-  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">連續讀取64KiB</block>
-  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">連續寫入64KiB</block>
-  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">隨機讀取8KiB</block>
-  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">隨機寫入8KiB</block>
-  <block id="e78425925b16cdbe3107734a56031c80" category="cell">隨機WR/ RD（50/50）8KiB</block>
-  <block id="590488d177e2d68396e9e404f0787197" category="cell">支援DAS（SSD）軟體RAID的支援範例9.6 ONTAP</block>
-  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171億次</block>
-  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559億次</block>
-  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">954億次</block>
-  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">394-393MBps</block>
-  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">564 MBps</block>
-  <block id="895f2f67b79ae99fa3fe27377f9e4cd0" category="cell">支援DAS（SSD）軟體RAID的支援範例9.6選擇中執行個體ONTAP</block>
-  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090億美元</block>
-  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MBps</block>
-  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677億次</block>
-  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335億次</block>
-  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 3億次</block>
-  <block id="97ed077967fa6e5c5b243597455454ad" category="cell">支援DAS（SSD）硬體RAID的支援範例9.6 ONTAP</block>
-  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038億美元</block>
-  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520億分之一</block>
-  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578台MiBps</block>
-  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325迷你吧</block>
-  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399億次</block>
-  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64K循序讀取</block>
-  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">詳細資料：</block>
-  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">SIO直接I/O已啟用</block>
-  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2個節點</block>
-  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">每個節點2個資料NIC</block>
-  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（8TB軟體RAID）</block>
-  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64個SIO處理程序、每個處理程序1個執行緒</block>
-  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">每個節點32個磁碟區</block>
-  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">每個處理器1個檔案；每個檔案為12000MB</block>
-  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64K循序寫入</block>
-  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）</block>
-  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128個SIO處理程序、每個處理程序1個執行緒</block>
-  <block id="5347890bfa18e54f63569bc0327414f2" category="list-text">每節點32個磁碟區（硬體RAID）、16個（軟體RAID）</block>
-  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">每個處理器1個檔案；每個檔案30720MB</block>
-  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8K隨機讀取</block>
-  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64個SIO處理程序、每個處理程序8個執行緒</block>
-  <block id="5e891e0901bd4eb1cada8b221b715ae8" category="list-text">每個節點的磁碟區32</block>
-  <block id="4af562d52353844c11ed213dc9654510" category="list-text">每個處理器1個檔案；每個檔案12228MB</block>
-  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8K隨機寫入</block>
-  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">每個處理器有1個檔案；每個檔案為819MB</block>
-  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8K隨機50%寫入50%讀取</block>
-  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">每個處理器64個SIO pro208執行緒</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">適用於雙NIC和四NIC組態的VMware VSwitch組態和負載平衡原則。ONTAP Select</block>
   <block id="492e974e8b190853245906ac4824304e" category="doc">VMware vSphere vSwitch組態</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">支援使用標準和分散式vSwitch組態。ONTAP Select分散式vSwitch支援連結集合架構（LACP）。連結集合體是一種通用的網路架構、用於彙總多個實體介面卡的頻寬。LACP是一種廠商中立的標準、可為網路端點提供開放式傳輸協定、將實體網路連接埠群組整合到單一邏輯通道中。可搭配設定為連結集合群組（LAG）的連接埠群組使用。ONTAP Select不過、NetApp建議使用個別實體連接埠作為簡單的上行（主幹）連接埠、以避免LAG組態。在這些情況下、標準和分散式VSwitches的最佳實務做法是相同的。</block>
@@ -488,15 +424,11 @@
   <block id="33ba2ef8157bb8f83fe7476e84b76be7" category="list-text">Json輸入（步驟10）</block>
   <block id="95ccb28342b6f78f3f3a3eb2dc5046d6" category="list-text">您必須提供ONTAP 該管理員帳戶的密碼。</block>
   <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">效能會因硬體組態而異。</block>
-  <block id="803abb3d8fba33b629c90a24fc1585f8" category="doc">效能一般考量</block>
-  <block id="e4169e437dafc2dac3f256dc83393811" category="paragraph">本節所述的效能數據、是對ONTAP Select VMware叢集效能的粗略估計、並非效能保證。</block>
-  <block id="8db2c1339766522ddbe10fc18f14fda4" category="paragraph">由於基礎硬體和組態的特性、所以無法大幅改變VMware叢集的效能ONTAP Select 。事實上、特定硬體組態是特定ONTAP Select 執行個體效能的最大因素。以下是影響特定ONTAP Select 執行個體效能的一些因素：</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">*核心頻率*。一般而言、較高的頻率較為理想。</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">*單插槽與多插槽*。雖然不使用多插槽功能、但支援多插槽組態的Hypervisor負荷會在整體效能方面造成一定程度的差異。ONTAP Select</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">* RAID卡組態及相關Hypervisor驅動程式*。Hypervisor提供的預設驅動程式可能需要由硬體廠商驅動程式取代。</block>
   <block id="71408d9f3d3515fa8a651b1604736a6f" category="list-text">* RAID群組中的磁碟機類型和磁碟機數目*。</block>
   <block id="f28d3f9b022a76395cd98dbce7787e03" category="list-text">* Hypervisor版本與修補程式層級*。</block>
-  <block id="d98c26215b600e916c38a438cd921e98" category="paragraph">本節僅包含在完全相同的測試平台上執行測試時的效能比較、以強調特定功能的影響。一般而言、我們會記錄硬體環境、並在該平台上執行可能的最高效能組態。</block>
   <block id="4d09b06d3f1c9f3b24f2fc22fbc1f4d8" category="summary">隨附於Rashdeploy的REST API ONTAP Select 會指派版本編號。API版本編號與部署版本編號無關。您應該注意部署版本隨附的API版本、以及這會如何影響API的使用。</block>
   <block id="ac966fd996f684f0395b996d1d4fecbc" category="doc">部署API版本管理</block>
   <block id="2f73e96f40faeb03ac034ff609003901" category="paragraph">部署管理公用程式的目前版本包含REST API的第3版。舊版的部署公用程式包括下列API版本：</block>
@@ -833,34 +765,6 @@
   <block id="6eff2276c4f875c14c569fbc11e4c2a0" category="cell">nnnnnnn</block>
   <block id="28166a3ae8b939ecccabac1b217dd6b9" category="cell">使用容量資源池的每個節點、由授權管理員產生的可變八位數值</block>
   <block id="d5b7ad6085f954060b4b4df44a320995" category="admonition">注意：在NetApp支援中開啟使用容量資源池授權的節點案例時、您無法提供完整的二十位數節點序號。您必須提供九位數的容量資源池授權序號。您可以從節點序號中衍生授權序號、如上所示。跳過節點序號（「999」）的前三位數、然後擷取下九位數（pppppppppp）。</block>
-  <block id="6d42c54012b863cd6eedcc3d403ad0c6" category="summary">FAS9.5效能：頂級HA直接附加SSD儲存設備。ONTAP Select</block>
-  <block id="ff0e3825fd4663837f971a7ba681159f" category="doc">S9.5效能：優質HA直接附加SSD儲存設備ONTAP Select</block>
-  <block id="c9b1fc9101d9afb87bc8e65e52b3cdaf" category="paragraph">提供優異的HA直接附加SSD儲存設備、提供9.5效能。ONTAP Select</block>
-  <block id="d8ae9b53271ef4ae7e463671d9edd15f" category="paragraph">S9.5（Premium）硬體（每個節點）ONTAP Select ：</block>
-  <block id="da8d0349a5f6486d92d1203e4c900b69" category="list-text">Cisco UCS C240 M4SX：</block>
-  <block id="66b56969cc3581bdd13812374d117941" category="list-text">Intel Xeon CPU E5-2620、2.1GHz</block>
-  <block id="79f2a0232b06d44ab405491d76e73a16" category="list-text">2個插槽；每個插槽16個CPU</block>
-  <block id="88f6a554563c7a608913d59040ebaf62" category="list-text">128GB RAM</block>
-  <block id="433abae658dcc70d5d3761c8600f7b1f" category="list-text">VMware ESXi 6.5</block>
-  <block id="1762c54cddae477ffccf703524615078" category="list-text">每個主機的磁碟機：24個900GB SSD</block>
-  <block id="89b13670b1db743f4d85d8e8f4088bcf" category="paragraph">用戶端硬體：</block>
-  <block id="2eb19baafd2ac3bf96bb137917d946fa" category="paragraph">組態資訊：</block>
-  <block id="a40f55e0a537eb3307ad8510ba1e6e1b" category="list-text">1、500 MTU用於用戶端與Select叢集之間的資料路徑</block>
-  <block id="b488012d536d61994101d21973ccb5fc" category="cell">支援DAS（SSD）硬體RAID的支援範例9.5 ONTAP</block>
-  <block id="f3478912bb07f7ec7c8444a5e316e819" category="cell">1、733億次</block>
-  <block id="95017f29234ec8b67e7f06611466891b" category="cell">412億次</block>
-  <block id="48c28f3a705b0584dbfb937f1e189873" category="cell">391MiBps</block>
-  <block id="9dcedfb9f11c04fb8a4aaa046d530c89" category="cell">1251MiBps</block>
-  <block id="772f559bb1cae1f865b3a396cf692ddc" category="cell">309MiBps</block>
-  <block id="c91e356267219d84f0202e2d0dfbffb2" category="cell">支援DAS（SSD）軟體RAID的支援範例9.5 ONTAP</block>
-  <block id="aad82c942b780f118f2cb44de2a917b2" category="cell">1、674MiBps</block>
-  <block id="c17a615d3925b4ae5b453126b17c321f" category="cell">360MiBps</block>
-  <block id="db456de05f2855d308ef49d553c921f7" category="cell">451MiBps</block>
-  <block id="6f874ec8b8b77dc7dd8d2a094888d1e3" category="cell">223MiBps</block>
-  <block id="2de50a1b7b5776ec223eb8252b6d9597" category="cell">293MiBps</block>
-  <block id="114ff4f2711841720a4f7186e6a15a6a" category="list-text">每個處理器1個檔案；每個檔案12228MB</block>
-  <block id="1180f790e23bf2a48f8bf9f2b5e2a5d4" category="list-text">每個處理器1個檔案；每個檔案為819MB</block>
-  <block id="e919c753c1379472f37d0b73be4c0c35" category="list-text">64個SIO處理程序、每個處理程序20個執行緒</block>
   <block id="1bef0a056722dac4fff8d9e4eb9229d3" category="summary">您可以使用下列指令碼、根據指令碼中定義的參數和Json輸入檔來建立叢集。</block>
   <block id="e16c906ba61aeeafbcb69e14b4357d15" category="doc">建立叢集的指令碼</block>
   <block id="297413ed02fa3433b06a3824ddf5c4c8" category="summary">規劃一套功能完整的部署時、您應該考慮幾項MetroCluster 需求。ONTAP Select</block>
@@ -3037,39 +2941,6 @@
   <block id="b6916597ca4fb596035c95675806adc4" category="list-text">部署後再管理ONTAP Select 一個叢集</block>
   <block id="5552d2e42187f5ce0bb8b3e93af40a15" category="list-text">部署ONTAP Select 完一個故障叢集之後、您可以像設定硬體型ONTAP 的故障叢集一樣設定叢集。例如、您可以ONTAP Select 使用System Manager或標準ONTAP 的指令行介面來設定一個靜態叢集。</block>
   <block id="b1d42ed6470398387d373e3f35d8d69e" category="paragraph"><block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block></block>
-  <block id="1844b667aa3a3552724d4b6f25fdfee0" category="summary">效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。</block>
-  <block id="7e6ffef2d9e4630a693d27eee2bf092b" category="doc">發揮作用：頂級HA直接附加SSD儲存設備ONTAP Select</block>
-  <block id="62226f401a888e5c673bd197232488a4" category="paragraph">提供優異的HA直接附加SSD儲存設備、提供9.4效能。ONTAP Select</block>
-  <block id="7145f73f47761ef03a9ac7fa743946ba" category="paragraph">《》（頂級）硬體（每個節點）ONTAP Select ：</block>
-  <block id="080b55c282b18aff6acbb9b8307e45d7" category="list-text">Cisco UCS C240 M4S2：</block>
-  <block id="c2d47e9bc55facf5b445ed65b937324d" category="list-text">Intel Xeon CPU E5-2697、2.60GHz</block>
-  <block id="4fb1dad16b1d444620c31d069252b122" category="list-text">2個插槽；每個插槽14個CPU</block>
-  <block id="067be87059aca76ce27d2d89d383b1fe" category="list-text">56個邏輯CPU（啟用HT）</block>
-  <block id="3b63a934f24699a3abc944472864815f" category="list-text">256GB RAM</block>
-  <block id="a47c0000c2a8c08808a324895ee9f307" category="list-text">每部主機磁碟機：24個X371A NetApp 960GB SSD</block>
-  <block id="2dfe3c2982e9fc1ac8adf6ce6b36e54c" category="list-text">4個NFSv3 IBM 3550m4用戶端</block>
-  <block id="8b72248fc750c60f5a43e996ad821fe0" category="paragraph">下表列出針對HA配對ONTAP Select 的某個精選節點上的讀寫工作負載所測得的處理量。效能測量是使用SIO負載產生工具進行。</block>
-  <block id="b6b524966f971cc1b38cf6c4eded4605" category="paragraph">* ONTAP Select 單一節點（四節點中型執行個體的一部分）的效能結果：DAS（SSD）*上的S59.4叢集</block>
-  <block id="cfde5abdec2f5607a3796be635ad47c8" category="cell">供應DAS（SSD）的精選中型執行個體ONTAP</block>
-  <block id="1f194e7c72c8d7d14fa3c4f8961be5d9" category="cell">1045MBps 16、712 IOPS</block>
-  <block id="28e25559b3ba528fccbc794a3d5acf26" category="cell">251MBps 4016 IOPS</block>
-  <block id="cd1bc5669f6e4b437606af5e53a8b1fa" category="cell">492MBps 62,912 IOPS</block>
-  <block id="ece20723782dfa056ec3b55e3b24c37e" category="cell">141MBps 18、048 IOPS</block>
-  <block id="d75d181c83215266d40487856fd42da7" category="cell">218MBps 27、840 IOPS</block>
-  <block id="a3aa868c13903be73360a0ca2b15dfec" category="list-text">2個資料NIC</block>
-  <block id="c877600127e0c10559aaef3fa6f8b340" category="list-text">1個資料Aggregate（2TB）</block>
-  <block id="49bbe54cd8eaab8f69a8a97fa376d801" category="list-text">64個磁碟區；64個SIO處理程序/執行緒</block>
-  <block id="4a0db462fd57fced8d7681b289ec4560" category="list-text">每個節點32個磁碟區（總共64個）</block>
-  <block id="de2926cc8dca4ae82290fb564b1e727a" category="list-text">每個磁碟區1個SIO程序；每個檔案1個SIO執行緒</block>
-  <block id="1ac3559913b9b5236f11c6f5102ad2ef" category="list-text">每個磁碟區1個檔案；每個檔案為12000MB</block>
-  <block id="be480d1f91e2cdc691aa5d12fca920bc" category="list-text">1個資料Aggregate（2TB）：</block>
-  <block id="09316e2030ac2a586bdc8b34957a3f11" category="list-text">64個磁碟區；128個SIO處理程序/執行緒</block>
-  <block id="5c976de35e9bfb7d8dfdc6bc36e9f30b" category="list-text">每個磁碟區2個SIO程序；每個檔案1個SIO執行緒</block>
-  <block id="e5f9abaaeb90091b0581ce38df4c2c3b" category="list-text">每個磁碟區2個檔案、每個檔案30720MB</block>
-  <block id="f2c1316c9ccf02c81ebe9af467c06324" category="list-text">每個磁碟區1個SIO程序；每個檔案8個SIO執行緒</block>
-  <block id="e8a52598182d56969b5ab1ca3f51824c" category="list-text">每個磁碟區1個檔案、每個檔案12228MB</block>
-  <block id="e5b92c2ae9138f1aed4a50d59474e5b4" category="list-text">每個磁碟區1個檔案、每個檔案819MB</block>
-  <block id="8199bd94478b387253fc671d5de902af" category="list-text">每個磁碟區1個SIO程序；每個檔案20個SIO執行緒</block>
   <block id="9193a4c6677511855c3ab435f999d751" category="summary">您可以存取更多資源、以取得協助並尋找ONTAP Select 更多關於下列項目的資訊。</block>
   <block id="9b0fbf172f51b4a5abce0857edfab0f9" category="section-title">產品資源ONTAP Select</block>
   <block id="c49e76269f99b6773f9b3a78f408edb0" category="paragraph">下列產品頁面提供各種ONTAP Select 不同的支援資源連結。</block>
@@ -3377,10 +3248,6 @@
   <block id="7590e9173880f1e9732bf635a6fdd451" category="sidebar">同步複寫與鏡射Aggregate</block>
   <block id="4ad4ca6d00f55818bc64af3e5a3ec6fb" category="sidebar">其他高可用度功能</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="sidebar">效能</block>
-  <block id="3516c8ba7b35045de92853ce609c11f7" category="sidebar">一般考量</block>
-  <block id="51816119234063b73e5a0a75806755ce" category="sidebar">9.4優質HA直接附加SSD儲存設備</block>
-  <block id="1bbc5edfb65abbd74567c968131d62b8" category="sidebar">9.5優質HA直接附加SSD儲存設備</block>
-  <block id="121abb38eefc2bbdbd5ecfe650e612c1" category="sidebar">9.6優質HA直接附加SSD儲存設備</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="sidebar">快速入門</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">總覽</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="sidebar">架構</block>
@@ -3650,4 +3517,6 @@
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">目前版本ONTAP Select 的</block>
   <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">過去版本ONTAP Select 的不一樣</block>
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">關於此工作</block>
+  <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">由於基礎硬體和組態的特性、所以無法大幅改變VMware叢集的效能ONTAP Select 。特定的硬體組態是特定ONTAP Select 執行個體效能的最大因素。以下是影響特定ONTAP Select 執行個體效能的一些因素：</block>
+  <block id="589ecc96b319d521b89948044a66b27b" category="paragraph">如需ONTAP Select 效能測試詳細資料、請參閱ONTAP Select 的「_Estrap_Performance」一節<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>。</block>
 </blocks>

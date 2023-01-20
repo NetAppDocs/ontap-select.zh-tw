@@ -184,15 +184,7 @@ sidebar:
       - title: 其他高可用度功能
         url: "/concept_ha_other.html"
     - title: 效能
-      entries:
-      - title: 一般考量
-        url: "/concept_perf_general.html"
-      - title: 9.4優質HA直接附加SSD儲存設備
-        url: "/concept_perf_premium_ha_direct_ssd_94.html"
-      - title: 9.5優質HA直接附加SSD儲存設備
-        url: "/concept_perf_premium_ha_direct_ssd_95.html"
-      - title: 9.6優質HA直接附加SSD儲存設備
-        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+      url: "/concept_perf_general.html"
   - title: 與vCenter整合
     entries:
     - title: 快速入門
