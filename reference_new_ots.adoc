@@ -15,10 +15,100 @@ summary: 目前的版本不包含ONTAP Select 任何特定於功能的新功能�
 
 
 [role="lead"]
-目前的版本不包含ONTAP Select 任何特定於功能的新功能或改進。
+NetApp會定期更新ONTAP Select 產品介紹、為您帶來全新功能與增強功能。
 
 
 
-== 發行說明 ONTAP
+== 零點9.12.1. ONTAP Select
 
-從目前發行的核心產品中、大部分的新發展中獲益。ONTAP Select ONTAP請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["發行說明 ONTAP"^] 以瞭ONTAP 解每個版本的更新功能或改進功能。
+目前發行的核心版的核心版大部分新開發成果、均可讓您受益於此功能ONTAP ONTAP Select 。不包含ONTAP Select 任何特定於功能更新或改進功能。
+
+
+
+== 零點9.11.1. ONTAP Select
+
+包含多項新功能與改良功能ONTAP Select 。
+
+增強VMware ESXi支援:: 支援VMware ESXi 7.0 U3C的VMware ESXi 9.11.1。ONTAP Select
+支援VMware NSxT-T:: VMware NSS-T 3.1.2版已符合VMware NSS-9.10.1及更新版本的資格ONTAP Select 。將NSS-T搭配ONTAP Select 部署有OVA檔案和ONTAP Select 支援此功能的整合式管理公用程式的單節點叢集使用時、沒有任何功能問題或不足之處。不過、將NSS-T搭配ONTAP Select 使用於不支援任何功能的多節點叢集時、您應該注意ONTAP Select 下列有關《The S59.11.1》的限制：
++
+--
+* 網路連線檢查工具
++
+在NSX T型網路上執行時、透過部署CLI提供的網路連線檢查程式會失敗。
+
+
+
+--
+不再支援KVM Hypervisor::
++
+--
+從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
+
+從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
+
+NetApp強烈建議客戶規劃並執行完整的資料移轉、從ONTAP Select 適用於KVM的VMware移轉至ONTAP 任何其他的支援平台、包括ONTAP Select 適用於ESXi的VMware。如需詳細資訊、請參閱 https://mysupport.netapp.com/info/communications/ECMLP2877451.html["EOA通知"^]
+
+--
+
+
+
+
+== 零點9.10.1 ONTAP Select
+
+包含多項新功能與改良功能ONTAP Select 。
+
+支援VMware NSxT-T:: 符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSS-T搭配ONTAP Select 部署有OVA檔案和ONTAP Select 支援此功能的整合式管理公用程式的單節點叢集使用時、沒有任何功能問題或不足之處。不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意下列需求和限制：
++
+--
+* 叢集MTU
++
+您必須手動將叢集MTU大小調整為8800、才能部署叢集以因應額外的負荷。VMware指南是在使用NSX T時允許使用200位元組的緩衝區
+
+* 網路4x10Gb組態
++
+針對配置有四個NIC的VMware ESXi主機上的VMware ESXi部署、部署公用程式會提示您遵循最佳實務做法、在兩個不同的連接埠群組之間分割內部流量、以及在兩個不同的連接埠群組之間分割外部流量。ONTAP Select不過、使用重疊網路時、此組態無法運作、您應該忽略建議。在這種情況下、您應該只使用一個內部連接埠群組和一個外部連接埠群組。
+
+* 網路連線檢查工具
++
+在NSX T型網路上執行時、透過部署CLI提供的網路連線檢查程式會失敗。
+
+
+
+--
+不再支援KVM Hypervisor:: 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集。ONTAP Select不過、如果您將叢集從舊版升級至9.10.1、您仍可使用部署公用程式來管理叢集。
+
+
+
+
+== 部分9.9.1 ONTAP Select
+
+包含多項新功能與改良功能ONTAP Select 。
+
+處理器系列支援:: 從更新版本的支援範圍ONTAP Select 起、ONTAP Select 僅支援Intel Xeon Sandy Bridge或更新版本的CPU機型。
+更新VMware ESXi支援:: 支援VMware ESXi的ONTAP Select 功能已透過VMware 9.9.1增強。現在支援下列版本：
++
+--
+* ESXi 7.0 U2
+* ESXi 7.0 U1.
+
+
+--
+
+
+
+
+== 部分9.8 ONTAP Select
+
+在更新功能ONTAP Select 方面、有幾項功能已在更新。
+
+高速介面:: 高速介面功能可同時提供25G（25GbE）和40G（40GbE）選項、以增強網路連線能力。若要在使用這些較高速度時達到最佳效能、您應遵循ONTAP Select 《The》（《The》）文件中所述的連接埠對應組態最佳實務做法。
+更新VMware ESXi支援:: 關於支援VMware ESXi的ONTAP Select 問題、共有兩項關於支援VMware ESXi的變更。
++
+--
+* 支援ESXi 7.0（GA build 15843807及更新版本）
+* 不再支援ESXi 6.0
+
+
+--
+

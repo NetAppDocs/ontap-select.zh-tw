@@ -43,7 +43,7 @@ CAUTION: 您不應移除ONTAP Select 叢集所使用的任何非影像。
 +
 範例「rm -r /opt/NetApp/images/DataONTAPv-9.3RC1-vidConsole -esx.ova」
 
-. 使用版本ONTAP Select 低於版本的版本時、可選擇性地移除KVM映像。
+. 使用ONTAP Select 版本早於版本的版本時、可選擇性地移除KVM映像。
 +
 範例「rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar」
 

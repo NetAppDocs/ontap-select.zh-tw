@@ -16,9 +16,13 @@ summary: 尋找ONTAP Select 有關資訊的常見問題解答。
 [role="lead"]
 您可以找ONTAP Select 到有關解決常見問題的答案。
 
+[NOTE]
+====
+* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
+* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
 
-NOTE: 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集。ONTAP Select現在有了更新版本的版本、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機。ONTAP Select涉及KVM的問題僅適用於支援KVM的舊版。
 
+====
 
 
 == 一般

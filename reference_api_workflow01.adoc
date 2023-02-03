@@ -21,7 +21,15 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 * ESXi主機並非由vCenter（獨立主機）管理
 * 叢集內使用多個節點或主機
 * 叢集部署於已購買授權的正式作業環境中
-* 使用KVM Hypervisor而非VMware ESXi（建立ONTAP Select 使用VMware 9.10.1及更新版本的新叢集時、不再支援KVM）
+* 使用KVM Hypervisor而非VMware ESXi
++
+[NOTE]
+====
+** 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
+** 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
+
+
+====
 
 
 
@@ -42,7 +50,7 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step01 'https://10.21.191.150/api/security/credentials'
 ----
 Json輸入（步驟01）::
 
@@ -85,7 +93,7 @@ Json輸入（步驟01）::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step02 'https://10.21.191.150/api/hosts'
 ----
 Json輸入（步驟02）::
 
@@ -131,7 +139,7 @@ Json輸入（步驟02）::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
 ----
 Json輸入（步驟03）::
 
@@ -170,7 +178,7 @@ Json輸入（步驟03）::
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
 ----
 Json輸入（步驟04）::
 
@@ -211,7 +219,7 @@ Json輸入（步驟04）::
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
 ----
 處理類型:: 同步
 輸出::
@@ -241,7 +249,7 @@ curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
 ----
 Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機ID。
 
@@ -279,7 +287,7 @@ Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機I
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
 ----
 處理類型:: 同步
 輸出::
@@ -312,7 +320,7 @@ NOTE: 發出下列API呼叫兩次、每個網路一次。
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
 ----
 Json輸入（步驟08）:: 您需要提供網路名稱。
 
@@ -345,7 +353,7 @@ Json輸入（步驟08）:: 您需要提供網路名稱。
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
 ----
 Json輸入（步驟09）:: 集區容量為2 TB。
 
@@ -383,7 +391,7 @@ Json輸入（步驟09）:: 集區容量為2 TB。
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
 ----
 Json輸入（步驟10）:: 您必須提供ONTAP 該管理員帳戶的密碼。
 
