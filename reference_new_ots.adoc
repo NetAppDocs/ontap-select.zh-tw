@@ -43,11 +43,12 @@ NetApp會定期更新ONTAP Select 產品介紹、為您帶來全新功能與增�
 不再支援KVM Hypervisor::
 +
 --
-從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-
-從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
+* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
+* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
++
 NetApp強烈建議客戶規劃並執行完整的資料移轉、從ONTAP Select 適用於KVM的VMware移轉至ONTAP 任何其他的支援平台、包括ONTAP Select 適用於ESXi的VMware。如需詳細資訊、請參閱 https://mysupport.netapp.com/info/communications/ECMLP2877451.html["EOA通知"^]
+
+
 
 --
 

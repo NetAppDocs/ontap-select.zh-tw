@@ -601,7 +601,6 @@
   <block id="433e51a365a7b38eca70ff3fb9842f4f" category="paragraph">出現提示時、請提供系統管理員帳戶密碼。</block>
   <block id="8321447cfcedfbf85f936b6d5ffebfe0" category="list-text">在系統中顯示授權、以確認已正確新增授權：</block>
   <block id="8822a9cc146d06e4ec77936054fb11ca" category="paragraph">《許可證展示》</block>
-  <block id="ba93b2a719cfe3e8015ab3ec2eaf4774" category="section-title">新增ESXi Hypervisor主機</block>
   <block id="73f4469376ea1f5c82d6b88b4dd08c80" category="paragraph">您必須登錄ONTAP Select 每個執行此節點的Hypervisor主機。在此過程中、部署管理公用程式會驗證到管理主機的vCenter伺服器、或直接驗證到ESXi獨立主機。</block>
   <block id="dd18331505610da0aa987b27dd5c8b25" category="paragraph">登錄由vCenter管理的主機之前、您必須先新增vCenter伺服器的管理伺服器帳戶。如果主機不是由vCenter管理、您可以在登錄主機時提供主機認證資料。您應該使用此程序來新增每個主機。</block>
   <block id="c1f1fdaeb1fc7d288d9969efdd963bcc" category="list-text">以系統管理員帳戶使用SSH登入部署公用程式CLI。</block>
@@ -609,7 +608,6 @@
   <block id="12c193f5dcc3f99c7a295445ebc9b455" category="paragraph">「認證新增-主機名稱&lt;FQDN：ip&gt;-輸入vCenter -usernamevCenter_username'</block>
   <block id="c61720431284d81fa9e02425c5f95ab6" category="list-text">註冊主機：</block>
   <block id="05a199c9e0f61506eaad93a8dc60682f" category="list-text">註冊非vCenter管理的獨立主機：「host register -name &lt;fqd| ip&gt;-hypervisor類型ESX -usernameESX_username'</block>
-  <block id="1c33a374a227666dbe5c62e17c001cc4" category="list-text">註冊由vCenter管理的主機：「host register -name &lt;fqd| ip&gt;-hypervisor類型ESX -mgmt-server &lt;fqd| ip&gt;'</block>
   <block id="72d7c672225aae34bedacaaa9e067e1b" category="list-text">顯示主機狀態並確認其為驗證狀態。</block>
   <block id="86cc5166af9ee54f72113259fac2f069" category="paragraph">「host show -name &lt;FQDN：ip&gt;-detailed」</block>
   <block id="9654fb56bf1aee9815d9cad239ed20e6" category="section-title">建立及設定ONTAP Select 一個叢集</block>
@@ -3551,4 +3549,26 @@
   <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">使用KVM Hypervisor而非VMware ESXi</block>
   <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster</block>
   <block id="e5a37d3922c90b1192e2c159354c1e1d" category="list-text">使用ONTAP Select 版本早於版本的版本時、可選擇性地移除KVM映像。</block>
+  <block id="7ece09332cee8602060ca18c20ce13f2" category="section-title">新增ESXi Hypervisor主機</block>
+  <block id="7e2fe14c99e2697025b2031aedd0ec68" category="list-text">登錄由vCenter管理的主機：<block ref="06cf66b5547f9422d5a9c37b6cfb3aca" prefix=" " category="inline-code"></block></block>
+  <block id="18d733133eb14f6d577f2d278fac37a1" category="summary">您可以使用host modify命令來修改含有ONTAP Select 此例項的主機管理伺服器。</block>
+  <block id="35f41fa38694b23a0654a4a8c0dd359b" category="doc">修改主機管理伺服器</block>
+  <block id="88f06314571793a45376bea0a67c1684" category="paragraph">您可以使用<block ref="efefae9f89e157498d052edf2886fd00" prefix=" " category="inline-code"></block> 命令、以ONTAP Select 這個執行個體的支援功能來修改主機管理伺服器。</block>
+  <block id="92e9d6227d5534e7afc27a11179c808e" category="section-title">語法</block>
+  <block id="6297f303e9e12ebecef22ddbadda2695" category="paragraph"><block ref="2a5899524cd06699eb3f22670e5b5f7a" prefix="" category="inline-code"></block></block>
+  <block id="15f4c82d7b2b43e31c30dd018b800c56" category="section-title">必要參數</block>
+  <block id="83f499a540b1323009c200d6f8cc9396" category="cell">參數</block>
+  <block id="5a0c5f11bba8b50361398fca38743e26" category="paragraph"><block ref="d1e29f4e7c05a0d14116dced0271a083" prefix="" category="inline-code"></block></block>
+  <block id="8e6d2b7bb122ef90ab4d9499b2c875ea" category="paragraph">您要修改之主機的IP位址或FQDN。</block>
+  <block id="666b70d55b751021bd6bceab3555d74b" category="paragraph"><block ref="57fb45691ba5713dde99aa386c9de5c5" prefix="" category="inline-code"></block></block>
+  <block id="f265ef7fd6211a9a63635d95bcbe841d" category="paragraph">要設定為主機的主機管理伺服器IP位址或FQDN。指定「-」（連字號）、從主機取消設定管理伺服器。使用登錄此主機之前、必須先新增此管理伺服器的認證資料 <block ref="c779ef963465b6edf0cdf8be183d8b9e" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="e3beee990a3abfcc54a09f5727e1ee11" category="section-title">選用參數</block>
+  <block id="ca6c068d9b2bab12276a5adb2fa8b1c4" category="paragraph"><block ref="f599cc506e0eddc851eb7ebdb18a6143" prefix="" category="inline-code"></block></block>
+  <block id="d04f7b66a82acbcd30236e90b34f191b" category="paragraph">顯示說明訊息。</block>
+  <block id="51409356309172bc38605699145c5125" category="paragraph"><block ref="c3e8e825367e7f94475a891a9d781ce5" prefix="" category="inline-code"></block></block>
+  <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">此參數控制長時間執行命令的行為。如果設定、命令會在前景執行、並在作業發生時顯示相關的事件訊息。</block>
+  <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
+  <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">可存取此主機的使用者名稱。只有當主機不是由管理伺服器（也就是由vCenter管理的ESX主機）管理時、才需要執行此動作。</block>
+  <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索軟體保護（Arp）</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
 </blocks>

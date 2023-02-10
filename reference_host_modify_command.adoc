@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: reference_host_modify_command.html 
+keywords: host modify, command, syntax, host management server 
+summary: 您可以使用host modify命令來修改含有ONTAP Select 此例項的主機管理伺服器。 
+---
+= 修改主機管理伺服器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 `host modify` 命令、以ONTAP Select 這個執行個體的支援功能來修改主機管理伺服器。
+
+
+
+== 語法
+
+`host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
+
+
+
+== 必要參數
+
+[cols="35,65"]
+|===
+
+
+| 參數 | 說明 
+
+
+ a| 
+`-name _name_`
+ a| 
+您要修改之主機的IP位址或FQDN。
+
+
+
+ a| 
+`-mgmt-server _management_server_`
+ a| 
+要設定為主機的主機管理伺服器IP位址或FQDN。指定「-」（連字號）、從主機取消設定管理伺服器。使用登錄此主機之前、必須先新增此管理伺服器的認證資料  `credential add` 命令。
+
+|===
+
+
+== 選用參數
+
+[cols="35,65"]
+|===
+
+
+| 參數 | 說明 
+
+
+ a| 
+`-help`
+ a| 
+顯示說明訊息。
+
+
+
+ a| 
+`-foreground`
+ a| 
+此參數控制長時間執行命令的行為。如果設定、命令會在前景執行、並在作業發生時顯示相關的事件訊息。
+
+
+
+ a| 
+`-username _username_`
+ a| 
+可存取此主機的使用者名稱。只有當主機不是由管理伺服器（也就是由vCenter管理的ESX主機）管理時、才需要執行此動作。
+
+|===

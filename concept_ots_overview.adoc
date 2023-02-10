@@ -93,6 +93,7 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 * 不支援使用支援的資料交換埠屬性修改不支援的連接埠屬性、包括速度、雙工和流程控制。ONTAP ONTAP
 * 服務處理器
 * NetApp儲存加密磁碟機
+* 自主勒索軟體保護（Arp）
 
 
 .相關資訊

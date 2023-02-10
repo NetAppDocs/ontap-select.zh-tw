@@ -104,7 +104,8 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 . 註冊主機：
 +
 ** 註冊非vCenter管理的獨立主機：「host register -name <fqd| ip>-hypervisor類型ESX -usernameESX_username'
-** 註冊由vCenter管理的主機：「host register -name <fqd| ip>-hypervisor類型ESX -mgmt-server <fqd| ip>'
+** 登錄由vCenter管理的主機：
+`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
 範例
 

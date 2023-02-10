@@ -13,7 +13,11 @@ sidebar:
   - title: 文件ONTAP Select
     url: "/index.html"
   - title: 版本資訊
-    url: "/reference_release_notes.html"
+    entries:
+    - title: 發行說明ONTAP Select
+      url: "/reference_release_notes.html"
+    - title: 新增功能
+      url: "/reference_new_ots.html"
   - title: 概念
     entries:
     - title: 產品總覽
@@ -294,6 +298,8 @@ sidebar:
       entries:
       - title: 將ESXi升級至6.5及更高版本
         url: "/task_cli_upgrade_esxi65.html"
+      - title: 修改主機管理伺服器
+        url: "/reference_host_modify_command.html"
     - title: 部署公用程式
       entries:
       - title: 升級部署執行個體
