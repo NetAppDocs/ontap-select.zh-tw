@@ -2448,7 +2448,6 @@
   <block id="5bc075cee240a70af54270621d93765c" category="list-text">SnapVault</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
-  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="list-text">NetApp Volume Encryption</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">重複資料刪除與壓縮</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">支援多租戶共享ONTAP</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp Volume Encryption（僅限非受限國家/地區）</block>
@@ -3182,7 +3181,6 @@
   <block id="eda37297768fb66316ec0c97afd29213" category="paragraph">當每個主機包含兩個10Gb連接埠時、您應該依照下列方式設定vSwitch：</block>
   <block id="a86f2765e738940e7dd8fdf6da677fd5" category="list-text">設定vSwitch並將兩個連接埠指派給vSwitch。使用兩個連接埠建立NIC群組。</block>
   <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">將負載平衡原則設定為「根據來源虛擬連接埠ID進行路由」。</block>
-  <block id="4392037ca9aa84394b086d1268c59a3b" category="list-text">將兩個介面卡標示為「作用中」。</block>
   <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">vSwitch屬性）</block>
   <block id="fee017d680804978d6f31a0149d3356f" category="list-text">將「容錯回復」設定設為「是」。<block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">設定vSwitch使用巨型框架（9000 MTU）。</block>
@@ -3571,4 +3569,5 @@
   <block id="6766f7a2e53a40ab3efd050bec084512" category="paragraph">可存取此主機的使用者名稱。只有當主機不是由管理伺服器（也就是由vCenter管理的ESX主機）管理時、才需要執行此動作。</block>
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索軟體保護（Arp）</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">將兩個介面卡標示為「主動」或將一個介面卡標示為「主動」、另一個標示為「待命」。</block>
 </blocks>
