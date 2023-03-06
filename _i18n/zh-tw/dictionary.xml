@@ -3570,4 +3570,73 @@
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">自主勒索軟體保護（Arp）</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">將兩個介面卡標示為「主動」或將一個介面卡標示為「主動」、另一個標示為「待命」。</block>
+  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。</block>
+  <block id="f0b00c7331f322626690d4fd2e51c06f" category="doc">效能：優質HA直接附加SSD儲存設備</block>
+  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">參考平台的效能資訊。</block>
+  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">參考平台</block>
+  <block id="1046c015c70060135ed38c7cc90d8b86" category="paragraph">（優質XL）硬體（每個節點ONTAP Select ）</block>
+  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">Fujitsu PRIMERGY RX2540 M4：</block>
+  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">Intel（R）Xeon（R）Gold 6142b CPU、速度為2.6 GHz</block>
+  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32個實體核心（16 x 2個插槽）、64個邏輯核心</block>
+  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB RAM</block>
+  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">每個主機的磁碟機：24個960GB SSD</block>
+  <block id="54b588a0a73b1fd4e80bea0b52b66a5c" category="list-text">ESX 6.5U1.</block>
+  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">用戶端硬體</block>
+  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5個NFSv3 IBM 3550m4用戶端</block>
+  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">組態資訊</block>
+  <block id="644583ef81af3657d263540fe36659df" category="list-text">軟體RAID 1 x 9 + 2 RAID-DP（11個磁碟機）</block>
+  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5（ONTAP 位於EASEID中的RAID-0）/ RAID快取NVRAM</block>
+  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）</block>
+  <block id="8b753111757d995e14e8b502f0b060f5" category="paragraph">下表列出ONTAP Select 使用軟體RAID和硬體RAID、在高可用度（HA）的一對邊節點上針對讀寫工作負載所測量的處理量。效能測量是使用SIO負載產生工具進行。</block>
+  <block id="8f0b44fb88a1368b40ccf845bb51b622" category="admonition">這些效能數據均以ONTAP Select VMware 9.6為基礎。</block>
+  <block id="5f0987d7c836e13b5c975378b71cb33d" category="paragraph">*使用ONTAP Select 軟體RAID和硬體RAID*、在直接附加儲存（DAS）SSD上、單一節點（四節點中型執行個體的一部分）的效能結果</block>
+  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">連續讀取64KiB</block>
+  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">連續寫入64KiB</block>
+  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">隨機讀取8KiB</block>
+  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">隨機寫入8KiB</block>
+  <block id="e78425925b16cdbe3107734a56031c80" category="cell">隨機WR/ RD（50/50）8KiB</block>
+  <block id="b9f7179a485f0a08d3f620ea3027bc01" category="cell">採用DAS（SSD）軟體RAID的大型執行個體ONTAP Select</block>
+  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171億次</block>
+  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559億次</block>
+  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">954億次</block>
+  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">394-393MBps</block>
+  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">564 MBps</block>
+  <block id="729966193ad3771980bdca3507a1eaaf" category="cell">採用DAS（SSD）軟體RAID的中型執行個體ONTAP Select</block>
+  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090億美元</block>
+  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MBps</block>
+  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677億次</block>
+  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335億次</block>
+  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 3億次</block>
+  <block id="e4475fda14f8565f7c25947659d1c3d9" category="cell">採用DAS（SSD）硬體RAID的中型執行個體ONTAP Select</block>
+  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038億美元</block>
+  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520億分之一</block>
+  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578台MiBps</block>
+  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325迷你吧</block>
+  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399億次</block>
+  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64K循序讀取</block>
+  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">詳細資料：</block>
+  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">SIO直接I/O已啟用</block>
+  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2個節點</block>
+  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">每個節點2個資料NIC</block>
+  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（8TB軟體RAID）</block>
+  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64個SIO處理程序、每個處理程序1個執行緒</block>
+  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">每個節點32個磁碟區</block>
+  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">每個處理器1個檔案；每個檔案為12000MB</block>
+  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64K循序寫入</block>
+  <block id="0f298226345a9b3c58f0c3df3b00ab51" category="list-text">每個節點2個資料網路介面卡（NIC）</block>
+  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）</block>
+  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128個SIO處理程序、每個處理程序1個執行緒</block>
+  <block id="ebfa598c2ae4ecaca547d57ec9bcebda" category="list-text">每個節點的磁碟區數：32（硬體RAID）、16（軟體RAID）</block>
+  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">每個處理器1個檔案；每個檔案30720MB</block>
+  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8K隨機讀取</block>
+  <block id="06f2713882df7e7a8c3ec49774af3f5d" category="list-text">每個節點2個資料NIC</block>
+  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64個SIO處理程序、每個處理程序8個執行緒</block>
+  <block id="37b92a84c96cf144d3d2f1ddd9e668dc" category="list-text">每個節點的磁碟區數：32個</block>
+  <block id="4af562d52353844c11ed213dc9654510" category="list-text">每個處理器1個檔案；每個檔案12228MB</block>
+  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8K隨機寫入</block>
+  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">每個處理器有1個檔案；每個檔案為819MB</block>
+  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8K隨機50%寫入50%讀取</block>
+  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">每個處理器64個SIO pro208執行緒</block>
+  <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">效能總覽</block>
+  <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">FAS9.6效能ONTAP Select</block>
 </blocks>

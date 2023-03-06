@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_96.html 
+keywords: ontap select, performance 
+summary: 效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。 
+---
+= 效能：優質HA直接附加SSD儲存設備
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+參考平台的效能資訊。
+
+
+
+== 參考平台
+
+（優質XL）硬體（每個節點ONTAP Select ）
+
+* Fujitsu PRIMERGY RX2540 M4：
++
+** Intel（R）Xeon（R）Gold 6142b CPU、速度為2.6 GHz
+** 32個實體核心（16 x 2個插槽）、64個邏輯核心
+** 256 GB RAM
+** 每個主機的磁碟機：24個960GB SSD
+** ESX 6.5U1.
+
+
+
+
+用戶端硬體
+
+* 5個NFSv3 IBM 3550m4用戶端
+
+
+組態資訊
+
+* 軟體RAID 1 x 9 + 2 RAID-DP（11個磁碟機）
+* 22+1 RAID-5（ONTAP 位於EASEID中的RAID-0）/ RAID快取NVRAM
+* 沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）
+
+
+下表列出ONTAP Select 使用軟體RAID和硬體RAID、在高可用度（HA）的一對邊節點上針對讀寫工作負載所測量的處理量。效能測量是使用SIO負載產生工具進行。
+
+
+NOTE: 這些效能數據均以ONTAP Select VMware 9.6為基礎。
+
+*使用ONTAP Select 軟體RAID和硬體RAID*、在直接附加儲存（DAS）SSD上、單一節點（四節點中型執行個體的一部分）的效能結果
+
+[cols="6*"]
+|===
+| 說明 | 連續讀取64KiB | 連續寫入64KiB | 隨機讀取8KiB | 隨機寫入8KiB | 隨機WR/ RD（50/50）8KiB 
+
+
+| 採用DAS（SSD）軟體RAID的大型執行個體ONTAP Select | 2171億次 | 559億次 | 954億次 | 394-393MBps | 564 MBps 
+
+
+| 採用DAS（SSD）軟體RAID的中型執行個體ONTAP Select | 2090億美元 | 592 MBps | 677億次 | 335億次 | 441 3億次 
+
+
+| 採用DAS（SSD）硬體RAID的中型執行個體ONTAP Select | 2038億美元 | 520億分之一 | 578台MiBps | 325迷你吧 | 399億次 
+|===
+
+
+=== 64K循序讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（8TB軟體RAID）
+* 64個SIO處理程序、每個處理程序1個執行緒
+* 每個節點32個磁碟區
+* 每個處理器1個檔案；每個檔案為12000MB
+
+
+
+
+=== 64K循序寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料網路介面卡（NIC）
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 128個SIO處理程序、每個處理程序1個執行緒
+* 每個節點的磁碟區數：32（硬體RAID）、16（軟體RAID）
+* 每個處理器1個檔案；每個檔案30720MB
+
+
+
+
+=== 8K隨機讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 64個SIO處理程序、每個處理程序8個執行緒
+* 每個節點的磁碟區數：32個
+* 每個處理器1個檔案；每個檔案12228MB
+
+
+
+
+=== 8K隨機寫入
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 64個SIO處理程序、每個處理程序8個執行緒
+* 每個節點的磁碟區數：32個
+* 每個處理器有1個檔案；每個檔案為819MB
+
+
+
+
+=== 8K隨機50%寫入50%讀取
+
+詳細資料：
+
+* SIO直接I/O已啟用
+* 2個節點
+* 每個節點2個資料NIC
+* 每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）
+* 每個處理器64個SIO pro208執行緒
+* 每個節點的磁碟區數：32個
+* 每個處理器1個檔案；每個檔案12228MB
+
