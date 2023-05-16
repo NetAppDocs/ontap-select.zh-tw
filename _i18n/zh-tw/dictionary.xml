@@ -586,7 +586,6 @@
   <block id="c423fd05ac4075cd52ed8e9ec9961c3f" category="paragraph">如果您使用軟體RAID、則必須為系統資料建立儲存資源池、並確保SSD磁碟機可用於根集合體和資料集合體。您必須附加儲存資源池和磁碟、作為設定ONTAP Select 節點的一部分。</block>
   <block id="d5ba525828b35ea241ddabb08b074ffd" category="section-title">提供ONTAP Select 的版本</block>
   <block id="aa66e32480de432747a10957bdaa05fd" category="inline-link-macro">新增ONTAP Select 要部署的鏡像</block>
-  <block id="f04ce539f861b20e999ae9ca7a1a5963" category="paragraph">部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 <block ref="78d33d23ddbc660baa867877fc233dd4" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="700dafd7ca1606f2a30973a096a3f27f" category="section-title">正式ONTAP Select 作業部署的授權功能</block>
   <block id="9526942f4f0cae81c16b2f122cce2a1e" category="paragraph">在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用_capsityleap__模型在每個節點上授權儲存設備、或使用_capsityPools_模型授權共用資源池。</block>
   <block id="9b419acef9660c05b08074757cfef581" category="section-title">上傳及註冊授權檔案</block>
@@ -3641,4 +3640,5 @@
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">FAS9.6效能ONTAP Select</block>
   <block id="31ecb65d48d53f60c89a54adee2acf00" category="section-title">管理過期的容量資源池授權</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">一般而言、當授權到期時、不會發生任何事。不過、您無法安裝不同的授權、因為節點與過期的授權相關聯。在續約授權之前、您不應執行任何會使Aggregate離線的動作、例如重新開機或容錯移轉作業。建議採取的行動是加速授權續約。</block>
+  <block id="15ab075109f8f2254777d15c63f96650" category="paragraph">部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 <block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
 </blocks>

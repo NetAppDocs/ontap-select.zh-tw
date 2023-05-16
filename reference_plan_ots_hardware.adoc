@@ -66,7 +66,7 @@ NOTE: 只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識�
 
 NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更新版本為基礎的CPU機型。
 
-請參閱 https://mysupport.netapp.com/matrix["NetApp互通性對照表工具、window=_blank"] 以取得更多資訊。
+請參閱 https://["NetApp互通性對照表工具、window=_blank"] 以取得更多資訊。
 
 
 

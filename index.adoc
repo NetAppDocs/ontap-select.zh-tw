@@ -35,7 +35,7 @@ NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署�
 
 VMware ESXi可部署VMware 9.12.1。ONTAP Select本網站包含ONTAP Select VMware ESXi上執行的VMware 9.12.1、9.11.1、9.10.1、9.9.1、9.8及9.7文件、以及Hypervisor無關文件（例如REST API）。
 
-您可以在上找到KVM版本產品的版本資訊、以及先前版本所支援的文件 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]。
+您可以在上找到KVM版本產品的版本資訊、以及先前版本所支援的文件 https://["產品庫ONTAP Select"^]。
 
 
 

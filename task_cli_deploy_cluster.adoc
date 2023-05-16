@@ -34,7 +34,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 === 提供ONTAP Select 的版本
 
-部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_adm_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"] 以取得更多資訊。
+部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"] 以取得更多資訊。
 
 
 

@@ -27,17 +27,17 @@ CAUTION: 您無法使用部署管理公用程式來升級現有ONTAP Select 的�
 
 . 瀏覽至NetApp支援網站的下載頁面。
 +
-https://mysupport.netapp.com/site/downloads["NetApp支援下載"^]
+https://["NetApp支援下載"^]
 
 . 按一下「* ONTAP Select 不含節點升級*」。
 . 選取並下載適當的升級映像、視需要回應所有提示。
 . 在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。您可以在ONTAP Select 產品庫頁面存取版本的《發行說明》。
 +
-https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]
+https://["產品庫ONTAP Select"^]
 
 . 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。
 +
-https://docs.netapp.com/us-en/ontap/["部分9文件ONTAP"^]
+https://["部分9文件ONTAP"^]
 
 
 
