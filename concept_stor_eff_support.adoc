@@ -57,7 +57,7 @@ Cross Volume Background Deduplication:  true
 NOTE: 若要從9.6版或更新版本升級、您必須在具有優質授權的DAS SSD儲存設備上安裝支援功能ONTAP Select ONTAP Select 。此外、您必須在執行ONTAP 初始叢集安裝時勾選*啟用儲存效率*核取方塊、以使用「整合」功能進行叢集安裝。如果在未符合先前條件的情況下啟用AFF型特性設定ONTAP後升級、則需要手動建立開機引數和節點重新開機。如需詳細資訊、請聯絡技術支援部門。
 
 .儲存效率組態ONTAP Select
-下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視媒體類型和軟體授權而定。下表中的資訊適用於ONTAP Select 更新版本的資訊。如需先前版本的資訊、請參閱ONTAP Select 中的「_SURFITY Support_」一節 https://["TR-4517"^]。
+下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視媒體類型和軟體授權而定。下表中的資訊適用於ONTAP Select 更新版本的資訊。如需先前版本的資訊、請參閱ONTAP Select 中的「_SURFITY Support_」一節 https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^]。
 
 [cols="4"]
 |===

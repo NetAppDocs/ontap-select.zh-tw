@@ -20,7 +20,7 @@ summary: 代表性狀態傳輸（REST）是建立分散式Web應用程式的風�
 
 == 架構與傳統限制
 
-REST由Roy Fielding在博士課程中正式表達 https://["論文"] 於2000年在UC爾灣舉行。它透過一組限制來定義架構風格、這些限制共同改善了網路型應用程式和基礎傳輸協定。這些限制會使用無狀態通訊協定、根據用戶端/伺服器架構來建立RESTful Web服務應用程式。
+REST由Roy Fielding在博士課程中正式表達 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["論文"] 於2000年在UC爾灣舉行。它透過一組限制來定義架構風格、這些限制共同改善了網路型應用程式和基礎傳輸協定。這些限制會使用無狀態通訊協定、根據用戶端/伺服器架構來建立RESTful Web服務應用程式。
 
 
 

@@ -17,5 +17,5 @@ summary: 如果ONTAP Select 您未執行最新版本、則可取得先前版本�
 如果ONTAP Select 您未執行最新版本、則可取得先前版本的更新文件。您也可以在使用KVM Hypervisor搭配先前支援的版本時、存取所需的文件。
 
 .不含更新版本ONTAP Select
-* https://["產品庫ONTAP Select"^]
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["產品庫ONTAP Select"^]
 

@@ -22,19 +22,19 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 下列產品頁面提供各種ONTAP Select 不同的支援資源連結。
 
-* https://["NetApp ONTAP Select 技術資源"^]
-* https://["NetApp ONTAP Select 產品頁面"^]
+* https://www.netapp.com/data-management/ontap-select/documentation["NetApp ONTAP Select 技術資源"^]
+* https://www.netapp.com/us/products/data-management-software/ontap-select-sds.aspx["NetApp ONTAP Select 產品頁面"^]
 
 
 
 
 == 支援支援支援ONTAP
 
-* https://["供應說明文件ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/["供應說明文件ONTAP"^]
 +
 提供ONTAP 有關支援功能的文件（CLI命令除外）。
 
-* https://["供應說明文件中心 ONTAP"^]
+* https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"^]
 +
 提供ONTAP 有關支援功能的文件、以供參考。
 
@@ -46,7 +46,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 我們提供一系列部落格文章、內容涵蓋ONTAP Select 各種不同層面。
 
-* https://["NetApp ONTAP Select 產品資訊部落格"^]
+* https://blog.netapp.com/tag/ontap-select/["NetApp ONTAP Select 產品資訊部落格"^]
 
 
 
@@ -55,7 +55,7 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 您可以與其他使用者聯絡、詢問問題並協助NetApp ONTAP Select 解決方案社群。
 
-* http://["NetApp社群ONTAP Select"^]
+* http://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select["NetApp社群ONTAP Select"^]
 
 
 
@@ -64,5 +64,5 @@ summary: 您可以存取更多資源、以取得協助並尋找ONTAP Select 更�
 
 互通性對照表工具包含詳細的組態與產品支援資訊。
 
-* https://["NetApp IMT"^]
+* https://mysupport.netapp.com/matrix/["NetApp IMT"^]
 
