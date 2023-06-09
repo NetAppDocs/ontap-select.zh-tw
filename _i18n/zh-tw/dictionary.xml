@@ -1507,7 +1507,6 @@
   <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">取得升級套件之後、您必須將檔案上傳至部署虛擬機器。</block>
   <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">您必須在本機工作站上提供升級檔案。您也必須擁有系統管理員使用者帳戶的密碼。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此工作說明將檔案上傳至部署虛擬機器的一種方法。可能還有其他更適合您環境的選項。</block>
-  <block id="fc867a2c06f0b493d05e8508b022600e" category="list-text">在本機工作站的命令Shell中、使用sftp公用程式將映像檔上傳至部署虛擬機器。</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">升級檔案儲存在管理使用者的主目錄中。</block>
   <block id="cff2646f28c605bf4435cf5b8260a4e7" category="section-title">套用升級套件</block>
   <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">將升級檔案上傳至部署虛擬機器之後、即可套用升級。</block>
@@ -3641,4 +3640,6 @@
   <block id="31ecb65d48d53f60c89a54adee2acf00" category="section-title">管理過期的容量資源池授權</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">一般而言、當授權到期時、不會發生任何事。不過、您無法安裝不同的授權、因為節點與過期的授權相關聯。在續約授權之前、您不應執行任何會使Aggregate離線的動作、例如重新開機或容錯移轉作業。建議採取的行動是加速授權續約。</block>
   <block id="15ab075109f8f2254777d15c63f96650" category="paragraph">部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 <block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="f39da9a3a7ab30031d6c4133fff101c1" category="admonition">如果您已安裝 ONTAP Select Deploy 管理公用程式執行個體、則應考慮升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 <block ref="4c9e70831def8fb341e5d69652f04dcf" category="inline-link-macro-rx"></block> 以取得更多詳細資料。</block>
+  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">在本機工作站的命令 Shell 中、使用 scp 公用程式將影像檔案上傳至部署虛擬機器。</block>
 </blocks>

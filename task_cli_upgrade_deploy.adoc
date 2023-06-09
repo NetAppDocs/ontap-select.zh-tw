@@ -23,6 +23,9 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 確保在升級期間不會使用部署來執行任何其他工作。如需升級部署公用程式的相關資訊和限制、請參閱最新版本說明。
 
 
+NOTE: 如果您已安裝 ONTAP Select Deploy 管理公用程式執行個體、則應考慮升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 link:concept_adm_upgrading_nodes.html["升級ONTAP Select 節點"^] 以取得更多詳細資料。
+
+
 
 == 正在下載升級套件
 
@@ -54,15 +57,13 @@ link:https://mysupport.netapp.com["NetApp支援"^]
 此工作說明將檔案上傳至部署虛擬機器的一種方法。可能還有其他更適合您環境的選項。
 
 .步驟
-. 在本機工作站的命令Shell中、使用sftp公用程式將映像檔上傳至部署虛擬機器。
+. 在本機工作站的命令 Shell 中、使用 scp 公用程式將影像檔案上傳至部署虛擬機器。
 +
 範例
 
 +
 ....
-sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
 
 
@@ -89,8 +90,7 @@ exit
 
 +
 ....
-deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
