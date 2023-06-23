@@ -89,11 +89,15 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 * 不支援介面群組介面群組（IFGRPs）。
 * 健全狀況監控傳統的健全狀況監控功能、搭配硬體架ONTAP 構的內部部署、僅適用於基礎硬體元件。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。
 * NIC卸載支援由於ONTAP Select 搭配使用的虛擬化環境、不支援NIC卸載功能。
-* 叢集IPspace不支援任何對叢集IPspace的修改、包括新增或移除連接埠。
+* 叢集 IP 空間
+不支援任何叢集 IPspace 的修改、包括新增或移除連接埠、虛擬 LAN （ VLAN ）或連結集合群組。
 * 不支援使用支援的資料交換埠屬性修改不支援的連接埠屬性、包括速度、雙工和流程控制。ONTAP ONTAP
 * 服務處理器
 * NetApp儲存加密磁碟機
 * 自主勒索軟體保護（Arp）
+* 可防竄改的Snapshot複本
+* SVM移轉
+* VMware HCX
 
 
 .相關資訊

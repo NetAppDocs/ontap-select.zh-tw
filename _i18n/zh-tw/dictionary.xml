@@ -1085,7 +1085,6 @@
   <block id="d00e5e6179a113ecbf710d36aa88e4fd" category="list-text">不支援介面群組介面群組（IFGRPs）。</block>
   <block id="4980ffa00c517c7cc63e35e9bb2badc8" category="list-text">健全狀況監控傳統的健全狀況監控功能、搭配硬體架ONTAP 構的內部部署、僅適用於基礎硬體元件。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。</block>
   <block id="00bbd977d1e0bcd12815512c500c80c0" category="list-text">NIC卸載支援由於ONTAP Select 搭配使用的虛擬化環境、不支援NIC卸載功能。</block>
-  <block id="0deeb1230c395c3d0c86df9b8fedbb62" category="list-text">叢集IPspace不支援任何對叢集IPspace的修改、包括新增或移除連接埠。</block>
   <block id="ae17b3d1f56509708706e25dfd3adfc7" category="list-text">不支援使用支援的資料交換埠屬性修改不支援的連接埠屬性、包括速度、雙工和流程控制。ONTAP ONTAP</block>
   <block id="b77e0c9663536ba98dbe087f083ddb67" category="list-text">服務處理器</block>
   <block id="aaeb4231dd9f4da475d71f9212010cdd" category="list-text">NetApp儲存加密磁碟機</block>
@@ -3642,4 +3641,9 @@
   <block id="15ab075109f8f2254777d15c63f96650" category="paragraph">部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 <block ref="b1d42ed6470398387d373e3f35d8d69e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="f39da9a3a7ab30031d6c4133fff101c1" category="admonition">如果您已安裝 ONTAP Select Deploy 管理公用程式執行個體、則應考慮升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 <block ref="4c9e70831def8fb341e5d69652f04dcf" category="inline-link-macro-rx"></block> 以取得更多詳細資料。</block>
   <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">在本機工作站的命令 Shell 中、使用 scp 公用程式將影像檔案上傳至部署虛擬機器。</block>
+  <block id="a847af8ec24fb4acb1f1194041f1508f" category="list-text">叢集 IP 空間
+不支援任何叢集 IPspace 的修改、包括新增或移除連接埠、虛擬 LAN （ VLAN ）或連結集合群組。</block>
+  <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">可防竄改的Snapshot複本</block>
+  <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM移轉</block>
+  <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
 </blocks>
