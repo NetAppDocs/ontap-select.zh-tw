@@ -556,7 +556,6 @@
   <block id="0f168ca1cdd02cac089ca7bafb134cd1" category="inline-link-macro">重新安裝容量資源池授權</block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">部署ONTAP Select 完一個叢集後、您可以使用部署管理公用程式來升級節點的Hypervisor執行個體類型。</block>
   <block id="a81401e9911e6ba18e35f42e304aeafc" category="doc">調整ONTAP Select 叢集節點的大小</block>
-  <block id="da8c60eda9de027a78518654141ef28e" category="admonition">您只能在使用容量層授權模式時、執行叢集節點的大小調整作業。無法調整具有容量資源池授權的各個節點。ONTAP Select</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">叢集必須處於線上狀態。</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">此工作說明如何使用部署Web使用者介面。您也可以使用部署CLI來執行執行執行個體調整大小。無論您使用何種介面、調整大小作業所需的時間可能會因數項因素而大幅變動、而且可能需要較長的時間才能完成。您只能將節點大小調整為較大的大小。</block>
   <block id="0a34214ca44126aa0cdfec7af4a58c66" category="list-text">按一下頁面頂端的*叢集*索引標籤、然後從清單中選取所需的叢集。</block>
@@ -3646,4 +3645,7 @@
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">可防竄改的Snapshot複本</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM移轉</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
+  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">您可以在使用容量層授權模式和容量集區授權模式時、執行叢集節點調整大小作業。</block>
+  <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
+  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。如需詳細資訊、請參閱知識庫文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
 </blocks>

@@ -18,6 +18,9 @@ summary: 部署叢集後、您應該瞭解叢集的初始狀態、並視環境�
 
 建立一個包含多項特性的叢集。ONTAP Select
 
+
+NOTE: 限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。如需詳細資訊、請參閱知識庫文章 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/OTS_Deploy_cluster_refresh_fails_with_error%3A_ONTAPSelectSysCLIVersionFailed_zapi_returned_bad_status_0%3A_None["OTS 部署叢集重新整理失敗、並出現錯誤"^]。
+
 .生命
 指派了兩種類型的客戶指定生命期：
 
