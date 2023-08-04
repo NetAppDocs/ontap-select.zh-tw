@@ -65,7 +65,7 @@ NOTE: 當用作該叢集的中介器時、支援功能可將虛擬機器整合�
 
 雙節點MetroCluster 的不完整資料SDS定義為叢集、其節點實體分隔（不同的空間、不同的建築物和不同的資料中心）超過300公尺。此外、每個節點的上行鏈路連線都會連接至不同的網路交換器。不需要專用硬體即可實現此功能。MetroCluster不過、環境應符合延遲需求（RTT最長5毫秒、不穩定性最長5毫秒、總共10毫秒）和實體距離（最大10公里）。
 
-不需取得Premium授權、即可享有出色的SDS功能。MetroClusterPremium授權可支援建立中小型VM、以及HDD和SSD媒體。
+MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。
 
 
 NOTE: 本地附加儲存設備（DAS）和共享儲存設備（vNAS）均支援使用支援的支援。MetroCluster請注意、VNAS組態通常會因為ONTAP Select 在整個過程中使用的是介於整個過程中的虛擬機器和共享儲存設備、而產生較高的內在延遲。包含共享儲存延遲在內的各個節點之間、均必須提供最多10毫秒的延遲。MetroCluster換句話說、只測量Select VM之間的延遲並不足夠、因為這些組態的共享儲存延遲並不微不足道。

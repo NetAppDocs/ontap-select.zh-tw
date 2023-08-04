@@ -745,7 +745,6 @@
   <block id="568e700bfd84bf09ea449e03f0b63ec2" category="paragraph">您可以將雙節點主動/主動式HA叢集延伸至更遠的距離、並可能將每個節點放置在不同的資料中心。雙節點叢集與雙節點延伸叢集（也稱為MetroCluster 「效益SDS」）之間的唯一區別、是節點之間的網路連線距離。</block>
   <block id="576271d358b861b1da59de8d0b9547e8" category="paragraph">雙節點叢集定義為叢集、兩個節點位於同一個資料中心、距離300公尺以內。一般而言、兩個節點都有上行鏈路可連至同一個網路交換器或一組交換器間連結（ISL）網路交換器。</block>
   <block id="4e83e8addeafe73c3acbe68952183177" category="paragraph">雙節點MetroCluster 的不完整資料SDS定義為叢集、其節點實體分隔（不同的空間、不同的建築物和不同的資料中心）超過300公尺。此外、每個節點的上行鏈路連線都會連接至不同的網路交換器。不需要專用硬體即可實現此功能。MetroCluster不過、環境應符合延遲需求（RTT最長5毫秒、不穩定性最長5毫秒、總共10毫秒）和實體距離（最大10公里）。</block>
-  <block id="04392e82fbee6fd91224b767c3bcd4ae" category="paragraph">不需取得Premium授權、即可享有出色的SDS功能。MetroClusterPremium授權可支援建立中小型VM、以及HDD和SSD媒體。</block>
   <block id="526a514c4ab4ec984314911904c226e7" category="admonition">本地附加儲存設備（DAS）和共享儲存設備（vNAS）均支援使用支援的支援。MetroCluster請注意、VNAS組態通常會因為ONTAP Select 在整個過程中使用的是介於整個過程中的虛擬機器和共享儲存設備、而產生較高的內在延遲。包含共享儲存延遲在內的各個節點之間、均必須提供最多10毫秒的延遲。MetroCluster換句話說、只測量Select VM之間的延遲並不足夠、因為這些組態的共享儲存延遲並不微不足道。</block>
   <block id="9cbb2237779591c572f2e7fa9444989e" category="summary">在容量層授權模式下、九位數節點序號與指派給節點的授權序號相同。不過、使用容量資源池授權模式指派給節點的序號格式不同。</block>
   <block id="875d6acfb9499e910c2863da32d9284e" category="doc">節點序號</block>
@@ -3010,7 +3009,6 @@
   <block id="c79b5e481b72a791067309bf6341357a" category="section-title">部署備份</block>
   <block id="f30bc4e85b9bb354d7f8cfeba876a8ba" category="paragraph">最佳做法是定期備份部署組態資料、包括在建立叢集之後。這對雙節點叢集而言特別重要、因為備份中包含了中介組態資料。</block>
   <block id="af57810cccc926c446851c6408c6667b" category="paragraph">建立或部署叢集之後、您應該備份ONTAP Select 「還原部署」組態資料。</block>
-  <block id="f28ccc9cc7fa1367f54e4ae8e3176c31" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。在主要Aggregate中、空間不足的情況可能會導致ONTAP 使用通用的NetApp Snapshot™複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。監控Aggregate空間使用率的良好基準高達85%。</block>
   <block id="9dc41c2a99c45941a7b6c4298a4ba9a5" category="section-title">NIC集合體、群組和容錯移轉</block>
   <block id="27294906efe978d2e7d613739082d7c5" category="paragraph">支援雙節點叢集的單一10Gb連結；不過、NetApp最佳實務做法是透過內部和外部網路上的NIC集合體或NIC群組來提供硬體備援。ONTAP Select ONTAP Select</block>
   <block id="d29b03a7fc61c6e1f42a47018afc8bcb" category="paragraph">如果NIC具有多個應用程式專屬的整合式電路（ASIC）、請在透過內部和外部網路的NIC群組建網路架構時、從每個ASIC選取一個網路連接埠。</block>
@@ -3648,4 +3646,7 @@
   <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">您可以在使用容量層授權模式和容量集區授權模式時、執行叢集節點調整大小作業。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
   <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。如需詳細資訊、請參閱知識庫文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
+  <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。</block>
+  <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建議您至少保留 20% 的可用空間以容納鏡射的集合體、以獲得最佳的儲存效能和可用度。雖然建議非鏡射的集合體為 10% 、但檔案系統可能會使用額外 10% 的空間來吸收遞增變更。由於 ONTAP 的寫入時複製 Snapshot 架構、遞增變更會增加鏡射集合體的空間使用率。不遵守這些最佳實務做法可能會對效能造成負面影響。</block>
+  <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。</block>
 </blocks>
