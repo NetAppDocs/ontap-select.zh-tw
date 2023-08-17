@@ -24,7 +24,6 @@
   <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">適用於雙NIC和四NIC組態的VMware VSwitch組態和負載平衡原則。ONTAP Select</block>
-  <block id="492e974e8b190853245906ac4824304e" category="doc">VMware vSphere vSwitch組態</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">支援使用標準和分散式vSwitch組態。ONTAP Select分散式vSwitch支援連結集合架構（LACP）。連結集合體是一種通用的網路架構、用於彙總多個實體介面卡的頻寬。LACP是一種廠商中立的標準、可為網路端點提供開放式傳輸協定、將實體網路連接埠群組整合到單一邏輯通道中。可搭配設定為連結集合群組（LAG）的連接埠群組使用。ONTAP Select不過、NetApp建議使用個別實體連接埠作為簡單的上行（主幹）連接埠、以避免LAG組態。在這些情況下、標準和分散式VSwitches的最佳實務做法是相同的。</block>
   <block id="10e7ad3863cdd2b48f9a7524784cedee" category="paragraph">本節說明在雙NIC和四NIC組態中應使用的vSwitch組態和負載平衡原則。</block>
   <block id="da05a02ceee0169095d6250face3e1a6" category="paragraph">設定ONTAP Select 要由VMware使用的連接埠群組時、應遵循下列最佳實務做法；連接埠群組層級的負載平衡原則是根據來源虛擬連接埠ID進行路由。VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFast。</block>
@@ -2959,7 +2958,6 @@
   <block id="e7174cdff2de95e16bdf33105f509464" category="list-text"><block ref="e7174cdff2de95e16bdf33105f509464" category="inline-link-rx"></block></block>
   <block id="ef063895a1ede73693b222ec3a2f0a63" category="summary">選取最佳的硬體、並設定網路以最佳化效能和恢復能力。</block>
   <block id="2e9a99934aaba2c5ae48b142fa347861" category="doc">支援的網路組態</block>
-  <block id="3ad46bc4202506ae104cdd08943bdf18" category="paragraph">伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。從VMware ESX開始ONTAP Select 、支援25GB/s和40Gb/s NIC介面卡。</block>
   <block id="1ff04d941ae1b8262465779276105e05" category="paragraph">由於VMware的效能ONTAP Select 與基礎硬體的特性直接相關、因此選擇速度較快的NIC來增加VM的處理量、會導致叢集效能較高、整體使用者體驗也較佳。可使用四個10Gb NIC或兩個較高速NIC（25/40 GB/s）來實現高效能網路配置。還有許多其他組態也受到支援。對於雙節點叢集、支援4個1Gb連接埠或1個10Gb連接埠。對於單一節點叢集、支援2個1Gb連接埠。</block>
   <block id="523bd57fcc837e7be7bc3b0cd4b52afa" category="cell">最低要求</block>
   <block id="d08307744845f9100511e47ff88bc61a" category="paragraph"><block ref="d08307744845f9100511e47ff88bc61a" category="inline-image-macro-rx" type="image"></block></block>
@@ -3230,7 +3228,6 @@
   <block id="029512cdc2b1f0fa16e4fc28ea554124" category="sidebar">單節點和多節點組態</block>
   <block id="bab8e5962588e40db65a36db5d916d05" category="sidebar">內部和外部網路</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="sidebar">支援的組態</block>
-  <block id="5bb5c0519a3ead3dfe6030831305e46c" category="sidebar">VMware vSphere vSwitch組態</block>
   <block id="52b9048ce13dbc3e7feb51e89c16b2e3" category="sidebar">資料與管理分離</block>
   <block id="fb3d59ef8abb86b2989e3e7dcc13a94e" category="sidebar">高可用度架構</block>
   <block id="2ae32cce8d9e1bdcb0478c5f14d4be9c" category="sidebar">HA組態</block>
@@ -3649,4 +3646,7 @@
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。</block>
   <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建議您至少保留 20% 的可用空間以容納鏡射的集合體、以獲得最佳的儲存效能和可用度。雖然建議非鏡射的集合體為 10% 、但檔案系統可能會使用額外 10% 的空間來吸收遞增變更。由於 ONTAP 的寫入時複製 Snapshot 架構、遞增變更會增加鏡射集合體的空間使用率。不遵守這些最佳實務做法可能會對效能造成負面影響。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。</block>
+  <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">VMware vSphere vSwitch 組態</block>
+  <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。從 ONTAP Select 9.8 開始、每秒 25Gb 和 40Gb/s NIC 介面卡開始、 VMware ESX 支援。</block>
+  <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch 組態</block>
 </blocks>

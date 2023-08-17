@@ -175,7 +175,7 @@ sidebar:
         url: "/concept_nw_internal_external.html"
       - title: 支援的組態
         url: "/concept_nw_supported_configs.html"
-      - title: VMware vSphere vSwitch組態
+      - title: VMware vSphere vSwitch 組態
         url: "/concept_nw_vsphere_vswitch_config.html"
       - title: 實體交換器組態
         url: "/concept_nw_physical_switch_config.html"
