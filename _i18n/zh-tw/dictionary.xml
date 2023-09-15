@@ -1648,9 +1648,6 @@
   <block id="2e47d1812c96cee9e86c118c72c7c736" category="paragraph">在ONTAP Select VMware ESXi Hypervisor上部署VMware ESXi叢集時、您可以使用ONTAP Select 由VMware提供的軟體RAID功能、而非使用本機硬體RAID控制器。在使用軟體RAID部署叢集之前、您必須先瞭解幾項需求與限制。</block>
   <block id="a1a264e616e24563d4b8f8b5795ea403" category="section-title">一般要求</block>
   <block id="724e52bc94bfb8a8a2ac7b6bc981655c" category="paragraph">VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：</block>
-  <block id="935b367303b47c19b9b62a47057f5d6c" category="list-text">VMware ESXi版本：</block>
-  <block id="0ac68f79bc5b55360d35600434d8da5f" category="list-text">ESXi 6.5 U2（版本號294253）或更新版本</block>
-  <block id="69322b2256be20f40d4399494e6e5d1d" category="list-text">ESXi 6.7 GA（建置8169922）或更新版本</block>
   <block id="7d92dddf3cdeb831e5c777dcd6e3edb1" category="list-text">S9.5或更新版本ONTAP Select</block>
   <block id="cfc85f4f7df067874a4ebae923cfada5" category="list-text">部署2.1或更新版本ONTAP Select</block>
   <block id="2e5d3e181c7fbda932e522084a6325f4" category="list-text">僅限全新ONTAP Select 的叢集</block>
@@ -2258,7 +2255,6 @@
   <block id="b87008505cc6fe630b46cc1e948e36f1" category="list-text">快速入門啟動頁面</block>
   <block id="8a8160f2e850747bb7fabd6819906b08" category="list-text">初始頁面* ONTAP Select 《Getting Started with the Siddeploy》（《使用介紹》）*將引導您完成建立叢集的多步驟程序。主要步驟有五個、包括：</block>
   <block id="fb98e8390277794afc419e842f4bccd9" category="list-text">新增授權</block>
-  <block id="d60f56bb9d55a941e09cc5c959de9a36" category="list-text">將主機新增至庫存</block>
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">建立叢集</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">網路預先檢查</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">部署叢集</block>
@@ -2267,8 +2263,6 @@
   <block id="18889d3b7d7412c773430265b3f7a703" category="list-text">如果要部署多節點叢集、您應該熟悉網路檢查程式。</block>
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署叢集之後</block>
   <block id="1457153d67772d3f9c4bf60a210172dc" category="section-title">建立單節點叢集</block>
-  <block id="3a4abd9eeeda413a4bf9956a7ec34228" category="paragraph">您可以使用ONTAP Select 「功能不全」網路使用者介面來部署單節點ONTAP Select 的功能不全的叢集。</block>
-  <block id="25ba26f357a31d39960ce1746018e712" category="paragraph">建立一個含有一個節點的整個叢集、以進行正式作業部署。ONTAP Select</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用系統管理員帳戶（admin）透過Web介面登入部署公用程式。</block>
   <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">如果ONTAP Select 顯示*歡迎使用S還原*快顯視窗、請確認您已符合組態先決條件、然後按一下*確定*。</block>
   <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">如果未顯示*快速入門*叢集啟動頁面、請按一下 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 在頁面頂端、按一下*快速入門*。</block>
@@ -2294,8 +2288,6 @@
   <block id="18c27fdda3b31de582a5c418705a0eab" category="paragraph">建立叢集可能需要30分鐘的時間。</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">監控多步驟叢集建立程序、確認叢集已成功建立。</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">頁面會定期自動重新整理。</block>
-  <block id="e1fdfbd988f463b21214e88021ddf580" category="admonition">如果叢集建立作業已啟動但無法完成、ONTAP 則您定義的整套管理密碼可能無法登錄。在這種情況下、您可以使用ONTAP Select 管理員帳戶的密碼_changeme123_來存取該叢集的管理介面。</block>
-  <block id="d409594d71c1119a8e70a3f177e882c0" category="paragraph">您應該確認ONTAP Select AutoSupport 已設定好「還原」功能、並備份ONTAP Select 「還原部署」組態資料。</block>
   <block id="c425134bb19f4b4f525b0c1083b045dc" category="summary">您可以透過vSphere Web使用者介面使用部署vCenter外掛程式來部署ONTAP Select VMware叢集。</block>
   <block id="d1ca50336076d7a8eab4b563cc9efc9f" category="paragraph">部署ONTAP Select VMware叢集之前、您應該先準備好使用部署vCenter外掛程式。</block>
   <block id="94b998ad17d9ea05d2548ce1476a8977" category="section-title">所有規模叢集的通用準備</block>
@@ -3276,7 +3268,6 @@
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">舊版</block>
   <block id="33b6370e1de46bd324564163dfaf48a9" category="list-text">VMware ESXi 7.0 GA（建置編號：15843807或更新版本）、包括7.0 U1、U2和U3C</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">Hypervisor可部署至ESXi或KVM（視部署版本而定）。部署至ESXi時、Hypervisor可以由vCenter管理、也可以是獨立式主機。</block>
-  <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">請參閱 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以準備部署叢集。必須先安裝並設定部署管理（密碼AutoSupport 、VMware vCenter）。</block>
   <block id="d0a2c35dd24f48a701484a2c0e0e4e2a" category="list-text">支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）</block>
   <block id="34a5cab8543c50812e1e9045207ef342" category="sidebar">文件ONTAP Select</block>
   <block id="88d96915de77c1959098b364119959de" category="paragraph">請參閱 <block ref="20acef5038e91881d90c1f2f38d1998f" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
@@ -3649,4 +3640,27 @@
   <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">VMware vSphere vSwitch 組態</block>
   <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。從 ONTAP Select 9.8 開始、每秒 25Gb 和 40Gb/s NIC 介面卡開始、 VMware ESX 支援。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch 組態</block>
+  <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">將主機新增至庫存</block>
+  <block id="747777855f9e01e88df9a2f37da41753" category="section-title">建立單節點或多節點叢集</block>
+  <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">您可以使用 ONTAP Select Deploy Web 使用者介面來部署單一節點或多節點 ONTAP Select 叢集。</block>
+  <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">請參閱 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以準備部署叢集。部署管理必須先安裝並設定（密碼、 AutoSupport 和 vCenter ）。</block>
+  <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">系統會為正式作業部署建立具有一或多個節點的 ONTAP Select 叢集。</block>
+  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">您所遵循的步驟取決於您要建立單節點叢集或多節點叢集。</block>
+  <block id="d4f87fedecd0cb118e567859f3b4f8b0" category="admonition">如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能尚未登錄。在這種情況下、您可以使用ONTAP Select 管理員帳戶的密碼_changeme123_來存取該叢集的管理介面。</block>
+  <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多節點叢集</block>
+  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請確認您已符合組態先決條件、然後按一下 * 確定 * 。</block>
+  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">在「*入門*」頁面上、按一下「*上傳*」、然後從本機工作站選取授權、再按一下「*開啟*」上傳授權。重複以新增第二個授權。</block>
+  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">按一下 * 重新整理 * 、確認已新增授權。</block>
+  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">按一下 * 下一步 * 以新增兩個 Hypervisor 主機、然後按一下 * 新增 * 。</block>
+  <block id="a25302f443f60fa8f7aef0d5c122b11f" category="paragraph">您可以直接新增 ESXi 主機、或是連線至 vCenter 伺服器。視需要提供適當的主機詳細資料和認證資料。</block>
+  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">在 * 叢集詳細資料 * 區段中、為 * 叢集大小 * 選取 * 2 節點叢集 * 、提供描述叢集的所有必要資訊、然後按一下 * 完成 * 。</block>
+  <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">在 * 節點設定 * 下、提供節點管理 IP 位址、並選取每個節點的授權；您可以視需要上傳新授權。您也可以視需要變更節點名稱。</block>
+  <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">有三種節點組態可定義虛擬機器大小和可用的功能集。這些執行個體類型分別受購買授權的標準、優質和優質XL產品支援。您為節點選取的授權必須符合或超過執行個體類型。</block>
+  <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">選取 Hypervisor 主機、以及管理、資料和內部網路。</block>
+  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">按一下 * 下一步 * 並按一下 * 執行 * 來執行網路預先檢查。這會驗證為 ONTAP 叢集流量選取的內部網路運作正常。</block>
+  <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">建立叢集可能需要 45 分鐘的時間。</block>
+  <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">監控多步驟叢集建立程序、以確認叢集已成功建立。</block>
+  <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。</block>
+  <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">如需外部儲存設備支援資訊、請參閱 <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>。</block>
+  <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA （建置 15843807 ）或更新版本</block>
 </blocks>

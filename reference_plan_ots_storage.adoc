@@ -17,6 +17,9 @@ summary: 有幾個規劃問題與ONTAP Select 不支援的主機儲存有關、�
 有幾個規劃問題與ONTAP Select 不支援的主機儲存有關、您應該考慮這些問題。
 
 
+NOTE: 如需外部儲存設備支援資訊、請參閱 link:reference_plan_ots_vnas.html["VNAS需求ONTAP Select"]。
+
+
 
 == 硬體RAID控制器需求
 
@@ -60,12 +63,7 @@ RAID控制器的最低需求包括：
 
 VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：
 
-* VMware ESXi版本：
-+
-** ESXi 6.5 U2（版本號294253）或更新版本
-** ESXi 6.7 GA（建置8169922）或更新版本
-
-
+* VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
 * S9.5或更新版本ONTAP Select
 * 部署2.1或更新版本ONTAP Select
 * 僅限全新ONTAP Select 的叢集
