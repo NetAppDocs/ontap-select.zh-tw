@@ -66,3 +66,215 @@ summary: 您可以執行多項相關工作、以確保ONTAP Select 實現一套�
 
 
 
+
+
+
+== 設定 MFA
+
+從 ONTAP Select 9.13.1 開始、 ONTAP Select Deploy 系統管理員帳戶支援多因素驗證（ MFA ）：
+
+* link:task_adm_security.html#ontap-select-deploy-cli-mfa-login-using-yubikey-piv-or-fido2-authentication["ONTAP Select 使用 YubKey 個人身分驗證（ PIV ）或快速身分識別線上（ FIDO2 ）驗證來部署 CLI MFA 登入"]
+* <<ONTAP Select 使用 ssh-keygen 部署 CLI MFA 登入>>
+
+
+
+
+== ONTAP Select 使用 YobiKey PIV 或 FIDO2 驗證來部署 CLI MFA 登入
+
+
+
+=== YibKeyPIV
+
+設定 YobiKey PIN 、並使用中的步驟來產生或匯入遠端支援代理程式（ RSA ）或省略曲線數位簽章演算法（ ECDSA ）私密金鑰和憑證 link:https://docs.netapp.com/us-en/ontap-technical-reports/security.html#multifactor-authentication["TR-4647 ： ONTAP 中的多因素驗證"^]。
+
+* 適用於 Windows ：技術報告的「 * 適用於 Windows* 的 YubKeyPIV 用戶端組態」一節。
+* 對於 MacOS ：技術報告的 * YobiKey PIV 用戶端組態（適用於 MAC OS 和 Linux* ）一節。
+
+
+
+
+=== FIDO2
+
+如果您選擇選擇使用 YubiKey FIDO2 驗證、請使用 YubiKey Manager 來設定 YubiKey FIDO2 PIN 、並使用適用於 Windows 的 PuTTY-CAC （通用存取卡）或適用於 MacOS 的 ssh-keygen 來產生 FIDO2 金鑰。執行此操作的步驟請參考技術報告 link:https://docs.netapp.com/us-en/ontap-technical-reports/security.html#multifactor-authentication["TR-4647 ： ONTAP 中的多因素驗證"^]。
+
+* Windows ：技術報告的「 * 適用於 Windows* 的 YubKeyFIDO2 用戶端組態」一節。
+* MacOS ：技術報告的 * YubKeyFIDO2 用戶端組態（適用於 Mac OS 和 Linux* ）一節。
+
+
+
+
+=== 取得 YobiKey PIV 或 FIDO2 公開金鑰
+
+取得公開金鑰取決於您是 Windows 或 MacOS 用戶端、以及您是否使用 PIV 或 FIDO2 。
+
+.Windows：
+* 使用 SSH 下的 * 複製到剪貼簿 * 功能、匯出 PIV 公開金鑰、如 TR-4647 第 16 頁 * 設定 Windows PuTTY-CAC SSH Client for YubiKey PIV Authentication* 一節所述。
+* 使用 SSH 下的 * 複製到剪貼簿 * 功能、匯出 FIDO2 公開金鑰、如 TR-4647 第 30 頁 * 設定 Windows PuTTY-CAC SSH Client for YubiKey FIDO2 Authentication* 一節所述。
+
+
+.MacOS ：
+* PIV 公開金鑰應使用匯出 `ssh-keygen -e` 命令、如 TR-4647 第 24 頁 * 設定 Mac OS 或 Linux SSH Client for YobiKey PIV 驗證 * 一節所述。
+* FIDO2 公開金鑰位於 `id_ecdsa_sk.pub` 檔案或 `id_edd519_sk.pub` 檔案、視您使用 ECDSA 或 EDD519 而定、如 TR-4647 第 39 頁 * 設定 YobiKey FIDO2 驗證 * 的 MAC OS 或 Linux SSH 用戶端一節所述。
+
+
+
+
+== 在 ONTAP Select Deploy 中設定公開金鑰
+
+SSH 是由系統管理員帳戶用於公開金鑰驗證方法。無論驗證方法是標準 SSH 公開金鑰驗證、還是 YubKeyPIV 或 FIDO2 驗證、所使用的命令都相同。
+
+對於硬體型 SSH MFA 、除了在 ONTAP Select 部署上設定的公開金鑰外、驗證因素如下：
+
+* PIV 或 FIDO2 PIN
+* 持有 YobiKey 硬體裝置。對於 FIDO2 、在驗證過程中實際接觸 YibiKey 即可確認這一點。
+
+
+.開始之前
+設定設定 YobiKey 的 PIV 或 FIDO2 公開金鑰。ONTAP Select Deploy CLI 命令 `security publickey add -key` PIV 或 FIDO2 的相同、且公開金鑰字串不同。
+
+公開金鑰可從以下網址取得：
+
+* PIV 和 FIDO2 的 PTTY-CAC * 複製到剪貼簿 * 功能（ Windows ）
+* 使用以 SSH 相容格式匯出公開金鑰 `ssh-keygen -e` PIV 命令
+* 位於的公開金鑰檔案 `~/.ssh/id_***_sk.pub` FIDO2 （ MacOS ）檔案
+
+
+.步驟
+. 在中尋找產生的金鑰 `.ssh/id_***.pub` 檔案：
+. 使用將產生的金鑰新增至 ONTAP Select 部署 `security publickey add -key <key>` 命令。
++
+[listing]
+----
+(ONTAPdeploy) security publickey add -key "ssh-rsa <key> user@netapp.com"
+----
+. 使用啟用 MFA 驗證 `security multifactor authentication enable` 命令。
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication enable
+MFA enabled Successfully
+----
+
+
+
+
+== 使用透過 SSH 的 YobiKey PIV 驗證登入 ONTAP Select 部署
+
+您可以使用透過 SSH 的 YobiKey PIV 驗證登入 ONTAP Select 部署。
+
+.步驟
+. 設定 YobiKey Token 、 SSH 用戶端和 ONTAP Select 部署之後、您可以透過 SSH 使用 MFA YobiKey PIV 驗證。
+. 登入 ONTAP Select Deploy 。如果您使用的是 Windows PuTTY-CAC SSH 用戶端、會出現一個對話方塊、提示您輸入 YubiKey PIN 。
+. 從裝置登入、並連接 YobiKey 。
+
+
+.輸出範例
+[listing]
+----
+login as: admin
+Authenticating with public key "<public_key>"
+Further authentication required
+<admin>'s password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy)
+----
+
+
+== ONTAP Select 使用 ssh-keygen 部署 CLI MFA 登入
+
+。 `ssh-keygen` Command 是一種工具、可為 SSH 建立新的驗證金鑰配對。金鑰組用於自動化登入、單一登入和驗證主機。
+
+。 `ssh-keygen` 命令支援數種驗證金鑰的公開金鑰演算法。
+
+* 演算法是使用選取的 `-t` 選項
+* 使用選取金鑰大小 `-b` 選項
+
+
+.輸出範例
+[listing]
+----
+ssh-keygen -t ecdsa -b 521
+ssh-keygen -t ed25519
+ssh-keygen -t ecdsa
+----
+.步驟
+. 在中尋找產生的金鑰 `.ssh/id_***.pub` 檔案：
+. 使用將產生的金鑰新增至 ONTAP Select 部署 `security publickey add -key <key>` 命令。
++
+[listing]
+----
+(ONTAPdeploy) security publickey add -key "ssh-rsa <key> user@netapp.com"
+----
+. 使用啟用 MFA 驗證 `security multifactor authentication enable` 命令。
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication enable
+MFA enabled Successfully
+----
+. 啟用 MFA 之後、登入 ONTAP Select 部署系統。您應該會收到類似下列範例的輸出。
++
+[listing]
+----
+[<user ID> ~]$ ssh <admin>
+Authenticated with partial success.
+<admin>'s password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy)
+----
+
+
+
+
+=== 從 MFA 移轉至單一因素驗證
+
+您可以使用下列方法停用部署系統管理員帳戶的 MFA ：
+
+* 如果您可以使用 Secure Shell （ SSH ）以系統管理員身分登入部署 CLI 、請執行停用 MFA `security multifactor authentication disable` 來自 Deploy CLI 的命令。
++
+[listing]
+----
+(ONTAPdeploy) security multifactor authentication disable
+MFA disabled Successfully
+----
+* 如果您無法使用 SSH 以系統管理員身分登入部署 CLI ：
++
+.. 透過 vCenter 或 vSphere 連線至部署虛擬機器（ VM ）視訊主控台。
+.. 使用管理員帳戶登入部署 CLI 。
+.. 執行 `security multifactor authentication disable` 命令。
++
+[listing]
+----
+Debian GNU/Linux 11 <user ID> tty1
+
+<hostname> login: admin
+Password:
+
+NetApp ONTAP Select Deploy Utility.
+Copyright (C) NetApp Inc.
+All rights reserved.
+
+Version: NetApp Release 9.13.1 Build:6811765 08-17-2023 03:08:09
+
+(ONTAPdeploy) security multifactor authentication disable
+MFA disabled successfully
+
+(ONTAPdeploy)
+----
+
+
+* 系統管理員可以使用下列項目刪除公開金鑰：
+`security publickey delete -key`
+

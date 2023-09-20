@@ -37,6 +37,50 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 
 
 
+== 驗證 ONTAP Select Deploy OVA 簽章
+
+安裝安裝套件之前、您應該先驗證 ONTAP Select 開放式虛擬化設備（ OVA ）的簽章。
+
+.開始之前
+確認您的系統符合下列需求：
+
+* 用於基本驗證的 Openssl 版本 1.0.2 至 3.0
+* 線上憑證狀態傳輸協定（ OCSP ）驗證的公用網際網路存取
+
+
+.步驟
+. 從 NetApp 支援網站 的產品下載頁面取得下列檔案：
++
+[cols="2*"]
+|===
+| 檔案 | 說明 
+
+
+| `ONTAP-Select-Deploy-Production.pub` | 用於驗證簽名的公開金鑰。 
+
+
+| `csc-prod-chain-ONTAP-Select-Deploy.pem` | 公共憑證授權單位（ CA ）信任鏈結。 
+
+
+| `csc-prod-ONTAP-Select-Deploy.pem` | 用於產生金鑰的憑證。 
+
+
+| `ONTAPdeploy.ova` | ONTAP Select 9.13.1 的產品安裝執行檔。 
+
+
+| `ONTAPdeploy.ova.sig` | SHA-256 演算法會遭到雜湊、然後由遠端支援代理程式（ RSA ）使用簽署 `csc-prod` 安裝程式的金鑰和簽名。 
+|===
+. 確認 `ONTAPdeploy.ova.sig` 檔案正在使用相關的憑證和驗證命令。
+. 使用下列命令驗證簽名：
++
+[listing]
+----
+openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
+----
+
+
+
+
 == 部署虛擬機器
 
 您必須使用ONTAP Select OVF虛擬機器映像來安裝及啟動「物件部署」虛擬機器。在安裝程序中、您必須將網路介面設定為使用DHCP或靜態IP組態。
@@ -94,7 +138,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 
 
 
-== 登入部署Web介面
+== 登入部署 Web 介面
 
 您應該登入Web使用者介面、確認部署公用程式可用並執行初始組態。
 

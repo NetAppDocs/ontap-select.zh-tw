@@ -25,6 +25,7 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 下列功能已隨ONTAP Select 附於根據預設授權的功能中：
 
+* NVMe over TCP
 * NFS
 * CIFS
 * iSCSI

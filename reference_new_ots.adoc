@@ -19,6 +19,17 @@ NetApp會定期更新ONTAP Select 產品介紹、為您帶來全新功能與增�
 
 
 
+== ONTAP Select 9.13.1%
+
+ONTAP Select 9.13.1 包含多項新功能與改良功能。
+
+叢集擴充:: ONTAP Select 9.13.1 引進叢集擴充功能、可提供高可用度（ HA ）保護、避免節點中斷對叢集服務資料的能力造成影響。從 ONTAP Select 9.13.1 開始、您可以將兩個節點設定為 HA 配對、將單節點叢集擴充至雙節點叢集。此程序是透過 CLI 或 Web 介面、從 ONTAP Select 部署中自動啟動。若要執行此程序、您必須符合特定的硬體和軟體需求。 link:concept_cluster_expansion.html["深入瞭解"]。
+支援 NVMe over TCP:: 升級至 ONTAP Select 9.13.1 時、您必須擁有新的授權、才能透過 TCP 支援 NVMe 。當您第一次從 9.13.1 版開始部署 ONTAP Select 時、就會自動包含此授權。
+更新VMware ESXi支援:: 從 ONTAP 9.13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0 GA （組建 20513097 ）。
+
+
+
+
 == 零點9.12.1. ONTAP Select
 
 目前發行的核心版的核心版大部分新開發成果、均可讓您受益於此功能ONTAP ONTAP Select 。不包含ONTAP Select 任何特定於功能更新或改進功能。

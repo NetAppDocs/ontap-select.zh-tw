@@ -220,8 +220,6 @@
   <block id="880e4da9bcc9725e517c69e219a63339" category="paragraph">若要部署ONTAP Select 一個VMware叢集、貴組織必須擁有有效的VMware vSphere授權、以供執行ONTAP Select VMware的Hypervisor主機使用。您應該使用適合部署的授權。</block>
   <block id="da132c60d8df0a4756d0a1e64618decf" category="section-title">軟體相容性</block>
   <block id="f2df12ffd4f2520acaaeab11317642da" category="paragraph">下列Hypervisor可部署下列項目：ONTAP Select</block>
-  <block id="cb09cc9a7c5645adef2952e42c8113a4" category="list-text">VMware ESXi 6.5 U2（版本號294253或更新版本）</block>
-  <block id="6d49558f2efead8b9c52640d24baa9c6" category="list-text">VMware ESXi 6.7 GA（建置8169922或更新版本）、包括6.7 U1、U2和U3</block>
   <block id="3522298772b42c1feed00428b1765cfd" category="admonition">只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識別的ESXi版本上提供支援。</block>
   <block id="b4d68fa6f7a2f05a7861fc01bd7d54df" category="section-title">升級至VMware ESXi 6.5 U2或更新版本</block>
   <block id="10e25613e6e661d9225b8b8847992335" category="paragraph">如果您目前在ONTAP Select VMware ESXi 6.5 U1上部署了VMware ESXi、則應盡快升級至ESXi 6.5 U2或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。</block>
@@ -1291,8 +1289,6 @@
   <block id="e649721db54535a2a5e277b34bc8fbe0" category="paragraph">從NVRAM降級至資料集合體（RACP）包括下列步驟：ONTAP Select ONTAP</block>
   <block id="9f5f5dc7b970257064e1b0a673449b10" category="list-text">寫入作業會從虛擬NVRAM移轉至虛擬資料Aggregate。</block>
   <block id="22fe89dea72658d468cae7b570a6b8cb" category="list-text">鏡射引擎會將區塊同步複寫到兩個叢集中。</block>
-  <block id="132bf791073c4b17c13357c14b6562bf" category="summary">如果您是在ONTAP Select VMware ESXi上執行VMware ESXi、可以將ESXi軟體從先前支援的版本升級至ESXi 6.5或6.7。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。</block>
-  <block id="d2283a8b3afa21d3f713bd9cda08fb85" category="doc">將VMware ESXi升級至6.5版及更高版本</block>
   <block id="ce78f638c1329fc432323298fd5ab053" category="paragraph">在裝載ONTAP Select 某個叢集的Hypervisor上升級ESXi軟體之前、您應該先準備並選擇適合您環境的升級程序。</block>
   <block id="a74a74cc9eac206cd17b389aebee1edf" category="admonition">如果您選擇升級至VMware ESXi 6.5、則應升級至ESXi U2（版本號是82253）或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。</block>
   <block id="c4e95f89325739a12066fe59a8c74035" category="section-title">熟悉如何升級VMware ESXi</block>
@@ -1302,7 +1298,6 @@
   <block id="d98bf1b619a94ca49b2cf4e249269541" category="list-text">支援單節點和多節點叢集的叢集大小。ONTAP Select</block>
   <block id="c9a714bea6de08f5989eee603a121dae" category="list-text">無論是否使用部署公用程式、都能使用ONTAP Select VMware部署升級。</block>
   <block id="649ae0572dea5b8bc6208820d18b8e73" category="admonition">您應該選取使用部署管理公用程式的升級程序。</block>
-  <block id="cbd6ddbbce02203098e22e613d37b57b" category="paragraph">使用部署管理公用程式執行ESXi升級是較為一般且彈性的選項。不過、部署無法使用或無法使用時、可能會有一些執行個體。例如ONTAP Select 、舊版的VMware ESXi和Deploy管理公用程式不支援升級至ESXi 6.5。</block>
   <block id="d24e4d209595dd00d983cbed66cc28da" category="paragraph">如果您使用這些較早版本並嘗試升級、ONTAP Select 則無法將該虛擬機器開機的狀態也會保留下來。在此情況下、您必須選取不使用Deploy的升級程序。如需詳細資訊、請參閱* 1172198*。</block>
   <block id="4331a924031e9c4e425fc81ec923f3c4" category="section-title">升級部署管理公用程式</block>
   <block id="f037c33af478257218bc64b1facea5ab" category="paragraph">在使用Deploy公用程式執行升級程序之前、您可能需要升級部署執行個體。一般而言、您應該升級至最新版的部署。至少您必須使用部署2.5或更新版本。Deploy公用程式必須支援ONTAP Select 您所使用的版本。如ONTAP Select 需詳細資訊、請參閱《發行說明》。</block>
@@ -1313,7 +1308,6 @@
   <block id="b150b43a1c50821ffa6faf08aa2b2fec" category="paragraph">您必須使用部署2.5版或更新版本。</block>
   <block id="681dd84e331133125fc528e3066ea4b7" category="list-text">將節點移至離線狀態。</block>
   <block id="3a5d7f86dd219466ffbcb0e2f8ffd034" category="paragraph">範例「節點停止-叢集名稱&lt;叢集名稱&gt;-節點名稱&lt;節點名稱&gt;」</block>
-  <block id="92e4e00b84d8a746bc85b6d5962866e2" category="list-text">使用ONTAP Select VMware提供的程序、將執行VMware的Hypervisor主機升級至ESXi 6.5或6.7。</block>
   <block id="577326be3a2834459d5d211f052684dd" category="paragraph">如需詳細資訊、請參閱「開始前_」。</block>
   <block id="d1c1e91e03c71fa9882b17583973d0c4" category="list-text">將節點移至線上狀態。</block>
   <block id="fb373c881fd0931abd6943e8bcf86440" category="paragraph">範例「節點啟動-叢集名稱&lt;叢集名稱&gt;-節點名稱&lt;節點名稱&gt;」</block>
@@ -1747,14 +1741,12 @@
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">所有Python指令碼都會在單一模組中使用通用的Python類別。</block>
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支援模組</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。</block>
-  <block id="9451ede3dcf8c6274c0874b432242b1d" category="section-title">下載虛擬機器映像</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">您可以ONTAP Select 從NetApp支援網站下載此解決方案。</block>
   <block id="428ed2a3ebb9fd9f1d5b11240dec37f3" category="paragraph">根據開放式虛擬化格式（OVF）標準、將此支援公用程式封裝成虛擬機器。ONTAP Select單一壓縮檔案的字尾為「ova」。</block>
   <block id="97cb0dfea21cc934eab612152be86e44" category="list-text">使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。</block>
   <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">向下捲動並按一下* ONTAP Select 《*》。</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">選取所需的套件版本。</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">選取並下載適當的套件、視需要回應所有提示。</block>
-  <block id="4ce7c1d0ecac9ee18490989135de7a8f" category="section-title">部署虛擬機器</block>
   <block id="24d390150f97fa124ebe58c6f7ce9bb7" category="paragraph">您必須使用ONTAP Select OVF虛擬機器映像來安裝及啟動「物件部署」虛擬機器。在安裝程序中、您必須將網路介面設定為使用DHCP或靜態IP組態。</block>
   <block id="efcc2f6be3ed35ac69f6663f683772f3" category="paragraph">您必須準備好部署ONTAP Select 這個功能完善的虛擬機器：</block>
   <block id="780f7110b279a0cc42242a48431ab5bd" category="list-text">安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能</block>
@@ -1781,7 +1773,6 @@
   <block id="c5d6ff59e8e5595e5fc323f4237b333c" category="paragraph">使用DHCP設定網路資訊？[n]：</block>
   <block id="4c2427d11d6824d2270f4f66eaa29805" category="list-text">輸入* n*定義靜態IP組態、或輸入y使用DHCP、然後按* Enter *。</block>
   <block id="79a72de3f5191386741777dd0441f591" category="list-text">如果您選擇靜態組態、請視需要提供所有網路組態資訊。</block>
-  <block id="9a51bd26983db2f29b85944ae1a3fd6e" category="section-title">登入部署Web介面</block>
   <block id="887ee30caedf2bee91979565f5ddf01e" category="paragraph">您應該登入Web使用者介面、確認部署公用程式可用並執行初始組態。</block>
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">使用IP位址或網域名稱、將瀏覽器指向Deploy公用程式：</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph">https://&lt;ip_address&gt;/`</block>
@@ -3369,11 +3360,8 @@
   <block id="8a820df1b1697eba16442acc38af08cd" category="paragraph">您至少應使用兩個實體NIC、以避免網路層發生單點故障。NetApp建議資料、管理及內部連接埠群組採用NIC群組和連結、並在群組或連結中設定兩個以上的上行鏈路。此類組態可確保在發生上行鏈路故障時、虛擬交換器會將流量從故障上行鏈路移至NIC群組中的正常上行鏈路。如需建議網路組態的詳細資訊、請參閱 <block ref="705c0997f8d64d5d2f3905a67e67034f" category="inline-link-macro-rx"></block>。</block>
   <block id="bc8028393dfe2dad42a885ee42952937" category="inline-link-macro">此版本的新功能</block>
   <block id="81f4b69f6b074a0894dc780d0c5fe22f" category="list-text"><block ref="81f4b69f6b074a0894dc780d0c5fe22f" category="inline-link-macro-rx"></block></block>
-  <block id="14f3d38ecd199a3a7efaea74103df87f" category="paragraph">VMware ESXi可部署VMware 9.12.1。ONTAP Select本網站包含ONTAP Select VMware ESXi上執行的VMware 9.12.1、9.11.1、9.10.1、9.9.1、9.8及9.7文件、以及Hypervisor無關文件（例如REST API）。</block>
   <block id="b3a281a86bd3818b168900985a901d99" category="inline-link-macro">關於此功能的注意事項ONTAP Select 9.12.1.1</block>
   <block id="ee6f7d910b278ad714ca5e935fc4ef34" category="list-text"><block ref="ee6f7d910b278ad714ca5e935fc4ef34" category="inline-link-macro-rx"></block></block>
-  <block id="f35dd9a9dbe889bc05b23cec8774b252" category="inline-link">《》（英文）ONTAP Select</block>
-  <block id="b3075927414c52e4bd4c7e822453d175" category="paragraph">您可以存取<block ref="3ec17b33e7ccb0ff402fc289d09bfa2b" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
   <block id="81884c993fa720d5bc8ac8f0f7c6dbda" category="summary">目前的版本不包含ONTAP Select 任何特定於功能的新功能或改進。</block>
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">此版本的新功能</block>
   <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">使用All Flash VSAN或一般Flash陣列進行的虛擬NAS（vNAS）部署、應遵循非SSD直接附加儲存設備（DAS）的最佳實務做法ONTAP Select ONTAP Select 。</block>
@@ -3663,4 +3651,153 @@
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。</block>
   <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">如需外部儲存設備支援資訊、請參閱 <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>。</block>
   <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA （建置 15843807 ）或更新版本</block>
+  <block id="8930a560533f598bac6dd3f7f9bfedb6" category="summary">將兩個節點設定為高可用度（ HA ）配對、將現有的單節點叢集擴充至雙節點叢集。</block>
+  <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="doc">展開叢集</block>
+  <block id="9ee92687843ac50c08d2dcb3c75ec679" category="paragraph">從 ONTAP 9.13.1 開始、您可以將兩個節點設定為高可用度（ HA ）配對、將現有的單節點叢集擴充至雙節點叢集。擴充至雙節點 HA 叢集可提供高可用度、保護您不受節點中斷對叢集服務資料能力的影響。</block>
+  <block id="2e8a327b283fd50b16d1b5295d65b015" category="paragraph">此程序是透過 CLI 或 Web 介面、從 ONTAP Select 部署中自動啟動。這是一種破壞性程序。</block>
+  <block id="0c76347c001891562a0f24f80b85e516" category="paragraph-title">叢集擴充必要條件</block>
+  <block id="e0fd129ed78300784653b377b8198dbb" category="paragraph">在開始叢集擴充程序之前、請確認您符合下列先決條件：</block>
+  <block id="44a3770a41ceabe41ad75ce81596fa56" category="list-text">現有節點已開啟電源。</block>
+  <block id="1f82de86080fe46e8a75ac3507754123" category="list-text">您已成功在現有節點上執行叢集重新整理。</block>
+  <block id="ecf4c2fcb52cc03a7c2d7b050f653f18" category="list-text">現有和新節點的 ESX 主機具有相同的組態。</block>
+  <block id="e493ed3a4bfea3ebf118f361ad92ba47" category="list-text">您已成功在現有節點和新節點的 ESX 主機之間執行網路連線檢查程式。</block>
+  <block id="eb0f08fae2c41a7793a912980295a2e5" category="list-text">若要使用 ONTAP Select 部署叢集擴充程序、您必須擁有試用版授權（ 90 天）和正式作業（容量層或容量池）授權。確認您符合下列授權要求：</block>
+  <block id="d994644aa0b2bc896cb4e64956675a0d" category="list-text">您擁有新節點所需的容量層或容量集區授權。</block>
+  <block id="f704690c246db554ef6568a89bdff702" category="admonition">對於容量集區授權、您可以在現有的集區中使用未使用的容量。如有需要、您可以升級授權來增加容量。</block>
+  <block id="305a476aa1b8f3372c65ac3346486cf2" category="list-text">如果兩個節點都有容量集區授權、則它們屬於同一個容量集區。</block>
+  <block id="62ab77cacb864affe5ac1c6e259a142c" category="list-text">您已將相同的授權類型套用至兩個節點。</block>
+  <block id="cd43d984bcc3a4f711cfa1af282b7455" category="paragraph">雙節點叢集中每個節點（現有和新）的授權需求是單節點叢集需求的兩倍：</block>
+  <block id="1b6b2c9a82282029d8cd12086bc16748" category="list-text">對於單節點叢集、完整授權可用於資料集合體。例如、擁有 1TB 授權的單一節點可以裝載 1TB 的資料集合體。</block>
+  <block id="4fe400ca1b94c1aadc6481c02d68ee64" category="list-text">對於雙節點叢集、一半的授權容量用於每個節點上的資料集合體、另一半則用於對應合作夥伴節點的資料集合體鏡射磁碟。例如、兩個節點各有 1TB 授權主機 1TB 的資料集合體、可為資料集合體提供合併的 2TB 總可用容量、而 2TB 則可裝載集合體的鏡射磁碟。</block>
+  <block id="11f428ea307b5e86300719c1b6dc8fea" category="paragraph">如需授權的詳細資訊、請參閱 <block ref="9575ba7bfcdc84cc585701a17575801c" category="inline-link-macro-rx"></block> 區段。</block>
+  <block id="92ae53adefd2bce2616eabbc31ca99d6" category="list-text">附加至節點的資料存放區符合下列條件：</block>
+  <block id="ecfe3a20b4af8b63e0f7fd2223373048" category="list-text">現有節點上的資料存放區必須是相同類型、例如 VMware Virtual Machine File System （ VMFS ） -5 、 VMFS-3 或 NFS 。</block>
+  <block id="e8534479a8ab3e9f651571dccdd016b9" category="list-text">附加至新節點的資料存放區必須與現有節點的預設資料存放區類型相同。</block>
+  <block id="d41741a2b7d1a4249520e3eedfa415d3" category="list-text">現有節點上的資料存放區必須有等於或大於節點上已用空間的可用空間。</block>
+  <block id="9d430f9d9bdca636bf2bd34d0ca10048" category="list-text">附加至新節點的資料存放區上的可用空間必須是現有節點上的總使用空間的兩倍。</block>
+  <block id="f509b7af47ddc6f61e01296750db0a94" category="list-text">兩個 ONTAP Select 節點都是相同的執行個體類型。</block>
+  <block id="630e5660de352108f57840f67c4ce73b" category="paragraph-title">硬體與軟體需求</block>
+  <block id="1deab229dd7288feb521151130a73e51" category="paragraph">新的和現有的節點必須符合多項硬體和軟體需求：</block>
+  <block id="ab12d295318edecf8e697f5aa1e28b04" category="list-text">現有的單節點叢集正在執行 ONTAP 9.13.1 或更新版本。</block>
+  <block id="571bab1b8c172b818850c083f2b7d219" category="list-text">現有和新節點的 ESX 主機符合下列條件：</block>
+  <block id="b16daec5e991a4bdaff00495ee637ff3" category="list-text">它們支援 vCenter Server 7.0 Update 3 或更新版本。NetApp 也建議使用 vCenter Server 7.0 或更新版本。</block>
+  <block id="135e04137c0f3fc2a13414acc2f294fc" category="list-text">它們有內部網路可進行叢集間連線。</block>
+  <block id="3007f0b4c8fb013252aaf0d42faf5b5a" category="list-text">現有節點和新節點是硬體 RAID 類型。</block>
+  <block id="b1f291eee188a7c63f37b91bcf001a94" category="list-text">對於小型執行個體類型、節點至少有 16GB 的 RAM 和四個 CPU 。對於大型執行個體類型、節點最多可擁有 128GB 的 RAM 和 16 個 CPU 。</block>
+  <block id="8237ba6c0c380781f49dc22af5f26bcf" category="paragraph-title">叢集擴充限制</block>
+  <block id="b5355429781ee9ef7d73aa9f8fe3d3b3" category="paragraph">您應該注意 ONTAP Select 叢集擴充的下列限制：</block>
+  <block id="3f3b17881e2b6e6eadaf34fd18c031cc" category="list-text">此程序僅支援將單節點叢集擴充至雙節點叢集。</block>
+  <block id="cb33ce1462fe7e5b557f6db4425ece2e" category="list-text">擴充容量上限為 64TB 資料存放區總容量；資料儲存容量為 32TB 、其餘 32TB 則是額外的資料鏡射空間。</block>
+  <block id="afa22359d4f3cf79284a0728560e7264" category="list-text">叢集擴充僅支援硬體 RAID 節點和叢集類型。不支援擴充至混合軟體和硬體 RAID 類型。</block>
+  <block id="27025ea85d4bc0d28bef7e51e8da61f3" category="inline-image-macro">單節點對雙節點叢集擴充圖</block>
+  <block id="3a42ded421b7b7328d29348b4f404e36" category="paragraph">下圖說明擴充前的單一節點組態、以及擴充後的雙節點 HA 配對組態。
+<block ref="6e6de549f8b72b049bce1f29ebacc7fc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="287742be1329b1bd7bf7d7fb169b2fa6" category="paragraph-title">啟動叢集擴充程序</block>
+  <block id="e3321a5f63313219081d62cede2f8ca2" category="paragraph">若要啟動 ONTAP Select Deploy 以執行叢集擴充程序、請從 CLI 執行下列命令：</block>
+  <block id="e0f45ff72f2d7d91d9e112f7c7b7e686" category="list-text"><block ref="f0489c17dde991a8954f812ebbe2a6c0" prefix="" category="inline-code"></block></block>
+  <block id="31792351955ddd5711877797e67e90e6" category="list-text"><block ref="66866e8e2f0d236b0f23317b92e3498d" prefix="" category="inline-code"></block></block>
+  <block id="c2187f782201a45ff7b8db0effd6da3e" category="list-text"><block ref="091de9b7e3eb6abf6d66ba8e5e98d03f" prefix="" category="inline-code"></block></block>
+  <block id="8ae8ceb1e3c34f71654ecd45e3edd18b" category="list-text"><block ref="1e50fe28b3ba1196bf5c7e0d1f4aa881" prefix="" category="inline-code"></block></block>
+  <block id="cc85e5e33f89d779593267f90f3de591" category="list-text"><block ref="2437f2194443c2e0de2deac482449798" prefix="" category="inline-code"></block></block>
+  <block id="492625061ab08d886a40d6113d7d5261" category="paragraph">出現提示時、請輸入您的 ONTAP 管理員密碼。</block>
+  <block id="dd4c12bfc49beb3edaea04166917c887" category="paragraph">ONTAP Select 9.13.1 可部署在 VMware ESXi 上。本網站包含 ONTAP Select 9.13.1 、 9.12.1 、 9.11.1 、 9.10.1 、 9.9.1 、 9.9.1 、 在 VMware ESXi 上執行 9.8 和 9.7 、以及與 Hypervisor 無關的文件（例如 REST API ）。</block>
+  <block id="015a51a212cad15ae88ab6926256ef36" category="inline-link-macro">ONTAP Select 9.13.1 注意事項</block>
+  <block id="e9deea859bf1ecf9513d6b6ff2f0d72b" category="list-text"><block ref="e9deea859bf1ecf9513d6b6ff2f0d72b" category="inline-link-macro-rx"></block></block>
+  <block id="d1c880d2d3422bfbdd2ae687b1d78a6f" category="list-text">NVMe over TCP</block>
+  <block id="5062d6ea23d4fd55ee88803b528d99a6" category="inline-link">ONTAP Select 9.13.1 版本資訊</block>
+  <block id="4bd7854eb0f9c44ba581e8e66001d6a2" category="paragraph">您可以存取<block ref="a3fdd86b36a3532f43f007788a7d3f9e" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
+  <block id="64a49455734301778985c42afcafa1b5" category="list-text">VMware ESXi 8.0 GA （組建 20513097 ）</block>
+  <block id="9702dfddce9ca846a20b21815bd5bf71" category="list-text">VMware ESXi 8.0 U1 （內部版本 21495797 ）</block>
+  <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link">互通性對照表工具IMT （不含）</block>
+  <block id="2dbfa835ab3a0bf6c79ee95b561f1daf" category="admonition">ESXi 6.5 GA 和 ESXi 6.7 GA 即將達到可用度狀態。如果您的 ONTAP Select 叢集具有這些版本、則必須依照升級至支援的版本<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>。</block>
+  <block id="be89bf0bd68c0f721ab7e25e408b6fa7" category="summary">如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi 軟體從支援的舊版升級至 ESXi 7.0 或更新版本。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。</block>
+  <block id="945bbea596cf9bf88be28497537ef993" category="doc">將 VMware ESXi 升級至 7.0 版或更新版本</block>
+  <block id="817a2297c74a908c3261968059682b32" category="paragraph">使用部署管理公用程式執行ESXi升級是較為一般且彈性的選項。不過、部署無法使用或無法使用時、可能會有一些執行個體。例如、舊版 ONTAP Select 和部署管理公用程式不支援升級至 ESXi 7.0 。</block>
+  <block id="f87065c0eaa86d23a9d0bc62defec91b" category="list-text">使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。</block>
+  <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1%</block>
+  <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 包含多項新功能與改良功能。</block>
+  <block id="85c9296df6a3c9630ed684b4af8847a8" category="list-text">叢集擴充</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">深入瞭解</block>
+  <block id="406ccb0f77a29335e34c2bfe9553fc82" category="list-text">ONTAP Select 9.13.1 引進叢集擴充功能、可提供高可用度（ HA ）保護、避免節點中斷對叢集服務資料的能力造成影響。從 ONTAP Select 9.13.1 開始、您可以將兩個節點設定為 HA 配對、將單節點叢集擴充至雙節點叢集。此程序是透過 CLI 或 Web 介面、從 ONTAP Select 部署中自動啟動。若要執行此程序、您必須符合特定的硬體和軟體需求。 <block ref="42332fd9348b1caa61a2a7319c6d2c9d" category="inline-link-macro-rx"></block>。</block>
+  <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">支援 NVMe over TCP</block>
+  <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">升級至 ONTAP Select 9.13.1 時、您必須擁有新的授權、才能透過 TCP 支援 NVMe 。當您第一次從 9.13.1 版開始部署 ONTAP Select 時、就會自動包含此授權。</block>
+  <block id="4d8daf3f51ebf7fefb4dfcf900e9b79d" category="list-text">從 ONTAP 9.13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0 GA （組建 20513097 ）。</block>
+  <block id="da691cb71c1f879ed7bf93a9a845601a" category="section-title">下載虛擬機器映像</block>
+  <block id="8435c401e57e043b0c57edfb0a00c774" category="section-title">驗證 ONTAP Select Deploy OVA 簽章</block>
+  <block id="ab07c13a31893a6c9ee2547e7b9df643" category="paragraph">安裝安裝套件之前、您應該先驗證 ONTAP Select 開放式虛擬化設備（ OVA ）的簽章。</block>
+  <block id="cfa6562e428e1a648631dac061567897" category="paragraph">確認您的系統符合下列需求：</block>
+  <block id="80c9c2739b6086de81c8ec7262f87af8" category="list-text">用於基本驗證的 Openssl 版本 1.0.2 至 3.0</block>
+  <block id="03018e3ee63fad9b70308ee5184022f9" category="list-text">線上憑證狀態傳輸協定（ OCSP ）驗證的公用網際網路存取</block>
+  <block id="940949e444a7d7ca33644736f8b10bcd" category="list-text">從 NetApp 支援網站 的產品下載頁面取得下列檔案：</block>
+  <block id="0b27918290ff5323bea1e3b78a9cf04e" category="cell">檔案</block>
+  <block id="249111a1c7f415853c625e0755631d11" category="cell"><block ref="008c7b6d630fe84ef2d584c45f088cb2" prefix="" category="inline-code"></block></block>
+  <block id="e4069d9d0927b15ac9a4b5a57f151285" category="cell">用於驗證簽名的公開金鑰。</block>
+  <block id="efe8e2ee824be146dc129d30269a5102" category="cell"><block ref="0c30c017e47f5d9daacaa689d14755a1" prefix="" category="inline-code"></block></block>
+  <block id="a7a0ef9e615ab0d55916e8c44b6b02d8" category="cell">公共憑證授權單位（ CA ）信任鏈結。</block>
+  <block id="b30eb909f1cf7890af614e0a372ebe69" category="cell"><block ref="44d439b98474c4bea1ce90f963d0ce9b" prefix="" category="inline-code"></block></block>
+  <block id="11e28814e8daa6ab60f29e9365e29951" category="cell">用於產生金鑰的憑證。</block>
+  <block id="e2ce763ce4c328af6852dedbd857137a" category="cell"><block ref="1699fe41f4360ef312a48730cf26d035" prefix="" category="inline-code"></block></block>
+  <block id="7c8af6e0bab843ab8817d688f7e31835" category="cell">ONTAP Select 9.13.1 的產品安裝執行檔。</block>
+  <block id="4e4e408ba11d90a1648acdc6230e66d0" category="cell"><block ref="20db26963ac3dc0b119aa4c781855701" prefix="" category="inline-code"></block></block>
+  <block id="51efe37fbdc37f9d0c55c657a430d296" category="cell">SHA-256 演算法會遭到雜湊、然後由遠端支援代理程式（ RSA ）使用簽署<block ref="b6ad60ee94a07b2ba8c24c883ec70503" prefix=" " category="inline-code"></block> 安裝程式的金鑰和簽名。</block>
+  <block id="1f463ad70f232a0c4114c51cb2a44a5a" category="list-text">確認<block ref="20db26963ac3dc0b119aa4c781855701" prefix=" " category="inline-code"></block> 檔案正在使用相關的憑證和驗證命令。</block>
+  <block id="134cfba28fd247854afe7ce4d31767ad" category="list-text">使用下列命令驗證簽名：</block>
+  <block id="0ba1987cb555e519f115071e917656fc" category="section-title">部署虛擬機器</block>
+  <block id="25775c61c3281e6d412f48371102d8b3" category="section-title">登入部署 Web 介面</block>
+  <block id="db05ec33127afb72e99fdef2dd7e222b" category="section-title">設定 MFA</block>
+  <block id="aef6d7448e31d21fcd5e57734fa1fb88" category="paragraph">從 ONTAP Select 9.13.1 開始、 ONTAP Select Deploy 系統管理員帳戶支援多因素驗證（ MFA ）：</block>
+  <block id="b43e5dc621bb5f7a6746a0bf53636924" category="inline-link-macro">ONTAP Select 使用 YubKey 個人身分驗證（ PIV ）或快速身分識別線上（ FIDO2 ）驗證來部署 CLI MFA 登入</block>
+  <block id="f82ace39832c70c06efc78eb1947b6f4" category="list-text"><block ref="f82ace39832c70c06efc78eb1947b6f4" category="inline-link-macro-rx"></block></block>
+  <block id="cebd67670761a5da244bef9609848dcb" category="list-text"><block ref="c4c2e789fdec94b8ef39088bdc0b1cb6" category="inline-xref-macro-rx"></block></block>
+  <block id="4ca5ee356d097d93144cfeb2518d619a" category="section-title">ONTAP Select 使用 YobiKey PIV 或 FIDO2 驗證來部署 CLI MFA 登入</block>
+  <block id="b3725c8fd10aa9a2adf70ad57738023c" category="section-title">YibKeyPIV</block>
+  <block id="a6fe75fc63ca141194b414c175d2cc5f" category="inline-link-macro">TR-4647 ： ONTAP 中的多因素驗證</block>
+  <block id="4bf14d500591d8e73d655aed56c2f144" category="paragraph">設定 YobiKey PIN 、並使用中的步驟來產生或匯入遠端支援代理程式（ RSA ）或省略曲線數位簽章演算法（ ECDSA ）私密金鑰和憑證 <block ref="a5f594d2a3d4fe1cd7c633ac516cda13" category="inline-link-macro-rx"></block>。</block>
+  <block id="b3e210c6ecd68c2d26827f1c14c340c0" category="list-text">適用於 Windows ：技術報告的「 * 適用於 Windows* 的 YubKeyPIV 用戶端組態」一節。</block>
+  <block id="e9b47ad7b72a1ecb0b5d30a048aa46d6" category="list-text">對於 MacOS ：技術報告的 * YobiKey PIV 用戶端組態（適用於 MAC OS 和 Linux* ）一節。</block>
+  <block id="54d0308327747160e6c6b7dc700227c1" category="section-title">FIDO2</block>
+  <block id="2019415b8fc23071e4232f343c0ab895" category="paragraph">如果您選擇選擇使用 YubiKey FIDO2 驗證、請使用 YubiKey Manager 來設定 YubiKey FIDO2 PIN 、並使用適用於 Windows 的 PuTTY-CAC （通用存取卡）或適用於 MacOS 的 ssh-keygen 來產生 FIDO2 金鑰。執行此操作的步驟請參考技術報告 <block ref="a5f594d2a3d4fe1cd7c633ac516cda13" category="inline-link-macro-rx"></block>。</block>
+  <block id="0cb9161b88a09a798735ff874cb58681" category="list-text">Windows ：技術報告的「 * 適用於 Windows* 的 YubKeyFIDO2 用戶端組態」一節。</block>
+  <block id="d83115ad366c14a6a480c0d85bed6f85" category="list-text">MacOS ：技術報告的 * YubKeyFIDO2 用戶端組態（適用於 Mac OS 和 Linux* ）一節。</block>
+  <block id="10dc6aa5a383cdc8860db4e3b0f8bf60" category="section-title">取得 YobiKey PIV 或 FIDO2 公開金鑰</block>
+  <block id="889467bdd100f2f2c376dc3477eb6cd3" category="paragraph">取得公開金鑰取決於您是 Windows 或 MacOS 用戶端、以及您是否使用 PIV 或 FIDO2 。</block>
+  <block id="950ec0214988f2cee4280a4a29075cf3" category="list-title">Windows：</block>
+  <block id="8d6a89420d27c2eec893fe29cccfc617" category="list-text">使用 SSH 下的 * 複製到剪貼簿 * 功能、匯出 PIV 公開金鑰、如 TR-4647 第 16 頁 * 設定 Windows PuTTY-CAC SSH Client for YubiKey PIV Authentication* 一節所述。</block>
+  <block id="d56a5bd77b47be09a794ac2118102335" category="list-text">使用 SSH 下的 * 複製到剪貼簿 * 功能、匯出 FIDO2 公開金鑰、如 TR-4647 第 30 頁 * 設定 Windows PuTTY-CAC SSH Client for YubiKey FIDO2 Authentication* 一節所述。</block>
+  <block id="d8932a31f1a3ea027d5c1af6b38df831" category="list-title">MacOS ：</block>
+  <block id="e489cc8b368bd3ee132f3803c8151d4a" category="list-text">PIV 公開金鑰應使用匯出<block ref="fdad7cf0556ad767cd0b40ca8200a4a1" prefix=" " category="inline-code"></block> 命令、如 TR-4647 第 24 頁 * 設定 Mac OS 或 Linux SSH Client for YobiKey PIV 驗證 * 一節所述。</block>
+  <block id="92275395881e3dde58a2721ffc2f016c" category="list-text">FIDO2 公開金鑰位於<block ref="c580db344c164b01bb07a17bfda85db7" prefix=" " category="inline-code"></block> 檔案或<block ref="87c80ab3cf592031066461837cfc5ea4" prefix=" " category="inline-code"></block> 檔案、視您使用 ECDSA 或 EDD519 而定、如 TR-4647 第 39 頁 * 設定 YobiKey FIDO2 驗證 * 的 MAC OS 或 Linux SSH 用戶端一節所述。</block>
+  <block id="7554e364dbafdbff96a16b6e1958aa51" category="section-title">在 ONTAP Select Deploy 中設定公開金鑰</block>
+  <block id="463ec45e1f25f14c852f797accb188ef" category="paragraph">SSH 是由系統管理員帳戶用於公開金鑰驗證方法。無論驗證方法是標準 SSH 公開金鑰驗證、還是 YubKeyPIV 或 FIDO2 驗證、所使用的命令都相同。</block>
+  <block id="d6dd48f51d84aeddf71fc065e33b2eb3" category="paragraph">對於硬體型 SSH MFA 、除了在 ONTAP Select 部署上設定的公開金鑰外、驗證因素如下：</block>
+  <block id="f7fd97c62eac2db373c94fcbbf9ad996" category="list-text">PIV 或 FIDO2 PIN</block>
+  <block id="7c4de63e6b87ea14ce9f7e28c8bae2d1" category="list-text">持有 YobiKey 硬體裝置。對於 FIDO2 、在驗證過程中實際接觸 YibiKey 即可確認這一點。</block>
+  <block id="2f749bc08afa54d64b543ebedbb07a59" category="paragraph">設定設定 YobiKey 的 PIV 或 FIDO2 公開金鑰。ONTAP Select Deploy CLI 命令<block ref="4e8003b3e13aedbdbae0e2cefcc81e9d" prefix=" " category="inline-code"></block> PIV 或 FIDO2 的相同、且公開金鑰字串不同。</block>
+  <block id="d77ec4c5ee8d59f72f1f6b297e7d0b7f" category="paragraph">公開金鑰可從以下網址取得：</block>
+  <block id="ea0f6462129cba41747fd16a699fbdb0" category="list-text">PIV 和 FIDO2 的 PTTY-CAC * 複製到剪貼簿 * 功能（ Windows ）</block>
+  <block id="59bcf48a535c070308e348ff0eb6072c" category="list-text">使用以 SSH 相容格式匯出公開金鑰<block ref="fdad7cf0556ad767cd0b40ca8200a4a1" prefix=" " category="inline-code"></block> PIV 命令</block>
+  <block id="f91f5438c03c536c36ab8c75be650eed" category="list-text">位於的公開金鑰檔案<block ref="e27450519cf8f26be0ac320bff396bb9" prefix=" " category="inline-code"></block> FIDO2 （ MacOS ）檔案</block>
+  <block id="3a7b749a5de6a8e432d510f4c11146e8" category="list-text">在中尋找產生的金鑰<block ref="25e9c3d606cf0c8c542629e62d39cd96" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="52be2639af408dc18bf18bc365ca5b1c" category="list-text">使用將產生的金鑰新增至 ONTAP Select 部署<block ref="79efd197d8563de439f329489f64a255" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="425b3bbc04135a05a75dfa8f1f1690ca" category="list-text">使用啟用 MFA 驗證<block ref="29ac8cfa360949bc886c34f99f56ce7b" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="38b6e3ddfe3da156ee999db029f405ab" category="section-title">使用透過 SSH 的 YobiKey PIV 驗證登入 ONTAP Select 部署</block>
+  <block id="786024c8427e697db51d5ba099540cdd" category="paragraph">您可以使用透過 SSH 的 YobiKey PIV 驗證登入 ONTAP Select 部署。</block>
+  <block id="872240e5c7be9f19081516cf86692a1c" category="list-text">設定 YobiKey Token 、 SSH 用戶端和 ONTAP Select 部署之後、您可以透過 SSH 使用 MFA YobiKey PIV 驗證。</block>
+  <block id="537f7afd03be7b15c5c054ee8d444af6" category="list-text">登入 ONTAP Select Deploy 。如果您使用的是 Windows PuTTY-CAC SSH 用戶端、會出現一個對話方塊、提示您輸入 YubiKey PIN 。</block>
+  <block id="5f2a207c324401bbadd72cb5d7a24609" category="list-text">從裝置登入、並連接 YobiKey 。</block>
+  <block id="587b796170a9abac4701cd8aa1bb38cb" category="listing-title">輸出範例</block>
+  <block id="8c4bb7f7c610b4adc9048e26d1b16545" category="section-title">ONTAP Select 使用 ssh-keygen 部署 CLI MFA 登入</block>
+  <block id="8b2b97b78c39d5d348e1374ff3fd45ba" category="paragraph">。<block ref="5356c138de038f32891acc3ddf8f3ed6" prefix=" " category="inline-code"></block> Command 是一種工具、可為 SSH 建立新的驗證金鑰配對。金鑰組用於自動化登入、單一登入和驗證主機。</block>
+  <block id="6d70341637494536c584f85439a39827" category="paragraph">。<block ref="5356c138de038f32891acc3ddf8f3ed6" prefix=" " category="inline-code"></block> 命令支援數種驗證金鑰的公開金鑰演算法。</block>
+  <block id="fdd2ff2892e86d8ca17b98a7c2b215b9" category="list-text">演算法是使用選取的<block ref="b7cc4b6b2b8c0f37377b5cc259385de0" prefix=" " category="inline-code"></block> 選項</block>
+  <block id="bca99f13a64f5c3bdc8afc6a3c9f9ff8" category="list-text">使用選取金鑰大小<block ref="15e4235e578d96be98a6c3f8a346a52c" prefix=" " category="inline-code"></block> 選項</block>
+  <block id="67bd5b443b9ddac4a285cad236c61734" category="list-text">啟用 MFA 之後、登入 ONTAP Select 部署系統。您應該會收到類似下列範例的輸出。</block>
+  <block id="3dc7c42d1ccbe1be0c8a490a015c6fbd" category="section-title">從 MFA 移轉至單一因素驗證</block>
+  <block id="4a2e337dbdc20546fc566f3eccc5e32c" category="paragraph">您可以使用下列方法停用部署系統管理員帳戶的 MFA ：</block>
+  <block id="d52c27f8bd38a7ef569052e521256588" category="list-text">如果您可以使用 Secure Shell （ SSH ）以系統管理員身分登入部署 CLI 、請執行停用 MFA<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> 來自 Deploy CLI 的命令。</block>
+  <block id="7cfa19a89f1daea3828b198bcfc36e59" category="list-text">如果您無法使用 SSH 以系統管理員身分登入部署 CLI ：</block>
+  <block id="842bce6b18705a10804c5c82d94ba294" category="list-text">透過 vCenter 或 vSphere 連線至部署虛擬機器（ VM ）視訊主控台。</block>
+  <block id="094a1a8c17c096d2758f951380aa7b77" category="list-text">使用管理員帳戶登入部署 CLI 。</block>
+  <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">執行<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">系統管理員可以使用下列項目刪除公開金鑰：<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
 </blocks>
