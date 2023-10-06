@@ -3800,4 +3800,5 @@
   <block id="094a1a8c17c096d2758f951380aa7b77" category="list-text">使用管理員帳戶登入部署 CLI 。</block>
   <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">執行<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">系統管理員可以使用下列項目刪除公開金鑰：<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
+  <block id="306a97cf9f5c4fb1198deb28baf7cf94" category="list-text">儲存 VM 災難恢復（ SVM DR ）</block>
 </blocks>
