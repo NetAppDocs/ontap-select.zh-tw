@@ -50,7 +50,7 @@ http://<Deploy-IP-Address/api/ui
 NOTE: API v3版本與舊版API不相容。新的API指南可在上取得 https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"]。
 
 .是否可以ONTAP Select 使用VMware或其他協力廠商快照來備份VMware的不完整資料？
-不可以該VMware使用獨立的持續磁碟機、ONTAP Select 這些磁碟機不受VMware快照的限制。唯一支援ONTAP Select 的備份方法是SnapMirror、SnapVault SnapMirror或SVM DR（如適用）。
+不可以該VMware使用獨立的持續磁碟機、ONTAP Select 這些磁碟機不受VMware快照的限制。唯一支援的 ONTAP Select 備份方法是 SnapMirror 或 SnapVault 。
 
 .對於本常見問題集未涵蓋的問題、我該如何釐清？
 聯絡人 link:mailto:ng-ses-ontap-select@netapp.com["ng-ses-ontap-select@netapp.com"]。
