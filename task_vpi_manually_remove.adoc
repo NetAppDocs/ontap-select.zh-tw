@@ -30,7 +30,7 @@ summary: 您可以從vCenter伺服器手動移除部署外掛程式。
 
 
 
-== 使用VMware MOB移除外掛程式
+== 使用 VMware MOB 移除外掛程式
 
 MOB是VMware應用程式、可讓您檢視及管理VMware vCenter伺服器上的物件。您可以使用MOB移除部署vCenter外掛程式。
 
@@ -53,7 +53,7 @@ com.netapp.selectdeploy`
 
 
 
-== 從vSphere UI資料夾移除外掛程式
+== 從 vSphere UI 資料夾移除外掛程式
 
 您應該檢查vCenter伺服器上的vSphere UI目錄、並移除部署外掛程式（若有）。
 
@@ -93,7 +93,7 @@ com.netapp.selectdeploy`
 
 
 
-== 從vSphere用戶端資料夾移除外掛程式
+== 從 vSphere 用戶端資料夾移除外掛程式
 
 您應該檢查vCenter伺服器上的vSphere Client目錄、並移除部署外掛程式（若有）。雖然部署外掛程式並未使用Flash、但最佳做法是在外掛程式移除程序中檢查此目錄。
 

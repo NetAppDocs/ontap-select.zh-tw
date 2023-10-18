@@ -167,7 +167,7 @@ image:ST_02.jpg["ESXi叢集"]
 您可以建立位於外部儲存陣列上的VMFS資料存放區。儲存設備可使用多種不同的網路傳輸協定之一來存取。下圖說明使用iSCSI傳輸協定存取的外部儲存陣列上的VMFS資料存放區。
 
 
-NOTE: 支援《VMware Storage/SAN相容性指南》中所述的所有外部儲存陣列、包括iSCSI、Fibre Channel和Fibre Channel over Ethernet。ONTAP Select
+NOTE: ONTAP Select 支援 VMware Storage/SAN 相容性文件中所述的所有外部儲存陣列、包括 iSCSI 、光纖通道和乙太網路光纖通道。
 
 image:ST_03.jpg["ESXi Hypervisor主機"]
 

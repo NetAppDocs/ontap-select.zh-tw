@@ -74,7 +74,7 @@ summary: 您可以使用命令列介面、將現有的部署管理公用程式�
 
 
 .相關資訊
-link:task_install_deploy.html["安裝ONTAP Select 部署功能"]
+link:task_install_deploy.html["安裝ONTAP Select 部署"]
 
 
 

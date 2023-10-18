@@ -23,11 +23,11 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 確保在升級期間不會使用部署來執行任何其他工作。如需升級部署公用程式的相關資訊和限制、請參閱最新版本說明。
 
 
-NOTE: 如果您已安裝 ONTAP Select Deploy 管理公用程式執行個體、則應考慮升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 link:concept_adm_upgrading_nodes.html["升級ONTAP Select 節點"^] 以取得更多詳細資料。
+NOTE: 如果您已安裝舊版 ONTAP Select Deploy 管理公用程式、則應升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 link:concept_adm_upgrading_nodes.html["升級 ONTAP Select 節點"^] 以取得更多詳細資料。
 
 
 
-== 正在下載升級套件
+== 下載升級套件
 
 若要開始升級程序、您必須從NetApp支援網站下載適當的部署虛擬機器升級檔案。升級套件會格式化為單一壓縮檔案。
 

@@ -4,7 +4,7 @@ permalink: task_install_deploy.html
 keywords: install, installing, ontap select deploy, deploy administration utility, deploy utility 
 summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。 
 ---
-= 安裝ONTAP Select 部署功能
+= 安裝ONTAP Select 部署
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -65,7 +65,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 | `csc-prod-ONTAP-Select-Deploy.pem` | 用於產生金鑰的憑證。 
 
 
-| `ONTAPdeploy.ova` | ONTAP Select 9.13.1 的產品安裝執行檔。 
+| `ONTAPdeploy.ova` | ONTAP Select 的產品安裝執行檔。 
 
 
 | `ONTAPdeploy.ova.sig` | SHA-256 演算法會遭到雜湊、然後由遠端支援代理程式（ RSA ）使用簽署 `csc-prod` 安裝程式的金鑰和簽名。 
@@ -159,4 +159,4 @@ https://<ip_address>/`
 
 
 .相關資訊
-link:task_cli_signing_in.html["使用SSH登入部署"]
+link:task_cli_signing_in.html["登入以使用 SSH 部署"]

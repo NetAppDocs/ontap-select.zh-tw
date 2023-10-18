@@ -45,7 +45,7 @@ NetApp解決方案適用於SDS市場。ONTAP SelectNetApp將企業級儲存管�
 部署管理公用程式是以獨立的Linux虛擬機器進行封裝與安裝。您必須使用公用程式、在ONTAP Select 正式作業環境中部署叢集。Deploy公用程式隨附目前版本ONTAP Select 的ImageNode映像。
 
 
-NOTE: 從功能更新至功能更新階段開始ONTAP Select 、部署管理公用程式將不再指派個別的版本編號。Deploy的版本編號與相關ONTAP Select 的版本編號相同。不過、特定ONTAP Select 版本的每個Deploy公用程式更新都有一個獨特的建置編號。
+NOTE: 部署管理公用程式並未指派個別的版本號碼。Deploy的版本編號與相關ONTAP Select 的版本編號相同。不過、特定ONTAP Select 版本的每個Deploy公用程式更新都有一個獨特的建置編號。
 
 
 
@@ -57,7 +57,7 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 
 
-== 比較功能與功能ONTAP Select ONTAP
+== 請比較 ONTAP Select 和 ONTAP 9
 
 以硬體為基礎ONTAP 的供應功能可提供ONTAP Select 企業級的儲存解決方案。不過、由於設計和實作方式各異、因此每個方案都能因應不同的業務需求和使用情境。在規劃ONTAP Select 一套解決方法部署之前、您應該先熟悉平台之間的主要差異。
 

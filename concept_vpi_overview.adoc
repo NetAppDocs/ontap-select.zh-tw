@@ -92,19 +92,19 @@ VMware vCenter Plug-in ONTAP Select for VMware Deploy專為ONTAP Select 在VMwar
 |===
 
 
-== 比較vCenter外掛程式與原生部署使用者介面
+== 比較 vCenter 外掛程式與原生部署使用者介面
 
 vCenter外掛程式透過vSphere提供的功能相當於原生部署使用者介面。不過、外掛程式並未隨附幾項功能、只有部署使用者介面才提供這些功能。
 
 
 
-=== 管理vCenter外掛程式
+=== 管理 vCenter 外掛程式
 
 您無法使用vCenter外掛程式來安裝、更新、移除或驗證vCenter外掛程式。您必須透過原生部署使用者介面執行這些管理工作。
 
 
 
-=== 管理vCenter認證資料
+=== 管理 vCenter 認證
 
 安裝vCenter外掛程式之前、您必須先新增必要的vCenter認證、才能使用原生部署使用者介面進行部署。
 

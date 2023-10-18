@@ -45,7 +45,7 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：
 
-* 企業版SnapLock
+* SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
 * FabricPool
 * 資料可用度服務
 * 零成本FlexCache

@@ -40,7 +40,7 @@ Deploy組態資料由AutoSupport 整個過程中使用。
 
 
 
-== 顯示ONTAP Select 「功能不整」事件訊息
+== 顯示 ONTAP Select 部署事件訊息
 
 此功能包括事件記錄功能、可提供系統活動的相關資訊。ONTAP Select您應該檢視事件記錄的內容、以偵錯任何問題、或是在支援人員指示的情況下進行偵錯。
 
@@ -80,7 +80,7 @@ NetApp使用支援功能的主要疑難排解工具：AutoSupport ONTAP Select�
 
 
 
-== 產生及下載AutoSupport 一個更新套件
+== 產生並下載 AutoSupport 套件
 
 包含產生一套功能不整的功能。ONTAP Select AutoSupport您應該產生一個套件來偵錯任何問題、或是在支援人員的指示下進行偵錯。
 

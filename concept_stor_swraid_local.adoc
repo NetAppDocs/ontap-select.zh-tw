@@ -123,7 +123,7 @@ NOTE: 根Aggregate的RAID群組類型取決於可用的磁碟數目。支援：�
 
 
 
-== 將ONTAP Select 一個VMware磁碟與對應的ESX磁碟配對
+== 將 ONTAP Select 磁碟與對應的 ESX 磁碟配對
 
 通常將各個磁碟標示為NET x.y。ONTAP Select您可以使用下列ONTAP 的fuse命令來取得磁碟UUID：
 

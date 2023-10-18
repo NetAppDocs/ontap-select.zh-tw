@@ -27,12 +27,9 @@ NOTE: 若要深入瞭解如何在Hypervisor主機上設定vSwitch及高速介面
 
 
 
-== 升級至VMXNET3
+== 升級至 VMXNET3
 
-從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將現有ONTAP Select 的S還原 節點升級至9.5版或更新版本、則不會自動升級驅動程式。
-
-
-NOTE: 目前不需要升級至VMXNET3。不過、如果您選擇升級驅動程式、則必須手動執行升級。在此情況下、請聯絡NetApp支援部門以取得協助。
+從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將舊版 ONTAP Select 節點升級至 9.5 版或更新版本、則不會自動升級驅動程式。
 
 
 

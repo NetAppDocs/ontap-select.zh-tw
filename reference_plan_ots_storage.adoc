@@ -64,14 +64,6 @@ RAID控制器的最低需求包括：
 VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：
 
 * VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
-* S9.5或更新版本ONTAP Select
-* 部署2.1或更新版本ONTAP Select
-* 僅限全新ONTAP Select 的叢集
-
-
-
-NOTE: 您必須ONTAP Select 使用Deploy管理公用程式、部署採用NetApp 9.5或更新版本的新叢集。您無法將軟體RAID用於已從舊版升級至ONTAP Select 版本的現有節點。
-
 * 不含更新版本的進階授權ONTAP Select
 * 僅限本機SSD磁碟機
 * 將系統磁碟與根與資料集合體分開
@@ -82,6 +74,7 @@ NOTE: 您必須ONTAP Select 使用Deploy管理公用程式、部署採用NetApp 
 NOTE: 如果有硬體RAID控制器、請參閱 link:concept_stor_concepts_chars.html["深度儲存"] 一節以瞭解其他組態需求。
 
 * 不支援VMware VMotion、HA和DRS
+* 您無法將軟體 RAID 搭配已從 ONTAP Select 9.4 或更早版本升級的節點使用。如果是這種情況、您需要為軟體 RAID 部署建立新的節點。
 
 
 
@@ -100,14 +93,14 @@ NOTE: 如果有硬體RAID控制器、請參閱 link:concept_stor_concepts_chars.
 
 在規劃ONTAP Select 非重點部署時、您應該瞭解與儲存配置和使用有關的限制。
 
-最重要的儲存限制如下所示。您也應該檢閱_NetApp互通性對照表工具_、以取得更詳細的資訊。
+最重要的儲存限制如下所示。您也應該檢閱 link:https://mysupport.netapp.com/matrix/["NetApp 互通性對照表工具"^] 以取得更詳細的資訊。
 
 
-TIP: 執行與儲存分配和使用相關的數項限制。ONTAP Select在您部署ONTAP Select 一個叢集或購買授權之前、您應該先熟悉這些限制。如需詳細資訊、請參閱「_License」一節。
+TIP: 執行與儲存分配和使用相關的數項限制。ONTAP Select在您部署ONTAP Select 一個叢集或購買授權之前、您應該先熟悉這些限制。請參閱 link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["授權"] 章節以取得更多資訊。
 
 
 
-=== 正在計算原始儲存容量
+=== 計算原始儲存容量
 
 此功能對應於連接到該虛擬機器的虛擬資料和根磁碟的總允許大小。ONTAP Select ONTAP Select在分配容量時、您應該考慮這一點。
 
@@ -163,7 +156,7 @@ NOTE: 每個儲存資源池中有2%的緩衝區未使用、因此不需要容量
 
 您應該考慮下列有關Hypervisor核心硬體的建議：
 
-* 單ONTAP Select 一資訊區集合體中的所有磁碟機都應為相同類型。例如、您不應該在相同的集合體中混用HDD和SSD磁碟機。
+* 單一 ONTAP Select Aggregate 中的所有磁碟機都應該是相同類型。例如、您不應該在相同的集合體中混用HDD和SSD磁碟機。
 
 
 
@@ -199,10 +192,10 @@ NOTE: 含本機DAS磁碟機的軟體RAID可透過優質授權（僅限SSD）和�
 
 您可以設定軟體RAID以使用NVMe SSD磁碟機。您的環境必須符合下列需求：
 
-* 包含相關部署管理公用程式的更新版本ONTAP Select
+* ONTAP Select 9.7 或更新版本、搭配支援的部署管理公用程式
 * 優質XL平台授權方案或90天試用授權
 * VMware ESXi 6.7版或更新版本
 * 符合規格1.0或更新版本的NVMe裝置
 
 
-您必須先手動設定NVMe磁碟機、才能使用它們。請參閱 link:task_chk_nvme_configure.html["設定主機使用NVMe磁碟機"] 以取得更多資訊。
+您必須先手動設定NVMe磁碟機、才能使用它們。請參閱 link:task_chk_nvme_configure.html["設定主機以使用 NVMe 磁碟機"] 以取得更多資訊。

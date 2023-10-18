@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: Python指令碼範例可讓您執行多項不同的工作。您應該先瞭解指令碼、再在即時部署執行個體中使用。 
 ---
-= 瞭解Python指令碼
+= 瞭解 Python 指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -69,7 +69,7 @@ NetApp用來支援解決方案的主要疑難排解工具。AutoSupport ONTAP Se
 
 
 
-== 產生AutoSupport 一個包裹
+== 產生 AutoSupport 套件
 
 部署vCenter外掛程式可產生AutoSupport 一套功能不全的套件。您應該產生一個套件來偵錯問題、或是在支援人員的指示下產生問題。
 

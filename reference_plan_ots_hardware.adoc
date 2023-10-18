@@ -50,7 +50,7 @@ NOTE: ESXi 6.5 GA 和 ESXi 6.7 GA 即將達到可用度狀態。如果您的 ONT
 
 
 
-=== 升級至VMware ESXi 6.5 U2或更新版本
+=== 升級至 VMware ESXi 6.5 U2 或更新版本
 
 如果您目前在ONTAP Select VMware ESXi 6.5 U1上部署了VMware ESXi、則應盡快升級至ESXi 6.5 U2或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。
 
@@ -90,7 +90,7 @@ NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更�
 |===
 
 
-| 叢集大小 | 最低要求 | 建議 
+| 叢集大小 | 最低要求 | 建議要求 
 
 
 | 單節點叢集 | 2 x 1GbE | 2個10GbE 

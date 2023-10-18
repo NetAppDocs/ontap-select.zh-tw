@@ -24,5 +24,3 @@ summary: 效能會因硬體組態而異。
 * * RAID群組中的磁碟機類型和磁碟機數目*。
 * * Hypervisor版本與修補程式層級*。
 
-
-如需ONTAP Select 效能測試詳細資料、請參閱ONTAP Select 的「_Estrap_Performance」一節 https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^]。

@@ -4,7 +4,7 @@ permalink: task_vpi_deploy_cluster.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, deploy cluster, deploying cluster, create cluster, creating cluster 
 summary: 您可以透過vSphere Web使用者介面使用部署vCenter外掛程式來部署ONTAP Select VMware叢集。 
 ---
-= 部署ONTAP Select 一個不必要的叢集
+= 部署ONTAP Select 一個叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -51,7 +51,7 @@ summary: 您可以透過vSphere Web使用者介面使用部署vCenter外掛程�
 
 
 
-== 新增Hypervisor主機
+== 新增 Hypervisor 主機
 
 您可以將Hypervisor主機新增至部署公用程式、ONTAP Select 以便在部署叢集之前執行各個節點。如果需要、您可以改為將主機新增為叢集建立對話框的一部分。
 

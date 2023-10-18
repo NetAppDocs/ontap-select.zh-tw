@@ -4,7 +4,7 @@ permalink: task_cli_deploy_image_add.html
 keywords: administer, administering, cli, deploy, ontap select image, add 
 summary: 您可以在ONTAP Select 部署管理公用程式的執行個體中新增一個鏡像。安裝映像之後、您可以在部署ONTAP Select 一個叢集時使用它。 
 ---
-= 新增ONTAP Select 要部署的鏡像
+= 新增要部署的 ONTAP Select 映像
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,7 +35,7 @@ NOTE: 您只能使用ONTAP Select 比部署公用程式執行個體隨附的原�
 
 
 
-== 正在下載安裝映像
+== 下載安裝映像
 
 若要開始在ONTAP Select Deploy公用程式執行個體中新增ImageImage的程序、您必須從NetApp支援網站下載安裝映像。將此鏡像格式化為ONTAP Select 單一壓縮檔案。
 

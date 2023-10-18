@@ -11,7 +11,7 @@ settings:
   langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: 文件ONTAP Select
+  - title: 本文檔ONTAP Select
     url: "/index.html"
   - title: 版本資訊
     entries:
@@ -143,9 +143,9 @@ sidebar:
         url: "/task_adm_video_console.html"
       - title: 調整叢集節點的大小
         url: "/task_adm_resize.html"
-      - title: 更換故障的SW RAID磁碟機
+      - title: 更換故障的 SW RAID 磁碟機
         url: "/task_adm_replace_drives_swraid.html"
-      - title: 升級至VMFS6
+      - title: 升級至 VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
     - title: 授權
       url: "/task_adm_licenses.html"
@@ -197,7 +197,7 @@ sidebar:
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
   - title: 與vCenter整合
     entries:
-    - title: 快速入門
+    - title: 開始使用
       entries:
       - title: 總覽
         url: "/concept_vpi_overview.html"
@@ -255,13 +255,13 @@ sidebar:
         url: "/concept_api_before_browser.html"
       - title: 存取文件頁面
         url: "/task_api_access_doc_page.html"
-      - title: 瞭解API呼叫
+      - title: 瞭解 API 呼叫
         url: "/task_api_understanding_call.html"
     - title: 工作流程程序
       entries:
       - title: 開始之前
         url: "/concept_api_before_workflows.html"
-      - title: 工作流程1：建立叢集
+      - title: 工作流程 1 建立叢集
         url: "/reference_api_workflow01.html"
     - title: 使用Python存取
       entries:
@@ -287,8 +287,6 @@ sidebar:
     url: "/concept_automate_ansible.html"
   - title: 使用CLI
     entries:
-    - title: 開始之前
-      url: "/concept_cli_before.html"
     - title: 使用SSH登入
       url: "/task_cli_signing_in.html"
     - title: 部署叢集
@@ -319,9 +317,5 @@ sidebar:
         url: "/task_cli_deploy_recover_two_node.html"
   - title: 常見問題集
     url: "/reference_faq.html"
-  - title: 取得更多資訊
-    url: "/reference_additional_info.html"
-  - title: 舊版
-    url: "/reference_earlier_versions.html"
   - title: 法律聲明
     url: "/reference_legal_notices.html"

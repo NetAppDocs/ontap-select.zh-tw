@@ -4,7 +4,7 @@ permalink: task_cli_deploy_cluster.html
 keywords: administer, administering, cli, create cluster, deploy cluster 
 summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程式的命令列介面來建立單節點ONTAP Select 或多節點的解決方法叢集。 
 ---
-= 使用CLI部署ONTAP Select 一個叢集
+= 使用 CLI 部署 ONTAP Select 叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 
 
-=== 準備將儲存設備附加ONTAP Select 至節點
+=== 準備將儲存設備附加至 ONTAP Select 節點
 
 如果您使用本機硬體RAID控制器、則必須在每個節點上為系統資料以及根和資料集合體建立至少一個儲存資源池。您必須附加儲存資源池、作為設定ONTAP Select 節點的一部分。
 
@@ -34,17 +34,17 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 === 提供ONTAP Select 的版本
 
-部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"] 以取得更多資訊。
+部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增要部署的 ONTAP Select 映像"] 以取得更多資訊。
 
 
 
-=== 正式ONTAP Select 作業部署的授權功能
+=== 正式作業部署的授權 ONTAP Select
 
 在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用_capsityleap__模型在每個節點上授權儲存設備、或使用_capsityPools_模型授權共用資源池。
 
 
 
-== 上傳及註冊授權檔案
+== 上傳並註冊授權檔案
 
 取得具有儲存容量的授權檔案後、您必須將包含授權的檔案上傳至部署虛擬機器並加以註冊。
 
@@ -81,7 +81,7 @@ exit
 
 
 
-== 新增ESXi Hypervisor主機
+== 新增 ESXi Hypervisor 主機
 
 您必須登錄ONTAP Select 每個執行此節點的Hypervisor主機。在此過程中、部署管理公用程式會驗證到管理主機的vCenter伺服器、或直接驗證到ESXi獨立主機。
 
@@ -173,7 +173,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 
 
-== 設定ONTAP Select 一個節點
+== 設定 ONTAP Select 節點
 
 您必須在ONTAP Select E驗 集叢中設定每個節點。
 
@@ -245,7 +245,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
-== 將儲存設備附加ONTAP Select 至節點
+== 將儲存設備附加至 ONTAP Select 節點
 
 您必須設定ONTAP Select 由叢集中每個節點使用的儲存設備。每個節點必須一律至少指派一個儲存資源池。使用軟體RAID時、也必須為每個節點指派至少一個磁碟機。
 
@@ -328,7 +328,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
-== 部署ONTAP Select 一個不必要的叢集
+== 部署ONTAP Select 一個叢集
 
 設定叢集和節點之後、即可部署叢集。
 

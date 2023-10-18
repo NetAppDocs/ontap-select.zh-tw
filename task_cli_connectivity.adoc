@@ -4,7 +4,7 @@ permalink: task_cli_connectivity.html
 keywords: administer, administering, cli, connectivity, network connectivity, network checker 
 summary: 您可以測試ONTAP Select 內部叢集網路上兩個或多個節點之間的網路連線能力。您通常會在部署多節點叢集之前執行此測試、以偵測可能導致作業失敗的問題。 
 ---
-= 確認ONTAP Select 各個節點之間的網路連線能力
+= 確認 ONTAP Select 節點之間的網路連線能力
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

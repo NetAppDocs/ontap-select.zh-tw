@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 您可以使用ONTAP Select 隨附於「解決方法部署」管理公用程式的網路使用者介面來部署單節點ONTAP Select 或多節點的解決方法叢集。 
 ---
-= 部署ONTAP Select 一個不必要的叢集
+= 部署ONTAP Select 一個叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ summary: 您可以使用ONTAP Select 隨附於「解決方法部署」管理公�
 當您使用Deploy公用程式網路介面建立ONTAP Select 一個叢集時、系統會引導您完成一系列特定步驟。確切的程序會因部署單一節點或多節點叢集而有所不同。
 
 
-TIP: 您也可以ONTAP Select 使用部署公用程式CLI來部署叢集。
+TIP: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_deploy_cluster.html["使用部署公用程式 CLI 部署 ONTAP Select 叢集"]。
 
 
 
@@ -49,8 +49,8 @@ TIP: 您也可以ONTAP Select 使用部署公用程式CLI來部署叢集。
 
 --
 授權檔案:: 如果您打算在正式作業環境中部署叢集、則必須根據授權模式取得儲存授權檔案。
-部署安裝和帳戶認證:: 您必須安裝部署管理公用程式並執行初始組態。請參閱 link:task_install_deploy.html["安裝ONTAP Select 部署功能"] 以取得更多資訊。您必須擁有部署系統管理員帳戶的密碼、此密碼已設定為安裝程序的一部分。
-安裝先前ONTAP Select 的鏡像節點映像:: 根據預設、部署管理公用程式會在ONTAP Select 發行時包含最新版本的功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 要部署的鏡像"] 以取得更多資訊。
+部署安裝和帳戶認證:: 您必須安裝部署管理公用程式並執行初始組態。請參閱 link:task_install_deploy.html["安裝ONTAP Select 部署"] 以取得更多資訊。您必須擁有部署系統管理員帳戶的密碼、此密碼已設定為安裝程序的一部分。
+安裝先前ONTAP Select 的鏡像節點映像:: 根據預設、部署管理公用程式會在ONTAP Select 發行時包含最新版本的功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增要部署的 ONTAP Select 映像"] 以取得更多資訊。
 快速入門啟動頁面:: 初始頁面* ONTAP Select 《Getting Started with the Siddeploy》（《使用介紹》）*將引導您完成建立叢集的多步驟程序。主要步驟有五個、包括：
 +
 --
@@ -73,7 +73,7 @@ NOTE: 您可以按一下頁面頂端的索引標籤（叢集、Hypervisor主機�
 
 
 
-== 建立單節點或多節點叢集
+== 建立單一節點或多節點叢集
 
 您可以使用 ONTAP Select Deploy Web 使用者介面來部署單一節點或多節點 ONTAP Select 叢集。
 

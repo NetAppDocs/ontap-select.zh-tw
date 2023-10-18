@@ -22,7 +22,8 @@ summary: 有幾個規劃問題與ONTAP Select 使用功能不相關、您應該�
 
 此解決方案可搭配任何規模的不二叢集使用。ONTAP Select ONTAP Select
 
-所有相關的儲存元件、包括硬體、軟體和功能需求、都必須符合中所述的要求link:https://mysupport.netapp.com/matrix/["VMware相容性指南"]。此外ONTAP Select 、支援《VMware Storage/SAN相容性指南》中所述的所有外部儲存陣列、包括iSCSI、NAS（NFSv3）、Fibre Channel和Fibre Channel over Ethernet。外部陣列支援受ONTAP Select 支援ESXi版本的限制。如需詳細資訊、請參閱_NetApp互通性對照表工具_。
+所有相關的儲存元件、包括硬體、軟體和功能需求、都必須符合中所述的要求
+link:https://mysupport.netapp.com/matrix/["NetApp 互通性對照表工具"^]。此外、 ONTAP Select 支援 VMware Storage/SAN 相容性文件中所述的所有外部儲存陣列、包括 iSCSI 、 NAS （ NFSv3 ）、光纖通道和乙太網路光纖通道。外部陣列支援受ONTAP Select 支援ESXi版本的限制。
 
 部署使用ONTAP Select VMware vCenter的叢集時、支援下列VMware功能：
 

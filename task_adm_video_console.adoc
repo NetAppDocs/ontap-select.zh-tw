@@ -4,7 +4,7 @@ permalink: task_adm_video_console.html
 keywords: administer, administering, web, video console 
 summary: 您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視訊主控台。 
 ---
-= 存取ONTAP Select 不同步視訊主控台
+= 存取 ONTAP Select 視訊主控台
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

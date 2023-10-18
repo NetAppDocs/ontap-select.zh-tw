@@ -18,7 +18,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
-== 將ONTAP Select 某個不正常的叢集移到離線和線上
+== 將 ONTAP Select 叢集離線移至線上
 
 建立叢集之後、您可以視需要將其離線或上線。
 
@@ -40,7 +40,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
-== 刪除ONTAP Select 一個叢集
+== 刪除 ONTAP Select 叢集
 
 您可以在ONTAP Select 不再需要時刪除一個不需要的叢集。
 

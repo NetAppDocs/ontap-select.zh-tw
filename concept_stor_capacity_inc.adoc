@@ -54,7 +54,7 @@ image:ST_07.jpg["容量分配：在節點1執行兩次額外的儲存新增作�
 
 
 
-== 利用ONTAP Select 軟體RAID提升功能
+== 利用軟體 RAID 增加 ONTAP Select 的容量
 
 儲存新增精靈也可以使用ONTAP Select 軟體RAID來增加支援支援支援的支援能力。此精靈僅顯示可用的DAS SDD磁碟機、並可將其對應為RDM至ONTAP Select 該VM。
 

@@ -4,7 +4,7 @@ permalink: task_vpi_access.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, access, accessing 
 summary: 您可以透過vSphere Web用戶端存取部署vCenter外掛程式。 
 ---
-= 透過vSphere存取vCenter外掛程式
+= 透過 vSphere 存取 vCenter 外掛程式
 :allow-uri-read: 
 
 

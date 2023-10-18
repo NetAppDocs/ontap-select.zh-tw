@@ -54,7 +54,7 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 | 是的 | 使用組態備份還原部署公用程式執行個體 
 
 
-| 否 | 重新設定及還原部署公用程式執行個體 
+| 否 | 重新設定及恢復部署公用程式執行個體 
 |===
 
 
@@ -119,7 +119,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 
-== 重新設定及還原部署公用程式執行個體
+== 重新設定及恢復部署公用程式執行個體
 
 如果您沒有包含雙節點叢集的失敗部署公用程式執行個體備份、則必須在新的部署虛擬機器中設定中介iSCSI目標和信箱。然後、您必須執行ONTAP Select 額外的組態來完成恢復、將兩個節點放在一個叢集內。
 
@@ -210,7 +210,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量集區授權。
 
 .相關資訊
-* link:task_install_deploy.html["安裝ONTAP Select 部署功能"]
+* link:task_install_deploy.html["安裝ONTAP Select 部署"]
 * link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["將部署組態資料還原至新的虛擬機器"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝容量資源池授權"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝容量集區授權"]
 

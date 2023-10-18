@@ -18,7 +18,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
-== 將ONTAP Select 一個叢集移至離線和線上狀態
+== 將 ONTAP Select 叢集移至離線和線上狀態
 
 建立叢集之後、您可以視需要將其狀態變更為離線或線上。
 
@@ -30,7 +30,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
-== 刪除ONTAP Select 一個叢集
+== 刪除 ONTAP Select 叢集
 
 您可以在ONTAP Select 不再需要時刪除一個不需要的叢集。
 

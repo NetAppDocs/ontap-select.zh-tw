@@ -32,7 +32,7 @@ summary: 部署外掛程式與vCenter伺服器緊密整合。由於這項整合�
 
 
 
-== 透過外掛程式檢視叢集的VMware資源
+== 透過外掛程式檢視叢集的 VMware 資源
 
 您可以ONTAP Select 透過部署外掛程式來檢視指派給某個VMware叢集的VMware資源。
 
@@ -46,7 +46,7 @@ summary: 部署外掛程式與vCenter伺服器緊密整合。由於這項整合�
 
 
 
-== 透過ONTAP Select ESXi虛擬機器檢視VMware叢集
+== 透過 ESXi 虛擬機器檢視 ONTAP Select 叢集
 
 您可以存取VMware虛擬機器來檢視ONTAP Select VMware叢集資源和相關的叢集資源。
 
@@ -60,7 +60,7 @@ summary: 部署外掛程式與vCenter伺服器緊密整合。由於這項整合�
 
 
 
-== 在ESXi主機上建立單節點叢集
+== 在 ESXi 主機上建立單節點叢集
 
 您可以透過vSphere介面選取ESXi Hypervisor主機、並部署ONTAP Select 一個VMware單節點叢集。
 
@@ -68,5 +68,5 @@ summary: 部署外掛程式與vCenter伺服器緊密整合。由於這項整合�
 . 使用瀏覽器透過vSphere HTML5登入vCenter伺服器。
 . 按一下頂端的*功能表*、然後按一下*主機與叢集*。
 . 在左邊想要的Hypervisor主機上按一下滑鼠右鍵、選取* ONTAP Select 《*》（*）、然後按一下「*新ONTAP Select 增*」。
-. 依照中的步驟完成部署程序 link:task_deploy_cluster.html["部署ONTAP Select 一個不必要的叢集"]。
+. 依照中的步驟完成部署程序 link:task_deploy_cluster.html["部署ONTAP Select 一個叢集"]。
 

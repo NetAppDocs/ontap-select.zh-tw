@@ -4,7 +4,7 @@ permalink: task_adm_replace_drives_swraid.html
 keywords: administer, administering, web, software raid, replace drive 
 summary: 使用軟體RAID時、ONTAP Select 當磁碟機故障時、使用備用磁碟機（如果有）並自動開始重建程序。這類似ONTAP 於《關於FAS 功能的資訊與AFF 技術的資訊之用」。不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。 
 ---
-= 使用SW RAID時更換故障磁碟機
+= 使用 SW RAID 時更換故障磁碟機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

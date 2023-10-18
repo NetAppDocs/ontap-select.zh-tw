@@ -1,0 +1,41 @@
+---
+indexpage:
+  lead: NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含
+    ONTAP Select 9.13.1 、 9.12.1 、 9.11.1 、 9.10.1 和 9.9.1 的文件。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 版本資訊
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2885795
+    - title: 新增功能
+      url: "/reference_new_ots.html"
+    - title: 瞭解 ONTAP Select
+      url: "/concept_ots_overview.html"
+    - title: 授權
+      url: "/concept_lic_production.html"
+    - title: 常見問題集
+      url: "/reference_faq.html"
+  - title: 安裝與管理
+    links:
+    - title: 規劃您的部署
+      url: "/concept_workflow_deploy.html"
+    - title: 安裝
+      url: "/task_install_deploy.html"
+    - title: 管理叢集
+      url: "/concept_adm_before.html"
+    - title: 使用 REST API
+      url: "/concept_api_how_access.html"
+  - title: 更多資源
+    links:
+    - title: ONTAP Select 資源頁面
+      url: https://www.netapp.com/data-management/ontap-select/documentation/
+    - title: 產品庫ONTAP Select
+      url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293
+    - title: 部分9文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap/
+    - title: ONTAP Select 部落格
+      url: https://blog.netapp.com/tag/ontap-select/
+    - title: ONTAP Select 社群
+      url: https://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select
+    - title: 互通性對照表
+      url: https://mysupport.netapp.com/matrix/

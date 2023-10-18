@@ -1,7 +1,8 @@
 ---
+layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: 歡迎使用ONTAP Select 適用於此的文件入口網站。 
+summary: NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含 ONTAP Select 9.13.1 、 9.12.1 、 9.11.1 、 9.10.1 和 9.9.1 的文件。 
 ---
 = 本文檔ONTAP Select
 :hardbreaks:
@@ -11,35 +12,4 @@ summary: 歡迎使用ONTAP Select 適用於此的文件入口網站。
 :linkattrs: 
 :imagesdir: ./media/
 
-
-[role="lead"]
-NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。
-
-
-
-== 瞭解最新資訊
-
-* link:reference_new_ots.html["此版本的新功能"]
-
-
-[NOTE]
-====
-* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
-
-====
-
-
-== 瀏覽產品文件
-
-ONTAP Select 9.13.1 可部署在 VMware ESXi 上。本網站包含 ONTAP Select 9.13.1 、 9.12.1 、 9.11.1 、 9.10.1 、 9.9.1 、 9.9.1 、 在 VMware ESXi 上執行 9.8 和 9.7 、以及與 Hypervisor 無關的文件（例如 REST API ）。
-
-您可以在上找到KVM版本產品的版本資訊、以及先前版本所支援的文件 https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["產品庫ONTAP Select"^]。
-
-
-
-== 取得更多資訊並與同儕交流
-
-* link:reference_additional_info.html["何處可取得協助及尋找更多資訊"]
 

@@ -4,7 +4,7 @@ permalink: task_cli_deploy_image_remove.html
 keywords: administer, administering, cli, deploy, ontap select image, remove 
 summary: 您可以在ONTAP Select 不再需要時、從部署管理公用程式的執行個體中移除不必要的影像。 
 ---
-= 從ONTAP Select 部署中移除鏡像
+= 移除部署的 ONTAP Select 映像
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

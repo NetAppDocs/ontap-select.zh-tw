@@ -18,7 +18,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
-== 刪除ONTAP Select 一個叢集
+== 刪除 ONTAP Select 叢集
 
 您可以使用ONTAP Select 命令列介面刪除不再需要的叢集。
 
