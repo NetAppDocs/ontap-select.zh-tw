@@ -1388,12 +1388,9 @@
   <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。</block>
   <block id="966c758e5fd0e52652aa5afbd8f22a24" category="list-text">按一下「*熱門工作*」下的「*下載軟體*」、然後登入。</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">按一下*尋找您的產品*。</block>
-  <block id="bccf3e76ee48d8e82f2ceba72b62d7af" category="list-text">向下捲動並按一下* ONTAP Select 「*」「部署升級*」。</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">選取所需的升級套件版本。</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">檢閱終端使用者授權合約（EULA）、然後按一下*「Accept &amp; Continue（接受並繼續）」*。</block>
   <block id="def8f653fff47640d3bcce40244c6331" category="list-text">選取並下載適當的套件、視環境需求回應所有提示。</block>
-  <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link-macro">NetApp支援</block>
-  <block id="256b9e5b7f511be2eea8558649199f73" category="paragraph"><block ref="256b9e5b7f511be2eea8558649199f73" category="inline-link-macro-rx"></block></block>
   <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">取得升級套件之後、您必須將檔案上傳至部署虛擬機器。</block>
   <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">您必須在本機工作站上提供升級檔案。您也必須擁有系統管理員使用者帳戶的密碼。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此工作說明將檔案上傳至部署虛擬機器的一種方法。可能還有其他更適合您環境的選項。</block>
@@ -1402,7 +1399,6 @@
   <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">您必須知道升級檔案位於Deploy公用程式虛擬機器的哪個目錄。此外、請確保在執行升級時、不會使用部署來執行任何其他工作。</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">使用適當的目錄路徑和檔案名稱執行升級：</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph">「部署升級-套件路徑檔案路徑」</block>
-  <block id="150fc0d33877571bc7e496a88e0dcdb5" category="paragraph">升級程序完成後、系統會要求您建立部署虛擬機器組態的備份。您也應該清除瀏覽器快取、以便檢視新建立的部署頁面。</block>
   <block id="c751e53f249ee0116e0b9066fb94001d" category="paragraph">建立叢集之後、您可以視需要將其狀態變更為離線或線上。</block>
   <block id="439347f35d25038c54a659f1881f7c1a" category="list-text">在所需的叢集上按一下滑鼠右鍵、即可顯示可用的動作。</block>
   <block id="e3859870d86ae0269ef43519a4d016d3" category="list-text">按一下「*離線*」或「*上線*」、然後按一下「*是*」確認申請。</block>
@@ -2641,7 +2637,6 @@
   <block id="332fd48f854bf692aea555e091e1b3cc" category="paragraph"><block ref="332fd48f854bf692aea555e091e1b3cc" category="inline-link-rx"></block></block>
   <block id="eea1cec828c419810e082867558ec301" category="list-text">按一下「* ONTAP Select 不含節點升級*」。</block>
   <block id="a864f71b844955db4e27746202712f1b" category="list-text">選取並下載適當的升級映像、視需要回應所有提示。</block>
-  <block id="202772c1f92d500b0765ed04693d11e5" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。</block>
   <block id="c09b5be4c2da04f4040eef1878f258aa" category="inline-link">部分9文件ONTAP</block>
   <block id="27ac4f41a6a95e6d95afb9eb1af5bba3" category="summary">您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視訊主控台。</block>
   <block id="349f27a15a1aba59be9538487e4a6304" category="paragraph">您可能需要存取虛擬機器主控台來疑難排解問題、或是NetApp支援部門要求您這麼做。</block>
@@ -3526,7 +3521,6 @@
   <block id="f300769ad7ade3ee1597c88f58750b97" category="doc">升級 ONTAP Select 節點</block>
   <block id="2e17a67d810d937603511ac8eb9044c5" category="paragraph">在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。</block>
   <block id="2a883d1fe3d932e9f2fc25c99deaa4b9" category="inline-link-macro">ONTAP 升級總覽</block>
-  <block id="c6747590f95713e2f203d616751eb4ea" category="paragraph"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
   <block id="46928a27773a23230df6e5bda4c3aeb9" category="section-title">還原 ONTAP Select 節點</block>
   <block id="140182c4500e816e4313b2abddef452d" category="paragraph">您無法將 ONTAP Select 節點還原為原先安裝的版本。例如：</block>
   <block id="f02e36d55b7d949e1003748824aa7ec6" category="list-text">ONTAP Select 9.7 一開始即已安裝</block>
@@ -3708,4 +3702,10 @@
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">瞭解 API 呼叫</block>
   <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">工作流程 1 建立叢集</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">瞭解指令碼</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">NetApp 支援網站</block>
+  <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">存取 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用網頁瀏覽器、並從「下載」功能表中選擇 * 「下載 * 」。</block>
+  <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">向下捲動並選取 * ONTAP Select Deploy Upgrade* 。</block>
+  <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">檢閱終端使用者授權合約（ EULA ）、然後選取 * 接受並繼續 * 。</block>
+  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">升級程序完成之前、系統會要求您建立部署虛擬機器組態的備份。此外、您也應該清除瀏覽器快取、以便檢視新建立的部署頁面。</block>
+  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。請參閱 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> 以取得詳細的升級程序。</block>
 </blocks>
