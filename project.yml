@@ -8,10 +8,21 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
+  versions:
+  - version-number: 9.14.1
+    url: "/ontap-select"
+  - version-number: 9.13.1
+    url: "/ontap-select-9131"
+  - version-number: 9.12.1
+    url: "/ontap-select-9121"
+  - version-number: 9.11.1
+    url: "/ontap-select-9111"
+  - version-number: 9.10.1
+    url: "/ontap-select-9101"
   langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: 本文檔ONTAP Select
+  - title: ONTAP Select 9.14.1 文件
     url: "/index.html"
   - title: 版本資訊
     entries:

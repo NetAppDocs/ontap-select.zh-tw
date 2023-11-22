@@ -3614,4 +3614,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="a00a440e4e7508545fb84f9e32bb861b" category="paragraph-title">將 ONTAP Select 與 ONTAP 硬體型叢集整合</block>
   <block id="e289810d4028b10554ae6b447fa581ee" category="sidebar">外部儲存需求</block>
   <block id="a9e831fb19f71068ebfd5cb9b303ea66" category="sidebar">ESXi 上的 VMware vCenter</block>
+  <block id="314c09ddbe5ce5a2ebc071a5ba939ef6" category="sidebar">ONTAP Select 9.14.1 文件</block>
 </blocks>
