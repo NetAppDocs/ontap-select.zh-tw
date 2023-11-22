@@ -26,7 +26,7 @@ NOTE: 如需外部儲存設備支援資訊、請參閱 link:reference_plan_ots_v
 在Hypervisor主機上部署ONTAP Select 的RAID控制器必須符合多項需求。
 
 
-NOTE: 執行ONTAP Select 效能不實的ESXi主機在使用硬體RAID控制器或ONTAP Select 使用隨附的軟體RAID功能時、需要使用本機實體磁碟機。如果您使用ONTAP Select 支援內部儲存設備的支援功能來存取外部儲存設備、則不會使用本機RAID控制器和軟體RAID功能。
+NOTE: 執行 ONTAP Select 的主機在使用硬體 RAID 控制器或 ONTAP Select 隨附的軟體 RAID 功能時、需要使用本機實體磁碟機。如果您使用ONTAP Select 支援內部儲存設備的支援功能來存取外部儲存設備、則不會使用本機RAID控制器和軟體RAID功能。
 
 RAID控制器的最低需求包括：
 
@@ -45,8 +45,8 @@ RAID控制器的最低需求包括：
 
 * LUN組態必須根據下列準則執行：
 +
-** 如果RAID群組大小超過最大ESXi LUN大小64TB、您應該設定多個大小相同的LUN、以佔用RAID群組內的所有可用儲存空間。
-** 如果RAID群組大小小於最大ESXi LUN大小64TB、您應該設定一個LUN、佔用RAID群組內的所有可用儲存空間。
+** 如果 RAID 群組大小超過 64 TB 的最大 LUN 大小、您應該設定多個大小相等的 LUN 、以使用 RAID 群組中的所有可用儲存設備。
+** 如果 RAID 群組大小小於 64 TB 的最大 LUN 大小、您應該設定一個 LUN 、使用 RAID 群組中的所有可用儲存設備。
 
 
 
@@ -55,13 +55,13 @@ RAID控制器的最低需求包括：
 
 == 軟體RAID需求
 
-在ONTAP Select VMware ESXi Hypervisor上部署VMware ESXi叢集時、您可以使用ONTAP Select 由VMware提供的軟體RAID功能、而非使用本機硬體RAID控制器。在使用軟體RAID部署叢集之前、您必須先瞭解幾項需求與限制。
+在 Hypervisor 上部署 ONTAP Select 叢集時、您可以使用 ONTAP Select 提供的軟體 RAID 功能、而非本機硬體 RAID 控制器。在使用軟體RAID部署叢集之前、您必須先瞭解幾項需求與限制。
 
 
 
 === 一般要求
 
-VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：
+軟體 RAID 部署環境必須符合下列核心需求：
 
 * VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
 * 不含更新版本的進階授權ONTAP Select
@@ -73,8 +73,49 @@ VMware ESXi上的軟體RAID部署環境必須符合下列核心需求：
 
 NOTE: 如果有硬體RAID控制器、請參閱 link:concept_stor_concepts_chars.html["深度儲存"] 一節以瞭解其他組態需求。
 
+
+
+=== ESXi 特定需求
+
+* VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
 * 不支援VMware VMotion、HA和DRS
 * 您無法將軟體 RAID 搭配已從 ONTAP Select 9.4 或更早版本升級的節點使用。如果是這種情況、您需要為軟體 RAID 部署建立新的節點。
+
+
+
+
+=== KVM 特定需求
+
+還有特定的軟體套件組態需求。請參閱 link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["準備 Linux 伺服器"] 以取得更多資訊。
+
+KVM 的媒體期望:: 所使用的 SSD Flash 儲存裝置必須符合下列額外需求：
++
+--
+* SSD 裝置必須透過下列方法、準確且持續地向 Linux 主機回報：
++
+** # cat /sys/block/queue/旋轉 <device>
++
+針對這些命令回報的值必須是「 0 」。
+
+
+
+* 預期裝置會連線至 HBA 、或在某些情況下連線至設定為以 JBOD 模式運作的 RAID 控制器。使用 RAID 控制器時、裝置功能必須在主機上傳遞、而不會過度配置任何 RAID 功能。在 JBOD 模式下使用 RAID 控制器時、您應檢閱 RAID 文件、或視需要聯絡廠商、確保裝置回報的旋轉速度為「 0 」。
+* 有兩個獨立的儲存元件：
++
+** 虛擬機器儲存設備
++
+這是一個 LVM 集區（儲存池）、其中包含用於裝載 ONTAP Select 虛擬機器的系統資料。LVM Pool 必須由高耐受度 Flash 裝置作為後盾、而且可以是 SAS 、 SATA 或 NVMe 。建議使用 NVMe 裝置來改善效能。
+
+** 資料磁碟
++
+這是一組用於資料管理的 SAS 或 SATA SSD 磁碟機。SSD 裝置應為企業級且持久耐用。NVMe 介面不受支援。
+
+
+
+* 所有裝置都必須以 512BPS 格式化。
+
+
+--
 
 
 

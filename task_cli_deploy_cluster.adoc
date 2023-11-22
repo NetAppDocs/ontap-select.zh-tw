@@ -20,7 +20,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 == 開始之前
 
-在ONTAP Select ESXi上建立一個叢集之前、您應該先瞭解所需的準備工作。
+在 Hypervisor 上建立 ONTAP Select 叢集之前、您應該先瞭解必要的準備工作。
 
 
 
@@ -57,7 +57,7 @@ NOTE: 如果您只要部署叢集進行評估、可以跳過此步驟。
 .步驟
 . 在本機工作站的命令Shell中、使用sftp公用程式將授權檔案上傳至部署虛擬機器。
 +
-範例
+輸出範例
 
 +
 ....
@@ -81,9 +81,58 @@ exit
 
 
 
-== 新增 ESXi Hypervisor 主機
+== 新增 Hypervisor 主機
 
-您必須登錄ONTAP Select 每個執行此節點的Hypervisor主機。在此過程中、部署管理公用程式會驗證到管理主機的vCenter伺服器、或直接驗證到ESXi獨立主機。
+您必須登錄ONTAP Select 每個執行此節點的Hypervisor主機。
+
+[role="tabbed-block"]
+====
+.KVM
+--
+您必須登錄要執行 ONTAP Select 節點的 Hypervisor 主機。在此過程中、部署管理公用程式會驗證至 KVM 主機。
+
+.關於這項工作
+如果需要多個 Hypervisor 主機、您應該使用此程序來新增每個主機。
+
+.步驟
+. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
+. 註冊主機：
++
+[source, asciidoc]
+----
+`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+----
++
+輸出範例
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+出現提示時、請提供主機帳戶的密碼。
+
+. 顯示主機的狀態、並確認已驗證：
++
+[source, asciidoc]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+輸出範例
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
+
+
+--
+.ESXi
+--
+在此過程中、部署管理公用程式會驗證到管理主機的vCenter伺服器、或直接驗證到ESXi獨立主機。
 
 .關於這項工作
 登錄由vCenter管理的主機之前、您必須先新增vCenter伺服器的管理伺服器帳戶。如果主機不是由vCenter管理、您可以在登錄主機時提供主機認證資料。您應該使用此程序來新增每個主機。
@@ -95,7 +144,7 @@ exit
 「認證新增-主機名稱<FQDN：ip>-輸入vCenter -usernamevCenter_username'
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -107,7 +156,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** 登錄由vCenter管理的主機：
 `host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
-範例
+輸出範例
 
 +
 ....
@@ -120,7 +169,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 「host show -name <FQDN：ip>-detailed」
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -128,6 +177,8 @@ host show -name 10.234.81.14 -detailed
 ....
 
 
+--
+====
 
 
 == 建立及設定ONTAP Select 一個叢集
@@ -147,7 +198,7 @@ host show -name 10.234.81.14 -detailed
 「cluster create -name clustername -node-countes nodes」
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -158,7 +209,7 @@ cluster create -name test-cluster -node-count 1
 「cluster modify -name clustername -mgmt-ip ip_address -netmask -gateway ip_address -dnsDNS伺服器<fqd|ip>_list -dns_domain_list'
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -191,7 +242,7 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 . 選取節點並執行基本組態：「nodemodify -name nodename -cluster-name clustername -host-name <fqd|ip>-license序號-instance-type -passite-disks fals'
 +
-範例
+輸出範例
 
 +
 ....
@@ -209,7 +260,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 「主機網路show -host-name <FQDN：ip>-detailed」
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -223,7 +274,7 @@ host network show -host-name 10.234.81.14 -detailed
 部署單節點叢集時、您不需要內部網路、而且應該移除內部網路。
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -235,7 +286,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 「節點show -name nodename -cluster-name clustername -detailed」
 
 +
-範例
+輸出範例
 
 +
 ....
@@ -262,7 +313,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 「主機儲存資源池show -host-name <FQDN：ip>'
 
 +
-範例
+輸出範例
 
 +
 [listing]
@@ -280,7 +331,7 @@ host storage pool show -host-name 10.234.81.14
 如果包含-capacity限制參數、請將值指定為GB或TB。
 
 +
-範例
+輸出範例
 
 +
 [listing]
@@ -293,7 +344,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 「節點儲存資源池」顯示-cluster-name clustername -node-name nodename
 
 +
-範例
+輸出範例
 
 +
 [listing]
@@ -305,7 +356,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 「節點儲存磁碟附加- node-name nodename -cluster-name clustername -disks list_of_drives」（節點儲存磁碟附加-節點名稱節點名稱-叢集名稱-磁碟list_of_drives）
 
 +
-範例
+輸出範例
 
 +
 [listing]
@@ -317,7 +368,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 「節點儲存磁碟show -node-name nodename -cluster-name clustername」
 
 +
-範例
+輸出範例
 
 +
 [listing]
@@ -342,7 +393,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 "cluster deploy -name clusternam"
 
 +
-範例
+輸出範例
 
 +
 [listing]

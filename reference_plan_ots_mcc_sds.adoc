@@ -16,7 +16,7 @@ summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluste
 [role="lead"]
 建立雙節點的叢集時、可選擇使用哪些組態選項。MetroCluster ONTAP Select這類似於遠端辦公室/分公司（ROBO）部署、但兩個節點之間的距離可達10公里這項強化的雙節點部署可提供額外的使用案例。在準備部署MetroCluster 環節中、您應該瞭解各項要求和限制。
 
-在部署MetroCluster 不含SDS的產品之前、您必須確保符合下列要求。
+部署 MetroCluster SDS 之前、請確認符合下列需求。
 
 .授權
 每個節點都必須擁有優質或更高ONTAP Select 版本的不含功能的授權。
@@ -26,9 +26,7 @@ summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluste
 
 [NOTE]
 ====
-* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
+從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 
 ====
 .網路組態

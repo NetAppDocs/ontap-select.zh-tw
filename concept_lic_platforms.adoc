@@ -73,4 +73,4 @@ summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不�
 
 
 
-NOTE: 大型執行個體類型（使用優質XL授權）僅在VMware ESXi上支援。
+NOTE: 您可以將大型執行個體類型（使用 Premium XL 授權）用於任何組態、但由於效能問題、 KVM 不支援大型執行個體類型。

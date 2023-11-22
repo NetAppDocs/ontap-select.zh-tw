@@ -26,6 +26,10 @@ summary: 支援單一節點和多節點網路組態。ONTAP Select
 
 這些連接埠可用來提供下列服務：管理、資料及叢集間的LIF。
 
+.KVM
+ONTAP Select 可部署為單一節點叢集。Hypervisor 主機包含可存取外部網路的虛擬交換器。
+
+.ESXi
 下圖顯示這些連接埠與基礎實體介面卡之間的關係、說明ONTAP Select ESX Hypervisor上的一個VMware叢集節點。
 
 *單節點ONTAP Select 的網路組態不完整叢集*

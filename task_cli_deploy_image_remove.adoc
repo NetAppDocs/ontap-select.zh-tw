@@ -39,12 +39,23 @@ CAUTION: 您不應移除ONTAP Select 叢集所使用的任何非影像。
 +
 「ls -lh /opt/NetApp/images/映 像」
 
-. 選擇性地移除ESXi映像。
+. 您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。
 +
-範例「rm -r /opt/NetApp/images/DataONTAPv-9.3RC1-vidConsole -esx.ova」
-
-. 使用ONTAP Select 版本早於版本的版本時、可選擇性地移除KVM映像。
-+
-範例「rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar」
-
+[role="tabbed-block"]
+====
+.ESXi 範例
+--
+[source, asciidoc]
+----
+rm -r /opt/netapp/images/DataONTAPv-9.3RC1-vidconsole-esx.ova
+----
+--
+.KVM 範例
+--
+[source, asciidoc]
+----
+rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar
+----
+--
+====
 

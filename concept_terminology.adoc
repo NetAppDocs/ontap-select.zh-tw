@@ -17,6 +17,7 @@ summary: 當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語�
 當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語和關鍵概念是很有幫助的。
 
 部署ONTAP Select:: 「部署」是用來部署叢集的管理公用程式。ONTAP Select ONTAP Select部署公用程式可在專屬的Linux虛擬機器上執行。您可以透過Web使用者介面、CLI管理Shell和REST API來存取部署公用程式。
+核心型虛擬機器:: 核心型虛擬機器（ KVM ）是 Linux 核心的虛擬化功能、可讓它做為 Hypervisor 平台。支援多種來賓作業系統。
 Hypervisor主機與ONTAP Select 非節點:: Hypervisor主機_是裝載ONTAP Select 一個整套虛擬機器的核心硬體平台。當在Hypervisor主機上部署及啟用某部虛擬機器時、該虛擬機器被視為_節點_。ONTAP Select ONTAP Select
 叢集ONTAP Select:: 您可以建立一個由ONTAP Select 一個、兩個、四個、六個或八個節點組成的_實體叢集_。多節點叢集永遠包含一或多個HA配對。例如、四節點叢集由兩個HA配對組成。單一節點叢集無法提供HA功能。
 準備Hypervisor主機環境:: 在使用部署管理公用程式部署ONTAP Select 一個orised叢集之前、您必須先準備執行ONTAP Select 該程序的Hypervisor主機、包括儲存設備和網路環境。根據ONTAP Select 目前的需求和限制、此主機的預先組態是在不包括整個產品的情況下進行。
@@ -59,7 +60,7 @@ vsvNAS ONTAP Select:: 利用VMware vCenter解決方案、可讓一個節點存�
 
 在這兩種情況下、必須先設定外部儲存設備、再建立ONTAP Select 一個叢集或擴充現有節點的儲存容量。
 
-節點重新託管:: 當您部署叢集時、如果叢集使用ONTAP Select 透過VMware vCenter解決方案（VMware vSAN或一般外部儲存陣列）提供的外部儲存設備、則可ONTAP Select 利用下列VMware功能、透過各種行動來移動裝載此節點的ESXi虛擬機器：
+在 ESXi VM 上重新裝載節點:: 當您部署叢集時、如果叢集使用ONTAP Select 透過VMware vCenter解決方案（VMware vSAN或一般外部儲存陣列）提供的外部儲存設備、則可ONTAP Select 利用下列VMware功能、透過各種行動來移動裝載此節點的ESXi虛擬機器：
 +
 --
 * vMotion
@@ -77,6 +78,7 @@ vsvNAS ONTAP Select:: 利用VMware vCenter解決方案、可讓一個節點存�
 
 
 --
+開啟 Vswitch for KVM:: 開放式 vSwitch （ OVS ）是支援多種網路協定的虛擬交換器的軟體實作。OVS 是開放原始碼、根據 Apache License 2.0 提供。
 中介服務:: 此解決方案ONTAP Select 包含一個連接至作用中雙節點叢集節點的中介服務。此服務會監控每個HA配對、並協助管理故障。
 
 

@@ -60,7 +60,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
-== 使用 vNAS 時組合 ONTAP Select 節點
+== 在 ESXi 上使用 vNAS 時組合 ONTAP Select 節點
 
 支援共享儲存設備上的多節點元功能的叢集。ONTAP Select ONTAP Select只要這些節點不屬於同一個叢集、即可在同一部ESX主機上設定多個支援節點。ONTAP ONTAP Select請注意、此組態僅適用於VNAS環境（共享資料存放區）。使用DAS儲存設備時、每個主機不ONTAP Select 支援多個執行個體、因為這些執行個體競用相同的硬體RAID控制器。
 

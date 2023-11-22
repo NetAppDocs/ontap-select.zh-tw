@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas 
-summary: 有幾個規劃問題與ONTAP Select 使用功能不相關、您應該考量這些問題。 
+keywords: plan, planning, vnas, vmware esxi, 
+summary: 您應該考慮幾個與使用 VMware ESXi 相關的規劃問題。 
 ---
-= VNAS需求ONTAP Select
+= VMware ESXi 需求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 有幾個規劃問題與ONTAP Select 使用功能不相關、您應該�
 
 
 [role="lead"]
-藉由使用物件vNAS解決方案、可將不支援的資料存放區置於執行此虛擬機器的Hypervisor主機之外。ONTAP Select ONTAP Select ONTAP Select這些遠端資料存放區可透過VMware vSAN或一般外部儲存陣列存取。
+ONTAP Select vNAS 是一種解決方案、可讓 ONTAP Select 資料儲存區位於執行 ONTAP Select 虛擬機器的 ESXi Hypervisor 主機外部。這些遠端資料存放區可透過 VMware vSAN 或一般外部儲存陣列存取。
 
 
 

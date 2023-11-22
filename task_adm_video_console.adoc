@@ -14,7 +14,7 @@ summary: 您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視�
 
 
 [role="lead"]
-您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視訊主控台。
+您可以存取執行 ONTAP Select 的 Hypervisor 虛擬機器的視訊主控台。
 
 .關於這項工作
 您可能需要存取虛擬機器主控台來疑難排解問題、或是NetApp支援部門要求您這麼做。

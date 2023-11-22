@@ -23,7 +23,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 您可以ONTAP Select 從NetApp支援網站下載此解決方案。
 
 .關於這項工作
-根據開放式虛擬化格式（OVF）標準、將此支援公用程式封裝成虛擬機器。ONTAP Select單一壓縮檔案的字尾為「ova」。
+ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元 `ova`。
 
 .步驟
 . 使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。
@@ -83,18 +83,18 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 == 部署虛擬機器
 
-您必須使用ONTAP Select OVF虛擬機器映像來安裝及啟動「物件部署」虛擬機器。在安裝程序中、您必須將網路介面設定為使用DHCP或靜態IP組態。
+您必須使用 OVF VM 映像來安裝及啟動 ONTAP Select Deploy VM 。在安裝程序中、您可以將網路介面設定為使用 DHCP 或靜態 IP 組態。
 
 .開始之前
-您必須準備好部署ONTAP Select 這個功能完善的虛擬機器：
+對於 ESXi Hypervisor 、您必須準備部署 ONTAP Select Deploy VM ：
 
 * 安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能
-* 如果您要動態指派IP位址給部署虛擬機器、請在VMware環境中啟用DHCP
+* 如果您要動態指派 IP 位址給部署的虛擬機器、請在 VMware 環境中啟用 DHCP
 
 
-您必須擁有建立虛擬機器時要使用的組態資訊、包括虛擬機器名稱、外部網路和主機名稱。定義靜態網路組態時、您需要下列額外資訊：
+對於 ESXi 和 KVM Hypervisor 、您必須擁有在建立 VM 時要使用的組態資訊、包括 VM 名稱、外部網路和主機名稱。定義靜態網路組態時、您需要下列額外資訊：
 
-* 部署虛擬機器的IP位址
+* 部署 VM 的 IP 位址
 * 網路遮罩
 * 閘道（路由器）的IP位址
 * 主要DNS伺服器的IP位址
@@ -103,17 +103,23 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 .關於這項工作
-如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署虛擬機器的主控台來設定網路。
+如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署 VM 的主控台來設定網路。
 
 .步驟
+您所遵循的步驟取決於您是使用 ESXi 還是 KVM Hypervisor 。
+
+[role="tabbed-block"]
+====
+.ESXi
+--
 . 存取vSphere用戶端並登入。
 . 瀏覽至階層中的適當位置、然後選取*部署OVF範本*。
 . 選取OVA檔案並完成「部署OVF範本」精靈、選取適合您環境的選項。
 +
 您必須定義系統管理員帳戶的密碼。登入部署公用程式時、您必須提供此密碼。
 
-. 部署虛擬機器之後、請選取新的虛擬機器、如果尚未根據您對部署精靈的輸入而啟動、請將其開啟。
-. 如有需要、您可以使用虛擬機器主控台設定部署網路：
+. 部署虛擬機器之後、請根據您對部署精靈的輸入、選取新的虛擬機器、並在尚未啟動時開啟其電源。
+. 如有需要、您可以使用 VM 主控台設定部署網路：
 +
 .. 按一下*主控台*索引標籤、即可存取ESXi主機設定Shell並監控開機程序。
 .. 等待下列提示：
@@ -130,12 +136,65 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 +
 使用DHCP設定網路資訊？[n]：
 
-.. 輸入* n*定義靜態IP組態、或輸入y使用DHCP、然後按* Enter *。
+.. 鍵入 *n* 可定義靜態 IP 組態，或鍵入 *y* 使用 DHCP ，然後選取 *Enter* 。
 .. 如果您選擇靜態組態、請視需要提供所有網路組態資訊。
 
 
 
 
+--
+.KVM
+--
+. 在 Linux 伺服器登入 CLI ：
++
+[listing]
+----
+ssh root@<ip_address>
+----
+. 建立新目錄並擷取原始 VM 映像：
++
+[listing]
+----
+mkdir /home/select_deploy25
+cd /home/select_deploy25
+mv /root/<file_name> .
+tar -xzvf <file_name>
+----
+. 建立並啟動執行 Deploy 管理公用程式的 KVM VM ：
++
+[listing]
+----
+virt-install --name=select-deploy --vcpus=2 --ram=4096 --os-variant=debian10 --controller=scsi,model=virtio-scsi --disk path=/home/deploy/ONTAPdeploy.raw,device=disk,bus=scsi,format=raw --network "type=bridge,source=ontap-br,model=virtio,virtualport_type=openvswitch" --console=pty --import --noautoconsole
+----
+. 如有需要、您可以使用 VM 主控台設定部署網路：
++
+.. 連線至 VM 主控台：
++
+[listing]
+----
+virsh console <vm_name>
+----
+.. 等待下列提示：
++
+[listing]
+----
+Host name :
+----
+.. 鍵入主機名稱並選擇 *Enter* 。
+.. 等待下列提示：
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. 鍵入 *n* 可定義靜態 IP 組態，或鍵入 *y* 使用 DHCP ，然後選取 *Enter* 。
+.. 如果您選擇靜態組態、請視需要提供所有網路組態資訊。
+
+
+
+
+--
+====
 
 
 == 登入部署 Web 介面

@@ -18,9 +18,7 @@ summary: 尋找ONTAP Select 有關資訊的常見問題解答。
 
 [NOTE]
 ====
-* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
+從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 
 ====
 
@@ -118,7 +116,11 @@ NOTE: 不ONTAP Select 支援變更不支援的靜態部署VM IP位址。
 
 軟體RAID的部分需求如下：
 
-* 支援ESX和KVM（ONTAP Select 不含於VMware版9.10.1之前）
+* 支援 ESX 和 KVM
++
+** 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 移除了 KVM Hypervisor 支援。
+
+
 * 支援的實體磁碟大小：200GB–32TB
 * 僅在DAS組態上受支援
 * 支援SSD或NVMe
@@ -203,21 +205,6 @@ VMware vCenter有幾個問題與解答。
 .什麼vCenter權限ONTAP Select 可讓您部署以建立ONTAP Select VMware叢集？
 此處提供所需的vCenter權限清單： link:reference_plan_ots_vcenter.html["VMware vCenter伺服器"]。
 
-.什麼是vCenter部署外掛程式？
-您可以將ONTAP Select vCenter伺服器中的「VMware vCenter部署」功能與ONTAP Select 「VMware vCenter部署」外掛程式整合。請注意、外掛程式並不會取代ONTAP Select 「更新部署」。而ONTAP Select 非在背景中部署、vCenter管理員可利用ONTAP Select 外掛程式來叫用大部分的「VMware部署」功能。部分ONTAP Select 的功能部署作業只能使用CLI進行。
-
-.有多少ONTAP Select 個可在一個vCenter伺服器上註冊外掛程式的VMware vCenter部署VM？
-只有一個ONTAP Select VMware vCenter部署VM可以在特定的vCenter伺服器上登錄其外掛程式。
-
-.什麼是ONTAP Select VMware vCenter插件的優勢？
-外掛程式可讓vCenter管理員和IT通才使用ONTAP Select vCenter HTML5 GUI來建立VMware叢集。請注意、不支援Flash vCenter GUI。
-
-此外ONTAP Select 、它也允許使用vCenter RBAC進行驗證。獲授予vCenter使用ONTAP Select 此功能的使用者、其vCenter帳戶會對應ONTAP Select 至該部署管理使用者。下列檔案可做為基本稽核記錄、以記錄每項作業的使用者ID：ONTAP Select
-
-[listing]
-----
-nginx_access.log
-----
 
 
 == HA和叢集

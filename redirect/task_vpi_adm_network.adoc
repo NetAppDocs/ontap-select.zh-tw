@@ -1,0 +1,8 @@
+---
+permalink: task_vpi_adm_network.html 
+redirect: ontap-select/index.html 
+---
+= 
+:allow-uri-read: 
+
+

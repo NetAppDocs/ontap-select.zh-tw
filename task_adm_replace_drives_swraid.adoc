@@ -25,6 +25,50 @@ NOTE: 移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都�
 
 當磁碟機故障時、您需要使用ONTAP CLI來識別故障磁碟。
 
+[role="tabbed-block"]
+====
+.KVM
+--
+.開始之前
+您必須擁有 ONTAP Select 虛擬機器的 VM ID 、以及 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+
+.關於這項工作
+只有當 ONTAP Select 節點在 KVM 上執行且設定為使用軟體 RAID 時、才應使用此程序。
+
+.步驟
+. 在 ONTAP Select CLI 中、識別要更換的磁碟：
++
+.. 依虛擬機器中的序號、 UUID 或目標位址來識別磁碟。
++
+[listing]
+----
+disk show -fields serial,vmdisk-target-address,uuid
+----
+.. 您也可以選擇顯示具有分割磁碟的完整備用磁碟容量清單。
+儲存Aggregate show-spare磁碟
+
+
+. 在 Linux 命令列介面上、找到磁碟。
++
+.. 檢查系統裝置、搜尋磁碟序號或 UUID （磁碟名稱）：
++
+[listing]
+----
+find /dev/disk/by-id/<SN|ID>
+----
+.. 檢查虛擬機器組態、搜尋目標位址：
++
+[listing]
+----
+virsh dumpxml VMID
+----
+
+
+
+
+--
+.ESXi
+--
 .步驟
 . 使用系統管理員帳戶登入ONTAP CLI。
 . 識別故障的磁碟機。
@@ -39,27 +83,122 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ----
 
 
+--
+====
 
 
 == 移除故障磁碟機
 
 識別出故障的磁碟機後、請取出磁碟。
 
+[role="tabbed-block"]
+====
+.使用部署的 KVM
+--
+您可以將磁碟從 KVM 主機分離、以作為更換磁碟的一部分、或是在不再需要時。
+
+.開始之前
+您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
+. 在所需的 HA 配對或節點旁選擇 *+* 。
++
+如果停用此選項、則部署目前正在重新整理儲存資訊。
+
+. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
+. 取消選取要從節點上分離的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存設備 * 來套用變更。
+. 選擇 * 是 * 以確認快顯視窗中的警告。
+. 選取要監控的叢集 * 事件 * 索引標籤、並確認卸除作業。
++
+如果不再需要實體磁碟、您可以將其從主機中移除。
+
+
+
+--
+.使用 CLI 的 KVM
+--
+識別磁碟之後、請依照下列步驟進行。
+
+.步驟
+. 從虛擬機器分離磁碟：
++
+.. 傾印組態。
++
+[listing]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. 編輯檔案、並移除要從虛擬機器上分離的磁碟以外的所有項目。
++
+磁碟的目標位址應與 ONTAP 中的 vmdisk-target-address 欄位相對應。
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. 分離磁碟。
++
+[listing]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. 更換實體磁碟：
++
+您可以使用公用程式、例如 `ledctl locate=` 如有需要、可找到實體磁碟。
+
++
+.. 從主機中取出磁碟。
+.. 選擇新磁碟、並在必要時將其安裝在主機中。
+
+
+. 編輯原始磁碟組態檔案、然後新增磁碟。
++
+您應該視需要更新磁碟路徑和任何其他組態資訊。
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
+.ESXi
+--
 .步驟
 . 使用系統管理員帳戶登入部署Web使用者介面。
-. 按一下「*叢集*」索引標籤、然後選取相關的叢集。
+. 選取 * 叢集 * 索引標籤、然後選取相關的叢集。
 +
 image:ST_22.jpg["節點詳細資料"]
 
-. 按一下「*+*」以展開儲存檢視。
+. 選取 *+* 以展開儲存檢視。
 +
 image:ST_23.jpg["編輯節點儲存設備"]
 
-. 按一下*編輯*以變更附加磁碟、然後取消核取故障磁碟機。
+. 選取 * 編輯 * 以變更附加磁碟、然後取消核取故障磁碟機。
 +
 image:ST_24.jpg["儲存磁碟詳細資料"]
 
-. 提供叢集認證資料、然後按一下*編輯儲存設備*。
+. 提供叢集認證、然後選取 * 編輯儲存設備 * 。
 +
 image:ST_25.jpg["身分證明ONTAP"]
 
@@ -69,27 +208,77 @@ image:ST_26.jpg["警告"]
 
 
 
+--
+====
 
 
 == 新增備用磁碟機
 
 移除故障磁碟機之後、請新增備用磁碟。
 
+[role="tabbed-block"]
+====
+.使用部署的 KVM
+--
+.使用 Deploy 附加磁碟
+您可以將磁碟附加至 KVM 主機、作為更換磁碟或新增更多儲存容量的一部分。
+
+.開始之前
+您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+
+新磁碟必須實際安裝在 KVM Linux 主機上。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
+. 在所需的 HA 配對或節點旁選擇 *+* 。
++
+如果停用此選項、則部署目前正在重新整理儲存資訊。
+
+. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
+. 選取要附加至節點的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存 * 以套用變更。
+. 選取 * 事件 * 標籤以監控並確認附加作業。
+. 檢查節點儲存組態、確認磁碟已附加。
+
+
+--
+.使用 CLI 的 KVM
+--
+識別並移除故障磁碟機之後、您可以附加新磁碟機。
+
+.步驟
+. 將新磁碟連接至虛擬機器。
++
+[listing]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.結果
+磁碟會指派為備援磁碟、可供 ONTAP Select 使用。磁碟可能需要一分鐘或更長的時間才能使用。
+
+.完成後
+由於節點組態已變更、因此您應該使用部署管理公用程式來執行叢集重新整理作業。
+
+--
+.ESXi
+--
 .步驟
 . 使用系統管理員帳戶登入部署Web使用者介面。
-. 按一下「*叢集*」索引標籤、然後選取相關的叢集。
+. 選取 * 叢集 * 索引標籤、然後選取相關的叢集。
 +
 image:ST_27.jpg["HA配對"]
 
-. 按一下「*+*」以展開儲存檢視。
+. 選取 *+* 以展開儲存檢視。
 +
 image:ST_28.jpg["編輯節點儲存設備"]
 
-. 按一下*編輯*、確認新磁碟機可用、然後選取該磁碟機。
+. 選擇 * 編輯 * 並確認新磁碟機可用、然後將其選取。
 +
 image:ST_29.jpg["儲存磁碟詳細資料"]
 
-. 提供叢集認證資料、然後按一下*編輯儲存設備*。
+. 提供叢集認證、然後選取 * 編輯儲存設備 * 。
 +
 image:ST_30.jpg["儲存磁碟詳細資料"]
 
@@ -98,3 +287,6 @@ image:ST_30.jpg["儲存磁碟詳細資料"]
 image:ST_31.jpg["儲存磁碟詳細資料"]
 
 
+
+--
+====

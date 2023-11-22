@@ -116,7 +116,7 @@ NOTE: 在VMware環境中、儲存資源池與VMware資料存放區同義。
 
 
 
-=== 管理虛擬磁碟
+=== 管理 ESXi 上的虛擬磁碟
 
 在準備部署ONTAP Select 時、您應該注意幾個與虛擬磁碟有關的問題。
 
@@ -141,7 +141,7 @@ NOTE: 在VMware環境中、儲存資源池與VMware資料存放區同義。
 
 
 
-== 外部儲存環境的圖例
+== ESXi 上外部儲存環境的圖例
 
 利用此解決方案、支援使用位在Hypervisor主機外部儲存設備上的資料存放區。ONTAP Select ONTAP Select資料存放區可使用VMware vSAN透過網路存取、或直接從外部儲存陣列存取。
 

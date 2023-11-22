@@ -1,12 +1,12 @@
 ---
 indexpage:
-  lead: NetApp ONTAP Select VMware vCenter是軟體定義儲存應用裝置、可部署在執行VMware ESXi Hypervisor的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含
-    ONTAP Select 9.13.1 、 9.12.1 、 9.11.1 、 9.10.1 和 9.9.1 的文件。
+  lead: NetApp ONTAP Select 是軟體定義的儲存應用裝置、可部署在執行 VMware ESXi 或核心型虛擬機器（ KVM ） Hypervisor
+    的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含 ONTAP Select 9.14.1 的文件。
   tiles:
   - title: 開始使用
     links:
     - title: 版本資訊
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2885795
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733
     - title: 新增功能
       url: "/reference_new_ots.html"
     - title: 瞭解 ONTAP Select

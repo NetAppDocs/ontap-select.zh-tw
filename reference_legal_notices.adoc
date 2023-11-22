@@ -48,8 +48,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 == 開放原始碼
 
-通知檔案提供有關NetApp軟體所使用之協力廠商版權與授權的資訊。
+通知檔案提供有關 NetApp 軟體中使用的協力廠商版權和授權的資訊。
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885796["ONTAP Select 9.13.1 注意事項"^]
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["關於此功能的注意事項ONTAP Select 9.12.1.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886734["ONTAP Select 9.14.1 注意事項"^]
 

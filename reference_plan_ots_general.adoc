@@ -18,6 +18,49 @@ summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾�
 
 
 
+== KVM 所需的 Linux 知識與技能
+
+採用 KVM Hypervisor 的 Linux 是一個複雜的環境、可以在其中運作。在 KVM 上部署 ONTAP Select 之前、您必須具備必要的知識和技能。
+
+Linux 伺服器配送:: 您應該擁有 ONTAP Select 部署所使用的特定 Linux 套裝作業系統的經驗。具體而言、您應該能夠執行下列工作：
++
+--
+* 安裝 Linux 套裝作業系統
+* 使用 CLI 設定系統
+* 新增軟體套件及任何相依性
+
+
+--
+
+
+如需準備 Linux 伺服器的詳細資訊、包括必要的組態和軟體套件、請參閱主機組態檢查清單。請參閱 Hypervisor 需求、以瞭解目前支援的 Linux 套裝作業系統。
+
+KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM 環境中安裝和管理 ONTAP Select 時、您必須使用幾個 Linux CLI 命令：
++
+--
+* `virt-install`
+* `virsh`
+* `lsblk`
+* `lvs`
+* `vgs`
+* `pvs`
+
+
+--
+網路和開放式 vSwitch 組態:: 您應該熟悉網路概念和網路交換器的組態。此外、您應該擁有 Open vSwitch 的使用經驗。您必須在 KVM 環境中使用下列網路命令來設定 ONTAP Select 網路：
++
+--
+* `ovs-vsctl`
+* `ip`
+* `ip link`
+* `systemctl`
+
+
+--
+
+
+
+
 == 叢集大小及相關考量
 
 有幾個規劃問題與叢集大小有關、您應該考慮這些問題。
@@ -28,7 +71,7 @@ summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾�
 
 
 
-== Hypervisor主機
+== Hypervisor 主機考量
 
 有幾個與Hypervisor主機相關的規劃問題、您應該考慮。
 
@@ -46,7 +89,7 @@ Hypervisor不受限制:: 支援不受Hypervisor限制的支援、包括不受支
 
 
 
-NOTE: 從ONTAP Select 推出《支援支援支援升級的支援》（《支援升級的管理程式》）一開始、KVM Hypervisor在部署新叢集時便不再受支援。您仍可將KVM搭配先前支援的版本使用。
+NOTE: 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 
 如需支援平台的其他詳細資料、請參閱Hypervisor專屬規劃資訊和版本說明。
 
@@ -81,7 +124,7 @@ Hypervisor、適用於ONTAP Select 節點與管理公用程式:: 部署管理公
 
 
 
-== 儲存設備
+== 儲存考量
 
 您應該考慮幾個與主機儲存有關的規劃問題。
 
@@ -109,6 +152,32 @@ RAID 類型:: 在ESXi上使用直接附加儲存設備（DAS）時、您應該�
 NOTE: 此功能可與連接到該虛擬機器的資料磁碟總允許大小相對應。ONTAP Select ONTAP Select
 
 正式作業部署的授權模式:: 您必須針對ONTAP Select 部署在正式作業環境中的每個叢集、選擇容量層級或容量資源池授權模式。如需詳細資訊、請參閱_License一節。
+
+
+
+
+== 使用認證儲存區進行驗證
+
+ONTAP Select Deploy 認證儲存區是儲存帳戶資訊的資料庫。部署會使用帳戶認證來執行主機驗證、做為叢集建立與管理的一部分。您應該瞭解認證儲存區如何在規劃ONTAP Select 還原部署時使用。
+
+
+NOTE: 帳戶資訊會使用進階加密標準（ AES ）加密演算法和 SHA-256 雜湊演算法、安全地儲存在資料庫中。
+
+認證類型:: 支援下列類型的認證：
++
+--
+* 主機
++
+* 主機 * 認證是用來驗證 Hypervisor 主機、作為將 ONTAP Select 節點直接部署到 ESXi 或 KVM 的一部分。
+
+* vCenter
++
+當主機由 VMware vCenter 管理時、 * vCenter * 認證可用於驗證 vCenter 伺服器、作為將 ONTAP Select 節點部署至 ESXi 的一部分。
+
+
+
+--
+存取:: 認證存放區是在內部存取、做為使用部署執行一般管理工作的一部分、例如新增Hypervisor主機。您也可以透過部署Web使用者介面和CLI直接管理認證存放區。
 
 
 .相關資訊

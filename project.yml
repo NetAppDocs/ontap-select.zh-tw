@@ -49,8 +49,12 @@ sidebar:
         url: "/reference_plan_ots_hardware.html"
       - title: 儲存與RAID
         url: "/reference_plan_ots_storage.html"
-      - title: vsvNAS ONTAP Select
-        url: "/reference_plan_ots_vnas.html"
+      - title: 外部儲存需求
+        entries:
+        - title: VMware ESXi
+          url: "/reference_plan_ots_vnas.html"
+        - title: KVM
+          url: "/reference_plan_ots_kvm.html"
       - title: 網路
         url: "/reference_plan_ots_networking.html"
       - title: 雙節點叢集
@@ -59,10 +63,8 @@ sidebar:
         url: "/reference_plan_ots_robo.html"
       - title: 部分SDS MetroCluster
         url: "/reference_plan_ots_mcc_sds.html"
-      - title: VMware vCenter
+      - title: ESXi 上的 VMware vCenter
         url: "/reference_plan_ots_vcenter.html"
-      - title: VMware vCenter外掛程式
-        url: "/reference_plan_ots_plugin.html"
     - title: 部署ONTAP Select
       entries:
       - title: 一般要求
@@ -195,44 +197,6 @@ sidebar:
         url: "/concept_perf_general.html"
       - title: FAS9.6效能ONTAP Select
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
-  - title: 與vCenter整合
-    entries:
-    - title: 開始使用
-      entries:
-      - title: 總覽
-        url: "/concept_vpi_overview.html"
-      - title: 架構
-        url: "/concept_vpi_architecture.html"
-      - title: 規劃
-        url: "/concept_vpi_planning.html"
-    - title: 管理外掛程式
-      entries:
-      - title: 開始之前
-        url: "/concept_vpi_manage_before.html"
-      - title: 安裝
-        url: "/task_vpi_install.html"
-      - title: 存取
-        url: "/task_vpi_access.html"
-      - title: 升級與移除
-        url: "/task_vpi_upgrade.html"
-    - title: 手動移除外掛程式
-      url: "/task_vpi_manually_remove.html"
-    - title: 部署叢集
-      url: "/task_vpi_deploy_cluster.html"
-    - title: vCenter整合
-      url: "/concept_vpi_vcenter_integration.html"
-    - title: 管理
-      entries:
-      - title: 診斷與支援
-        url: "/task_vpi_adm_support.html"
-      - title: 網路
-        url: "/task_vpi_adm_network.html"
-      - title: 叢集
-        url: "/task_vpi_adm_clusters.html"
-      - title: 授權
-        url: "/task_vpi_adm_licenses.html"
-    - title: 疑難排解
-      url: "/reference_vpi_troubleshooting.html"
   - title: 使用REST自動化
     entries:
     - title: 概念

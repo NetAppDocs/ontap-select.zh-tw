@@ -1,0 +1,8 @@
+---
+permalink: concept_vpi_manage_before.html 
+redirect: ontap-select/index.html 
+---
+= 
+:allow-uri-read: 
+
+
