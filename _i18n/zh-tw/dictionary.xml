@@ -778,7 +778,6 @@
   <block id="209d48c97092139c09f12b8b898b3ebb" category="cell">永久（不需續約）</block>
   <block id="fdad6dbf8e8406dac26765af9059a3a1" category="cell">根據購買情況固定持續時間（需要續約）</block>
   <block id="20e5e85bddb25cf1cf39977f4a5b8f1f" category="cell">資料Aggregate的租用期間</block>
-  <block id="6aade83f8151a6756008a80c389bef65" category="cell">不適用一小時至七天</block>
   <block id="a051cb6fe36d0d57186040136f51ded4" category="cell">節點序號</block>
   <block id="0d746fcebf15f4b3e76f455166f550b9" category="summary">在執行範例Python指令碼之前、您必須先準備環境。</block>
   <block id="29e9f19925f99f248473ca37ea546b64" category="doc">使用Python存取API之前</block>
@@ -3615,4 +3614,20 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e289810d4028b10554ae6b447fa581ee" category="sidebar">外部儲存需求</block>
   <block id="a9e831fb19f71068ebfd5cb9b303ea66" category="sidebar">ESXi 上的 VMware vCenter</block>
   <block id="314c09ddbe5ce5a2ebc071a5ba939ef6" category="sidebar">ONTAP Select 9.14.1 文件</block>
+  <block id="e681a3b45989b468533c4b90ee960bf9" category="cell">不適用</block>
+  <block id="7ce9d272dad1050f5d215fea78fec004" category="cell">一小時到七天</block>
+  <block id="1106adf8812d775cf27b79c3606184f6" category="cell">九位數、等於授權序號</block>
+  <block id="cda405d8561cd2797065f70348fbe747" category="cell">20 位數、由授權管理員產生</block>
+  <block id="db5eb84117d06047c97c9a0191b5fffe" category="cell">支援</block>
+  <block id="d7b5ad2c890d9e01c658dc9e1cc80af5" category="cell">附加元件與時間有限</block>
+  <block id="b055659deac2e10b8eadf9bae15af191" category="cell">包含並共同命名</block>
+  <block id="2b2fba693aacdb90002ef3efdb1f458b" category="cell">授權類型</block>
+  <block id="7c8735b3789d1d371da9c168d892b5b2" category="cell">標準、優質、優質 XL</block>
+  <block id="f6f75165e8287838950283461281ea99" category="cell">有試用版授權</block>
+  <block id="c8ce06302aadd8032e956b943dce085c" category="cell">正式作業升級評估</block>
+  <block id="cfc60e5db5da2e3856f4ae65f1b4493b" category="cell">ONTAP Select 虛擬機器調整大小（中小型、中型至大型）</block>
+  <block id="5afd324114e926d9bb06b382e5c6f40e" category="cell">強制：授權已過期</block>
+  <block id="71781f9ea0fb446c6a84f96eac4f474f" category="cell">是（無寬限期）</block>
+  <block id="ec9f3071a98530430c856aaab30c310b" category="paragraph">在評估 HA 配對的儲存容量時、您必須考慮所有的集合體（根和資料）都會鏡射。因此、每個集合體的每個叢都會使用相同數量的儲存設備。</block>
+  <block id="909cd2b5288a2ed7dfbc029a25ad991d" category="paragraph">例如、建立 2TB Aggregate 時、它會將 2TB 分配給兩個 plex 執行個體（ plex0 為 2TB 、 plex1 為 2TB ）、或是總授權儲存容量的 4TB 。</block>
 </blocks>
