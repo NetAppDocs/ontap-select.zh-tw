@@ -31,6 +31,7 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 * iSCSI
 * SnapMirror
 * SnapVault
+* FlexCache
 * FlexClone
 * SnapRestore
 * 重複資料刪除與壓縮
