@@ -25,19 +25,20 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 下列功能已隨ONTAP Select 附於根據預設授權的功能中：
 
-* NVMe over TCP
-* NFS
 * CIFS
-* iSCSI
-* SnapMirror
-* SnapVault
+* 重複資料刪除與壓縮
 * FlexCache
 * FlexClone
-* SnapRestore
-* 重複資料刪除與壓縮
+* iSCSI
+* NDMP
+* NetApp Volume Encryption（僅限非受限國家/地區）
+* NFS
+* NVMe over TCP
 * 支援多租戶共享ONTAP
 * SS3 ONTAP
-* NetApp Volume Encryption（僅限非受限國家/地區）
+* SnapMirror
+* SnapRestore
+* SnapVault
 
 
 
@@ -46,12 +47,12 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：
 
-* SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
-* FabricPool
 * 資料可用度服務
+* FabricPool
 * 零成本FlexCache
-* 零成本SyncMirror
 * SDS（不含高級授權）MetroCluster ONTAP Select
+* SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
+* 零成本SyncMirror
 
 
 
