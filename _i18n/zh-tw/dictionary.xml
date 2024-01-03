@@ -1144,7 +1144,6 @@
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">按一下頁面頂端的*管理*索引標籤。</block>
   <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">按一下「*授權*」、然後按一下「*容量層級*」。</block>
   <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">（可選）單擊* Filter（篩選器）*並限制顯示的許可證數量。</block>
-  <block id="394aecca280e07533a3d7792d8e0bed1" category="list-text">（可選）選擇授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理現有授權</block>
   <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">若要新增授權、請按一下頁面頂端的*「Add*」（新增*）、然後按一下「*上傳授權*」、再從本機工作站選取授權檔案。</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能完善的資源池授權。</block>
   <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">按一下「*授權*」、然後按一下「*容量資源池*」。</block>
@@ -2141,8 +2140,6 @@
   <block id="242993ddd5be1ee9c2b34ac3d6e16525" category="list-text">本機硬體RAID控制器或軟體RAID</block>
   <block id="0ffe501fe086c67c3769d18d093b040d" category="list-text">部分SDS MetroCluster</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">優質XL產品提供下列功能：</block>
-  <block id="5e1e35787d312440de294099e5a73814" category="list-text">小型、中型或大型執行個體類型。</block>
-  <block id="d72f431c4274d31e60a80915e200ced0" category="list-text">本機硬體RAID控制器或軟體RAID。</block>
   <block id="94c8034605d41dd846d36c99c7168f29" category="summary">代表性狀態傳輸（REST）是建立分散式Web應用程式的風格。當套用到Web服務API的設計時、它會建立一套技術和最佳實務做法、以揭露伺服器型資源並管理其狀態。它使用主流傳輸協定和標準、為部署和管理ONTAP Select 等叢集提供靈活的基礎。</block>
   <block id="8ed6428212b41847f33c5db651c2aa70" category="doc">REST Web服務基礎</block>
   <block id="7f5099080bd152e508b14b6ceb0c89d7" category="section-title">架構與傳統限制</block>
@@ -3291,7 +3288,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">部署至 Hypervisor 伺服器節點</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">存取 Hypervisor 伺服器</block>
   <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">存取部署（容量集區授權）</block>
-  <block id="577362db3aa99018c35d90bc2a1f3fff" category="admonition">您可以將大型執行個體類型（使用 Premium XL 授權）用於任何組態、但由於效能問題、 KVM 不支援大型執行個體類型。</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">核心型虛擬機器</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">核心型虛擬機器（ KVM ）是 Linux 核心的虛擬化功能、可讓它做為 Hypervisor 平台。支援多種來賓作業系統。</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">在 ESXi VM 上重新裝載節點</block>
@@ -3636,4 +3632,9 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
+  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型執行個體類型</block>
+  <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD 、 SSD 或 NVMe 磁碟機</block>
+  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。</block>
+  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">若要取代現有授權、請選取授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Update* 。</block>
+  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">（可選）選擇授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理現有授權。</block>
 </blocks>

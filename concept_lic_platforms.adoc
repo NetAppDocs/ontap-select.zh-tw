@@ -65,12 +65,12 @@ summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不�
 
 優質XL產品提供下列功能：
 
-* 小型、中型或大型執行個體類型。
-* 硬碟（HDD）或固態硬碟（SSD）
-* 本機硬體RAID控制器或軟體RAID。
+* 小型、中型或大型執行個體類型
+* HDD 、 SSD 或 NVMe 磁碟機
+* 本機硬體RAID控制器或軟體RAID
 * vNAS
 * 部分SDS MetroCluster
 
 
 
-NOTE: 您可以將大型執行個體類型（使用 Premium XL 授權）用於任何組態、但由於效能問題、 KVM 不支援大型執行個體類型。
+NOTE: KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。
