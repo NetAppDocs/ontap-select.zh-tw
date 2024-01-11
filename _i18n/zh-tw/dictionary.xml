@@ -3637,4 +3637,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。</block>
   <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">若要取代現有授權、請選取授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Update* 。</block>
   <block id="22296b7841252645a75ccd1c4032738e" category="list-text">（可選）選擇授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理現有授權。</block>
+  <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加授權</block>
+  <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理授權總覽（僅限叢集管理員）</block>
+  <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">新增授權金鑰以啟用新功能</block>
+  <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">對於 ONTAP Select 產品、附加授權會直接套用至 ONTAP 、而不會透過 ONTAP Select Deploy 進行管理。請參閱 <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> 和 <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
 </blocks>

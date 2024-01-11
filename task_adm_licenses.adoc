@@ -160,3 +160,9 @@ summary: 管理ONTAP Select 多方面的相關工作可讓您執行、包括執�
 == 管理過期容量集區授權
 
 一般而言、當授權到期時、不會發生任何事。不過、您無法安裝不同的授權、因為節點與過期的授權相關聯。在續約授權之前、您不應執行任何會使Aggregate離線的動作、例如重新開機或容錯移轉作業。建議採取的行動是加速授權續約。
+
+
+
+== 管理附加授權
+
+對於 ONTAP Select 產品、附加授權會直接套用至 ONTAP 、而不會透過 ONTAP Select Deploy 進行管理。請參閱 link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理授權總覽（僅限叢集管理員）"^] 和 link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["新增授權金鑰以啟用新功能"^] 以取得更多資訊。
