@@ -14,7 +14,7 @@ summary: 虛擬NAS（vNAS）部署可支援ONTAP Select VSAN上的支援功能�
 
 
 [role="lead"]
-虛擬NAS（vNAS）部署可支援ONTAP Select VSAN上的支援功能、部分HCI產品、NetApp HCI 支援各種外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。
+虛擬 NAS （ vNAS ）部署支援虛擬 SAN （ VSAN ）上的 ONTAP Select 叢集、部分 HCI 產品、以及外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。
 
 最低要求是基礎組態受VMware支援、並應列在各自的VMware HCL上。
 
