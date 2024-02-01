@@ -130,10 +130,6 @@ NOTE: 您可以按一下頁面頂端的索引標籤（叢集、Hypervisor主機�
 +
 頁面會定期自動重新整理。
 
-+
-
-TIP: 如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能尚未登錄。在這種情況下、您可以使用ONTAP Select 管理員帳戶的密碼_changeme123_來存取該叢集的管理介面。
-
 
 
 --
@@ -180,13 +176,19 @@ TIP: 如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管�
 +
 頁面會定期自動重新整理。
 
-+
-
-TIP: 如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能尚未登錄。在這種情況下、您可以使用ONTAP Select 管理員帳戶的密碼_changeme123_來存取該叢集的管理介面。
-
 
 
 --
 ====
 .完成後
 您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。
+
+[TIP]
+====
+如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能不會套用。如果發生這種情況、您可以使用下列 CLI 命令來判斷 ONTAP Select 叢集的暫存管理密碼：
+
+[listing]
+----
+(ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
+----
+====

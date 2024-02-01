@@ -2993,7 +2993,6 @@
   <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">請參閱 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以準備部署叢集。部署管理必須先安裝並設定（密碼、 AutoSupport 和 vCenter ）。</block>
   <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">系統會為正式作業部署建立具有一或多個節點的 ONTAP Select 叢集。</block>
   <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">您所遵循的步驟取決於您要建立單節點叢集或多節點叢集。</block>
-  <block id="d4f87fedecd0cb118e567859f3b4f8b0" category="admonition">如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能尚未登錄。在這種情況下、您可以使用ONTAP Select 管理員帳戶的密碼_changeme123_來存取該叢集的管理介面。</block>
   <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多節點叢集</block>
   <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請確認您已符合組態先決條件、然後按一下 * 確定 * 。</block>
   <block id="736cb4ef7019568859d8e044e044c906" category="list-text">在「*入門*」頁面上、按一下「*上傳*」、然後從本機工作站選取授權、再按一下「*開啟*」上傳授權。重複以新增第二個授權。</block>
@@ -3642,4 +3641,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">新增授權金鑰以啟用新功能</block>
   <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">對於 ONTAP Select 產品、附加授權會直接套用至 ONTAP 、而不會透過 ONTAP Select Deploy 進行管理。請參閱 <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> 和 <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">虛擬 NAS （ vNAS ）部署支援虛擬 SAN （ VSAN ）上的 ONTAP Select 叢集、部分 HCI 產品、以及外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。</block>
+  <block id="106b2acee8931f9a5618948233ee3f9a" category="paragraph">如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能不會套用。如果發生這種情況、您可以使用下列 CLI 命令來判斷 ONTAP Select 叢集的暫存管理密碼：</block>
 </blocks>
