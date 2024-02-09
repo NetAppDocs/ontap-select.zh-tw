@@ -99,7 +99,6 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 * SVM移轉
 * 儲存 VM 災難恢復（ SVM DR ）
 * 符合法規SnapLock
-* 可防竄改的Snapshot複本
 * VMware HCX
 
 

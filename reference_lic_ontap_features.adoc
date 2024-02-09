@@ -49,9 +49,12 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 * 資料可用度服務
 * FabricPool
-* 零成本FlexCache
 * SDS（不含高級授權）MetroCluster ONTAP Select
 * SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
++
+** 可防竄改的Snapshot複本
+
+
 * 零成本SyncMirror
 
 
