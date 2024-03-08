@@ -1949,7 +1949,6 @@
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">NetApp Volume Encryption（僅限非受限國家/地區）</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="cd4d0565c73e994a0df5b7c0a072acc6" category="list-text">資料可用度服務</block>
-  <block id="fe22023b7eac61fb7114a4a9abd199bc" category="list-text">零成本FlexCache</block>
   <block id="53b398e6d63ff4fbc7624b7d3737c3ea" category="list-text">零成本SyncMirror</block>
   <block id="eab10597f9ef50e8058170729878869e" category="list-text">SDS（不含高級授權）MetroCluster ONTAP Select</block>
   <block id="b3575342fc6b994ce81d8810bb513442" category="admonition">使用完無法使用的不需要FabricPool 使用「不需使用任何功能」StorageGRID 。</block>
@@ -3642,4 +3641,19 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">對於 ONTAP Select 產品、附加授權會直接套用至 ONTAP 、而不會透過 ONTAP Select Deploy 進行管理。請參閱 <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> 和 <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">虛擬 NAS （ vNAS ）部署支援虛擬 SAN （ VSAN ）上的 ONTAP Select 叢集、部分 HCI 產品、以及外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。</block>
   <block id="106b2acee8931f9a5618948233ee3f9a" category="paragraph">如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能不會套用。如果發生這種情況、您可以使用下列 CLI 命令來判斷 ONTAP Select 叢集的暫存管理密碼：</block>
+  <block id="728dae8c09c02d31a488c58d0abbc713" category="paragraph-title">部署如何偵測 ONTAP Select 授權是否已續約？</block>
+  <block id="1c404f221fc19754e03aac9abdf229e0" category="paragraph">所有授權的方法都相同、不過具體細節會因容量層或容量池授權而異。</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">NetApp 支援網站</block>
+  <block id="7eb90e44cd52166d38ee412a0232d948" category="list-text">ONTAP Select Deploy 會偵測授權與支援合約是否在從 NetApp 購買更新的授權檔案時續約。授權檔案（ .NLF ）包含容量、開始日期和結束日期、並會在上產生 <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>，然後在部署伺服器上更新。</block>
+  <block id="df893ad066dabfa13efd91221b3bccff" category="admonition">您可以使用 *Add* 和 *Update* 功能將 NLF 載入部署伺服器。* 新增 * 新增授權至伺服器、 * 更新 * 會以容量、節點授權（標準、高級、優質 XL ）、支援開始與結束日期（容量層級授權）、或訂閱開始與結束日期（容量池授權）等資訊來更新現有檔案。</block>
+  <block id="d39f37cf3f2791c375e1df22336bc0c1" category="admonition">請勿嘗試修改授權檔案。這樣做會使安全金鑰失效、並使授權無效。</block>
+  <block id="8f5801f55c8818fb8546dec02aa0cb36" category="list-text">* 容量層授權 * 是連結至 ONTAP Select 節點序號的每個節點永久授權。隨附獨立的支援合約。雖然授權是永久的、但必須續約支援合約才能存取 ONTAP Select 升級、並獲得 NetApp 技術支援的協助。變更授權參數（例如容量或節點大小）也需要目前的支援合約。</block>
+  <block id="477c7238569246f69cc9ae8f8ecc6b57" category="paragraph">購買容量層授權更新、參數變更或支援合約續約時、訂單中需要節點序號。容量層節點序號長度為九位數、開頭為數字「 32 」。</block>
+  <block id="ea9589592b98533b70a296a006630c8b" category="paragraph">一旦購買完成並產生授權檔案、就會使用 * 更新 * 功能上傳至部署伺服器。</block>
+  <block id="6e6f36110dec05c8c4b7d9473e704fee" category="list-text">* 容量資源池授權 * 是使用特定容量集區和節點大小（標準、高階、高階 XL ）來部署一或多個叢集的權利訂閱。訂閱內容包括使用授權的權利、以及特定條款的支援。使用授權和支援合約的權利已指定開始和結束日期。</block>
+  <block id="920b036cff328a6924c0fbdd7ab08f4d" category="paragraph-title">部署如何偵測節點是否有續約授權或支援合約？</block>
+  <block id="c3975d39937733b863b8e078a435a60a" category="paragraph">購買、產生及上傳更新的授權檔案、是部署如何偵測更新的授權與支援合約。</block>
+  <block id="79416550309ddcac023464218d55a23d" category="paragraph">如果容量層支援合約的結束日期已過、則節點可以繼續執行、但您無法下載及安裝 ONTAP 更新、或是致電 NetApp 技術支援部門尋求協助、而無需先將支援合約更新至最新版本。</block>
+  <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">如果容量集區訂閱失效、系統會先發出警告、但 30 天後、如果系統關機、系統將不會重新開機、直到部署伺服器上安裝更新的訂閱為止。</block>
+  <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">如需 ONTAP Select 和授權續約的詳細資訊、請參閱中的「授權、安裝、升級及還原」一節 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
 </blocks>

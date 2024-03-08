@@ -161,6 +161,8 @@ summary: 管理ONTAP Select 多方面的相關工作可讓您執行、包括執�
 
 一般而言、當授權到期時、不會發生任何事。不過、您無法安裝不同的授權、因為節點與過期的授權相關聯。在續約授權之前、您不應執行任何會使Aggregate離線的動作、例如重新開機或容錯移轉作業。建議採取的行動是加速授權續約。
 
+如需 ONTAP Select 和授權續約的詳細資訊、請參閱中的「授權、安裝、升級及還原」一節 link:https://docs.netapp.com/us-en/ontap-select/reference_faq.html#licenses-installation-upgrades-and-reverts["常見問題集"]。
+
 
 
 == 管理附加授權
