@@ -76,7 +76,7 @@ NOTE: API v3版本與舊版API不相容。上有新的 API 程序 https://librar
 .不需要取得進階授權嗎？ONTAP MetroCluster
 是的。
 
-.安裝完成後、ONTAP Select 是否ONTAP Select 可以變更功能不完整的部署IP位址、以及叢集與節點管理功能？
+.ONTAP Select 叢集網路組態是否可以在安裝後變更？
 使用GUI、CLI或REST API提供的叢集重新整理作業、即可透過下列功能識別出對下列功能的變更：ONTAP Select ONTAP Select
 
 * 網路組態（IP位址、DNS、NTP、網路遮罩和閘道）
@@ -89,10 +89,10 @@ NOTE: API v3版本與舊版API不相容。上有新的 API 程序 https://librar
 * 主機網路名稱和儲存資源池名稱會變更
 
 
-
-NOTE: 不ONTAP Select 支援變更不支援的靜態部署VM IP位址。
-
 升級ONTAP Select 至支援使用支援這些變更的功能、適用於ONTAP Select 已部署但尚未變更原始組態的任何叢集。換句話說、如果ONTAP Select 使用System Manager或vCenter變更上述的VMware叢集屬性、則升級ONTAP Select 至VMware部署2.6將無法修正這些不一致的問題。必須先回復此功能的更新以供還原、才能將其獨特的中繼資料新增至每個支援功能VM。ONTAP Select ONTAP Select ONTAP Select
+
+.ONTAP Select 部署網路組態是否可以在安裝後變更？
+不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態"^]。
 
 .部署如何偵測 ONTAP Select 授權是否已續約？
 所有授權的方法都相同、不過具體細節會因容量層或容量池授權而異。

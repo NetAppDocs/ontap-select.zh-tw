@@ -2718,7 +2718,6 @@
   <block id="aae4f232f5ffb9e9721fd019ba8b1efe" category="listing-title">如何存取Swagger API頁面ONTAP Select 以進行功能整合？</block>
   <block id="40a60db1cb196f556dfa7fc31b0fc0de" category="paragraph">是的。可將此程式與無法更新的叢集分開升級。ONTAP Select ONTAP Select同樣地、Select叢集也可與ONTAP Select 整合式部署公用程式分開升級。</block>
   <block id="59515ed968b51f31e5dba26d6fd648ce" category="paragraph">使用GUI、CLI或REST API提供的叢集重新整理作業、即可透過下列功能識別出對下列功能的變更：ONTAP Select ONTAP Select</block>
-  <block id="0505613d75e769b75ece38e7cd9acbeb" category="admonition">不ONTAP Select 支援變更不支援的靜態部署VM IP位址。</block>
   <block id="1c1b6371821b57c0181e5ac9c60110dd" category="paragraph">升級ONTAP Select 至支援使用支援這些變更的功能、適用於ONTAP Select 已部署但尚未變更原始組態的任何叢集。換句話說、如果ONTAP Select 使用System Manager或vCenter變更上述的VMware叢集屬性、則升級ONTAP Select 至VMware部署2.6將無法修正這些不一致的問題。必須先回復此功能的更新以供還原、才能將其獨特的中繼資料新增至每個支援功能VM。ONTAP Select ONTAP Select ONTAP Select</block>
   <block id="19e3b046872155951a88cbd2e790b7e6" category="paragraph">是的。可在KVM或ESX上安裝支援、兩種安裝都能在任一Hypervisor上建立支援功能的叢集。ONTAP Select ONTAP Select</block>
   <block id="5a1db0789444e54a1e8a26c422380d57" category="paragraph">如果ESX主機獲得適當授權、則不需要由vCenter Server管理ESX主機。不過、如果主機是由vCenter伺服器管理、則您必須設定ONTAP Select 使用該vCenter Server的VMware vCenter Deploy。換句話說、ONTAP Select 如果ESX主機正由vCenter Server主動管理、則無法在VMware部署中將其設定為獨立主機。請注意ONTAP Select 、由於ONTAP Select VMotion或VMware HA事件、所以使用vCenter來追蹤ESXi主機之間的所有VMware移轉。</block>
@@ -2794,7 +2793,6 @@
   <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">是否可以ONTAP Select 使用FAS 與叢集相同的程序來升級呢？</block>
   <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">是否能ONTAP Select 使用FAS 與叢集相同的程序來還原呢？</block>
   <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">不需要取得進階授權嗎？ONTAP MetroCluster</block>
-  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">安裝完成後、ONTAP Select 是否ONTAP Select 可以變更功能不完整的部署IP位址、以及叢集與節點管理功能？</block>
   <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">單ONTAP Select 一的VMware部署執行個體是否能在ESX和KVM上建立叢集？</block>
   <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">ESX上的vCenter是否需要ONTAP Select 執行？</block>
   <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">什麼是軟體RAID？</block>
@@ -3656,4 +3654,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="79416550309ddcac023464218d55a23d" category="paragraph">如果容量層支援合約的結束日期已過、則節點可以繼續執行、但您無法下載及安裝 ONTAP 更新、或是致電 NetApp 技術支援部門尋求協助、而無需先將支援合約更新至最新版本。</block>
   <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">如果容量集區訂閱失效、系統會先發出警告、但 30 天後、如果系統關機、系統將不會重新開機、直到部署伺服器上安裝更新的訂閱為止。</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">如需 ONTAP Select 和授權續約的詳細資訊、請參閱中的「授權、安裝、升級及還原」一節 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
+  <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">ONTAP Select 叢集網路組態是否可以在安裝後變更？</block>
+  <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">ONTAP Select 部署網路組態是否可以在安裝後變更？</block>
+  <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態</block>
+  <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
 </blocks>
