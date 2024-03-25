@@ -1,0 +1,3433 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>本機附加儲存設備的硬體RAID服務</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="本機附加儲存設備的硬體RAID服務" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html" />
+	<meta property="og:description" content="當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/ontap-select/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。">
+  <meta name="keywords" content=" ontap select, hardware raid, performance boost, protection"><!-- Icons -->
+  <link rel="icon" href="/zh-tw/ontap-select/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-select/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/ontap-select/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/ontap-select/concept_stor_hwraid_local.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/ontap-select/concept_stor_hwraid_local.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/ontap-select/js/na-search.js'></script><script src='/zh-tw/ontap-select/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/zh-tw/ontap-select/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/ontap-select/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/ontap-select/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/ontap-select/js/jszip.min.js'></script><script src='/zh-tw/ontap-select/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/zh-tw/ontap-select/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/tw">
+                <image id="ie-header-logo" src="/zh-tw/ontap-select/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">文件</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/zh-tw/ontap-select/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">繁體中文</span>
+                    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/ontap-select/concept_stor_hwraid_local.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/zh-tw/ontap-select/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">所有 NetApp</span>
+                    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">支援</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">知識庫</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">訓練</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/zh-tw/ontap-select/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/zh-tw/ontap-select/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">所有文件</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/zh-tw/ontap-select/">-->
+      ONTAP Select
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors"><div id="version-dropdown-new" class="custom-dropdown" >
+  <div class="custom-dropdown-select unselected" title=" 9.14.1">
+    <label>版本</label>
+    <span translate="no" class="notranslate">9.14.1</span>
+    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown version invisible" />
+    <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup version" />
+  </div>
+
+  <ul class="custom-dropdown-menu"><li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.14.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-select-9131/concept_stor_hwraid_local.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.13.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-select-9121/concept_stor_hwraid_local.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.12.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-select-9111/concept_stor_hwraid_local.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.11.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-select-9101/concept_stor_hwraid_local.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.10.1</span></span>
+      </a>
+                     
+    </li>
+    
+  </ul>
+</div></div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/zh-tw/ontap-select/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/zh-tw/ontap-select/search.html" 
+        data-type="widget"
+        data-placeholder="搜尋說明文件"
+        data-no-results-found="找不到 {query} 的結果"
+        data-did-you-mean="搜尋 {suggestion}。"
+        data-no-results-found-did-you-mean="找不到 {query} 的結果。您的意思是 {suggestion} 嗎？"
+        data-results-found="找到 {hitCount} 個結果"
+        data-error-message="發生錯誤。請再試一次。"
+        data-error-reset="重設搜尋"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select 9.14.1 文件"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-select/index.html">
+        ONTAP Select 9.14.1 文件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="版本資訊"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 版本資訊</div>-->
+         版本資訊
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="發行說明ONTAP Select"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_release_notes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/reference_release_notes.html">
+        發行說明ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增功能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_new_ots.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/reference_new_ots.html">
+        新增功能
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="產品總覽"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_ots_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_ots_overview.html">
+        產品總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署ONTAP Select"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_ots_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_ots_deploy.html">
+        部署ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="商業使用案例"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 商業使用案例</div>-->
+         商業使用案例
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="業務需求與使用情境"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_usecase_overview.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_usecase_overview.html">
+        業務需求與使用情境
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="遠端與分公司"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_usecase_robo.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_usecase_robo.html">
+        遠端與分公司
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="私有雲端與資料中心"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_usecase_private_cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_usecase_private_cloud.html">
+        私有雲端與資料中心
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部分SDS MetroCluster"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_usecase_mc_sds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_usecase_mc_sds.html">
+        部分SDS MetroCluster
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="術語"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_terminology.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_terminology.html">
+        術語
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="規劃"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 規劃</div>-->
+         規劃
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署工作流程"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_workflow_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_workflow_deploy.html">
+        部署工作流程
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP Select"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> ONTAP Select</div>-->
+         ONTAP Select
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="一般要求"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_general.html">
+        一般要求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Hypervisor與硬體"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_hardware.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_hardware.html">
+        Hypervisor與硬體
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存與RAID"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_storage.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_storage.html">
+        儲存與RAID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="外部儲存需求"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 外部儲存需求</div>-->
+         外部儲存需求
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware ESXi"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_vnas.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-select/reference_plan_ots_vnas.html">
+        VMware ESXi
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="KVM"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_kvm.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-select/reference_plan_ots_kvm.html">
+        KVM
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="網路"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_networking.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_networking.html">
+        網路
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="雙節點叢集"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_two_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_two_node.html">
+        雙節點叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="遠端辦公室和分公司"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_robo.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_robo.html">
+        遠端辦公室和分公司
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部分SDS MetroCluster"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_mcc_sds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_mcc_sds.html">
+        部分SDS MetroCluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ESXi 上的 VMware vCenter"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_ots_vcenter.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_ots_vcenter.html">
+        ESXi 上的 VMware vCenter
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署ONTAP Select"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 部署ONTAP Select</div>-->
+         部署ONTAP Select
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="一般要求"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_dep_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_dep_general.html">
+        一般要求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware環境"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_dep_vmware.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_plan_dep_vmware.html">
+        VMware環境
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="最佳實務做法"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_plan_best_practices.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/reference_plan_best_practices.html">
+        最佳實務做法
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="授權"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 授權</div>-->
+         授權
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="選項"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 選項</div>-->
+         選項
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="評估授權"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_evaluation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_evaluation.html">
+        評估授權
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="正式作業授權"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_production.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_production.html">
+        正式作業授權
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="平台授權方案"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_platforms.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_platforms.html">
+        平台授權方案
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="容量資源池授權模式"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 容量資源池授權模式</div>-->
+         容量資源池授權模式
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="營運詳細資料"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_cp_operation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_cp_operation.html">
+        營運詳細資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="節點序號"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_cp_serial_number.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_cp_serial_number.html">
+        節點序號
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="限制"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_cp_restrictions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_cp_restrictions.html">
+        限制
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="容量集區與容量層"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_cp_compare_ct.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_cp_compare_ct.html">
+        容量集區與容量層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="效益摘要"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_cp_benefits.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_cp_benefits.html">
+        效益摘要
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="購買"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 購買</div>-->
+         購買
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="授權工作流程"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_lic_workflow.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_lic_workflow.html">
+        授權工作流程
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="容量階層"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_lic_acquire_ct.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_lic_acquire_ct.html">
+        容量階層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="容量資源池"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_lic_acquire_cp.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_lic_acquire_cp.html">
+        容量資源池
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="功能ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_lic_ontap_features.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/reference_lic_ontap_features.html">
+        功能ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 安裝</div>-->
+         安裝
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝前檢查清單"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 安裝前檢查清單</div>-->
+         安裝前檢查清單
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="主機準備檢查清單"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_chk_host_prep.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_chk_host_prep.html">
+        主機準備檢查清單
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署公用程式所需資訊"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_chk_deploy_req_info.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_chk_deploy_req_info.html">
+        部署公用程式所需資訊
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="必填資訊ONTAP Select"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_chk_select_req_info.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_chk_select_req_info.html">
+        必填資訊ONTAP Select
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NVMe主機組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_chk_nvme_configure.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_chk_nvme_configure.html">
+        NVMe主機組態
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝ONTAP Select 部署"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_install_deploy.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_install_deploy.html">
+        安裝ONTAP Select 部署
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署叢集"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_deploy_cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_deploy_cluster.html">
+        部署叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="初始叢集狀態"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_initial_state.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/reference_initial_state.html">
+        初始叢集狀態
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理</div>-->
+         管理
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始之前"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_adm_before.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_adm_before.html">
+        開始之前
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級節點"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_adm_upgrading_nodes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/concept_adm_upgrading_nodes.html">
+        升級節點
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="診斷與支援"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_support.html">
+        診斷與支援
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安全性"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_security.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_security.html">
+        安全性
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="網路連線能力"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_connectivity.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_connectivity.html">
+        網路連線能力
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="協調員"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_mediators.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_mediators.html">
+        協調員
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="叢集"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_clusters.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_clusters.html">
+        叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="節點和主機"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 節點和主機</div>-->
+         節點和主機
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VM視訊主控台"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_video_console.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_adm_video_console.html">
+        VM視訊主控台
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="調整叢集節點的大小"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_resize.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_adm_resize.html">
+        調整叢集節點的大小
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="更換故障的 SW RAID 磁碟機"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_replace_drives_swraid.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_adm_replace_drives_swraid.html">
+        更換故障的 SW RAID 磁碟機
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級至 VMFS6"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_upgrade_vmfs6.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_adm_upgrade_vmfs6.html">
+        升級至 VMFS6
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="授權"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_adm_licenses.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_adm_licenses.html">
+        授權
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="深入探討"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 深入探討</div>-->
+         深入探討
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存設備"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 儲存設備</div>-->
+         儲存設備
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="一般概念與特性"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_concepts_chars.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_concepts_chars.html">
+        一般概念與特性
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="本機附加儲存設備的硬體RAID服務"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_hwraid_local.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_hwraid_local.html">
+        本機附加儲存設備的硬體RAID服務
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="本機附加儲存設備的軟體RAID服務"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_swraid_local.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_swraid_local.html">
+        本機附加儲存設備的軟體RAID服務
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vSAN與外部陣列組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_vsan_external.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_vsan_external.html">
+        vSAN與外部陣列組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="增加儲存容量"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_capacity_inc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_capacity_inc.html">
+        增加儲存容量
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存效率支援"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_stor_eff_support.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_stor_eff_support.html">
+        儲存效率支援
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="網路"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 網路</div>-->
+         網路
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="一般概念與特性"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_concepts_chars.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_concepts_chars.html">
+        一般概念與特性
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="單節點和多節點組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_single_multi_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_single_multi_node.html">
+        單節點和多節點組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="內部和外部網路"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_internal_external.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_internal_external.html">
+        內部和外部網路
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_supported_configs.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_supported_configs.html">
+        支援的組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware vSphere vSwitch 組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_vsphere_vswitch_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_vsphere_vswitch_config.html">
+        VMware vSphere vSwitch 組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="實體交換器組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_physical_switch_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_physical_switch_config.html">
+        實體交換器組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="資料與管理分離"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_nw_data_mgmt_separation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_nw_data_mgmt_separation.html">
+        資料與管理分離
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="高可用度架構"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 高可用度架構</div>-->
+         高可用度架構
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA組態"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_ha_config.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_ha_config.html">
+        HA組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="同步複寫與鏡射Aggregate"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_ha_mirroring.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_ha_mirroring.html">
+        同步複寫與鏡射Aggregate
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="其他高可用度功能"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_ha_other.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_ha_other.html">
+        其他高可用度功能
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="效能"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 效能</div>-->
+         效能
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="效能總覽"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_perf_general.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_perf_general.html">
+        效能總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAS9.6效能ONTAP Select"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_perf_premium_ha_direct_ssd_96.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_perf_premium_ha_direct_ssd_96.html">
+        FAS9.6效能ONTAP Select
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用REST自動化"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用REST自動化</div>-->
+         使用REST自動化
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="REST Web服務"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_rest.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_rest.html">
+        REST Web服務
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="存取部署API"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_how_access.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_how_access.html">
+        存取部署API
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署API版本管理"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_versions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_versions.html">
+        部署API版本管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="基本操作"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_operation.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_operation.html">
+        基本操作
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="要求與回應交易"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_transaction.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_transaction.html">
+        要求與回應交易
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="非同步處理"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_async_proc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_async_proc.html">
+        非同步處理
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用瀏覽器存取"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用瀏覽器存取</div>-->
+         使用瀏覽器存取
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始之前"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_before_browser.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_before_browser.html">
+        開始之前
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="存取文件頁面"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_api_access_doc_page.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_api_access_doc_page.html">
+        存取文件頁面
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="瞭解 API 呼叫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_api_understanding_call.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_api_understanding_call.html">
+        瞭解 API 呼叫
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="工作流程程序"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 工作流程程序</div>-->
+         工作流程程序
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始之前"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_before_workflows.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_before_workflows.html">
+        開始之前
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="工作流程 1 建立叢集"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_workflow01.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_workflow01.html">
+        工作流程 1 建立叢集
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Python存取"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用Python存取</div>-->
+         使用Python存取
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始之前"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_before_python.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_before_python.html">
+        開始之前
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="瞭解指令碼"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_api_understanding_scripts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/concept_api_understanding_scripts.html">
+        瞭解指令碼
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Python程式碼範例"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Python程式碼範例</div>-->
+         Python程式碼範例
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="建立叢集"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_script_cc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_script_cc.html">
+        建立叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Json來建立叢集"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_json_cc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_json_cc.html">
+        Json來建立叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增節點授權"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_script_anl.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_script_anl.html">
+        新增節點授權
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="刪除叢集"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_script_dc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_script_dc.html">
+        刪除叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="通用支援模組"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_script_common.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_script_common.html">
+        通用支援模組
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="調整叢集節點大小"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_api_script_resize.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_api_script_resize.html">
+        調整叢集節點大小
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Ansible進行自動化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/concept_automate_ansible.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-select/concept_automate_ansible.html">
+        使用Ansible進行自動化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用CLI"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用CLI</div>-->
+         使用CLI
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用SSH登入"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_signing_in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_cli_signing_in.html">
+        使用SSH登入
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署叢集"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_deploy_cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_cli_deploy_cluster.html">
+        部署叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安全性"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_security.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_cli_security.html">
+        安全性
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="網路連線能力"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_connectivity.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_cli_connectivity.html">
+        網路連線能力
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="叢集"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_clusters.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-select/task_cli_clusters.html">
+        叢集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="節點和主機"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 節點和主機</div>-->
+         節點和主機
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將ESXi升級至6.5及更高版本"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_upgrade_esxi65.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_upgrade_esxi65.html">
+        將ESXi升級至6.5及更高版本
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="修改主機管理伺服器"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_host_modify_command.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/reference_host_modify_command.html">
+        修改主機管理伺服器
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署公用程式"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-select/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-select/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 部署公用程式</div>-->
+         部署公用程式
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級部署執行個體"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_upgrade_deploy.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_upgrade_deploy.html">
+        升級部署執行個體
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="移轉部署執行個體"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_migrate_deploy.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_migrate_deploy.html">
+        移轉部署執行個體
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增ONTAP Select 功能圖片"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_deploy_image_add.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_deploy_image_add.html">
+        新增ONTAP Select 功能圖片
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="移除ONTAP Select 鏡像"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_deploy_image_remove.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_deploy_image_remove.html">
+        移除ONTAP Select 鏡像
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="恢復雙節點叢集的部署"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/task_cli_deploy_recover_two_node.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-select/task_cli_deploy_recover_two_node.html">
+        恢復雙節點叢集的部署
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="常見問題集"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/reference_faq.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-select/reference_faq.html">
+        常見問題集
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律聲明"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept_stor_hwraid_local.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-select/legal-notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/zh-tw/ontap-select"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/zh-tw/ontap-select"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/zh-tw/ontap-select/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">本機附加儲存設備的硬體RAID服務</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2022-05-03 10:48:49 +0000">05/03/2022</time>
+        
+    
+    
+        <span>貢獻者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/zh-tw/ontap-select/images/discuss-sm.svg" alt="" class="github-icon" />建議變更</span>
+        <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-select.zh-tw/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/zh-tw/ontap-select/concept_stor_hwraid_local.html&page-title=本機附加儲存設備的硬體RAID服務" class="page-nav-contribute-link" role="button">請求文件變更</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-select/blob/main/concept_stor_hwraid_local.adoc" class="page-nav-contribute-link" role="button">編輯本頁</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >瞭解如何貢獻</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/zh-tw/ontap-select/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/zh-tw/ontap-select/pdfs/fullsite-sidebar/本文檔ONTAP_Select.pdf" >
+                    <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>此文件 PDF 的網站</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/版本資訊.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            版本資訊
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/商業使用案例.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            商業使用案例
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/規劃.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            規劃
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/ONTAP_Select.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            ONTAP Select
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/外部儲存需求.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            外部儲存需求
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/部署ONTAP_Select.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            部署ONTAP Select
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/授權.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            授權
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/選項.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            選項
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/容量資源池授權模式.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            容量資源池授權模式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/購買.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            購買
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/安裝.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            安裝
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/安裝前檢查清單.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            安裝前檢查清單
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/管理.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/節點和主機.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            節點和主機
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/深入探討.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            深入探討
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/儲存設備.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            儲存設備
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/網路.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            網路
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/高可用度架構.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            高可用度架構
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/效能.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            效能
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用REST自動化.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用REST自動化
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用瀏覽器存取.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用瀏覽器存取
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/工作流程程序.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            工作流程程序
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用Python存取.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用Python存取
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/Python程式碼範例.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Python程式碼範例
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/使用CLI.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用CLI
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/節點和主機.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            節點和主機
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-select/pdfs/sidebar/部署公用程式.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-select/images/pdf-icon.png" alt="" width="16" height="16"/>
+            部署公用程式
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/zh-tw/ontap-select/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>個別的 PDF 文件集合<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+由於實體RAID控制器為基礎磁碟機提供RAID分段功能、因此將支援使用RAID 0的實體資料集合體進行設定。ONTAP Select不支援其他RAID層級。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="本機附加儲存設備的raid控制器組態">本機附加儲存設備的RAID控制器組態</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>所有提供ONTAP Select 支援儲存功能的本地附加磁碟、都必須位於RAID控制器後方。大部分的市售伺服器都有多種RAID控制器選項、可跨越多個價位、每個價位的功能層級各不相同。其目的是盡可能支援這些選項的數量、前提是這些選項符合控制器上的特定最低要求。</p>
+</div>
+<div class="paragraph">
+<p>管理ONTAP Select 此類磁碟的RAID控制器必須符合下列需求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>硬體RAID控制器必須具有電池備份單元（BBU/Flash備援寫入快取（FBWC）、並支援12Gbps的處理量。</p>
+</li>
+<li>
+<p>RAID控制器必須支援能夠承受至少一或兩個磁碟故障的模式（RAID 5和RAID 6）。</p>
+</li>
+<li>
+<p>磁碟機快取必須設定為停用。</p>
+</li>
+<li>
+<p>寫入原則必須設定為回寫模式、並在發生BBU/Flash故障時提供回寫功能。</p>
+</li>
+<li>
+<p>讀取的I/O原則必須設定為快取。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>所有提供ONTAP Select 支援儲存功能的本地附加磁碟、都必須放入執行RAID 5或RAID 6的RAID群組中。對於SAS磁碟機和SSD、使用最多24個磁碟機的RAID群組、ONTAP 讓NetApp能夠將傳入的讀取要求分散到更多的磁碟上。這樣做可大幅提升效能。使用SAS/SSD組態時、會針對單一LUN與多LUN組態進行效能測試。沒有發現顯著差異、因此為了簡化、NetApp建議您建立最少的LUN數量、以支援您的組態需求。</p>
+</div>
+<div class="paragraph">
+<p>NL-SAS和SATA磁碟機需要一套不同的最佳實務做法。基於效能考量、磁碟的最小數量仍為8個、但RAID群組大小不應大於12個磁碟機。NetApp也建議每個RAID群組使用一個備援磁碟機；不過、所有RAID群組都可以使用全域備援磁碟機。例如、您可以每三個RAID群組使用兩個備援磁碟機、每個RAID群組包含八到十二個磁碟機。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+舊版ESX的最大範圍和資料存放區大小為64TB、可能會影響支援這些大容量磁碟機所提供之總原始容量所需的LUN數量。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="raid模式">RAID模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>許多RAID控制器最多可支援三種操作模式、每種模式代表寫入要求所採用的資料路徑有顯著差異。這三種模式如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WriteThrough：所有傳入的I/O要求都會寫入RAID控制器快取、然後立即排清到磁碟、再將要求傳回主機。</p>
+</li>
+<li>
+<p>Writaround.所有傳入的I/O要求都會直接寫入磁碟、繞過RAID控制器快取。</p>
+</li>
+<li>
+<p>回寫。所有傳入的I/O要求都會直接寫入控制器快取、並立即確認回主機。資料區塊會使用控制器以非同步方式排清到磁碟。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>回寫模式提供最短的資料路徑、區塊進入快取後會立即出現I/O確認。此模式可為混合式讀取/寫入工作負載提供最低延遲和最高處理量。但是、如果沒有任何磁碟機或非揮發性Flash技術、使用者在這種模式下操作時、如果系統發生電源故障、就會有資料遺失的風險。</p>
+</div>
+<div class="paragraph">
+<p>由於需要電池備份或Flash裝置、因此我們可以確信、快取的區塊會在發生此類故障時排清到磁碟。ONTAP Select因此、RAID控制器必須設定為回寫模式。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="本地磁碟共享ontap-select-於支援支援的作業系統">本地磁碟共享ONTAP Select 於支援支援的作業系統</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>最常見的伺服器組態是所有本機連接的磁碟位於單一RAID控制器後方的組態。您應該配置至少兩個LUN：一個用於Hypervisor、一個ONTAP Select 用於搭配使用。</p>
+</div>
+<div class="paragraph">
+<p>例如、請考慮使用HP DL380 G8搭配六個內部磁碟機和一個Smart Array P420i RAID控制器。所有內部磁碟機均由此RAID控制器管理、且系統上沒有其他儲存設備。</p>
+</div>
+<div class="paragraph">
+<p>下圖顯示此組態樣式。在此範例中、系統上沒有其他儲存設備、因此Hypervisor必須與ONTAP Select 該節點共用儲存設備。</p>
+</div>
+<div class="paragraph">
+<p><strong>伺服器LUN組態、僅使用RAID管理的磁碟</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_08.jpg" alt="伺服器LUN組態、僅使用RAID管理的磁碟"></span></p>
+</div>
+<div class="paragraph">
+<p>將OS LUN從ONTAP Select 同一個RAID群組配置為「支援」、可讓Hypervisor OS（以及任何也從該儲存設備配置的用戶端VM）受益於RAID保護。此組態可防止單一磁碟機故障導致整個系統關機。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="本機磁碟在ontap-select-不支援的地方和作業系統之間分割">本機磁碟在ONTAP Select 不支援的地方和作業系統之間分割</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>伺服器廠商提供的其他可能組態包括使用多個RAID或磁碟控制器來設定系統。在此組態中、一組磁碟是由一個磁碟控制器管理、該磁碟控制器可能提供或可能不提供RAID服務。第二組磁碟由能夠提供RAID 5/6服務的硬體RAID控制器管理。</p>
+</div>
+<div class="paragraph">
+<p>有了這種組態風格、位於RAID控制器後方可提供RAID 5/6服務的一組磁碟、應由ONTAP Select 該虛擬機器獨家使用。視所管理的總儲存容量而定、您應該將磁碟機設定為一個或多個RAID群組、以及一個或多個LUN。然後、這些LUN將用於建立一或多個資料存放區、所有資料存放區都受到RAID控制器的保護。</p>
+</div>
+<div class="paragraph">
+<p>第一組磁碟保留給Hypervisor作業系統、以及任何不使用ONTAP 支援此功能的用戶端VM、如下圖所示。</p>
+</div>
+<div class="paragraph">
+<p><strong>混合式RAID/非RAID系統上的伺服器LUN組態</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_09.jpg" alt="混合式RAID/非RAID系統上的伺服器LUN組態"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="多個lun">多個LUN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>單一RAID群組/單一LUN組態必須變更的情況有兩種。使用NL-SAS或SATA磁碟機時、RAID群組大小不得超過12個磁碟機。此外、單一LUN可能會大於基礎Hypervisor儲存限制、無論是個別檔案系統範圍的最大大小或總儲存池的最大大小。然後必須將基礎實體儲存設備分割成多個LUN、才能成功建立檔案系統。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vmware-vsphere虛擬機器檔案系統限制">VMware vSphere虛擬機器檔案系統限制</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>某些ESX版本上的資料存放區大小上限為64TB。</p>
+</div>
+<div class="paragraph">
+<p>如果伺服器所連接的儲存容量超過64TB、則可能需要配置多個LUN、每個LUN的容量都小於64TB。建立多個RAID群組來改善SATA/NL-SAS磁碟機的RAID重建時間、也會導致配置多個LUN。</p>
+</div>
+<div class="paragraph">
+<p>當需要多個LUN時、最重要的考量是確保這些LUN的效能相似且一致。如果所有LUN都要用於單ONTAP 一的位向集合體、這點特別重要。或者、如果一個或多個LUN的子集具有明顯不同的效能設定檔、我們強烈建議您將這些LUN隔離在個別ONTAP 的「VMware Aggregate」中。</p>
+</div>
+<div class="paragraph">
+<p>多個檔案系統範圍可用來建立單一資料存放區、最多可達資料存放區的最大大小。若要限制需要ONTAP Select 使用流通證的容量、請務必在叢集安裝期間指定容量上限。此功能僅允許ONTAP Select 使用（因此需要授權）資料存放區中空間的子集。</p>
+</div>
+<div class="paragraph">
+<p>或者、您可以從在單一LUN上建立單一資料存放區開始著手。如果需要更多空間、需要更大ONTAP Select 的等量資料授權、則可將該空間新增至與某個範圍相同的資料存放區、最多可增加至資料存放區的最大大小。達到最大容量後、就能建立新的資料存放區並將其新增至ONTAP Select 功能區。這兩種類型的容量擴充作業均受到支援、並可透過ONTAP 使用「支援部署儲存新增功能」來達成。每ONTAP Select 個支援多達400TB儲存容量的支援節點均可設定。從多個資料存放區配置容量需要兩個步驟的程序。</p>
+</div>
+<div class="paragraph">
+<p>初始叢集建立可用於建立ONTAP Select 一個佔用初始資料存放區部分或全部空間的不實叢集。第二個步驟是使用其他資料存放區執行一或多個容量新增作業、直到達到所需的總容量為止。本節將詳細說明此功能 <a href="concept_stor_capacity_inc.html">"增加儲存容量"</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+VMFS負荷非零（請參閱 <a href="https://kb.vmware.com/s/article/1001618">"VMware知識庫1001618"</a>）、且嘗試使用資料存放區回報為可用的整個空間、導致叢集建立作業期間發生假錯誤。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>每個資料存放區中有2%的緩衝區未使用。這個空間不需要容量授權、因為ONTAP Select 它不供人使用。只要未指定容量上限、即可自動計算緩衝區的確切GB數。ONTAP如果指定容量上限、則會先強制執行該大小。如果容量上限大小落在緩衝區大小內、叢集建立就會失敗、並顯示錯誤訊息、指出可用做容量上限的正確最大大小參數：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>“InvalidPoolCapacitySize: Invalid capacity specified for storage pool “ontap-select-storage-pool”, Specified value: 34334204 GB. Available (after leaving 2% overhead space): 30948”</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>VMFS 6同時支援新安裝、也支援做為現有ONTAP 的VMware部署或ONTAP Select VMware VM Storage VMotion作業的目標。</p>
+</div>
+<div class="paragraph">
+<p>VMware不支援從VMFS 5就地升級至VMFS 6。因此、Storage VMotion是唯一允許任何VM從VMFS 5資料存放區移轉至VMFS 6資料存放區的機制。不過ONTAP Select 、除了ONTAP 從VMFS 5移轉至VMFS 6的特定目的之外、還擴大了對含VMware及VMware部署的Storage VMotion的支援、以涵蓋其他案例。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="虛擬磁碟ontap-select">虛擬磁碟ONTAP Select</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在其核心、ONTAP Select 透過ONTAP 一或多個儲存資源池配置的一組虛擬磁碟、呈現出一套功能完善的功能。提供一組虛擬磁碟、將其視為實體磁碟、而儲存堆疊的其餘部分則由Hypervisor抽象化。ONTAP下圖更詳細地顯示這種關係、強調實體RAID控制器、Hypervisor和ONTAP Select 不支援的VM之間的關係。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RAID群組和LUN組態是從伺服器的RAID控制器軟體內部進行。使用VSAN或外部陣列時、不需要此組態。</p>
+</li>
+<li>
+<p>儲存資源池組態是從Hypervisor內部進行。</p>
+</li>
+<li>
+<p>虛擬磁碟是由個別VM所建立和擁有、ONTAP Select 在此範例中、由支援。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>虛擬磁碟對實體磁碟對應</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_12.jpg" alt="虛擬磁碟對實體磁碟的對應"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="虛擬磁碟資源配置">虛擬磁碟資源配置</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>為了提供更精簡的使用者體驗、ONTAP Select 我們的「更新」管理工具ONTAP 「還原部署」會自動從相關的儲存資源池配置虛擬磁碟、並將其附加至ONTAP Select 「更新」VM。這項作業會在初始設定和儲存新增作業期間自動執行。如果ONTAP Select 此節點是HA配對的一部分、則虛擬磁碟會自動指派給本機和鏡射儲存資源池。</p>
+</div>
+<div class="paragraph">
+<p>將基礎附加儲存設備分割成大小相同的虛擬磁碟、每個磁碟不超過16TB。ONTAP Select如果ONTAP Select 此節點是HA配對的一部分、則每個叢集節點上至少會建立兩個虛擬磁碟、並指派給鏡射Aggregate中要使用的本機叢和鏡射叢。</p>
+</div>
+<div class="paragraph">
+<p>例如ONTAP Select 、某個對象可以指派31 TB的資料存放區或LUN（部署VM後的剩餘空間、以及系統和根磁碟的資源配置）。然後建立四個~7.75TB虛擬磁碟、並指派給適當ONTAP 的鏡射本機叢和鏡射叢。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+將容量新增至ONTAP Select 某個VMware可能會導致不同大小的VMDK。如需詳細資訊、請參閱一節 <a href="concept_stor_capacity_inc.html">"增加儲存容量"</a>。不同FAS 於VMware系統、不同大小的VMDK可存在於同一個集合體中。在這些VMDK上使用RAID 0等量磁碟區、無論其大小為何、都能充分利用每個VMDK中的所有空間。ONTAP Select
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="虛擬化nvram">虛擬化NVRAM</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp FAS 支援系統通常裝有實體NVRAM PCI卡、這是一種高效能卡、內含非揮發性Flash記憶體。此卡可立即ONTAP 認可傳入寫入回用戶端的功能、大幅提升寫入效能。它也可以在稱為「減少需求」的程序中、將修改過的資料區塊排程回較慢的儲存媒體。</p>
+</div>
+<div class="paragraph">
+<p>一般而言、市售系統並未安裝此類設備。因此、此NVRAM卡的功能已虛擬化、並放入ONTAP Select 了一個分區內的系統啟動磁碟。因此、放置執行個體的系統虛擬磁碟非常重要。這也是為什麼產品需要實體RAID控制器、並針對本機附加儲存組態提供彈性快取。</p>
+</div>
+<div class="paragraph">
+<p>NVRAM位於自己的VMDK上。將NVRAM拆分成自己的VMDK、ONTAP Select 即可讓VMware使用vNVMe驅動程式與NVRAM VMDK通訊。此外、還需要ONTAP Select 使用與ESX 6.5及更新版本相容的硬體版本13。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="資料路徑說明nvram和raid控制器">資料路徑說明：NVRAM和RAID控制器</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>虛擬化NVRAM系統分割區與RAID控制器之間的互動、最好是在寫入要求進入系統時、透過資料路徑來強調顯示。</p>
+</div>
+<div class="paragraph">
+<p>傳入ONTAP Select 的寫入要求會以VM的NVRAM分割區為目標。在虛擬化層、此分割區存在ONTAP Select 於一個連接ONTAP Select 到該VMware VM的VMware系統磁碟內。在實體層、這些要求會快取到本機RAID控制器、就像所有針對基礎磁碟的區塊變更一樣。從這裡、寫入作業會確認回傳給主機。</p>
+</div>
+<div class="paragraph">
+<p>此時、實體區塊會駐留在RAID控制器快取中、等待排清到磁碟。邏輯上、區塊位於NVRAM中、等待將資料移轉至適當的使用者資料磁碟。</p>
+</div>
+<div class="paragraph">
+<p>由於變更的區塊會自動儲存在RAID控制器的本機快取中、因此傳入的NVRAM分割區寫入作業會自動快取、並定期排清到實體儲存媒體。這不應與定期將NVRAM內容排清回ONTAP 還原至還原資料磁碟的做法相混淆。這兩個事件是不相關的、會在不同的時間和頻率發生。</p>
+</div>
+<div class="paragraph">
+<p>下圖顯示傳入寫入所需的I/O路徑。它強調實體層（由RAID控制器快取和磁碟表示）與虛擬層（由VM的NVRAM和資料虛擬磁碟表示）之間的差異。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+雖然NVRAM VMDK上變更的區塊會快取到本機RAID控制器快取中、但快取並不知道VM結構或其虛擬磁碟。它會將所有變更的區塊儲存在系統上、其中NVRAM只是其中的一部分。如果Hypervisor是從相同的備份磁碟配置、則這包括綁定至Hypervisor的寫入要求。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>傳入寫入ONTAP Select 到Sing VM</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/ST_13.jpg" alt="傳入寫入ONTAP Select 到不實虛擬機器"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap-select/images/note.svg" alt="註">
+</td>
+<td class="content">
+NVRAM磁碟分割區是在自己的VMDK上分隔。VMDK是使用ESX版本6.5或更新版本中提供的vNVME驅動程式來附加。這項變更對於ONTAP Select 使用軟體RAID進行的版本更新來說最重要、因為軟體RAID無法從RAID控制器快取中獲益。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/zh-tw/ontap-select/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/zh-tw/ontap-select/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">在本頁</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">使用條款</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隱私權政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">傳送有關本網頁的意見反應</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/ontap-select/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/ontap-select/js/ie-tabbed-blocks.js'></script>
+    <script src='/zh-tw/ontap-select/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
