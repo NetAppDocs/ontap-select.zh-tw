@@ -3658,4 +3658,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">ONTAP Select 部署網路組態是否可以在安裝後變更？</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
+  <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為最多 16 個關係的來源。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 、例如 9.12.1 至 9.14.1 。</block>
 </blocks>

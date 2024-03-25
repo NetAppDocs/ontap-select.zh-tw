@@ -39,6 +39,11 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 * SnapMirror
 * SnapRestore
 * SnapVault
+* 儲存 VM 災難恢復（ SVM DR ）
++
+
+NOTE: ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為最多 16 個關係的來源。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 、例如 9.12.1 至 9.14.1 。
+
 
 
 
