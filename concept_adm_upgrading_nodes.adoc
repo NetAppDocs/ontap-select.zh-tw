@@ -34,7 +34,7 @@ https://mysupport.netapp.com/site/downloads["NetApp支援下載"^]
 +
 在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。
 
-. 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。請參閱 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^] 以取得詳細的升級程序。
+. 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需 ONTAP 升級程序的詳細資訊、包括支援的升級路徑等資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^]。
 
 
 

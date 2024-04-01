@@ -1211,7 +1211,6 @@
   <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">確保在升級期間不會使用部署來執行任何其他工作。如需升級部署公用程式的相關資訊和限制、請參閱最新版本說明。</block>
   <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">若要開始升級程序、您必須從NetApp支援網站下載適當的部署虛擬機器升級檔案。升級套件會格式化為單一壓縮檔案。</block>
   <block id="67a5c1dd24ee56878ca59f7cbb4a6602" category="list-text">使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。</block>
-  <block id="966c758e5fd0e52652aa5afbd8f22a24" category="list-text">按一下「*熱門工作*」下的「*下載軟體*」、然後登入。</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">按一下*尋找您的產品*。</block>
   <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">選取所需的升級套件版本。</block>
   <block id="9bf3ac5f4cb6341117598df735958bdf" category="list-text">檢閱終端使用者授權合約（EULA）、然後按一下*「Accept &amp; Continue（接受並繼續）」*。</block>
@@ -1432,7 +1431,6 @@
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支援模組</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">您可以ONTAP Select 從NetApp支援網站下載此解決方案。</block>
-  <block id="97cb0dfea21cc934eab612152be86e44" category="list-text">使用網頁瀏覽器存取NetApp支援網站、然後按一下*支援快速連結*。</block>
   <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">向下捲動並按一下* ONTAP Select 《*》。</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">選取所需的套件版本。</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">選取並下載適當的套件、視需要回應所有提示。</block>
@@ -1458,7 +1456,6 @@
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">使用IP位址或網域名稱、將瀏覽器指向Deploy公用程式：</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph">https://&lt;ip_address&gt;/`</block>
   <block id="533f8108cde4f7f1af2f1fb435cc4710" category="list-text">提供系統管理員（admin）帳戶名稱和密碼並登入。</block>
-  <block id="001ba89c3853493a35f9ab59f150b2d6" category="list-text">如果ONTAP Select 顯示*歡迎使用S還原*快顯視窗、請檢閱必要條件、然後按一下*確定*繼續。</block>
   <block id="1d2215b67b18c63fb1146b841d364f01" category="list-text">如果這是第一次登入、但您並未使用vCenter提供的精靈安裝部署、請在出現提示時提供下列組態資訊：</block>
   <block id="f6c0536935d8c4b9da68277e49781b74" category="list-text">系統管理員帳戶的新密碼（必填）</block>
   <block id="0dd298d83de1b2c4259299d711cefb70" category="list-text">選擇性的AutoSupport</block>
@@ -3263,7 +3260,6 @@
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">向下捲動並選取 * ONTAP Select Deploy Upgrade* 。</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">檢閱終端使用者授權合約（ EULA ）、然後選取 * 接受並繼續 * 。</block>
   <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">升級程序完成之前、系統會要求您建立部署虛擬機器組態的備份。此外、您也應該清除瀏覽器快取、以便檢視新建立的部署頁面。</block>
-  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。請參閱 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> 以取得詳細的升級程序。</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">您可以存取執行 ONTAP Select 的 Hypervisor 虛擬機器的視訊主控台。</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">ESXi 範例</block>
@@ -3475,7 +3471,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d337df11b3ebf63c5a2171392491798f" category="cell">安裝部署公用程式之 VMware ESXi 或 KVM Hypervisor 主機的識別碼。</block>
   <block id="e827723eb84c3ca87c21fd4dbca2ccda" category="cell">資料存放區名稱</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">存放虛擬機器檔案的 Hypervisor 資料存放區識別碼（約需 40GB ）。</block>
-  <block id="27c85ffe05d0705505febd16e11d1146" category="paragraph">ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。</block>
   <block id="1eadabe4e39cf3ae5ce71caf6ddc8447" category="paragraph">您必須使用 OVF VM 映像來安裝及啟動 ONTAP Select Deploy VM 。在安裝程序中、您可以將網路介面設定為使用 DHCP 或靜態 IP 組態。</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">對於 ESXi Hypervisor 、您必須準備部署 ONTAP Select Deploy VM ：</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">如果您要動態指派 IP 位址給部署的虛擬機器、請在 VMware 環境中啟用 DHCP</block>
@@ -3659,4 +3654,13 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
   <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為最多 16 個關係的來源。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 、例如 9.12.1 至 9.14.1 。</block>
+  <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM 提供 ONTAP Select 節點的部署伺服器和安裝映像。</block>
+  <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">存取 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用網頁瀏覽器登入。</block>
+  <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">從菜單中選擇 * 下載 * ，然後從下拉菜單中選擇 * 下載 * 。</block>
+  <block id="ab0ffe542101d39137dce2c19869d545" category="list-text">在 [ 下載 ] 頁面上，選取 [ 所有產品 A-Z ] 底下的字母 *O* 。</block>
+  <block id="a896447aac9deddba0f8b7bc142c079f" category="list-text">向下捲動並選取 * ONTAP Select * 。</block>
+  <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請檢閱必要條件、然後選取 * 確定 * 繼續。</block>
+  <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">只有 ESXi 支援調整大小至大型執行個體類型。</block>
+  <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">由於可能需要在每個拓撲所需的不同 NIC 群組組組態之間轉換、因此不支援在執行中叢集上的單一連結和多個連結拓撲之間進行轉換。</block>
+  <block id="8d3f7bf7a16e08794393171ba82658c1" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需 ONTAP 升級程序的詳細資訊、包括支援的升級路徑等資訊、請參閱 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block>。</block>
 </blocks>
