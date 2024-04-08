@@ -3662,5 +3662,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請檢閱必要條件、然後選取 * 確定 * 繼續。</block>
   <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">只有 ESXi 支援調整大小至大型執行個體類型。</block>
   <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">由於可能需要在每個拓撲所需的不同 NIC 群組組組態之間轉換、因此不支援在執行中叢集上的單一連結和多個連結拓撲之間進行轉換。</block>
-  <block id="8d3f7bf7a16e08794393171ba82658c1" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需 ONTAP 升級程序的詳細資訊、包括支援的升級路徑等資訊、請參閱 <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block>。</block>
+  <block id="4d63a206f9a467135d39dc9c9512fc9e" category="inline-link-macro">支援的 ONTAP 升級路徑</block>
+  <block id="8c3e5d2f8a26562237025f868ae58fd6" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需支援升級路徑的相關資訊、請參閱 <block ref="641712e0b7bbcdbd0a030cb6eba15629" category="inline-link-macro-rx"></block>。</block>
+  <block id="c6747590f95713e2f203d616751eb4ea" category="list-text"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
 </blocks>

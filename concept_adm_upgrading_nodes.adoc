@@ -34,7 +34,7 @@ https://mysupport.netapp.com/site/downloads["NetApp支援下載"^]
 +
 在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。
 
-. 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需 ONTAP 升級程序的詳細資訊、包括支援的升級路徑等資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^]。
+. 使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需支援升級路徑的相關資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["支援的 ONTAP 升級路徑"^]。
 
 
 
@@ -52,3 +52,7 @@ ONTAP Select 9.8 一開始即已安裝:: 您無法還原至 9.7 版、因為此�
 == 使用 VMXNET3 網路驅動程式
 
 VMXNET3 是 VMware ESXi 上新叢集部署所隨附的預設網路驅動程式。如果您升級執行 ONTAP Select 9.4 或更早版本的現有 ONTAP Select 節點、則不會自動升級網路驅動程式。您必須手動升級至VMXNET3。如需升級協助、請聯絡NetApp支援部門。
+
+.相關資訊
+* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^]
+
