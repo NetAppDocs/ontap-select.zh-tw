@@ -3665,4 +3665,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="4d63a206f9a467135d39dc9c9512fc9e" category="inline-link-macro">支援的 ONTAP 升級路徑</block>
   <block id="8c3e5d2f8a26562237025f868ae58fd6" category="list-text">使用ONTAP Select 標準ONTAP 的升級程序、透過ONTAP Select 升級檔升級到這個節點。如需支援升級路徑的相關資訊、請參閱 <block ref="641712e0b7bbcdbd0a030cb6eba15629" category="inline-link-macro-rx"></block>。</block>
   <block id="c6747590f95713e2f203d616751eb4ea" category="list-text"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
+  <block id="5c4629755c5a0a5545bb649c6d58d899" category="list-text">更新的 ONTAP Select 部署支援</block>
+  <block id="2dbcb54e47dfd070743afb26077cdc91" category="list-text">如果您執行的 ONTAP Select 版本低於 9.14.1P2 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="2183c79114d56889f4a8854299f703a5" category="list-text">截至 2024 年 4 月、 ONTAP Select Deploy 9.13.1 已不再適用於 NetApp 支援網站 。如果您執行的是 ONTAP Select Deploy 9.13.1 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="6e1144fb904fc4097d1a90d7908b66cc" category="paragraph">自 2024 年 4 月起、 ONTAP Select Deploy 9.12.1 不再適用於 NetApp 支援網站 。如果您執行的是 ONTAP Select Deploy 9.12.1 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
 </blocks>
