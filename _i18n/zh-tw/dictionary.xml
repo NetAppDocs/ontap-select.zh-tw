@@ -3669,4 +3669,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="2dbcb54e47dfd070743afb26077cdc91" category="list-text">如果您執行的 ONTAP Select 版本低於 9.14.1P2 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
   <block id="2183c79114d56889f4a8854299f703a5" category="list-text">截至 2024 年 4 月、 ONTAP Select Deploy 9.13.1 已不再適用於 NetApp 支援網站 。如果您執行的是 ONTAP Select Deploy 9.13.1 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
   <block id="6e1144fb904fc4097d1a90d7908b66cc" category="paragraph">自 2024 年 4 月起、 ONTAP Select Deploy 9.12.1 不再適用於 NetApp 支援網站 。如果您執行的是 ONTAP Select Deploy 9.12.1 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="0eac7bd25176d9e38db43b4181062abe" category="list-text">多租戶金鑰管理程式（ MTKM ）</block>
 </blocks>
