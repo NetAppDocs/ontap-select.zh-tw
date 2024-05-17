@@ -2,7 +2,7 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-summary: NetApp ONTAP Select 是軟體定義的儲存應用裝置、可部署在執行 VMware ESXi 或核心型虛擬機器（ KVM ） Hypervisor 的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含 ONTAP Select 9.15.1 的文件。 
+summary: NetApp ONTAP Select 是軟體定義的儲存應用裝置、可部署在執行 VMware ESXi 或核心型虛擬機器（ KVM ） Hypervisor 的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含 ONTAP Select 9.14.1 的文件。 
 ---
 = 本文檔ONTAP Select
 :hardbreaks:

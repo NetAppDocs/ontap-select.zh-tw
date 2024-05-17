@@ -2,7 +2,8 @@
 sidebar: sidebar 
 permalink: reference_new_ots.html 
 keywords: new features 
-summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。 
+// summary: The current release includes several new features and improvements specific to ONTAP Select. 
+summary: 目前的版本不包含ONTAP Select 任何特定於功能的新功能或改進。 
 ---
 = 此版本的新功能
 :hardbreaks:
@@ -15,31 +16,6 @@ summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。
 
 [role="lead"]
 NetApp會定期更新ONTAP Select 產品介紹、為您帶來全新功能與增強功能。
-
-
-
-== ONTAP Select 9.15.1.1
-
-ONTAP Select 9.15.1 包含多項新功能與改良功能。
-
-支援叢集擴充和縮減:: 從 ONTAP Select 9.15.1 開始、支援叢集擴充和收縮。
-+
---
-* 從六節點叢集擴充至八節點叢集
-+
-您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。 link:task_cluster_expansion_contraction.html#expand-the-cluster["深入瞭解"]。
-
-* 叢集將八個節點縮減為六個節點叢集
-+
-您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。 link:task_cluster_expansion_contraction.html#contract-the-cluster["深入瞭解"]。
-
-
-
---
-
-
-
-NOTE: 叢集擴充和收縮支援僅限於 ESX 叢集。
 
 
 
