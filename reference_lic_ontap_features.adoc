@@ -42,7 +42,7 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 * 儲存 VM 災難恢復（ SVM DR ）
 +
 
-NOTE: ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為最多 16 個關係的來源。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 、例如 9.12.1 至 9.14.1 。
+NOTE: ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為來源和目的地、最多可與 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 。例如、 ONTAP Select 9.12.1 來源可以連線至目的地 ONTAP 9.12.1 、 9.13.1 或 9.14.1 版。
 
 
 

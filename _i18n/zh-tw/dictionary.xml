@@ -3647,7 +3647,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">ONTAP Select 部署網路組態是否可以在安裝後變更？</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>。</block>
-  <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為最多 16 個關係的來源。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 、例如 9.12.1 至 9.14.1 。</block>
   <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM 提供 ONTAP Select 節點的部署伺服器和安裝映像。</block>
   <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">存取 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用網頁瀏覽器登入。</block>
   <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">從菜單中選擇 * 下載 * ，然後從下拉菜單中選擇 * 下載 * 。</block>
@@ -3727,4 +3726,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="012deed4bd1d789fa86812367047fe25" category="paragraph">將叢集外包最多需要 30 分鐘。</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">監控多步驟叢集收縮程序、確認叢集已成功簽約。</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.15.1 文件</block>
+  <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為來源和目的地、最多可與 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 。例如、 ONTAP Select 9.12.1 來源可以連線至目的地 ONTAP 9.12.1 、 9.13.1 或 9.14.1 版。</block>
 </blocks>
