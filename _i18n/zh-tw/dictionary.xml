@@ -808,8 +808,6 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">僅支援IP第4版（IPV4）ONTAP Select 。不支援IP版本6（IPv6）。此限制會以ONTAP Select 下列方式影響到流通：</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">您必須為部署虛擬機器的管理LIF指派一個IPV4位址。</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。</block>
-  <block id="8d0030231ca098991021200ebed892e9" category="section-title">VMware vCenter語言限制</block>
-  <block id="f3723501df4dfade0c26ca5e04290d9e" category="paragraph">如果您使用ONTAP Select VMware部署在Windows Server上的ESXi和vCenter上建立執行的叢集、則必須使用英文版本。非英文版Windows不支援vCenter的支援。ONTAP Select</block>
   <block id="fa748407272b92f3705a6294bcb1b272" category="summary">部署具有HA的雙節點叢集時、必須使用與其他叢集節點組態相同的規劃與組態。不過、在建立雙節點叢集時、您應該注意幾個差異。</block>
   <block id="53a40851af0b9784d82acc5102b9a119" category="doc">使用HA的雙節點叢集ONTAP Select</block>
   <block id="82832646cc7df221178fe8916e5a23e9" category="paragraph">雙節點叢集由一組HA配對組成、專為遠端辦公室和分公司部署所設計。</block>
@@ -3727,4 +3725,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">監控多步驟叢集收縮程序、確認叢集已成功簽約。</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">ONTAP Select 9.15.1 文件</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為來源和目的地、最多可與 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 。例如、 ONTAP Select 9.12.1 來源可以連線至目的地 ONTAP 9.12.1 、 9.13.1 或 9.14.1 版。</block>
+  <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select 最多支援四個 vmnics 。</block>
 </blocks>

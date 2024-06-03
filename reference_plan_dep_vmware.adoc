@@ -103,6 +103,3 @@ ESXi Hypervisor主機必須滿足幾項最低資源需求。您應確保ONTAP Se
 * 您必須為部署虛擬機器的管理LIF指派一個IPV4位址。
 * 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
 
-
-.VMware vCenter語言限制
-如果您使用ONTAP Select VMware部署在Windows Server上的ESXi和vCenter上建立執行的叢集、則必須使用英文版本。非英文版Windows不支援vCenter的支援。ONTAP Select
