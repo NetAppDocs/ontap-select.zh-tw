@@ -2654,7 +2654,6 @@
   <block id="0deac5caf37785bb3c3ce0d80f8d8d18" category="admonition">通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select</block>
   <block id="8132b1f57834df621ea1aedaa548729e" category="section-title">根據預設會自動啟用的支援功能ONTAP</block>
   <block id="d4370df695508d400d73750728248ebe" category="paragraph">下列功能已隨ONTAP Select 附於根據預設授權的功能中：</block>
-  <block id="1716834171e243de0f898a67621b6624" category="list-text">SS3 ONTAP</block>
   <block id="a56a12489213d10b531398efee448f95" category="section-title">個別授權的功能ONTAP</block>
   <block id="585f4a038bba40a29999437c007446e9" category="paragraph">您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：</block>
   <block id="6dec3523c85f378f79fcf83c82e21868" category="paragraph">當使用軟體RAID的磁碟機故障時、ONTAP Select 如果有備用磁碟機可用、則會指派備用磁碟機、並自動開始重建程序。這類似ONTAP 於關於FAS 功能的介紹、AFF不過、如果沒有可用的備用磁碟機、您需要將其新增至ONTAP Select 該節點。</block>
@@ -3724,4 +3723,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為來源和目的地、最多可與 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本至版本 +2 。例如、 ONTAP Select 9.12.1 來源可以連線至目的地 ONTAP 9.12.1 、 9.13.1 或 9.14.1 版。</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select 最多支援四個 vmnics 。</block>
   <block id="28986937787872c11df39e20ca126e8d" category="admonition">ESXi 6.5 GA 和 ESXi 6.7 GA 已達到可用性終止狀態。如果您的 ONTAP Select 叢集具有這些版本、則必須依照升級至支援的版本<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>。</block>
+  <block id="e1a514cdffca7e72189bc1b4d2b14cb1" category="list-text">ONTAP S3 （零成本）</block>
+  <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">NetApp ONTAP -主要授權金鑰</block>
+  <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
 </blocks>

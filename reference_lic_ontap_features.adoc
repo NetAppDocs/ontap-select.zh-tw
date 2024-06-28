@@ -35,7 +35,6 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 * NFS
 * NVMe over TCP
 * 支援多租戶共享ONTAP
-* SS3 ONTAP
 * SnapMirror
 * SnapRestore
 * SnapVault
@@ -55,6 +54,7 @@ NOTE: ONTAP Select 9.12.1 及更新版本現在支援 SVM DR 做為來源和目�
 * 資料可用度服務
 * FabricPool
 * SDS（不含高級授權）MetroCluster ONTAP Select
+* ONTAP S3 （零成本）
 * SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
 +
 ** 可防竄改的Snapshot複本
@@ -68,4 +68,5 @@ NOTE: 使用完無法使用的不需要FabricPool 使用「不需使用任何功
 
 .相關資訊
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比較功能與功能ONTAP Select ONTAP"]
+* link:https://mysupport.netapp.com/site/systems/master-license-keys["NetApp ONTAP -主要授權金鑰"^]
 
