@@ -3257,8 +3257,6 @@
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">ESXi 範例</block>
   <block id="a6690185d6d60ba77823b380d0cf9b40" category="open-title">KVM 範例</block>
-  <block id="39ec0c31f6785cc3bca5662324c85501" category="list-text">RedHat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 和 9.2</block>
-  <block id="1f18189b50199e23599d81a94a1e49b6" category="list-text">落基 Linux 8 和 9 上的 KVM</block>
   <block id="ddb3e9a5262cd471087b75501bb8e76f" category="section-title">升級至 VMXNET3 （僅限 ESXi ）</block>
   <block id="0d96b85e7095867ad0ed8bb6b07bfbba" category="section-title">含標準 vSwitch 的雙 NIC 主機（僅限 ESXi ）</block>
   <block id="38313565feb70deddb18b57a0fa6a1bb" category="section-title">配備標準 vSwitch 的四 NIC 主機（僅限 ESXi ）</block>
@@ -3726,4 +3724,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e1a514cdffca7e72189bc1b4d2b14cb1" category="list-text">ONTAP S3 （零成本）</block>
   <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">NetApp ONTAP -主要授權金鑰</block>
   <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
+  <block id="f588ddb32cd79889160082356416d2f3" category="list-text">已更新 KVM Hypervisor 支援</block>
+  <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
+  <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">Red Hat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 9.2 和 9.4</block>
+  <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">落基 Linux 8.6 、 8.7 、 8.8 、 8.9 、 9.0 、 9.1 、 9.2 、 9.3 和 9.4</block>
 </blocks>

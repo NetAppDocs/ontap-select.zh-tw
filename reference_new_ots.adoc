@@ -23,6 +23,7 @@ NetApp會定期更新ONTAP Select 產品介紹、為您帶來全新功能與增�
 
 ONTAP Select 9.15.1 包含多項新功能與改良功能。
 
+已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。
 支援叢集擴充和縮減:: 從 ONTAP Select 9.15.1 開始、支援叢集擴充和收縮。
 +
 --
