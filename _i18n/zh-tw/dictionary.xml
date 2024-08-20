@@ -3008,7 +3008,6 @@
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1 包含多項新功能與改良功能。</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">支援 NVMe over TCP</block>
   <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">升級至 ONTAP Select 9.13.1 時、您必須擁有新的授權、才能透過 TCP 支援 NVMe 。當您第一次從 9.13.1 版開始部署 ONTAP Select 時、就會自動包含此授權。</block>
-  <block id="4d8daf3f51ebf7fefb4dfcf900e9b79d" category="list-text">從 ONTAP 9.13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0 GA （組建 20513097 ）。</block>
   <block id="da691cb71c1f879ed7bf93a9a845601a" category="section-title">下載虛擬機器映像</block>
   <block id="8435c401e57e043b0c57edfb0a00c774" category="section-title">驗證 ONTAP Select Deploy OVA 簽章</block>
   <block id="ab07c13a31893a6c9ee2547e7b9df643" category="paragraph">安裝安裝套件之前、您應該先驗證 ONTAP Select 開放式虛擬化設備（ OVA ）的簽章。</block>
@@ -3728,4 +3727,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
   <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">Red Hat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 9.2 和 9.4</block>
   <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">落基 Linux 8.6 、 8.7 、 8.8 、 8.9 、 9.0 、 9.1 、 9.2 、 9.3 和 9.4</block>
+  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3.</block>
+  <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 支援 VMware ESXi 8.0.2 。</block>
+  <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。</block>
 </blocks>

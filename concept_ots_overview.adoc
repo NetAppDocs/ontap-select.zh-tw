@@ -88,6 +88,7 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 * 自主勒索軟體保護（Arp）
 * 叢集 IP 空間
 不支援任何叢集 IPspace 的修改、包括新增或移除連接埠、虛擬 LAN （ VLAN ）或連結集合群組。
+* ESXi 8.0 U3.
 * 不支援Fibre Channel Fibre Channel和Fibre Channel over Ethernet。
 * 健全狀況監控傳統的健全狀況監控功能、搭配硬體架ONTAP 構的內部部署、僅適用於基礎硬體元件。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。
 * 介面群組
