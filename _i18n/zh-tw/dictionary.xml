@@ -3730,4 +3730,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3.</block>
   <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 支援 VMware ESXi 8.0.2 。</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。</block>
+  <block id="066308395ea593f82277b09bef1304dc" category="list-text">儲存原始的部署虛擬機器映像。</block>
+  <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">當您將部署組態資料從原始虛擬機器還原至新虛擬機器時、本程序稍後將需要原始部署虛擬機器映像。</block>
 </blocks>
