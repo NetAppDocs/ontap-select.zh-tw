@@ -3627,9 +3627,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e84b565f766d2b63406ea62dbdd12c66" category="list-text">從 ONTAP Select 9.15.1 開始、支援叢集擴充和收縮。</block>
   <block id="d535a23dc4caf42819a2764f917df8d4" category="list-text">從六節點叢集擴充至八節點叢集</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">深入瞭解</block>
-  <block id="46784c9ba69d72d62e5ff719f2e75e3f" category="paragraph">您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。 <block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>。</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">叢集將八個節點縮減為六個節點叢集</block>
-  <block id="3fa352640216b35ee8eded7e2c07ca96" category="paragraph">您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。 <block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>。</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">叢集擴充和收縮支援僅限於 ESX 叢集。</block>
   <block id="e967860b1a40b9dcdb66b252a950a240" category="inline-link">ONTAP Select 9.15.1 版本資訊</block>
   <block id="5eb820f5a922021204972230d9d4d93d" category="paragraph">您可以存取<block ref="a879f440894cff34b3d87053560dcd34" category="inline-link-rx"></block> 可查看有關當前版本的詳情。</block>
@@ -3637,7 +3635,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="c5f80e69da9019e045ae59cca1c9ae22" category="doc">擴充或收縮叢集</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從六個節點增加至八個節點、並將叢集大小從八個節點減少至六個節點。不支援其他叢集擴充或收縮情況。</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">此程序是使用 CLI 、 API 或 Web 介面從 ONTAP Select 部署啟動。</block>
-  <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">硬體與儲存需求</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">叢集擴充和收縮功能受到下列限制：</block>
   <block id="03a645906298706d76817495f4d8708a" category="list-text">支援僅限於在 ESX Hypervisor 主機上建立的叢集。下列 ESX 版本與 ONTAP Select 9.15.1 相容：</block>
   <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
@@ -3645,8 +3642,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
   <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
-  <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">只能從六節點叢集擴充至八節點叢集。</block>
-  <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">只能從八節點叢集到六節點叢集進行縮減。</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展開叢集</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">您可以使用叢集擴充功能、將現有叢集的大小從六節點增加到八節點叢集。</block>
   <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">在準備叢集擴充程序時、會將新的 ESX 主機新增至清單、並指派新節點的詳細資料。在開始叢集擴充程序之前、網路預先檢查會驗證所選的內部網路。</block>
@@ -3698,4 +3693,10 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">Hypervisor 的軟體相容性資訊</block>
   <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。如需所支援 RHEL 版本的清單、請參閱<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安裝期間、您應依照下列方式設定系統：</block>
   <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">如需必要套件及其他組態需求的詳細資訊，請參閱<block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>。</block>
+  <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。目前不支援從一個、兩個或四個節點叢集擴充至六個或八個節點叢集的叢集。<block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>。</block>
+  <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。目前不支援從六個或八個節點叢集到一個、兩個或四個節點叢集的叢集收縮。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬體與儲存考量</block>
+  <block id="04b2d3e0b04793e1eab99a7ce4905944" category="paragraph">目前不支援下列叢集擴充和收縮：</block>
+  <block id="246664f02679d184f0608a4d7824502b" category="list-text">從一個、兩個或四個節點叢集擴充至六個或八個節點叢集。</block>
+  <block id="226d8636aca6bd1bdcac58203b8ddcd2" category="list-text">從六個或八個節點叢集、收縮到一個、兩個或四個節點叢集。</block>
 </blocks>

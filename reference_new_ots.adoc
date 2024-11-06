@@ -29,11 +29,11 @@ ONTAP Select 9.15.1 包含多項新功能與改良功能。
 --
 * 從六節點叢集擴充至八節點叢集
 +
-您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。 link:task_cluster_expansion_contraction.html#expand-the-cluster["深入瞭解"]。
+您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。目前不支援從一個、兩個或四個節點叢集擴充至六個或八個節點叢集的叢集。link:task_cluster_expansion_contraction.html#expand-the-cluster["深入瞭解"]。
 
 * 叢集將八個節點縮減為六個節點叢集
 +
-您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。 link:task_cluster_expansion_contraction.html#contract-the-cluster["深入瞭解"]。
+您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。目前不支援從六個或八個節點叢集到一個、兩個或四個節點叢集的叢集收縮。link:task_cluster_expansion_contraction.html#contract-the-cluster["深入瞭解"]。
 
 
 
