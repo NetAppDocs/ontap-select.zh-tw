@@ -3353,7 +3353,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="b2e7abe45d5aa586a8f3507497cdd9f9" category="paragraph-title">準備 Linux 伺服器</block>
   <block id="b09f29f89d723a464604296e2e5e07ac" category="paragraph">您必須準備部署 ONTAP Select 節點的每個 Linux KVM 伺服器。您也必須準備部署 ONTAP Select 部署管理公用程式的伺服器。</block>
   <block id="fc8913280cdc00a30c367fb6cad82a5a" category="paragraph-title">安裝Red Hat Enterprise Linux</block>
-  <block id="68a91f25005786321a1f8d6a1ee48471" category="paragraph">您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。在安裝期間、您應依照下列方式設定系統：</block>
   <block id="4adf8d273405d567b3c04578e7587fcc" category="list-text">選取「預設」做為安全性原則</block>
   <block id="b7ed0ef33f8535f13a2a8c61b522db5c" category="list-text">選擇虛擬化主機軟體選項</block>
   <block id="beb8bb5c30618e7ed13d13dae4f958bd" category="list-text">目的地應為本機開機磁碟、而非 ONTAP Select 使用的 RAID LUN</block>
@@ -3363,42 +3362,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="3738f55ea208199f5c75954580847670" category="paragraph">ONTAP Select 需要數個額外的軟體套件。套件的確切清單會因您使用的 Linux 版本而異。第一步是確認伺服器上是否有 yum 儲存庫。如果無法使用、您可以使用擷取<block ref="a52a983e58d14432379ef732f02ff1ab" prefix=" " category="inline-code"></block> 命令：</block>
   <block id="99965beffa3302f13c927db3818d3722" category="inline-link-macro">開啟 vSwitch 文件</block>
   <block id="ef81ea587a9f08c529a68f4615638a9f" category="admonition">如果您在安裝 Linux 伺服器期間選擇虛擬化主機做為軟體選擇、則可能已安裝部分必要的套件。您可能需要從原始程式碼安裝 openvswitch 套件、如中所述 <block ref="7514235d0c1cb4fbed4568e20a4d9277" category="inline-link-macro-rx"></block>。</block>
-  <block id="e8d8655fb6a53b117137b3c4c8b513d6" category="paragraph-title">RHEL 7.7 所需的其他套件</block>
-  <block id="38b05d80cfdb17c384b49b78c5779d34" category="paragraph">安裝 RHEL 7.6 所需的相同套件集。</block>
-  <block id="4504762947692447bf5d6197d7415a2b" category="paragraph-title">RHEL 7.6 所需的其他套件</block>
-  <block id="c5ddd03bd8afc1a01dfb929571f7984c" category="paragraph">使用 RHEL 7.6 或 CentOS 7.6 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。</block>
-  <block id="b3768f3042522f2ebefd687b011ef35b" category="list-text">QEMU-KVM （ 1.5.3-160 ）</block>
-  <block id="73c94f60276006addfcc246cf5694dea" category="admonition">使用軟體 RAID 時、您必須改用版本 2.9.0 。</block>
-  <block id="e7b6819ebab33d41294f76cb2ef12d89" category="list-text">libvirt （ 4.5.0-10 ）</block>
-  <block id="63d4dd1094ecc476b13197bf5bcf9d74" category="list-text">openvswitch （ 2.7.3 ）</block>
-  <block id="81bacf976bcfb2e05b1bab56d153fd53" category="list-text">虛擬安裝（ 1.5.0-1 ）</block>
-  <block id="0af0fc62f7cd9d3b202c4fe9d734ac15" category="list-text">Lshw （ B.02.18-12 ）</block>
-  <block id="ce2f31b80fee4a220bf108c0c1c7b4c0" category="list-text">lsscsi （ 0.27-6 ）</block>
-  <block id="a72b667fcf6c87b1d9261d7fbfda5c21" category="list-text">lsof （ 4.87-6 ）</block>
-  <block id="f2836af2ae094b6178aa55d38db1db83" category="paragraph">如果您在 KVM （外部儲存設備）上使用 vNAS 、並計畫將虛擬機器從一部主機移轉至另一部主機、則應安裝下列其他套件和相依性：</block>
-  <block id="e161209405816766b464900b7eaf4594" category="list-text">Fence - 代理程式 - 全部（ 4.2.1-11 ）</block>
-  <block id="b4bc73e8ba342f5dd4c958e1597646c9" category="list-text">LVM2 叢集（ 2.02.180-8 ）</block>
-  <block id="af9008e8791f6754f7139995dffa092d" category="list-text">心律調整器（ 1.1.19-8 ）</block>
-  <block id="1d3d8cff8b4d8c56161a24798b46d75e" category="list-text">PC （ 0.9.165-6 ）</block>
-  <block id="47bf2901e81b84a3461fe6f88dc0822b" category="paragraph-title">RHEL 7.5 所需的其他套件</block>
-  <block id="5e35a367894ad4778ad935a913f20591" category="paragraph">使用 RHEL 7.5 或 CentOS 7.5 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。</block>
-  <block id="962b918f7188b59dd7dda40036ccb244" category="list-text">QEMU-KVM （ 1.5.3-141 ）</block>
-  <block id="0829cbb8c3f5e3775b8b9b6ff12edba2" category="list-text">libvirt （ 3.0.0 ）</block>
-  <block id="828fda93ae5609ae900a74b74a329a1f" category="list-text">虛擬安裝（ 1.4.1-7 ）</block>
-  <block id="9a85f336951f60862065a2c99a506331" category="list-text">lsof （ 4.87-5 ）</block>
-  <block id="22520cb839fcc2ea175d9468908457de" category="list-text">Fence - agents - All （ 4.0.11-86 ）</block>
-  <block id="eaaf2c3924b5ae9f38e2888c82fffeca" category="list-text">LVM2 叢集（ 2.02.177-4 ）</block>
-  <block id="63a608b8dcb6a5cbb6bc554603885f0f" category="list-text">心律調整器（ 1.1.18-11 ）</block>
-  <block id="94d2030906db727ace138dc978ae4250" category="list-text">PC （ 0.9.16205 ）</block>
-  <block id="a81ff201ea5e179ccb62ed746bf9bd3a" category="paragraph-title">RHEL 7.4 所需的其他套件</block>
-  <block id="953b5a8d418e7a7571a24efdaaeffd73" category="paragraph">使用 RHEL 7.4 或 CentOS 7.4 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。</block>
-  <block id="83d959bc76f3b861a116f9eea1c7a2a7" category="list-text">libvirt （ 3.2.0-14 ）</block>
-  <block id="fac13a6d19ac85eceeda764e5abcb6f8" category="list-text">Lshw （ B.02.18-7 ）</block>
-  <block id="847db2741d4d60a1941f2a32402e6128" category="list-text">lsof （ 4.87-4 ）</block>
-  <block id="6eefc4ad705acae02bbc63fb026239ff" category="list-text">Fence - agents - All （ 4.0.11-66 ）</block>
-  <block id="e8cf539445d5c650ec492b96a3986d22" category="list-text">LVM2 叢集（ 2.02.171-8 ）</block>
-  <block id="808a7f32a60e4e781435682f980ff36a" category="list-text">心律調整器（ 1.1.16-12 ）</block>
-  <block id="cb2885fb02858a21c6adb63dcfb19659" category="list-text">PC （ 0.9.158-6 ）</block>
   <block id="3fec9570e277fe5ca33bf5e5dc7cf266" category="paragraph-title">儲存資源池的組態</block>
   <block id="4a1a2ddde34541bd47c25ab818424838" category="paragraph">ONTAP Select 儲存資源池是一個邏輯資料容器、可將基礎實體儲存設備抽象化。您必須在部署 ONTAP Select 的 KVM 主機上管理儲存池。</block>
   <block id="694bb5d3641d16eb91812f8515d06f39" category="section-title">建立儲存資源池</block>
@@ -3732,4 +3695,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">儲存原始的部署虛擬機器映像。</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">當您將部署組態資料從原始虛擬機器還原至新虛擬機器時、本程序稍後將需要原始部署虛擬機器映像。</block>
+  <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">Hypervisor 的軟體相容性資訊</block>
+  <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。如需所支援 RHEL 版本的清單、請參閱<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安裝期間、您應依照下列方式設定系統：</block>
+  <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">如需必要套件及其他組態需求的詳細資訊，請參閱<block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>。</block>
 </blocks>

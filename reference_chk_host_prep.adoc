@@ -33,7 +33,7 @@ NOTE: 此功能不需要執行Hypervisor主機所需的網路和儲存組態。O
 您必須準備部署 ONTAP Select 節點的每個 Linux KVM 伺服器。您也必須準備部署 ONTAP Select 部署管理公用程式的伺服器。
 
 .安裝Red Hat Enterprise Linux
-您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。在安裝期間、您應依照下列方式設定系統：
+您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。如需所支援 RHEL 版本的清單、請參閱link:reference_plan_ots_hardware.html#software-compatibility["Hypervisor 的軟體相容性資訊"]。在安裝期間、您應依照下列方式設定系統：
 
 * 選取「預設」做為安全性原則
 * 選擇虛擬化主機軟體選項
@@ -50,81 +50,7 @@ ONTAP Select 需要數個額外的軟體套件。套件的確切清單會因您�
 
 NOTE: 如果您在安裝 Linux 伺服器期間選擇虛擬化主機做為軟體選擇、則可能已安裝部分必要的套件。您可能需要從原始程式碼安裝 openvswitch 套件、如中所述 link:https://docs.openvswitch.org/en/latest/intro/install/general/["開啟 vSwitch 文件"^]。
 
- For additional information about the necessary packages and other configuration requirements, see the link:https://imt.netapp.com/matrix/#welcome[NetApp Interoperability Matrix Tool^].
-.RHEL 7.7 所需的其他套件
-安裝 RHEL 7.6 所需的相同套件集。
-
-.RHEL 7.6 所需的其他套件
-使用 RHEL 7.6 或 CentOS 7.6 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。
-
-* QEMU-KVM （ 1.5.3-160 ）
-+
-
-NOTE: 使用軟體 RAID 時、您必須改用版本 2.9.0 。
-
-* libvirt （ 4.5.0-10 ）
-* openvswitch （ 2.7.3 ）
-* 虛擬安裝（ 1.5.0-1 ）
-* Lshw （ B.02.18-12 ）
-* lsscsi （ 0.27-6 ）
-* lsof （ 4.87-6 ）
-
-
-如果您在 KVM （外部儲存設備）上使用 vNAS 、並計畫將虛擬機器從一部主機移轉至另一部主機、則應安裝下列其他套件和相依性：
-
-* Fence - 代理程式 - 全部（ 4.2.1-11 ）
-* LVM2 叢集（ 2.02.180-8 ）
-* 心律調整器（ 1.1.19-8 ）
-* PC （ 0.9.165-6 ）
-
-
-.RHEL 7.5 所需的其他套件
-使用 RHEL 7.5 或 CentOS 7.5 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。
-
-* QEMU-KVM （ 1.5.3-141 ）
-+
-
-NOTE: 使用軟體 RAID 時、您必須改用版本 2.9.0 。
-
-* libvirt （ 3.0.0 ）
-* openvswitch （ 2.7.3 ）
-* 虛擬安裝（ 1.4.1-7 ）
-* Lshw （ B.02.18-12 ）
-* lsscsi （ 0.27-6 ）
-* lsof （ 4.87-5 ）
-
-
-如果您在 KVM （外部儲存設備）上使用 vNAS 、並計畫將虛擬機器從一部主機移轉至另一部主機、則應安裝下列其他套件和相依性：
-
-* Fence - agents - All （ 4.0.11-86 ）
-* LVM2 叢集（ 2.02.177-4 ）
-* 心律調整器（ 1.1.18-11 ）
-* PC （ 0.9.16205 ）
-
-
-.RHEL 7.4 所需的其他套件
-使用 RHEL 7.4 或 CentOS 7.4 時、請確認已安裝下列套件和相依性。在每種情況下、都會包含套件名稱和版本。
-
-* QEMU-KVM （ 1.5.3-141 ）
-+
-
-NOTE: 使用軟體 RAID 時、您必須改用版本 2.9.0 。
-
-* libvirt （ 3.2.0-14 ）
-* openvswitch （ 2.7.3 ）
-* 虛擬安裝（ 1.4.1-7 ）
-* Lshw （ B.02.18-7 ）
-* lsscsi （ 0.27-6 ）
-* lsof （ 4.87-4 ）
-
-
-如果您在 KVM （外部儲存設備）上使用 vNAS 、並計畫將虛擬機器從一部主機移轉至另一部主機、則應安裝下列其他套件和相依性：
-
-* Fence - agents - All （ 4.0.11-66 ）
-* LVM2 叢集（ 2.02.171-8 ）
-* 心律調整器（ 1.1.16-12 ）
-* PC （ 0.9.158-6 ）
-
+如需必要套件及其他組態需求的詳細資訊，請參閱link:https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
 
 .儲存資源池的組態
 ONTAP Select 儲存資源池是一個邏輯資料容器、可將基礎實體儲存設備抽象化。您必須在部署 ONTAP Select 的 KVM 主機上管理儲存池。
