@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 您可以使用命令列介面、將現有的部署管理公用程式執行個體移轉至新的虛擬機器。 
 ---
-= 將部署執行個體移轉至新的虛擬機器
+= 將 ONTAP Select 部署執行個體移轉至新的虛擬機器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

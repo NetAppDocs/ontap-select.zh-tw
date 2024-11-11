@@ -4,7 +4,7 @@ permalink: concept_nw_physical_switch_config.html
 keywords: ontap select, upstream physical switch configuration 
 summary: 上游實體交換器組態詳細資料、以單一交換器和多重交換器環境為基礎。 
 ---
-= 實體交換器組態
+= ONTAP Select 實體交換器組態
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

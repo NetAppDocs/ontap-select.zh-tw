@@ -4,7 +4,7 @@ permalink: task_adm_security.html
 keywords: administer, administering, web, security 
 summary: 您可以執行多項相關工作、以確保ONTAP Select 實現一套完整的功能部署。 
 ---
-= 安全性
+= 保護 ONTAP Select 部署安全
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_plan_ots_mcc_sds.html 
 keywords: plan, planning, metrocluster, metrocluster sds 
-summary: 規劃一套功能完整的部署時、您應該考慮幾項MetroCluster 需求。ONTAP Select 
+summary: 在規劃 ONTAP Select 部署時，您應該考慮幾項 MetroCluster SDS 的需求。 
 ---
-= 準備MetroCluster 進行不需填寫的SDS部署
+= 準備 ONTAP Select MetroCluster SDS 部署
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

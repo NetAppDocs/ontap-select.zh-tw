@@ -4,7 +4,7 @@ permalink: reference_host_modify_command.html
 keywords: host modify, command, syntax, host management server 
 summary: 您可以使用host modify命令來修改含有ONTAP Select 此例項的主機管理伺服器。 
 ---
-= 修改主機管理伺服器
+= 修改用於 ONTAP Select 部署的主機管理伺服器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

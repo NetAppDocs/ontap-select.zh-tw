@@ -4,7 +4,7 @@ permalink: reference_plan_ots_general.html
 keywords: plan, planning, general requirements 
 summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾項一般需求。 
 ---
-= 一般需求與規劃考量
+= ONTAP Select 需求與規劃考量
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

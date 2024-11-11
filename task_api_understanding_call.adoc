@@ -4,7 +4,7 @@ permalink: task_api_understanding_call.html
 keywords: rest api, deploy rest api, rest, understanding, executing 
 summary: 所有API呼叫的詳細資料均以通用格式記錄及顯示在ONTAP Select 「更新」線上文件網頁上。只要瞭解單一API呼叫、即可存取及解譯所有API呼叫的詳細資料。 
 ---
-= 瞭解並執行 API 呼叫
+= 瞭解並執行 ONTAP Select 部署 API 呼叫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

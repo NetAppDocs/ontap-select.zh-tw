@@ -4,7 +4,7 @@ permalink: task_cli_signing_in.html
 keywords: administer, administering, cli, deploy, sign in, signing in 
 summary: 您需要使用SSH登入部署管理Shell。登入後、您可以發出CLI命令來建立ONTAP Select 一個故障叢集、並執行相關的管理程序。 
 ---
-= 登入以使用 SSH 部署
+= 使用 SSH 登入 ONTAP Select 部署
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

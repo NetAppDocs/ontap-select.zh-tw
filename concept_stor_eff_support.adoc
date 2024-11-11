@@ -4,7 +4,7 @@ permalink: concept_stor_eff_support.html
 keywords: ontap select, storage efficiency support 
 summary: 提供的儲存效率選項類似於介紹在功能性和功能性上的儲存效率選項。ONTAP Select FAS AFF 
 ---
-= 儲存效率支援
+= ONTAP Select 儲存效率支援
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

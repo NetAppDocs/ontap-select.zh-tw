@@ -4,7 +4,7 @@ permalink: concept_ha_other.html
 keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
 summary: HA磁碟心跳轉、HA信箱、HA心跳轉、HA容錯移轉及還原等功能、可強化資料保護。 
 ---
-= HA其他詳細資料
+= ONTAP Select HA 可強化資料保護
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: HA磁碟心跳轉、HA信箱、HA心跳轉、HA容錯移轉及還原等
 
 
 [role="lead"]
-HA磁碟心跳轉、HA信箱、HA心跳轉、HA容錯移轉及還原等功能、可強化資料保護。
+高可用度（ HA ）磁碟心跳， HA 信箱， HA 心跳， HA 容錯移轉和 Giveback 工作，以強化資料保護。
 
 
 

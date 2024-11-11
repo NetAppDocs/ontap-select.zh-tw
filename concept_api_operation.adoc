@@ -4,7 +4,7 @@ permalink: concept_api_operation.html
 keywords: rest api, deploy rest api, rest, operation, basic operation 
 summary: REST建立一套通用的技術和最佳實務做法、但每個API的詳細資料可能會因設計選項而異。在使用API之前、您應該先瞭解ONTAP Select 到「更新部署API」的詳細資料和操作特性。 
 ---
-= 基本營運特性
+= ONTAP Select 部署 API 基本作業特性
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

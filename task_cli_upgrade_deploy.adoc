@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: 您可以使用命令列介面、就地升級現有的部署公用程式虛擬機器。 
 ---
-= 升級部署執行個體
+= 升級 ONTAP Select 部署執行個體
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_api_rest.html
 keywords: rest api, deploy rest api, rest, architecture, resources, state, uri, http, json 
 summary: 代表性狀態傳輸（REST）是建立分散式Web應用程式的風格。當套用到Web服務API的設計時、它會建立一套技術和最佳實務做法、以揭露伺服器型資源並管理其狀態。它使用主流傳輸協定和標準、為部署和管理ONTAP Select 等叢集提供靈活的基礎。 
 ---
-= REST Web服務基礎
+= 用於部署和管理 ONTAP Select 叢集的 REST Web 服務基礎
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

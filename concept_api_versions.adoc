@@ -4,7 +4,7 @@ permalink: concept_api_versions.html
 keywords: rest api, deploy rest api, rest, version, versioning 
 summary: 隨附於Rashdeploy的REST API ONTAP Select 會指派版本編號。API版本編號與部署版本編號無關。您應該注意部署版本隨附的API版本、以及這會如何影響API的使用。 
 ---
-= 部署API版本管理
+= ONTAP Select 部署 API 版本控制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

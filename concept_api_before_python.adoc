@@ -4,7 +4,7 @@ permalink: concept_api_before_python.html
 keywords: rest api, deploy rest api, rest, python, before you begin 
 summary: 在執行範例Python指令碼之前、您必須先準備環境。 
 ---
-= 使用Python存取API之前
+= 使用 Python 存取 ONTAP Select 部署 API 之前
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

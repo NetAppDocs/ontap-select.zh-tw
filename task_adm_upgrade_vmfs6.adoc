@@ -4,7 +4,7 @@ permalink: task_adm_upgrade_vmfs6.html
 keywords: administer, administering, web, storage vmotion, upgrade vmfs6 
 summary: VMware不支援從VMFS 5就地升級至VMFS 6。您可以使用Storage VMotion、將現有ONTAP Select 的VMware節點從VMFS 5資料存放區移轉至VMFS 6資料存放區。 
 ---
-= 使用 Storage VMotion 升級至 VMFS6
+= 使用 Storage VMotion 將 ONTAP Select 節點升級至 VMFS6
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

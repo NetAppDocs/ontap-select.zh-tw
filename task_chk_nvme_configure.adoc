@@ -4,7 +4,7 @@ permalink: task_chk_nvme_configure.html
 keywords: ontap select, nvme storage, host preparation 
 summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主機來識別磁碟機。 
 ---
-= 設定主機使用NVMe磁碟機
+= 設定 ONTAP Select 主機以使用 NVMe 磁碟機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

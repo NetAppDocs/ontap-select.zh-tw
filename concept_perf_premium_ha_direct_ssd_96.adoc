@@ -4,7 +4,7 @@ permalink: concept_perf_premium_ha_direct_ssd_96.html
 keywords: ontap select, performance 
 summary: 效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。 
 ---
-= 效能：優質HA直接附加SSD儲存設備
+= FAS9.6效能：優質HA直接附加SSD儲存設備ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

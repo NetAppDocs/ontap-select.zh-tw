@@ -4,7 +4,7 @@ permalink: concept_stor_concepts_chars.html
 keywords: ontap select, storage concepts 
 summary: 探索ONTAP Select 特定儲存元件之前、請先探索適用於整個環境的一般儲存概念。 
 ---
-= 儲存：一般概念與特性
+= ONTAP Select 儲存設備：一般概念與特性
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

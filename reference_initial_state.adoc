@@ -4,7 +4,7 @@ permalink: reference_initial_state.html
 keywords: install, installing, initial state, cluster initial state 
 summary: 部署叢集後、您應該瞭解叢集的初始狀態、並視環境需求設定叢集。 
 ---
-= 部署後叢集的初始狀態
+= 部署後 ONTAP Select 叢集的初始狀態
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

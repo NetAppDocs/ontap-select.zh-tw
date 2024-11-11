@@ -4,7 +4,7 @@ permalink: concept_usecase_mc_sds.html
 keywords: ontap select, metrocluster software defined storage, mc sds storage 
 summary: 支援升級的保護功能和具成本效益的實作。ONTAP Select MetroCluster 
 ---
-= 以軟體定義的儲存設備MetroCluster
+= ONTAP Select MetroCluster 軟體定義儲存設備
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: 從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從六個節點增加至八個節點、並將叢集大小從八個節點減少至六個節點。 
 ---
-= 擴充或收縮叢集
+= 擴充或收縮 ONTAP Select 叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ summary: 從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從�
 
 叢集擴充和收縮功能受到下列限制：
 
-* 支援僅限於在 ESX Hypervisor 主機上建立的叢集。下列 ESX 版本與 ONTAP Select 9.15.1 相容：
+* 支援僅限於在 ESX Hypervisor 主機上建立的叢集。下列 ESX 版本與 ONTAP Select 9.15.1 及更新版本相容：
 +
 ** ESXi 8.0U2
 ** ESXi 8.0U1
@@ -60,7 +60,7 @@ summary: 從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從�
 . 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
 . 在叢集詳細資料頁面上、選取頁面右側的齒輪圖示、然後選取 * 展開叢集 * 。
 . 瀏覽至 * HA 配對 4* 區段。
-. 選擇第四個 HA 配對的高可用度（ HA ）配對組態詳細資料、包括：
+. 選擇第四個 HA 配對的高可用度（ HA ）配對組態詳細資料，包括：
 +
 ** 執行個體類型
 ** 節點名稱

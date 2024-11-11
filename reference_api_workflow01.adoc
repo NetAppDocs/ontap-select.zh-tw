@@ -4,7 +4,7 @@ permalink: reference_api_workflow01.html
 keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
 summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署單節點的VMware ESXi叢集。叢集是以評估授權所建立。 
 ---
-= 工作流程 1 ：在 ESXi 上建立單一節點評估叢集
+= 工作流程 1 ：在 ESXi 上建立 ONTAP Select 單節點評估叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

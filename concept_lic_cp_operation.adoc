@@ -4,7 +4,7 @@ permalink: concept_lic_cp_operation.html
 keywords: license, licensing, capacity pools, operation details 
 summary: 容量資源池授權模式與容量層模式不同。儲存容量會分配給一個集區、並在許多節點之間共用、而非將儲存容量專用於每個個別節點。已建立其他元件和程序來支援容量集區模式。 
 ---
-= 營運詳細資料
+= ONTAP Select 容量資源池授權模式的營運詳細資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_usecase_overview.html
 keywords: ontap select, business use case overview, deployment, storage, development and testing 
 summary: 根據Hypervisor虛擬化所提供的固有靈活度、適用於多種不同類型的應用程式。ONTAP Select 
 ---
-= 業務需求與使用情境
+= ONTAP Select 業務需求和使用情境
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

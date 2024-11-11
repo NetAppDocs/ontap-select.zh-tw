@@ -4,7 +4,7 @@ permalink: reference_plan_ots_kvm.html
 keywords: plan, planning, vnas, kvm 
 summary: 您應該考慮幾個與使用 KVM Hypervisor 相關的規劃問題。 
 ---
-= KVM 需求
+= ONTAP Select KVM 需求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_api_json_cc.html
 keywords: rest api, deploy rest api, rest, python script, json, create cluster 
 summary: 使用ONTAP Select Python程式碼範例建立或刪除一個故障叢集時、您必須提供一個Json檔案作為指令碼的輸入。您可以根據部署計畫來複製及修改適當的Json範例。 
 ---
-= 用於建立叢集之指令碼的Json
+= JSON ，用於建立 ONTAP Select 叢集的指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

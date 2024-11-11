@@ -4,7 +4,7 @@ permalink: reference_plan_ots_networking.html
 keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
 summary: 您必須先正確設定Hypervisor網路、然後才能部署ONTAP Select 功能。 
 ---
-= 網路考量
+= ONTAP Select 網路考量
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

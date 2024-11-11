@@ -4,7 +4,7 @@ permalink: concept_lic_production.html
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
 summary: 判斷ONTAP Select 出適用於貴組織的解決方案之後、您可以購買支援正式作業部署所需的授權。您必須選擇容量層級或容量集區授權模式、以及每個部署的儲存容量。 
 ---
-= 購買正式作業部署的授權
+= ONTAP Select 購買了正式作業部署的授權
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_api_access_doc_page.html
 keywords: rest api, deploy rest api, rest, deploy documentation, access, accessing 
 summary: 您必須存取ONTAP Select 「更新版本」線上文件頁面、才能顯示API文件、以及手動發出API呼叫。 
 ---
-= 存取部署文件頁面
+= 存取 ONTAP Select 部署文件頁面
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

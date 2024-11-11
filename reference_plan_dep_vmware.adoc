@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: 在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。 
 ---
-= Hypervisor 主機考量
+= ONTAP Select 部署 Hypervisor 主機考量事項
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

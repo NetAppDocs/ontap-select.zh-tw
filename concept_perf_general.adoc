@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: 效能會因硬體組態而異。 
 ---
-= 效能
+= ONTAP Select 效能總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

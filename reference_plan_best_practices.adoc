@@ -4,7 +4,7 @@ permalink: reference_plan_best_practices.html
 keywords: plan, planning, best practices, recommendations 
 summary: 在規劃ONTAP Select 一套功能完整的部署時、您應該考慮採用最佳實務做法。 
 ---
-= 最佳實務做法摘要
+= ONTAP Select 部署最佳實務做法摘要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -85,18 +85,37 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 不支援多項支援的功能。ONTAP ONTAP Select在大多數情況下、這些功能都需要虛擬ONTAP Select 化的故障環境中無法使用的特殊硬體。
 
-* 自主勒索軟體保護（Arp）
+* 自動更新自動勒索軟體保護（ ARP ）
++
+
+NOTE: 從 ONTAP Select 9.16.1 開始，支援手動更新 ARP ， NetApp 授權檔案（ NLF ）中包含 ARP 功能授權。
+
 * 叢集 IP 空間
++
 不支援任何叢集 IPspace 的修改、包括新增或移除連接埠、虛擬 LAN （ VLAN ）或連結集合群組。
-* ESXi 8.0 U3.
-* 不支援Fibre Channel Fibre Channel和Fibre Channel over Ethernet。
-* 健全狀況監控傳統的健全狀況監控功能、搭配硬體架ONTAP 構的內部部署、僅適用於基礎硬體元件。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。
+
+* Fibre Channel
++
+不支援 Fibre Channel 和 Fibre Channel over Ethernet 。
+
+* 健全狀況監視器
++
+與硬體型 ONTAP 部署搭配使用的傳統健全狀況監控，是專屬於基礎硬體元件的。由於搭配使用的虛擬化環境ONTAP Select 、因此健全狀況監視器並未啟動。
+
 * 介面群組
++
 不支援介面群組。
+
 * 多租戶金鑰管理程式（ MTKM ）
-* NIC卸載支援由於ONTAP Select 搭配使用的虛擬化環境、不支援NIC卸載功能。
+* NIC 卸載支援
++
+由於 ONTAP Select 使用的虛擬化環境、因此不支援 NIC 卸載功能。
+
 * NetApp儲存加密磁碟機
-* 不支援使用支援的資料交換埠屬性修改不支援的連接埠屬性、包括速度、雙工和流程控制。ONTAP ONTAP
+* ONTAP 連接埠內容
++
+不支援修改 ONTAP 連接埠的內容、包括速度、雙工和流量控制。
+
 * 服務處理器
 * SVM移轉
 * 符合法規SnapLock
@@ -104,5 +123,4 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 
 .相關資訊
-* link:reference_lic_ontap_features.html["預設啟用的支援功能ONTAP"]
-
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["預設啟用的支援功能ONTAP"]

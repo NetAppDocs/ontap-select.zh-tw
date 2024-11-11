@@ -4,7 +4,7 @@ permalink: reference_plan_ots_robo.html
 keywords: plan, planning, remote and branch office, robo 
 summary: 您可以在ONTAP Select 遠端辦公室/分公司（ROBO）環境中部署功能。在規劃ROBO部署時、您必須選擇支援目標的組態。 
 ---
-= 遠端與分公司部署
+= ONTAP Select 遠端和分公司部署
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_nw_single_multi_node.html
 keywords: ontap select, single node network configuration, multinode network configuration 
 summary: 支援單一節點和多節點網路組態。ONTAP Select 
 ---
-= 單節點和多節點網路組態
+= ONTAP Select 單節點和多節點網路組態
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_adm_support.html
 keywords: administer, administering, web, diagnostics, support 
 summary: 您可以執行多項相關的診斷與支援工作、作為執行ONTAP Select 功能的一部分。 
 ---
-= 診斷與支援
+= ONTAP Select 診斷與支援
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

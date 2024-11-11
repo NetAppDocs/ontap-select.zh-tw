@@ -4,7 +4,7 @@ permalink: concept_terminology.html
 keywords: terminology, key concepts, concepts 
 summary: 當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語和關鍵概念是很有幫助的。 
 ---
-= 術語和主要概念
+= ONTAP Select 術語和關鍵概念
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -95,6 +95,9 @@ vNAS預設組態可啟用寫入最佳化功能、稱為單一執行個體資料�
 --
 叢集更新:: 建立叢集之後、您可以使用ONTAP VMware或Hypervisor管理工具、在Deploy公用程式之外變更叢集或虛擬機器組態。您也可以移轉導致組態變更的虛擬機器。發生這些變更時、部署公用程式不會自動更新、而且可能會與叢集狀態不同步。您可以使用叢集重新整理功能來更新部署組態資料庫。叢集更新可透過部署Web使用者介面、CLI管理Shell及REST API取得。
 軟體RAID:: 使用直接附加儲存設備（DAS）時、RAID功能通常是透過本機硬體RAID控制器提供。您可以改為將節點設定為使用_softwareRAID_、ONTAP Select 以便讓該節點提供RAID功能。如果您使用軟體RAID、則不再需要硬體RAID控制器。
+
+
+[[ontap-select-image-install]]
 安裝鏡像ONTAP Select:: 從ONTAP Select 部署2.8開始、部署管理公用程式只包含ONTAP Select 單一版本的資訊。所含版本是發行時最新的版本。利用此功能、您可以在部署公用程式的執行個體中新增舊版的支援功能、以便在部署支援叢集時使用。ONTAP Select ONTAP Select ONTAP Select請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 圖片以取得更多資訊"]。
 
 

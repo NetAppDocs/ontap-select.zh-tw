@@ -4,7 +4,7 @@ permalink: concept_api_async_proc.html
 keywords: rest api, deploy rest api, rest, asynchronous processing, job object 
 summary: 有些部署API呼叫（尤其是建立或修改資源的呼叫）可能需要比其他呼叫更長的時間才能完成。以非同步方式部署這些長時間執行的要求。ONTAP Select 
 ---
-= 使用工作物件進行非同步處理
+= 使用 ONTAP Select 的工作物件進行非同步處理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

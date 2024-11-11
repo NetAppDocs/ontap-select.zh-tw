@@ -4,7 +4,7 @@ permalink: reference_chk_host_prep.html
 keywords: ontap select, pre-installation checklist, host preparation 
 summary: 準備ONTAP Select 每個部署了一個節點的Hypervisor主機。在準備主機時、請仔細評估部署環境、確保主機設定正確、並準備好支援ONTAP Select 部署一個VMware叢集。 
 ---
-= 主機組態與準備檢查清單
+= ONTAP Select 主機組態與準備檢查清單
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

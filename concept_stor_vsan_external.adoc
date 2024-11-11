@@ -4,7 +4,7 @@ permalink: concept_stor_vsan_external.html
 keywords: ontap select, vsan and external array configurations, vnas architecture 
 summary: 虛擬NAS（vNAS）部署可支援ONTAP Select VSAN上的支援功能、部分HCI產品、NetApp HCI 支援各種外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。 
 ---
-= vSAN與外部陣列組態
+= ONTAP Select VSAN 和外部陣列組態
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_nw_data_mgmt_separation.html
 keywords: ontap select, traffic separation 
 summary: 將資料流量和管理流量隔離到獨立的第2層網路。 
 ---
-= 資料與管理流量分離
+= ONTAP Select 資料與管理流量分離
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

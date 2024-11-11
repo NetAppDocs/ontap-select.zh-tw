@@ -4,7 +4,7 @@ permalink: task_adm_mediators.html
 keywords: administer, administering, web, mediators 
 summary: 每ONTAP Select 個包含兩個節點的叢集都由中介服務監控、這有助於管理節點所共享的HA功能。 
 ---
-= 管理部署協調器服務
+= 管理 ONTAP Select 部署協調服務
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

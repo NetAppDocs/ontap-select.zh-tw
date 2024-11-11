@@ -4,7 +4,7 @@ permalink: concept_stor_capacity_inc.html
 keywords: ontap select, deploy, increase storage 
 summary: 使用「部署」可為叢集中的每個節點新增及授權額外的儲存空間。ONTAP ONTAP Select 
 ---
-= 增加儲存容量
+= 增加 ONTAP Select 儲存容量
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

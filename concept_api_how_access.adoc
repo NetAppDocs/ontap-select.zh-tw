@@ -4,7 +4,7 @@ permalink: concept_api_how_access.html
 keywords: rest api, deploy rest api, rest, access, accessing, how to access 
 summary: 由於REST Web服務固有的靈活度、ONTAP Select 因此可以透過多種不同的方式存取《支援》API。 
 ---
-= 如何存取部署API
+= 如何存取 ONTAP Select 部署 API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

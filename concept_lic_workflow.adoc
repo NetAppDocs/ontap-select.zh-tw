@@ -4,7 +4,7 @@ permalink: concept_lic_workflow.html
 keywords: license, licensing, purchase, purchasing, workflow 
 summary: 您可以依照工作流程來購買及套用授權以進行ONTAP Select 您的NetApp部署。 
 ---
-= 購買授權時的工作流程
+= 購買 ONTAP Select 授權時的工作流程
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,3 +24,6 @@ summary: 您可以依照工作流程來購買及套用授權以進行ONTAP Selec
 
 
 image:purchased_license_workflow.png["說明用於購買及安裝正式作業ONTAP Select 的儲存授權部署程序。"]
+
+.相關資訊
+link:task_adm_licenses.html["不需要授權ONTAP Select"]

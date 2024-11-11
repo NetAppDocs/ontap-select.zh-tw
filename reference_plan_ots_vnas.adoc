@@ -4,7 +4,7 @@ permalink: reference_plan_ots_vnas.html
 keywords: plan, planning, vnas, vmware esxi, 
 summary: 您應該考慮幾個與使用 VMware ESXi 相關的規劃問題。 
 ---
-= VMware ESXi 需求
+= ONTAP Select VMware ESXi 需求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

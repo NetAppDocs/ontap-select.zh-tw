@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。 
 ---
-= 本機附加儲存設備的硬體RAID服務
+= ONTAP Select 本機附加儲存設備的硬體 RAID 服務
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,6 +24,9 @@ NOTE: 由於實體RAID控制器為基礎磁碟機提供RAID分段功能、因此
 == 本機附加儲存設備的RAID控制器組態
 
 所有提供ONTAP Select 支援儲存功能的本地附加磁碟、都必須位於RAID控制器後方。大部分的市售伺服器都有多種RAID控制器選項、可跨越多個價位、每個價位的功能層級各不相同。其目的是盡可能支援這些選項的數量、前提是這些選項符合控制器上的特定最低要求。
+
+
+NOTE: 您無法從使用硬體 RAID 組態的 ONTAP Select VM 中分離虛擬磁碟。只有使用軟體 RAID 組態的 ONTAP Select VM 才支援分離磁碟。如需詳細資訊、請參閱 link:task_adm_replace_drives_swraid.html["在 ONTAP Select 軟體 RAID 組態中更換故障磁碟機"] 。
 
 管理ONTAP Select 此類磁碟的RAID控制器必須符合下列需求：
 

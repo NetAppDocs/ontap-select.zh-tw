@@ -4,7 +4,7 @@ permalink: concept_api_before_browser.html
 keywords: rest api, deploy rest api, rest, access browser, before you begin 
 summary: 在使用「部署」線上文件頁面之前、您應該瞭解幾項事項。 
 ---
-= 使用瀏覽器存取API之前
+= 使用瀏覽器存取 ONTAP Select 部署 API 之前
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

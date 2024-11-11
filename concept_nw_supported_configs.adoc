@@ -4,7 +4,7 @@ permalink: concept_nw_supported_configs.html
 keywords: ontap select, supported network configurations 
 summary: 選取最佳的硬體、並設定網路以最佳化效能和恢復能力。 
 ---
-= 支援的網路組態
+= 支援的 ONTAP Select 網路組態
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_api_script_cc.html
 keywords: rest api, deploy rest api, rest, python script, create cluster 
 summary: 您可以使用下列指令碼、根據指令碼中定義的參數和Json輸入檔來建立叢集。 
 ---
-= 建立叢集的指令碼
+= 建立 ONTAP Select 叢集的指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

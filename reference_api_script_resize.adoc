@@ -4,7 +4,7 @@ permalink: reference_api_script_resize.html
 keywords: rest api, deploy rest api, rest, python script, resize nodes 
 summary: 您可以使用下列指令碼來調整ONTAP Select 叢集中節點的大小。 
 ---
-= 調整叢集節點大小的指令碼
+= 調整 ONTAP Select 叢集節點大小的指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_plan_ots_storage.html
 keywords: plan, planning, storage, software raid, hardware raid, raid, nvme 
 summary: 有幾個規劃問題與ONTAP Select 不支援的主機儲存有關、您應該考慮這些問題。 
 ---
-= 儲存與RAID考量
+= ONTAP Select 儲存設備與 RAID 考量
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

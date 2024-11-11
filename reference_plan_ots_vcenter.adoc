@@ -4,7 +4,7 @@ permalink: reference_plan_ots_vcenter.html
 keywords: plan, planning, vmware vcenter, vcenter server, vcenter 
 summary: 您應該考慮幾項與VMware vCenter相關的規劃需求。 
 ---
-= ESXi 上的 VMware vCenter Server
+= ESXi 上的 ONTAP Select VMware vCenter 伺服器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

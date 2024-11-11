@@ -4,7 +4,7 @@ permalink: concept_nw_concepts_chars.html
 keywords: ontap select, networking concepts, cluster characteristics 
 summary: 首先熟悉ONTAP Select 適用於整個過程的一般網路概念。然後探索單一節點和多節點叢集的特定特性和選項。 
 ---
-= 網路：一般概念與特性
+= ONTAP Select 網路概念與特性
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

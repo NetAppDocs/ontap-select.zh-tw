@@ -4,7 +4,7 @@ permalink: reference_chk_deploy_req_info.html
 keywords: ontap select, deploy, pre-installation, vmware 
 summary: 在VMware環境中安裝部署管理公用程式之前、請先檢閱基本需求、並為成功部署做好準備。 
 ---
-= 部署公用程式安裝所需的資訊
+= ONTAP Select 部署公用程式安裝的必要資訊
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

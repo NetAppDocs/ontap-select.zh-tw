@@ -4,7 +4,7 @@ permalink: concept_stor_swraid_local.html
 keywords: ontap select, software raid, local attached storage, protection 
 summary: 軟體RAID是一套RAID抽象層、實作於ONTAP 整套的功能。它提供的功能與傳統ONTAP 的支援平台（例如FAS 、）內的RAID層相同。RAID層會執行磁碟機同位元檢查計算、並在ONTAP Select 一個節點內針對個別磁碟機故障提供保護。 
 ---
-= 本機附加儲存設備的軟體RAID服務
+= 適用於本機附加儲存設備的 ONTAP Select 軟體 RAID 組態服務
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

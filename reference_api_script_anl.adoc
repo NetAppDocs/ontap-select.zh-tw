@@ -4,7 +4,7 @@ permalink: reference_api_script_anl.html
 keywords: rest api, deploy rest api, rest, python script, add node license 
 summary: 您可以使用下列指令碼來新增ONTAP Select 適用於某個節點的授權。 
 ---
-= 新增節點授權的指令碼
+= 新增 ONTAP Select 節點授權的指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

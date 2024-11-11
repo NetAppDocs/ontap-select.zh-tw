@@ -4,7 +4,7 @@ permalink: reference_api_script_dc.html
 keywords: rest api, deploy rest api, rest, python script, delete cluster 
 summary: 您可以使用下列CLI指令碼來刪除現有的叢集。 
 ---
-= 刪除叢集的指令碼
+= 用於刪除 ONTAP Select 叢集的指令碼
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

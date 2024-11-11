@@ -4,7 +4,7 @@ permalink: concept_usecase_private_cloud.html
 keywords: ontap select, private cloud 
 summary: 支援組織內一個或多個私有雲端的理想選擇。ONTAP Select常見的使用案例是為建置於市售伺服器上的私有雲端提供儲存服務。 
 ---
-= 私有雲端與資料中心
+= ONTAP Select 支援私有雲和資料中心
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

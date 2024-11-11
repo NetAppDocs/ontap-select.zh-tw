@@ -4,7 +4,7 @@ permalink: concept_lic_cp_restrictions.html
 keywords: license, licensing, capacity pools, restrictions 
 summary: 使用容量資源池授權模式時適用的限制如下所示。 
 ---
-= 容量集區授權的部署限制
+= ONTAP Select 容量資源池授權的部署限制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

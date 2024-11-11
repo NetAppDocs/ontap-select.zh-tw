@@ -4,7 +4,7 @@ permalink: reference_faq.html
 keywords: faq, frequently asked questions 
 summary: 尋找ONTAP Select 有關資訊的常見問題解答。 
 ---
-= 常見問題集
+= 關於 ONTAP Select 的常見問題集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

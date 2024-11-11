@@ -4,7 +4,7 @@ permalink: concept_nw_internal_external.html
 keywords: ontap select, internal network, external network 
 summary: 內部ONTAP Select 和外部的不二網路特性。 
 ---
-= 內部和外部網路ONTAP Select
+= ONTAP Select 內部和外部網路
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
