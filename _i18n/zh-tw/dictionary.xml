@@ -3554,10 +3554,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從六個節點增加至八個節點、並將叢集大小從八個節點減少至六個節點。不支援其他叢集擴充或收縮情況。</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">此程序是使用 CLI 、 API 或 Web 介面從 ONTAP Select 部署啟動。</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">叢集擴充和收縮功能受到下列限制：</block>
-  <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
-  <block id="43629b681eab8f23e6624067ec8d1fde" category="list-text">ESXi 8.0U1</block>
-  <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
-  <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">展開叢集</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">您可以使用叢集擴充功能、將現有叢集的大小從六節點增加到八節點叢集。</block>
@@ -3598,7 +3594,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
   <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">Red Hat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 9.2 和 9.4</block>
   <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">落基 Linux 8.6 、 8.7 、 8.8 、 8.9 、 9.0 、 9.1 、 9.2 、 9.3 和 9.4</block>
-  <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 支援 VMware ESXi 8.0.2 。</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">儲存原始的部署虛擬機器映像。</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">當您將部署組態資料從原始虛擬機器還原至新虛擬機器時、本程序稍後將需要原始部署虛擬機器映像。</block>
@@ -3725,7 +3720,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">ESXi 上的 ONTAP Select VMware vCenter 伺服器</block>
   <block id="634920e565b06acb85fcaff73d20a15d" category="doc">ONTAP Select VMware ESXi 需求</block>
   <block id="0edc199faf78056856f9f042ee780e07" category="inline-link">ONTAP Select 9.16.1 版本資訊</block>
-  <block id="a1fe17f34ab508f2ef781ee6a7c0421b" category="paragraph">您可以存取<block ref="dcda9204a0d7995e0d0246096082b5ee" category="inline-link-rx"></block>以檢視目前版本的詳細資料。</block>
   <block id="023deab3a8c9b82a9bfd452c0b68af9b" category="doc">確認 ONTAP Select 節點之間的連線能力</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">管理 ONTAP Select 部署協調服務</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">更換故障的 ONTAP Select 軟體 RAID 磁碟機</block>
@@ -3753,4 +3747,11 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">存取 VM 視訊主控台</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">更換故障的軟體 RAID 磁碟機</block>
   <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">將 ESXi 升級至 6.5 以上版本</block>
+  <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1 支援 VMware ESXi 8.0 U2 。</block>
+  <block id="b7d2c3ffb4e7ab988d8422ff889440b1" category="paragraph">您可以存取<block ref="cf1ab4e8632efa681982f5c2d85eebd4" category="inline-link-macro-rx"></block>以檢視目前版本的詳細資料。</block>
+  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3.</block>
+  <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2.</block>
+  <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1.</block>
+  <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
+  <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3.</block>
 </blocks>

@@ -68,7 +68,7 @@ ONTAP Select 9.14.1 包含多項新功能與改良功能。
 支援 KVM Hypervisor:: 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 不再支援部署 VMware vCenter 外掛程式:: 從 ONTAP Select 9.14.1 開始、不再支援部署 VMware vCenter 外掛程式。
 更新的 ONTAP Select 部署支援:: 如果您執行的 ONTAP Select 版本低於 9.14.1P2 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["ONTAP Select 9.14.1 版本資訊"^]。
-增強VMware ESXi支援:: ONTAP Select 9.14.1 支援 VMware ESXi 8.0.2 。
+增強VMware ESXi支援:: ONTAP Select 9.14.1 支援 VMware ESXi 8.0 U2 。
 
 
 

@@ -26,10 +26,11 @@ summary: 從 ONTAP Select 9.15.1 開始、您可以將現有叢集的大小從�
 
 * 支援僅限於在 ESX Hypervisor 主機上建立的叢集。下列 ESX 版本與 ONTAP Select 9.15.1 及更新版本相容：
 +
-** ESXi 8.0U2
-** ESXi 8.0U1
+** ESXi 8.0 U3.
+** ESXi 8.0 U2.
+** ESXi 8.0 U1.
 ** ESXi 8.0GA
-** ESXi 7.0U3
+** ESXi 7.0 U3.
 ** ESXi 7.0
 
 
