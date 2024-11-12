@@ -6,7 +6,7 @@ indexpage:
   - title: 開始使用
     links:
     - title: 版本資訊
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3330673
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP3332465
     - title: 新增功能
       url: "/reference_new_ots.html"
     - title: 瞭解 ONTAP Select
