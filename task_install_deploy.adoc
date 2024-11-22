@@ -218,4 +218,6 @@ https://<ip_address>/`
 
 
 .相關資訊
-link:task_cli_signing_in.html["登入以使用 SSH 部署"]
+* link:task_cli_signing_in.html["登入以使用 SSH 部署"]
+* link:task_quick_start_for_ovf_template_deployments.html["適用於 OVF 範本部署的 ONTAP Select 快速入門"]
+

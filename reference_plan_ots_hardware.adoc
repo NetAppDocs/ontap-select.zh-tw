@@ -81,6 +81,9 @@ NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更�
 * 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
 
 
+
+NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
+
 .乙太網路組態
 根據叢集大小、有多種支援的乙太網路組態。
 

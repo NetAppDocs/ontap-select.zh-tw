@@ -167,13 +167,6 @@ summary: 使用ONTAP Select Python程式碼範例建立或刪除一個故障叢�
 
 == KVM上的單節點叢集
 
-[NOTE]
-====
-* 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-* 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
-
-====
 [source, json]
 ----
 {

@@ -182,7 +182,6 @@
   <block id="667aa4140034cc454b837db2fc24ce3d" category="inline-link">NetApp互通性對照表工具、window=_blank</block>
   <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">請參閱<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬體需求</block>
-  <block id="6e789a662664596fd2f867b83af8955a" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon處理器、window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">適用於伺服器的Intel Xeon處理器（請參閱 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 以取得更多資訊）</block>
   <block id="7538c6fd2c1f96ec16f31ff621c5090f" category="list-text">2個10GbE</block>
@@ -3167,7 +3166,6 @@
   <block id="250f6d868aabeaced76663cb583769da" category="sidebar">管理叢集</block>
   <block id="6a66d4f800a8576eee650d6dd676dd9d" category="sidebar">使用 REST API</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
-  <block id="2cf665df8bcce3d8608ac2923c3934b2" category="sidebar">ONTAP Select 資源頁面</block>
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">ONTAP Select 部落格</block>
   <block id="bafb5d4f7ed06fcf88f3e77fadecc81b" category="sidebar">ONTAP Select 社群</block>
   <block id="dd3d71b5f68ad8da8831a0b5ea514e35" category="sidebar">互通性對照表</block>
@@ -3754,4 +3752,41 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1.</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3.</block>
+  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">適用於 OVF 範本部署的 ONTAP Select 快速入門</block>
+  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
+  <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
+  <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。</block>
+  <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">您可以使用 VMware ESXi 上的 OVF 範本，快速部署單節點 ONTAP Select 叢集的 90 天評估執行個體。</block>
+  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">您可以使用開放式虛擬化格式（ OVF ）範本部署的快速入門，使用 VMware ESXi 上的 OVF 範本，快速部署單節點 ONTAP Select 叢集的 90 天評估執行個體。</block>
+  <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您不需要從 NetApp 取得序號或儲存容量授權。</block>
+  <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以為使用者資料分配與購買的授權相同數量的儲存空間。</block>
+  <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您無法將節點從評估版授權升級至購買的授權。</block>
+  <block id="de68e769353f85803d50af3ad5192201" category="list-text">您只能使用 vCenter 帳戶來部署 OVF 範本。目前不支援直接安裝到 ESXi 主機。</block>
+  <block id="3becac3f3a46d46f0df7e4df7b69a359" category="list-text">您必須使用 vSphere 獨立式用戶端或 vSphere Web 用戶端（ ESXi 6.5 及更新版本的唯一選項）來安裝 OVF 範本（包含在 ova 檔案中）。您不使用 ONTAP Select Deploy 管理公用程式。</block>
+  <block id="324b9a453c1c067658adca4be37dbae0" category="section-title">準備 ONTAP Select 叢集主機</block>
+  <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">使用下列需求來準備部署 ONTAP Select 叢集的 ESXi 主機。平台說明是根據標準或小型執行個體類型組態，使用本機直接附加儲存（ DAS ）格式化，使用的是 VMFS-3 或 VMFS-3 檔案系統。</block>
+  <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">準備 ESXi 主機的需求</block>
+  <block id="40500d60ce10678b5afdd4398f493978" category="paragraph"><block ref="40500d60ce10678b5afdd4398f493978" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9d35c0cb060ab36e25ffd3d93795556" category="inline-link-macro">ONTAP Select 安裝文件</block>
+  <block id="295c8d07537fb1be04c147371b26ece5" category="paragraph">有關主機組態選項的其他資訊，請參閱<block ref="cd27c348e940a3727b6807628855d8fd" category="inline-link-macro-rx"></block>。</block>
+  <block id="246320dc101bf0e3be5986b0320159e6" category="section-title">使用 OVF 範本部署單節點 ONTAP Select 叢集</block>
+  <block id="a50cac13360eacf7961596b190047155" category="paragraph">在支援的 64 位元 ESXi 主機伺服器上完成下列步驟。</block>
+  <block id="e7c78d04f4c3c4a7d36c59b9d2c2b9f7" category="list-text">前往「 NetApp 評估產品方案」頁面，然後選取 * ONTAP Select * ，將 ONTAP Select OVF 範本下載至您的本機工作站。</block>
+  <block id="04b1e5dd71a31edd4beba2e075fb1a5e" category="list-text">使用管理 Privileges 的帳戶登入 VMware vSphere Web 用戶端。</block>
+  <block id="b8d4fc60e9ceb80bf2fc078ddfdc693c" category="list-text">使用下列其中一個選項選取主機：</block>
+  <block id="a636f64e8e0f0ff7c201bcbe4197a1a8" category="list-text">選取*檔案*&gt;*部署OVF範本*。</block>
+  <block id="96a3af93a31aa2d6987b7e0083ab462b" category="list-text">選擇 * 資料中心 * 。然後按一下滑鼠右鍵並選取 * 部署 OVF 範本 * 。</block>
+  <block id="e0ccc728234a1a6f0227f25e6efde9d4" category="list-text">在本地工作站上選擇 ONTAP Select 來源 OVA 檔案，然後選擇 * 下一步 * 。</block>
+  <block id="ea9ba5785c2b1398a34baf7fc0a68c67" category="list-text">檢閱 OVF 範本詳細資料，然後選取 * 下一步 * 。</block>
+  <block id="9caf4332c798060a1cebc6b53f315bb7" category="list-text">檢閱 EULA 詳細資料，然後選取 * 接受 * 。然後選擇 * 下一步 * 。</block>
+  <block id="be18e91c73f7a7d7a9ae5462079f0ac7" category="list-text">輸入新虛擬機器的名稱，然後選取 * 下一步 * 。</block>
+  <block id="87d6a5bfde901ee6044d4f9ec142b4d6" category="list-text">如果有多個資料存放區可用，請選取資料存放區，然後選取 * 下一步 * 。</block>
+  <block id="44260bcf8bb9526a48d3725d7dccac06" category="list-text">選擇 * 粗備置閒置零 * ，然後選擇 * 下一步 * 。</block>
+  <block id="d4de99256df06c0619573e5d37a5352d" category="list-text">選取資料與管理網路，然後選取 * 下一步 * 。</block>
+  <block id="34fcbce1c7afc6b294a2a56ad5419543" category="list-text">在「 * 內容 * 」頁面上，提供所有必要的值，然後選取 * 下一步 * 。</block>
+  <block id="dfe2716b8d1ea246f6e1aa9804752d1e" category="list-text">檢閱部署詳細資料，然後選取 * 部署後開機 * 。</block>
+  <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">選擇 * 完成 * 開始部署程序。</block>
+  <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署 ONTAP Select 叢集之後，您可以使用系統管理員或 CLI 介面來設定叢集。您必須使用標準的 ONTAP * 磁碟指派 * 作業來指派磁碟。</block>
+  <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
+  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">OVF 範本部署快速入門</block>
 </blocks>

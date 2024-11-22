@@ -22,14 +22,6 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 * 叢集內使用多個節點或主機
 * 叢集部署於已購買授權的正式作業環境中
 * 使用KVM Hypervisor而非VMware ESXi
-+
-[NOTE]
-====
-** 從功能更新至功能更新至功能更新、您將無法再在KVM Hypervisor上部署新叢集ONTAP Select 。
-** 從功能支援的版本起、除了「離線」和「刪除」功能之外、所有的管理功能都不再適用於現有的KVM叢集和主機ONTAP Select 。
-
-
-====
 
 
 
@@ -413,3 +405,6 @@ Json輸入（步驟10）:: 您必須提供ONTAP 該管理員帳戶的密碼。
 
 --
 
+
+.相關資訊
+link:task_quick_start_for_ovf_template_deployments.html["適用於 OVF 範本部署的 ONTAP Select 快速入門"]

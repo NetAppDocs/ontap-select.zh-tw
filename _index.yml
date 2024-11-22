@@ -25,10 +25,10 @@ indexpage:
       url: "/concept_adm_before.html"
     - title: 使用 REST API
       url: "/concept_api_how_access.html"
+    - title: OVF 範本部署快速入門
+      url: "/task_quick_start_for_ovf_template_deployments.html"
   - title: 更多資源
     links:
-    - title: ONTAP Select 資源頁面
-      url: https://www.netapp.com/data-management/ontap-select/documentation/
     - title: 產品庫ONTAP Select
       url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293
     - title: 部分9文件ONTAP
