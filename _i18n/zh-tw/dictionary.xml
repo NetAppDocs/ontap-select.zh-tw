@@ -3752,12 +3752,9 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1.</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3.</block>
-  <block id="2541fca0ad59c8199b8bb08b5020de58" category="inline-link-macro">適用於 OVF 範本部署的 ONTAP Select 快速入門</block>
-  <block id="eccbbc66ee95decf0d7c0595d219c92b" category="paragraph"><block ref="eccbbc66ee95decf0d7c0595d219c92b" category="inline-link-macro-rx"></block></block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。</block>
   <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">您可以使用 VMware ESXi 上的 OVF 範本，快速部署單節點 ONTAP Select 叢集的 90 天評估執行個體。</block>
-  <block id="08aeb5678ae03a8db1f16233a4a16070" category="paragraph">您可以使用開放式虛擬化格式（ OVF ）範本部署的快速入門，使用 VMware ESXi 上的 OVF 範本，快速部署單節點 ONTAP Select 叢集的 90 天評估執行個體。</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您不需要從 NetApp 取得序號或儲存容量授權。</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以為使用者資料分配與購買的授權相同數量的儲存空間。</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您無法將節點從評估版授權升級至購買的授權。</block>
@@ -3788,5 +3785,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">選擇 * 完成 * 開始部署程序。</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署 ONTAP Select 叢集之後，您可以使用系統管理員或 CLI 介面來設定叢集。您必須使用標準的 ONTAP * 磁碟指派 * 作業來指派磁碟。</block>
   <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
-  <block id="fa0d249cd337d58b40ea3c7cc54de247" category="sidebar">OVF 範本部署快速入門</block>
+  <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署 ONTAP Select 叢集的 90 天評估執行個體</block>
+  <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
+  <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署叢集的 90 天評估執行個體</block>
 </blocks>

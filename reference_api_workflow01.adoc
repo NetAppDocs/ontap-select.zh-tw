@@ -407,4 +407,4 @@ Json輸入（步驟10）:: 您必須提供ONTAP 該管理員帳戶的密碼。
 
 
 .相關資訊
-link:task_quick_start_for_ovf_template_deployments.html["適用於 OVF 範本部署的 ONTAP Select 快速入門"]
+link:deploy-evaluation-ontap-select-ovf-template.html["部署 ONTAP Select 叢集的 90 天評估執行個體"]

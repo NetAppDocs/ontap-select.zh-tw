@@ -19,7 +19,7 @@ settings:
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
+  langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
   - title: ONTAP Select 9.16.1 文件
@@ -294,8 +294,8 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: 恢復雙節點叢集的部署
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: OVF 範本部署快速入門
-    url: "/task_quick_start_for_ovf_template_deployments.html"
+  - title: 部署叢集的 90 天評估執行個體
+    url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: 常見問題集
     url: "/reference_faq.html"
   - title: 法律聲明

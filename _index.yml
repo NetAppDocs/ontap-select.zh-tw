@@ -25,8 +25,8 @@ indexpage:
       url: "/concept_adm_before.html"
     - title: 使用 REST API
       url: "/concept_api_how_access.html"
-    - title: OVF 範本部署快速入門
-      url: "/task_quick_start_for_ovf_template_deployments.html"
+    - title: 部署叢集的 90 天評估執行個體
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: 更多資源
     links:
     - title: 產品庫ONTAP Select
