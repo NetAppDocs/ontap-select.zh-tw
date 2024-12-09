@@ -1179,7 +1179,6 @@
   <block id="620e81c66c131f0b1e414614fed0e418" category="list-text">建立網路組態</block>
   <block id="cea548261425f3d897f63b97e936d640" category="list-text">配置您的集合體</block>
   <block id="c644c0897d8dc8d07dc010b0a5d1b341" category="paragraph">如果您決定不安裝儲存容量的授權檔案、作為部署ONTAP Select 此叢集的一部分、則必須在使用購買授權執行的叢集寬限期到期之前、取得並安裝授權檔案。</block>
-  <block id="92d7efa0a9c4eca7052897e58341d0b6" category="paragraph">部署管理公用程式會從ONTAP Select 可用的資料存放區空間（例如Pool0和Pool1）、在每個節點上建立資料備援磁碟。若要在多節點叢集上實作資料的高可用度、您必須使用這些備援磁碟來建立鏡射Aggregate。</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">您可以使用命令列介面、就地升級現有的部署公用程式虛擬機器。</block>
   <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">確保在升級期間不會使用部署來執行任何其他工作。如需升級部署公用程式的相關資訊和限制、請參閱最新版本說明。</block>
   <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">若要開始升級程序、您必須從NetApp支援網站下載適當的部署虛擬機器升級檔案。升級套件會格式化為單一壓縮檔案。</block>
@@ -1783,11 +1782,7 @@
   <block id="7df2592d21ee2d7b12cfa029e519d7b9" category="list-text">版本ONTAP Select</block>
   <block id="07c910df832eed07eccb9da18112e34b" category="list-text">主機準備</block>
   <block id="37d0d8277e2cec2cf18d723f103fbca0" category="list-text">您必須準備Hypervisor主機、ONTAP Select 讓其執行效能不中斷的節點、並根據授權模式取得所需的儲存授權檔案。若要檢視準備要求：</block>
-  <block id="c93ac09febb4264dc3b4e28bc4aa22ba" category="list-text">登入部署Web使用者介面。</block>
   <block id="9c3a59d6f34c8cd48494cf65ab055e67" category="inline-image-macro">問號</block>
-  <block id="34d1b92a9bea981532796b3947d5c933" category="list-text">按一下 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 頁面頂端。</block>
-  <block id="557b212863af34dee6642f1dd8feef4c" category="list-text">按一下「*先決條件*」。</block>
-  <block id="a08bb19599dcb78fd73e7aa3b405980f" category="list-text">向下捲動以檢閱需求、然後按一下「*確定*」。</block>
   <block id="d5b05ba2463ff6cca0078e72e50f28e7" category="list-text">授權檔案</block>
   <block id="85341d624e9b0303539956bd22bfd4d4" category="list-text">如果您打算在正式作業環境中部署叢集、則必須根據授權模式取得儲存授權檔案。</block>
   <block id="f0d5638b299d1abdeea7e3509c4a29b5" category="list-text">部署安裝和帳戶認證</block>
@@ -1798,31 +1793,18 @@
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">建立叢集</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">網路預先檢查</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">部署叢集</block>
-  <block id="4a27c1e90fe3acd696c1f0934ce7e3b5" category="admonition">您可以按一下頁面頂端的索引標籤（叢集、Hypervisor主機、管理）、獨立執行相同的步驟。</block>
   <block id="9dae84e581f54bbd3529b1a828393655" category="list-text">網路檢查工具</block>
   <block id="18889d3b7d7412c773430265b3f7a703" category="list-text">如果要部署多節點叢集、您應該熟悉網路檢查程式。</block>
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">部署叢集之後</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">使用系統管理員帳戶（admin）透過Web介面登入部署公用程式。</block>
-  <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">如果ONTAP Select 顯示*歡迎使用S還原*快顯視窗、請確認您已符合組態先決條件、然後按一下*確定*。</block>
-  <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">如果未顯示*快速入門*叢集啟動頁面、請按一下 <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> 在頁面頂端、按一下*快速入門*。</block>
-  <block id="5d0652261e3e13ff5041f1c875d60d9c" category="list-text">在「*入門*」頁面上、按一下「*上傳*」、然後從本機工作站選取授權、再按一下「*開啟*」上傳授權。</block>
-  <block id="3f4187941dcc4a52259a3955f138c314" category="list-text">按一下「*重新整理*」、確認已新增授權。</block>
-  <block id="f11dc7320c4209cdff4f85de946666bf" category="list-text">按一下*「下一步*」以新增Hypervisor主機、然後按一下*「新增*」。</block>
-  <block id="180a2ecafc5641b9bb33d5a6fe6ba41d" category="list-text">單擊* Refresh（刷新）*並確認主機的* Type（類型）*值是* esesx *。</block>
   <block id="4693647f83597e4a631ffdc39034b06d" category="paragraph">您提供的任何帳戶認證資料都會新增至部署認證資料庫。</block>
-  <block id="b46a9a6d9c38c08d97979def3d4a6e23" category="list-text">單擊* Next*（下一步*）開始建立叢集的程序。</block>
-  <block id="a291fbe570213bb24c1d06ffc86d2dc0" category="list-text">在「*叢集詳細資料*」區段中、提供描述叢集的所有必要資訊、然後按一下「*完成*」。</block>
   <block id="0f602d7fe375d87b4dfff619bb7a3b50" category="list-text">在「*節點設定*」下、提供節點管理IP位址並選取節點的授權；如有需要、您可以上傳新的授權。您也可以視需要變更節點名稱。</block>
   <block id="a57c05031d6102136a8bfe300ea61093" category="list-text">提供* Hypervisor *和*網路*組態。</block>
   <block id="f1928401d0f38929a4645cc2dbff7269" category="paragraph">有三種節點組態可定義虛擬機器大小和可用的功能集。這些執行個體類型分別受購買授權的標準、優質和優質XL產品支援。您為節點選取的授權必須符合或超過執行個體類型。</block>
   <block id="77bd5556fc873a5f14bb16bd6159b24f" category="paragraph">選取Hypervisor主機、以及管理和資料網路。</block>
-  <block id="3118e59890d54fc6e861b3ed19f01dd1" category="list-text">提供* Storage*組態、然後按一下*完成*。</block>
   <block id="1a61adfd179794f0468e7cc27a3731c5" category="paragraph">您可以根據平台授權層級和主機組態來選取磁碟機。</block>
   <block id="83b2958f895c780b1ce04a69f29fa14f" category="list-text">檢閱並確認叢集的組態。</block>
   <block id="7dce122004969d56ae2e0245cb754d35" category="inline-image-macro">編輯</block>
-  <block id="fc27442e8051c88f8a185d91ced22a20" category="paragraph">按一下即可變更組態 <block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block> 在適用的章節中。</block>
-  <block id="674ac8fe871dc102602a9bf96882a339" category="list-text">單擊* Next*（下一步*）並提供ONTAP 管理員密碼。</block>
-  <block id="6e4ee895001e74a8e30d8d23a8ef73a4" category="list-text">按一下「*建立叢集*」開始建立叢集程序、然後按一下快顯視窗中的「*確定*」。</block>
   <block id="18c27fdda3b31de582a5c418705a0eab" category="paragraph">建立叢集可能需要30分鐘的時間。</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">監控多步驟叢集建立程序、確認叢集已成功建立。</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">頁面會定期自動重新整理。</block>
@@ -2914,24 +2896,16 @@
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
   <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。如需詳細資訊、請參閱知識庫文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。</block>
-  <block id="2d27e76da02804de2afe9d209e5cbb1c" category="admonition">建議您至少保留 20% 的可用空間以容納鏡射的集合體、以獲得最佳的儲存效能和可用度。雖然建議非鏡射的集合體為 10% 、但檔案系統可能會使用額外 10% 的空間來吸收遞增變更。由於 ONTAP 的寫入時複製 Snapshot 架構、遞增變更會增加鏡射集合體的空間使用率。不遵守這些最佳實務做法可能會對效能造成負面影響。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch 組態</block>
   <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">將主機新增至庫存</block>
   <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">您可以使用 ONTAP Select Deploy Web 使用者介面來部署單一節點或多節點 ONTAP Select 叢集。</block>
   <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">請參閱 <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> 以準備部署叢集。部署管理必須先安裝並設定（密碼、 AutoSupport 和 vCenter ）。</block>
   <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">系統會為正式作業部署建立具有一或多個節點的 ONTAP Select 叢集。</block>
-  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">您所遵循的步驟取決於您要建立單節點叢集或多節點叢集。</block>
   <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">多節點叢集</block>
-  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請確認您已符合組態先決條件、然後按一下 * 確定 * 。</block>
-  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">在「*入門*」頁面上、按一下「*上傳*」、然後從本機工作站選取授權、再按一下「*開啟*」上傳授權。重複以新增第二個授權。</block>
-  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">按一下 * 重新整理 * 、確認已新增授權。</block>
-  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">按一下 * 下一步 * 以新增兩個 Hypervisor 主機、然後按一下 * 新增 * 。</block>
-  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">在 * 叢集詳細資料 * 區段中、為 * 叢集大小 * 選取 * 2 節點叢集 * 、提供描述叢集的所有必要資訊、然後按一下 * 完成 * 。</block>
   <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">在 * 節點設定 * 下、提供節點管理 IP 位址、並選取每個節點的授權；您可以視需要上傳新授權。您也可以視需要變更節點名稱。</block>
   <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">有三種節點組態可定義虛擬機器大小和可用的功能集。這些執行個體類型分別受購買授權的標準、優質和優質XL產品支援。您為節點選取的授權必須符合或超過執行個體類型。</block>
   <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">選取 Hypervisor 主機、以及管理、資料和內部網路。</block>
-  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">按一下 * 下一步 * 並按一下 * 執行 * 來執行網路預先檢查。這會驗證為 ONTAP 叢集流量選取的內部網路運作正常。</block>
   <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">建立叢集可能需要 45 分鐘的時間。</block>
   <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">監控多步驟叢集建立程序、以確認叢集已成功建立。</block>
   <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。</block>
@@ -3788,4 +3762,32 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署 ONTAP Select 叢集的 90 天評估執行個體</block>
   <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
   <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署叢集的 90 天評估執行個體</block>
+  <block id="ad152885aafb9bc53df5849eb7ca2f93" category="paragraph">部署管理公用程式會從可用的資料存放區空間（例如 Pool0 和 Pool1 ），在每個 ONTAP Select 節點上建立資料備援磁碟。若要在多節點叢集上實作資料的高可用度、您必須使用這些備援磁碟來建立鏡射Aggregate。</block>
+  <block id="8e5126a524085c2d504ecc6a9ee619cb" category="admonition">只有將資料集合體設定為鏡射集合體時，才支援高可用度接管。</block>
+  <block id="5da001c2cdc95a4311e28cf37673f6ba" category="admonition">NetApp 建議您至少保留 20% 的可用空間以容納鏡射的集合體，以獲得最佳的儲存效能和可用度。雖然非鏡射的集合體建議為 10% ，但檔案系統可以使用額外 10% 的空間來吸收遞增變更。由於 ONTAP 的寫入時複製 Snapshot 架構、遞增變更會增加鏡射集合體的空間使用率。不遵守這些最佳實務做法可能會對效能造成負面影響。只有將資料集合體設定為鏡射集合體時，才支援高可用度接管。</block>
+  <block id="40164cee4e237bb78398a5485589b913" category="list-text">登入部署 Web UI 。</block>
+  <block id="a46f1a6ef7f27e34e2b1ade44c188257" category="list-text">選取<block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block>頁面頂端的。</block>
+  <block id="fe8dec8b217b332b88e66ecdf5472b01" category="list-text">選擇 * 先決條件 * 。</block>
+  <block id="3929bbc1e55fa3a638006eb8e6566b4d" category="list-text">向下捲動以檢閱要求，然後選取 * 確定 * 。</block>
+  <block id="1339b9f22cb64ff9975ba4df2d3c543b" category="admonition">您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管理），獨立執行相同的步驟。</block>
+  <block id="f79319ec1d7b82161a58de3096cafdd0" category="paragraph">您所遵循的步驟取決於您要建立單節點叢集或多節點叢集。多節點叢集可以有兩個，四個，六個或八個節點。</block>
+  <block id="555e1ae22bd894e4a9fe23fc5bb1ca5e" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗，請確認您已符合組態先決條件，然後選取 * 確定 * 。</block>
+  <block id="1ade53760ce0b2b9ced3db48b79b4e51" category="list-text">如果未顯示 * 入門 * 叢集啟動頁面，請選取頁面頂端的，<block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block>然後選取 * 入門 * 。</block>
+  <block id="820d1873bef6998cbee232163b828a57" category="list-text">在 * 快速入門 * 頁面上，選取 * 上傳 * ，然後從您的本機工作站選取授權，然後選取 * 開啟 * 來上傳授權。</block>
+  <block id="68488b2b0b0bac78cf8e946ef52da267" category="list-text">選取 * 重新整理 * 並確認已新增授權。</block>
+  <block id="3d549ad86001c792e0804733ec4c2957" category="list-text">選取 * 下一步 * 以新增 Hypervisor 主機，然後選取 * 新增 * 。</block>
+  <block id="d44b6331867f2132b1d71fa39b6807b4" category="list-text">選擇 *Refresh* 並確認主機的 *Type* 值爲 *ESX* 。</block>
+  <block id="c62cb76848266877f290be96b3ff294e" category="list-text">選擇 * 下一步 * 開始叢集建立程序。</block>
+  <block id="6c7b66882eb92b081bda7b0b837ecadc" category="list-text">在 * 叢集詳細資料 * 區段中，提供描述叢集的所有必要資訊，然後選取 * 完成 * 。</block>
+  <block id="e1c524d61c650626841b4dcb765c3916" category="list-text">提供 * 儲存 * 組態並選取 * 完成 * 。</block>
+  <block id="aaa33d34d1d725c0a59b5dc1da1a9741" category="paragraph">您可以在適用的區段中選取來變更組態<block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="83cce49c4543a6bd5a93689ecad56e5e" category="list-text">選擇 * 下一步 * 並提供 ONTAP 管理員密碼。</block>
+  <block id="d66205342799ff313cc08b6f66303456" category="list-text">選取 * 建立叢集 * 以開始叢集建立程序，然後在快顯視窗中選取 * 確定 * 。</block>
+  <block id="9108f18e4fb1ca838b140d2c60144a07" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗，請確認您已符合組態先決條件，然後選取 * 確定 * 。</block>
+  <block id="875185b48917f696df4ff8fa2783728c" category="list-text">在 * 快速入門 * 頁面上，選取 * 上傳 * ，然後從您的本機工作站選取授權，然後選取 * 開啟 * 來上傳授權。重複以新增其他授權。</block>
+  <block id="7b22f8bd9968f64a1c7b9264a85c020c" category="list-text">選取 * 重新整理 * 並確認已新增授權。</block>
+  <block id="7c5fd8d9b8b6482272535e13665a25a8" category="list-text">選取 * 下一步 * 以新增所有 Hypervisor 主機，然後選取 * 新增 * 。</block>
+  <block id="944a1b1080e2860bd56c15282a8e476e" category="list-text">在 * 叢集詳細資料 * 區段中，選取所需的 * 叢集大小 * ，提供描述叢集的所有必要資訊，然後選取 * 完成 * 。</block>
+  <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">選擇 * 下一步 * ，然後選取 * 執行 * 來執行網路預先檢查。這會驗證為 ONTAP 叢集流量選取的內部網路運作正常。</block>
+  <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">選取 * 建立叢集 * 以開始叢集建立程序，然後在快顯視窗中選取 * 確定 * 。</block>
 </blocks>
