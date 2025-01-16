@@ -262,8 +262,6 @@ sidebar:
         url: "/reference_api_script_common.html"
       - title: 調整叢集節點大小
         url: "/reference_api_script_resize.html"
-  - title: 使用Ansible進行自動化
-    url: "/concept_automate_ansible.html"
   - title: 使用CLI
     entries:
     - title: 使用SSH登入

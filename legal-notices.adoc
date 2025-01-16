@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: legal-notices.html 
-keywords:  
-summary:  
+keywords: copyrights, notices, trademarks, patents, privacy 
+summary: 法律聲明提供版權聲明、商標、專利等存取權限。 
 ---
 = 法律聲明
 :hardbreaks:
@@ -48,7 +48,6 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 == 開放原始碼
 
-通知檔案提供有關 NetApp 軟體中使用的協力廠商版權和授權的資訊。
+通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3330674["ONTAP Select 9.16.1 注意事項"^]
-
+https://library.netapp.com/ecm/ecm_download_file/ECMLP3330674["ONTAP Select 9.16.1 注意事項"^]

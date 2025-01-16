@@ -474,12 +474,8 @@
   <block id="e6d9b928e48b5e5a2538b2bcdc515c95" category="paragraph">指派了兩種類型的客戶指定生命期：</block>
   <block id="7e8ceade9e54e9a912c6f9a52ea87658" category="list-text">叢集管理（每個叢集一個）</block>
   <block id="5e3a8851b34912653fbf0e9bbf3fc9d0" category="list-text">節點管理（每個節點一個）</block>
-  <block id="3013e63917da83ac89d317625e960fa3" category="paragraph">兩個管理SVM處於作用中狀態：</block>
-  <block id="38cd25d85c8a7e96abb2aaf9d4009eb2" category="list-text">預設SVM</block>
-  <block id="c6117cdbee2307d85ed57db8a195f4f8" category="list-text">叢集SVM</block>
   <block id="ebeedb9721ef0e0966825fecfef52bb5" category="paragraph">即會建立根Aggregate。</block>
   <block id="d5daa4c0e0a3988a633eb5273b984697" category="paragraph">所有功能均已獲得授權且可供使用。既是支援功能、也是支援功能的功能。SnapLock FabricPool</block>
-  <block id="076515078e25047da0c60bc6f27e2c68" category="admonition">沒有建立資料SVM。此外、多節點叢集還有一個內部網路、其中包含自動產生的LIF。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相關資訊</block>
   <block id="7e4d14e940ca34d72bbdbc88f17285ad" category="inline-link-macro">預設啟用的支援功能ONTAP</block>
   <block id="48bd47a31dab80aa978f949db8e14bb2" category="list-text"><block ref="48bd47a31dab80aa978f949db8e14bb2" category="inline-link-macro-rx"></block></block>
@@ -1076,40 +1072,7 @@
   <block id="f9af681ffe76058731402326b2c3b21c" category="cell">次要網域名稱伺服器。</block>
   <block id="8eece195bddb7ef51bf3e3aaa23e7345" category="cell">搜尋網域</block>
   <block id="b07c79f371126a8737e35942d21d74c3" category="cell">要使用的搜尋網域清單。</block>
-  <block id="c32e557727d87dabd26419e2d74fd541" category="summary">使用Ansible角色來自動化ONTAP Select 執行各項部署。</block>
-  <block id="6a7bceb6d2b5ceedce475be4f9b01f70" category="doc">利用ONTAP Select Ansible將執行的功能自動化</block>
-  <block id="ef4813ca7c0fc0ff31c081f95744fca3" category="paragraph">使用Ansible角色和方針來自動化ONTAP Select 執行各項功能部署。</block>
-  <block id="53e3f47e6ca445e9be6f8424cc405d08" category="paragraph">Ansible角色是標準化檔案結構中的工作、範本、處理常式和變數邏輯集合。使用這些角色來推動、重複使用和模組化功能、以便獨立使用。將角色及您要執行的主機清單納入執行方針。安裝Ansible之後、請更新必要的模組、並瞭解教戰手冊、您可以從ONTAP Select NetApp GitHub下載各種職務、以建立並執行自己的教戰手冊來部署ONTAP Select 各種不同的叢集。</block>
-  <block id="a5cd3ed116608dac017f14c046ea56bf" category="section-title">角色</block>
-  <block id="826d466edf75a6e091340a11b737b650" category="paragraph">有兩種角色ONTAP Select 可供選擇：</block>
-  <block id="efd9faa12026d5475636db4e69b74c88" category="section-title">na_no_deploy</block>
-  <block id="43240aa487d9e87740e23d626da1a362" category="paragraph">此角色會將ONTAP Select 安裝檔案下載至vCenter或ESXi主機、以供進行VMware vCenter或ESXi部署。然後建立並執行部署VM。</block>
-  <block id="295abdb722ec58f88548a860f1de3615" category="paragraph">此角色使用下列輸入值：</block>
-  <block id="ce32e2e59fbccdfecf9783e364821344" category="list-text">vCenter或ESXi主機認證資料</block>
-  <block id="bcac6351d7ffa20621625e884ac48eef" category="list-text">部署虛擬機器建立、包括下列資訊：</block>
-  <block id="75ba8d70e3692ba200f0e0df37b4d2ae" category="list-text">IP 位址</block>
-  <block id="99dea78007133396a7b8ed70578ac6ae" category="list-text">登入</block>
   <block id="dc647eb65e6711e155375218212b3964" category="list-text">密碼</block>
-  <block id="53c3b66ec700ff4dc91986d0dd8b16ac" category="list-text">OVA檔案的本機路徑</block>
-  <block id="a494e509586e66c9858cd2b0032bbb59" category="paragraph">在執行包括角色在內的方針之前、請先確定安裝檔案可用。</block>
-  <block id="67b626a26e85af31687eb59b04a92d36" category="admonition">提供這些輸入值最簡單的方法是透過YML格式的全域變數檔案。將此YML檔案傳入教戰手冊。</block>
-  <block id="62f436a0c8a1102605e3a87bed8fb9bb" category="paragraph">此角色只需執行一項工作、即可將部署OVA檔案匯入主機、建立VM並執行。您可以從NetApp Ansible GitHub存取及下載此角色： <block ref="76046f5222ce385c10b6d73a03e82ba7" category="inline-link-macro-rx"></block></block>
-  <block id="844c277ee2d3a4ab83ef1f113352e100" category="section-title">na_no_nOs_cluster</block>
-  <block id="7fd297e1f0beaa7151bd9285d7dff546" category="paragraph">此角色使用ONTAP Select RESUDeploy API來建立及部署ONTAP Select 叢集。它假設已建立部署VM、且已手動啟動並執行、或是使用* na_ros_deploy *角色。此外、此角色也假設Select主機已適當設定ONTAP Select 為使用叢集所需的網路和儲存設備。</block>
-  <block id="f0257515d53312c2d8028409069c5d84" category="paragraph">此角色會使用vCenter或ESXi認證的輸入值、並部署VM認證、以存取API及建立ONTAP Select 叢集和節點VM所需的所有相關資訊。</block>
-  <block id="ea6e2b68eae559d20093f0d7eae85fb8" category="paragraph">此角色執行下列工作：</block>
-  <block id="de939cf4d4a045633c8a520b501bb40e" category="list-text">新增（vCenter或ESXi）主機認證</block>
-  <block id="0b67a16a8394599f4eecf8683ef0d301" category="list-text">取得和登錄主機ID</block>
-  <block id="fa8c1aa26c03157b5e62997fd0fdaa14" category="list-text">驗證內部網路（適用於多節點叢集）</block>
-  <block id="d7494ab1ca8800562b8faee8d3a4984e" category="list-text">建立叢集</block>
-  <block id="073dd452840b7a9881432728f959cd2c" category="list-text">設定節點</block>
-  <block id="5b6e8147fdc6caa0b27d7fc75489608f" category="list-text">設定網路和儲存資源池</block>
-  <block id="b6877b94a1e530ab0fc6b8d1545fd166" category="list-text">部署叢集</block>
-  <block id="f8cac4cf1b1201d6a9386323183ca9c8" category="paragraph">因此、當叢集VM啟動並執行、ONTAP Select 且整個叢集均已部署完畢、角色即告完成。您可以從NetApp Ansible GitHub存取及下載此角色： <block ref="56a4d28e5b01605b6b865a56dead08da" category="inline-link-macro-rx"></block></block>
-  <block id="043194e296799e8dbefda7f37d0e101e" category="section-title">教戰手冊範例</block>
-  <block id="483b9ffc2547d862835719e69821ce3e" category="paragraph">以下是一本名列ONTAP Select 這兩個「樣例」的教戰手冊。請注意、輸入變數是在YML檔案中定義、並透過「vars_Files」傳入。您可以在每個角色的README檔案中找到更多詳細資料。</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">請按這裡</block>
-  <block id="006a0a02171a296bf3a320f8991be24a" category="paragraph">使用上述角色建立及執行叢集之後ONTAP Select 、您可以運用豐富ONTAP 的功能組合、進一步自動化ONTAP 各項功能。您ONTAP 可以存取可用的功能 <block ref="4d400bdda09fce7a6e9e1a49c64cce9d" category="inline-link-macro-rx"></block>。總而言之ONTAP Select 、利用「不可行」角色和ONTAP 「不可行」角色、您可以將端點對端點工作流程完全自動化、以便使用ONTAP Select 「不可行」管理儲存設備。</block>
   <block id="893c95c096fab305c703479243f6943c" category="summary">管理ONTAP Select 多方面的相關工作可讓您執行、包括執行多方面的功能。</block>
   <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">不需要授權ONTAP Select</block>
   <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能不均的層級授權。</block>
@@ -2567,7 +2530,6 @@
   <block id="eff97b5f2d2c83f1ed5631ba2caad4b3" category="sidebar">新增節點授權</block>
   <block id="17a06a80e87a37d4e1892e8c0528b857" category="sidebar">刪除叢集</block>
   <block id="1ca48c398b8c739a9815d44011185388" category="sidebar">調整叢集節點大小</block>
-  <block id="46fc1cf655dd8158b6b58910cf88e653" category="sidebar">使用Ansible進行自動化</block>
   <block id="8a9e0f8224695e94f0988f444488877b" category="sidebar">使用CLI</block>
   <block id="89c5ba6f9355d2da97bb00bdf0ec66e5" category="sidebar">使用SSH登入</block>
   <block id="8c45b8a7e3dd4094586773bc09fc8842" category="sidebar">部署公用程式</block>
@@ -2894,7 +2856,6 @@
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
   <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">您可以在使用容量層授權模式和容量集區授權模式時、執行叢集節點調整大小作業。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
-  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。如需詳細資訊、請參閱知識庫文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">VMware vSphere vSwitch 組態</block>
@@ -3386,7 +3347,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="f778b020848c4bce334b26593dd9cc1f" category="paragraph">磁碟會指派為備援磁碟、可供 ONTAP Select 使用。磁碟可能需要一分鐘或更長的時間才能使用。</block>
   <block id="a743fc9c91bd7ab650676dc7bcff7cbe" category="paragraph">由於節點組態已變更、因此您應該使用部署管理公用程式來執行叢集重新整理作業。</block>
   <block id="2e34b681cc534c1f05dd05873a67719f" category="list-text">選擇 * 編輯 * 並確認新磁碟機可用、然後將其選取。</block>
-  <block id="33693ff3a7d631ea880e109dfc69ea97" category="paragraph">通知檔案提供有關 NetApp 軟體中使用的協力廠商版權和授權的資訊。</block>
   <block id="f371e1e74365e433f105f30c886225bf" category="inline-link">ONTAP Select 9.14.1 版本資訊</block>
   <block id="6e0dedd1d494cddc9086f77fa36f54a0" category="paragraph">ONTAP Select 可部署為單一節點叢集。Hypervisor 主機包含可存取外部網路的虛擬交換器。</block>
   <block id="6615bf96d027d0ff485c1b1838661527" category="admonition">執行 ONTAP Select 的主機在使用硬體 RAID 控制器或 ONTAP Select 隨附的軟體 RAID 功能時、需要使用本機實體磁碟機。如果您使用ONTAP Select 支援內部儲存設備的支援功能來存取外部儲存設備、則不會使用本機RAID控制器和軟體RAID功能。</block>
@@ -3646,7 +3606,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">在遠端辦公室和分公司使用 ONTAP Select</block>
   <block id="ecef17057a10f9337620a1aee67c110f" category="summary">NetApp ONTAP Select 是軟體定義的儲存應用裝置、可部署在執行 VMware ESXi 或核心型虛擬機器（ KVM ） Hypervisor 的各種市售硬體伺服器上。它提供您建置靈活且可擴充的私有雲基礎架構所需的敏捷度。本網站包含 ONTAP Select 9.16.1 的文件。</block>
   <block id="b38f50fa2d7eac1d0761ec2b46339f62" category="inline-link-macro">ONTAP Select 9.16.1 注意事項</block>
-  <block id="561a04c4081432fad02b159522e1d02c" category="list-text"><block ref="561a04c4081432fad02b159522e1d02c" category="inline-link-macro-rx"></block></block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON ，用於建立 ONTAP Select 叢集的指令碼</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">新增 ONTAP Select 節點授權的指令碼</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">建立 ONTAP Select 叢集的指令碼</block>
@@ -3790,4 +3749,16 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="944a1b1080e2860bd56c15282a8e476e" category="list-text">在 * 叢集詳細資料 * 區段中，選取所需的 * 叢集大小 * ，提供描述叢集的所有必要資訊，然後選取 * 完成 * 。</block>
   <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">選擇 * 下一步 * ，然後選取 * 執行 * 來執行網路預先檢查。這會驗證為 ONTAP 叢集流量選取的內部網路運作正常。</block>
   <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">選取 * 建立叢集 * 以開始叢集建立程序，然後在快顯視窗中選取 * 確定 * 。</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
+  <block id="4d5e19ca322ec82f576cffa70356d45b" category="paragraph"><block ref="4d5e19ca322ec82f576cffa70356d45b" category="inline-link-rx"></block></block>
+  <block id="dba6192da7444fc9e5fd32119193b12b" category="admonition">限制 ONTAP 系統管理員帳戶的角色和權限、可能會限制 ONTAP Select 部署管理叢集的能力。有關詳細信息，請參閱知識庫文章 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>。</block>
+  <block id="a97a40851f37ebfbf5db3d3bf28da58b" category="admonition">多節點叢集具有自動產生的生命的內部網路。</block>
+  <block id="0f1007666fd5cc7934baffbdef1287d0" category="paragraph">有三個 SVM 處於作用中狀態：</block>
+  <block id="070848ec049722b444235c5db132a1bb" category="list-text">管理 SVM</block>
+  <block id="9392c5507686114a0bba1e8e0b5be096" category="list-text">節點 SVM</block>
+  <block id="d78477ac5628a6dd2fb8c046564b2227" category="list-text">系統（叢集） SVM</block>
+  <block id="93b1520005778e826c33efa7132d61c9" category="inline-link">建立 SVM</block>
+  <block id="e0d52f0658828de62020550252885d55" category="admonition">資料 SVM 並非 ONTAP Select 叢集部署的一部分。它們必須在部署之後由叢集管理員建立。如需更多資訊、請參閱<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>。</block>
+  <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">叢集中包含的 SVM 類型</block>
+  <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
 </blocks>
