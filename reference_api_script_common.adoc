@@ -4,7 +4,7 @@ permalink: reference_api_script_common.html
 keywords: rest api, deploy rest api, rest, python script, common module 
 summary: 所有Python指令碼都會在單一模組中使用通用的Python類別。 
 ---
-= 通用支援 ONTAP Select Python 模組
+= ONTAP Select 常用支援 Python 模組
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

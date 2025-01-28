@@ -4,7 +4,7 @@ permalink: task_adm_licenses.html
 keywords: administer, administering, web, licenses 
 summary: 管理ONTAP Select 多方面的相關工作可讓您執行、包括執行多方面的功能。 
 ---
-= 不需要授權ONTAP Select
+= 管理 ONTAP Select 授權
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

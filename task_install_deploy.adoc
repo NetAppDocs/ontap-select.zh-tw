@@ -22,6 +22,9 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 
 您可以ONTAP Select 從NetApp支援網站下載此解決方案。
 
+.開始之前
+https://mysupport.netapp.com/site/user/registration["您擁有註冊的 NetApp 支援網站帳戶"^]。
+
 .關於這項工作
 ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元 `ova`。VM 提供 ONTAP Select 節點的部署伺服器和安裝映像。
 
@@ -118,7 +121,7 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 +
 您必須定義系統管理員帳戶的密碼。登入部署公用程式時、您必須提供此密碼。
 
-. 部署虛擬機器之後、請根據您對部署精靈的輸入、選取新的虛擬機器、並在尚未啟動時開啟其電源。
+. 部署虛擬機器之後，請選取新的虛擬機器。如果尚未根據您對部署精靈的輸入來開啟電源，請手動開啟電源。
 . 如有需要、您可以使用 VM 主控台設定部署網路：
 +
 .. 按一下*主控台*索引標籤、即可存取ESXi主機設定Shell並監控開機程序。
@@ -208,7 +211,7 @@ https://<ip_address>/`
 
 . 提供系統管理員（admin）帳戶名稱和密碼並登入。
 . 如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請檢閱必要條件、然後選取 * 確定 * 繼續。
-. 如果這是第一次登入、但您並未使用vCenter提供的精靈安裝部署、請在出現提示時提供下列組態資訊：
+. 如果這是第一次登入，但您並未使用 vCenter 提供的精靈來安裝部署，請在出現提示時提供下列組態資訊：
 +
 ** 系統管理員帳戶的新密碼（必填）
 ** 選擇性的AutoSupport

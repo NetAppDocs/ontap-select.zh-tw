@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_perf_general.html 
 keywords: ontap select, performance 
-summary: 效能會因硬體組態而異。 
+summary: ONTAP Select 叢集的效能可能會因硬體組態而異。 
 ---
 = ONTAP Select 效能總覽
 :hardbreaks:
@@ -14,8 +14,6 @@ summary: 效能會因硬體組態而異。
 
 
 [role="lead"]
-效能會因硬體組態而異。
-
 由於基礎硬體和組態的特性、所以無法大幅改變VMware叢集的效能ONTAP Select 。特定的硬體組態是特定ONTAP Select 執行個體效能的最大因素。以下是影響特定ONTAP Select 執行個體效能的一些因素：
 
 * *核心頻率*。一般而言、較高的頻率較為理想。

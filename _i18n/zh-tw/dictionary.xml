@@ -359,7 +359,6 @@
   <block id="365539463bcc61785d264265fdb0e583" category="cell">叢集/｛cluster｝/部署</block>
   <block id="33ba2ef8157bb8f83fe7476e84b76be7" category="list-text">Json輸入（步驟10）</block>
   <block id="95ccb28342b6f78f3f3a3eb2dc5046d6" category="list-text">您必須提供ONTAP 該管理員帳戶的密碼。</block>
-  <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">效能會因硬體組態而異。</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">*核心頻率*。一般而言、較高的頻率較為理想。</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">*單插槽與多插槽*。雖然不使用多插槽功能、但支援多插槽組態的Hypervisor負荷會在整體效能方面造成一定程度的差異。ONTAP Select</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">* RAID卡組態及相關Hypervisor驅動程式*。Hypervisor提供的預設驅動程式可能需要由硬體廠商驅動程式取代。</block>
@@ -812,7 +811,6 @@
   <block id="440776946e3349ff3266a8cf25bef605" category="section-title">部署管理公用程式ONTAP Select</block>
   <block id="deeb67d546017625d12dfbcf3d817a5c" category="paragraph">部署管理公用程式是以獨立的Linux虛擬機器進行封裝與安裝。您必須使用公用程式、在ONTAP Select 正式作業環境中部署叢集。Deploy公用程式隨附目前版本ONTAP Select 的ImageNode映像。</block>
   <block id="d69f8aaae124c9269620ba7ca5678c34" category="section-title">典型部署的圖例</block>
-  <block id="60d804a6b011555fd729bcd0c5e206da" category="paragraph">下圖說明ONTAP Select 用於部署和支援四節點ONTAP Select 的整套系統管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。</block>
   <block id="3163bfc32e34eb9c2f84e4c7a1535111" category="inline-image-macro">說明ONTAP Select 以部署管理公用程式建立的一個由四節點組成的叢集。</block>
   <block id="3e69161d02590dc69114626444a3d815" category="paragraph"><block ref="3e69161d02590dc69114626444a3d815" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c3c1ba002ed4d0d1ae23559793a734bd" category="section-title">比較功能與功能ONTAP Select ONTAP</block>
@@ -893,14 +891,11 @@
   <block id="8b3398557c7fb55b263bf52bece82b68" category="doc">評估授權</block>
   <block id="e009f07bc1785009a3ceb83036990929" category="section-title">授權特性</block>
   <block id="11731b987dc6227f75478145446eec49" category="paragraph">本產品的功能特性如下：ONTAP Select</block>
-  <block id="1a722f6211174d2c13dea99241228cdd" category="list-text">不需要具備儲存容量的正式作業授權</block>
   <block id="da43be3a437b4b11176af278d2bf65e4" category="list-text">節點序號為二十位數、ONTAP Select 由還原部署自動產生</block>
-  <block id="d81334460101f9ea4e0446684836ab2c" category="paragraph">（您不直接從NetApp取得）</block>
   <block id="b8c2c21a1451d44d469c74b3bc603f96" category="list-text">授權所提供的評估期間最多可達90天</block>
   <block id="ad49b216aa656d515b04dd8c523873dd" category="list-text">每個節點所配置的最大儲存容量與正式作業授權相同</block>
   <block id="238908176e0b205e68cd2d9e0c4972e5" category="paragraph">您可以升級ONTAP Select 一套用作正式作業授權的功能。您應注意下列限制：</block>
   <block id="60c8e16d600bd89fdcfca7dd31b63260" category="list-text">您必須使用部署管理公用程式來執行授權升級</block>
-  <block id="1e2f74556f8f29bf17e0d81fdf7f56ab" category="list-text">可以使用容量層授權、但不支援容量資源池授權</block>
   <block id="040571bf34446f7204162544612cd237" category="list-text">每個節點都必須配置足夠的儲存空間、以根據叢集大小來支援正式作業授權所需的最低需求</block>
   <block id="c17dae9b9d3b729444b86ade708fe369" category="summary">您應該準備好檢閱及使用工作流程程序。</block>
   <block id="0224e614246b594584218c9734c56792" category="paragraph">《支援》線上文件頁面包含每次REST API呼叫的詳細資料。ONTAP Select工作流程範例中使用的每個API呼叫都只包含您在文件頁面上找到呼叫所需的資訊、而非在此重複這些詳細資料。找到特定API呼叫之後、您可以檢閱通話的完整詳細資料、包括輸入參數、輸出格式、HTTP狀態代碼及要求處理類型。</block>
@@ -3290,7 +3285,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d98fb3ce51b49ee9b9e8ea2645524f08" category="list-text">部署 VM 的 IP 位址</block>
   <block id="30e58d6b4fce06c690ff3897ae040f55" category="paragraph">如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署 VM 的主控台來設定網路。</block>
   <block id="922bafb0938c68773e29242e2675f0b9" category="paragraph">您所遵循的步驟取決於您是使用 ESXi 還是 KVM Hypervisor 。</block>
-  <block id="41c929e54fb793fb7a784130ebd7c7b1" category="list-text">部署虛擬機器之後、請根據您對部署精靈的輸入、選取新的虛擬機器、並在尚未啟動時開啟其電源。</block>
   <block id="1c2f49da17d54e224e8288edcb35fd8b" category="list-text">如有需要、您可以使用 VM 主控台設定部署網路：</block>
   <block id="e24d94772b7fb552cdad8786d3972fe1" category="list-text">鍵入 *n* 可定義靜態 IP 組態，或鍵入 *y* 使用 DHCP ，然後選取 *Enter* 。</block>
   <block id="64c8e1a4f8f739423fd7163b603a4b32" category="list-text">在 Linux 伺服器登入 CLI ：</block>
@@ -3561,7 +3555,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支援評估叢集時，有幾個考量：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能將叢集用於評估用途。您不得在正式作業環境中使用具有評估授權的叢集。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在設定每個主機時，您應該使用 ONTAP Select Deploy 管理公用程式，如下所示：</block>
-  <block id="1b2bebf50d8caf7cae03b0a936752188" category="list-text">請勿提供序號</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">設定以使用評估授權</block>
   <block id="21f27b191f1f034aa81e5f786bf9829c" category="doc">瞭解 ONTAP Select 平台授權方案</block>
   <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select 購買了正式作業部署的授權</block>
@@ -3609,7 +3602,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON ，用於建立 ONTAP Select 叢集的指令碼</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">新增 ONTAP Select 節點授權的指令碼</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">建立 ONTAP Select 叢集的指令碼</block>
-  <block id="41cfd9e48a1b6c66998391efe14f06f2" category="doc">通用支援 ONTAP Select Python 模組</block>
   <block id="d066221405020e2f85c198e0b44e228b" category="doc">用於刪除 ONTAP Select 叢集的指令碼</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">調整 ONTAP Select 叢集節點大小的指令碼</block>
   <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流程 1 ：在 ESXi 上建立 ONTAP Select 單節點評估叢集</block>
@@ -3761,4 +3753,22 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e0d52f0658828de62020550252885d55" category="admonition">資料 SVM 並非 ONTAP Select 叢集部署的一部分。它們必須在部署之後由叢集管理員建立。如需更多資訊、請參閱<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>。</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">叢集中包含的 SVM 類型</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
+  <block id="c19cab121a967e7d4e145437fee16c02" category="doc">ONTAP Select 部署的評估授權</block>
+  <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">若要下載 ONTAP Select Deploy 管理公用程式，您需要下列項目：</block>
+  <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">使用者登錄</block>
+  <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">已註冊的 NetApp 支援網站帳戶。如果您沒有帳戶，請參閱<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>。</block>
+  <block id="4c38e9c9635f62bc0c98a4fc0dbf6f04" category="inline-link">接受終端使用者授權合約</block>
+  <block id="bcb0a8f0933f79963f8da791712307a2" category="list-text"><block ref="b36a96015925128ab0074fda8004c795" category="inline-link-rx"></block>適用於具有評估授權的 ONTAP Select 部署。</block>
+  <block id="76be33f6608866426ecccffc5acd6be8" category="list-text">請勿提供序號</block>
+  <block id="2fcd5d5ae3d245e3d2870429d2c9381d" category="list-text">不需要具備儲存容量的正式作業授權</block>
+  <block id="695af2710450ef107be1555e59f22b01" category="paragraph">（您不會直接從 NetApp 取得）</block>
+  <block id="0fa0a315c1605e80221e4ae40cfaac60" category="list-text">可以使用容量層授權，但不支援容量集區授權</block>
+  <block id="d480e694d74a85a8bf679cab5063c9f1" category="paragraph">下圖說明用於部署和支援四節點 ONTAP Select 叢集的 NetApp ONTAP Select 部署管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。</block>
+  <block id="54d1b8efd5a74820db5617b48f538671" category="summary">ONTAP Select 叢集的效能可能會因硬體組態而異。</block>
+  <block id="123521c98d5a32b10ae4a2d5e59ed719" category="doc">ONTAP Select 常用支援 Python 模組</block>
+  <block id="b7a30ea4f45797fa98b43f64e7be11b9" category="doc">管理 ONTAP Select 授權</block>
+  <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">您擁有註冊的 NetApp 支援網站帳戶</block>
+  <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>。</block>
+  <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">部署虛擬機器之後，請選取新的虛擬機器。如果尚未根據您對部署精靈的輸入來開啟電源，請手動開啟電源。</block>
+  <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">如果這是第一次登入，但您並未使用 vCenter 提供的精靈來安裝部署，請在出現提示時提供下列組態資訊：</block>
 </blocks>

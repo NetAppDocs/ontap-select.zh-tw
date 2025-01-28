@@ -51,7 +51,7 @@ NOTE: 部署管理公用程式並未指派個別的版本號碼。Deploy的版�
 
 == 典型部署的圖例
 
-下圖說明ONTAP Select 用於部署和支援四節點ONTAP Select 的整套系統管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。
+下圖說明用於部署和支援四節點 ONTAP Select 叢集的 NetApp ONTAP Select 部署管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。
 
 image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立的一個由四節點組成的叢集。"]
 
