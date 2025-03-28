@@ -1073,19 +1073,12 @@
   <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能不均的層級授權。</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">使用系統管理員帳戶透過Web介面登入部署公用程式。</block>
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">按一下頁面頂端的*管理*索引標籤。</block>
-  <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">按一下「*授權*」、然後按一下「*容量層級*」。</block>
-  <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">（可選）單擊* Filter（篩選器）*並限制顯示的許可證數量。</block>
-  <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">若要新增授權、請按一下頁面頂端的*「Add*」（新增*）、然後按一下「*上傳授權*」、再從本機工作站選取授權檔案。</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能完善的資源池授權。</block>
-  <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">按一下「*授權*」、然後按一下「*容量資源池*」。</block>
-  <block id="8e2791365de62e59e56b5d6fcdd0f3e2" category="list-text">若要新增授權或續約現有授權、請按一下頁面頂端的*「Add*」（新增*）、然後按一下*「上傳授權*」、再從本機工作站選取授權檔案。</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">若要查看容量資源池清單：</block>
-  <block id="b14052b3af7caf15ec0beb76766be24f" category="list-text">按一下*摘要*。</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">選取並展開資源池、以查看叢集和節點從資源池租賃儲存設備的情況。</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">在*授權資訊*下檢視授權的目前狀態。</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">您可以在「租賃到期」下變更為資源池所核發的租賃期間。</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">若要查看叢集清單：</block>
-  <block id="8ab91110ae01f9e5c2c34364ebb2da32" category="list-text">按一下*詳細資料*。</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">選取並展開叢集以查看儲存使用率。</block>
   <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">每個作用中容量集區授權都會鎖定至特定的License Manager執行個體、而該執行個體包含在部署管理公用程式的執行個體中。如果您使用容量集區授權、然後還原或還原部署執行個體、則原始授權將不再有效。您必須產生新的容量授權檔案、然後將授權安裝到新的部署執行個體。</block>
   <block id="be0411c455172a2eece4547673c61675" category="list-text">判斷原始部署執行個體所使用的所有容量集區授權。</block>
@@ -1096,8 +1089,6 @@
   <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">請聯絡NetApp支援部門、讓原始部署執行個體的所有容量資源池授權不受限制且未經註冊。</block>
   <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">為每個容量集區授權取得並下載新的授權檔案。</block>
   <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新的部署執行個體安裝容量資源池授權：</block>
-  <block id="99683d4e14f8df30b153000825273e2d" category="list-text">按一下「*授權*」、然後按一下「*容量資源池*」。</block>
-  <block id="095bb96ffb3551a58960c96316107d76" category="list-text">按一下「*新增*」、然後按*「上傳授權*」以選取並上傳授權。</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">如果您在建立新的部署執行個體時未還原備份、或是使用的備份不是最新且最新的備份、則必須更新序號：</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">使用系統管理員帳戶登入部署公用程式命令列介面。</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">顯示由原始部署執行個體最近建立之節點的序號：</block>
@@ -1116,11 +1107,7 @@
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">每個節點都必須配置足夠的儲存空間、以支援正式作業授權所需的最低需求。</block>
   <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">您必須擁有評估叢集中每個節點的容量層授權。</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">對單節點叢集執行叢集授權的修改會造成中斷。不過、多節點叢集的情況並非如此、因為轉換程序會一次重新啟動每個節點以套用授權。</block>
-  <block id="2bb59383631b39d52464741628ce0ca4" category="list-text">單擊頁面頂端的* Clusters*（叢集*）索引標籤a、然後選取所需的叢集。</block>
-  <block id="2b92ba791b5d35e9921e9be06d12553c" category="list-text">在叢集詳細資料頁面頂端、按一下*按一下此處*以修改叢集授權。</block>
-  <block id="3ec0b37e2f174766469a343ec8265983" category="paragraph">您也可以在「*叢集詳細資料*」區段中、按一下評估授權旁的*修改*。</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">為每個節點選取可用的正式作業授權、或視需要上傳額外授權。</block>
-  <block id="36d90e9baa4dfd0dda8eeaac2623f12c" category="list-text">提供ONTAP 此資訊證明、然後按一下*修改*。</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">叢集的授權升級可能需要數分鐘的時間。允許程序在離開頁面或進行任何其他變更之前完成。</block>
   <block id="58c19e610497280d55686885113b1e5a" category="paragraph">最初指派給評估部署每個節點的二十位數節點序號、會由用於升級的正式作業授權中的九位數序號所取代。</block>
   <block id="b73167eee5082eed4d7d4c53de18c738" category="summary">建立ONTAP Select 完叢集後、您可以執行各種管理工作來支援部署。需要注意的一般考量有幾個。</block>
@@ -3424,8 +3411,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型執行個體類型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD 、 SSD 或 NVMe 磁碟機</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。</block>
-  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">若要取代現有授權、請選取授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Update* 。</block>
-  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">（可選）選擇授權、然後按一下 <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> 管理現有授權。</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加授權</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理授權總覽（僅限叢集管理員）</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">新增授權金鑰以啟用新功能</block>
@@ -3771,4 +3756,28 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>。</block>
   <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">部署虛擬機器之後，請選取新的虛擬機器。如果尚未根據您對部署精靈的輸入來開啟電源，請手動開啟電源。</block>
   <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">如果這是第一次登入，但您並未使用 vCenter 提供的精靈來安裝部署，請在出現提示時提供下列組態資訊：</block>
+  <block id="c2fffdb7e5db1a96deec5901fd1a882b" category="list-text">選取頁面頂端的 * 管理 * 索引標籤。</block>
+  <block id="7f73b891b6f89493a9a42f78c96dfbde" category="list-text">選取 * 授權 * ，然後選取 * 容量層 * 。</block>
+  <block id="ac058bee21b19fb7d5683b470b430bce" category="list-text">（可選）選擇 *Filter* 並限制顯示的許可證。</block>
+  <block id="f76e9a144df7cb5bf308e94a6e908da4" category="list-text">要替換現有許可證，請選擇<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Update* 。</block>
+  <block id="2a312f34de3de288696c20c1e8fdab8c" category="list-text">若要新增授權，請選取頁面頂端的 * 新增 * ，然後選取 * 上傳授權 * ，並從您的本機工作站選取授權檔案。</block>
+  <block id="e138becae13ca9b3317ae72cd807b7ed" category="list-text">選擇 * Licenses* 並選擇 * 容量池 * 。</block>
+  <block id="e4dbf5646ea0f3591d85a89dcc220112" category="list-text">（可選）選擇 *Filter* 並限制顯示的許可證。</block>
+  <block id="0238150d48dcbb89f61418a79faf879c" category="list-text">或者，選取授權，然後選取<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>以管理現有授權。</block>
+  <block id="f675b264e07a6d56cc74839352166e25" category="list-text">新增授權或續約現有授權：</block>
+  <block id="e1ff67a9ee704536271bf20bae768184" category="open-title">新增授權</block>
+  <block id="85c89e836071c9255062f2c7b147db6a" category="paragraph">若要新增授權，請選取頁面頂端的 * 新增 * 。</block>
+  <block id="bbb047a51418944f835ae59b4e145de5" category="open-title">續約現有授權</block>
+  <block id="612b39eeafbac7f4962e5513903d070d" category="paragraph">若要續約現有授權：</block>
+  <block id="6e1121544cd3144bdf088e3fc4c6d58e" category="list-text">選取<block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>現有授權。</block>
+  <block id="1f20356b85cdefac297216209ca2bcb1" category="list-text">選取 * 上傳授權 * 。</block>
+  <block id="7d2e20d8c3e5ebfbdbd81ec85b9c313e" category="list-text">從本機工作站選取授權檔案。</block>
+  <block id="3e4b3d97ed721fa6c588b33d67e7327a" category="list-text">選取 * 摘要 * 。</block>
+  <block id="522aeaf73b031c733a2277fe9eadd494" category="list-text">選擇*詳細資料*。</block>
+  <block id="055dab4754e0e1d62a339ad80dcac225" category="list-text">選取 * Licenses* ，然後選取 * 容量資源池 * 。</block>
+  <block id="8ad539dc195e039c5437c07b3d810ad8" category="list-text">選取 * 新增 * ，然後 * 上傳授權 * 以選取並上傳授權。</block>
+  <block id="1a9274360bc45212a6a014b4c6df1e9c" category="list-text">選取頁面頂端的 * 叢集 * 索引標籤 A ，然後選取所需的叢集。</block>
+  <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">在叢集詳細資料頁面頂端，選取 * 按一下此處 * 以修改叢集授權。</block>
+  <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">您也可以在 * 叢集詳細資料 * 區段中，選取評估授權旁邊的 * 修改 * 。</block>
+  <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">提供 ONTAP 認證，然後選取 * 修改 * 。</block>
 </blocks>
