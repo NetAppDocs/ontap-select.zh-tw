@@ -132,9 +132,7 @@
   <block id="f9c8e615168b7695f683bda1636a1fd7" category="list-text">vCenter用於驗證vCenter伺ONTAP Select 服器、以在VMware vCenter管理主機時、將VMware節點部署至ESXi</block>
   <block id="bf733d8a933c1601697f364223fc7ecb" category="section-title">存取</block>
   <block id="6bc6433efd5abd7e3ac98556742ca0e4" category="paragraph">認證存放區是在內部存取、做為使用部署執行一般管理工作的一部分、例如新增Hypervisor主機。您也可以透過部署Web使用者介面和CLI直接管理認證存放區。</block>
-  <block id="e4bd755214153474324cb3c791d0988e" category="summary">判斷ONTAP Select 出適用於貴組織的解決方案之後、您可以購買支援正式作業部署所需的授權。您必須選擇容量層級或容量集區授權模式、以及每個部署的儲存容量。</block>
   <block id="3c868759d0863801160ccec7f31cd26a" category="section-title">通用授權特性</block>
-  <block id="5f878954b0c63a957a4fca43d50b03b3" category="paragraph">容量層級_和容量資源池_授權模式在幾個方面都截然不同。不過、這兩種授權模式有幾種共通的特性、包括：</block>
   <block id="1e27a8e66b6c9b86c6097d597ad1aae5" category="list-text">在ONTAP Select 正式作業環境中部署時、您必須視需要購買一或多份授權。</block>
   <block id="15dffe620a63cf36cf7950870eb1dd7f" category="list-text">授權的儲存容量會以1 TB為單位分配。</block>
   <block id="e87c2d5c68d6bca7e5d00d0f9ba86e6c" category="list-text">儲存容量會識別原始容量、並對應ONTAP Select 到可用於該虛擬機器的資料磁碟總允許大小。</block>
@@ -144,25 +142,13 @@
   <block id="c84d0d15d89203b240d22009f0e21410" category="list-text">安裝及套用授權之後、您可以聯絡NetApp客戶團隊或合作夥伴以取得更新授權、藉此新增額外容量。</block>
   <block id="a3263397bbc31693f6873997c36fe75d" category="list-text">HA配對中的兩個節點必須具有相同的儲存和授權容量。</block>
   <block id="d86f9ceaae5a2db2c1aefdb22d547e86" category="list-text">最初以購買授權部署的這個節點、無法轉換成評估授權。ONTAP Select</block>
-  <block id="f9e76b1ce7aec73ae826282e626e80ed" category="section-title">容量層授權模式</block>
-  <block id="07d2c59cd8b3d442f434212582fce4bc" category="paragraph">容量層級授權模式有幾項獨特特性、包括：</block>
   <block id="871e597c4ae832351177624116bba41c" category="list-text">您必須為每ONTAP Select 個節點購買授權。</block>
   <block id="13bcda60ca431e945b05ba49704703a7" category="list-text">您可購買的最低金額為1 TB。</block>
-  <block id="171f2b7f54fcb35f8671d5a99f59cf4c" category="list-text">每個容量層授權都有儲存容量、並鎖定至特定節點。</block>
   <block id="41a121513d59eed4db3a4c7f1fc6d0ba" category="list-text">NetApp會針對每ONTAP Select 個節點產生九位數的授權序號。</block>
   <block id="b7fb304e7a779889262a8b4612155a54" category="list-text">分配給節點的儲存設備為永久儲存設備（不需續約）。</block>
   <block id="a1039017542e538bd9f244ed701a0b65" category="list-text">節點序號為九位數、等於授權序號。</block>
   <block id="d9e741d943a65e9ffbf3b085cb693ee3" category="list-text">您可以在叢集部署期間或建立叢集後30天內套用授權檔案。</block>
-  <block id="f06bc89da14b727a7173d325c2f414f2" category="section-title">容量資源池授權模式</block>
-  <block id="d7ca8d1fad156c6e5fcd9a56e10d2455" category="paragraph">容量集區授權模式有幾項獨特特性、包括：</block>
-  <block id="cbdbae6aeb6edf0b767c6aa5e5e98d07" category="list-text">您必須為每個共用容量資源池購買授權。</block>
   <block id="cb58a864ca9b83c561396808328e023e" category="list-text">您可購買的最低金額為2 TB。</block>
-  <block id="0d728590b1ea6bc8ad55fef75c463c29" category="list-text">每個容量資源池授權都有儲存容量、並鎖定至特定的授權管理員執行個體。</block>
-  <block id="1bcb44fe448d5052f21974775c2594bf" category="list-text">NetApp會針對每個容量資源池產生九位數的授權序號。</block>
-  <block id="06b92373d44bb688094b05df7cf1ff8e" category="list-text">分配給容量資源池的儲存設備僅在購買時有效（需續約）。</block>
-  <block id="03aef2179b374f799679e6b0d6c70010" category="list-text">節點序號為二十位數、由授權管理員根據容量資源池授權序號產生。</block>
-  <block id="a6483e971a591957efb5493b5bb42291" category="list-text">每個節點都會自動從共享容量資源池租用其本機資料集合體的儲存容量。</block>
-  <block id="4f1b3cd9fba2e292ff3f1a184f8331f0" category="paragraph">如需容量集區授權模式的詳細資訊、請參閱_Capacity Pool授權模式_以取得更多資訊。</block>
   <block id="7436b418bed093768e360d32105591d2" category="doc">本文檔ONTAP Select</block>
   <block id="fa0fa8503380df9df5c58ad57a531ff5" category="inline-link">產品庫ONTAP Select</block>
   <block id="57a8f1209a3d14eac0b8a5740de50115" category="summary">您應該考量幾項與VMware環境相關的硬體需求與規劃問題。</block>
@@ -179,8 +165,6 @@
   <block id="d200a289a8ebcab27fa991f9d753e39c" category="section-title">核心硬體需求</block>
   <block id="09b8a8e0dc5db4d03118426909a90e16" category="paragraph">您部署ONTAP Select 的實體Hypervisor主機必須符合多項硬體需求。只要符合最低硬體需求、您就可以選擇Hypervisor主機的任何平台。下列廠商提供支援的硬體平台：Cisco、Dell、HP、Fujitsu、Lenovo、 和Supermmicro.</block>
   <block id="54046c200f18c7f662cdbd80eaba39a0" category="admonition">從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更新版本為基礎的CPU機型。</block>
-  <block id="667aa4140034cc454b837db2fc24ce3d" category="inline-link">NetApp互通性對照表工具、window=_blank</block>
-  <block id="e974ba73413c61605294fbea7a63f880" category="paragraph">請參閱<block ref="6989237bb21ab12eea7660d1d2c0793b" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="6ef6e53858c70e7e79a98bf86eb89b40" category="section-title">基本硬體需求</block>
   <block id="7a4cc24a8547103995174a22d62c6415" category="inline-link-macro">Intel Xeon處理器、window=_blank</block>
   <block id="fc86323f8bb43524824dfedf72c12f20" category="list-text">適用於伺服器的Intel Xeon處理器（請參閱 <block ref="b4ae18ee7ddc8509f21de2805d7b78c6" category="inline-link-macro-rx"></block> 以取得更多資訊）</block>
@@ -413,7 +397,6 @@
   <block id="92a71e755753127bb017bb1fe9bad028" category="paragraph">您必須判斷是否有來自故障部署公用程式執行個體的組態資料備份、該執行個體包含ONTAP Select 了雙節點叢集。您的備份可能不包含叢集。</block>
   <block id="618988b1c7baef58636565874807619a" category="paragraph">您應該能夠還原部署組態資料的備份、視所使用的還原程序而定。</block>
   <block id="88178796123172aa042c2352197e09e0" category="paragraph">您必須知道故障的原始部署公用程式虛擬機器的IP位址。</block>
-  <block id="fb66c65c562c0e260ab33c68ef45f2c7" category="paragraph">您必須判斷是否使用容量資源池或容量層授權。如果您使用容量集區授權、則必須在還原或還原部署執行個體之後、重新安裝每個容量集區授權。</block>
   <block id="378cdb3591ae498a782312834334c853" category="paragraph">您必須決定恢復ONTAP Select 某個執行個體時要使用的程序。您的決定取決於您是否備份來自原始故障部署公用程式的組態資料、該公用程式包含ONTAP Select 了雙節點叢集。</block>
   <block id="11530c57a897d905bc943331e58f56b0" category="cell">您是否有包含雙節點叢集的部署備份？</block>
   <block id="b42236ddc43aefb700714337ec5fe465" category="cell">恢復程序</block>
@@ -437,7 +420,6 @@
   <block id="1146fee0eb880f0892a23e726ca0a4d2" category="list-text">將信箱磁碟指派給兩個節點：</block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">確認已啟用儲存容錯移轉：</block>
   <block id="751035e5db88d172e881299c202d9b13" category="paragraph">「容錯移轉顯示」</block>
-  <block id="0e6429e5a26e1f9ea7c357f0cd190a54" category="paragraph">如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量資源池授權_。</block>
   <block id="569f883a1fcdb29c5aa5e29f182e9dd9" category="paragraph">如果您沒有包含雙節點叢集的失敗部署公用程式執行個體備份、則必須在新的部署虛擬機器中設定中介iSCSI目標和信箱。然後、您必須執行ONTAP Select 額外的組態來完成恢復、將兩個節點放在一個叢集內。</block>
   <block id="1b8f191261c89384d2a9550aaac5eac0" category="paragraph">您必須擁有新部署公用程式執行個體的中介目標名稱。您必須能夠登入ONTAP 雙節點叢集的CLI、並知道ONTAP 兩個節點的名稱。</block>
   <block id="b641370bc8479ac609268e5b798181a7" category="paragraph">您可以選擇性地將組態備份還原至新的部署虛擬機器、即使該虛擬機器不包含雙節點叢集。由於雙節點叢集並非以還原方式重新建立、因此您必須透過ONTAP Select 部署的「支援資訊」線上文件網頁、將中介iSCSI目標和信箱手動新增至新的部署公用程式執行個體。您必須能夠登入雙節點叢集、並知道ONTAP 兩個節點的名稱。</block>
@@ -460,7 +442,6 @@
   <block id="109c8e36bc942c26365dbf0801f87f3d" category="list-text">按一下*「試試看！*」以建立協調器iSCSI目標。</block>
   <block id="3d85b7e0ce2983da3c1d066243516254" category="paragraph">如果申請成功、您將會收到HTTP狀態代碼200。</block>
   <block id="4da2af2783b38d64f7ad51f0188043f0" category="list-text">如果新部署虛擬機器的IP位址與原始部署虛擬機器不同、您必須使用ONTAP CLI移除舊的中介iSCSI目標、並新增新目標：</block>
-  <block id="9d0ce8b3bd13c88962b5522282ef1f2a" category="paragraph">如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量集區授權。</block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">部署ONTAP Select 完一個叢集後、您可以使用部署管理公用程式來升級節點的Hypervisor執行個體類型。</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">叢集必須處於線上狀態。</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">此工作說明如何使用部署Web使用者介面。您也可以使用部署CLI來執行執行執行個體調整大小。無論您使用何種介面、調整大小作業所需的時間可能會因數項因素而大幅變動、而且可能需要較長的時間才能完成。您只能將節點大小調整為較大的大小。</block>
@@ -482,7 +463,6 @@
   <block id="618aade87a4c0dc9b9fe7ea456efd7ad" category="paragraph">如果您使用本機硬體RAID控制器、則必須在每個節點上為系統資料以及根和資料集合體建立至少一個儲存資源池。您必須附加儲存資源池、作為設定ONTAP Select 節點的一部分。</block>
   <block id="c423fd05ac4075cd52ed8e9ec9961c3f" category="paragraph">如果您使用軟體RAID、則必須為系統資料建立儲存資源池、並確保SSD磁碟機可用於根集合體和資料集合體。您必須附加儲存資源池和磁碟、作為設定ONTAP Select 節點的一部分。</block>
   <block id="d5ba525828b35ea241ddabb08b074ffd" category="section-title">提供ONTAP Select 的版本</block>
-  <block id="9526942f4f0cae81c16b2f122cce2a1e" category="paragraph">在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用_capsityleap__模型在每個節點上授權儲存設備、或使用_capsityPools_模型授權共用資源池。</block>
   <block id="973a0d9d3fbac9204b63c3c4b4ef0e8e" category="paragraph">取得具有儲存容量的授權檔案後、您必須將包含授權的檔案上傳至部署虛擬機器並加以註冊。</block>
   <block id="2fec03a9efc770f765197fa8c7911b8b" category="admonition">如果您只要部署叢集進行評估、可以跳過此步驟。</block>
   <block id="b9f0026a35bc57805d0d99fdcdfe0dd7" category="paragraph">您必須擁有管理員使用者帳戶的密碼。</block>
@@ -513,13 +493,10 @@
   <block id="5f503a75cbd22c8269b0eb1377d09880" category="list-text">顯示叢集的組態和狀態：</block>
   <block id="fbba132f8bfb4917ab068c504260e91d" category="paragraph">「cluster show -name clustername -detailed」</block>
   <block id="fb395229c68cbade5ef8a29846dadf96" category="paragraph">您必須在ONTAP Select E驗 集叢中設定每個節點。</block>
-  <block id="5ce515418398a169e0380c3856289f5f" category="paragraph">您必須擁有節點的組態資訊。容量層授權檔案應上傳並安裝在部署公用程式中。</block>
-  <block id="5d74908d060471342c6387e13df8ef36" category="paragraph">您應該使用此程序來設定每個節點。在此範例中、容量層授權會套用至節點。</block>
   <block id="ca43b0b07b80357b6b79621504c12e57" category="list-text">確定指派給叢集節點的名稱：</block>
   <block id="f9b851f69cae3703f91dd7f46ee96be9" category="paragraph">「節點show -cluster-name clustername」</block>
   <block id="8b5cb1e38684b903416c8da0166076b5" category="list-text">選取節點並執行基本組態：「nodemodify -name nodename -cluster-name clustername -host-name &lt;fqd|ip&gt;-license序號-instance-type -passite-disks fals'</block>
   <block id="6dd204eccb05c441b87e6a643950694d" category="paragraph">節點的RAID組態會以_passthrough disks_參數表示。如果您使用的是本機硬體RAID控制器、則此值必須為假。如果您使用的是軟體RAID、則此值必須為真。</block>
-  <block id="7efc18a8265e9977fb3518551ff21574" category="paragraph">容量層授權用於ONTAP Select 不中斷節點。</block>
   <block id="2b24bc0f21d6bbbaef36e09ddfa027a0" category="list-text">顯示主機上可用的網路組態：</block>
   <block id="e5cc61140754d924e9497ca93ae33daf" category="paragraph">「主機網路show -host-name &lt;FQDN：ip&gt;-detailed」</block>
   <block id="bb7ea5508da973d7f3f3a022afe1dd6b" category="list-text">執行節點的網路組態：</block>
@@ -543,14 +520,7 @@
   <block id="1d8edcb67cffc7ed8d5c5ba0f36578b7" category="list-text">顯示叢集狀態、以判斷叢集何時成功部署：</block>
   <block id="e8cda75e7e5da3e0963e9bf30c7fe4c4" category="paragraph">「cluster show -name clustername」</block>
   <block id="a1b2fc65ee3382a95ecb29d66110e2ad" category="paragraph">您應該備份ONTAP Select 「不再部署」組態資料。</block>
-  <block id="7807c1892c85ba4af2d3c779c7823c25" category="summary">使用容量資源池授權模式時適用的限制如下所示。</block>
-  <block id="3e786bde6715be4e14e3475dd6ed4cce" category="paragraph">單ONTAP Select 一資料叢集內的所有節點都必須使用相同的授權模式、例如容量層級或容量資源池。您無法在單一叢集內混合使用節點的授權類型。</block>
-  <block id="1698dae6a4f7df9ce924018053e98157" category="paragraph">所有在一個叢集中具有容量集區授權的節點ONTAP Select 、都必須使用相同的授權管理員執行個體。由於每個部署執行個體中都有一個授權管理員執行個體、因此此限制重新說明叢集中所有節點必須由同一個部署執行個體管理的現有需求。</block>
-  <block id="44f8a5fada3e18e6f15ff271b3edc087" category="paragraph">每個節點都可以從一個容量資源池租用儲存設備。節點無法使用兩個以上的資源池。</block>
-  <block id="9f9dee89e91dda6c0bed11a752b85182" category="paragraph">單一HA配對中的兩個節點都必須從相同的容量資源池租用儲存設備。不過、同一個叢集內的不同HA配對可以從同一個授權管理員所管理的不同資源池租用儲存設備。</block>
   <block id="ae060de04aca5e325886869d3119eab9" category="paragraph">從NetApp取得儲存授權時、您必須選擇授權期間。例如、授權的有效時間可能為一年。</block>
-  <block id="3684db008f18e1ffdeda56bf51708696" category="paragraph">當某個節點要求資料Aggregate的儲存租賃時、授權管理員會根據容量集區的組態、提供特定期間的租賃。ONTAP Select您可以設定每個資源池在一小時到七天之間的租用期間。預設的租用期間為24小時。</block>
-  <block id="987ded954f3b3c95296c03ab6b45ec09" category="paragraph">使用容量集區授權時、您必須為部署管理公用程式指派靜態IP位址。</block>
   <block id="38fe5a7ac0941190856f04300c469ba4" category="summary">您應該考慮幾項與VMware vCenter相關的規劃需求。</block>
   <block id="85b8b2674420975b303ca7af2cceb0b1" category="doc">VMware vCenter伺服器</block>
   <block id="932e043aa57bcad42e0294838a086f83" category="section-title">管理權限</block>
@@ -604,9 +574,7 @@
   <block id="576271d358b861b1da59de8d0b9547e8" category="paragraph">雙節點叢集定義為叢集、兩個節點位於同一個資料中心、距離300公尺以內。一般而言、兩個節點都有上行鏈路可連至同一個網路交換器或一組交換器間連結（ISL）網路交換器。</block>
   <block id="4e83e8addeafe73c3acbe68952183177" category="paragraph">雙節點MetroCluster 的不完整資料SDS定義為叢集、其節點實體分隔（不同的空間、不同的建築物和不同的資料中心）超過300公尺。此外、每個節點的上行鏈路連線都會連接至不同的網路交換器。不需要專用硬體即可實現此功能。MetroCluster不過、環境應符合延遲需求（RTT最長5毫秒、不穩定性最長5毫秒、總共10毫秒）和實體距離（最大10公里）。</block>
   <block id="526a514c4ab4ec984314911904c226e7" category="admonition">本地附加儲存設備（DAS）和共享儲存設備（vNAS）均支援使用支援的支援。MetroCluster請注意、VNAS組態通常會因為ONTAP Select 在整個過程中使用的是介於整個過程中的虛擬機器和共享儲存設備、而產生較高的內在延遲。包含共享儲存延遲在內的各個節點之間、均必須提供最多10毫秒的延遲。MetroCluster換句話說、只測量Select VM之間的延遲並不足夠、因為這些組態的共享儲存延遲並不微不足道。</block>
-  <block id="9cbb2237779591c572f2e7fa9444989e" category="summary">在容量層授權模式下、九位數節點序號與指派給節點的授權序號相同。不過、使用容量資源池授權模式指派給節點的序號格式不同。</block>
   <block id="875d6acfb9499e910c2863da32d9284e" category="doc">節點序號</block>
-  <block id="5c8c6a008855a7326fa4629a85dd127e" category="paragraph">使用容量資源池授權的節點序號格式如下：</block>
   <block id="3341673f4960921bc2834aa8bfa4ac44" category="paragraph">"999 ppppppppppp nnnnnnn"</block>
   <block id="8488b21dee18149216107700b6943d61" category="admonition">已新增空格以清楚說明、但不屬於實際序號的一部分。</block>
   <block id="eea8b1995d50aa53af45e544818f8706" category="paragraph">下表從左到右說明節點序號的每個區段。</block>
@@ -614,10 +582,7 @@
   <block id="04adb8320a112460030976076e1b41c5" category="cell">'999'</block>
   <block id="94c8db1e39e106761ed9c4db655dd019" category="cell">NetApp保留的固定三位數值。</block>
   <block id="0c59088c12981c5178183df5dc1d06ec" category="cell">ppppppppppp</block>
-  <block id="2d11bc3376ef9a1325097fc3bdf98e3b" category="cell">NetApp指派給容量資源池的可變九位數授權序號</block>
   <block id="6eff2276c4f875c14c569fbc11e4c2a0" category="cell">nnnnnnn</block>
-  <block id="28166a3ae8b939ecccabac1b217dd6b9" category="cell">使用容量資源池的每個節點、由授權管理員產生的可變八位數值</block>
-  <block id="d5b7ad6085f954060b4b4df44a320995" category="admonition">注意：在NetApp支援中開啟使用容量資源池授權的節點案例時、您無法提供完整的二十位數節點序號。您必須提供九位數的容量資源池授權序號。您可以從節點序號中衍生授權序號、如上所示。跳過節點序號（「999」）的前三位數、然後擷取下九位數（pppppppppp）。</block>
   <block id="1bef0a056722dac4fff8d9e4eb9229d3" category="summary">您可以使用下列指令碼、根據指令碼中定義的參數和Json輸入檔來建立叢集。</block>
   <block id="f32f31f3f65cf8fd06f0af930a71a5a1" category="paragraph">建立雙節點的叢集時、可選擇使用哪些組態選項。MetroCluster ONTAP Select這類似於遠端辦公室/分公司（ROBO）部署、但兩個節點之間的距離可達10公里這項強化的雙節點部署可提供額外的使用案例。在準備部署MetroCluster 環節中、您應該瞭解各項要求和限制。</block>
   <block id="b06ea299e97a88792e784ae5e265bc85" category="paragraph">每個節點都必須擁有優質或更高ONTAP Select 版本的不含功能的授權。</block>
@@ -741,13 +706,9 @@
   <block id="65691488761a7747318eb7ff73d74467" category="paragraph">您可以使用ONTAP Select 產品介紹來實作額外的儲存設備、以擴充您的主要儲存功能。額外的儲存設備可用來支援貴組織的災難恢復工作和資料備份計畫。</block>
   <block id="201682dba6c42f044edb1fb3b72e26dd" category="section-title">開發與測試</block>
   <block id="72baaefd6e8827d0e29d5eccbe87eb9d" category="paragraph">當您在組織內部署各種應用程式時、ONTAP Select 可以將NetApp做為整體應用程式開發與測試程序的一部分。例如、您可能需要暫用儲存設備來保存測試輸入或輸出資料。這些部署類型的長度可能會因應用程式特性和需求而異。</block>
-  <block id="f7cbb5649dbc857609b9017aafeee7f1" category="summary">容量資源池與容量層授權模式之間有幾個差異。</block>
   <block id="bed7832e3f97e759fd2581b465169890" category="paragraph">下表比較ONTAP Select 了支援的兩種正式作業授權模式。</block>
-  <block id="40cc20fb536f79b4342dc02e04418031" category="cell">容量階層</block>
-  <block id="3824ce9b3abc70c7c5c21eda0ab912d0" category="cell">容量資源池</block>
   <block id="d8c97127df818e94ea6e6ac7b50e96b4" category="cell">授權序號</block>
   <block id="74eb298f532f82b217f8fd4335a9809f" category="cell">由NetApp產生並指派給節點的九位數</block>
-  <block id="91bc1f85b954434200a85f3bb06ad036" category="cell">由NetApp產生並指派給容量資源池的九位數</block>
   <block id="cfe9ad257383707f3fd7fae02d04d37c" category="cell">授權鎖定</block>
   <block id="d62725d2824f19699315182c0a6b0376" category="cell">鎖定ONTAP Select 至節點</block>
   <block id="d38016c64850189116e2066e441f03ee" category="cell">鎖定至License Manager執行個體</block>
@@ -798,10 +759,7 @@
   <block id="38da2c2103ef987f4862381c4a4c2339" category="paragraph">由於雙節點叢集通常部署在遠端或分公司、因此它們可以遠端從公司資料中心部署、而部署公用程式則提供管理支援。使用此組態、部署公用程式與叢集之間的管理流量會透過WAN傳輸。如需限制與限制的詳細資訊、請參閱版本說明。</block>
   <block id="f2b1b246e8c1326b576cc904e17de1bb" category="paragraph">最佳做法是定期備份部署組態資料、包括在建立叢集之後。這對雙節點叢集而言特別重要、因為備份中包含了中介組態資料。</block>
   <block id="d5955f327d5d79aa3434b5772a31b4d8" category="summary">支援僅軟體版本的功能、可在Hypervisor主機上部署為虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。</block>
-  <block id="7cc14acbe7c6207c4a44a5e6e60f0a80" category="doc">概述ONTAP Select</block>
-  <block id="2a0e91436f90a22cb84ac4d4041e2aa5" category="paragraph">支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。</block>
   <block id="9ed6c695ae7ec8113471a76ddcea07cf" category="section-title">軟體定義儲存設備</block>
-  <block id="3d55457ab585cd891246ed7dff68b788" category="paragraph">透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（SDI）架構、最寶貴的IT資產可與基礎實體基礎架構分開、提供靈活度、擴充性及可程式化性。</block>
   <block id="718d7c969f416878691ffcaa2bdf3ca1" category="paragraph">在資料分散於直接附加儲存設備（DAS）的零散環境中、資料移動性和管理變得更加複雜。軟體定義儲存設備（SDS）已成為「軟體定義基礎架構」領域的重要一環、可解決這些及其他問題。</block>
   <block id="b2c8689de5a7643d75bcb087da31d4a0" category="paragraph">NetApp解決方案適用於SDS市場。ONTAP SelectNetApp將企業級儲存管理功能帶入軟體定義的資料中心、並將NetApp Data Fabric架構延伸至極端邊緣使用案例、包括物聯網（IoT）和戰術伺服器。ONTAP Select</block>
   <block id="5e75bdbfd3f02cf9f655d512b767dc1f" category="section-title">兩個軟體元件</block>
@@ -818,7 +776,6 @@
   <block id="c6d43ec5b0b49fe2c3f127531903582c" category="section-title">不同的HA架構</block>
   <block id="881afa18564b62e47e6c83658db1df5a" category="paragraph">根據您在叢集中定義的節點數量、ONTAP Select 功能可提供HA功能。例如、四節點叢集由兩個HA配對組成。搭配使用的HA架構ONTAP Select 是以非共享儲存模式為基礎。也就是HA配對中的一個節點無法直接存取另一個節點所擁有的儲存設備。此設計可能會影響ONTAP Select 某些功能特性。</block>
   <block id="799a3fe6cff876fa3027852cc5707a2e" category="section-title">容量授權</block>
-  <block id="ac0038e6c040d26c9e742bc6b66ed6be" category="paragraph">介紹消費型授權模式。ONTAP Select在ONTAP Select 正式作業環境中部署一個叢集時、您必須為每個節點或共享容量資源池購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。</block>
   <block id="1881f93f26871d54aaa9ae5669b15643" category="section-title">功能授權ONTAP</block>
   <block id="3a621a06fd7d2a8267661a7bbea67799" category="paragraph">在一個叢集中的每個節點ONTAP Select 都會自動獲得使用數ONTAP 個功能的授權。您不需要手動安裝或套用這些功能授權。</block>
   <block id="7718fb3bf518427efc070f44f598bda4" category="section-title">不支援的支援功能ONTAP ONTAP Select</block>
@@ -1070,25 +1027,17 @@
   <block id="dc647eb65e6711e155375218212b3964" category="list-text">密碼</block>
   <block id="893c95c096fab305c703479243f6943c" category="summary">管理ONTAP Select 多方面的相關工作可讓您執行、包括執行多方面的功能。</block>
   <block id="9eb6b36f84e03f93cb360a15fa276ffb" category="doc">不需要授權ONTAP Select</block>
-  <block id="4d072981d0459a6e8dddc5e65d85a19d" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能不均的層級授權。</block>
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">使用系統管理員帳戶透過Web介面登入部署公用程式。</block>
   <block id="8466d9c8baffa8020cd2061f9cb4929e" category="list-text">按一下頁面頂端的*管理*索引標籤。</block>
-  <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">您可以視ONTAP Select 需要新增、編輯及刪除功能完善的資源池授權。</block>
   <block id="d26363bf70cc27dd1ba8f09739b8f116" category="list-text">若要查看容量資源池清單：</block>
   <block id="e034cc23606a54a163075931f70dbbab" category="list-text">選取並展開資源池、以查看叢集和節點從資源池租賃儲存設備的情況。</block>
   <block id="8797856e9d86b8ee20026b14229ca29a" category="list-text">在*授權資訊*下檢視授權的目前狀態。</block>
   <block id="21b26341db1dfa394a993c5d152ccf13" category="list-text">您可以在「租賃到期」下變更為資源池所核發的租賃期間。</block>
   <block id="a0d12512fae580ca38325fe122b9f447" category="list-text">若要查看叢集清單：</block>
   <block id="31881fb30a812ef998d7f2111d7bcc44" category="list-text">選取並展開叢集以查看儲存使用率。</block>
-  <block id="844c5fe8a900e62416848502a4af7fdf" category="paragraph">每個作用中容量集區授權都會鎖定至特定的License Manager執行個體、而該執行個體包含在部署管理公用程式的執行個體中。如果您使用容量集區授權、然後還原或還原部署執行個體、則原始授權將不再有效。您必須產生新的容量授權檔案、然後將授權安裝到新的部署執行個體。</block>
-  <block id="be0411c455172a2eece4547673c61675" category="list-text">判斷原始部署執行個體所使用的所有容量集區授權。</block>
   <block id="80098f7971b686ffe786b2703cea27f2" category="list-text">如果您在建立新的部署執行個體時還原備份、請判斷備份是否為最新版本。</block>
   <block id="9ea0cf0b607e87c61eee72761d5f73a5" category="list-text">找出ONTAP Select 最新由原始部署執行個體所建立的支援節點（僅當原始部署執行個體的最新備份未還原至新部署執行個體時）。</block>
   <block id="36ee47cdf830e8ef804643369ae9cb6f" category="list-text">還原或重新建立部署執行個體</block>
-  <block id="3e7e570e683be353e09e19562e3196f3" category="paragraph">從較高層級來看、這項工作由三個部分組成。您必須重新產生並安裝部署執行個體所使用的所有容量集區授權。將所有授權重新安裝至新的部署執行個體之後、您可以視需要重設序號。最後、如果部署IP位址已變更、您必須更新ONTAP Select 使用容量資源池授權的每個節點。</block>
-  <block id="6d46c419c8dde2ad4ea4d5623e1b4350" category="list-text">請聯絡NetApp支援部門、讓原始部署執行個體的所有容量資源池授權不受限制且未經註冊。</block>
-  <block id="dc94932a20b0a7c73d1e6aa60af35223" category="list-text">為每個容量集區授權取得並下載新的授權檔案。</block>
-  <block id="8018479e33974a2b0f774cf42ec399e5" category="list-text">在新的部署執行個體安裝容量資源池授權：</block>
   <block id="e05566aa3784020545c76d92dcb376ab" category="list-text">如果您在建立新的部署執行個體時未還原備份、或是使用的備份不是最新且最新的備份、則必須更新序號：</block>
   <block id="1c4bd3e7e2bc88b1415fade6249d5a46" category="list-text">使用系統管理員帳戶登入部署公用程式命令列介面。</block>
   <block id="1de9bd334d99fc24b79e751ee32ab23c" category="list-text">顯示由原始部署執行個體最近建立之節點的序號：</block>
@@ -1097,15 +1046,12 @@
   <block id="6b5a573590d2b4e33bc4abb08fbfc691" category="list-text">在序號中新增20、以建立新的序號。</block>
   <block id="569ba0d8b8c86f41c90c5df6e562c9a2" category="list-text">設定新部署執行個體的序號：</block>
   <block id="0426f75052d2375cd4d03853499c9218" category="paragraph">「license-manager modify -sSerial-sequence SEQ_number'」</block>
-  <block id="ab5251cc25a6494baca2bffd2a2d2a30" category="list-text">如果指派給新部署執行個體的IP位址與原始部署執行個體的IP位址不同、您必須更新ONTAP Select 使用容量資源池授權的每個節點的IP位址：</block>
   <block id="d4e6e8c5111a4fa039aeebcb814b9716" category="list-text">登入ONTAP 到位於現象節點的指令行介面。ONTAP Select</block>
   <block id="a8a37ba1161f9107f9ddb65d7c79c164" category="list-text">顯示目前的組態：</block>
   <block id="0751f3a066840ee186e51768399a17d4" category="paragraph">「系統授權管理員展示」</block>
   <block id="98f8649e2f83d631b66784b6b451ed1c" category="list-text">設定節點使用的授權管理員（部署）IP位址：</block>
   <block id="f06ba64d3be7b8d25f7ebbcfc88db033" category="paragraph">「系統授權授權管理員修改主機new_ip_address'</block>
-  <block id="de2312541c249bc72eb1d78f6c56e732" category="paragraph">您可以透過ONTAP Select 部署管理公用程式來升級版的功能評估叢集、以使用正式作業容量層授權。</block>
   <block id="bc882e7be43ec2480a6be229d77c8eaf" category="list-text">每個節點都必須配置足夠的儲存空間、以支援正式作業授權所需的最低需求。</block>
-  <block id="b94a9bad5ae121ac9e7cd292197b59e1" category="list-text">您必須擁有評估叢集中每個節點的容量層授權。</block>
   <block id="f5d5a8d93d0ff3b80b514c776adc3d06" category="paragraph">對單節點叢集執行叢集授權的修改會造成中斷。不過、多節點叢集的情況並非如此、因為轉換程序會一次重新啟動每個節點以套用授權。</block>
   <block id="5a3b7bb229a1d7655341b191f93fef35" category="list-text">為每個節點選取可用的正式作業授權、或視需要上傳額外授權。</block>
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">叢集的授權升級可能需要數分鐘的時間。允許程序在離開頁面或進行任何其他變更之前完成。</block>
@@ -1219,30 +1165,22 @@
   <block id="6d998d9ff628e2b0fde654239468060c" category="list-text">在主頁面上、捲動至底部、然後按一下「*叢集*」。</block>
   <block id="2fa8b95c0280fa208e02bcfc35b2d714" category="list-text">按一下「* Get /cluster /｛cluster _id｝*」以顯示API呼叫的詳細資料、該API呼叫用於傳回ONTAP Select 有關某個叢集的資訊。</block>
   <block id="b5a04f0b908059ef31247ca46d104984" category="summary">您可以使用下列指令碼來調整ONTAP Select 叢集中節點的大小。</block>
-  <block id="1fa376cad2ffe76e02ea9d82c3eb6d9c" category="summary">容量資源池授權模式與容量層模式不同。儲存容量會分配給一個集區、並在許多節點之間共用、而非將儲存容量專用於每個個別節點。已建立其他元件和程序來支援容量集區模式。</block>
   <block id="1a2858c08187c4c1503bdd84f6814aa7" category="doc">營運詳細資料</block>
   <block id="da2d544df7edf3f50bd8cae1e601264a" category="section-title">授權管理員</block>
-  <block id="f80fce6ffa62c519c91dbe6256373e6e" category="list-text">根據容量集區授權序號、為每個節點產生唯一的二十位數序號</block>
-  <block id="2b2888d3189fe96ab747317d559c34f6" category="list-text">根據ONTAP Select 來自各個節點的要求、從共享容量資源池建立容量租賃</block>
   <block id="18267b7796271fa458d6c8f635e9cebb" category="list-text">透過部署使用者介面回報集區使用資訊</block>
   <block id="52e472917eedf9e8a785e7c56e92d749" category="section-title">租賃特性</block>
-  <block id="54e5aaa838921f915019ec44b1e43fa3" category="paragraph">在使用容量資源池授權的節點上、為每個資料集合分配的儲存設備必須具有相關的租賃。節點要求儲存設備租賃、如果容量可用、則授權管理員會以租賃回應。每個租期都有下列明確或隱含的屬性：</block>
   <block id="5fe818f94cd9173f284c2cb187775708" category="list-text">License Manager每ONTAP Select 個節點都與一個License Manager執行個體相關聯</block>
-  <block id="26151cc6bc3f2e8bac3b52e9a8cad859" category="list-text">容量資源池每ONTAP Select 個節點都與一個容量資源池相關聯</block>
   <block id="d671bee3ba61f48b2736b6e6d38fbf16" category="list-text">儲存設備配置會在租賃中指派特定容量值</block>
   <block id="8a41c43a78c273b7090dd972cb11c8fa" category="list-text">到期日與時間租賃的期間介於1小時到7天之間、視使用者組態而定。</block>
   <block id="466feccbc5c615c8c64edaa9f141fd74" category="section-title">授權鎖定ID</block>
-  <block id="8ddd4ae6565aad8e0220721a3b0b115f" category="paragraph">每個使用許可管理員執行個體、以及每個對應的部署公用程式執行個體、都會以唯一的128位元號碼來識別。此數字與九位數容量資源池授權序號結合使用、可將資源池鎖定至特定的授權管理員執行個體（實際上是部署執行個體）。您必須在NetApp支援網站上提供這兩個值、作為產生NetApp授權檔案（NLF）的一部分。</block>
   <block id="c35b911ba82c4e39b4517e38d1a88551" category="paragraph">您可以使用Web使用者介面、以下列方式判斷部署執行個體的授權鎖定ID：</block>
   <block id="93147ad40002fa287e2077d09284c452" category="list-text">「快速入門」頁面此頁面會在您第一次登入部署時顯示。您也可以按一下頁面右上角的下拉式方塊、然後選取「Getting Started（使用入門）」、以顯示頁面。LLID會顯示在「新增授權」區段中。</block>
   <block id="f51e8d01c52b31dc2ac35fcbc93eca28" category="list-text">系統管理按一下頁面頂端的「*管理*」索引標籤、然後按一下「*系統*」和「*設定*」。</block>
   <block id="bc165811908b5de0b53e3fb455b59f7d" category="section-title">基本租賃作業</block>
-  <block id="e02846e806da1a115348e9fee40e2ff8" category="paragraph">每次建立、擴充或變更資料Aggregate時、均必須尋找或申請有效的容量租用。ONTAP Select您可以使用從先前的申請中取得且仍有效的租賃、或視需要申請新的租賃。下列步驟是ONTAP Select 由節點執行、以找出容量資源池租賃：</block>
   <block id="7d9520f0fa2db8b35655f9495b62e220" category="list-text">如果節點上有現有的租用、則只要符合下列所有條件、就會使用該租用：</block>
   <block id="841155ef8ec7759dbe94406233eb27b5" category="list-text">租約尚未到期</block>
   <block id="25784b4e2979db42de075e5e9dd10079" category="list-text">集合體的儲存要求不會超過租用容量</block>
   <block id="e854418dddc00af07fa6200a4ede9a50" category="list-text">如果找不到現有的租用、節點會向授權管理員要求新的租用。</block>
-  <block id="4834df5eda0b47ccabbdf06e24c846dd" category="paragraph">儲存容量會視需要從容量資源池中分配、而每個新要求都會減少資源池中的可用儲存空間。儲存容量會在多種情況下傳回集區、包括：</block>
   <block id="25e8c3dfe0fc86ab114fd57ec6ff2450" category="list-text">資料Aggregate的租期將會到期、且節點不會續約</block>
   <block id="c368765dd32d8b7199f9250b99a8087b" category="list-text">刪除資料Aggregate</block>
   <block id="afcc04ba59c0e5b7c23adba80994022a" category="admonition">如果刪除某部執行中的虛擬機器、則所有執行中的租賃將一直有效、直到到期為止。ONTAP Select發生這種情況時、容量會傳回集區。</block>
@@ -1379,9 +1317,7 @@
   <block id="468c7067a5232ce7f7b5f71d1c6e1685" category="paragraph">如果符合特定的最低需求、則可在兩個位置之間延伸雙節點叢集。這種架構可在硬體MetroCluster 式的功能區和單一資料中心叢集（硬體定義或軟體定義）之間、完美融入其中。對「不完整」SDS的要求ONTAP Select MetroCluster 強調軟體定義儲存解決方案的一般靈活度、以及它與硬體型MetroCluster 的「不一致」SDS之間的差異。不需要專屬硬體。</block>
   <block id="189f86e135df200ab301cdba9724b737" category="paragraph">與MetroCluster 之不同的ONTAP Select 是、不只使用現有的網路基礎架構、還能支援高達5ms的RTT網路延遲、最大不穩定性可達5ms、最大延遲可達10ms。雖然延遲設定檔較為重要、但也需要最大距離10公里。市場空間的分隔需求與實體分隔的關係比實際距離還要多。在某些情況下、這可能代表不同的建築物。在其他情況下、這可能意味著同一棟建築內的不同房間。無論實際放置的實體位置為何、將雙節點叢集定義為MetroCluster 「物件SDS」的是每個節點都使用獨立的上行鏈路交換器。</block>
   <block id="c0a1eea8b1af6026a021d360f96c66d8" category="paragraph">在雙節點HA組態中、需要使用中介器來在容錯移轉期間正確識別作用中節點、並避免發生任何在網路分割期間兩個節點都保持獨立作用的腦分割案例。此作業與先前可用的一般雙節點HA組態相同。為了在站台故障期間提供適當的保護和容錯移轉、中介器應位於不同於兩個HA節點的站台。中介器與每ONTAP Select 個節點之間的最大延遲不得超過125毫秒。</block>
-  <block id="94552a5199f7104b614575781d58ffef" category="paragraph">有了這套解決方案、企業客戶就能放心地在市售硬體上運用軟體定義儲存解決方案的靈活度。他們可以安心部署、因為他們知道自己的資料受到企業級零RPO解決方案的保護。</block>
   <block id="7df0d3f86ea85895ce805f02d425a395" category="paragraph">支援下列功能：ONTAP Select MetroCluster</block>
-  <block id="55f4eec83ef8167eeb9aae4734147eab" category="list-text">支援的另一個層面（從資料中心到資料中心）是針對功能的保護。MetroCluster ONTAP Select客戶現在除了能充分發揮軟體定義儲存設備和ONTAP 功能之外、還能享有更高層級的保護。</block>
   <block id="efd88036e2c90f7b3284371d9cdbb406" category="list-text">利用0 RPO和自動容錯移轉功能、支援關鍵業務資料保護。MetroCluster資料儲存設備和應用程式存取點都會自動切換至正常運作的資料中心或節點、而不會受到IT部門的任何介入。</block>
   <block id="31414fd6f8904fe7a521040b566ba467" category="list-text">以符合成本效益的方式提供SDS。MetroCluster它利用現有的網路基礎架構、在HA配對之間實現延伸恢復能力、而且不需要額外的硬體。它也能在同一個叢集中提供主動/主動式資料存取和資料中心備援。</block>
   <block id="d6f1b8d7589890e7cbb2e641d329ba0b" category="paragraph">*《SSD*》MetroCluster</block>
@@ -1598,18 +1534,13 @@
   <block id="33049db6f4337fdeb40a9daa0f02990a" category="cell">每個要部署的OTS節點</block>
   <block id="7500b5713f13bc8f1704bb7da699f783" category="cell">iSCSI（3260）</block>
   <block id="486a5d62fc96d90727c1ed173ccfa4b5" category="cell">中介器/信箱磁碟</block>
-  <block id="3de1ca7c5efc91bb5c6c3fe1667e7f17" category="summary">您必須為ONTAP Select 各個由節點使用的容量資源池取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。</block>
-  <block id="e26cab9e8e6b8390bd5be41af1d4052a" category="paragraph">您必須擁有由NetApp指派給容量資源池的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。</block>
-  <block id="3268086c81bdd4a048f2802c1261a578" category="paragraph">您必須針對ONTAP Select 各個節點使用的容量資源池執行此工作。</block>
   <block id="7456bc766f2bb265ca706274029a4d1d" category="list-text">使用網頁瀏覽器存取NetApp支援網站並登入。</block>
   <block id="89d470e4f09750972e667a0aa66f60da" category="list-text">按一下頂端的* Systemes*、然後按一下* Software Licenses*。</block>
-  <block id="b8c28c22670acd8bd63bb0a805272088" category="list-text">輸入容量集區的授權序號、然後按一下「*執行！*」。</block>
   <block id="ae9aa26e0640b9c3d2d442b604f354ee" category="list-text">在授權詳細資料頁面上、瀏覽至*產品詳細資料*欄。</block>
   <block id="706a307ae92c25933ca962eb6dbd8560" category="list-text">按一下適當列上的*「Get NetApp License File"（取得NetApp授權檔案）*。</block>
   <block id="e3a2b007e462109d35d40e5a66167dd3" category="list-text">輸入ONTAP Select 您的「更新部署」執行個體的授權鎖定ID、然後按一下「*提交*」。</block>
   <block id="428eaaa9f14db57c6bd3b4e5dc5b258f" category="list-text">選擇適當的交付方法、然後按一下*提交*。</block>
   <block id="e65eef77c34710d04f651265a36f1383" category="list-text">按一下「傳送確認」視窗上的「*確定*」。</block>
-  <block id="f9398cacd5f1ebcc0aca8d8b93299cb5" category="paragraph">您必須先將授權檔案上傳至部署管理公用程式、才能讓ONTAP Select 某個節點使用容量資源池。</block>
   <block id="b77f8745ee9c36f9805514d75ac8967e" category="summary">如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主機來識別磁碟機。</block>
   <block id="d713613f7887118583b019301c1d2427" category="paragraph">在NVMe裝置上使用VMDirectPath I/O傳遞、以最大化資料效率。此設定可將磁碟機展示給ONTAP Select 整個物件虛擬機器、ONTAP 使其能夠直接透過PCI存取裝置。</block>
   <block id="29ddeaafb3734d2cd4a59921d590cdfa" category="paragraph">確保您的部署環境符合下列最低需求：</block>
@@ -1678,9 +1609,7 @@
   <block id="c9a9a8f627d1d803e2e94b0b16e265f3" category="section-title">ESXi上的單節點叢集</block>
   <block id="70771ca4958d1b97175631c548e5b806" category="section-title">使用vCenter在ESXi上使用單節點叢集</block>
   <block id="fa7d26728677ccb514c43b50b7837b1f" category="section-title">KVM上的單節點叢集</block>
-  <block id="6fad90e28618e0a28b3096e32fc10067" category="summary">使用容量層授權時、您需要為每ONTAP Select 個節點取得授權檔案。授權檔案會定義節點的儲存容量、並透過NetApp指派的獨特九位數序號鎖定至節點。</block>
   <block id="b83de81d9df2daba7b299079440e4a70" category="paragraph">您必須擁有由NetApp指派給節點的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。</block>
-  <block id="6bb55d7bed113bc9f1eb1ceaa56c67c3" category="paragraph">您必須為ONTAP Select 每個需要容量層授權的節點執行此工作。</block>
   <block id="f1119e2a8337db49fe7086c2b2267602" category="list-text">使用網頁瀏覽器存取ONTAP Select 此功能：</block>
   <block id="ac8e78a77fe7ca32132b86474e8c9de5" category="paragraph">https://register.netapp.com/register/getlicensefile`</block>
   <block id="84db9bc9926628faaa27e124a2df79bb" category="list-text">使用您的NetApp帳戶認證登入。</block>
@@ -1816,12 +1745,8 @@
   <block id="117d84c5d2c4c5d0965e55b844c0e46d" category="paragraph">在延伸的HA部署模式中、只支援使用「媒體工具」的雙節點叢集。</block>
   <block id="545d5da191e6a6ba8756e03d9e72b5d9" category="summary">您可以依照工作流程來購買及套用授權以進行ONTAP Select 您的NetApp部署。</block>
   <block id="67f277ce98738f33f83293525780e9a2" category="paragraph">下列工作流程說明了購買及套用授權以進行ONTAP Select 支援的程序。購買授權時、您必須選擇授權模式和儲存容量。</block>
-  <block id="6fff1f3e41423b59b387036f1c43f446" category="paragraph">確切的程序會因使用容量層級或容量集區授權而有所不同：</block>
   <block id="0062e2b8fb35cb9835391a2defa6a065" category="list-text">九位數授權序號</block>
-  <block id="79e0e2c63445d0a61c41da376fa86f53" category="list-text">序號適用於節點（容量層級）或儲存資源池（容量資源池）</block>
-  <block id="8a1682395c44d437628616757dac21b3" category="list-text">使用容量集區授權時、您必須擁有部署執行個體的授權鎖定ID</block>
   <block id="c6fdf62cd5d566315189e3fc6458c3d7" category="list-text">授權網站</block>
-  <block id="43180a10c14034015ad04f63c4222224" category="list-text">您可以在不同的網站取得容量層級和容量資源池授權</block>
   <block id="d981b46179e3f91d5fe1f32dd9134fff" category="inline-image-macro">說明用於購買及安裝正式作業ONTAP Select 的儲存授權部署程序。</block>
   <block id="87f55f3b9d86ff28fa332ac74ae68458" category="paragraph"><block ref="87f55f3b9d86ff28fa332ac74ae68458" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c6546b53840ec8245dd4d4d70fcdbc26" category="list-text">CIFS</block>
@@ -1962,15 +1887,11 @@
   <block id="a80b761ab06a4ff6731297d4de180b0b" category="list-text">瀏覽至頁面底部、按一下「*部署*」、然後按一下「*取得/images"。</block>
   <block id="d7053ec6f3f2e9697233f406d33a87fb" category="list-text">按一下*試用！*以顯示可用ONTAP Select 的圖片。</block>
   <block id="c5db03c3f05f8d27a033a2f8f7fbf211" category="list-text">確認所需的映像可用。</block>
-  <block id="5f21d6245c5bb0178e94ca31973b2629" category="summary">使用容量資源池授權模式而非容量層授權模式時、有幾項優點。</block>
   <block id="f375253c446097df1911643c823bcebc" category="doc">效益摘要</block>
   <block id="9d7eafb0b72f9b5f7663e196c8c405d4" category="section-title">更有效率地使用儲存容量</block>
-  <block id="045609ee650288df1c254d2307390990" category="paragraph">使用容量層授權時、您會為每個節點分配固定的儲存容量。任何未使用的空間都無法與其他節點共享、因此會有效浪費。透過容量集區授權、每個節點只會根據資料集合體的大小、消耗所需的容量。</block>
   <block id="c49054c6883b9886c6f31a2e8723ffe6" category="paragraph">由於容量是固定在中央集區中、因此可在組織的許多節點之間共用。</block>
   <block id="5aaf2ab29a3c1228e8c4125acd634e5e" category="section-title">大幅降低管理成本、進而降低成本</block>
-  <block id="d103dad4fce7c3b935c3371288ee0e36" category="paragraph">如果您使用容量層授權、則必須取得並安裝每個節點的授權。使用容量資源池時、每個共用資源池都有一個授權。如此可大幅降低管理成本、並降低成本。</block>
   <block id="1e8785eff311926f53d67ca62acdaa7b" category="section-title">改善使用量標準</block>
-  <block id="c9e41b9dec6359fc66760c0eb4d6fa5f" category="paragraph">部署Web使用者介面提供容量集區的增強使用資訊。您可以快速判斷容量集區中使用和可用的儲存容量、使用資源池中儲存設備的節點、以及叢集正在從中配置容量的資源池。</block>
   <block id="ce78ffc97df7b01d036f243f07839070" category="summary">使用「部署」可為叢集中的每個節點新增及授權額外的儲存空間。ONTAP ONTAP Select</block>
   <block id="9d9a4fa3f8bc822652ce73f5ccc63a4e" category="paragraph">在支援的情況下、只有使用支援的儲存新增功能ONTAP 才能增加管理中的儲存容量、而且ONTAP Select 不支援直接修改此功能。下圖顯示啟動儲存新增精靈的「+」圖示。</block>
   <block id="c3a3966f7642611a1f29ac32ece5424a" category="inline-image-macro">叢集與節點詳細資料</block>
@@ -2003,9 +1924,7 @@
   <block id="6946015929ad4f656738c88a1535f3e0" category="list-text">使用系統管理員帳戶登入部署公用程式CLI。</block>
   <block id="79f41a0e0ccd4b8ecf18041e9a81199d" category="list-text">變更密碼：「密碼修改」</block>
   <block id="82127225cef946e77040d2fd1420db6f" category="list-text">根據您的環境回應所有提示。</block>
-  <block id="8249cf77b8d8e1a887c3064234f33f64" category="summary">您可以在ONTAP Select 三種平台容量層級之一購買一個不含任何功能的功能區層級或容量資源池授權。這些授權產品決定了部署ONTAP Select 的主機功能。</block>
   <block id="d8ab7c9c78c21b4a22cdfba499be0102" category="section-title">平台授權方案提供的功能</block>
-  <block id="bf2bf32468663aa60c17572fd96be228" category="paragraph">特定授權方案可定義並限制Hypervisor主機在以下兩個領域的功能：</block>
   <block id="3c1861aaa9fcf5a348da316345ccfdb6" category="list-text">執行個體類型（CPU、記憶體）</block>
   <block id="09bf8b227659727142783e5535a49102" category="list-text">其他功能</block>
   <block id="640b087d140d4a80f7e7d94ebcced847" category="paragraph">授權方案會依照從標準到優質XL的功能遞增順序排列。一般而言、您選擇的授權選項會授予您該層級和所有較低層級的功能。例如、高級層級提供優質和標準的功能。</block>
@@ -2016,7 +1935,6 @@
   <block id="9f0890b87339c093ced753d756bc24fa" category="list-text">vNAS</block>
   <block id="9796a14555a2c8bf2cbefd825c3168c8" category="paragraph">優質產品提供下列功能：</block>
   <block id="dcf1bea6142acd68dc8ee180fa525686" category="list-text">小型或中型執行個體類型</block>
-  <block id="d598b7c596887c12a7901f81a1798bd3" category="list-text">硬碟（HDD）或固態硬碟（SSD）</block>
   <block id="242993ddd5be1ee9c2b34ac3d6e16525" category="list-text">本機硬體RAID控制器或軟體RAID</block>
   <block id="0ffe501fe086c67c3769d18d093b040d" category="list-text">部分SDS MetroCluster</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">優質XL產品提供下列功能：</block>
@@ -2128,7 +2046,6 @@
   <block id="7aef2921a7d9da0c29e1025af9b9bc9b" category="list-text">您應該決定ONTAP Select 哪些儲存空間是用於不必要的節點。取得具有儲存容量的已購買授權時、必須提供此資訊。如需詳細資訊、請參閱儲存容量限制。</block>
   <block id="514d658beb8d2ad9347d561c047df99c" category="admonition">此功能可與連接到該虛擬機器的資料磁碟總允許大小相對應。ONTAP Select ONTAP Select</block>
   <block id="71d95f80f78afeb107caa45cdd0d4b5a" category="list-text">正式作業部署的授權模式</block>
-  <block id="04ad7df80604af0ba0f4b5923ab1f2ae" category="list-text">您必須針對ONTAP Select 部署在正式作業環境中的每個叢集、選擇容量層級或容量資源池授權模式。如需詳細資訊、請參閱_License一節。</block>
   <block id="680e9e82137091017ba19fdaa5193e04" category="list-text"><block ref="680e9e82137091017ba19fdaa5193e04" category="inline-link-macro-rx"></block></block>
   <block id="aca2fd87d8012efa91dbc6e6c912d7e7" category="summary">提供的儲存效率選項類似於介紹在功能性和功能性上的儲存效率選項。ONTAP Select FAS AFF</block>
   <block id="6b3850335452abbd46e2f81ea011d686" category="doc">儲存效率支援</block>
@@ -2198,9 +2115,6 @@
   <block id="1e738b21b4088a71993efbdd8baca955" category="list-text">授權模式</block>
   <block id="83f73443b8e5ae5f7dc3654ef7bffac3" category="list-text">儲存容量</block>
   <block id="2d97b8a3010b7d7eb0dc173f2d9af444" category="list-text">平台授權方案</block>
-  <block id="dd2cce5aedf6d2f673323b5aa2546e29" category="list-text">容量層授權模式是將儲存設備授權給ONTAP Select 某個部署項目的原始選項。它是以ONTAP NetApp AFF 的《關於NetApp的資料與FAS 資料的資料與資料的資料」為基礎。每個節點都需要個別的授權。儲存容量會鎖定至節點且永久（不需續約）。</block>
-  <block id="54f1ce370f3764196052d27fb5bc23bd" category="list-text">容量資源池授權模式是ONTAP Select 透過使用Deploy 2.1隨附於《S動地9.5：每個儲存容量資源池都需要個別授權。容量集區授權會鎖定至授權管理員執行個體（即部署執行個體）、而且必須根據購買條款進行續約。您可以授權及使用組織中任意數量的容量集區。不過ONTAP Select 、由於資源池是由支援資源的節點共享、因此通常所需的授權比授權容量層級還要少。</block>
-  <block id="e77002bd32b8903c6909b75ca9d0986b" category="list-text">授權管理員是支援容量集區授權的軟體元件。它目前是部署管理公用程式的一部分。LM會將儲存設備從ONTAP Select 其管理的共享資源池租賃給各個節點。_License Lock ID_是唯一識別每個LM執行個體的數字字串、因此是每個部署執行個體。您必須同時使用容量資源池授權序號和LLID來產生授權檔案。</block>
   <block id="6ce3d683f11be5f1e22f253158d4c047" category="list-text">平台授權方案</block>
   <block id="3cfbc322e3cddd57d170712cdb477d47" category="list-text">我們提供三種授權方案、可在ONTAP Select 您購買授權時判斷出該虛擬機器的大小功能：</block>
   <block id="b23921d037d566b4c86b49c1a7df885c" category="paragraph">如需詳細資訊、請參閱_Plan _和_Licens__兩節。</block>
@@ -2233,7 +2147,6 @@
   <block id="c861565e46192ae0f20f00e3a3b602be" category="inline-link-macro">新增ONTAP Select 圖片以取得更多資訊</block>
   <block id="b6916597ca4fb596035c95675806adc4" category="list-text">部署後再管理ONTAP Select 一個叢集</block>
   <block id="5552d2e42187f5ce0bb8b3e93af40a15" category="list-text">部署ONTAP Select 完一個故障叢集之後、您可以像設定硬體型ONTAP 的故障叢集一樣設定叢集。例如、您可以ONTAP Select 使用System Manager或標準ONTAP 的指令行介面來設定一個靜態叢集。</block>
-  <block id="9ed4a475dd3705157a9fed8811f63ce2" category="section-title">NetApp 互通性對照表工具</block>
   <block id="ef063895a1ede73693b222ec3a2f0a63" category="summary">選取最佳的硬體、並設定網路以最佳化效能和恢復能力。</block>
   <block id="1ff04d941ae1b8262465779276105e05" category="paragraph">由於VMware的效能ONTAP Select 與基礎硬體的特性直接相關、因此選擇速度較快的NIC來增加VM的處理量、會導致叢集效能較高、整體使用者體驗也較佳。可使用四個10Gb NIC或兩個較高速NIC（25/40 GB/s）來實現高效能網路配置。還有許多其他組態也受到支援。對於雙節點叢集、支援4個1Gb連接埠或1個10Gb連接埠。對於單一節點叢集、支援2個1Gb連接埠。</block>
   <block id="523bd57fcc837e7be7bc3b0cd4b52afa" category="cell">最低要求</block>
@@ -2469,7 +2382,6 @@
   <block id="794df3791a8c800841516007427a2aa3" category="sidebar">授權</block>
   <block id="187e115b0c10602baa476f64acc86a80" category="sidebar">正式作業授權</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="sidebar">限制</block>
-  <block id="b2fa85b6d75024ce8b7618eccad51ef7" category="sidebar">容量集區與容量層</block>
   <block id="76b6a47a02685d51794b9fdb095512e5" category="sidebar">購買</block>
   <block id="d707dd0578f8287a0a8a84e71f612e87" category="sidebar">授權工作流程</block>
   <block id="f33b49f74fc8933d903baf71e893888b" category="sidebar">功能ONTAP</block>
@@ -2642,7 +2554,6 @@
   <block id="47228ec57373d626b6ba8033642aa844" category="paragraph-title">DAS SSD組態的升級行為注意事項</block>
   <block id="06be3d2851694a8ac21502e41f3e4305" category="paragraph-title">每個叢集的授權模式一致</block>
   <block id="4b0e422dcf415e37a99fb9240372b2e7" category="paragraph-title">叢集中的所有節點都使用相同的授權管理員執行個體</block>
-  <block id="02adb22963ca335394cfa32d81eb77c1" category="paragraph-title">每個節點一個容量資源池</block>
   <block id="b738a2037fc94e2290be56df30341770" category="paragraph-title">HA配對中節點的相同資源池</block>
   <block id="affb254e2447d7a107f972ff759efbb0" category="paragraph-title">儲存授權期間</block>
   <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="paragraph-title">資料Aggregate租用期間</block>
@@ -2836,7 +2747,6 @@
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">可防竄改的Snapshot複本</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">SVM移轉</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
-  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">您可以在使用容量層授權模式和容量集區授權模式時、執行叢集節點調整大小作業。</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">MetroCluster SDS 是一項優質功能、需要 Premium 授權或 Premium XL 授權。Premium授權可支援建立中小型VM、以及HDD和SSD媒體。Premium XL 授權也支援 NVMe 磁碟機的建立。</block>
@@ -2973,8 +2883,6 @@
   <block id="95caa54794f3f2e01024925ee49db3db" category="paragraph">下表摘要列出各種可用的儲存效率選項、預設為啟用、或預設為未啟用、但建議使用、視媒體類型和軟體授權而定。</block>
   <block id="e4182895110dd07e2aace12387fe72a4" category="admonition">ONTAP Select 支援 VMware Storage/SAN 相容性文件中所述的所有外部儲存陣列、包括 iSCSI 、光纖通道和乙太網路光纖通道。</block>
   <block id="403c94a11e9f3b463bb8ab8ee8b5f368" category="section-title">檢視中介服務的狀態</block>
-  <block id="cabaafab34446bfc39babebeb820ad0a" category="paragraph">所有相關的儲存元件、包括硬體、軟體和功能需求、都必須符合中所述的要求
-<block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block>。此外、 ONTAP Select 支援 VMware Storage/SAN 相容性文件中所述的所有外部儲存陣列、包括 iSCSI 、 NAS （ NFSv3 ）、光纖通道和乙太網路光纖通道。外部陣列支援受ONTAP Select 支援ESXi版本的限制。</block>
   <block id="6a76e5eccaae065aae5cd7a8193204ff" category="paragraph">您可以部署單一節點或多節點叢集。請參閱 <block ref="4452a56e6eb6220413b5f5ed2b39c2eb" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="d2f67fbcdde5ccb2059e155c4507f07d" category="section-title">管理 ONTAP Select</block>
   <block id="1a7f92b5b7c947bfb70b208837107708" category="paragraph">支援ONTAP Select 的過程包括許多不同的管理程序。此外、部署管理公用程式也有特定的程序。以下是其中最重要的程序。一般而言、全部都使用部署Web使用者介面。</block>
@@ -2983,7 +2891,6 @@
   <block id="0fff1320bbb426b546cc717659845cf2" category="section-title">執行其他 ONTAP 組態</block>
   <block id="efc65817e295ad904ce33fec808387bc" category="paragraph">部署完一個叢集之後、您就可以設定及管理叢集、就像使用硬體型的作業系統一樣。ONTAP Select ONTAP例如、您可以使用 ONTAP 系統管理員或 ONTAP CLI 來設定 ONTAP Select 叢集。</block>
   <block id="5ecb6b24c169667ff1a176768115659e" category="list-text">Active IQ Unified Manager</block>
-  <block id="2a5240540ad0583c2eeed83da7cbc0ed" category="paragraph">若要識別用戶端軟體的支援版本、請參閱 <block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block>。如果用戶端軟體支援ONTAP SJ9、ONTAP Select 則相同版本也可支援該功能。</block>
   <block id="44d05de3077b3838b8ce9d9ad5d45351" category="list-text">建立資料儲存 VM （ SVM ）</block>
   <block id="6b58c1940f3237f8b68aff9dee0612c0" category="section-title">查詢與 API 要求相關的工作物件</block>
   <block id="cd5b6640283cfb064f238f20f8cf467f" category="doc">瞭解平台授權方案</block>
@@ -2992,13 +2899,10 @@
   <block id="06a53967f62b6ebf8a1fba55cabdfecf" category="list-text"><block ref="06a53967f62b6ebf8a1fba55cabdfecf" category="inline-link-macro-rx"></block></block>
   <block id="89ac05efab2228e74e12191efccdf85c" category="inline-link-macro">將部署組態資料還原至新的虛擬機器</block>
   <block id="9731a2aaf926f5fd46b5a7343839efb4" category="list-text"><block ref="9731a2aaf926f5fd46b5a7343839efb4" category="inline-link-macro-rx"></block></block>
-  <block id="86e72ee91d7354c4e08385ba07861bd9" category="inline-link-macro">重新安裝容量集區授權</block>
-  <block id="88e1ef271e0da2ef1b1734cbd286219c" category="list-text"><block ref="88e1ef271e0da2ef1b1734cbd286219c" category="inline-link-macro-rx"></block></block>
   <block id="47546bf1e2847e2d81e73bde93926649" category="section-title">將 ONTAP Select 叢集離線移至線上</block>
   <block id="60458f1485d61e13b322742ae9f0113a" category="section-title">重新整理部署叢集組態</block>
   <block id="c5eb28f60f3d5beee457404724018eb2" category="section-title">刪除 ONTAP Select 叢集</block>
   <block id="24c77c4c999a67b38b8910008fcbf84a" category="paragraph">使用許可管理員會在部署管理公用程式的每個執行個體內以個別程序執行。LM提供的部分功能包括：</block>
-  <block id="7f00ef1ed77e1ee61534d0095471e191" category="section-title">將儲存容量傳回容量集區</block>
   <block id="7df4c22f834073378cbc7bda2a69e5d8" category="section-title">備份部署組態資料</block>
   <block id="a1f19e06427877524f78f5c30de18fb0" category="section-title">安裝部署虛擬機器的新執行個體</block>
   <block id="fb9a355d46a44ee7087bc1fb6669f2f5" category="paragraph">從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將舊版 ONTAP Select 節點升級至 9.5 版或更新版本、則不會自動升級驅動程式。</block>
@@ -3006,7 +2910,6 @@
   <block id="f25b2c6dc6839bba6b8b58cc63c55b3c" category="section-title">排序輸出集中的物件</block>
   <block id="bbd1bf9de2e4077d7d60ab5cd0b761b0" category="section-title">解讀API回應</block>
   <block id="0eb6f6088fedfb69df393e6f09f93699" category="list-text">您無法將軟體 RAID 搭配已從 ONTAP Select 9.4 或更早版本升級的節點使用。如果是這種情況、您需要為軟體 RAID 部署建立新的節點。</block>
-  <block id="e7a0da12e39522bffee10137c534d871" category="paragraph">最重要的儲存限制如下所示。您也應該檢閱 <block ref="aaa18d9ccb38f09094f0c241a8585efd" category="inline-link-macro-rx"></block> 以取得更詳細的資訊。</block>
   <block id="4e452735041997669420c443fdc5dd4b" category="admonition">執行與儲存分配和使用相關的數項限制。ONTAP Select在您部署ONTAP Select 一個叢集或購買授權之前、您應該先熟悉這些限制。請參閱 <block ref="3b292653c3539e42e716109703c672f6" category="inline-link-macro-rx"></block> 章節以取得更多資訊。</block>
   <block id="21415e3d95f2107f49f15bae446d575b" category="section-title">計算原始儲存容量</block>
   <block id="57f64e74028c39685007270c2544c90f" category="list-text">單一 ONTAP Select Aggregate 中的所有磁碟機都應該是相同類型。例如、您不應該在相同的集合體中混用HDD和SSD磁碟機。</block>
@@ -3033,11 +2936,6 @@
   <block id="6f79f88c3d3696fcca3ac6e4f78fd71f" category="admonition">將容量新增至ONTAP Select 某個VMware可能會導致不同大小的VMDK。如需詳細資訊、請參閱一節 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。不同FAS 於VMware系統、不同大小的VMDK可存在於同一個集合體中。在這些VMDK上使用RAID 0等量磁碟區、無論其大小為何、都能充分利用每個VMDK中的所有空間。ONTAP Select</block>
   <block id="5498e86ddbc371087e391d7f3cae5701" category="list-text">SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">變更部署管理員密碼</block>
-  <block id="e4faeb8305c0591d2d61731e2acd18d9" category="section-title">管理容量層授權</block>
-  <block id="8332a78d15667768802110db7d461f39" category="section-title">管理容量集區授權</block>
-  <block id="a04752e304246fb808d9263e3b56379b" category="inline-link-macro">取得容量資源池授權</block>
-  <block id="659d7307965808b9de5245b56fa7b572" category="paragraph">請參閱 <block ref="4548fbfe7e75938d91eeeb4f1520ad00" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="9a74a1f7ca60edeb651edcb6f305db61" category="section-title">管理過期容量集區授權</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用 CLI 部署 ONTAP Select 叢集</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">準備將儲存設備附加至 ONTAP Select 節點</block>
   <block id="ad34b3ead133ac2946581ad99de776f1" category="paragraph">部署管理公用程式包含ONTAP Select 單一版本的不完整功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須先將ONTAP Select 此不實影像新增至部署執行個體。請參閱 <block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
@@ -3113,7 +3011,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d9817ded489aaa35d8ba40ab33bdfd4b" category="cell">KVM</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">部署至 Hypervisor 伺服器節點</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">存取 Hypervisor 伺服器</block>
-  <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">存取部署（容量集區授權）</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">核心型虛擬機器</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">核心型虛擬機器（ KVM ）是 Linux 核心的虛擬化功能、可讓它做為 Hypervisor 平台。支援多種來賓作業系統。</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">在 ESXi VM 上重新裝載節點</block>
@@ -3410,7 +3307,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
   <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型執行個體類型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD 、 SSD 或 NVMe 磁碟機</block>
-  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加授權</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理授權總覽（僅限叢集管理員）</block>
   <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">新增授權金鑰以啟用新功能</block>
@@ -3418,19 +3314,12 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="b5150f2681f3eb5a5b6aab4cbdadad34" category="paragraph">虛擬 NAS （ vNAS ）部署支援虛擬 SAN （ VSAN ）上的 ONTAP Select 叢集、部分 HCI 產品、以及外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。</block>
   <block id="106b2acee8931f9a5618948233ee3f9a" category="paragraph">如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能不會套用。如果發生這種情況、您可以使用下列 CLI 命令來判斷 ONTAP Select 叢集的暫存管理密碼：</block>
   <block id="728dae8c09c02d31a488c58d0abbc713" category="paragraph-title">部署如何偵測 ONTAP Select 授權是否已續約？</block>
-  <block id="1c404f221fc19754e03aac9abdf229e0" category="paragraph">所有授權的方法都相同、不過具體細節會因容量層或容量池授權而異。</block>
   <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link-macro">NetApp 支援網站</block>
   <block id="7eb90e44cd52166d38ee412a0232d948" category="list-text">ONTAP Select Deploy 會偵測授權與支援合約是否在從 NetApp 購買更新的授權檔案時續約。授權檔案（ .NLF ）包含容量、開始日期和結束日期、並會在上產生 <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block>，然後在部署伺服器上更新。</block>
-  <block id="df893ad066dabfa13efd91221b3bccff" category="admonition">您可以使用 *Add* 和 *Update* 功能將 NLF 載入部署伺服器。* 新增 * 新增授權至伺服器、 * 更新 * 會以容量、節點授權（標準、高級、優質 XL ）、支援開始與結束日期（容量層級授權）、或訂閱開始與結束日期（容量池授權）等資訊來更新現有檔案。</block>
   <block id="d39f37cf3f2791c375e1df22336bc0c1" category="admonition">請勿嘗試修改授權檔案。這樣做會使安全金鑰失效、並使授權無效。</block>
-  <block id="8f5801f55c8818fb8546dec02aa0cb36" category="list-text">* 容量層授權 * 是連結至 ONTAP Select 節點序號的每個節點永久授權。隨附獨立的支援合約。雖然授權是永久的、但必須續約支援合約才能存取 ONTAP Select 升級、並獲得 NetApp 技術支援的協助。變更授權參數（例如容量或節點大小）也需要目前的支援合約。</block>
-  <block id="477c7238569246f69cc9ae8f8ecc6b57" category="paragraph">購買容量層授權更新、參數變更或支援合約續約時、訂單中需要節點序號。容量層節點序號長度為九位數、開頭為數字「 32 」。</block>
   <block id="ea9589592b98533b70a296a006630c8b" category="paragraph">一旦購買完成並產生授權檔案、就會使用 * 更新 * 功能上傳至部署伺服器。</block>
-  <block id="6e6f36110dec05c8c4b7d9473e704fee" category="list-text">* 容量資源池授權 * 是使用特定容量集區和節點大小（標準、高階、高階 XL ）來部署一或多個叢集的權利訂閱。訂閱內容包括使用授權的權利、以及特定條款的支援。使用授權和支援合約的權利已指定開始和結束日期。</block>
   <block id="920b036cff328a6924c0fbdd7ab08f4d" category="paragraph-title">部署如何偵測節點是否有續約授權或支援合約？</block>
   <block id="c3975d39937733b863b8e078a435a60a" category="paragraph">購買、產生及上傳更新的授權檔案、是部署如何偵測更新的授權與支援合約。</block>
-  <block id="79416550309ddcac023464218d55a23d" category="paragraph">如果容量層支援合約的結束日期已過、則節點可以繼續執行、但您無法下載及安裝 ONTAP 更新、或是致電 NetApp 技術支援部門尋求協助、而無需先將支援合約更新至最新版本。</block>
-  <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">如果容量集區訂閱失效、系統會先發出警告、但 30 天後、如果系統關機、系統將不會重新開機、直到部署伺服器上安裝更新的訂閱為止。</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">如需 ONTAP Select 和授權續約的詳細資訊、請參閱中的「授權、安裝、升級及還原」一節 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">ONTAP Select 叢集網路組態是否可以在安裝後變更？</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">ONTAP Select 部署網路組態是否可以在安裝後變更？</block>
@@ -3502,15 +3391,11 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">NetApp ONTAP -主要授權金鑰</block>
   <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
   <block id="f588ddb32cd79889160082356416d2f3" category="list-text">已更新 KVM Hypervisor 支援</block>
-  <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
-  <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">Red Hat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 9.2 和 9.4</block>
-  <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">落基 Linux 8.6 、 8.7 、 8.8 、 8.9 、 9.0 、 9.1 、 9.2 、 9.3 和 9.4</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">儲存原始的部署虛擬機器映像。</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">當您將部署組態資料從原始虛擬機器還原至新虛擬機器時、本程序稍後將需要原始部署虛擬機器映像。</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">Hypervisor 的軟體相容性資訊</block>
   <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">您必須使用 ISO 映像來安裝 Red Hat Enterprise Linux （ RHEL ）作業系統。如需所支援 RHEL 版本的清單、請參閱<block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block>。在安裝期間、您應依照下列方式設定系統：</block>
-  <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">如需必要套件及其他組態需求的詳細資訊，請參閱<block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>。</block>
   <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">您可以將叢集大小從六節點叢集增加至具有叢集擴充功能的八節點叢集。目前不支援從一個、兩個或四個節點叢集擴充至六個或八個節點叢集的叢集。<block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>。</block>
   <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。目前不支援從六個或八個節點叢集到一個、兩個或四個節點叢集的叢集收縮。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>。</block>
   <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬體與儲存考量</block>
@@ -3531,17 +3416,11 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="c849264ebb01817c7925cd0a068007af" category="doc">ONTAP Select HA RSM 和鏡射的集合體</block>
   <block id="ec8ac2a2aba486a14f418e0d73aa199d" category="doc">ONTAP Select HA 可強化資料保護</block>
   <block id="2f1f8f7609cf43a281fbca2068eb08b8" category="paragraph">高可用度（ HA ）磁碟心跳， HA 信箱， HA 心跳， HA 容錯移轉和 Giveback 工作，以強化資料保護。</block>
-  <block id="f2bf1c1269a6e0c1a495f75b5c9f308e" category="doc">ONTAP Select 容量資源池授權效益摘要</block>
-  <block id="747313594c8e769ed4bf654668df2753" category="doc">比較 ONTAP Select 容量集區和容量層授權</block>
-  <block id="61750e2717477039b22a307414c9311b" category="doc">ONTAP Select 容量資源池授權模式的營運詳細資料</block>
-  <block id="0a00b84f2a503924f11abc21254dffab" category="doc">ONTAP Select 容量資源池授權的部署限制</block>
-  <block id="6cc6c24434af53794977cd3f0355096d" category="doc">ONTAP Select 容量集區授權模式的節點序號</block>
   <block id="55734e2f86357f8b0f60cd204e105d21" category="paragraph">您可以使用評估授權或購買的授權來部署 ONTAP Select 。您選擇的授權必須套用至 ONTAP Select 叢集中的每個節點，因此必須套用至整個叢集。如果您想要在ONTAP Select 決定購買之前先評估一下「版本」、就可以使用評估授權。評估版授權隨附ONTAP Select 於EView部署管理公用程式、並會在ONTAP Select 評估部署中自動套用至每個節點。</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支援評估叢集時，有幾個考量：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能將叢集用於評估用途。您不得在正式作業環境中使用具有評估授權的叢集。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在設定每個主機時，您應該使用 ONTAP Select Deploy 管理公用程式，如下所示：</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">設定以使用評估授權</block>
-  <block id="21f27b191f1f034aa81e5f786bf9829c" category="doc">瞭解 ONTAP Select 平台授權方案</block>
   <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select 購買了正式作業部署的授權</block>
   <block id="711f738f1281862e087807884aa5cd1c" category="doc">購買 ONTAP Select 授權時的工作流程</block>
   <block id="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="paragraph"><block ref="8c2b226cf8dfc01c2d5885e6b1dc9fd2" category="inline-link-macro-rx"></block></block>
@@ -3566,7 +3445,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e1822392dfeb820c1cca38e5e718a61f" category="paragraph">由於 ONTAP Select 使用的虛擬化環境、因此不支援 NIC 卸載功能。</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">ONTAP 連接埠內容</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">不支援修改 ONTAP 連接埠的內容、包括速度、雙工和流量控制。</block>
-  <block id="89661a8f5ae5f3b88ab1a6ba4ba0dbf0" category="paragraph"><block ref="89661a8f5ae5f3b88ab1a6ba4ba0dbf0" category="inline-link-macro-rx"></block></block>
   <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">ONTAP Select 效能總覽</block>
   <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">FAS9.6效能：優質HA直接附加SSD儲存設備ONTAP Select</block>
   <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">增加 ONTAP Select 儲存容量</block>
@@ -3578,7 +3456,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="07c6a664d186f44a90042e2245e46aad" category="doc">適用於本機附加儲存設備的 ONTAP Select 軟體 RAID 組態服務</block>
   <block id="3e1672f186d30598b8343a9dbdd833ae" category="doc">ONTAP Select VSAN 和外部陣列組態</block>
   <block id="e263536030472b1b884032009157f00c" category="doc">ONTAP Select 術語和關鍵概念</block>
-  <block id="fac92aa1bceedd34bdbd54ea3a5c1d41" category="doc">ONTAP Select MetroCluster 軟體定義儲存設備</block>
   <block id="b993d6b1ae8a2148a7be773127a7d668" category="doc">ONTAP Select 業務需求和使用情境</block>
   <block id="18ea6d668ccbbc1b64935d2ae14d9c63" category="doc">ONTAP Select 支援私有雲和資料中心</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">在遠端辦公室和分公司使用 ONTAP Select</block>
@@ -3645,8 +3522,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">擴充或收縮 ONTAP Select 叢集</block>
   <block id="e6bf3ba5fe1006a55faeef44787ee469" category="list-text">支援僅限於在 ESX Hypervisor 主機上建立的叢集。下列 ESX 版本與 ONTAP Select 9.15.1 及更新版本相容：</block>
   <block id="d4597f95391a261a44459b6a1ddb6a8e" category="list-text">選擇第四個 HA 配對的高可用度（ HA ）配對組態詳細資料，包括：</block>
-  <block id="e3d070f7498c7e147dc4f645a0d0165d" category="doc">取得 ONTAP Select 容量資源池授權</block>
-  <block id="28f937bb8b94ebdea4af2d6d321d545b" category="doc">取得 ONTAP Select 容量層授權</block>
   <block id="269ec7d71e2b69e0e1efbee545e82252" category="sidebar">ONTAP Select 9.16.1 文件</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">Secure ONTAP Select</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">確認網路連線能力</block>
@@ -3694,7 +3569,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="dfe2716b8d1ea246f6e1aa9804752d1e" category="list-text">檢閱部署詳細資料，然後選取 * 部署後開機 * 。</block>
   <block id="c56b5c777d1fbf5b3503afddde839f20" category="list-text">選擇 * 完成 * 開始部署程序。</block>
   <block id="66723f6678d3dd5c1bae3c6838416d52" category="list-text">部署 ONTAP Select 叢集之後，您可以使用系統管理員或 CLI 介面來設定叢集。您必須使用標準的 ONTAP * 磁碟指派 * 作業來指派磁碟。</block>
-  <block id="7c51cb770ac84a1429ed1cfe6c686aed" category="paragraph"><block ref="7c51cb770ac84a1429ed1cfe6c686aed" category="inline-link-macro-rx"></block></block>
   <block id="8ca84893979a849d9d51eac372cc15a9" category="inline-link-macro">部署 ONTAP Select 叢集的 90 天評估執行個體</block>
   <block id="cb5e9657db1221bb8eb7f5be5287d604" category="paragraph"><block ref="cb5e9657db1221bb8eb7f5be5287d604" category="inline-link-macro-rx"></block></block>
   <block id="ac951fbceb082ef32560a291949a4015" category="sidebar">部署叢集的 90 天評估執行個體</block>
@@ -3747,7 +3621,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="76be33f6608866426ecccffc5acd6be8" category="list-text">請勿提供序號</block>
   <block id="2fcd5d5ae3d245e3d2870429d2c9381d" category="list-text">不需要具備儲存容量的正式作業授權</block>
   <block id="695af2710450ef107be1555e59f22b01" category="paragraph">（您不會直接從 NetApp 取得）</block>
-  <block id="0fa0a315c1605e80221e4ae40cfaac60" category="list-text">可以使用容量層授權，但不支援容量集區授權</block>
   <block id="d480e694d74a85a8bf679cab5063c9f1" category="paragraph">下圖說明用於部署和支援四節點 ONTAP Select 叢集的 NetApp ONTAP Select 部署管理公用程式。部署公用程式和ONTAP Select VMware節點可在專屬Hypervisor主機上以獨立虛擬機器的形式執行。</block>
   <block id="54d1b8efd5a74820db5617b48f538671" category="summary">ONTAP Select 叢集的效能可能會因硬體組態而異。</block>
   <block id="123521c98d5a32b10ae4a2d5e59ed719" category="doc">ONTAP Select 常用支援 Python 模組</block>
@@ -3780,4 +3653,195 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e951843bb1ba0912165bd527e8312bec" category="list-text">在叢集詳細資料頁面頂端，選取 * 按一下此處 * 以修改叢集授權。</block>
   <block id="17d9cc4f645deac6e5e367f0ef6fd4ee" category="paragraph">您也可以在 * 叢集詳細資料 * 區段中，選取評估授權旁邊的 * 修改 * 。</block>
   <block id="380ce7f967546f46005a7cb8b03e358c" category="list-text">提供 ONTAP 認證，然後選取 * 修改 * 。</block>
+  <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link-macro">互通性對照表工具</block>
+  <block id="e417b438eac96386f4107e979870c70f" category="paragraph">若要識別用戶端軟體的支援版本，請參閱<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。如果用戶端軟體支援ONTAP SJ9、ONTAP Select 則相同版本也可支援該功能。</block>
+  <block id="8dd24bef30862ad2a7813bfc4c46d79c" category="summary">使用容量資源池授權模式而非容量層授權模式時，有幾項好處。</block>
+  <block id="860aff0d822e08d1cb7d1f79ee16667e" category="doc">ONTAP Select 容量資源池授權效益摘要</block>
+  <block id="3840ec18790ba33b63a3a6e22afe1a99" category="paragraph">使用 Capacity Tiers 授權時，您可以為每個節點分配固定的儲存容量。任何未使用的空間都無法與其他節點共享、因此會有效浪費。透過 Capacity Pool 授權，每個節點只會根據資料集合體的大小來消耗所需的容量。</block>
+  <block id="49466a9207c7bafb807837aa58b28a65" category="paragraph">如果您使用 Capacity Tier 授權，則必須取得並安裝每個節點的授權。使用容量集區時，每個共用集區都有一個授權。如此可大幅降低管理成本、並降低成本。</block>
+  <block id="393a145ee32920c6a9dce6c89774161b" category="paragraph">部署 Web 使用者介面可提供容量集區的增強使用資訊。您可以快速判斷容量集區中使用和可用的儲存空間量，使用集區儲存設備的節點，以及叢集分配容量的來源集區。</block>
+  <block id="020fa1d798f607b3ef39647558b0e171" category="summary">容量資源池與容量層授權模式之間有幾種差異。</block>
+  <block id="befac9828a8ee884df5e223362669974" category="doc">比較 ONTAP Select 容量資源池和容量層授權</block>
+  <block id="52d1f8cb6e7593cd562d4522014e106d" category="cell">容量層級</block>
+  <block id="a74c45c38136d5cb4b7be385e3a8c24e" category="cell">容量資源池</block>
+  <block id="b3e10a17f0986c4e189b80192f1c0f19" category="cell">NetApp 產生九位數並指派給容量資源池</block>
+  <block id="a3719249a1f3a7b49dd84d53689289f9" category="summary">容量資源池授權模式與容量層模式不同。儲存容量會分配給一個集區、並在許多節點之間共用、而非將儲存容量專用於每個個別節點。已建立其他元件和程序，以支援容量資源池模式。</block>
+  <block id="020714b69513bf3a78c5bf5e611bbf05" category="doc">ONTAP Select 容量資源池授權模式的營運詳細資料</block>
+  <block id="58e2309fa8979e52ed4f424f7ee35b93" category="list-text">根據 Capacity Pool 授權序號，為每個節點產生唯一的二十位數序號</block>
+  <block id="3dc7acfb50ee98a5c175fb8cdf20a88d" category="list-text">根據來自 ONTAP Select 節點的要求，從共享容量資源池建立容量租賃</block>
+  <block id="11b2d2fecd3396efb87558be584a6d41" category="paragraph">使用容量資源池授權，在節點上為每個資料集合分配的儲存設備，必須具有相關的租用。節點要求儲存設備租賃、如果容量可用、則授權管理員會以租賃回應。每個租期都有下列明確或隱含的屬性：</block>
+  <block id="9bb09439dbf58c43c8434974e261285c" category="list-text">容量集區每個 ONTAP Select 節點都與一個容量集區相關聯</block>
+  <block id="c57cd85a32e181fb83420d2adb23427d" category="paragraph">每個使用許可管理員執行個體、以及每個對應的部署公用程式執行個體、都會以唯一的128位元號碼來識別。此編號與九位數容量集區授權序號結合使用，可將集區鎖定至特定的授權管理員執行個體（實際上是部署執行個體）。您必須在 NetApp 支援網站上提供這兩個值，做為產生 NetApp 授權檔案（NLF）的一部分。</block>
+  <block id="3ccfdfb46d04e07ae1d6fe35a8cbb514" category="paragraph">每次建立、擴充或變更資料Aggregate時、均必須尋找或申請有效的容量租用。ONTAP Select您可以使用從先前的申請中取得且仍有效的租賃、或視需要申請新的租賃。ONTAP Select 節點會採取下列步驟來找出容量集區租用：</block>
+  <block id="4760e200c006091f431ae756ea50eb83" category="section-title">將儲存容量傳回容量集區</block>
+  <block id="b6249920b182baff7dc50dc8c3c21811" category="paragraph">儲存容量會視需要從容量集區分配，每個新的要求都能減少集區中的可用儲存空間。儲存容量會在多種情況下傳回集區、包括：</block>
+  <block id="d65c8696b5fd8387f8b3f5f6c5c24418" category="summary">使用容量資源池授權模式時適用的限制如下所示。</block>
+  <block id="810bc88512dd1c6822f4992dd8667995" category="doc">ONTAP Select 容量集區授權的部署限制</block>
+  <block id="87734871bc5735c84e6ee48cdfdad1b3" category="paragraph">單一 ONTAP Select 叢集中的所有節點都必須使用相同的授權模式，即容量層級或容量層級。您無法在單一叢集內混合使用節點的授權類型。</block>
+  <block id="96344640227999714b6bc9eb179a6b3d" category="paragraph">在 ONTAP Select 叢集中具有容量集區授權的所有節點都必須使用相同的授權管理員執行個體。由於每個部署執行個體中都有一個授權管理員執行個體、因此此限制重新說明叢集中所有節點必須由同一個部署執行個體管理的現有需求。</block>
+  <block id="7b0e0ad6985cddb5b8e0a150a2fc65fb" category="paragraph-title">每個節點一個容量集區</block>
+  <block id="3618eed950da22dba9e302693bf31644" category="paragraph">每個節點只能從一個容量集區租用儲存設備。節點無法使用兩個以上的資源池。</block>
+  <block id="a68727c2470d44ca2bcd0b95331bfb0c" category="paragraph">單一 HA 配對中的兩個節點都必須從同一個容量集區租用儲存設備。不過、同一個叢集內的不同HA配對可以從同一個授權管理員所管理的不同資源池租用儲存設備。</block>
+  <block id="121aeb58b15f5021ad094c25b9ab6875" category="paragraph">當 ONTAP Select 節點要求資料集合的儲存租用時，授權管理員會根據容量集區的組態，提供特定期間的租用。您可以設定每個資源池在一小時到七天之間的租用期間。預設的租用期間為24小時。</block>
+  <block id="dffc25a8660670650d9dadda393882ec" category="paragraph">使用 Capacity Pool 授權時，您必須為部署管理公用程式指派靜態 IP 位址。</block>
+  <block id="fdaaffd277a294e5ad05141047b5c8f9" category="summary">在容量層授權模式下，九位數的節點序號與指派給節點的授權序號相同。不過，使用容量資源池授權模式指派給節點的序號格式不同。</block>
+  <block id="aca287ce24cdc5e2ad3d2e36becf7d37" category="doc">ONTAP Select 容量集區授權模式的節點序號</block>
+  <block id="a875da8c90c98e4c0f1e4e3e3d4d81a7" category="paragraph">使用容量資源池授權的節點序號格式如下：</block>
+  <block id="769d960ab0e824951746a3c368509fcd" category="cell">NetApp 指派給容量集區的 9 位數可變授權序號</block>
+  <block id="28ec4566b445eb67771a9a111611e502" category="cell">由 License Manager 針對使用 Capacity Pool 的每個節點所產生的八位數變數值</block>
+  <block id="9aaa5ca53edcd9baf965b66b1fba1368" category="admonition">注意：當以 NetApp 支援開啟案例時，如果某個節點使用容量資源池授權，則無法提供完整的 20 位數節點序號。您必須提供九位數容量資源池授權序號。您可以從節點序號中衍生授權序號、如上所示。跳過節點序號（「999」）的前三位數、然後擷取下九位數（pppppppppp）。</block>
+  <block id="35892d48da3c4641520dc5f89430eeaa" category="list-text">您可以使用 Capacity Tier 授權，但不支援 Capacity Pool 授權</block>
+  <block id="1538605c931beb7706c95917ca61c48d" category="summary">您可以在三個平台容量層級中的其中一個層級購買 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。</block>
+  <block id="4be94941d4ae435ad44487d075e7a367" category="doc">瞭解 ONTAP Select 平台授權方案</block>
+  <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以購買標準，優質或優質 XL 等級的 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。</block>
+  <block id="d6a54d06ffa7a2e05f6c0d035a345cb1" category="paragraph">特定授權方案可定義及限制 Hypervisor 主機在兩個方面的功能：</block>
+  <block id="3e98038f4cdd32e64d0357acf2d03cda" category="list-text">硬碟機（ HDD ）或固態硬碟（ SSD ）</block>
+  <block id="56dce1f406f2aca239ffdd315cc83d5d" category="admonition">核心型虛擬機器（ KVM ）不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。</block>
+  <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比較平台授權方案的硬體支援</block>
+  <block id="46fa26efbd4810693c18739e5417980e" category="paragraph">標準，優質及優質 XL 授權產品支援多種硬體與軟體。如需軟硬體版本的最新資訊，請參閱<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心項目</block>
+  <block id="a3090b498c20b75b1533765619b273a0" category="cell">核心項目類型</block>
+  <block id="6bf08a2d2d231573eaa714b5221158e6" category="cell">主機傳輸協定</block>
+  <block id="d9271d1702d6357cd68d0248f2b98bfb" category="cell">NFS ， SMB/CIFS ， iSCSI 和 NVMe over TCP</block>
+  <block id="e2c5a3645710b0ed6fec1053fdfe0ead" category="cell">部署選項</block>
+  <block id="eb09c1a5eb262d090f2cc7e8158cae4e" category="cell">單節點雙節點叢集（ HA 配對）四節點，六節點或八節點叢集</block>
+  <block id="8557a15ebd845a53c232f882fe21205a" category="cell">支援的容量（每個節點）</block>
+  <block id="e8551ae26bc9361887df2597e2a2ea57" category="cell">最高 400TB 原始資料（ ESXi 和 KVM ）</block>
+  <block id="3c02a379965ab0dfcd77b1c484450433" category="open-title">硬體</block>
+  <block id="440222a5c365cf69d621e3526ea562c4" category="cell">硬體類型</block>
+  <block id="719033e288b59becdea112c671c54bda" category="cell">執行個體大小</block>
+  <block id="7ddc213b44b1caa736b0d7f1efe305df" category="cell">CPU 系列</block>
+  <block id="794e40c13e8053b2f637ceb39fb2d773" category="cell">Intel Xeon E5-26xx v3 （ Haswell ）或更新版本</block>
+  <block id="7c806fdbaff43b9704153f0c5c81482c" category="cell">ONTAP Select CPU/ 記憶體</block>
+  <block id="cfff052f97e49b5003f78ce3678da6de" category="cell">4 個虛擬 CPU （ vCPU ） / 16 GB RAM</block>
+  <block id="a0275a50dc79599db737a8bc1a17cba6" category="cell">8 個 vCPU / 64GB RAM</block>
+  <block id="426c3105a73b89195130759dbbb3f08a" category="cell">16 個 vCPU / 128GB RAM</block>
+  <block id="2c7f3dfe816e26a26331c6cc50536754" category="cell">主機 CPU / 記憶體最低需求 ^1^</block>
+  <block id="4ec4f4725cc876bcb95183576c366df4" category="cell">6 核心 / 24GB RAM</block>
+  <block id="0a63727fe995fb5d301d20fb9140de4d" category="cell">10 核心 / 72GB RAM</block>
+  <block id="e73d640a676c83c4510d0212e506bb38" category="cell">18 核心 / 136GB RAM</block>
+  <block id="522c4ec4d9d59e1a992d989c8d770589" category="cell">網路（每個節點）</block>
+  <block id="d5fda742cbaf307ce4ca202b12335858" category="cell">單一節點叢集至少需要兩個 1GbE 連接埠，雙節點叢集至少要有四個 1GbE 連接埠（ HA 配對），四個，六個或八個節點叢集至少要有兩個 10GbE 連接埠</block>
+  <block id="c65eee5a4810d852ee01a79b87c993f3" category="paragraph">^1^ 假設 Hypervisor 有兩個核心和 8Gb RAM 。</block>
+  <block id="f0cb6783b152b19ceab16227ca3976a2" category="open-title">儲存類型</block>
+  <block id="5939197c86f855d26c9639db3b9a29d6" category="paragraph">下表提供指定儲存設備所需的最低授權類型。 </block>
+  <block id="1138bbb83d6525f914cbce8dccc4a874" category="cell">Pemium XL</block>
+  <block id="e629ab9880aae245163ce498ab9e1389" category="cell">中小型</block>
+  <block id="a09a88160dc1591cac42ba911581e599" category="cell">小，中，大</block>
+  <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">具有硬體 RAID 控制器的本機 DAS</block>
+  <block id="2feb1874507e2463194f3c757efe6209" category="cell">8 到 60 個磁碟機</block>
+  <block id="7742d08808786c4493a46e06b5648ff9" category="cell">HDD （ SAS ， NL-SAS ， SATA ）</block>
+  <block id="fea45fcfeb873048ff2e2be995d8cb77" category="cell">4 – 60 個磁碟機</block>
+  <block id="bb878052f3499d534f13d06526b7d885" category="cell">SSD （ SAS ）</block>
+  <block id="25a5b17224d1f38c386742ec7cbc343b" category="cell">4 – 60 個磁碟機（僅限 SSD ）</block>
+  <block id="d8e31ece33b3b9fb9373e996815932a7" category="cell">具有軟體 RAID 的本機 DAS</block>
+  <block id="a64e775634e2bf5c5e3f63f149af2601" category="cell">4 - 14 個磁碟機（僅限 NVMe ）</block>
+  <block id="518c7a2538245dd75c6daac2212b8316" category="cell">外部陣列 ^1^</block>
+  <block id="8731210144d2e5094fb4001b893115d2" category="cell">外部陣列上的資料存放區是透過 FC ， FCoE ， iSCSI 和 NFS 連線（ KVM 不支援 NFS ）。這些資料存放區可提供高可用度和恢復能力。</block>
+  <block id="563a5726768d43a126f11bc13b3361dd" category="paragraph">^1^ 外部陣列傳輸協定支援反映了網路儲存連線能力。</block>
+  <block id="719d067b229178f03bcfa1da4ac4dede" category="open-title">軟體</block>
+  <block id="e94dfbdb85e6f13fea9179c0fd50d81f" category="cell">軟體類型</block>
+  <block id="9295b1d52d6b9b34b829dfb4fabf6d05" category="cell">Hypervisor 支援（ VMware ）</block>
+  <block id="4a9dffc4c71f7a56c8a8d9b0e4381f90" category="cell">VMware vSphere 7.0GA 及透過 3C 更新 VMware vSphere 8.0GA 及更新 1 至 3</block>
+  <block id="4f17c009683074f845007741fa1c26dd" category="cell">Hypervisor 支援（ KVM ）</block>
+  <block id="e12f83762dfb76b01ed77a9370b24967" category="cell">RedHat Enterprise Linux 64 位元（ KVM ） 9.5 ， 9.4 ， 9.3 ， 9.2 ， 9.1 ， 9.0 ， 8.9 ， 8.8 ， 8.7 和 8.6 Rocky Linux （ KVM ） 9 和 8</block>
+  <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理軟體</block>
+  <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager 管理套件 ONTAP Select Deploy Utility SnapCenter （選用）</block>
+  <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">瞭解容量層和容量池授權類型</block>
+  <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block>。</block>
+  <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">判斷ONTAP Select 出適用於貴組織的解決方案之後、您可以購買支援正式作業部署所需的授權。您必須選擇 Capacity Tiers 或 Capacity Pool 授權模式，以及每個部署的儲存容量。</block>
+  <block id="580ede122197eca33afea87d209746f9" category="paragraph">_Capacity Tiers_ 和 _Capacity Pools_ 授權模式在幾個方面都有很大差異。不過、這兩種授權模式有幾種共通的特性、包括：</block>
+  <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">容量層級授權模式</block>
+  <block id="f57d33a41fff8f72b8541732b6d8adf0" category="paragraph">Capacity Tiers 授權模式有幾項獨特的特性，包括：</block>
+  <block id="ba83abe50eb1c6316ad583689b2834f6" category="list-text">每個容量層授權都有儲存容量，並鎖定至特定節點。</block>
+  <block id="9e586a550fe27d06853aa45ee04db107" category="section-title">容量資源池授權模式</block>
+  <block id="5308e94ce80081b419db4c906ea0e711" category="paragraph">容量資源池授權模式有幾項獨特的特性，包括：</block>
+  <block id="a5c50f7ef156865bfd5e9875fc89d1f6" category="list-text">您必須為每個共享容量集區購買授權。</block>
+  <block id="1f463a24c9d024f8fdaeb1e4ad716c1d" category="list-text">每個 Capacity Pool 授權都有儲存容量，並鎖定至特定的 License Manager 執行個體。</block>
+  <block id="72845ca8a5a798fdf6f61c6d2bed72b4" category="list-text">NetApp 會為每個容量集區產生九位數的授權序號。</block>
+  <block id="77ba5c2fc03c677b9c3fe2b00b4439fa" category="list-text">分配給容量資源池的儲存設備僅在購買後的特定時間內有效（需要續約）。</block>
+  <block id="d150443cb572e514bfd51ac57dab1fce" category="list-text">節點序號為 20 位數，由授權管理員根據容量集區授權序號產生。</block>
+  <block id="f658732514353ebc97c68b22fba83311" category="list-text">每個節點會自動從共享容量池中租用其本機資料集合體的儲存容量。</block>
+  <block id="260ed5703a4e4e3c27063e5ad62d8426" category="paragraph">如需 Capacity Pool 授權模式的詳細資訊，請參閱 _Capacity Pools 授權模式 _ 以取得更多資訊。</block>
+  <block id="52736b6c929e3fcbb90ce69d40477b01" category="paragraph">實際程序會因您使用的是容量層或容量池授權而異：</block>
+  <block id="371311feed51b9a8b306f029ede6fb62" category="list-text">序號適用於節點（容量階層）或儲存池（容量資源池）</block>
+  <block id="1e3bb0b8e7ecbce202ac714bd6e3f265" category="list-text">使用 Capacity Pool 授權時，您必須擁有部署執行個體的授權鎖定 ID</block>
+  <block id="461ecad85ce670905ab753be871deb71" category="list-text">您可以在不同的網站上取得容量層級和容量集區授權</block>
+  <block id="69bbee1943d709d1872e201eef4b29a8" category="paragraph">支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它可輔助主流 FAS ， AFF 和 ASA ONTAP 產品套件，以及其他純軟體選項，例如 Cloud Volumes ONTAP 。</block>
+  <block id="00a3caa2896a927e39b353d23b56eb2d" category="paragraph">ONTAP Select 可將內部磁碟機， NVMe ， SSD 或 HDD ，以及外部陣列儲存設備，轉換成靈活的儲存系統，並享有專用 ONTAP 儲存系統所提供的許多相同優勢。您也可以在新伺服器或現有的伺服器基礎架構上部署 ONTAP Select 。ONTAP Select 易於管理，並使用與 ONTAP 型解決方案相同的管理軟體，因此可降低營運成本和訓練需求。</block>
+  <block id="8307546cfa4f0ccad4627a2dcd4f46fa" category="paragraph">ONTAP Select 採用兩種互補授權模式：容量層和完全靈活的容量資源池，可因應您的容量使用需求。這兩種授權模式都能讓您以最小 1TB 的增量來增加容量。例如，您可以從數 TB 開始，並隨著專案成長而動態增加容量。如果您使用容量資源池，則可以在專案完成時視需要重新分配容量。</block>
+  <block id="d88f78a3aeac7464dce1dfe85df34e06" category="paragraph">ONTAP Select 已整合至雲端管理架構，例如 VMware vSphere 。這有助於加速部署檔案服務，主目錄，軟體開發環境和應用程式測試等新專案。</block>
+  <block id="39de1f5e6bbe7e17017c377d3305e9fd" category="paragraph">SnapMirror 軟體可讓您在混合雲的 ONTAP 儲存設備之間移動資料，以便您輕鬆地在想要的位置存取資料。例如，您可以快速建立環境來證明想法。之後，您可以將專案移至專用的儲存平台進行正式作業部署，或是在開發工作流程中，讓專案更容易在雲端中存取。</block>
+  <block id="9c191e042a5bb50dde6bcacd73b9fc18" category="paragraph">透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（ SDI ）架構，您可以將最寶貴的 IT 資產與基礎實體基礎架構分離，提供靈活度，擴充性和程式設計能力。</block>
+  <block id="cc0ffc2288900bd57ac4b3e354e5fb49" category="paragraph">介紹消費型授權模式。ONTAP Select在正式作業環境中部署 ONTAP Select 叢集時，您必須為每個節點或共享容量集區購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。</block>
+  <block id="bf66cac9fd96db287cb8aa533ce84928" category="inline-link-macro">瞭解預設啟用的 ONTAP 功能</block>
+  <block id="b0781771d593eb6be846237468e85b53" category="inline-link-macro">瞭解 ONTAP Select 授權選項</block>
+  <block id="7096efe9fc5e8c50e1866399304968bf" category="paragraph"><block ref="dd2fc3d451e43974d9ba6b2330d17e5b" category="inline-link-macro-rx"></block> <block ref="89ee8792b4466624e22db7a555dbec1c" category="inline-link-macro-rx"></block></block>
+  <block id="1d4d54ea9194ada2657bbedc16facf76" category="list-text">容量層級授權模式是 ONTAP Select 部署的原始選項。它是以ONTAP NetApp AFF 的《關於NetApp的資料與FAS 資料的資料與資料的資料」為基礎。每個節點都需要個別的授權。儲存容量會鎖定至節點且永久（不需續約）。</block>
+  <block id="4336ee0e2315cb2014ffbaddbb71d150" category="list-text">容量資源池授權模式是使用 Deploy 2.10 隨 ONTAP Select 9.5 一起推出。每個儲存容量集區都需要個別授權。Capacity Pool 授權會鎖定至 License Manager 執行個體（即部署執行個體），且必須根據購買條款進行續約。您可以在組織中授權及使用任意數量的容量集區。不過，由於容量集區是由 ONTAP Select 節點共用，因此通常需要的授權數量比容量層級授權少。</block>
+  <block id="07dd1826d2d39d21b05b11f5f59d47dd" category="list-text">授權管理員是支援 Capacity Pool 授權的軟體元件。它目前是部署管理公用程式的一部分。LM會將儲存設備從ONTAP Select 其管理的共享資源池租賃給各個節點。_License Lock ID_是唯一識別每個LM執行個體的數字字串、因此是每個部署執行個體。您必須同時使用 Capacity Pool 授權序號和 LLID 來產生授權檔案。</block>
+  <block id="43b16943d6d5ff73da96f41d29e4303d" category="paragraph"><block ref="43b16943d6d5ff73da96f41d29e4303d" category="inline-link-macro-rx"></block></block>
+  <block id="24d0d0c7fc9a3866a568dea751e3cd63" category="doc">瞭解 ONTAP Select 資料保護與效率</block>
+  <block id="05ed3d70c9259c59c7d687abfdcbf9be" category="paragraph">ONTAP Select 是以 ONTAP 儲存軟體為基礎，以高可用度，無共享的橫向擴充架構，有效提供企業儲存服務。您可以部署一個解決方案，每個節點有一個，兩個，四個，六個或八個節點，每個節點的原始容量最高可達 400TB ，適用於 NFS ， SMB/CIFS 和 iSCSI 連線儲存設備。您可以利用原生的重複資料刪除和壓縮技術來提高有效容量，進而降低儲存成本。橫向擴充架構可實現高可用度及不中斷營運的資料移動性，用於負載平衡或服務硬體。</block>
+  <block id="b489b293d6cbe8b86835d3cac8c315fb" category="section-title">Snapshot 資料保護</block>
+  <block id="467385c0c4913cc96395e5493d47b3bc" category="paragraph">ONTAP Select 包含資料保護功能，包括快照和 SnapMirror 軟體。您可以快速將資料複寫到其他 ONTAP 儲存設備，無論是內部部署，遠端站台或雲端。如果您必須快速恢復資料， SnapRestore 軟體可以使用本機快照，在數秒內恢復整個檔案系統或資料磁碟區，無論檔案容量或數量為何。</block>
+  <block id="787fb8fbafed37b77c3881f9e0c851a0" category="section-title">以軟體定義的儲存設備MetroCluster</block>
+  <block id="12402222727a1e6976eb8efff78d2bfe" category="paragraph">ONTAP Select MetroCluster 軟體定義儲存設備（ SDS ）提供強化的保護，並提供具成本效益的實作。</block>
+  <block id="c5d9de22973474c51d806858e261da44" category="list-text">支援的另一個層面（從資料中心到資料中心）是針對功能的保護。MetroCluster ONTAP Select除了充分利用軟體定義儲存設備和 ONTAP 的所有優點之外，您現在還能充分利用這種額外的保護層級。</block>
+  <block id="81256dd6a1d2918b467fe7ea3176a702" category="paragraph"><block ref="81256dd6a1d2918b467fe7ea3176a702" category="inline-link-macro-rx"></block></block>
+  <block id="1849d8fe80a23e86f80eb67cb29950f0" category="paragraph">如需必要套件及其他組態需求的詳細資訊，請參閱<block ref="d663e2c355c00396895dd4c79ec8b92b" category="inline-link-macro-rx"></block>。</block>
+  <block id="e8ea4a01792e4295b57655f0af615398" category="paragraph">所有授權的方法相同，但具體細節會因容量層或容量池授權而異。</block>
+  <block id="9dc93dd55c92caac98cabff37fbdc64d" category="admonition">您可以使用 *Add* 和 *Update* 功能將 NLF 載入部署伺服器。* 新增 * 新增授權至伺服器， * 更新 * 會以容量，節點授權（標準，高級，優質 XL ），支援開始與結束日期（容量層級授權），或訂閱開始與結束日期（容量池授權）等資訊來更新現有檔案。</block>
+  <block id="88379325a2a95cc4cf31ec59c1b8d0ab" category="list-text">* 容量層授權 * 是連結至 ONTAP Select 節點序號的每個節點永久授權。隨附獨立的支援合約。雖然授權是永久的、但必須續約支援合約才能存取 ONTAP Select 升級、並獲得 NetApp 技術支援的協助。變更授權參數（例如容量或節點大小）也需要目前的支援合約。</block>
+  <block id="a7ac9aa264c0f49d4bb74a0a19f309d8" category="paragraph">購買容量層授權更新，參數變更或支援合約續約，訂單中需要節點序號。容量層節點序號長度為九位數，開頭為數字「 32 」。</block>
+  <block id="2475e8d85e4c431ed7c77eaf00da0050" category="list-text">* 容量資源池授權 * 是使用特定容量集區和節點大小（標準，高階，高階 XL ）來部署一或多個叢集的權利訂閱。訂閱內容包括使用授權的權利、以及特定條款的支援。使用授權和支援合約的權利已指定開始和結束日期。</block>
+  <block id="65ce848134fed42df7f25dc0a3d9d329" category="paragraph">如果容量層級支援合約的結束日期已過，則該節點仍可持續運作，但您將無法下載及安裝 ONTAP 更新，或是致電 NetApp 技術支援部門尋求協助，而無需先將支援合約更新至最新版本。</block>
+  <block id="f72a27c1465f1a231c0f2c030e6f7e8b" category="paragraph">如果容量集區訂閱失效，系統會先發出警告，但 30 天後，如果系統關機，系統將不會重新開機，直到部署伺服器上安裝更新的訂閱為止。</block>
+  <block id="24b48c88df61ec1a7a95e26d1445ce5d" category="list-text">從 ONTAP Select 9.16.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.5 和 Rocky Linux 9.5 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
+  <block id="c747e5d99e0cdd0a943b0b532dc7eca4" category="list-text">從 ONTAP Select 9.15.1 開始， RHEL 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。</block>
+  <block id="932c03094f0a77749cc455e341a3ea08" category="list-text">您必須為正式作業環境中部署的每個 ONTAP Select 叢集選取容量層級或容量集區授權模式。如需詳細資訊、請參閱_License一節。</block>
+  <block id="479c7e016ce22da77ff8520b53179a68" category="list-text">Red Hat Enterprise Linux 8.6 ， 8.7 ， 8.8 ， 9.0 ， 9.1 ， 9.2 ， 9.4 和 9.5 上的 KVM</block>
+  <block id="41e0fd5b57f80140c6e78c70ec352bc7" category="list-text">在落基 Linux 8.6 ， 8.7 ， 8.8 ， 8.9 ， 9.0 ， 9.1 ， 9.2 ， 9.3 ， 9.4 和 9.5 上執行 KVM</block>
+  <block id="317a67df30f2813de3d883f1e7b38374" category="inline-link">互通性對照表工具， window=_blank</block>
+  <block id="64bdc3c3e77297346c380f015196bdd8" category="paragraph">如需詳細資訊，請參閱<block ref="6d25ea14bebd4b4dc452bcd44cab22c3" category="inline-link-rx"></block>。</block>
+  <block id="85d20cd418b9cf016df4a897af907e84" category="cell">存取部署（容量集區授權）</block>
+  <block id="a2a620f52d496d9ff18156031c1fd725" category="paragraph">最重要的儲存限制如下所示。您也應該檢閱<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>以取得更詳細的資訊。</block>
+  <block id="0df2aea977fec70784930b32e9e165c5" category="paragraph">所有相關的儲存元件（包括硬體，軟體和功能需求）都必須符合中所述的要求<block ref="303ffee46fa5d607063d9b04cfb6d8cb" category="inline-link-macro-rx"></block>。此外、 ONTAP Select 支援 VMware Storage/SAN 相容性文件中所述的所有外部儲存陣列、包括 iSCSI 、 NAS （ NFSv3 ）、光纖通道和乙太網路光纖通道。外部陣列支援受ONTAP Select 支援ESXi版本的限制。</block>
+  <block id="942d9b4c043168e08967b0c909910bfe" category="section-title">管理容量層授權</block>
+  <block id="5ad35c10c680ba726e50d40a631ed9ff" category="paragraph">您可以視需要新增，編輯及刪除 ONTAP Select 容量層授權。</block>
+  <block id="f39a3b280b8ce0907f247b1ecaaf100f" category="section-title">管理 Capacity Pool 授權</block>
+  <block id="7d5596892567a74637429d5d68b05f0b" category="paragraph">您可以視需要新增，編輯及刪除 ONTAP Select 容量資源池授權。</block>
+  <block id="6c0b8fd8fa018a586b3d5d04652f30ac" category="section-title">重新安裝 Capacity Pool 授權</block>
+  <block id="ee516c5383dfd5e420f4e45c5bda7495" category="paragraph">每個作用中容量集區授權都會鎖定到特定的授權管理員執行個體，該執行個體包含在部署管理公用程式的執行個體中。如果您使用 Capacity Pool 授權，然後還原或恢復部署執行個體，則原始授權將不再有效。您必須產生新的容量授權檔案、然後將授權安裝到新的部署執行個體。</block>
+  <block id="53f982214be91d0894e566a5ddb62557" category="list-text">判斷原始部署執行個體所使用的所有容量集區授權。</block>
+  <block id="09d5514aa379a7f21298f917a2b1119e" category="paragraph">從較高層級來看、這項工作由三個部分組成。您必須重新產生並安裝部署執行個體所使用的所有容量集區授權。將所有授權重新安裝至新的部署執行個體之後、您可以視需要重設序號。最後，如果部署 IP 位址已變更，您必須更新每個使用容量集區授權的 ONTAP Select 節點。</block>
+  <block id="00a96bebeb044c0b128ac4826a9e84dd" category="list-text">請聯絡 NetApp 支援部門，並將原始部署執行個體的所有容量資源池授權取消綁定和取消註冊。</block>
+  <block id="d4fba2927da7e42e3ecf128519764890" category="list-text">為每個 Capacity Pool 授權取得並下載新的授權檔案。</block>
+  <block id="f957819aabc968edb10b9f8a7cd31369" category="inline-link-macro">取得容量資源池授權</block>
+  <block id="efbea3f99a53c818e1b75ecc2e4f83b6" category="paragraph">如需詳細資訊、請參閱 <block ref="feab67090b12910c2c14365471a86ed6" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6a0e12d4c1f68fa836d49eacdbdd6d22" category="list-text">在新的部署執行個體上安裝 Capacity Pool 授權：</block>
+  <block id="f88bd3dead6f3ecc398404ba720d110d" category="list-text">如果指派給新部署執行個體的 IP 位址與原始部署執行個體的 IP 位址不同，則必須在使用容量資源池授權的每個 ONTAP Select 節點上更新 IP 位址：</block>
+  <block id="0656abd1f496ae9e196a1b6b0c589259" category="paragraph">您可以使用部署管理公用程式升級 ONTAP Select 評估叢集，以使用正式作業容量層授權。</block>
+  <block id="9ea928d7a888b1b6dd05218df42c1863" category="list-text">您必須擁有評估叢集中每個節點的容量層授權。</block>
+  <block id="6bc11a9dac55ab4bd5f801441e32be3e" category="section-title">管理過期的容量集區授權</block>
+  <block id="235d833d1553c6ac3ef4b59a69b7709d" category="admonition">您可以在使用 Capacity Tiers 授權模式和 Capacity Pool 授權模式時，執行叢集節點調整大小作業。</block>
+  <block id="799f1b966e3a6731dcf1bdc532fd6e05" category="paragraph">在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用 _Capacity Tiers_ 模式，在每個節點上授權儲存設備，或使用 _Capacity Poolers_ 模式來授權共用集區。</block>
+  <block id="4f48353f20e29f22472de3805fec8341" category="paragraph">您必須擁有節點的組態資訊。Capacity Tier 授權檔案應上傳並安裝於部署公用程式。</block>
+  <block id="751e45429506270501500591ecf71f63" category="paragraph">您應該使用此程序來設定每個節點。本範例中的容量層授權會套用至節點。</block>
+  <block id="f5eacefd45f87cad9eca589aeba17364" category="paragraph">容量層授權用於 ONTAP Select 節點。</block>
+  <block id="70c6ed94827afcf20125ed21cfa0d45d" category="paragraph">您必須判斷是否使用容量集區或容量層授權。如果您使用 Capacity Pool 授權，則必須在還原或還原部署執行個體之後重新安裝每個 Capacity Pool 授權。</block>
+  <block id="29f5b284a6c121e6b86e23d26c5492d7" category="paragraph">如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資料，請參閱重新安裝容量集區授權 _ 。</block>
+  <block id="ad8df021d39702efa54a5c4a58d4c408" category="paragraph">如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資訊，請參閱重新安裝容量資源池授權。</block>
+  <block id="907984c60dd3b3b1d06b28812739f3a3" category="list-text"><block ref="907984c60dd3b3b1d06b28812739f3a3" category="inline-link-macro-rx"></block></block>
+  <block id="b28ceb45f344ed12e54e3531ae0bac88" category="summary">您必須為 ONTAP Select 節點所使用的每個容量集區取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。</block>
+  <block id="b06635debd20e5d8f23e5fd54016e095" category="doc">取得 ONTAP Select 容量資源池授權</block>
+  <block id="332320e6473eb55e261b81cf0938cfbc" category="paragraph">您必須擁有 NetApp 指派給容量集區的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。</block>
+  <block id="0e1bb7bb179252e22d246c94c588991c" category="paragraph">您必須為 ONTAP Select 節點所使用的每個容量集區執行此工作。</block>
+  <block id="1a053c6f3c727874cbf13edff1c8a80e" category="list-text">輸入 Capacity Pool 的授權序號，然後按一下 *Go!* 。</block>
+  <block id="69d0d1235d3907b389980501bf178f3e" category="paragraph">您必須先將授權檔案上傳至部署管理公用程式， ONTAP Select 節點才能使用容量集區。</block>
+  <block id="e34af85c97201b9096873d4c2ad19cf3" category="summary">使用 Capacity Tiers 授權時，您需要為每個 ONTAP Select 節點取得授權檔案。授權檔案會定義節點的儲存容量、並透過NetApp指派的獨特九位數序號鎖定至節點。</block>
+  <block id="884816b6d5a6ed8f167117fc8af0b452" category="doc">取得 ONTAP Select 容量層授權</block>
+  <block id="6a83549be60e71831bbfcda50973a52e" category="paragraph">您必須為每個需要容量層授權的 ONTAP Select 節點執行此工作。</block>
+  <block id="9e2e9cf9504e665219344b4d7647d396" category="sidebar">資料保護與效率</block>
+  <block id="7b1e0be7876419647c8d2d4cd1e3444e" category="sidebar">容量集區與容量層的比較</block>
 </blocks>

@@ -37,8 +37,8 @@ NOTE: 您應該檢閱ONTAP Select 目前版本的《更新說明》、以瞭解�
 
 下列Hypervisor可部署下列項目：ONTAP Select
 
-* Red Hat Enterprise Linux 8.6 、 8.7 、 8.8 、 9.0 、 9.1 、 9.2 和 9.4
-* 落基 Linux 8.6 、 8.7 、 8.8 、 8.9 、 9.0 、 9.1 、 9.2 、 9.3 和 9.4
+* Red Hat Enterprise Linux 8.6 ， 8.7 ， 8.8 ， 9.0 ， 9.1 ， 9.2 ， 9.4 和 9.5 上的 KVM
+* 在落基 Linux 8.6 ， 8.7 ， 8.8 ， 8.9 ， 9.0 ， 9.1 ， 9.2 ， 9.3 ， 9.4 和 9.5 上執行 KVM
 * VMware ESXi 7.0 GA（建置編號：15843807或更新版本）、包括7.0 U1、U2和U3C
 * VMware ESXi 8.0 GA （組建 20513097 ）
 * VMware ESXi 8.0 U1 （內部版本 21495797 ）
@@ -67,7 +67,7 @@ NOTE: ESXi 6.5 GA 和 ESXi 6.7 GA 已達到可用性終止狀態。如果您的 
 
 NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更新版本為基礎的CPU機型。
 
-請參閱 https://mysupport.netapp.com/matrix["NetApp互通性對照表工具、window=_blank"] 以取得更多資訊。
+如需詳細資訊，請參閱 https://mysupport.netapp.com/matrix["互通性對照表工具， window=_blank"]。
 
 
 

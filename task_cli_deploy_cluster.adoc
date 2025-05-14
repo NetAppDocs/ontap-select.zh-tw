@@ -40,7 +40,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 === 正式作業部署的授權 ONTAP Select
 
-在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用_capsityleap__模型在每個節點上授權儲存設備、或使用_capsityPools_模型授權共用資源池。
+在ONTAP Select 正式作業環境中部署一個叢集之前、您必須先購買儲存容量授權、然後下載相關的授權檔案。您可以使用 _Capacity Tiers_ 模式，在每個節點上授權儲存設備，或使用 _Capacity Poolers_ 模式來授權共用集區。
 
 
 
@@ -229,10 +229,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 您必須在ONTAP Select E驗 集叢中設定每個節點。
 
 .開始之前
-您必須擁有節點的組態資訊。容量層授權檔案應上傳並安裝在部署公用程式中。
+您必須擁有節點的組態資訊。Capacity Tier 授權檔案應上傳並安裝於部署公用程式。
 
 .關於這項工作
-您應該使用此程序來設定每個節點。在此範例中、容量層授權會套用至節點。
+您應該使用此程序來設定每個節點。本範例中的容量層授權會套用至節點。
 
 .步驟
 . 以系統管理員帳戶使用SSH登入部署公用程式CLI。
@@ -253,7 +253,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 節點的RAID組態會以_passthrough disks_參數表示。如果您使用的是本機硬體RAID控制器、則此值必須為假。如果您使用的是軟體RAID、則此值必須為真。
 
 +
-容量層授權用於ONTAP Select 不中斷節點。
+容量層授權用於 ONTAP Select 節點。
 
 . 顯示主機上可用的網路組態：
 +

@@ -1,0 +1,8 @@
+---
+permalink: concept_usecase_mc_sds.html 
+redirect: ontap-select/concept-data-protection-and-efficiency.html 
+---
+= 
+:allow-uri-read: 
+
+

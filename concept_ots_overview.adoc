@@ -4,7 +4,7 @@ permalink: concept_ots_overview.html
 keywords: overview, software defined storage, sds, typical deployment, ontap 9 
 summary: 支援僅軟體版本的功能、可在Hypervisor主機上部署為虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。 
 ---
-= 概述ONTAP Select
+= 瞭解 ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,21 @@ summary: 支援僅軟體版本的功能、可在Hypervisor主機上部署為虛�
 
 
 [role="lead"]
-支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它是主流FAS 的整套功能、可搭配各種純AFF ONTAP 軟體選項（例如Cloud Volumes ONTAP ：）的補充。
+支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它可輔助主流 FAS ， AFF 和 ASA ONTAP 產品套件，以及其他純軟體選項，例如 Cloud Volumes ONTAP 。
+
+ONTAP Select 可將內部磁碟機， NVMe ， SSD 或 HDD ，以及外部陣列儲存設備，轉換成靈活的儲存系統，並享有專用 ONTAP 儲存系統所提供的許多相同優勢。您也可以在新伺服器或現有的伺服器基礎架構上部署 ONTAP Select 。ONTAP Select 易於管理，並使用與 ONTAP 型解決方案相同的管理軟體，因此可降低營運成本和訓練需求。
+
+ONTAP Select 採用兩種互補授權模式：容量層和完全靈活的容量資源池，可因應您的容量使用需求。這兩種授權模式都能讓您以最小 1TB 的增量來增加容量。例如，您可以從數 TB 開始，並隨著專案成長而動態增加容量。如果您使用容量資源池，則可以在專案完成時視需要重新分配容量。
+
+ONTAP Select 已整合至雲端管理架構，例如 VMware vSphere 。這有助於加速部署檔案服務，主目錄，軟體開發環境和應用程式測試等新專案。
+
+SnapMirror 軟體可讓您在混合雲的 ONTAP 儲存設備之間移動資料，以便您輕鬆地在想要的位置存取資料。例如，您可以快速建立環境來證明想法。之後，您可以將專案移至專用的儲存平台進行正式作業部署，或是在開發工作流程中，讓專案更容易在雲端中存取。
 
 
 
 == 軟體定義儲存設備
 
-透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（SDI）架構、最寶貴的IT資產可與基礎實體基礎架構分開、提供靈活度、擴充性及可程式化性。
+透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（ SDI ）架構，您可以將最寶貴的 IT 資產與基礎實體基礎架構分離，提供靈活度，擴充性和程式設計能力。
 
 在資料分散於直接附加儲存設備（DAS）的零散環境中、資料移動性和管理變得更加複雜。軟體定義儲存設備（SDS）已成為「軟體定義基礎架構」領域的重要一環、可解決這些及其他問題。
 
@@ -71,7 +79,7 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 === 容量授權
 
-介紹消費型授權模式。ONTAP Select在ONTAP Select 正式作業環境中部署一個叢集時、您必須為每個節點或共享容量資源池購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。
+介紹消費型授權模式。ONTAP Select在正式作業環境中部署 ONTAP Select 叢集時，您必須為每個節點或共享容量集區購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。
 
 
 
@@ -123,4 +131,4 @@ NOTE: 從 ONTAP Select 9.16.1 開始，支援手動更新 ARP ， NetApp 授權�
 
 
 .相關資訊
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["預設啟用的支援功能ONTAP"]
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["瞭解預設啟用的 ONTAP 功能"] link:concept_lic_evaluation.html["瞭解 ONTAP Select 授權選項"]

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_lic_platforms.html 
 keywords: license, licensing, platform license offerings, license offerings, standard, premium, premium xl 
-summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不含任何功能的功能區層級或容量資源池授權。這些授權產品決定了部署ONTAP Select 的主機功能。 
+summary: 您可以在三個平台容量層級中的其中一個層級購買 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。 
 ---
 = 瞭解 ONTAP Select 平台授權方案
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不�
 
 
 [role="lead"]
-您可以在ONTAP Select 三種平台容量層級之一購買一個不含任何功能的功能區層級或容量資源池授權。這些授權產品決定了部署ONTAP Select 的主機功能。
+您可以購買標準，優質或優質 XL 等級的 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。
 
 
 
 == 平台授權方案提供的功能
 
-特定授權方案可定義並限制Hypervisor主機在以下兩個領域的功能：
+特定授權方案可定義及限制 Hypervisor 主機在兩個方面的功能：
 
 * 執行個體類型（CPU、記憶體）
 * 其他功能
@@ -53,7 +53,7 @@ summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不�
 優質產品提供下列功能：
 
 * 小型或中型執行個體類型
-* 硬碟（HDD）或固態硬碟（SSD）
+* 硬碟機（ HDD ）或固態硬碟（ SSD ）
 * 本機硬體RAID控制器或軟體RAID
 * vNAS
 * 部分SDS MetroCluster
@@ -73,4 +73,112 @@ summary: 您可以在ONTAP Select 三種平台容量層級之一購買一個不�
 
 
 
-NOTE: KVM 不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。
+NOTE: 核心型虛擬機器（ KVM ）不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。
+
+
+
+== 比較平台授權方案的硬體支援
+
+標準，優質及優質 XL 授權產品支援多種硬體與軟體。如需軟硬體版本的最新資訊，請參閱link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。
+
+[role="tabbed-block"]
+====
+.核心項目
+--
+[cols="5"30"]
+|===
+
+
+2+| 核心項目類型 3+| 說明 
+
+
+2+| 主機傳輸協定 3+| NFS ， SMB/CIFS ， iSCSI 和 NVMe over TCP 
+
+
+2+| 部署選項 3+| 單節點雙節點叢集（ HA 配對）四節點，六節點或八節點叢集 
+
+
+2+| 支援的容量（每個節點） 3+| 最高 400TB 原始資料（ ESXi 和 KVM ） 
+|===
+--
+.硬體
+--
+[cols="5"30"]
+|===
+
+
+2+| 硬體類型 3+| 說明 
+
+
+2+| 執行個體大小 | 小 | 中 | 大 
+
+
+2+| CPU 系列 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 
+
+
+2+| ONTAP Select CPU/ 記憶體 | 4 個虛擬 CPU （ vCPU ） / 16 GB RAM | 8 個 vCPU / 64GB RAM | 16 個 vCPU / 128GB RAM 
+
+
+2+| 主機 CPU / 記憶體最低需求 ^1^ | 6 核心 / 24GB RAM | 10 核心 / 72GB RAM | 18 核心 / 136GB RAM 
+
+
+2+| 網路（每個節點） 3+| 單一節點叢集至少需要兩個 1GbE 連接埠，雙節點叢集至少要有四個 1GbE 連接埠（ HA 配對），四個，六個或八個節點叢集至少要有兩個 10GbE 連接埠 
+|===
+^1^ 假設 Hypervisor 有兩個核心和 8Gb RAM 。
+
+--
+.儲存類型
+--
+下表提供指定儲存設備所需的最低授權類型。 
+
+[cols="5"30"]
+|===
+
+
+2+| 儲存類型 3+| 說明 
+
+
+2+| 授權類型 | 標準 | 優質 | Pemium XL 
+
+
+2+| 執行個體大小 | 小 | 中小型 | 小，中，大 
+
+
+2+| 具有硬體 RAID 控制器的本機 DAS | 8 到 60 個磁碟機 | 8 到 60 個磁碟機 | 8 到 60 個磁碟機 
+
+
+2+| HDD （ SAS ， NL-SAS ， SATA ） | 不適用 | 4 – 60 個磁碟機 | 4 – 60 個磁碟機 
+
+
+2+| SSD （ SAS ） | 不適用 | 4 – 60 個磁碟機（僅限 SSD ） | 4 – 60 個磁碟機（僅限 SSD ） 
+
+
+2+| 具有軟體 RAID 的本機 DAS | 不適用 | 不適用 | 4 - 14 個磁碟機（僅限 NVMe ） 
+
+
+2+| 外部陣列 ^1^ 3+| 外部陣列上的資料存放區是透過 FC ， FCoE ， iSCSI 和 NFS 連線（ KVM 不支援 NFS ）。這些資料存放區可提供高可用度和恢復能力。 
+|===
+^1^ 外部陣列傳輸協定支援反映了網路儲存連線能力。
+
+--
+.軟體
+--
+[cols="5"30"]
+|===
+
+
+2+| 軟體類型 3+| 說明 
+
+
+2+| Hypervisor 支援（ VMware ） 3+| VMware vSphere 7.0GA 及透過 3C 更新 VMware vSphere 8.0GA 及更新 1 至 3 
+
+
+2+| Hypervisor 支援（ KVM ） 3+| RedHat Enterprise Linux 64 位元（ KVM ） 9.5 ， 9.4 ， 9.3 ， 9.2 ， 9.1 ， 9.0 ， 8.9 ， 8.8 ， 8.7 和 8.6 Rocky Linux （ KVM ） 9 和 8 
+
+
+2+| 管理軟體 3+| NetApp Active IQ Unified Manager 管理套件 ONTAP Select Deploy Utility SnapCenter （選用） 
+|===
+--
+====
+.相關資訊
+link:concept_lic_production.html["瞭解容量層和容量池授權類型"]。

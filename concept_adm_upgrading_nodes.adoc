@@ -54,5 +54,4 @@ ONTAP Select 9.8 一開始即已安裝:: 您無法還原至 9.7 版、因為此�
 VMXNET3 是 VMware ESXi 上新叢集部署所隨附的預設網路驅動程式。如果您升級執行 ONTAP Select 9.4 或更早版本的現有 ONTAP Select 節點、則不會自動升級網路驅動程式。您必須手動升級至VMXNET3。如需升級協助、請聯絡NetApp支援部門。
 
 .相關資訊
-* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^]
-
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 升級總覽"^]

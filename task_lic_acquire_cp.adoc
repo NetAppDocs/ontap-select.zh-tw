@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task_lic_acquire_cp.html 
-keywords: license, licensing, acquire, capacity pools 
-summary: 您必須為ONTAP Select 各個由節點使用的容量資源池取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。 
+keywords: license, licensing, acquire, Capacity Pools 
+summary: 您必須為 ONTAP Select 節點所使用的每個容量集區取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。 
 ---
 = 取得 ONTAP Select 容量資源池授權
 :hardbreaks:
@@ -14,18 +14,18 @@ summary: 您必須為ONTAP Select 各個由節點使用的容量資源池取得�
 
 
 [role="lead"]
-您必須為ONTAP Select 各個由節點使用的容量資源池取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。
+您必須為 ONTAP Select 節點所使用的每個容量集區取得授權檔案。授權檔案會定義集區的儲存容量和到期日。它會透過NetApp指派的唯一授權序號和與部署執行個體相關的授權鎖定ID組合、鎖定到授權管理員。
 
 .開始之前
-您必須擁有由NetApp指派給容量資源池的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。
+您必須擁有 NetApp 指派給容量集區的九位數授權序號。在嘗試取得授權檔案之前、您應在訂單出貨日期後至少等待二十四小時。
 
 .關於這項工作
-您必須針對ONTAP Select 各個節點使用的容量資源池執行此工作。
+您必須為 ONTAP Select 節點所使用的每個容量集區執行此工作。
 
 .步驟
 . 使用網頁瀏覽器存取NetApp支援網站並登入。
 . 按一下頂端的* Systemes*、然後按一下* Software Licenses*。
-. 輸入容量集區的授權序號、然後按一下「*執行！*」。
+. 輸入 Capacity Pool 的授權序號，然後按一下 *Go!* 。
 . 在授權詳細資料頁面上、瀏覽至*產品詳細資料*欄。
 . 按一下適當列上的*「Get NetApp License File"（取得NetApp授權檔案）*。
 . 輸入ONTAP Select 您的「更新部署」執行個體的授權鎖定ID、然後按一下「*提交*」。
@@ -34,4 +34,4 @@ summary: 您必須為ONTAP Select 各個由節點使用的容量資源池取得�
 
 
 .完成後
-您必須先將授權檔案上傳至部署管理公用程式、才能讓ONTAP Select 某個節點使用容量資源池。
+您必須先將授權檔案上傳至部署管理公用程式， ONTAP Select 節點才能使用容量集區。

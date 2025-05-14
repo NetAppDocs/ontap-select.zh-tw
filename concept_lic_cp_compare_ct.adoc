@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
-keywords: license, licensing, capacity pools, capacity tiers, comparing 
-summary: 容量資源池與容量層授權模式之間有幾個差異。 
+keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
+summary: 容量資源池與容量層授權模式之間有幾種差異。 
 ---
-= 比較 ONTAP Select 容量集區和容量層授權
+= 比較 ONTAP Select 容量資源池和容量層授權
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,10 +18,10 @@ summary: 容量資源池與容量層授權模式之間有幾個差異。
 
 [cols="20,40,40"]
 |===
-|  | 容量階層 | 容量資源池 
+|  | 容量層級 | 容量資源池 
 
 
-| 授權序號 | 由NetApp產生並指派給節點的九位數 | 由NetApp產生並指派給容量資源池的九位數 
+| 授權序號 | 由NetApp產生並指派給節點的九位數 | NetApp 產生九位數並指派給容量資源池 
 
 
 | 授權鎖定 | 鎖定ONTAP Select 至節點 | 鎖定至License Manager執行個體 

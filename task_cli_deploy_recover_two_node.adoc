@@ -41,7 +41,7 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 您必須知道故障的原始部署公用程式虛擬機器的IP位址。
 
 .儲存容量授權
-您必須判斷是否使用容量資源池或容量層授權。如果您使用容量集區授權、則必須在還原或還原部署執行個體之後、重新安裝每個容量集區授權。
+您必須判斷是否使用容量集區或容量層授權。如果您使用 Capacity Pool 授權，則必須在還原或還原部署執行個體之後重新安裝每個 Capacity Pool 授權。
 
 .決定要使用的恢復程序
 您必須決定恢復ONTAP Select 某個執行個體時要使用的程序。您的決定取決於您是否備份來自原始故障部署公用程式的組態資料、該公用程式包含ONTAP Select 了雙節點叢集。
@@ -115,7 +115,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .完成後
-如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量資源池授權_。
+如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資料，請參閱重新安裝容量集區授權 _ 。
 
 
 
@@ -207,10 +207,10 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .完成後
-如果您使用容量集區授權、則必須重新安裝每個容量集區授權。如需其他詳細資料、請參閱重新安裝容量集區授權。
+如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資訊，請參閱重新安裝容量資源池授權。
 
 .相關資訊
 * link:task_install_deploy.html["安裝ONTAP Select 部署"]
 * link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["將部署組態資料還原至新的虛擬機器"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝容量集區授權"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝 Capacity Pool 授權"]
 

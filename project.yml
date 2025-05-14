@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: 概念
     entries:
-    - title: 概述ONTAP Select
+    - title: 瞭解 ONTAP Select
       url: "/concept_ots_overview.html"
     - title: 部署ONTAP Select
       url: "/concept_ots_deploy.html"
@@ -44,8 +44,8 @@ sidebar:
         url: "/concept_usecase_robo.html"
       - title: 私有雲端與資料中心
         url: "/concept_usecase_private_cloud.html"
-      - title: 部分SDS MetroCluster
-        url: "/concept_usecase_mc_sds.html"
+      - title: 資料保護與效率
+        url: "/concept-data-protection-and-efficiency.html"
     - title: 術語
       url: "/concept_terminology.html"
   - title: 規劃
@@ -102,7 +102,7 @@ sidebar:
         url: "/concept_lic_cp_serial_number.html"
       - title: 限制
         url: "/concept_lic_cp_restrictions.html"
-      - title: 容量集區與容量層
+      - title: 容量集區與容量層的比較
         url: "/concept_lic_cp_compare_ct.html"
       - title: 效益摘要
         url: "/concept_lic_cp_benefits.html"
@@ -110,7 +110,7 @@ sidebar:
       entries:
       - title: 授權工作流程
         url: "/concept_lic_workflow.html"
-      - title: 容量階層
+      - title: 容量層級
         url: "/task_lic_acquire_ct.html"
       - title: 容量資源池
         url: "/task_lic_acquire_cp.html"

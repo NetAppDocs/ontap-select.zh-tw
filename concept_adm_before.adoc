@@ -53,7 +53,7 @@ NOTE: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_sign
 * 適用於VMware vSphere的虛擬儲存主控台
 
 
-若要識別用戶端軟體的支援版本、請參閱 link:https://mysupport.netapp.com/matrix/["NetApp 互通性對照表工具"^]。如果用戶端軟體支援ONTAP SJ9、ONTAP Select 則相同版本也可支援該功能。
+若要識別用戶端軟體的支援版本，請參閱link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。如果用戶端軟體支援ONTAP SJ9、ONTAP Select 則相同版本也可支援該功能。
 
 
 NOTE: 使用不必要的程式集和對應的外掛程式時、需要伺服器型授權。SnapCenter目前不支援使用支援的儲存系統SnapCenter 授權功能。ONTAP Select

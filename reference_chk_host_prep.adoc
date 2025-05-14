@@ -50,7 +50,7 @@ ONTAP Select 需要數個額外的軟體套件。套件的確切清單會因您�
 
 NOTE: 如果您在安裝 Linux 伺服器期間選擇虛擬化主機做為軟體選擇、則可能已安裝部分必要的套件。您可能需要從原始程式碼安裝 openvswitch 套件、如中所述 link:https://docs.openvswitch.org/en/latest/intro/install/general/["開啟 vSwitch 文件"^]。
 
-如需必要套件及其他組態需求的詳細資訊，請參閱link:https://imt.netapp.com/matrix/#welcome["NetApp 互通性對照表工具"^]。
+如需必要套件及其他組態需求的詳細資訊，請參閱link:https://imt.netapp.com/matrix/#welcome["互通性對照表工具"^]。
 
 .儲存資源池的組態
 ONTAP Select 儲存資源池是一個邏輯資料容器、可將基礎實體儲存設備抽象化。您必須在部署 ONTAP Select 的 KVM 主機上管理儲存池。

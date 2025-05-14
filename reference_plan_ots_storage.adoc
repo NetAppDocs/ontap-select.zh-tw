@@ -134,7 +134,7 @@ KVM 的媒體期望:: 所使用的 SSD Flash 儲存裝置必須符合下列額�
 
 在規劃ONTAP Select 非重點部署時、您應該瞭解與儲存配置和使用有關的限制。
 
-最重要的儲存限制如下所示。您也應該檢閱 link:https://mysupport.netapp.com/matrix/["NetApp 互通性對照表工具"^] 以取得更詳細的資訊。
+最重要的儲存限制如下所示。您也應該檢閱link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]以取得更詳細的資訊。
 
 
 TIP: 執行與儲存分配和使用相關的數項限制。ONTAP Select在您部署ONTAP Select 一個叢集或購買授權之前、您應該先熟悉這些限制。請參閱 link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["授權"] 章節以取得更多資訊。

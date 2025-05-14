@@ -31,6 +31,7 @@ ONTAP Select 9.16.1 包含多項新功能與改良功能。
 --
 支援自主勒索軟體保護:: ONTAP Select 9.16.1 引進對自主勒索軟體保護（ ARP ）的支援。ONTAP Select 9.16.1 僅支援手動 ARP 更新，不支援自動更新。ONTAP Select 9.16.1 的 NLF 中包含 ARP 功能授權。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["深入瞭解"]。
 增強VMware ESXi支援:: ONTAP Select 9.16.1 支援 VMware ESXi 8.0 U3 。
+已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.16.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.5 和 Rocky Linux 9.5 支援核心型虛擬機器（ KVM ） Hypervisor 。
 
 
 
@@ -39,7 +40,7 @@ ONTAP Select 9.16.1 包含多項新功能與改良功能。
 
 ONTAP Select 9.15.1 包含多項新功能與改良功能。
 
-已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.15.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。
+已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.15.1 開始， RHEL 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。
 支援叢集擴充和縮減:: 從 ONTAP Select 9.15.1 開始、支援叢集擴充和收縮。
 +
 --
