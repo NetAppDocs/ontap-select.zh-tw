@@ -27,7 +27,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 * 符合規格1.0或更新版本的NVMe裝置
 
 
-請依照 link:reference_chk_host_prep.html["主機準備檢查清單"]、檢閱 link:reference_chk_deploy_req_info.html["部署公用程式安裝所需的資訊"]和 link:reference_chk_select_req_info.html["安裝所需的資訊ONTAP Select"] 主題以取得更多資訊。
+link:kvm-host-configuration-and-preparation-checklist.html["主機準備檢查清單"]請遵循，檢閱，link:reference_chk_deploy_req_info.html["部署公用程式安裝所需的資訊"]和link:reference_chk_select_req_info.html["安裝所需的資訊ONTAP Select"]主題以取得更多資訊。
 
 .關於這項工作
 此程序設計為在建立新ONTAP Select 的叢集之前執行。您也可以執行程序、為現有的SW-RAID NVMe叢集設定額外的NVMe磁碟機。在這種情況下、設定磁碟機之後、您必須透過部署來新增磁碟機、如同使用其他SSD磁碟機一樣。主要差異在於部署會偵測NVMe磁碟機並重新開機節點。將NVMe磁碟機新增至現有叢集時、請注意下列關於重新開機程序的資訊：

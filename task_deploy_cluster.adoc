@@ -23,62 +23,76 @@ TIP: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_deplo
 
 
 
-== 開始之前
+== 步驟 1：準備部署
 
-您應該為部署做好準備、以確保部署成功。
+做好部署準備以確保其成功。
 
-初始規劃:: 檢閱文件的_計畫_和_授權_區段。在此基礎上、您可以針對叢集做出決策、包括：
+.步驟
+. 初步規劃。
 +
---
-* Hypervisor
-* 節點數
-* 授權類型
-* 平台大小（執行個體類型）
-* 版本ONTAP Select
+回顧link:concept_workflow_deploy.html["規劃"]和link:concept_lic_evaluation.html["授權"]部分。基於此審查，您可以做出有關集群的決策，包括：
 
-
---
-主機準備:: 您必須準備Hypervisor主機、ONTAP Select 讓其執行效能不中斷的節點、並根據授權模式取得所需的儲存授權檔案。若要檢視準備要求：
 +
---
-. 登入部署 Web UI 。
-. 選取image:icon_question_mark.gif["問號"]頁面頂端的。
-. 選擇 * 先決條件 * 。
-. 向下捲動以檢閱要求，然後選取 * 確定 * 。
+** Hypervisor
+** 節點數
+** 授權類型
+** 平台大小（執行個體類型）
+** 版本ONTAP Select
 
 
---
-授權檔案:: 如果您打算在正式作業環境中部署叢集、則必須根據授權模式取得儲存授權檔案。
-部署安裝和帳戶認證:: 您必須安裝部署管理公用程式並執行初始組態。請參閱 link:task_install_deploy.html["安裝ONTAP Select 部署"] 以取得更多資訊。您必須擁有部署系統管理員帳戶的密碼、此密碼已設定為安裝程序的一部分。
-安裝先前ONTAP Select 的鏡像節點映像:: 根據預設、部署管理公用程式會在ONTAP Select 發行時包含最新版本的功能。如果您想要使用舊版ONTAP Select 的不實功能來部署叢集、您必須將ONTAP Select 此不實影像新增至部署執行個體。請參閱 link:task_cli_deploy_image_add.html["新增要部署的 ONTAP Select 映像"] 以取得更多資訊。
-快速入門啟動頁面:: 初始頁面* ONTAP Select 《Getting Started with the Siddeploy》（《使用介紹》）*將引導您完成建立叢集的多步驟程序。主要步驟有五個、包括：
+. 準備好宿主。
 +
---
-* 新增授權
-* 將主機新增至庫存
-* 建立叢集
-* 網路預先檢查
-* 部署叢集
+您必須準備Hypervisor主機、ONTAP Select 讓其執行效能不中斷的節點、並根據授權模式取得所需的儲存授權檔案。若要檢視準備要求：
+
++
+.. 登入部署 Web UI 。
+.. 選取image:icon_question_mark.gif["問號"]頁面頂端的。
+.. 選擇 * 先決條件 * 。
+.. 向下捲動以檢閱要求，然後選取 * 確定 * 。
 
 
---
+. 取得許可證文件。
++
+如果您打算在正式作業環境中部署叢集、則必須根據授權模式取得儲存授權檔案。
 
+. 部署安裝和帳戶憑證。
++
+link:task_install_deploy.html["安裝 Deploy 管理實用程式並執行初始配置"]。您必須擁有部署系統管理員帳戶的密碼、此密碼已設定為安裝程序的一部分。
 
+. 或者，安裝早期版本的ONTAP Select節點映像。
++
+根據預設、部署管理公用程式會在ONTAP Select 發行時包含最新版本的功能。如果要使用早期版本的ONTAP Select部署集群，您需要link:task_cli_deploy_image_add.html["將ONTAP Select映像新增至您的 Deploy 實例"] 。
+
+. 了解「入門」啟動頁面。
++
+初始頁面* ONTAP Select 《Getting Started with the Siddeploy》（《使用介紹》）*將引導您完成建立叢集的多步驟程序。主要步驟有五個、包括：
+
++
+** 新增授權
+** 將主機新增至庫存
+** 建立叢集
+** 網路預先檢查
+** 部署叢集
++
 
 NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管理），獨立執行相同的步驟。
 
-網路檢查工具:: 如果要部署多節點叢集、您應該熟悉網路檢查程式。
-部署叢集之後:: 您應該備份ONTAP Select 「不再部署」組態資料。
+
+
+. 檢查網路檢查器。
++
+如果您正在部署多節點集群，您應該熟悉網路檢查器。您可以使用link:task_adm_connectivity.html["網頁使用者介面"]或link:task_cli_connectivity.html["CLI"] 。
 
 
 
 
-== 建立單一節點或多節點叢集
+
+== 步驟 2：建立單節點或多節點集群
 
 您可以使用 ONTAP Select Deploy Web 使用者介面來部署單一節點或多節點 ONTAP Select 叢集。
 
 .開始之前
-請參閱 link:task_deploy_cluster.html#before-you-begin["開始之前"] 以準備部署叢集。部署管理必須先安裝並設定（密碼、 AutoSupport 和 vCenter ）。
+驗證您已安裝 Deploy 管理並完成初始設定（密碼、 AutoSupport和 vCenter）。
 
 .關於這項工作
 系統會為正式作業部署建立具有一或多個節點的 ONTAP Select 叢集。
@@ -99,7 +113,7 @@ NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管�
 +
 您可以直接新增 Hypervisor 主機、或是連線至 vCenter 伺服器。視需要提供適當的主機詳細資料和認證資料。
 
-. 選擇 *Refresh* 並確認主機的 *Type* 值爲 *ESX* 。
+. 選擇*刷新*並確認主機的*類型*值為*ESX*或*KVM*。
 +
 您提供的任何帳戶認證資料都會新增至部署認證資料庫。
 
@@ -144,7 +158,7 @@ NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管�
 +
 您可以直接新增 Hypervisor 主機、或是連線至 vCenter 伺服器。視需要提供適當的主機詳細資料和認證資料。
 
-. 選擇 *Refresh* 並確認主機的 *Type* 值爲 *ESX* 。
+. 選擇*刷新*並確認主機的*類型*值為*ESX*或*KVM*。
 +
 您提供的任何帳戶認證資料都會新增至部署認證資料庫。
 
@@ -180,7 +194,10 @@ NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管�
 
 --
 ====
-.完成後
+
+
+== 步驟 3：完成後
+
 您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。
 
 [TIP]

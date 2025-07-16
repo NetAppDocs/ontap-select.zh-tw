@@ -32,7 +32,7 @@ summary: 您可以使用 VMware ESXi 上的 OVF 範本，快速部署單節點 O
 
 image:prepare_ESXi_host_requirements.png["準備 ESXi 主機的需求"]
 
-有關主機組態選項的其他資訊，請參閱link:reference_chk_host_prep.html["ONTAP Select 安裝文件"]。
+有關主機組態選項的其他資訊，請參閱link:esxi-host-configuration-and-preparation-checklist.html["ONTAP Select 安裝文件"]。
 
 
 

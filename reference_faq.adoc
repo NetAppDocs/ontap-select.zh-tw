@@ -244,7 +244,7 @@ VMware vCenter有幾個問題與解答。
 不像ONTAP Select 以供選擇的四節點、六節點和八節點叢集、以供選擇使用以整合虛擬機器來建立叢集、雙節點叢集會持續仰賴ONTAP Select 以供HA仲裁使用的功能為基礎的功能來部署虛擬機器。如果ONTAP Select 無法使用此功能、就會停用容錯移轉服務。
 
 .什麼是MetroCluster SDS？
-不只是NetApp的「恢復營運不中斷」解決方案、更低成本的同步複寫選項。MetroCluster MetroCluster不像NetApp的《混合式Flash》、《支援雲端的NetApp私有儲存設備》、《NetApp支援雲端的私有儲存設備》、以及《NetApp支援》（NetApp）技術、這項功能只能搭配ONTAP Select 使用。MetroCluster FAS AFF FlexArray
+不只是NetApp的「恢復營運不中斷」解決方案、更低成本的同步複寫選項。MetroCluster MetroCluster它僅適用於ONTAP Select，而NetApp MetroCluster則適用於FAS混合快閃記憶體、 AFF和NetApp Private Storage for Cloud。
 
 .不只是NetApp的功能、哪些地方的不一樣？MetroCluster MetroCluster
 支援同步複寫解決方案的不只是NetApp的解決方案、MetroCluster MetroCluster然而、主要差異在於所支援的距離（約10公里與300公里）、以及連線類型（僅支援IP網路、而非FC與IP）。

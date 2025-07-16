@@ -65,4 +65,6 @@ summary: 如果您想要在ONTAP Select 決定購買之前先評估一下「版�
 請參閱 link:task_adm_licenses.html["將試用版授權轉換為正式作業授權"] 以取得更多資訊。
 
 .相關資訊
-link:deploy-evaluation-ontap-select-ovf-template.html["部署 ONTAP Select 叢集的 90 天評估執行個體"]
+* link:concept_lic_production.html["了解生產部署的許可證"]
+* link:deploy-evaluation-ontap-select-ovf-template.html["部署 ONTAP Select 叢集的 90 天評估執行個體"]
+

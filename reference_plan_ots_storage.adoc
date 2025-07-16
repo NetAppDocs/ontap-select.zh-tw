@@ -86,7 +86,7 @@ NOTE: 如果有硬體RAID控制器、請參閱 link:concept_stor_concepts_chars.
 
 === KVM 特定需求
 
-還有特定的軟體套件組態需求。請參閱 link:https://docs.netapp.com/us-en/ontap-select/reference_chk_host_prep.html#kvm-hypervisor["準備 Linux 伺服器"] 以取得更多資訊。
+還有特定的軟體套件組態需求。查看link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["Linux 伺服器的準備"]步驟以取得更多資訊。
 
 KVM 的媒體期望:: 所使用的 SSD Flash 儲存裝置必須符合下列額外需求：
 +

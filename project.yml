@@ -121,7 +121,11 @@ sidebar:
     - title: 安裝前檢查清單
       entries:
       - title: 主機準備檢查清單
-        url: "/reference_chk_host_prep.html"
+        entries:
+        - title: KVM 主機檢查清單
+          url: "/kvm-host-configuration-and-preparation-checklist.html"
+        - title: ESXi 主機清單
+          url: "/esxi-host-configuration-and-preparation-checklist.html"
       - title: 部署公用程式所需資訊
         url: "/reference_chk_deploy_req_info.html"
       - title: 必填資訊ONTAP Select
