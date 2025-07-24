@@ -52,6 +52,18 @@ NOTE: 如果您在安裝 Linux 伺服器期間選擇虛擬化主機做為軟體�
 +
 如需必要套件及其他組態需求的詳細資訊，請參閱link:https://imt.netapp.com/matrix/#welcome["互通性對照表工具"^]。
 
+. 為 NVMe 磁碟配置 PCI 直通。
++
+如果您在設定中使用 NVMe 磁碟，則需要設定 PCI 直通 (DirectPath IO)，以便 KVM 主機能夠直接存取ONTAP Select叢集中本機連線的 NVMe 磁碟。您需要直接存取才能執行以下任務：
+
++
+** link:task_chk_nvme_configure.html["配置 KVM 主機以使用 NVMe 驅動器"]
+** link:concept_stor_swraid_local.html["部署叢集後使用軟體 RAID"]
+
+
++
+查看link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-pci_passthrough#sect-Virtualization-PCI_passthrough-AI_device_to_a_host["Red Hat 文檔"^]有關如何為 KVM 虛擬機器管理程式設定 PCI 直通（DirectPath IO）的說明。
+
 . 配置儲存池。
 +
 ONTAP Select 儲存資源池是一個邏輯資料容器、可將基礎實體儲存設備抽象化。您必須在部署 ONTAP Select 的 KVM 主機上管理儲存池。

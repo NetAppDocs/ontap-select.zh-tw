@@ -19,6 +19,47 @@ summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。
 
 
 
+== ONTAP Select 9.17.1
+
+ONTAP Select 9.17.1 包含多項新功能和改進。
+
+KVM 主機上本機連接的 NVMe 磁碟的軟體 RAID 支持:: ONTAP Select 9.17.1 引進了對基於核心的虛擬機器 (KVM) 虛擬機器管理程式主機上ONTAP Select本機連接的 NVMe 磁碟的軟體 RAID 支援。
++
+--
+若要對本機連線的 NVMe 磁碟使用軟體 RAID，您需要link:kvm-host-configuration-and-preparation-checklist.html["配置 PCI 直通（DirectPath IO）"]當您準備 KVM 主機。這為 KVM 主機提供了對本地連接的 NVMe 磁碟的直接訪問，這是以下任務所必需的：
+
+* 配置 KVM 主機以使用 NVMe 驅動器
+* 部署叢集後使用軟體 RAID
+
+
+link:concept_stor_swraid_local.html["了解本地連接儲存的軟體 RAID 設定服務"] 。
+
+--
+支援KVM主機叢集擴容與縮容:: 從ONTAP Select 9.17.1 開始，基於核心的虛擬機器 (KVM) 和 ESXi 虛擬機器管理程式主機均支援叢集擴充和收縮功能。對於ONTAP Select 9.16.1 和 9.15.1，僅 ESXi 虛擬機器管理程式主機支援叢集擴充和收縮功能。
++
+--
+您可以使用現有ONTAP Select叢集上的叢集擴展和收縮功能將叢集規模從六節點增加到八節點，或將叢集規模從八節點減少到六節點。
+
+link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
+
+--
+支援SnapMirror雲:: 從ONTAP Select 9.17.1 開始， ONTAP Select支援SnapMirror雲端。 SnapMirrorSnapMirror是獲得許可的ONTAP功能，在部署ONTAP Select 9.17.1 叢集或將現有ONTAP Select叢集升級到 9.17.1 版本時預設啟用。
++
+--
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["了解SnapMirror雲端備份到物件存儲"^] 。
+
+--
+更新了 NDA 驅動程式支援:: 從ONTAP Select 9.17.1 開始，FreeBSD NDA（NVMe 直接存取）裝置驅動程式取代了 NVD（NVMe 快速磁碟驅動程式）。 FreeBSD驅動程式透過實作 NVMe 命令協定來支援直接存取裝置。當您部署ONTAP Select 9.17.1 叢集或將現有ONTAP Select叢集升級至 9.17.1 版本時，設定 NVMe 裝置時會預設啟動 FreeBSD 驅動程式。
++
+--
+對於ONTAP Select 9.16.1 及更早版本，NVD 將繼續為ONTAP Select部署中的 NVMe 設備提供支援。
+
+--
+已更新 KVM Hypervisor 支援:: 從ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux (RHEL) 9.6 和 Rocky Linux 9.6 支援 KVM 虛擬機器管理程式。
+
+
+
+
 == ONTAP Select 9.16.1
 
 ONTAP Select 9.16.1 包含多項新功能與改良功能。
@@ -31,7 +72,7 @@ ONTAP Select 9.16.1 包含多項新功能與改良功能。
 --
 支援自主勒索軟體保護:: ONTAP Select 9.16.1 引進對自主勒索軟體保護（ ARP ）的支援。ONTAP Select 9.16.1 僅支援手動 ARP 更新，不支援自動更新。ONTAP Select 9.16.1 的 NLF 中包含 ARP 功能授權。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["深入瞭解"]。
 增強VMware ESXi支援:: ONTAP Select 9.16.1 支援 VMware ESXi 8.0 U3 。
-已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.16.1 開始、 Red Hat Enterprise Linux （ RHEL ） 9.5 和 Rocky Linux 9.5 支援核心型虛擬機器（ KVM ） Hypervisor 。
+已更新 KVM Hypervisor 支援:: 從ONTAP Select 9.16.1 開始，RHEL 9.5 和 Rocky Linux 9.5 支援 KVM 虛擬機器管理程式。
 
 
 

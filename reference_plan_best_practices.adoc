@@ -74,7 +74,7 @@ RAID控制器快取用於儲存所有傳入區塊變更、而不只是針對NVRA
 NetApp建議使用ESX 6.5 U2或更新版本、以及NVMe磁碟來裝載系統磁碟的資料存放區。此組態可為NVRAM分割區提供最佳效能。
 
 
-NOTE: 在ESX 6.5 U2及更高版本上安裝ONTAP Select 時、無論系統磁碟位於SSD或NVMe磁碟上、均使用vNVME驅動程式。這會將VM硬體層級設為13、與ESX 6.5及更新版本相容。
+NOTE: 在 ESX 6.5 U2 及更高版本上安裝時，無論系統磁碟位於 SSD 或 NVMe 磁碟上， ONTAP Select都會使用 vNVMEe 驅動程式。這會將虛擬機器硬體等級設為 13，與 ESX 6.5 及更高版本相容。
 
 針對ONTAP Select VMware vSAN和外部儲存設備定義專用的網路連接埠、頻寬和vSwitch組態（使用iSCSI或NFS時為VMware vSAN和一般儲存陣列流量）。
 

@@ -37,8 +37,9 @@ ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
 * NVMe over TCP
 * 支援多租戶共享ONTAP
 * SS3 ONTAP
-* SnapMirror
 * S3 SnapMirror
+* SnapMirror
+* SnapMirror雲
 * SnapRestore
 * SnapVault
 * 儲存 VM 災難恢復（ SVM DR ）

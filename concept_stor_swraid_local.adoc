@@ -27,11 +27,11 @@ summary: 軟體RAID是一套RAID抽象層、實作於ONTAP 整套的功能。它
 
 
 
-*附註*
-
+[NOTE]
+====
 * 術語服務磁碟和系統磁碟可互換使用。
 +
-** 服務磁碟是ONTAP Select 指在VMware支援中心內用於服務各種項目的VMDK、例如叢集、開機等。
+** 服務磁碟是ONTAP Select VM 內用於服務各種專案（例如叢集、啟動等）的虛擬磁碟 (VMDK)。
 ** 服務磁碟實體位於單一實體磁碟（統稱為服務/系統實體磁碟）上、從主機即可看到。該實體磁碟必須包含DAS資料存放區。在叢集部署期間、利用「部署」功能建立這些服務磁碟、以利實現不受故障的VM。ONTAP ONTAP Select
 
 
@@ -39,19 +39,20 @@ summary: 軟體RAID是一套RAID抽象層、實作於ONTAP 整套的功能。它
 * 硬體RAID並未過時。
 
 
+====
 
 
 == 本機附加儲存設備的軟體RAID組態
 
 使用軟體RAID時、不需要硬體RAID控制器是理想的選擇、但如果系統確實有現有的RAID控制器、則必須符合下列要求：
 
-* 硬體RAID控制器必須停用、才能將磁碟直接呈現給系統（JBOD）。這項變更通常可在RAID控制器BIOS中進行
-* 或硬體RAID控制器應處於SAS HBA模式。例如，某些BIOS組態除了RAID之外還允許使用「ahci」模式，而RAID則可選擇啟用JBOD模式。這會啟用傳遞、使實體磁碟機可視為主機上的實體磁碟機。
+* 您必須停用硬體 RAID 控制器，以便磁碟可以直接呈現給系統（JBOD）。通常，您可以在 RAID 控制器 BIOS 中進行此變更。
+* 或者，硬體 RAID 控制器應處於 SAS HBA 模式。例如，某些 BIOS 設定除了 RAID 之外還允許使用「AHCI」模式，您可以選擇啟用 JBOD 模式。這將啟用直通功能，以便實體磁碟機在主機上可以按原樣顯示。
 
 
-視控制器支援的磁碟機數量上限而定、可能需要額外的控制器。使用SAS HBA模式時、請確保IO控制器（SAS HBA）支援最低6Gb/s速度。不過、NetApp建議使用12Gbps速度。
+根據控制器支援的最大驅動器數量，可能需要額外的控制器。在 SAS HBA 模式下，請確保 I/O 控制器 (SAS HBA) 至少支援 6Gbps 的速度。不過， NetApp建議使用 12Gbps 的速度。
 
-不支援其他硬體RAID控制器模式或組態。例如、某些控制器允許RAID 0支援、這可能會人為地讓磁碟通過、但可能會造成不良影響。支援的實體磁碟大小（僅限SSD）介於200GB至16TB之間。
+不支援任何其他硬體 RAID 控制器模式或配置。例如，某些控制器允許 RAID 0 支持，這可以人為地啟用磁碟直通功能，但其後果可能不堪設想。支援的實體磁碟（僅限 SSD）大小在 200GB 到 16TB 之間。
 
 
 NOTE: 系統管理員必須追蹤ONTAP Select 哪些磁碟機正在由該名虛擬機器使用、並避免在主機上意外使用這些磁碟機。
@@ -62,7 +63,7 @@ NOTE: 系統管理員必須追蹤ONTAP Select 哪些磁碟機正在由該名虛�
 
 對於使用硬體RAID控制器的組態、實體磁碟備援是由RAID控制器提供。提供一個或多個VMDK、供VMware管理員設定資料集合體。ONTAP Select ONTAP這些VMDK採用RAID 0格式等量分佈、因為使用ONTAP VMware軟體RAID是備援的、效率不彰、而且由於硬體層級提供恢復功能、因此效率不彰。此外、用於系統磁碟的VMDK與用於儲存使用者資料的VMDK位於同一個資料存放區。
 
-使用軟體RAID時ONTAP 、針對ONTAP Select SSD和用於NVMes的PassthThrough或DirectPath IO裝置、使用一套虛擬磁碟（VMDK）和實體磁碟原始裝置對應（RDM）時、即可呈現出一套功能強大的功能。
+使用軟體 RAID 時， ONTAP Deploy 會向ONTAP Select提供一組 VMDK 和實體磁碟原始設備對映 [RDM]（用於 SSD）以及直通或 DirectPath IO 設備（用於 NVMe）。
 
 下圖更詳細地顯示這種關係、強調ONTAP Select 用來保存使用者資料的虛擬化磁碟與用來儲存使用者資料的實體磁碟之間的差異。
 
@@ -79,9 +80,9 @@ image:ST_19.PNG["支援NVMe磁碟的支援軟體RAID：使用虛擬化磁碟和�
 
 NOTE: 在目前的版本中、ONTAP Select 不可能在多個資料存放區或多個實體磁碟機之間進一步分隔出系統磁碟。
 
-每個資料磁碟分為三個部分：一個小的根分割區（等量磁碟區）和兩個大小相同的分割區、以建立ONTAP Select 在該vme中可見的兩個資料磁碟。分割區使用根資料（RD2）架構、如下列圖表所示、適用於單一節點叢集和HA配對中的節點。
+每個資料磁碟分為三個部分：一個小的根分割區（條帶）和兩個大小相等的分割區，從而建立在ONTAP Select虛擬機器中可見的兩個資料磁碟。分區使用根資料 (RD2) 模式，如下圖所示，分別針對單節點叢集和高可用性 (HA) 對中的節點。
 
-「P」代表同位元檢查磁碟機。「DP」代表雙同位元檢查磁碟機、而「s」代表備用磁碟機。
+`P`表示奇偶校驗驅動器，  `DP`表示雙奇偶校驗驅動器，且 `S`表示備用驅動器。
 
 *單節點叢集*適用的RDD磁碟分割
 
@@ -91,7 +92,7 @@ image:ST_19.jpg["單節點叢集的RDD磁碟分割"]
 
 image:ST_20.jpg["適用於多節點叢集（HA配對）的RDD磁碟分割"]
 
-支援下列RAID類型的軟件RAID：RAID 4、RAID-DP及ONTAP RAID-TEC這些都是FAS 由Same和AFF Same平台所使用的相同RAID架構。root資源配置ONTAP Select 僅支援RAID 4和RAID-DP。使用RAID-TEC 資料Aggregate時、整體保護是RAID-DP。NetApp HA使用無共享架構、將每個節點的組態複寫到另一個節點。ONTAP Select這表示每個節點都必須儲存其根分割區及其對等根分割區的複本。由於資料磁碟有單一根分割區、因此根據ONTAP Select 該節點是否屬於HA配對的一部分、資料磁碟的最小數量會有所不同。
+ONTAP軟體 RAID 支援下列 RAID 類型：RAID 4、RAID-DP 和RAID-TEC。這些是FAS和AFF平台使用的相同 RAID 結構。對於根配置， ONTAP Select僅支援 RAID 4 和 RAID-DP。當使用RAID-TEC進行資料聚合時，整體保護是 RAID-DP。 ONTAPONTAP Select HA 使用無共享架構，將每個節點的配置複製到另一個節點。這意味著每個節點都必須儲存其根分區及其對等節點根分區的副本。資料磁碟有一個根分割區。這意味著資料磁碟的最小數量取決於ONTAP Select節點是否屬於 HA 對。
 
 對於單一節點叢集、所有資料分割區都會用來儲存本機（作用中）資料。對於屬於HA配對一部分的節點、會使用一個資料分割區來儲存該節點的本機（作用中）資料、而第二個資料分割區則是用來鏡射HA對等端的作用中資料。
 
@@ -99,12 +100,12 @@ image:ST_20.jpg["適用於多節點叢集（HA配對）的RDD磁碟分割"]
 
 == PassthThrough（DirectPath IO）裝置與原始裝置對應（RDM）
 
-VMware ESX目前不支援NVMe磁碟做為原始裝置對應。若要讓VMware直接控制NVMe磁碟、NVMe磁碟機必須在ESX中設定為傳遞裝置。ONTAP Select請注意、將NVMe裝置設定為傳遞裝置需要伺服器BIOS的支援、這是一種中斷運作的程序、需要重新啟動ESX主機。此外、每個ESX主機的最大通道裝置數為16。不過、只有將此限制在14個範圍內。ONTAP每ONTAP Select 個節點最多可有14個NVMe裝置、這表示所有NVMe組態都能提供極高的IOPs密度（IOPS/TB）、而犧牲總容量。或者、如果您需要較大儲存容量的高效能組態、建議使用的組態為大ONTAP Select 尺寸的VMware VM、系統磁碟的Intel Optane卡、以及資料儲存的名義SSD磁碟機數量。
+ESX 和 KVM 虛擬機器管理程式不支援將 NVMe 磁碟用作原始裝置對應 (RDM)。若要允許ONTAP Select直接控制 NVMe 磁碟，您必須在 ESX 或 KVM 中將這些磁碟機配置為直通裝置。將 NVMe 設備配置為直通設備時，需要伺服器 BIOS 支持，並且可能需要重新啟動主機。此外，每個主機可分配的直通設備數量有限制，具體數量可能因平台而異。但是， ONTAP Deploy 將此限制為每個ONTAP Select節點 14 個 NVMe 設備。這意味著 NVMe 配置以犧牲總容量為代價，提供了非常高的 IOP 密度 (IOPs/TB)。或者，如果您需要具有更大儲存容量的高效能配置，建議的配置是：較大的ONTAP Select VM 大小、用於系統磁碟的 INTEL Optane 卡以及用於資料儲存的一定數量的 SSD 磁碟機。
 
 
 NOTE: 若要充分發揮NVMe效能、請考慮使用大ONTAP Select 尺寸的VMware。
 
-PassthThrough裝置與RDM之間還有其他差異。RDM可對應至執行中的VM。傳遞裝置需要重新開機VM。這表示任何NVMe磁碟機更換或容量擴充（新增磁碟機）程序都需要ONTAP Select 重新啟動以進行支援。磁碟機更換與容量擴充（磁碟機新增）作業是由ONTAP 在「支援」中的工作流程所驅動。藉由使用者可管理單一節點叢集的重開機功能、以及HA配對的容錯移轉/容錯回復功能。ONTAP ONTAP Select不過請務必注意使用SSD資料磁碟機（ONTAP Select 不需要進行重新開機/容錯移轉）和使用NVMe資料磁碟機（ONTAP Select 需要進行重新開機/容錯移轉）之間的差異。
+直通設備和 RDM 之間還有一個區別。 RDM可以對應到正在執行的虛擬機器。直通設備需要重新啟動虛擬機器。這意味著任何 NVMe 驅動器更換或容量擴展（驅動器添加）過程都需要重新啟動ONTAP Select虛擬機。驅動器更換和容量擴展（驅動器添加）操作由ONTAP Deploy 中的工作流程驅動。 ONTAPONTAP管理單節點叢集的ONTAP Select重新啟動以及 HA 對的故障轉移/故障復原。但是，請務必注意使用 SSD 資料磁碟機（無需ONTAP Select重新啟動/故障轉移）和使用 NVMe 資料磁碟機（需要ONTAP Select重新啟動/故障轉移）之間的差異。
 
 
 
@@ -117,17 +118,17 @@ PassthThrough裝置與RDM之間還有其他差異。RDM可對應至執行中的V
 
 NOTE: 根Aggregate的RAID群組類型取決於可用的磁碟數目。支援：部署選擇適當的RAID群組類型。ONTAP如果有足夠的磁碟配置給節點、則會使用RAID-DP、否則會建立RAID-4根Aggregate。
 
-當使用軟體RAID將容量新增至ONTAP Select 某個物件時、系統管理員必須考量實體磁碟機大小和所需磁碟機數量。如需詳細資訊、請參閱一節 link:concept_stor_capacity_inc.html["增加儲存容量"]。
+使用軟體 RAID 為ONTAP Select虛擬機器新增容量時，管理員必須考慮實體磁碟機的大小以及所需的磁碟機數量。有關詳細信息，請參閱link:concept_stor_capacity_inc.html["增加儲存容量"] 。
 
-與FAS 支援不相同AFF 的是、只有容量相等或更大的磁碟機可以新增至現有的RAID群組。容量較大的磁碟機大小適中。如果您要建立新的RAID群組、新的RAID群組大小應與現有的RAID群組大小相符、以確保整體的Aggregate效能不會降低。
+與FAS和AFF系統類似，您只能在現有 RAID 群組中新增容量相等或更大的磁碟機。容量更大的驅動器大小合適。如果您要建立新的 RAID 群組，則新 RAID 群組的大小應與現有 RAID 群組的大小相匹配，以確保整體聚合效能不會下降。
 
 
 
-== 將 ONTAP Select 磁碟與對應的 ESX 磁碟配對
+== 將ONTAP Select磁碟與對應的 ESX 或 KVM 磁碟相匹配
 
 通常將各個磁碟標示為NET x.y。ONTAP Select您可以使用下列ONTAP 的fuse命令來取得磁碟UUID：
 
-[listing]
+[source, cli]
 ----
 <system name>::> disk show NET-1.1
 Disk: NET-1.1
@@ -143,12 +144,25 @@ Plex: -This UID can be matched with the device UID displayed in the ‘storage d
 ----
 image:ST_21.jpg["將ONTAP Select 某個VMware磁碟與對應的ESX磁碟配對"]
 
-在ESXi Shell中、您可以輸入下列命令、以將特定實體磁碟的LED（以naa.unite-id識別）閃亮。
+在 ESXi 或 KVM shell 中，您可以輸入下列命令來使給定實體磁碟（由其 naa.unique-id 標識）的 LED 閃爍。
 
-[listing]
+[role="tabbed-block"]
+====
+.ESX
+--
+[source, cli]
 ----
 esxcli storage core device set -d <naa_id> -l=locator -L=<seconds>
 ----
+--
+.KVM
+--
+[source, cli]
+----
+cat /sys/block/<block_device_id>/device/wwid
+----
+--
+====
 
 
 == 使用軟體RAID時發生多個磁碟機故障
@@ -161,7 +175,9 @@ RAID4 Aggregate可在一次磁碟故障後繼續運作、RAID-DP Aggregate可在
 
 如果故障磁碟數量超過RAID類型支援的最大故障數、則本機叢會標示為故障、且Aggregate狀態會降級。資料是由位於HA合作夥伴的第二個叢提供。這表示任何節點1的I/O要求都會透過叢集互連連接埠e0e（iSCSI）傳送至實體位於節點2上的磁碟。如果第二個叢也失敗、則會將該集合體標示為故障、且資料無法使用。
 
-必須刪除並重新建立故障的叢、才能恢復正確的資料鏡射。請注意、多磁碟故障導致資料集合降級、也會導致根集合體降級。使用root資料資料（RDD）分割架構、將每個實體磁碟分割成一個根分割區和兩個資料分割區。ONTAP Select因此、遺失一或多個磁碟可能會影響多個Aggregate、包括本機根或遠端根Aggregate的複本、以及本機資料Aggregate和遠端資料Aggregate的複本。
+必須刪除並重新建立發生故障的叢，才能恢復正確的資料鏡像。請注意，多磁碟故障導致資料聚合降級，也會導致根聚合降級。 ONTAPONTAP Select使用根-資料-資料 (RDD) 分區模式將每個實體磁碟機分割為一個根分割區和兩個資料分割區。因此，遺失一個或多個磁碟可能會影響多個聚合，包括本地根聚合或遠端根聚合的副本，以及本機資料聚合和遠端資料聚合的副本。
+
+在以下範例輸出中，發生故障的 plex 被刪除並重新建立：
 
 [listing]
 ----
@@ -213,8 +229,9 @@ Owner Node: sti-rx2540-335a
      shared   NET-3.12                     1   SSD        -  205.1GB  447.1GB (normal)
 10 entries were displayed..
 ----
-
-NOTE: 若要測試或模擬一或多個磁碟機故障、請使用「儲存磁碟故障-磁碟NET-x.y -immediate」命令。如果系統中有備援磁碟機、則會開始重建集合體。您可以使用命令「shorage aggregate show」來檢查重建影像的狀態。您可以使用ONTAP 「還原部署」移除模擬的故障磁碟機。請注意ONTAP 、此驅動器已標示為「毀損」。磁碟機實際上並未損壞、可以使用ONTAP 還原部署來重新新增。若要清除損壞的標籤、請在ONTAP Select CLI中輸入下列命令：
+[NOTE]
+====
+若要測試或模擬一或多個磁碟機故障、請使用「儲存磁碟故障-磁碟NET-x.y -immediate」命令。如果系統中有備援磁碟機、則會開始重建集合體。您可以使用命令「shorage aggregate show」來檢查重建影像的狀態。您可以使用ONTAP 「還原部署」移除模擬的故障磁碟機。請注意ONTAP 、此驅動器已標示為「毀損」。磁碟機實際上並未損壞、可以使用ONTAP 還原部署來重新新增。若要清除損壞的標籤、請在ONTAP Select CLI中輸入下列命令：
 
 [listing]
 ----
@@ -224,6 +241,7 @@ disk show -broken
 ----
 最後一個命令的輸出應為空白。
 
+====
 
 
 == 虛擬化NVRAM

@@ -73,7 +73,7 @@ summary: 您可以在三個平台容量層級中的其中一個層級購買 ONTA
 
 
 
-NOTE: 核心型虛擬機器（ KVM ）不支援在 SW-RAID 組態中使用大型執行個體類型或 NVMe 磁碟機。
+NOTE: 基於核心的虛擬機器 (KVM) 不支援在軟體 RAID 配置中使用大型執行個體類型。
 
 
 
@@ -170,10 +170,10 @@ NOTE: 核心型虛擬機器（ KVM ）不支援在 SW-RAID 組態中使用大型
 2+| 軟體類型 3+| 說明 
 
 
-2+| Hypervisor 支援（ VMware ） 3+| VMware vSphere 7.0GA 及透過 3C 更新 VMware vSphere 8.0GA 及更新 1 至 3 
+2+| Hypervisor 支援（ VMware ） 3+| VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C 
 
 
-2+| Hypervisor 支援（ KVM ） 3+| RedHat Enterprise Linux 64 位元（ KVM ） 9.5 ， 9.4 ， 9.3 ， 9.2 ， 9.1 ， 9.0 ， 8.9 ， 8.8 ， 8.7 和 8.6 Rocky Linux （ KVM ） 9 和 8 
+2+| Hypervisor 支援（ KVM ） 3+| Red Hat Enterprise Linux 64 位元 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.08. 
 
 
 2+| 管理軟體 3+| NetApp Active IQ Unified Manager 管理套件 ONTAP Select Deploy Utility SnapCenter （選用） 

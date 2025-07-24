@@ -35,15 +35,28 @@ NOTE: 您應該檢閱ONTAP Select 目前版本的《更新說明》、以瞭解�
 
 === 軟體相容性
 
-下列Hypervisor可部署下列項目：ONTAP Select
+您可以在 KVM 和 ESXi 虛擬機器管理程式上部署ONTAP Select 。
 
-* Red Hat Enterprise Linux 8.6 ， 8.7 ， 8.8 ， 9.0 ， 9.1 ， 9.2 ， 9.4 和 9.5 上的 KVM
-* 在落基 Linux 8.6 ， 8.7 ， 8.8 ， 8.9 ， 9.0 ， 9.1 ， 9.2 ， 9.3 ， 9.4 和 9.5 上執行 KVM
-* VMware ESXi 7.0 GA（建置編號：15843807或更新版本）、包括7.0 U1、U2和U3C
-* VMware ESXi 8.0 GA （組建 20513097 ）
-* VMware ESXi 8.0 U1 （內部版本 21495797 ）
-* VMware ESXi 8.0 U2
+[role="tabbed-block"]
+====
+.KVM
+--
+ONTAP Select支援以下 KVM 虛擬機器管理程式版本：
+
+* Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 與 8.6 上的 KVM
+* Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 上的 KVM
+
+
+--
+.ESXi
+--
+ONTAP Select支援以下 ESXi 虛擬機器管理程式版本：
+
 * VMware ESXi 8.0 U3
+* VMware ESXi 8.0 U2
+* VMware ESXi 8.0 U1 （內部版本 21495797 ）
+* VMware ESXi 8.0 GA （組建 20513097 ）
+* VMware ESXi 7.0 GA（內部版本 15843807 或更高版本），包括 7.0 U3C、U2 和 U1
 
 
 
@@ -52,6 +65,8 @@ NOTE: 只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識�
 
 NOTE: ESXi 6.5 GA 和 ESXi 6.7 GA 已達到可用性終止狀態。如果您的 ONTAP Select 叢集具有這些版本、則必須依照升級至支援的版本 https://mysupport.netapp.com/matrix["互通性對照表工具IMT （不含）"^]。
 
+--
+====
 
 
 === VMware vCenter和獨立式ESXi主機
@@ -76,10 +91,7 @@ NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更�
 無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。
 
 .處理器
-支援的微處理器包括：
-
-* 適用於伺服器的Intel Xeon處理器（請參閱 link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"] 以取得更多資訊）
-
+支援的微處理器包括用於伺服器的 Intel Xeon 處理器，請參閱link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"]了解更多。
 
 
 NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
@@ -87,10 +99,8 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 .乙太網路組態
 根據叢集大小、有多種支援的乙太網路組態。
 
-[cols="30,35,35"]
+[cols="2,3,3"]
 |===
-
-
 | 叢集大小 | 最低要求 | 建議要求 
 
 
@@ -110,23 +120,18 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 
 請參閱 link:concept_lic_platforms.html["瞭解平台授權方案"] 以取得更多資訊。
 
-.小
-* CPU核心六個或更多實體核心、四個保留供ONTAP Select 作
-* 記憶體24GB以上、保留16GB以供ONTAP Select 支援。
-* 提供Standard、Premium或Premium XL的必要平台授權
+[cols="a1,a2,a2,a2"]
+|===
+| 節點大小 | CPU 核心 | 記憶 | 所需的平台許可證產品 
 
 
-.中
-* CPU核心10個或更多實體核心、8個保留供ONTAP Select 作
-* 記憶體72 GB以上、保留64GB ONTAP Select 以供使用
-* 提供Premium或Premium XL的必要平台授權
+| 小 | 六個或更多物理核心，其中四個保留用於ONTAP Select | 24 GB 或更大，其中 16 GB 保留給ONTAP Select | 標準型、高級型或高級 XL 型 
 
 
-.大
-* CPU核心擁有18個或更多實體核心、其中16個保留供ONTAP Select 作
-* 記憶體136GB或更高、128 GB保留供ONTAP Select 不穩定使用
-* 提供優質XL的必要平台授權
+| 中 | 十個或更多物理核心，其中八個保留用於ONTAP Select | 72GB 或更大，其中 64GB 保留給ONTAP Select | Premium 或 Premium XL 
 
 
+| 大 | 十八個或更多物理核心，其中十六個保留用於ONTAP Select | 136GB 或更大，其中 128GB 保留給ONTAP Select | 優質XL 
+|===
 
 NOTE: 根據平台授權、還有額外的磁碟需求。請參閱 link:reference_plan_ots_storage.html["儲存與RAID"] 以取得更多資訊。

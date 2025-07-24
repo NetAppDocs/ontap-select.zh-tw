@@ -14,23 +14,49 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 
 
 [role="lead"]
-如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主機來識別磁碟機。
+如果您打算將 NVMe 磁碟機與軟體 RAID 一起使用，則需要設定 ESXi 或 KVM 主機以識別磁碟機。
 
 在NVMe裝置上使用VMDirectPath I/O傳遞、以最大化資料效率。此設定可將磁碟機展示給ONTAP Select 整個物件虛擬機器、ONTAP 使其能夠直接透過PCI存取裝置。
 
 .開始之前
 確保您的部署環境符合下列最低需求：
 
-* ONTAP Select 9.7 或更新版本、搭配支援的部署管理公用程式
+* 對於 ESX 主機，ONTAP Select 9.7 或更高版本以及受支援的 Deploy 管理實用程式
+* 對於 KVM 主機， ONTAP Select 9.17.1 隨附受支援的 Deploy 管理實用程式
 * 優質XL平台授權方案或90天試用授權
-* VMware ESXi 6.7版或更新版本
+* ESXi 或 KVM 主機正在執行支援的虛擬機器管理程式版本：
++
+[role="tabbed-block"]
+====
+.ESXi
+--
+以下虛擬機器管理程式版本支援 ESXi：
+
+** VMware ESXi 8.0 U3
+** VMware ESXi 8.0 U2
+** VMware ESXi 8.0 U1 （內部版本 21495797 ）
+** VMware ESXi 8.0 GA （組建 20513097 ）
+** VMware ESXi 7.0 GA（內部版本 15843807 或更高版本），包括 7.0 U1、U2 和 U3C
+
+
+--
+.KVM
+--
+以下虛擬機器管理程式版本支援 KVM：
+
+** Red Hat Enterprise Linux 9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 與 8.6
+** Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 與 8.6
+
+
+--
+====
 * 符合規格1.0或更新版本的NVMe裝置
 
 
-link:kvm-host-configuration-and-preparation-checklist.html["主機準備檢查清單"]請遵循，檢閱，link:reference_chk_deploy_req_info.html["部署公用程式安裝所需的資訊"]和link:reference_chk_select_req_info.html["安裝所需的資訊ONTAP Select"]主題以取得更多資訊。
+關注link:kvm-host-configuration-and-preparation-checklist["主機準備檢查清單"] ，並審查所需的信息link:reference_chk_deploy_req_info.html["部署實用程式安裝"]和link:reference_chk_select_req_info.html["ONTAP Select安裝"]了解更多。
 
 .關於這項工作
-此程序設計為在建立新ONTAP Select 的叢集之前執行。您也可以執行程序、為現有的SW-RAID NVMe叢集設定額外的NVMe磁碟機。在這種情況下、設定磁碟機之後、您必須透過部署來新增磁碟機、如同使用其他SSD磁碟機一樣。主要差異在於部署會偵測NVMe磁碟機並重新開機節點。將NVMe磁碟機新增至現有叢集時、請注意下列關於重新開機程序的資訊：
+您必須在建立新的ONTAP Select叢集之前執行此程序。您也可以執行此程序為現有軟體 RAID NVMe 叢集配置額外的 NVMe 磁碟機。在這種情況下，配置磁碟機後，您必須像新增額外的 SSD 磁碟機一樣透過 Deploy 新增它們。主要差異在於 Deploy 會偵測 NVMe 磁碟機並重新啟動節點。將 NVMe 磁碟機新增至現有叢集時，請注意以下有關重新啟動流程的事項：
 
 * 部署可處理重新開機協調作業。
 * HA接管與還原是以有序的方式執行、但重新同步集合體可能需要花費大量時間。
@@ -41,18 +67,21 @@ link:kvm-host-configuration-and-preparation-checklist.html["主機準備檢查�
 
 .步驟
 . 存取主機上的* BIOS組態*功能表、以啟用I/O虛擬化支援。
-. 啟用「* Intel（R）VT for Directed I/O（VT-d）*」設定。
+. 啟用*Intel VT for Directed I/O (VT-d)* 設定。
 +
 image:nvme_01.png["通訊端組態"]
 
-. 部分伺服器支援* Intel Volume Management Device（Intel VMD*）*。啟用後、ESXi Hypervisor便無法看到可用的NVMe裝置；請先停用此選項、再繼續。
+. 某些伺服器支援*Intel 磁碟區管理設備 (Intel VMD)*。啟用後，可用的 NVMe 裝置將對 ESXi 或 KVM 虛擬機器管理程式不可見；請先停用此選項，然後再繼續操作。
 +
 image:nvme_07.png["套接字組態、VMd"]
 
 . 設定NVMe磁碟機、以便傳遞至虛擬機器。
 +
-.. 在vSphere中、開啟主機*設定*檢視、然後按一下*硬體：PCI裝置*下的*編輯*。
+.. 在 vSphere 中，開啟主機 *配置* 視圖並選擇 *硬體：PCI 裝置* 下的 *編輯*。
 .. 選取ONTAP Select 您要用於不支援的NVMe磁碟機。
++
+以下範例輸出顯示了 ESXi 主機的可用磁碟機：
+
 +
 image:nvme_02.png["編輯PCI裝置可用度"]
 
@@ -60,20 +89,25 @@ image:nvme_02.png["編輯PCI裝置可用度"]
 
 NOTE: 您需要一個也有NVMe裝置備份的VMFS資料存放區、來裝載ONTAP Select 支援的VMware系統磁碟和虛擬NVRAM。在設定其他NVMe磁碟機以進行PCI傳遞時、請至少保留一個NVMe磁碟機可供此用途使用。
 
-.. 按一下「*確定*」。選取的裝置會指出*可用（擱置中）*。
+.. 選擇“確定”。所選設備顯示“可用（待處理）”。
 
 
-. 單擊*重新引導主機*。
+. 選擇“*重新啟動此主機*”。
++
+以下範例輸出針對 ESXi 主機：
+
 +
 image:nvme_03.png["重新啟動此主機"]
 
 
 
 .完成後
-準備好主機之後、您就可以安裝ONTAP Select 此功能。部署可引導您在ONTAP Select 新準備的主機上建立功能完善的儲存叢集。在此過程中、部署會偵測到設定為傳遞的NVMe磁碟機、並自動選取這些磁碟機做ONTAP 為參考資料磁碟。您可以視需要調整預設選項。
+主機準備好後，您可以安裝ONTAP Select Deploy 實用程式。 Deploy將引導您在新準備的主機上建立ONTAP Select儲存叢集。在此過程中，Deploy 會偵測到已配置為直通的 NVMe 驅動器，並自動選擇它們以用作ONTAP資料磁碟。您可以根據需要調整預設選擇。
 
 
 NOTE: 每ONTAP Select 個節點最多支援14個NVMe裝置。
+
+以下範例輸出針對 ESXi 主機：
 
 image:nvme_04.png["部署叢集ONTAP Select"]
 
