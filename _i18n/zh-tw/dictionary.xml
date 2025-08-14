@@ -3793,7 +3793,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1b5226a9b144cf3cfc703d8ec6db57ef" category="section-title">步驟 3：完成後</block>
   <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">KVM 主機檢查清單</block>
   <block id="935f419c21e41ca992af1333488fd110" category="sidebar">ESXi 主機清單</block>
-  <block id="e7413dab214cef43694e01b289962db2" category="admonition">基於核心的虛擬機器 (KVM) 不支援在軟體 RAID 配置中使用大型執行個體類型。</block>
   <block id="891e3168577f6225cc6bf3c35aafa9e2" category="cell">VMware vSphere 8.0GA 及更新 1 至 3 VMware vSphere 7.0GA 及更新 1 至 3C</block>
   <block id="1a847c26edb3f3d6892cfa25198b2272" category="cell">Red Hat Enterprise Linux 64 位元 (KVM) 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6 Rocky Linux (KVM) 9.6 9.5、9.4、9.3、9.2、9.1、9.08.</block>
   <block id="637c87a94a9976e074cd8762dd5e83ec" category="list-text">服務磁碟是ONTAP Select VM 內用於服務各種專案（例如叢集、啟動等）的虛擬磁碟 (VMDK)。</block>
@@ -3906,4 +3905,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP憑證，然後選擇*擴展叢集*。</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用群集收縮功能將現有群集的大小從 8 個節點減少到 6 個節點。</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文檔</block>
+  <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">基於核心的虛擬機器 (KVM) 不支援使用大型執行個體類型。</block>
 </blocks>
