@@ -127,6 +127,7 @@ NOTE: 從 ONTAP Select 9.16.1 開始，支援手動更新 ARP ， NetApp 授權�
 * 服務處理器
 * SVM移轉
 * 符合法規SnapLock
+* SnapMirror主動同步
 * VMware HCX
 
 

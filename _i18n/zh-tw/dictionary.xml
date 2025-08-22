@@ -3911,4 +3911,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="b2fb3f45f259e44e136bed021ae55392" category="list-text">驗證在執行升級時ONTAP Select Deploy 未用於執行任何其他任務。</block>
   <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">使用管理員帳戶透過 SSHSign inONTAP Select Deploy 實用程式 CLI。</block>
   <block id="87a5212e058c62281b89455df9a32603" category="paragraph">在升級過程完成之前，系統會要求您建立ONTAP Select Deploy 虛擬機器配置的備份。此外，您應該清除瀏覽器快取，以便可以查看新建立的ONTAP Select Deploy 頁面。</block>
+  <block id="c0b79db5f258f0c991a383cbdbf001dd" category="list-text">SnapMirror主動同步</block>
 </blocks>
