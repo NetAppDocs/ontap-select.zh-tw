@@ -103,3 +103,24 @@ ESXi Hypervisor主機必須滿足幾項最低資源需求。您應確保ONTAP Se
 * 您必須為部署虛擬機器的管理LIF指派一個IPV4位址。
 * 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
 
+
+
+
+== ONTAP Select部署 VMware vCenter 伺服器注意事項
+
+
+
+=== ESA 的 VMware vSphere 權限
+
+以下列出了在 vCenter 中建立和管理 vSAN Express 儲存架構 (ESA) 所需的 vSphere 內容庫的特定權限：
+
+* 新增庫項目
+* 建立本地庫
+* 刪除庫項目
+* 刪除本機庫
+* 讀取儲存
+* 更新文件
+* 更新庫
+* 更新庫項目
+* 更新本地庫
+

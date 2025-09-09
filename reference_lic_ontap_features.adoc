@@ -57,11 +57,16 @@ NOTE: ONTAP Select 支援 SVM DR 做為來源和目的地，最多可與 16 個�
 
 * FabricPool
 * SDS（不含高級授權）MetroCluster ONTAP Select
-* SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）
+* SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可從link:https://mysupport.netapp.com/site/["NetApp 支援網站"^])
++
+
+NOTE: ONTAP Select不支援SnapLock Compliance 。
+
 +
 ** 可防竄改的Snapshot複本
 
 
+* SnapLock Select
 
 
 

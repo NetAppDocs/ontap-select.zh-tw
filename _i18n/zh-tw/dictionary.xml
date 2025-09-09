@@ -2812,7 +2812,6 @@
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">確認 ONTAP Select 節點之間的網路連線能力</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">初始叢集建立可用於建立ONTAP Select 一個佔用初始資料存放區部分或全部空間的不實叢集。第二個步驟是使用其他資料存放區執行一或多個容量新增作業、直到達到所需的總容量為止。本節將詳細說明此功能 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
   <block id="6f79f88c3d3696fcca3ac6e4f78fd71f" category="admonition">將容量新增至ONTAP Select 某個VMware可能會導致不同大小的VMDK。如需詳細資訊、請參閱一節 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。不同FAS 於VMware系統、不同大小的VMDK可存在於同一個集合體中。在這些VMDK上使用RAID 0等量磁碟區、無論其大小為何、都能充分利用每個VMDK中的所有空間。ONTAP Select</block>
-  <block id="5498e86ddbc371087e391d7f3cae5701" category="list-text">SnapLock 企業版（ ONTAP Select 不支援 SnapLock 法規遵循）</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">變更部署管理員密碼</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用 CLI 部署 ONTAP Select 叢集</block>
   <block id="6f78f7cef2637ad960245873ccb009cc" category="section-title">準備將儲存設備附加至 ONTAP Select 節點</block>
@@ -3352,7 +3351,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="43e827b042cf746a0442b15558031d99" category="doc">使用 SSH 登入 ONTAP Select 部署</block>
   <block id="6a72bf96d9b994589542338ffd146590" category="doc">升級 ONTAP Select 部署執行個體</block>
   <block id="c71000b965f24ab9f5c3995026415d28" category="doc">將 ONTAP Select VMware ESXi 升級至 7.0 版或更新版本</block>
-  <block id="bd633f5da3bfc77af90d4c908e9bf8ac" category="doc">擴充或收縮 ONTAP Select 叢集</block>
   <block id="10094bc8718a18a18fcc32e3cd50df4c" category="sidebar">Secure ONTAP Select</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">確認網路連線能力</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">管理中介服務</block>
@@ -3753,7 +3751,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="deb20e04b6a7cd797c67d023a7919cc9" category="inline-link-macro">網頁使用者介面</block>
   <block id="91af5705f16502125e8b2187e64202c0" category="inline-link-macro">CLI</block>
   <block id="9b7a3cef1d3f98a8d89d5d50af86ae90" category="paragraph">使用以下方式執行網路連線檢查器<block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block>或<block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block>確認內部網路上的叢集節點之間的連通性。</block>
-  <block id="3e7c1c2f4ff8e34c82dbce131bf96f39" category="paragraph">不支援以下集群擴展和收縮：</block>
   <block id="399ac94f70d77c6189cd7c4808326bdd" category="list-text">從一個、兩個或四個節點叢集擴充至六個或八個節點叢集。</block>
   <block id="f7dcf9444b81db6d7f05c66ad816c0fe" category="paragraph">若要將叢集中的節點數變更為叢集擴充或收縮不支援的大小，您需要執行下列任務：</block>
   <block id="f878a51040555cefe376b9b5a963ff25" category="list-text">使用<block ref="e244d19d71425b6ce1016edcf4f160e2" category="inline-link-macro-rx"></block>或<block ref="e7b95b44ed2cf30f5122b04d3c4d28be" category="inline-link-macro-rx"></block>隨ONTAP Select Deploy 管理實用程式一起提供。</block>
@@ -3828,7 +3825,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="0a0cc9b2212847ba1af46f41c160bb46" category="paragraph">您可以使用現有ONTAP Select叢集上的叢集擴展和收縮功能將叢集規模從六節點增加到八節點，或將叢集規模從八節點減少到六節點。</block>
   <block id="22cb6accb0a27ceffd521fb74834c16a" category="inline-link-macro">了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本</block>
   <block id="3c14c9e8cb33411708f168ddc9b0d40c" category="paragraph"><block ref="f426c2cadf7fc519436e151211954c8a" category="inline-link-macro-rx"></block> 。</block>
-  <block id="8c4c7ec85ddc20b785383c7e3b83aaf3" category="list-text">支援SnapMirror雲</block>
   <block id="8e6364cfe908f51088b3ba968ff3a1ef" category="list-text">從ONTAP Select 9.17.1 開始， ONTAP Select支援SnapMirror雲端。 SnapMirrorSnapMirror是獲得許可的ONTAP功能，在部署ONTAP Select 9.17.1 叢集或將現有ONTAP Select叢集升級到 9.17.1 版本時預設啟用。</block>
   <block id="138c7cd45c4194bbbdcc248c8d717a95" category="inline-link">了解SnapMirror雲端備份到物件存儲</block>
   <block id="a674f1954e78adeee48a68d3b46f7329" category="paragraph"><block ref="e78089da9b0e2900996a3bebc3fd1588" category="inline-link-rx"></block> 。</block>
@@ -3880,18 +3876,14 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="a19233fed380d5b231b023ea93dbe258" category="list-text">選擇“*重新啟動此主機*”。</block>
   <block id="26fe0a3b24674c6c3152ba4fb0ee4ed3" category="paragraph">以下範例輸出針對 ESXi 主機：</block>
   <block id="1055142d0c7647a07a5e1422110286e5" category="paragraph">主機準備好後，您可以安裝ONTAP Select Deploy 實用程式。 Deploy將引導您在新準備的主機上建立ONTAP Select儲存叢集。在此過程中，Deploy 會偵測到已配置為直通的 NVMe 驅動器，並自動選擇它們以用作ONTAP資料磁碟。您可以根據需要調整預設選擇。</block>
-  <block id="d36012a6f1af06ad2e32fd0380ecd688" category="paragraph">您可以將現有ONTAP Select集群的大小從六節點集群增加到八節點集群，也可以將集群大小從八節點集群減少到六節點集群</block>
-  <block id="1337ed24c95634be31bc604f5d1e6297" category="paragraph">KVM 和 ESXi 虛擬機器管理程式主機支援叢集擴充和收縮功能。</block>
   <block id="9c33111b54c52c9fcb0abaf82c9004f8" category="paragraph">從ONTAP Select 9.17.1 開始，KVM 虛擬機器管理程式主機支援叢集擴充和收縮。</block>
   <block id="342972daa4f7bc941a67318ae7af313b" category="paragraph">以下 KVM 虛擬機器管理程式版本支援叢集擴充和縮小：</block>
   <block id="e05b0c53b1a0c5711591f986de5de129" category="list-text">Red Hat Enterprise Linux 64 位元 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="a60b141bdd70b40e77bf0e83f56ade8d" category="paragraph">從ONTAP Select 9.15.1 開始，ESXi 虛擬機器管理程式主機支援叢集擴充和縮小。</block>
   <block id="1062164d3bf1751bfb605324bcaf3e29" category="paragraph">以下 ESXi 虛擬機器管理程式版本支援叢集擴充和收縮：</block>
-  <block id="e86abbb4089bb949221427ad94aa636a" category="paragraph">使用叢集擴展功能將現有叢集的大小從六個節點增加到八個節點。</block>
   <block id="305009997eb17ffe0901beb32fdc2040" category="paragraph">在準備叢集擴充時，新的 ESXi 和 KVM 主機會被加入到清單中，並指派新節點的詳細資訊。在開始叢集擴展程序之前，網路預檢查會驗證所選的內部網路。</block>
   <block id="1c53d6d4916415921dddecf6128580f3" category="list-text">為第四個 HA 對選擇以下高可用性 (HA) 對配置詳細資訊：</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP憑證，然後選擇*擴展叢集*。</block>
-  <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">使用群集收縮功能將現有群集的大小從 8 個節點減少到 6 個節點。</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">ONTAP Select 9.17.1 文檔</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">基於核心的虛擬機器 (KVM) 不支援使用大型執行個體類型。</block>
   <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">您可以使用 ONTAP ONTAP Select ONTAP Select Deploy 實用程式虛擬機器。</block>
@@ -3912,4 +3904,49 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">使用管理員帳戶透過 SSHSign inONTAP Select Deploy 實用程式 CLI。</block>
   <block id="87a5212e058c62281b89455df9a32603" category="paragraph">在升級過程完成之前，系統會要求您建立ONTAP Select Deploy 虛擬機器配置的備份。此外，您應該清除瀏覽器快取，以便可以查看新建立的ONTAP Select Deploy 頁面。</block>
   <block id="c0b79db5f258f0c991a383cbdbf001dd" category="list-text">SnapMirror主動同步</block>
+  <block id="4d9c10203def873e1c71f3e63344c26f" category="list-text">SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可從<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>)</block>
+  <block id="2f6bbdcc3a16c2d18a29e52e65bcab80" category="admonition">ONTAP Select不支援SnapLock Compliance 。</block>
+  <block id="047fc3d7b951880ca6749f6433cfe2bf" category="list-text">SnapLock Select</block>
+  <block id="eb35a2f875dfa96447c622fdb66d279e" category="list-text">增強對 ESXi 主機上的叢集擴展和收縮的支持</block>
+  <block id="2654d7a70d79a555a3d2a067d08ca074" category="list-text">從ONTAP Select 9.17.1 開始，ESXi 主機上的六節點叢集和十二節點叢集之間支援叢集擴展和收縮：</block>
+  <block id="983f8945aaf0213b99984eb7d1654484" category="paragraph">您可以按以下增量增加現有 ESXi 群集的群集大小：</block>
+  <block id="1ba5d5a69c22e4227b754eb7f598a6fc" category="list-text">從六個節點到八個、十個或十二個節點</block>
+  <block id="32f41e079924563332d58835bc015a2a" category="list-text">從八個節點到十個或十二個節點</block>
+  <block id="10edaf0aa7c8fb32db8c46287cc0d719" category="list-text">從十到十二個節點</block>
+  <block id="e2853d368ec6d993d5cfe565327e81ea" category="paragraph">您可以按以下增量減少現有 ESXi 群集的群集大小：</block>
+  <block id="be51a9b186841f2d88f0b97954d5bb75" category="list-text">從十二個節點到十個、八個或六個節點</block>
+  <block id="9b08665180caa1c2f681ecd893474c76" category="list-text">從十個節點到八個或六個節點</block>
+  <block id="fb6ec34800c58ebc5bb6517ce0db74b8" category="list-text">從八個節點到六個節點</block>
+  <block id="1cee57b3ea5529f5b9a7c47c1ca78952" category="list-text">支援ONTAP功能</block>
+  <block id="61016eff3249741d1200f508768ca397" category="list-text">從ONTAP Select 9.17.1 開始， ONTAP Select支援以下許可的ONTAP功能：</block>
+  <block id="cf17614f3329e90d510d18602d4ce8db" category="paragraph">從ONTAP Select 9.17.1 開始，新部署將自動獲得SnapLock Select 許可。對於從ONTAP Select 9.16.1 及更早版本升級，您需要SnapLock<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>並手動應用它。</block>
+  <block id="e9d1284d8df9151f9bec7a163cd5c363" category="list-text">在多節點叢集上支援 vSAN ESA</block>
+  <block id="4ba59a7efee785c52f70cdae7fca55c3" category="list-text">從ONTAP Select 9.17.1 開始，對 vSAN Express 儲存架構 (ESA) 的支援擴展，以部署多節點叢集。此增強功能可讓您部署 vSAN ESA 配置。</block>
+  <block id="e9c8709140b0de62f90e930862c6b06a" category="paragraph">vSAN ESA 是一種 ESX 特定配置，是 vSphere 8 中引入的 VMware vSAN 的新架構。 vSAN ESA 旨在提供增強的效率、可擴展性和效能，尤其是在使用基於 NVMe 的 TLC 快閃記憶體裝置時。</block>
+  <block id="ea6c62adffdf9ab5a61acdbc4608592e" category="paragraph">ONTAP Select Deploy 和ONTAP Select for ESX 支援配置ONTAP Select單節點和多節點集群，使用 vSAN 或外部陣列類型的資料儲存作為其儲存池。</block>
+  <block id="9f2987dffbb8cc07dc722392ca553e1e" category="paragraph">要執行內容庫操作，您需要存取額外的權限等級。如果您使用受限角色，這對於 vSAN ESA 部署是必要的。</block>
+  <block id="6146fd29f571a044684d201d9c796583" category="inline-link-macro">了解內容庫操作的存取權限級別</block>
+  <block id="23add99dd3b98f3716a4830bf3524c6e" category="paragraph"><block ref="0338668b24eba8707cba4da17831f4b6" category="inline-link-macro-rx"></block> 。</block>
+  <block id="2e4143d0df24451229cbcf21d106b6c5" category="section-title">ONTAP Select部署 VMware vCenter 伺服器注意事項</block>
+  <block id="0cdb970631a712b516a9779c1d127d32" category="section-title">ESA 的 VMware vSphere 權限</block>
+  <block id="fe2a57ed0ddb8d9b57b737aff59f340b" category="paragraph">以下列出了在 vCenter 中建立和管理 vSAN Express 儲存架構 (ESA) 所需的 vSphere 內容庫的特定權限：</block>
+  <block id="7fda80facd4b5302f2a2c887c2ecb595" category="list-text">新增庫項目</block>
+  <block id="5ac2b813625b685d2cd86e5bbd2e2259" category="list-text">建立本地庫</block>
+  <block id="036e7b8c4bda5955184609f09f458e15" category="list-text">刪除庫項目</block>
+  <block id="7ae429c7f415cbd07d1b30147ee76846" category="list-text">刪除本機庫</block>
+  <block id="bf0d559fc72e2b15ec4b32db14be07ad" category="list-text">讀取儲存</block>
+  <block id="693401b7881f3c546e1c1e7ac9f6c7e7" category="list-text">更新文件</block>
+  <block id="cbec5c675188a8b88f95c1615c33fb39" category="list-text">更新庫</block>
+  <block id="cbbbf9758b7ac41123821f7ea427538f" category="list-text">更新庫項目</block>
+  <block id="845b12256749d66531d9afd69bc3a33c" category="list-text">更新本地庫</block>
+  <block id="26f7069f09ce96914fa8e8c3a68a4191" category="doc">擴展或收縮ONTAP Select ESXi 或 KVM 集群</block>
+  <block id="b6901598f11464666113bfe479efe49f" category="paragraph">您可以增加 ESXi 和 KVM 虛擬機器管理程式主機的現有ONTAP Select叢集的叢集大小。對於 KVM 主機，您可以將叢集大小從 6 個節點增加到 8 個節點，或將叢集大小從 8 個節點減少到 6 個節點。對於 ESXi 主機，您可以在 6 到 12 個節點之間以增量增加或減少叢集大小。</block>
+  <block id="936ee35c221853e402fecb3657e726ba" category="paragraph">ESXi 和 KVM 主機不支援以下叢集擴充和收縮：</block>
+  <block id="ca069be0eeb72c96905b0cdbf504214d" category="paragraph">以下 KVM 和 ESXi 虛擬機器管理程式主機支援叢集擴充和收縮功能。</block>
+  <block id="e408638ff8e3e34af8feb723461e1722" category="paragraph">使用叢集擴充功能來增加現有 ESXi 或 KVM 叢集的大小。</block>
+  <block id="3678d282a88e095e0e76381ffa83ff7c" category="paragraph">您可以按以下增量增加現有 ESXi 叢集的大小：</block>
+  <block id="ba14db9083442c41643b3455693e3ee2" category="paragraph">您可以將現有 KVM 叢集的大小從六個節點增加到八個節點。</block>
+  <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">使用群集收縮功能來減少現有 ESXi 或 KVM 群集的大小。</block>
+  <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">您可以按以下增量減少現有 ESXi 群集的大小：</block>
+  <block id="50261774776b49c62695c35def3230b0" category="paragraph">您可以將現有叢集的大小從八個節點減少到六個節點。</block>
 </blocks>
