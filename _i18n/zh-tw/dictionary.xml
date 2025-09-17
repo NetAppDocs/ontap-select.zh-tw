@@ -3153,7 +3153,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
-  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">小型、中型或大型執行個體類型</block>
   <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD 、 SSD 或 NVMe 磁碟機</block>
   <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">管理附加授權</block>
   <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">管理授權總覽（僅限叢集管理員）</block>
@@ -3545,10 +3544,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e73d640a676c83c4510d0212e506bb38" category="cell">18 核心 / 136GB RAM</block>
   <block id="522c4ec4d9d59e1a992d989c8d770589" category="cell">網路（每個節點）</block>
   <block id="d5fda742cbaf307ce4ca202b12335858" category="cell">單一節點叢集至少需要兩個 1GbE 連接埠，雙節點叢集至少要有四個 1GbE 連接埠（ HA 配對），四個，六個或八個節點叢集至少要有兩個 10GbE 連接埠</block>
-  <block id="c65eee5a4810d852ee01a79b87c993f3" category="paragraph">^1^ 假設 Hypervisor 有兩個核心和 8Gb RAM 。</block>
   <block id="f0cb6783b152b19ceab16227ca3976a2" category="open-title">儲存類型</block>
   <block id="5939197c86f855d26c9639db3b9a29d6" category="paragraph">下表提供指定儲存設備所需的最低授權類型。 </block>
-  <block id="1138bbb83d6525f914cbce8dccc4a874" category="cell">Pemium XL</block>
   <block id="e629ab9880aae245163ce498ab9e1389" category="cell">中小型</block>
   <block id="a09a88160dc1591cac42ba911581e599" category="cell">小，中，大</block>
   <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">具有硬體 RAID 控制器的本機 DAS</block>
@@ -3569,7 +3566,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">管理軟體</block>
   <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">NetApp Active IQ Unified Manager 管理套件 ONTAP Select Deploy Utility SnapCenter （選用）</block>
   <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">瞭解容量層和容量池授權類型</block>
-  <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block>。</block>
   <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">判斷ONTAP Select 出適用於貴組織的解決方案之後、您可以購買支援正式作業部署所需的授權。您必須選擇 Capacity Tiers 或 Capacity Pool 授權模式，以及每個部署的儲存容量。</block>
   <block id="580ede122197eca33afea87d209746f9" category="paragraph">_Capacity Tiers_ 和 _Capacity Pools_ 授權模式在幾個方面都有很大差異。不過、這兩種授權模式有幾種共通的特性、包括：</block>
   <block id="8e8e728e920aef8a8e61276592f8f07a" category="section-title">容量層級授權模式</block>
@@ -3949,4 +3945,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="dbdf8658126f3cab82aa007ed31794d3" category="paragraph">使用群集收縮功能來減少現有 ESXi 或 KVM 群集的大小。</block>
   <block id="419d991bb53188641539fa8dfe55b258" category="paragraph">您可以按以下增量減少現有 ESXi 群集的大小：</block>
   <block id="50261774776b49c62695c35def3230b0" category="paragraph">您可以將現有叢集的大小從八個節點減少到六個節點。</block>
+  <block id="64f27557c7c3169a5053aaf03c554939" category="list-text">小型、中型或大型實例類型</block>
+  <block id="4e59a04163b76608c718d51a77e0ab85" category="paragraph">^1^ 假設虛擬機器管理程式有兩個核心和 8GB RAM。</block>
+  <block id="8b8284ef1bc414b0568b54a0a11232ad" category="cell">適用的</block>
+  <block id="6799f681592f9a0a7cf264c2b7bcd3d7" category="list-text"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block></block>
 </blocks>
