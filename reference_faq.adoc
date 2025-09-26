@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_faq.html 
 keywords: faq, frequently asked questions 
-summary: 尋找ONTAP Select 有關資訊的常見問題解答。 
+summary: 尋找有關ONTAP Select 的常見問題的答案。 
 ---
-= 關於 ONTAP Select 的常見問題集
+= ONTAP Select常見問題解答
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -70,14 +70,14 @@ NOTE: API v3版本與舊版API不相容。上有新的 API 程序 https://librar
 
 * 只有升級ONTAP Select 的版本無法還原、而且只能還原至原始安裝版本。新安裝無法還原至舊版程式碼、即使ONTAP Select 通常情況下、僅支援舊版的版本。
 * 對於使用軟體RAID的VMware（KVM）和VMware（ESX）、無法還原至不支援軟體RAID的舊版。ONTAP Select ONTAP Select此外ONTAP Select 、在ESX上新安裝的更新版本使用VMXNET3網路驅動程式、並在可能的情況下使用vNVE驅動程式。這些新安裝無法還原至ONTAP Select 舊版的更新版本。
-* 如果ONTAP Select 還升級到大型執行個體（使用Premium XL授權）、則不支援還原至9.6之前的舊版、因為舊版不提供大型執行個體功能。
+* 如果ONTAP Select VM 也升級為大型實例（使用 Premium XL 授權），則不支援還原至 9.6 之前的版本，因為早期版本中不提供大型執行個體功能。
 
 
 .不需要取得進階授權嗎？ONTAP MetroCluster
 是的。
 
 .ONTAP Select 叢集網路組態是否可以在安裝後變更？
-使用GUI、CLI或REST API提供的叢集重新整理作業、即可透過下列功能識別出對下列功能的變更：ONTAP Select ONTAP Select
+ONTAP Select Deploy 使用可透過 UI、CLI 或 REST API 提供的叢集刷新操作識別以下ONTAP Select叢集屬性的變更：
 
 * 網路組態（IP位址、DNS、NTP、網路遮罩和閘道）
 * 叢集、節點名稱和版本ONTAP Select
@@ -92,7 +92,7 @@ NOTE: API v3版本與舊版API不相容。上有新的 API 程序 https://librar
 升級ONTAP Select 至支援使用支援這些變更的功能、適用於ONTAP Select 已部署但尚未變更原始組態的任何叢集。換句話說、如果ONTAP Select 使用System Manager或vCenter變更上述的VMware叢集屬性、則升級ONTAP Select 至VMware部署2.6將無法修正這些不一致的問題。必須先回復此功能的更新以供還原、才能將其獨特的中繼資料新增至每個支援功能VM。ONTAP Select ONTAP Select ONTAP Select
 
 .ONTAP Select 部署網路組態是否可以在安裝後變更？
-不支援在環境中執行部署執行個體後、修改其網路詳細資料。如需詳細資訊、請參閱 link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["知識庫文章 - 修改 ONTAP 部署執行個體的 DNS 組態"^]。
+不支援在 Deploy 實例在環境中運行後修改其網路詳細資訊。有關更多信息，請參閱知識庫文章link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["修改ONTAP Deploy 實例的 DNS 配置"^] 。
 
 .部署如何偵測 ONTAP Select 授權是否已續約？
 所有授權的方法相同，但具體細節會因容量層或容量池授權而異。
@@ -166,7 +166,10 @@ CAUTION: 請勿嘗試修改授權檔案。這樣做會使安全金鑰失效、�
 
 您至少應使用兩個實體NIC、以避免網路層發生單點故障。NetApp建議資料、管理及內部連接埠群組採用NIC群組和連結、並在群組或連結中設定兩個以上的上行鏈路。此類組態可確保在發生上行鏈路故障時、虛擬交換器會將流量從故障上行鏈路移至NIC群組中的正常上行鏈路。如需建議網路組態的詳細資訊、請參閱 link:reference_plan_best_practices.html#networking["最佳實務做法摘要：網路"]。
 
-所有其他錯誤均由ONTAP 不含節點或四節點叢集的情形下由NetApp資源管理系統處理。如果Hypervisor伺服器需要更換、ONTAP Select 而需使用新伺服器重新組裝、請聯絡NetApp技術支援部門。
+對於雙節點或四節點集群，所有其他錯誤均由ONTAP HA 處理。如果需要更換虛擬機器管理程式伺服器，並且需要使用新伺服器重建ONTAP Select集群，請參閱_我可以恢復ONTAP Select節點嗎？ _。
+
+.我可以恢復ONTAP Select節點嗎？
+如果您需要復原ONTAP Select節點（例如，如果ONTAP Select VM 或主機完全遺失或單節點叢集被意外刪除），請聯絡NetApp技術支援。有關更多信息，請參閱知識庫文章link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-KBs/ONTAP_Select_node_VM_recovery_in_case_of_disaster["災難發生時ONTAP Select節點虛擬機器恢復"^] 。
 
 .支援哪些最大資料存放區大小ONTAP Select ？
 包括vSAN在內的所有組態均可支援每ONTAP Select 個節點400TB的儲存容量。
@@ -188,7 +191,7 @@ CAUTION: 請勿嘗試修改授權檔案。這樣做會使安全金鑰失效、�
 .支援vSAN上的多節點叢集或其他共享外部儲存設備（包括部分HCI堆疊）嗎？ONTAP Select
 ESX和KVM均支援使用外部儲存設備（多節點vNAS）的多節點叢集。不支援在同一個叢集中混用Hypervisor。共享儲存設備上的HA架構仍暗示HA配對中的每個節點都有其合作夥伴資料的鏡射複本。然而、多節點叢集卻能帶來ONTAP 不中斷營運的好處、而非依賴VMware HA或KVM Live Motion的單節點叢集。
 
-儘管ONTAP Select 在ONTAP Select 同一部主機上支援多個支援的支援功能、但在ONTAP Select 建立叢集期間、不允許這些執行個體成為同一個支援叢集的一部分。對於ESX環境、NetApp建議建立VM反關聯規則、使VMware HA不會嘗試將多ONTAP Select 個VMware VM從同ONTAP Select 一個VMware叢集移轉到單一ESX主機上。此外、ONTAP Select 如果Sfor Deploy偵測到管理（使用者啟動）vMotion或ONTAP Select 即時移轉某個物件VM、導致違反我們的最佳實務做法、例如兩ONTAP Select 個以相同實體主機結尾的物件節點、 部署在部署GUI和記錄中張貼警示。ONTAP Select唯有透過叢集更新作業、才能讓非功能性部署人員知道其所在的位置、這是由更新叢集管理員手動執行的作業。ONTAP Select ONTAP Select ONTAP Select在支援主動監控的情況下、無法使用ONTAP Select 功能進行非功能性部署、而且警示只能透過部署GUI或記錄顯示。換句話說、此警示無法轉送到集中式監控基礎架構。
+儘管ONTAP Select Deploy 增加了在同一台主機上部署多個ONTAP Select虛擬機的支持，但它不允許這些實例在叢集建立期間成為同一個ONTAP Select叢集的一部分。對於 ESX 環境， NetApp建議建立虛擬機器反關聯性規則，以便 VMware HA 不會嘗試將多個ONTAP Select虛擬機器從同一個ONTAP Select叢集移轉到單一 ESX 主機。此外，如果ONTAP Select Deploy 偵測到ONTAP Select虛擬機的管理（使用者啟動）vMotion 或即時遷移違反了我們的最佳實踐，例如兩個ONTAP Select節點最終位於同一實體主機上，則ONTAP Select Deploy 會在 Deploy UI 和日誌中發出警報。 ONTAPONTAP Select Deploy 獲知ONTAP Select虛擬機器位置的唯一方式是透過叢集刷新操作，這是ONTAP Select Deploy 管理員必須啟動的手動操作。ONTAP Select Deploy 中沒有啟用主動監控的功能，警報只能透過 Deploy UI 或日誌查看。換句話說，此警報無法轉發到集中監控基礎架構。
 
 .此功能是否支援VMware的NSX VXLAN？ONTAP Select
 支援NSX-V VXLAN連接埠群組。若為多節點HA（包括ONTAP MetroCluster SfingSDS）、請務必將內部網路MTU設定在7500到8900之間（而非9000）、以因應VXLAN的負荷。內部網路MTU可在ONTAP Select 叢集部署期間以「功能不整合」進行設定。
@@ -218,7 +221,7 @@ Select VM會繼承vSAN資料存放區儲存原則、而且不會限制FT/FTM設�
 VMware vCenter有幾個問題與解答。
 
 .如何與vCenter進行通訊、以及應開啟哪些防火牆連接埠ONTAP Select ？
-利用VMware VIX API與vCenter和/或ESX主機進行通訊。ONTAP SelectVMware文件指出、與vCenter Server或ESX主機的初始連線是使用TCP連接埠443上的HTTPS / SOAP來完成。這是透過TLS/SSL進行安全HTTP的連接埠。其次、會在TCP連接埠902的套接字上開啟ESX主機的連線。透過此連線傳輸的資料會以SSL加密。此外ONTAP Select 、支援功能可發出「ping」命令、驗證是否有ESX主機在您指定的IP位址上回應。
+ONTAP Select Deploy 使用 VMware VIX API 與 vCenter、ESX 主機或兩者進行通訊。文件指出，與 vCenter Server 或 ESX 主機的初始連線是使用 TCP 連接埠 443 上的 HTTPS/SOAP 建立的。這是用於透過 TLS/SSL 進行安全 HTTP 的連接埠。其次，在 TCP 連接埠 902 上的套接字上開啟與 ESX 主機的連線。透過此連線傳輸的資料使用 SSL 加密。此外， ONTAP Select Deploy 會發出 `PING`命令來驗證是否有 ESX 主機在您指定的 IP 位址上做出回應。
 
 此外、還必須能夠與下列的節點和叢集管理IP位址進行通訊：ONTAP Select ONTAP Select
 

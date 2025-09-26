@@ -83,7 +83,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 您可以使用Web使用者介面執行叢集更新、以更新部署組態資料庫。
 
 
-NOTE: 您可以使用部署CLI Shell中的叢集重新整理命令來重新整理叢集、而非使用部署GUI。
+NOTE: 您可以使用 Deploy CLI shell 中的 cluster refresh 指令來刷新叢集，而不必使用 Deploy UI。
 
 叢集與虛擬機器組態:: 可能變更並導致部署資料庫不同步的部分組態值包括：
 +
