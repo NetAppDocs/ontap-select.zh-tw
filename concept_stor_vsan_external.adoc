@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_stor_vsan_external.html 
 keywords: ontap select, vsan and external array configurations, vnas architecture 
-summary: 虛擬NAS（vNAS）部署可支援ONTAP Select VSAN上的支援功能、部分HCI產品、NetApp HCI 支援各種外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。 
+summary: '虛擬 NAS (vNAS) 部署支援 vSAN 上的ONTAP Select叢集、某些 HCI 產品、 NetApp HCI技術以及外部陣列類型的資料儲存。這些配置的底層基礎架構提供了資料儲存的彈性。' 
 ---
-= ONTAP Select VSAN 和外部陣列組態
+= ONTAP Select vSAN 和外部陣列配置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 虛擬NAS（vNAS）部署可支援ONTAP Select VSAN上的支援功能�
 
 
 [role="lead"]
-虛擬 NAS （ vNAS ）部署支援虛擬 SAN （ VSAN ）上的 ONTAP Select 叢集、部分 HCI 產品、以及外部陣列類型的資料存放區。這些組態的基礎架構可提供資料存放區恢復能力。
+虛擬 NAS (vNAS) 部署支援虛擬 SAN (vSAN) 上的ONTAP Select叢集、某些 HCI 產品以及外部陣列類型的資料儲存。這些配置的底層基礎架構提供了資料儲存的彈性。
 
-最低要求是基礎組態受VMware支援、並應列在各自的VMware HCL上。
+最低要求是您使用的虛擬機器管理程式（支援的 Linux 主機上的 VMware ESXi 或 KVM）支援底層配置。如果虛擬機器管理程式是 ESXi，則它應該在對應的 VMware HCL 上列出。
 
 
 
@@ -40,9 +40,9 @@ vNAS架構在邏輯上最類似於採用DAS和RAID控制器的伺服器架構。
 
 == vNAS NVRAM
 
-此功能可讓您順利執行。ONTAP Select換句話說ONTAP Select 、VMware將位元組可定址空間（傳統NVRAM）模擬在區塊可定址裝置（VMDK）上方。不過、NVRAM的效能對於ONTAP Select 整個節點的效能絕對重要。
+ONTAP Select NVRAM是一種 VMDK。這意味著ONTAP Select在區塊可尋址設備 (VMDK) 之上模擬位元組可尋址空間 (傳統NVRAM)。然而， NVRAM的效能對於ONTAP Select節點的整體效能至關重要。
 
-對於使用硬體RAID控制器的DAS設定、硬體RAID控制器快取會做為事實上的NVRAM快取、因為所有寫入NVRAM VMDK的作業都會先裝載在RAID控制器快取中。
+對於具有硬體 RAID 控制器的 DAS 設置，硬體 RAID 控制器快取充當NVRAM緩存，因為對NVRAM VMDK 的所有寫入都首先託管在 RAID 控制器快取中。
 
 針對VNAS架構、ONTAP Singfeploy會自動使用ONTAP Select 稱為「單一執行個體資料記錄」（SIDL）的開機引數來設定支援節點。當出現此開機引數時、ONTAP Select 即可略過NVRAM、並將資料有效負載直接寫入資料Aggregate。NVRAM僅用於記錄寫入作業所變更之區塊的位址。此功能的優點是避免重複寫入：一次寫入NVRAM、另一次寫入NVRAM。這項功能僅適用於vNAS、因為本機寫入RAID控制器快取的額外延遲可忽略不計。
 
@@ -64,7 +64,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 
 支援共享儲存設備上的多節點元功能的叢集。ONTAP Select ONTAP Select只要這些節點不屬於同一個叢集、即可在同一部ESX主機上設定多個支援節點。ONTAP ONTAP Select請注意、此組態僅適用於VNAS環境（共享資料存放區）。使用DAS儲存設備時、每個主機不ONTAP Select 支援多個執行個體、因為這些執行個體競用相同的硬體RAID控制器。
 
-藉由執行支援、可確保多節點VNAS叢集的初始部署不會將同一個叢集的多個實體執行個體置於同一部主機上。ONTAP ONTAP Select下圖顯示兩個四節點叢集在兩個主機上交叉的正確部署範例。
+ONTAP Deploy 確保多節點 VNAS 叢集的初始部署不會將來自相同叢集的多個ONTAP Select實例放置在同一台主機上。下圖說明了在兩台主機上相交的兩個四節點叢集的正確部署範例。
 
 *多節點VNAS叢集的初始部署*
 

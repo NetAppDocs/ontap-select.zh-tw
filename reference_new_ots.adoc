@@ -65,23 +65,13 @@ link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及�
 link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
 
 --
-支援ONTAP功能:: 從ONTAP Select 9.17.1 開始， ONTAP Select支援以下許可的ONTAP功能：
+支援SnapMirror雲:: 從ONTAP Select 9.17.1 開始， ONTAP Select支援SnapMirror雲端。 SnapMirrorSnapMirror是獲得許可的ONTAP功能，在部署ONTAP Select 9.17.1 叢集或將現有ONTAP Select叢集升級到 9.17.1 版本時預設啟用。
 +
 --
-* SnapLock Select
-+
-從ONTAP Select 9.17.1 開始，新部署將自動獲得SnapLock Select 許可。對於從ONTAP Select 9.16.1 及更早版本升級，您需要SnapLocklink:https://mysupport.netapp.com/site/["NetApp 支援網站"^]並手動應用它。
-
-* SnapMirror雲
-+
-從ONTAP Select 9.17.1 開始， ONTAP Select支援SnapMirror雲端。 SnapMirrorSnapMirror是獲得許可的ONTAP功能，在部署ONTAP Select 9.17.1 叢集或將現有ONTAP Select叢集升級到 9.17.1 版本時預設啟用。
-
-+
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["了解SnapMirror雲端備份到物件存儲"^] 。
 
-
-
 --
+支援SnapLock Select Enterprise:: 從ONTAP Select 9.17.1 開始，新部署將自動獲得SnapLock Select Enterprise（包括防篡改快照鎖定）許可。對於從ONTAP Select 9.16.1 及更早版本升級，您需要SnapLocklink:https://mysupport.netapp.com/site/["NetApp 支援網站"^]並手動應用它。
 在多節點叢集上支援 vSAN ESA:: 從ONTAP Select 9.17.1 開始，對 vSAN Express 儲存架構 (ESA) 的支援擴展，以部署多節點叢集。此增強功能可讓您部署 vSAN ESA 配置。
 +
 --

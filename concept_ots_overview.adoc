@@ -132,4 +132,6 @@ NOTE: 從 ONTAP Select 9.16.1 開始，支援手動更新 ARP ， NetApp 授權�
 
 
 .相關資訊
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["瞭解預設啟用的 ONTAP 功能"] link:concept_lic_evaluation.html["瞭解 ONTAP Select 授權選項"]
+* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["瞭解預設啟用的 ONTAP 功能"]
+* link:concept_lic_evaluation.html["瞭解 ONTAP Select 授權選項"]
+

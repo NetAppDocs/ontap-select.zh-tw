@@ -14,7 +14,7 @@ summary: 支援大部分的功能。ONTAP Select ONTAP部署叢集時、會自�
 
 
 [role="lead"]
-支援大部分的功能。ONTAP Select ONTAP部署叢集時、會自動為每個節點授權許多功能。ONTAP不過、有些功能需要另一份授權。
+ONTAP Select支援大多數ONTAP功能。部署叢集時，許多ONTAP功能都會自動為每個節點授予許可。但是，某些功能需要單獨的許可證。
 
 
 NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
@@ -53,25 +53,20 @@ NOTE: ONTAP Select 支援 SVM DR 做為來源和目的地，最多可與 16 個�
 
 == 個別授權的功能ONTAP
 
-您必須針對ONTAP 預設未啟用的任何功能取得個別授權、包括：
+對於任何預設未啟用的ONTAP功能，您需要取得單獨的許可證，包括：
 
 * FabricPool
 * SDS（不含高級授權）MetroCluster ONTAP Select
-* SnapLock Enterprise for ONTAP Select 9.16.1 及更早版本（可從link:https://mysupport.netapp.com/site/["NetApp 支援網站"^])
-+
-
-NOTE: ONTAP Select不支援SnapLock Compliance 。
-
-+
-** 可防竄改的Snapshot複本
 
 
-* SnapLock Select
+[NOTE]
+====
+* 對於ONTAP Select 9.16.1 及更早版本， SnapLock Select Enterprise（包括防篡改快照鎖定）可從link:https://mysupport.netapp.com/site/["NetApp 支援網站"^]。
+* ONTAP Select不支援SnapLock Compliance 。
+* 使用 StorageGRID 時不需要 FabricPool 授權。
 
 
-
-NOTE: 使用 StorageGRID 時不需要 FabricPool 授權。
-
+====
 .相關資訊
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["比較功能與功能ONTAP Select ONTAP"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["NetApp ONTAP -主要授權金鑰"^]
