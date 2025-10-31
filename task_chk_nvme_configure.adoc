@@ -18,10 +18,16 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 
 在NVMe裝置上使用VMDirectPath I/O傳遞、以最大化資料效率。此設定可將磁碟機展示給ONTAP Select 整個物件虛擬機器、ONTAP 使其能夠直接透過PCI存取裝置。
 
+
+
+== 步驟 1：設定主機
+
+配置 ESXi 或 KVM 主機以識別磁碟機。
+
 .開始之前
 確保您的部署環境符合下列最低需求：
 
-* 對於 ESX 主機，ONTAP Select 9.7 或更高版本以及受支援的 Deploy 管理實用程式
+* 對於 ESX 主機，請使用受支援的部署管理實用程式執行ONTAP Select。
 * 對於 KVM 主機， ONTAP Select 9.17.1 隨附受支援的 Deploy 管理實用程式
 * 優質XL平台授權方案或90天試用授權
 * ESXi 或 KVM 主機正在執行支援的虛擬機器管理程式版本：
@@ -32,6 +38,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 --
 以下虛擬機器管理程式版本支援 ESXi：
 
+** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 （內部版本 21495797 ）
@@ -101,7 +108,10 @@ image:nvme_03.png["重新啟動此主機"]
 
 
 
-.完成後
+
+
+== 步驟 2：安裝ONTAP Select Deploy 實用程式
+
 主機準備好後，您可以安裝ONTAP Select Deploy 實用程式。 Deploy將引導您在新準備的主機上建立ONTAP Select儲存叢集。在此過程中，Deploy 會偵測到已配置為直通的 NVMe 驅動器，並自動選擇它們以用作ONTAP資料磁碟。您可以根據需要調整預設選擇。
 
 
@@ -111,7 +121,7 @@ NOTE: 每ONTAP Select 個節點最多支援14個NVMe裝置。
 
 image:nvme_04.png["部署叢集ONTAP Select"]
 
-成功部署叢集之後ONTAP 、即可利用NetApp System Manager根據最佳實務做法來配置儲存設備。利用NVMe儲存設備、可自動啟用Flash最佳化的儲存效率功能。ONTAP
+叢集成功部署後， ONTAP系統管理器可讓您根據最佳實務配置儲存。 ONTAPONTAP會自動啟用快閃記憶體最佳化儲存效率功能，從而最大限度地利用您的 NVMe 儲存。
 
 image:nvme_05.png["準備本機儲存設備"]
 

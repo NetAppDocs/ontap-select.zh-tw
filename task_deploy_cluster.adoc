@@ -196,15 +196,15 @@ NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管�
 ====
 
 
-== 步驟 3：完成後
+== 步驟 3：完成部署
 
-您應該確認已設定 ONTAP Select AutoSupport 功能、然後備份 ONTAP Select 部署組態資料。
+叢集部署完成後，確認ONTAP Select AutoSupport功能已配置。link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"] 。
 
 [TIP]
 ====
 如果叢集建立作業已啟動但無法完成、您定義的 ONTAP 管理密碼可能不會套用。如果發生這種情況、您可以使用下列 CLI 命令來判斷 ONTAP Select 叢集的暫存管理密碼：
 
-[listing]
+[source, cli]
 ----
 (ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
 ----

@@ -81,3 +81,6 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 === vApp
 
 類別中的所有權限。
+
+.相關資訊
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html#ontap-select-deploy-vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 權限"]

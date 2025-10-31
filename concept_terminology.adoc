@@ -98,7 +98,7 @@ vNAS預設組態可啟用寫入最佳化功能、稱為單一執行個體資料�
 
 
 [[ontap-select-image-install]]
-安裝鏡像ONTAP Select:: 從ONTAP Select 部署2.8開始、部署管理公用程式只包含ONTAP Select 單一版本的資訊。所含版本是發行時最新的版本。利用此功能、您可以在部署公用程式的執行個體中新增舊版的支援功能、以便在部署支援叢集時使用。ONTAP Select ONTAP Select ONTAP Select請參閱 link:task_cli_deploy_image_add.html["新增ONTAP Select 圖片以取得更多資訊"]。
+安裝鏡像ONTAP Select:: 部署管理實用程式僅包含一個版本的ONTAP Select。其中包含的版本是發行時可用的最新版本。 ONTAPONTAP Select映像安裝功能可讓您將早期版本的ONTAP Select新增至 Deploy 公用程式實例中，然後在部署ONTAP Select叢集時使用該實例。看link:task_cli_deploy_image_add.html["新增ONTAP Select 圖片以取得更多資訊"]。
 
 
 

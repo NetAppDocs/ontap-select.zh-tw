@@ -23,7 +23,7 @@ summary: 您應該考量幾項與VMware環境相關的硬體需求與規劃問�
 有幾項需求與ONTAP Select 執行效能不均的Hypervisor有關。
 
 
-NOTE: 您應該檢閱ONTAP Select 目前版本的《更新說明》、以瞭解任何其他已知限制或限制。
+NOTE: 你應該複習一下link:reference_release_notes.html["發行說明ONTAP Select"]任何其他已知的限製或約束。
 
 
 
@@ -52,6 +52,7 @@ ONTAP Select支援以下 KVM 虛擬機器管理程式版本：
 --
 ONTAP Select支援以下 ESXi 虛擬機器管理程式版本：
 
+* VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 （內部版本 21495797 ）
@@ -80,7 +81,7 @@ NOTE: ESXi 6.5 GA 和 ESXi 6.7 GA 已達到可用性終止狀態。如果您的 
 您部署ONTAP Select 的實體Hypervisor主機必須符合多項硬體需求。只要符合最低硬體需求、您就可以選擇Hypervisor主機的任何平台。下列廠商提供支援的硬體平台：Cisco、Dell、HP、Fujitsu、Lenovo、 和Supermmicro.
 
 
-NOTE: 從ONTAP Select 支援的版本僅支援以Intel Xeon Sandy Bridge或更新版本為基礎的CPU機型。
+NOTE: 從ONTAP Select 9.9.1 開始，僅支援基於 Intel Xeon Sandy Bridge 或更高版本的 CPU 型號。
 
 如需詳細資訊，請參閱 https://mysupport.netapp.com/matrix["互通性對照表工具， window=_blank"]。
 
@@ -110,7 +111,7 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 | 雙節點叢集或MetroCluster 不含任何功能的SDS | 4 x 1GbE或1 x 10GbE | 2個10GbE 
 
 
-| 4/6/8節點叢集 | 2個10GbE | 4個10GbE或2個25/40GbE 
+| 四節點、六節點或八節點集群 | 2個10GbE | 4個10GbE或2個25/40GbE 
 |===
 
 

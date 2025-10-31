@@ -224,8 +224,6 @@ sidebar:
         url: "/concept_api_rest.html"
       - title: 存取部署API
         url: "/concept_api_how_access.html"
-      - title: 部署API版本管理
-        url: "/concept_api_versions.html"
       - title: 基本操作
         url: "/concept_api_operation.html"
       - title: 要求與回應交易

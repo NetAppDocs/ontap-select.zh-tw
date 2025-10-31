@@ -47,6 +47,7 @@ ESXi 和 KVM 主機不支援以下叢集擴充和收縮：
 
 以下 ESXi 虛擬機器管理程式版本支援叢集擴充和收縮：
 
+* ESXi 9.0
 * ESXi 8.0 U3.
 * ESXi 8.0 U2.
 * ESXi 8.0 U1.
@@ -131,7 +132,7 @@ ESXi 和 KVM 主機不支援以下叢集擴充和收縮：
 
 
 .完成後
-展開叢集之後、您應該備份 ONTAP Select 部署組態資料。
+link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"]。
 
 
 

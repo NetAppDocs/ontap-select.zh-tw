@@ -4,7 +4,7 @@ permalink: task_cli_clusters.html
 keywords: administer, administering, cli, clusters 
 summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。 
 ---
-= 叢集ONTAP Select
+= 使用 CLI 管理ONTAP Select集群
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,71 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 [role="lead"]
-您可以執行多項相關工作來管理ONTAP Select 一個叢集。
+您可以使用 CLI 執行幾個相關任務來管理ONTAP Select叢集。
+
+
+
+== 備份ONTAP Select Deploy 配置數據
+
+例如，部署叢集後，備份ONTAP Select Deploy 配置資料。資料將保存到加密檔案中，您可以將其下載到本機工作站。
+
+您建立的備份檔案會保存所有設定資料。這些數據描述了部署環境的各個方面，包括ONTAP Select集群。
+
+.開始之前
+請確定部署在備份作業期間未執行任何其他工作。
+
+.步驟
+. 使用管理員帳戶透過 SSHSign inONTAP Select Deploy 實用程式 CLI。
+. 建立ONTAP Select Deploy 配置資料的備份，該資料儲存在ONTAP Select Deploy 伺服器的內部目錄中：
++
+[source, cli]
+----
+deploy backup create
+----
+. 出現提示時、請提供備份密碼。
++
+備份檔案會根據密碼進行加密。
+
+. 在系統中顯示可用的備份：
++
+[source, cli]
+----
+deploy backup show -detailed
+----
+. 根據「*建立*」欄位中的日期選取備份檔案、並記錄*下載URL*值。
++
+您可以透過URL存取備份檔案。
+
+. 使用網頁瀏覽器或Curl等公用程式、將備份檔案下載到含有URL的本機工作站。
+
 
 
 
 == 刪除 ONTAP Select 叢集
 
-您可以使用ONTAP Select 命令列介面刪除不再需要的叢集。
+您可以在ONTAP Select 不再需要時刪除一個不需要的叢集。
 
-.關於這項工作
+.開始之前
 叢集必須處於離線狀態。
 
 .步驟
 . 使用系統管理員帳戶登入部署虛擬機器CLI。
-. 顯示叢集狀態：「cluster show -name clustername」
-. 如果叢集未離線、請將其移至離線狀態：「cluster offline -name clustername」（叢集離線名稱叢集名稱）
-. 確認叢集處於離線狀態之後、請刪除叢集：「cluster delete -name clustername」
+. 顯示集群狀態：
++
+[source, cli]
+----
+cluster show -name <cluster_name>
+----
+. 如果叢集未離線，則將其置於離線狀態：
++
+[source, cli]
+----
+cluster offline -name <cluster_name>
+----
+. 確認叢集處於離線狀態後，刪除該叢集：
++
+[source, cli]
+----
+cluster delete -name <cluster_name>
+----
 

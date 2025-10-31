@@ -480,5 +480,5 @@ cluster show -name <cluster_name>
 ----
 
 
-.完成後
-您應該備份ONTAP Select 「不再部署」組態資料。
+.下一步是什麼？
+link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"]。

@@ -94,6 +94,7 @@ link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["
 
 --
 已更新 KVM Hypervisor 支援:: 從ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux (RHEL) 9.6 和 Rocky Linux 9.6 支援 KVM 虛擬機器管理程式。
+增強VMware ESXi支援:: ONTAP Select 9.17.1 包含對 VMware ESXi 9.0 的支援。
 
 
 
