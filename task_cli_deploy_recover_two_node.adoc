@@ -18,44 +18,37 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 
 
 
-== 開始之前
+== 準備恢復部​​署實用程式
 
-您應該先做好準備、再嘗試恢復部署公用程式的執行個體、以確保成功。
+在嘗試還原 Deploy 實用程式實例之前，您需要做好準備以確保成功。您必須熟悉若干行政程序並掌握所需資訊。
 
-.所需技能與資訊
-您應該熟悉幾個管理程序、並擁有必要的資訊。
+.步驟
+. 確認您可以在虛擬機器管理程式環境中安裝ONTAP Select Deploy 實用程式的新實例。
++
+link:task_install_deploy.html["了解如何安裝ONTAP Select Deploy 實用程式"]
 
-.安裝部署虛擬機器
-您必須能夠在ONTAP Select Hypervisor環境中安裝新的更新版的更新版的更新版本。
+. 確認您可以登入ONTAP Select叢集並存取ONTAP叢集 shell (CLI)。
+. 確定您是否擁有包含ONTAP Select雙節點叢集的失敗部署公用程式實例的設定資料備份。您可能擁有不包含該叢集的備份。
+. 根據所使用的復原程序，驗證是否可以還原部署配置資料的備份。
++
+link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-to-the-new-virtual-machine["了解如何將部署配置資料還原到新的虛擬機"]
 
-.指令行介面ONTAP
-您必須能夠登入ONTAP 到該叢集的CLI、ONTAP Select 並使用Shell介面。
-
-.部署公用程式組態備份的可用度
-您必須判斷是否有來自故障部署公用程式執行個體的組態資料備份、該執行個體包含ONTAP Select 了雙節點叢集。您的備份可能不包含叢集。
-
-.還原部署組態的備份
-您應該能夠還原部署組態資料的備份、視所使用的還原程序而定。
-
-.原始部署虛擬機器的IP位址
-您必須知道故障的原始部署公用程式虛擬機器的IP位址。
-
-.儲存容量授權
-您必須判斷是否使用容量集區或容量層授權。如果您使用 Capacity Pool 授權，則必須在還原或還原部署執行個體之後重新安裝每個 Capacity Pool 授權。
-
-.決定要使用的恢復程序
-您必須決定恢復ONTAP Select 某個執行個體時要使用的程序。您的決定取決於您是否備份來自原始故障部署公用程式的組態資料、該公用程式包含ONTAP Select 了雙節點叢集。
-
+. 您擁有發生故障的原始部署公用程式虛擬機器的 IP 位址。
+. 確定採用容量池許可或容量層級許可。如果使用容量池許可，則必須在復原或還原 Deploy 執行個體後重新安裝每個容量池許可證。
+. 決定在復原ONTAP Select Deploy 實用程式實例時使用哪個程式。您的決定取決於您是否擁有包含ONTAP Select雙節點叢集的原始故障 Deploy 實用程式的設定資料備份。
++
 [cols="35,65"]
 |===
-| 您是否有包含雙節點叢集的部署備份？ | 恢復程序 
+| 您是否有包含雙節點叢集的部署備份？ | 使用恢復程序… 
 
 
-| 是的 | 使用組態備份還原部署公用程式執行個體 
+| 是的 | <<restore-deploy-backup,使用組態備份還原部署公用程式執行個體>> 
 
 
-| 否 | 重新設定及恢復部署公用程式執行個體 
+| 否 | <<restore-and-recover-deploy,重新設定及恢復部署公用程式執行個體>> 
 |===
+
+
 
 
 == 使用組態備份還原部署公用程式執行個體
@@ -63,7 +56,7 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 如果您有包含雙節點叢集的失敗部署公用程式執行個體備份、您可以將組態資料還原至新的部署虛擬機器執行個體。然後、您必須執行ONTAP Select 額外的組態來完成恢復、將兩個節點放在一個叢集內。
 
 .開始之前
-您必須備份原始故障部署虛擬機器的組態資料、其中包含雙節點叢集。您必須能夠登入ONTAP 雙節點叢集的CLI、並知道ONTAP 兩個節點的名稱。
+備份包含雙節點叢集的原始部署失敗虛擬機器的設定資料。您必須能夠登入雙節點叢集的ONTAP CLI，並且知道這兩個節點的ONTAP名稱。
 
 .關於這項工作
 由於還原的組態備份包含雙節點叢集、因此在新的部署公用程式虛擬機器中、會重新建立協調器iSCSI目標和信箱。
@@ -81,17 +74,26 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 . 登入ONTAP 到位在現象雙節點叢集的指令行介面。ONTAP Select
 . 進入進階權限模式：
 +
-《et adv'》
-
-. 如果新部署虛擬機器的IP位址與原始部署虛擬機器不同、您必須移除舊的中介iSCSI目標並新增目標：
+[source, cli]
+----
+set adv
+----
+. 如果新部署虛擬機器的 IP 位址與原部署虛擬機器的 IP 位址不同，請刪除舊的中介 iSCSI 目標並新增目標：
 +
-....
+[source, cli]
+----
 storage iscsi-initiator remove-target -node * -target-type mailbox
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node2_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-....
+----
 +
 「<ip_address>'參數是新部署虛擬機器的IP位址。
 
@@ -100,31 +102,37 @@ storage iscsi-initiator add-target -node <node2_name> -label mediator -target-ty
 
 . 確定中介磁碟的名稱：
 +
-「磁碟顯示-容器型中介器」
-
+[source, cli]
+----
+disk show -container-type mediator
+----
 . 將信箱磁碟指派給兩個節點：
 +
-....
+[source, cli]
+----
 disk assign -disk <mediator-disk1-name> -owner <node1-name>
+
 disk assign -disk <mediator-disk2-name> -owner <node2-name>
-....
+----
 . 確認已啟用儲存容錯移轉：
 +
-「容錯移轉顯示」
-
+[source, cli]
+----
+storage failover show
+----
 
 
 .完成後
-如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資料，請參閱重新安裝容量集區授權 _ 。
+如果您使用容量池許可，請重新安裝每個容量池許可證。看link:task_adm_licenses.html#reinstall-a-capacity-pool-license["重新安裝 Capacity Pool 授權"]更多詳情請見下文。
 
 
 
 == 重新設定及恢復部署公用程式執行個體
 
-如果您沒有包含雙節點叢集的失敗部署公用程式執行個體備份、則必須在新的部署虛擬機器中設定中介iSCSI目標和信箱。然後、您必須執行ONTAP Select 額外的組態來完成恢復、將兩個節點放在一個叢集內。
+如果您沒有包含雙節點叢集的失敗部署公用程式實例的備份，請在新的部署虛擬機器中設定中介 iSCSI 目標和郵件信箱。然後，透過對ONTAP Select叢集中的兩個節點進行額外配置來完成復原。
 
 .開始之前
-您必須擁有新部署公用程式執行個體的中介目標名稱。您必須能夠登入ONTAP 雙節點叢集的CLI、並知道ONTAP 兩個節點的名稱。
+請確認您已取得新部署公用程式實例的中介目標名稱。您必須能夠登入雙節點叢集的ONTAP CLI，並且知道這兩個節點的ONTAP名稱。
 
 .關於這項工作
 您可以選擇性地將組態備份還原至新的部署虛擬機器、即使該虛擬機器不包含雙節點叢集。由於雙節點叢集並非以還原方式重新建立、因此您必須透過ONTAP Select 部署的「支援資訊」線上文件網頁、將中介iSCSI目標和信箱手動新增至新的部署公用程式執行個體。您必須能夠登入雙節點叢集、並知道ONTAP 兩個節點的名稱。
@@ -145,12 +153,16 @@ NOTE: 恢復程序的目標是將雙節點叢集還原至正常狀態、以便�
 . 登入ONTAP 到位在現象雙節點叢集的指令行介面。ONTAP Select
 . 進入進階權限模式：
 +
-《et adv'》
-
+[source, cli]
+----
+set adv
+----
 . 取得中介iSCSI目標名稱：
 +
-「儲存iSCSI啟動器顯示-目標類型信箱」
-
+[source, cli]
+----
+storage iscsi-initiator show -target-type mailbox
+----
 . 存取新部署公用程式虛擬機器的線上文件網頁、然後使用admin帳戶登入：
 +
 http://<ip_address>/api/ui`
@@ -158,59 +170,64 @@ http://<ip_address>/api/ui`
 +
 您必須使用部署虛擬機器的IP位址。
 
-. 按一下*「媒體」*、然後按*「Get /Mediator*」。
-. 按一下*試用！*以顯示由部署維護的協調器清單。
+. 選擇 *Mediator*，然後選擇 *GET /mediators*。
+. 選擇「試用！」以顯示 Deploy 維護的中介器清單。
 +
 記下所需中介執行個體的ID。
 
-. 按一下*「媒體」*、然後按*「POST」*。
+. 選擇“中介者”，然後選擇“POST”。
 . 請提供「中介人ID的值。
-. 按一下「iSCSI目標」旁邊的*模型*、然後填寫名稱值。
+. 選擇旁邊的“型號” `iscsi_target`並填寫名稱值。
 +
 使用iqn_name參數的目標名稱。
 
-. 按一下*「試試看！*」以建立協調器iSCSI目標。
+. 選擇「試用！」以建立中介 iSCSI 目標。
 +
 如果申請成功、您將會收到HTTP狀態代碼200。
 
 . 如果新部署虛擬機器的IP位址與原始部署虛擬機器不同、您必須使用ONTAP CLI移除舊的中介iSCSI目標、並新增新目標：
 +
-....
+[source, cli]
+----
 storage iscsi-initiator remove-target -node * -target-type mailbox
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node2_name> -label mediator-target-type mailbox -target-portal <ip_address> -target-name <target>
-....
+----
 +
 「<ip_address>'參數是新部署虛擬機器的IP位址。
 
-
-
++
 這些命令可讓ONTAP Select 各個節點探索新部署公用程式虛擬機器上的信箱磁碟。
 
 . 確定中介磁碟的名稱：
 +
-「磁碟顯示-容器型中介器」
-
+[source, cli]
+----
+disk show -container-type mediator
+----
 . 將信箱磁碟指派給兩個節點：
 +
-....
+[source, cli]
+----
 disk assign -disk <mediator-disk1-name> -owner <node1-name>
 
 disk assign -disk <mediator-disk2-name> -owner <node2-name>
-....
+----
 . 確認已啟用儲存容錯移轉：
 +
-「容錯移轉顯示」
-
+[source, cli]
+----
+storage failover show
+----
 
 
 .完成後
-如果您使用 Capacity Pool 授權，則必須重新安裝每個 Capacity Pool 授權。如需其他詳細資訊，請參閱重新安裝容量資源池授權。
-
-.相關資訊
-* link:task_install_deploy.html["安裝ONTAP Select 部署"]
-* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["將部署組態資料還原至新的虛擬機器"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["重新安裝 Capacity Pool 授權"]
-
+如果您使用容量池許可，請重新安裝每個容量池許可證。看link:task_adm_licenses.html#reinstall-a-capacity-pool-license["重新安裝 Capacity Pool 授權"]更多詳情請見下文。

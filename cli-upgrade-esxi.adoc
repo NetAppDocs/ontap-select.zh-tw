@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_cli_upgrade_esxi65.html 
-keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
+permalink: cli-upgrade-esxi.html 
+keywords: administer, administering, cli, esxi, upgrade, esxi 7.0 
 summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi 軟體從支援的舊版升級至 ESXi 7.0 或更新版本。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。 
 ---
-= 將 VMware ESXi 升級到 7.0 或更高版本以使用ONTAP Select
+= 將ONTAP Select升級到 VMware ESXi 7.0 或更高版本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,47 +18,46 @@ summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi �
 
 
 
-== 開始之前
+== 準備升級 VMware ESXi
 
-在裝載ONTAP Select 某個叢集的Hypervisor上升級ESXi軟體之前、您應該先準備並選擇適合您環境的升級程序。
+在升級託管ONTAP Select叢集的虛擬機器管理程式上的 ESXi 軟體之前，請準備並選擇適合您環境的升級程式。
 
-
-CAUTION: 如果您選擇升級至VMware ESXi 6.5、則應升級至ESXi U2（版本號是82253）或更新版本。使用ESXi 6.5 U1可能會因為已知的VMware錯誤而導致虛擬機器故障。
-
-
-
-=== 熟悉如何升級 VMware ESXi
-
+.步驟
+. *熟悉如何升級 VMware ESXi*
++
 升級ESXi軟體是VMware所說明及支援的程序。Hypervisor升級程序是使用ONTAP Select 過程中較大規模升級的一部分。如需詳細資訊、請參閱 VMware 文件。
 
-
-
-=== 選擇升級程序
-
+. *選擇升級流程*
++
 有多種升級程序可供使用。您應根據下列條件選擇適用的程序：
 
-* 支援單節點和多節點叢集的叢集大小。ONTAP Select
-* 無論是否使用部署公用程式、都能使用ONTAP Select VMware部署升級。
++
+** 支援單節點和多節點叢集的叢集大小。ONTAP Select
+** 使用ONTAP Select部署
++
+可以使用 Deploy 工具升級，也可以不使用 Deploy 工具升級。
 
-
++
 
 TIP: 您應該選取使用部署管理公用程式的升級程序。
 
-使用部署管理公用程式執行ESXi升級是較為一般且彈性的選項。不過、部署無法使用或無法使用時、可能會有一些執行個體。例如、舊版 ONTAP Select 和部署管理公用程式不支援升級至 ESXi 7.0 。
++
+使用 Deploy 管理公用程式執行 ESXi 升級是更通用且更具彈性的選項。但是，有時可能會出現部署不可用或無法使用的情況。例如，早期版本的ONTAP Select和 Deploy 管理實用程式不支援升級到 ESXi 7.0。
 
++
 如果您使用這些較早版本並嘗試升級、ONTAP Select 則無法將該虛擬機器開機的狀態也會保留下來。在此情況下、您必須選取不使用Deploy的升級程序。請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] 以取得更多資訊。
 
 
 
-=== 升級部署管理公用程式
+. *升級部署管理實用程式*
++
+在使用 Deploy 實用程式執行升級程序之前，您可能需要升級您的 Deploy 執行個體。通常，您應該升級到最新版本的 Deploy。 Deploy實用程式必須支援您正在使用的ONTAP Select版本。請參閱link:reference_release_notes.html["ONTAP Select發行說明"]了解更多。
 
-在使用Deploy公用程式執行升級程序之前、您可能需要升級部署執行個體。一般而言、您應該升級至最新版的部署。Deploy公用程式必須支援ONTAP Select 您所使用的版本。如ONTAP Select 需詳細資訊、請參閱《發行說明》。
-
-
-
-=== 更新程序完成後
-
+. *更新程式完成後*
++
 如果您選取使用Deploy公用程式的升級程序、則應該在所有節點升級後、使用Deploy執行叢集重新整理作業。如需詳細資訊、請參閱重新整理部署叢集組態。
+
+
 
 
 
@@ -68,25 +67,29 @@ TIP: 您應該選取使用部署管理公用程式的升級程序。
 
 .步驟
 . 以系統管理員帳戶使用SSH登入部署公用程式CLI。
-. 將節點移至離線狀態。
+. 將節點移至離線狀態：
 +
-範例「節點停止-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
-
+[source, cli]
+----
+node stop --cluster-name <cluster_name> --node-name <node_name>
+----
 . 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
-. 將節點移至線上狀態。
+. 將節點移至線上狀態：
 +
-範例「節點啟動-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
-
+[source, cli]
+----
+node start --cluster-name <cluster_name> --node-name <node_name>
+----
 . 節點出現後、請確認叢集正常運作。
 +
-範例
+範例：
 
 +
 ....
 ESX-1N::> cluster show
-Node Health Eligibility
---------------------- ------- ------------
-sdot-d200-011d true true
+Node           Health  Eligibility
+-------------- ------- ------------
+sdot-d200-011d true    true
 ....
 
 
@@ -104,24 +107,29 @@ sdot-d200-011d true true
 
 .步驟
 . 以系統管理員帳戶使用SSH登入部署公用程式CLI。
-. 將節點移至離線狀態。
+. 將節點移至離線狀態：
 +
-範例「節點停止-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
-
+[source, cli]
+----
+node stop --cluster-name <cluster_name> --node-name <node_name>
+----
 . 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
 +
 如需詳細資訊、請參閱準備升級VMware ESXi。
 
-. 將節點移至線上狀態。
+. 將節點移至線上狀態：
 +
-範例「節點啟動-叢集名稱<叢集名稱>-節點名稱<節點名稱>」
-
+[source, cli]
+----
+node start --cluster-name <cluster_name> --node-name <node_name>
+----
 . 節點啟動後、請確認已啟用儲存容錯移轉、而且叢集正常運作。
 +
-範例
-
-+
-....
+.顯示範例
+[%collapsible]
+====
+[listing]
+----
 ESX-2N_I2_N11N12::> storage failover show
 Takeover
 Node Partner Possible State Description
@@ -135,7 +143,8 @@ Node Health Eligibility
 sdot-d200-011d true true
 sdot-d200-012d true true
 2 entries were displayed.
-....
+----
+====
 
 
 .完成後
@@ -163,16 +172,17 @@ sdot-d200-012d true true
 
 . 節點出現後、請確認叢集正常運作。
 +
-範例
+範例：
 
-
-
++
 ....
 ESX-1N::> cluster show
-Node Health Eligibility
---------------------- ------- ------------
-sdot-d200-011d true true
+Node           Health  Eligibility
+-------------- ------- ------------
+sdot-d200-011d true    true
 ....
+
+
 .完成後
 您應該使用部署管理公用程式來執行叢集重新整理作業。
 
@@ -198,10 +208,11 @@ sdot-d200-011d true true
 
 . 節點啟動後、請確認已啟用儲存容錯移轉、而且叢集正常運作。
 +
-範例
-
-+
-....
+.顯示範例
+[%collapsible]
+====
+[listing]
+----
 ESX-2N_I2_N11N12::> storage failover show
 Takeover
 Node Partner Possible State Description
@@ -215,7 +226,8 @@ Node Health Eligibility
 sdot-d200-011d true true
 sdot-d200-012d true true
 2 entries were displayed.
-....
+----
+====
 
 
 .完成後

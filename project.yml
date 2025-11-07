@@ -278,8 +278,8 @@ sidebar:
       url: "/task_cli_clusters.html"
     - title: 節點和主機
       entries:
-      - title: 將 ESXi 升級至 6.5 以上版本
-        url: "/task_cli_upgrade_esxi65.html"
+      - title: 升級 ESXi
+        url: "/cli-upgrade-esxi.html"
       - title: 修改主機管理伺服器
         url: "/reference_host_modify_command.html"
     - title: 部署公用程式

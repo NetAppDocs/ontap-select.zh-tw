@@ -198,7 +198,7 @@ NOTE: 您可以選取頁面頂端的標籤（叢集， Hypervisor 主機，管�
 
 == 步驟 3：完成部署
 
-叢集部署完成後，確認ONTAP Select AutoSupport功能已配置。link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"] 。
+集群部署完成後，link:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["確認ONTAP Select AutoSupport功能已配置"^]進而link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"]。
 
 [TIP]
 ====

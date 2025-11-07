@@ -26,19 +26,25 @@ CAUTION: 您不應移除ONTAP Select 叢集所使用的任何非影像。
 . 使用SSH以系統管理員（admin）帳戶登入部署公用程式CLI。
 . 顯示由部署管理的叢集、並記錄ONTAP 使用中的不實影像：
 +
-「叢集展示」
-
+[source, cli]
+----
+cluster show
+----
 +
 請注意每種情況下的版本編號和Hypervisor平台。
 
 . 啟動Bash Shell：
 +
-"死了"
-
+[source, cli]
+----
+shell bash
+----
 . 顯示所有可用ONTAP Select 的圖片：
 +
-「ls -lh /opt/NetApp/images/映 像」
-
+[source, cli]
+----
+ls -lh /opt/netapp/images
+----
 . 您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。
 +
 [role="tabbed-block"]

@@ -55,7 +55,7 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 
 
 .步驟
-. 在本地工作站的命令 shell 中，使用 `scp`（安全複製協定）實用程式將映像檔上傳到ONTAP Select Deploy 虛擬機器。
+. 在本地工作站的命令提示字元中，使用 `scp`使用（安全複製協定）實用程式將映像檔上傳到ONTAP Select Deploy 虛擬機，如下範例所示：
 +
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
@@ -80,7 +80,12 @@ scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide pas
 . 使用管理員帳戶透過 SSHSign inONTAP Select Deploy 實用程式 CLI。
 . 使用適當的目錄路徑和檔案名稱執行升級：
 +
-「部署升級-套件路徑檔案路徑」
+[source, cli]
+----
+deploy upgrade -package-path <file_path>
+----
++
+範例命令：
 
 +
 ....

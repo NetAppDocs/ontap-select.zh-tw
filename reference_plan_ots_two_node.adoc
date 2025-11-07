@@ -34,7 +34,8 @@ CAUTION: 如果您有一個或多個活動的雙節點集群，則管理這些�
 .叢集和中介服務的位置
 由於雙節點叢集通常部署在遠端或分支機構，因此它們可能遠離企業資料中心和提供管理支援的ONTAP Select Deploy 實用程式。透過這種配置， ONTAP Select Deploy 實用程式和叢集之間的管理流量將透過 WAN 傳輸。有關限制和約束的更多信息，請參閱發行說明。
 
-. 為ONTAP Select Deploy 分配靜態 IP 位址
+.備份 Deploy 配置數據
+最佳實踐是link:task_cli_clusters.html["備份ONTAP Select Deploy 配置數據"]定期進行，包括在建立集群之後。這對於雙節點叢集尤其重要，因為備份中包含了中介器配置資料。
 
-
+.指派給部署的靜態IP位址
 您必須為ONTAP Select Deploy 管理公用程式指派靜態 IP 位址。此要求適用於管理一個或多個ONTAP Select雙節點叢集的所有ONTAP Select Deploy 實例。

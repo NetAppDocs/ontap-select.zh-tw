@@ -40,16 +40,20 @@ CAUTION: 當您將部署組態資料從原始虛擬機器還原至新虛擬機�
 . 以系統管理員帳戶使用SSH登入部署公用程式CLI。
 . 建立部署組態資料的備份、該資料儲存在部署伺服器的內部目錄中：
 +
-「部署備份建立」
-
+[source, cli]
+----
+deploy backup create
+----
 . 出現提示時、請提供備份密碼。
 +
 備份檔案會根據密碼進行加密。
 
 . 在系統中顯示可用的備份：
 +
-「部署備份顯示-詳細」
-
+[source, cli]
+----
+deploy backup show -detailed
+----
 . 根據「*建立*」欄位中的日期選取備份檔案、並記錄*下載URL*值。
 +
 您可以透過URL存取備份檔案。
@@ -92,10 +96,7 @@ link:task_install_deploy.html["安裝ONTAP Select 部署"]
 您必須擁有先前備份的組態資料。資料包含在單一檔案中、必須可在本機工作站上使用。
 
 .步驟
-. 在本機工作站的命令Shell中、使用sftp公用程式將備份檔案上傳至部署虛擬機器。
-+
-範例
-
+. 在本機工作站的命令 shell 中，使用 sftp 公用程式將備份檔案上傳到 Deploy 虛擬機，如下例所示：
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -103,12 +104,14 @@ put deploy_backup_20190601162151.tar.gz
 exit
 ....
 . 以系統管理員帳戶使用SSH登入部署公用程式CLI。
-. 還原組態資料。
+. 恢復配置資料：
 +
-「部署備份還原-path pathname -fileName」
-
+[source, cli]
+----
+deploy backup restore -path <path_name> -filename <file_name>
+----
 +
-範例
+範例命令
 
 +
 「部署備份還原-path /home/admin -fileName deploy備份_20180601162151.tar .gz」
