@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.17.1
+  - version-number: 9.18.1
     url: "/ontap-select"
+  - version-number: 9.17.1
+    url: "/ontap-select-9171"
   - version-number: 9.16.1
     url: "/ontap-select-9161"
   - version-number: 9.15.1
     url: "/ontap-select-9151"
   - version-number: 9.14.1
     url: "/ontap-select-9141"
-  - version-number: 9.13.1
-    url: "/ontap-select-9131"
   langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
 sidebar:
   entries:
-  - title: ONTAP Select 9.17.1 文檔
+  - title: ONTAP Select 9.18.1 文檔
     url: "/index.html"
   - title: 版本資訊
     entries:

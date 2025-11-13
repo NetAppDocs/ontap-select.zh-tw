@@ -160,7 +160,7 @@ NetApp FAS 支援系統通常裝有實體NVRAM PCI卡、這是一種高效能卡
 
 一般而言、市售系統並未安裝此類設備。因此、此NVRAM卡的功能已虛擬化、並放入ONTAP Select 了一個分區內的系統啟動磁碟。因此、放置執行個體的系統虛擬磁碟非常重要。這也是為什麼產品需要實體RAID控制器、並針對本機附加儲存組態提供彈性快取。
 
-NVRAM位於自己的VMDK上。將NVRAM拆分成自己的VMDK、ONTAP Select 即可讓VMware使用vNVMe驅動程式與NVRAM VMDK通訊。此外、還需要ONTAP Select 使用與ESX 6.5及更新版本相容的硬體版本13。
+NVRAM位於其自己的 VMDK 上。將NVRAM分割到自己的 VMDK 中，可使ONTAP Select虛擬機器使用 vNVMe 驅動程式與其NVRAM VMDK 通訊。它還要求ONTAP Select VM 使用硬體版本 13，該版本與 ESX 8.0 及更高版本相容。
 
 
 
@@ -184,4 +184,4 @@ NOTE: 雖然NVRAM VMDK上變更的區塊會快取到本機RAID控制器快取中
 image:ST_13.jpg["傳入寫入ONTAP Select 到不實虛擬機器"]
 
 
-NOTE: NVRAM磁碟分割區是在自己的VMDK上分隔。VMDK是使用ESX版本6.5或更新版本中提供的vNVME驅動程式來附加。這項變更對於ONTAP Select 使用軟體RAID進行的版本更新來說最重要、因為軟體RAID無法從RAID控制器快取中獲益。
+NOTE: NVRAM分區在其自己的 VMDK 上獨立存在。此 VMDK 使用 ESX 8.0 或更高版本中提供的 vNVME 驅動程式進行連線。此變更對於使用軟體 RAID 的ONTAP Select安裝最為重要，因為此類安裝無法從 RAID 控制器快取中獲益。

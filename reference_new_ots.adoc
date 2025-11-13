@@ -19,9 +19,37 @@ summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。
 
 
 
-== ONTAP Select 9.17.1
+== ONTAP Select 9.18.1
 
-ONTAP Select 9.17.1 包含多項新功能和改進。
+增強對集群擴展和收縮的支持:: 從ONTAP Select 9.18.1 開始，支援在 ESXi 和 KVM 虛擬機器管理程式主機上，四節點和十二節點ONTAP Select叢集之間進行叢集擴展和收縮。
++
+--
+--
+您可以依下列增量增加 ESXi 或 KVM 主機上現有叢集的叢集大小：
+
+* 從四個節點到六個、八個、十個或十二個節點
+* 從六個節點到八個、十個或十二個節點
+* 從八個節點到十個或十二個節點
+* 從十到十二個節點
+
+
+您可以依下列增量減少 ESXi 或 KVM 主機上現有叢集的叢集大小：
+
+* 從十二個節點到十個、八個、六個或四個節點
+* 從十個節點減少到八個、六個或四個節點
+* 從八個節點到六個或四個節點
+* 從六個節點到四個節點
+
+
+--
+link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
+
+--
+
+
+
+
+== ONTAP Select 9.17.1
 
 KVM 主機上本機連接的 NVMe 磁碟的軟體 RAID 支持:: ONTAP Select 9.17.1 引進了對基於核心的虛擬機器 (KVM) 虛擬機器管理程式主機上ONTAP Select本機連接的 NVMe 磁碟的軟體 RAID 支援。
 +
@@ -101,8 +129,6 @@ link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["
 
 == ONTAP Select 9.16.1
 
-ONTAP Select 9.16.1 包含多項新功能與改良功能。
-
 更新的 NetApp 授權檔案支援:: 從 ONTAP Select 9.16.1 開始， NetApp 授權檔案（ NLF ）支援已更新。新的 NLF 格式包含 ARP ， ONTAP S3 和 S3 SnapMirror 功能的授權。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["深入瞭解"]。
 +
 --
@@ -117,8 +143,6 @@ ONTAP Select 9.16.1 包含多項新功能與改良功能。
 
 
 == ONTAP Select 9.15.1.1
-
-ONTAP Select 9.15.1 包含多項新功能與改良功能。
 
 已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.15.1 開始， RHEL 9.4 和 Rocky Linux 9.4 支援核心型虛擬機器（ KVM ） Hypervisor 。
 支援叢集擴充和縮減:: 從 ONTAP Select 9.15.1 開始、支援叢集擴充和收縮。
@@ -144,8 +168,6 @@ NOTE: 叢集擴充和收縮支援僅限於 ESX 叢集。
 
 == ONTAP Select 9.14.1.
 
-ONTAP Select 9.14.1 包含多項新功能與改良功能。
-
 支援 KVM Hypervisor:: 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 不再支援部署 VMware vCenter 外掛程式:: 從 ONTAP Select 9.14.1 開始、不再支援部署 VMware vCenter 外掛程式。
 更新的 ONTAP Select 部署支援:: 如果您執行的 ONTAP Select 版本低於 9.14.1P2 、則應儘快升級至 ONTAP Select Deploy 9.14.1P2 。如需詳細資訊、請參閱 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["ONTAP Select 9.14.1 版本資訊"^]。
@@ -155,8 +177,6 @@ ONTAP Select 9.14.1 包含多項新功能與改良功能。
 
 
 == ONTAP Select 9.13.1%
-
-ONTAP Select 9.13.1 包含多項新功能與改良功能。
 
 支援 NVMe over TCP:: 升級至 ONTAP Select 9.13.1 時、您必須擁有新的授權、才能透過 TCP 支援 NVMe 。當您第一次從 9.13.1 版開始部署 ONTAP Select 時、就會自動包含此授權。
 更新VMware ESXi支援:: 從 ONTAP 9 。 13.1 開始、硬體版本 4 及更新版本支援 VMware ESXi 8.0.1 GA （組建 20513097 ）。
@@ -174,8 +194,6 @@ ONTAP Select 9.13.1 包含多項新功能與改良功能。
 
 
 == 零點9.11.1. ONTAP Select
-
-包含多項新功能與改良功能ONTAP Select 。
 
 增強VMware ESXi支援:: 支援VMware ESXi 7.0 U3C的VMware ESXi 9.11.1。ONTAP Select
 支援VMware NSxT-T:: VMware NSS-T 3.1.2版已符合VMware NSS-9.10.1及更新版本的資格ONTAP Select 。將NSS-T搭配ONTAP Select 部署有OVA檔案和ONTAP Select 支援此功能的整合式管理公用程式的單節點叢集使用時、沒有任何功能問題或不足之處。不過、將NSS-T搭配ONTAP Select 使用於不支援任何功能的多節點叢集時、您應該注意ONTAP Select 下列有關《The S59.11.1》的限制：
@@ -205,8 +223,6 @@ NetApp強烈建議客戶規劃並執行完整的資料移轉、從ONTAP Select �
 
 == 零點9.10.1 ONTAP Select
 
-包含多項新功能與改良功能ONTAP Select 。
-
 支援VMware NSxT-T:: 符合VMware NSS-T 3.1.2版資格的S209.10.1。ONTAP Select將NSS-T搭配ONTAP Select 部署有OVA檔案和ONTAP Select 支援此功能的整合式管理公用程式的單節點叢集使用時、沒有任何功能問題或不足之處。不過、將NSxT-T搭配ONTAP Select 使用支援不支援的多節點叢集時、您應該注意下列需求和限制：
 +
 --
@@ -232,8 +248,6 @@ NetApp強烈建議客戶規劃並執行完整的資料移轉、從ONTAP Select �
 
 == 部分9.9.1 ONTAP Select
 
-包含多項新功能與改良功能ONTAP Select 。
-
 處理器系列支援:: 從 ONTAP Select 9.9.1 開始、 ONTAP Select 僅支援來自 Intel Xeon Sandy Bridge 或更新版本的 CPU 機型。
 更新VMware ESXi支援:: 支援VMware ESXi的ONTAP Select 功能已透過VMware 9.9.1增強。現在支援下列版本：
 +
@@ -248,8 +262,6 @@ NetApp強烈建議客戶規劃並執行完整的資料移轉、從ONTAP Select �
 
 
 == 部分9.8 ONTAP Select
-
-在更新功能ONTAP Select 方面、有幾項功能已在更新。
 
 高速介面:: 高速介面功能可同時提供25G（25GbE）和40G（40GbE）選項、以增強網路連線能力。若要在使用這些較高速度時達到最佳效能、您應遵循ONTAP Select 《The》（《The》）文件中所述的連接埠對應組態最佳實務做法。
 更新VMware ESXi支援:: 關於支援VMware ESXi的ONTAP Select 問題、共有兩項關於支援VMware ESXi的變更。

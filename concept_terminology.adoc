@@ -19,7 +19,7 @@ summary: 當您開始探索ONTAP Select 及規劃部署時、首先熟悉術語�
 部署ONTAP Select:: 「部署」是用來部署叢集的管理公用程式。ONTAP Select ONTAP Select部署公用程式可在專屬的Linux虛擬機器上執行。您可以透過Web使用者介面、CLI管理Shell和REST API來存取部署公用程式。
 核心型虛擬機器:: 核心型虛擬機器（ KVM ）是 Linux 核心的虛擬化功能、可讓它做為 Hypervisor 平台。支援多種來賓作業系統。
 Hypervisor主機與ONTAP Select 非節點:: Hypervisor主機_是裝載ONTAP Select 一個整套虛擬機器的核心硬體平台。當在Hypervisor主機上部署及啟用某部虛擬機器時、該虛擬機器被視為_節點_。ONTAP Select ONTAP Select
-叢集ONTAP Select:: 您可以建立一個由ONTAP Select 一個、兩個、四個、六個或八個節點組成的_實體叢集_。多節點叢集永遠包含一或多個HA配對。例如、四節點叢集由兩個HA配對組成。單一節點叢集無法提供HA功能。
+叢集ONTAP Select:: 您可以建立一個由一個、兩個、四個、六個、八個、十個或十二個節點組成的_ONTAP Select叢集_。多節點叢集始終包含一個或多個 HA 對。例如，一個四節點群集由兩個 HA 對組成。單節點叢集不提供 HA 功能。
 準備Hypervisor主機環境:: 在使用部署管理公用程式部署ONTAP Select 一個orised叢集之前、您必須先準備執行ONTAP Select 該程序的Hypervisor主機、包括儲存設備和網路環境。根據ONTAP Select 目前的需求和限制、此主機的預先組態是在不包括整個產品的情況下進行。
 評估與正式作業部署的比較:: 每ONTAP Select 個支援節點都會使用_評估版授權_或_購買的授權_來執行。評估授權可讓您在ONTAP Select 將其部署到正式作業環境之前、先評估其效能。評估授權會自動產生並套用。如果您在正式作業環境中部署叢集、則必須購買涉及選擇下列項目的授權：
 +

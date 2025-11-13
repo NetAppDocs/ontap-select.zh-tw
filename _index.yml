@@ -2,7 +2,7 @@
 indexpage:
   title: 本文檔ONTAP Select
   lead: NetApp ONTAP Select是一款軟體定義的儲存設備，您可以將其部署在執行 VMware ESXi 或基於核心的虛擬機器 (KVM) 管理程式的各種商用硬體伺服器上。它能夠提供您建構靈活且可擴展的私有雲基礎架構所需的敏捷性。此站點包含ONTAP
-    Select 9.17.1 的文檔。
+    Select 9.18.1 的文檔。
   tiles:
   - title: 開始使用
     links:

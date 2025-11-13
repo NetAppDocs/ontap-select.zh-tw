@@ -111,7 +111,7 @@ exit
 deploy backup restore -path <path_name> -filename <file_name>
 ----
 +
-範例命令
+範例命令：
 
 +
 「部署備份還原-path /home/admin -fileName deploy備份_20180601162151.tar .gz」

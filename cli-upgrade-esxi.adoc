@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: cli-upgrade-esxi.html 
-keywords: administer, administering, cli, esxi, upgrade, esxi 7.0 
-summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi 軟體從支援的舊版升級至 ESXi 7.0 或更新版本。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。 
+keywords: administer, administering, cli, esxi, upgrade, esxi 8.0 
+summary: 如果您在 VMware ESXi 上執行ONTAP Select ，則可以將 ESXi 軟體從早期支援的版本升級到 ESXi 8.0 或更高版本。在升級之前，您應該了解升級流程並選擇合適的升級步驟。 
 ---
-= 將ONTAP Select升級到 VMware ESXi 7.0 或更高版本
+= 將ONTAP Select升級到 VMware ESXi 8.0 或更高版本
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi �
 
 
 [role="lead"]
-如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi 軟體從支援的舊版升級至 ESXi 7.0 或更新版本。在升級之前、您應該先瞭解程序、然後選擇適當的升級程序。
+如果您在 VMware ESXi 上執行ONTAP Select ，則可以將 ESXi 軟體從早期支援的版本升級到 ESXi 8.0 或更高版本。在升級之前，您應該了解升級流程並選擇合適的升級步驟。
 
 
 
@@ -32,7 +32,10 @@ summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi �
 有多種升級程序可供使用。您應根據下列條件選擇適用的程序：
 
 +
-** 支援單節點和多節點叢集的叢集大小。ONTAP Select
+** ONTAP Select叢集大小
++
+同時支援單節點叢集和多節點叢集。
+
 ** 使用ONTAP Select部署
 +
 可以使用 Deploy 工具升級，也可以不使用 Deploy 工具升級。
@@ -42,7 +45,7 @@ summary: 如果您在 VMware ESXi 上執行 ONTAP Select 、則可以將 ESXi �
 TIP: 您應該選取使用部署管理公用程式的升級程序。
 
 +
-使用 Deploy 管理公用程式執行 ESXi 升級是更通用且更具彈性的選項。但是，有時可能會出現部署不可用或無法使用的情況。例如，早期版本的ONTAP Select和 Deploy 管理實用程式不支援升級到 ESXi 7.0。
+使用 Deploy 管理公用程式執行 ESXi 升級是更通用且更具彈性的選項。但是，有時可能會出現部署不可用或無法使用的情況。例如，早期版本的ONTAP Select和 Deploy 管理實用程式不支援升級到 ESXi 8.0。
 
 +
 如果您使用這些較早版本並嘗試升級、ONTAP Select 則無法將該虛擬機器開機的狀態也會保留下來。在此情況下、您必須選取不使用Deploy的升級程序。請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] 以取得更多資訊。
@@ -73,7 +76,7 @@ TIP: 您應該選取使用部署管理公用程式的升級程序。
 ----
 node stop --cluster-name <cluster_name> --node-name <node_name>
 ----
-. 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
+. 使用 VMware 提供的步驟將執行ONTAP Select 的虛擬機器管理程式主機升級到 ESXi 8.0 或更高版本。
 . 將節點移至線上狀態：
 +
 [source, cli]
@@ -113,7 +116,7 @@ sdot-d200-011d true    true
 ----
 node stop --cluster-name <cluster_name> --node-name <node_name>
 ----
-. 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
+. 使用 VMware 提供的步驟將執行ONTAP Select 的虛擬機器管理程式主機升級到 ESXi 8.0 或更高版本。
 +
 如需詳細資訊、請參閱準備升級VMware ESXi。
 
@@ -159,7 +162,7 @@ sdot-d200-012d true true
 .步驟
 . 登入ONTAP 到畫面上的指令行介面、然後停止節點。
 . 使用VMware vSphere、確認ONTAP Select 已關閉VMware vCenter虛擬機器。
-. 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
+. 使用 VMware 提供的步驟將執行ONTAP Select 的虛擬機器管理程式主機升級到 ESXi 8.0 或更高版本。
 +
 如需詳細資訊、請參閱準備升級VMware ESXi。
 
@@ -198,7 +201,7 @@ sdot-d200-011d true    true
 .步驟
 . 登入ONTAP 到畫面上的指令行介面、然後停止節點。
 . 使用VMware vSphere、確認ONTAP Select 已關閉VMware vCenter虛擬機器。
-. 使用 VMware 提供的程序、將執行 ONTAP Select 的 Hypervisor 主機升級至 ESXi 7.0 或更新版本。
+. 使用 VMware 提供的步驟將執行ONTAP Select 的虛擬機器管理程式主機升級到 ESXi 8.0 或更高版本。
 . 使用VMware vSphere存取vCenter並執行下列動作：
 +
 .. 將磁碟機新增至ONTAP Select 物件虛擬機器。

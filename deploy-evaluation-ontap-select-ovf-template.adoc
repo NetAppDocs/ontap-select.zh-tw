@@ -21,7 +21,7 @@ summary: 您可以使用 VMware ESXi 上的 OVF 範本，快速部署單節點 O
 * 您可以為使用者資料分配與購買的授權相同數量的儲存空間。
 * 您無法將節點從評估版授權升級至購買的授權。
 * 您只能使用 vCenter 帳戶來部署 OVF 範本。目前不支援直接安裝到 ESXi 主機。
-* 您必須使用 vSphere 獨立式用戶端或 vSphere Web 用戶端（ ESXi 6.5 及更新版本的唯一選項）來安裝 OVF 範本（包含在 ova 檔案中）。您不使用 ONTAP Select Deploy 管理公用程式。
+* 您必須使用 vSphere 獨立用戶端或 vSphere Web 用戶端（ESXi 8.0 及更高版本的唯一選項）安裝 OVF 範本（包含在 ova 檔案中）。請勿使用ONTAP Select Deploy 管理實用程式。
 
 
 

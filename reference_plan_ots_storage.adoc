@@ -63,7 +63,7 @@ RAID控制器的最低需求包括：
 
 軟體 RAID 部署環境必須符合下列核心需求：
 
-* VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
+* VMware ESXi 8.0 GA（內部版本 20513097）或更高版本
 * 不含更新版本的進階授權ONTAP Select
 * 僅限本機SSD磁碟機
 * 將系統磁碟與根與資料集合體分開
@@ -77,7 +77,7 @@ NOTE: 如果有硬體RAID控制器、請參閱 link:concept_stor_concepts_chars.
 
 === ESXi 特定需求
 
-* VMware ESXi 7.0 GA （建置 15843807 ）或更新版本
+* VMware ESXi 8.0 GA（內部版本 20513097）或更高版本
 * 不支援VMware VMotion、HA和DRS
 * 您無法將軟體 RAID 搭配已從 ONTAP Select 9.4 或更早版本升級的節點使用。如果是這種情況、您需要為軟體 RAID 部署建立新的節點。
 
@@ -241,7 +241,7 @@ NOTE: 含本機DAS磁碟機的軟體RAID可透過優質授權（僅限SSD）和�
 
 * 使用受支援的部署管理實用程式ONTAP Select
 * 優質XL平台授權方案或90天試用授權
-* VMware ESXi 6.7版或更新版本
+* VMware ESXi 8.0 或更高版本
 * 符合規格1.0或更新版本的NVMe裝置
 
 

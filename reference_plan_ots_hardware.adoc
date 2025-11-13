@@ -57,14 +57,13 @@ ONTAP Select支援以下 ESXi 虛擬機器管理程式版本：
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 （內部版本 21495797 ）
 * VMware ESXi 8.0 GA （組建 20513097 ）
-* VMware ESXi 7.0 GA（內部版本 15843807 或更高版本），包括 7.0 U3C、U2 和 U1
 
 
 
 NOTE: 只ONTAP Select 要VMware也持續支援相同版本、NetApp就能在識別的ESXi版本上提供支援。
 
 
-NOTE: ESXi 6.5 GA 和 ESXi 6.7 GA 已達到可用性終止狀態。如果您的 ONTAP Select 叢集具有這些版本、則必須依照升級至支援的版本 https://mysupport.netapp.com/matrix["互通性對照表工具IMT （不含）"^]。
+NOTE: ESXi 7.0 GA 已停止提供服務。如果您有使用此版本的ONTAP Select集群，則必須按照以下說明昇級到受支援的版本： https://mysupport.netapp.com/matrix["互通性對照表工具IMT （不含）"^] 。
 
 --
 ====
@@ -111,7 +110,7 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 | 雙節點叢集或MetroCluster 不含任何功能的SDS | 4 x 1GbE或1 x 10GbE | 2個10GbE 
 
 
-| 四節點、六節點或八節點集群 | 2個10GbE | 4個10GbE或2個25/40GbE 
+| 四節點、六節點、八節點、十節點或十二節點集群 | 2個10GbE | 4個10GbE或2個25/40GbE 
 |===
 
 

@@ -5,8 +5,11 @@ keywords: administer, administering, cli, two node cluster, recover, recovering
 summary: 如果由於某種原因而導致無法使用此功能、您將無法管理節點和叢集。ONTAP Select ONTAP Select此外、所有雙節點叢集都會喪失HA功能、因為部署所包含的中介服務無法使用。如果發生不可恢復的故障、您必須恢復部署公用程式執行個體、才能還原管理和HA功能。 
 ---
 = 恢復雙節點叢集的 ONTAP Select 部署公用程式
-:hardbreaks:
 :allow-uri-read: 
+:firstname: :hardbreaks:reints
+:author: :hardbreaks:reints
+:authorinitials: :
+:authors: :hardbreaks:reints
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -211,7 +214,7 @@ storage iscsi-initiator add-target -node <node2_name> -label mediator-target-typ
 +
 [source, cli]
 ----
-disk show -container-type mediator
+disk show -container-type mediator`
 ----
 . 將信箱磁碟指派給兩個節點：
 +

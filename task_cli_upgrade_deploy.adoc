@@ -23,7 +23,7 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 ====
 如果您已安裝舊版 ONTAP Select Deploy 管理公用程式、則應升級至目前版本。ONTAP Select 節點和 ONTAP Select Deploy 元件會分別升級。請參閱 link:concept_adm_upgrading_nodes.html["升級 ONTAP Select 節點"^] 以取得更多詳細資料。
 
-您可以從 ONTAP ONTAP Select ONTAP Select Deploy 9.17.1。若要從ONTAP Select Deploy 9.14.1 或更早版本升級，請查看ONTAP Select版本的發行說明。
+您可以從 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。若要從ONTAP Select Deploy 9.15.1 或更早版本升級，請查看ONTAP Select版本的發行說明。
 
 ====
 

@@ -44,7 +44,7 @@ NetApp解決方案適用於SDS市場。ONTAP SelectNetApp將企業級儲存管�
 
 === 節點ONTAP Select
 
-一個由一個、兩個、四個、六個或八個節點組成的叢集。ONTAP Select每個叢集節點都會部署為獨立的虛擬機器、並執行ONTAP 特別設計的版本的更新版本。
+ONTAP Select群集由一個、兩個、四個、六個、八個、十個或十二個節點組成。每個叢集節點都部署為單獨的虛擬機，並運行專門設計的ONTAP 9 軟體版本。
 
 
 

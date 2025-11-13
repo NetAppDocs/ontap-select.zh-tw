@@ -27,8 +27,8 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 .開始之前
 確保您的部署環境符合下列最低需求：
 
-* 對於 ESX 主機，請使用受支援的部署管理實用程式執行ONTAP Select。
-* 對於 KVM 主機， ONTAP Select 9.17.1 隨附受支援的 Deploy 管理實用程式
+* 對於 ESX 主機，ONTAP Select 9.7 或更高版本以及受支援的 Deploy 管理實用程式
+* 對於 KVM 主機，需要ONTAP Select 9.17.1 或更高版本以及受支援的部署管理實用程式。
 * 優質XL平台授權方案或90天試用授權
 * ESXi 或 KVM 主機正在執行支援的虛擬機器管理程式版本：
 +
@@ -43,7 +43,6 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 ** VMware ESXi 8.0 U2
 ** VMware ESXi 8.0 U1 （內部版本 21495797 ）
 ** VMware ESXi 8.0 GA （組建 20513097 ）
-** VMware ESXi 7.0 GA（內部版本 15843807 或更高版本），包括 7.0 U1、U2 和 U3C
 
 
 --
