@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+[NOTE]
+====
+在 RHEL 10.0 和 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式存在軟體 RAID 工作流程限制。更多信息，請參閱以下知識庫文章：
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020： ONTAP Select Deploy：使用 RHEL 10 和 ROCKY 10 建立叢集 HWR 時出現警告訊息"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025： ONTAP Select DeployGUI：在執行 RHEL10/Rocky 10 的主機上，叢集建立頁面中 SWR 的儲存池和儲存磁碟不可見"^]
+
+
+====

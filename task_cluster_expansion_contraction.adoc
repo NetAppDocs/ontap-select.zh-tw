@@ -61,10 +61,19 @@ ESXi 和 KVM 主機不支援以下叢集擴充和收縮：
 
 以下 KVM 虛擬機器管理程式版本支援叢集擴充和縮小：
 
-* Red Hat Enterprise Linux 64 位元 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6
-* Rocky Linux 9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 與 8.6
+* 紅帽企業 Linux (RHEL) 64 位元版本 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6
+* Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6
 
 
+[NOTE]
+====
+在 RHEL 10.0 和 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式存在軟體 RAID 工作流程限制。更多信息，請參閱以下知識庫文章：
+
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020： ONTAP Select Deploy：使用 RHEL 10 和 ROCKY 10 建立叢集 HWR 時出現警告訊息"^]
+* link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025： ONTAP Select DeployGUI：在執行 RHEL10/Rocky 10 的主機上，叢集建立頁面中 SWR 的儲存池和儲存磁碟不可見"^]
+
+
+====
 --
 ====
 
