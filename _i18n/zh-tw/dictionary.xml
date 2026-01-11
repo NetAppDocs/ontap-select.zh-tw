@@ -1154,7 +1154,6 @@
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">所有Python指令碼都會在單一模組中使用通用的Python類別。</block>
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支援模組</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。</block>
-  <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">您可以ONTAP Select 從NetApp支援網站下載此解決方案。</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">選取所需的套件版本。</block>
   <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">選取並下載適當的套件、視需要回應所有提示。</block>
   <block id="780f7110b279a0cc42242a48431ab5bd" category="list-text">安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能</block>
@@ -1175,7 +1174,6 @@
   <block id="8a356d5d6d9521b33479b519cca56a90" category="list-text">輸入密碼並按* Enter *。</block>
   <block id="c5d6ff59e8e5595e5fc323f4237b333c" category="paragraph">使用DHCP設定網路資訊？[n]：</block>
   <block id="79a72de3f5191386741777dd0441f591" category="list-text">如果您選擇靜態組態、請視需要提供所有網路組態資訊。</block>
-  <block id="887ee30caedf2bee91979565f5ddf01e" category="paragraph">您應該登入Web使用者介面、確認部署公用程式可用並執行初始組態。</block>
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">使用IP位址或網域名稱、將瀏覽器指向Deploy公用程式：</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph">https://&lt;ip_address&gt;/`</block>
   <block id="533f8108cde4f7f1af2f1fb435cc4710" category="list-text">提供系統管理員（admin）帳戶名稱和密碼並登入。</block>
@@ -2520,9 +2518,6 @@
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1%</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">支援 NVMe over TCP</block>
   <block id="db5f5d6e1e5a3e29724ce78258556ff1" category="list-text">升級至 ONTAP Select 9.13.1 時、您必須擁有新的授權、才能透過 TCP 支援 NVMe 。當您第一次從 9.13.1 版開始部署 ONTAP Select 時、就會自動包含此授權。</block>
-  <block id="da691cb71c1f879ed7bf93a9a845601a" category="section-title">下載虛擬機器映像</block>
-  <block id="8435c401e57e043b0c57edfb0a00c774" category="section-title">驗證 ONTAP Select Deploy OVA 簽章</block>
-  <block id="ab07c13a31893a6c9ee2547e7b9df643" category="paragraph">安裝安裝套件之前、您應該先驗證 ONTAP Select 開放式虛擬化設備（ OVA ）的簽章。</block>
   <block id="cfa6562e428e1a648631dac061567897" category="paragraph">確認您的系統符合下列需求：</block>
   <block id="80c9c2739b6086de81c8ec7262f87af8" category="list-text">用於基本驗證的 Openssl 版本 1.0.2 至 3.0</block>
   <block id="03018e3ee63fad9b70308ee5184022f9" category="list-text">線上憑證狀態傳輸協定（ OCSP ）驗證的公用網際網路存取</block>
@@ -2539,8 +2534,6 @@
   <block id="51efe37fbdc37f9d0c55c657a430d296" category="cell">SHA-256 演算法會遭到雜湊、然後由遠端支援代理程式（ RSA ）使用簽署<block ref="b6ad60ee94a07b2ba8c24c883ec70503" prefix=" " category="inline-code"></block> 安裝程式的金鑰和簽名。</block>
   <block id="1f463ad70f232a0c4114c51cb2a44a5a" category="list-text">確認<block ref="20db26963ac3dc0b119aa4c781855701" prefix=" " category="inline-code"></block> 檔案正在使用相關的憑證和驗證命令。</block>
   <block id="134cfba28fd247854afe7ce4d31767ad" category="list-text">使用下列命令驗證簽名：</block>
-  <block id="0ba1987cb555e519f115071e917656fc" category="section-title">部署虛擬機器</block>
-  <block id="25775c61c3281e6d412f48371102d8b3" category="section-title">登入部署 Web 介面</block>
   <block id="db05ec33127afb72e99fdef2dd7e222b" category="section-title">設定 MFA</block>
   <block id="aef6d7448e31d21fcd5e57734fa1fb88" category="paragraph">從 ONTAP Select 9.13.1 開始、 ONTAP Select Deploy 系統管理員帳戶支援多因素驗證（ MFA ）：</block>
   <block id="b43e5dc621bb5f7a6746a0bf53636924" category="inline-link-macro">ONTAP Select 使用 YubKey 個人身分驗證（ PIV ）或快速身分識別線上（ FIDO2 ）驗證來部署 CLI MFA 登入</block>
@@ -2854,7 +2847,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d337df11b3ebf63c5a2171392491798f" category="cell">安裝部署公用程式之 VMware ESXi 或 KVM Hypervisor 主機的識別碼。</block>
   <block id="e827723eb84c3ca87c21fd4dbca2ccda" category="cell">資料存放區名稱</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">存放虛擬機器檔案的 Hypervisor 資料存放區識別碼（約需 40GB ）。</block>
-  <block id="1eadabe4e39cf3ae5ce71caf6ddc8447" category="paragraph">您必須使用 OVF VM 映像來安裝及啟動 ONTAP Select Deploy VM 。在安裝程序中、您可以將網路介面設定為使用 DHCP 或靜態 IP 組態。</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">對於 ESXi Hypervisor 、您必須準備部署 ONTAP Select Deploy VM ：</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">如果您要動態指派 IP 位址給部署的虛擬機器、請在 VMware 環境中啟用 DHCP</block>
   <block id="4ecc6637981131c676cdedcda970a661" category="paragraph">對於 ESXi 和 KVM Hypervisor 、您必須擁有在建立 VM 時要使用的組態資訊、包括 VM 名稱、外部網路和主機名稱。定義靜態網路組態時、您需要下列額外資訊：</block>
@@ -3187,17 +3179,14 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
   <block id="f699f7e9ed69e5269a69fd9ec385c1ad" category="admonition">ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。</block>
-  <block id="676477cfcc6ef4db97bbb95e9c75b57e" category="summary">您可以使用 VMware ESXi 上的 OVF 範本，快速部署單節點 ONTAP Select 叢集的 90 天評估執行個體。</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您不需要從 NetApp 取得序號或儲存容量授權。</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以為使用者資料分配與購買的授權相同數量的儲存空間。</block>
   <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您無法將節點從評估版授權升級至購買的授權。</block>
   <block id="de68e769353f85803d50af3ad5192201" category="list-text">您只能使用 vCenter 帳戶來部署 OVF 範本。目前不支援直接安裝到 ESXi 主機。</block>
-  <block id="324b9a453c1c067658adca4be37dbae0" category="section-title">準備 ONTAP Select 叢集主機</block>
   <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">使用下列需求來準備部署 ONTAP Select 叢集的 ESXi 主機。平台說明是根據標準或小型執行個體類型組態，使用本機直接附加儲存（ DAS ）格式化，使用的是 VMFS-3 或 VMFS-3 檔案系統。</block>
   <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">準備 ESXi 主機的需求</block>
   <block id="40500d60ce10678b5afdd4398f493978" category="paragraph"><block ref="40500d60ce10678b5afdd4398f493978" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9d35c0cb060ab36e25ffd3d93795556" category="inline-link-macro">ONTAP Select 安裝文件</block>
-  <block id="246320dc101bf0e3be5986b0320159e6" category="section-title">使用 OVF 範本部署單節點 ONTAP Select 叢集</block>
   <block id="a50cac13360eacf7961596b190047155" category="paragraph">在支援的 64 位元 ESXi 主機伺服器上完成下列步驟。</block>
   <block id="e7c78d04f4c3c4a7d36c59b9d2c2b9f7" category="list-text">前往「 NetApp 評估產品方案」頁面，然後選取 * ONTAP Select * ，將 ONTAP Select OVF 範本下載至您的本機工作站。</block>
   <block id="04b1e5dd71a31edd4beba2e075fb1a5e" category="list-text">使用管理 Privileges 的帳戶登入 VMware vSphere Web 用戶端。</block>
@@ -3945,4 +3934,57 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="c5a8db185a9f4a35ad276638f9533ab6" category="list-text">紅帽企業 Linux (RHEL) 10.0、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="5701e65b5391163c34edb9efc807ee5f" category="list-text">Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
   <block id="77be5fd15bdb7705f2988a237003df51" category="list-text">紅帽企業 Linux (RHEL) 64 位元版本 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="1d635a2bfb4e1fe570efdeb7e95a39b1" category="summary">請求存取以下載ONTAP Select評估軟體。</block>
+  <block id="14a6da11ffa9cf53251b9ff57d86f2e3" category="doc">存取ONTAP Select評估軟體</block>
+  <block id="fe359189fa4d670313b3429fe242de5a" category="inline-link-macro">ONTAP Select評估軟體</block>
+  <block id="bd6461517f6e69368dd81c758db22e68" category="paragraph">您可以訪問 <block ref="ea17960d6170723022eb4d5de3e60125" category="inline-link-macro-rx"></block> 如果您是ONTAP Select的現有客戶，並且擁有有效的授權，或者您是NetApp合作夥伴，並且想要下載新的容量層級評估許可證。</block>
+  <block id="2505b030dbef17ccefc751c6bd407012" category="paragraph">如果您不屬於以上任何一種情況，並且想要試用ONTAP Select進行評估，您可以按照以下步驟申請下載評估軟體。</block>
+  <block id="0984c1edd8b74672c83f621be7c2371d" category="list-text">本說明適用於與NetApp有業務往來的NetApp銷售人員、合作夥伴及潛在客戶。</block>
+  <block id="95eebd9bfcccb9d681b457f9e5950b9d" category="list-text">ONTAP Select Capacity Tiers 評估許可證的有效期限為自安裝日起 90 天。</block>
+  <block id="b8b1507fe73d7d86ba34a071cf9c893e" category="admonition">評估許可證無法延長。90 天期滿後，許可證將失效，您將無法存取相關資料。</block>
+  <block id="b59b9153304861fe03d53ff01629500a" category="list-text">評估軟體包含下載ONTAP Select Deploy 管理實用程式和部署叢集所需的所有資訊。</block>
+  <block id="c8a43c95edf40f955992f2d6490e817e" category="section-title">第一步：註冊帳號</block>
+  <block id="52019818028f8847218f1bbd1674d2d5" category="paragraph">如有需要，完成NetApp帳號註冊，並申請潛在客戶存取權限。</block>
+  <block id="89ca1aefb6dc8a80385671197f92b2c0" category="list-text">建立新帳戶或退出現有帳戶。</block>
+  <block id="1aa668d559a3a32a44796aeee6978a59" category="open-title">建立新帳戶</block>
+  <block id="e0de4e570fbdf7cd1204bf43e4569031" category="paragraph">在以下網站註冊一個帳戶： <block ref="884c90a723b514d4db68b7829e2037e5" category="inline-link-macro-rx"></block> 使用您的企業信箱。</block>
+  <block id="e72c5fc7da39949d0eca4ed8d5b33c5f" category="admonition">免費郵箱帳戶，例如 Gmail 或 Yahoo，是不可接受的。</block>
+  <block id="45d98cb0c4dacd6be68da4095e1fa5f2" category="paragraph">請確保您沒有使用新建立的帳戶登入。</block>
+  <block id="bffee0a20448efe5e1af0e3c2a7b3eed" category="open-title">現有帳戶</block>
+  <block id="36076d78a016dd13b5826e0f1b98ff99" category="paragraph">如果您已有帳戶，請前往 <block ref="49b4f755ae136a93a19c82bfba9113cf" category="inline-link-macro-rx"></block> 請確保您未登入。</block>
+  <block id="73b271af3218cfeb87a3b893f67319c5" category="list-text">建立非技術支援案例，以提高「潛在客戶」的存取權限等級。</block>
+  <block id="621bfdc9de339de870581c0c5ab7f5ac" category="list-text">選擇“案例”選項卡，然後選擇“建立非技術案例”。</block>
+  <block id="021cb8754bcb517b5e2da0b479f6b87f" category="list-text">請選擇「用戶註冊問題」作為回饋類別。</block>
+  <block id="9a2b44a070cd576a7900b8d977c23d32" category="list-text">選擇“創建案例”。</block>
+  <block id="c8253ddac731d7f5c7cd042418ea0344" category="paragraph">請填寫所有必填訊息，並在評論部分寫明：「我的公司信箱地址是&lt;您的信箱地址&gt;。我希望能夠獲得下載ONTAP Select評估軟體的權限。</block>
+  <block id="69caffff95dcb99d1b140cf8c7e2233d" category="paragraph">請提供您的NetApp聯絡人姓名。</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">選擇*提交*。</block>
+  <block id="cd5539c344a39b5b21aa6386fb7f43b4" category="section-title">步驟 2：下載ONTAP Select評估軟體</block>
+  <block id="86338176a0b992e43f21e99312c31686" category="paragraph">您的支援案例經審核批准後， NetApp支援團隊將透過您提供的電子郵件地址通知您。</block>
+  <block id="bfd7797955c8d625272041af5917b9f1" category="inline-link">下載ONTAP Select評估軟體</block>
+  <block id="295eb5017e1bdbd4983bade2d38ed4bf" category="list-text"><block ref="1a62f0f0111db8cadb4b705107e76f14" category="inline-link-rx"></block>。</block>
+  <block id="67c5a52d5c97ff013e91119d354cf46c" category="paragraph">評估許可證文件位於壓縮文件內。</block>
+  <block id="708b56859c2409a451122056263cefe6" category="inline-link-macro">提交支援請求</block>
+  <block id="1009d81db421db34fbc45926ab8f8191" category="list-text">為了遵守法律規定，您需要 <block ref="3f943e080571fe2dbda7051678ab1855" category="inline-link-macro-rx"></block> 在獲得存取權限之前。這有助於NetApp保持正確的控制和文檔，同時為您提供所需的生產就緒軟體。</block>
+  <block id="adb988ac2aaf4e14c65785d0a38de873" category="admonition">NetApp提供ONTAP Select的「生產就緒」版本，該版本並非開源版本或替代版本。只有升級到正式版許可證才能獲得技術支援。</block>
+  <block id="7d984f4f58da5149b9f3de1a58142fc0" category="paragraph">評估軟體下載完成後，請依照指示下載ONTAP Select Deploy 管理公用程式並部署叢集。</block>
+  <block id="81b88157ccf03378cbd42db625f92b27" category="inline-link-macro">了解ONTAP Select部署的評估許可證</block>
+  <block id="3e0aeb759942dd62b97d1e0e9a6a0536" category="list-text"><block ref="3e0aeb759942dd62b97d1e0e9a6a0536" category="inline-link-macro-rx"></block></block>
+  <block id="05bccdd9a59f22e26e09213cf2d2dbff" category="list-text"><block ref="05bccdd9a59f22e26e09213cf2d2dbff" category="inline-link-macro-rx"></block></block>
+  <block id="7c480331728387279e0e8575b8f70765" category="inline-link-macro">存取ONTAP Select評估軟體</block>
+  <block id="7e457290f77b37c32546152d0c55879f" category="list-text"><block ref="7e457290f77b37c32546152d0c55879f" category="inline-link-macro-rx"></block></block>
+  <block id="43c2c693f16be58596e5267f1b4d6c8b" category="summary">您可以部署一個單節點ONTAP Select叢集的 90 天評估實例。</block>
+  <block id="f6dbfcdd0f076283f4df3208ab633467" category="paragraph">您可以使用 OVF 範本在 VMware ESXi 上部署ONTAP select 叢集的 90 天評估實例，叢集規模從單節點到 99 個節點不等。如果您是現有客戶或新客戶，您可以下載評估許可證。例如，您是現有客戶，您想在購買授權之前嘗試一種新的配置。</block>
+  <block id="ced8179cabed6ee9f3127b0c5fafd2db" category="section-title">步驟 1：準備ONTAP Select叢集主機</block>
+  <block id="9e25ed83bcf0bc2a794367ec640f2549" category="section-title">步驟 2：使用 OVF 範本部署單節點ONTAP Select集群</block>
+  <block id="916c12b3fbccb1ff32e8a4776708798e" category="section-title">步驟 1：下載虛擬機器鏡像</block>
+  <block id="b6754a68a857ab2b2389816249373a57" category="paragraph">從NetApp支援網站下載ONTAP Select軟體包。</block>
+  <block id="0230ee7e6071858ebc377c057e5e603e" category="section-title">步驟 2：驗證ONTAP Select Deploy OVA 簽名</block>
+  <block id="9e0015dd89b19bd3443ad4f4a14527ab" category="paragraph">安裝安裝包之前，請先確認ONTAP Select開放虛擬化設備 (OVA) 簽章。</block>
+  <block id="35f9f1c9a9790bd3fc497db798819083" category="section-title">步驟 3：部署虛擬機</block>
+  <block id="a84a05d08c99af325673887887ed8fdb" category="paragraph">使用 OVF VM 映像安裝並啟動ONTAP Select Deploy VM。作為安裝過程的一部分，您需要設定網路介面以使用 DHCP 或靜態 IP 設定。</block>
+  <block id="7e5f2ca43da3004f8d3d7bae3edb7bae" category="section-title">步驟 4：Sign inDeploy Web 介面</block>
+  <block id="619fea79d54cac08622de23d5f1d57d5" category="paragraph">Sign inWeb 使用者介面以確認部署實用程式可用並執行初始配置。</block>
+  <block id="97b3aadab6e4066f1f4afb183a83298c" category="sidebar">試試ONTAP Select</block>
+  <block id="3ff87e54e9b20339b68f24cf241f05b0" category="sidebar">訪問評估軟體</block>
 </blocks>

@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: access-evaluation-software.html 
+keywords: ontap select, evaluation, software, register, download, access 
+summary: 請求存取以下載ONTAP Select評估軟體。 
+---
+= 存取ONTAP Select評估軟體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以訪問 link:https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["ONTAP Select評估軟體"^] 如果您是ONTAP Select的現有客戶，並且擁有有效的授權，或者您是NetApp合作夥伴，並且想要下載新的容量層級評估許可證。
+
+如果您不屬於以上任何一種情況，並且想要試用ONTAP Select進行評估，您可以按照以下步驟申請下載評估軟體。
+
+.關於這項工作
+* 本說明適用於與NetApp有業務往來的NetApp銷售人員、合作夥伴及潛在客戶。
+* ONTAP Select Capacity Tiers 評估許可證的有效期限為自安裝日起 90 天。
++
+
+NOTE: 評估許可證無法延長。90 天期滿後，許可證將失效，您將無法存取相關資料。
+
+* 評估軟體包含下載ONTAP Select Deploy 管理實用程式和部署叢集所需的所有資訊。
+
+
+
+
+== 第一步：註冊帳號
+
+如有需要，完成NetApp帳號註冊，並申請潛在客戶存取權限。
+
+.步驟
+. 建立新帳戶或退出現有帳戶。
++
+[role="tabbed-block"]
+====
+.建立新帳戶
+--
+在以下網站註冊一個帳戶： link:https://mysupport.netapp.com/site/user/registration["NetApp 支援網站"^] 使用您的企業信箱。
+
+
+NOTE: 免費郵箱帳戶，例如 Gmail 或 Yahoo，是不可接受的。
+
+請確保您沒有使用新建立的帳戶登入。
+
+--
+.現有帳戶
+--
+如果您已有帳戶，請前往 link:https://mysupport.netapp.com/site/["NetApp 支援網站"^] 請確保您未登入。
+
+--
+====
+. 建立非技術支援案例，以提高「潛在客戶」的存取權限等級。
++
+.. 選擇“案例”選項卡，然後選擇“建立非技術案例”。
+.. 請選擇「用戶註冊問題」作為回饋類別。
+.. 選擇“創建案例”。
++
+請填寫所有必填訊息，並在評論部分寫明：「我的公司信箱地址是<您的信箱地址>。我希望能夠獲得下載ONTAP Select評估軟體的權限。
+
++
+請提供您的NetApp聯絡人姓名。
+
+.. 選擇*提交*。
+
+
+
+
+
+
+== 步驟 2：下載ONTAP Select評估軟體
+
+您的支援案例經審核批准後， NetApp支援團隊將透過您提供的電子郵件地址通知您。
+
+.步驟
+. https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["下載ONTAP Select評估軟體"^]。
++
+評估許可證文件位於壓縮文件內。
+
+. 為了遵守法律規定，您需要 link:https://mysupport.netapp.com/site/help["提交支援請求"^] 在獲得存取權限之前。這有助於NetApp保持正確的控制和文檔，同時為您提供所需的生產就緒軟體。
++
+
+NOTE: NetApp提供ONTAP Select的「生產就緒」版本，該版本並非開源版本或替代版本。只有升級到正式版許可證才能獲得技術支援。
+
+
+
+.下一步是什麼？
+評估軟體下載完成後，請依照指示下載ONTAP Select Deploy 管理公用程式並部署叢集。
+
+.相關資訊
+* link:concept_lic_evaluation.html["了解ONTAP Select部署的評估許可證"]
+* link:task_adm_licenses.html#convert-license["將試用版授權轉換為正式作業授權"]
+

@@ -294,8 +294,12 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: 恢復雙節點叢集的部署
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: 部署叢集的 90 天評估執行個體
-    url: "/deploy-evaluation-ontap-select-ovf-template.html"
+  - title: 試試ONTAP Select
+    entries:
+    - title: 訪問評估軟體
+      url: "/access-evaluation-software.html"
+    - title: 部署叢集的 90 天評估執行個體
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: 常見問題集
     url: "/reference_faq.html"
   - title: 法律聲明
