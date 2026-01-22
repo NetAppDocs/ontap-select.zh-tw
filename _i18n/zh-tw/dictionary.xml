@@ -3911,20 +3911,13 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="79ba28975143977867633095c7f73b2a" category="paragraph">您遵循的步驟取決於您要建立單節點叢集還是多節點叢集。多節點群集可以有兩個、四個、六個、八個、十個或十二個節點。</block>
   <block id="d3e10155b98b375f7263e8a2fc511046" category="sidebar">NetApp ONTAP Select是一款軟體定義的儲存設備，您可以將其部署在執行 VMware ESXi 或基於核心的虛擬機器 (KVM) 管理程式的各種商用硬體伺服器上。它能夠提供您建構靈活且可擴展的私有雲基礎架構所需的敏捷性。此站點包含ONTAP Select 9.18.1 的文檔。</block>
   <block id="9819a8f62e77caeb3fdd9bc78f3d0a27" category="sidebar">ONTAP Select 9.18.1 文檔</block>
-  <block id="b76521bcf27ea3e363a5684a8eadacba" category="paragraph">在 RHEL 10.0 和 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式存在軟體 RAID 工作流程限制。更多信息，請參閱以下知識庫文章：</block>
   <block id="7aa075f63e63ec1b0898cf7eebd760f6" category="inline-link-macro">CDEPLOY-4020： ONTAP Select Deploy：使用 RHEL 10 和 ROCKY 10 建立叢集 HWR 時出現警告訊息</block>
   <block id="7ceba9002504861c21a7c60ab97ce4d0" category="list-text"><block ref="7ceba9002504861c21a7c60ab97ce4d0" category="inline-link-macro-rx"></block></block>
   <block id="05e40b852405f8fbe510662799c939d2" category="inline-link-macro">CDEPLOY-4025： ONTAP Select DeployGUI：在執行 RHEL10/Rocky 10 的主機上，叢集建立頁面中 SWR 的儲存池和儲存磁碟不可見</block>
   <block id="5b121e358e0c7c08ef9cd2f6ed82464f" category="list-text"><block ref="5b121e358e0c7c08ef9cd2f6ed82464f" category="inline-link-macro-rx"></block></block>
-  <block id="2ae302f55f82ce1e7a86c1e4d2bec1fc" category="paragraph">Red Hat Enterprise Linux 64 位元 (KVM) 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="b3511106033b4eaf52fa527685aee9bf" category="paragraph">Rocky Linux (KVM) 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
-  <block id="ad350138b5fe5c3ae51dcb7a7bee26e5" category="paragraph">*注意*：在 RHEL 10.0 和 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式存在軟體 RAID 工作流程限制。更多信息，請參閱以下知識庫文章：</block>
-  <block id="ad503d6b4f8cd286498a440c78edf47c" category="list-text">從ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux (RHEL) 10.0 和 9.6 以及 Rocky Linux 10.0 和 9.6 支援 KVM 虛擬機器管理程式。</block>
-  <block id="9a6b54f1d41a9f7a21b56ebb01706042" category="list-text">KVM 可在 Red Hat Enterprise Linux (RHEL) 10.0、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 版本上執行</block>
   <block id="fc0e52e7a743e546179c3376db422db0" category="list-text">KVM 可在 Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 版本上運行</block>
-  <block id="c5a8db185a9f4a35ad276638f9533ab6" category="list-text">紅帽企業 Linux (RHEL) 10.0、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="5701e65b5391163c34edb9efc807ee5f" category="list-text">Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
-  <block id="77be5fd15bdb7705f2988a237003df51" category="list-text">紅帽企業 Linux (RHEL) 64 位元版本 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="1d635a2bfb4e1fe570efdeb7e95a39b1" category="summary">請求存取以下載ONTAP Select評估軟體。</block>
   <block id="14a6da11ffa9cf53251b9ff57d86f2e3" category="doc">存取ONTAP Select評估軟體</block>
   <block id="fe359189fa4d670313b3429fe242de5a" category="inline-link-macro">ONTAP Select評估軟體</block>
@@ -3987,4 +3980,11 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="23063442dbfdc1f0a8618060853d7bce" category="paragraph">當使用兩個高速（25/40Gb）網路卡時，建議的連接埠組配置在概念上與使用四個 10Gb 適配器的配置非常相似。即使只使用兩個實體適配器，也應該使用四個連接埠組。連接埠群組分配如下：</block>
   <block id="9bc25e03ceb7e341916e8e6cca6a827b" category="paragraph">以下範例展示了 vSwitch 的配置以及負責處理多節點ONTAP Select叢集內部和外部通訊服務的兩個連接埠群組。如果網路中斷，外部網路可以使用內部網路 VMNIC，因為內部網路 VMNIC 屬於此連接埠群組，並且配置為備用模式。外部網路的情況則恰恰相反。在網路中斷期間，對於ONTAP Select VM 的正確故障轉移而言，在兩個連接埠組之間交替使用活動 VMNIC 和備用 VMNIC 至關重要。</block>
   <block id="bad767c4cc128e0a2a4e8d23a72bdbce" category="admonition">LACP 要求將上游交換器連接埠配置為連接埠通道。在分散式 vSwitch 上啟用此配置之前，請確保已正確配置啟用 LACP 的連接埠通道。</block>
+  <block id="666e2d64cc00d0a8b97b0fd56b7dd1f8" category="paragraph">在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式的軟體 RAID 工作流程有一些限制。如需詳細資訊，請參閱下列知識庫文章：</block>
+  <block id="fd03a137fae70421c1edc03522f9a111" category="paragraph">Red Hat Enterprise Linux 64 位元（KVM）10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="4c593fb6a6971787a6c1b21b1778dbf1" category="paragraph">*注意*:在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主機上,KVM 虛擬機器管理程式的軟體 RAID 工作流程有限制。如需更多資訊,請參閱以下知識庫文章:</block>
+  <block id="cc11bdf4f5765009cf63440bceecaf71" category="list-text">從 ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux（RHEL）10.1、10.0、9.7 和 9.6 以及 Rocky Linux 10.0 和 9.6 支援 KVM 虛擬機器管理程式。</block>
+  <block id="9f67ae0fbf0ec858c854905b95acf153" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM</block>
+  <block id="02d99372e9e1eb54a9dddd0b08891357" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
+  <block id="d65f97fb1a167a35c6951233420ba74d" category="list-text">Red Hat Enterprise Linux (RHEL) 64 位元 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
 </blocks>
