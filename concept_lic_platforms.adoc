@@ -71,7 +71,7 @@ NOTE: 基於核心的虛擬機器 (KVM) 不支援大型執行個體類型。
 
 == 比較平台授權方案的硬體支援
 
-標準，優質及優質 XL 授權產品支援多種硬體與軟體。如需軟硬體版本的最新資訊，請參閱link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。
+標準版、高級版和高級 XL 版授權支援多種硬體和軟體。有關硬體和軟體版本的最新信息，請參閱 link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。
 
 [role="tabbed-block"]
 ====
@@ -182,6 +182,5 @@ Rocky Linux (KVM) 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8
 |===
 --
 ====
-.相關資訊
-* link:concept_lic_production.html["瞭解容量層和容量池授權類型"]
-
+.下一步是什麼？
+link:concept_lic_workflow.html["了解如何購買 ONTAP Select 授權"]

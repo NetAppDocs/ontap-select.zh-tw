@@ -88,32 +88,42 @@ sidebar:
     entries:
     - title: 選項
       entries:
-      - title: 評估授權
+      - title: 了解評估授權
         url: "/concept_lic_evaluation.html"
       - title: 正式作業授權
-        url: "/concept_lic_production.html"
-      - title: 平台授權方案
-        url: "/concept_lic_platforms.html"
-    - title: 容量資源池授權模式
-      entries:
-      - title: 營運詳細資料
-        url: "/concept_lic_cp_operation.html"
-      - title: 節點序號
-        url: "/concept_lic_cp_serial_number.html"
-      - title: 限制
-        url: "/concept_lic_cp_restrictions.html"
-      - title: 容量集區與容量層的比較
-        url: "/concept_lic_cp_compare_ct.html"
-      - title: 效益摘要
-        url: "/concept_lic_cp_benefits.html"
-    - title: 購買
+        entries:
+        - title: 了解生產授權
+          url: "/concept_lic_production.html"
+        - title: 平台授權方案
+          url: "/concept_lic_platforms.html"
+        - title: 容量資源池授權模式
+          entries:
+          - title: 營運詳細資料
+            url: "/concept_lic_cp_operation.html"
+          - title: 節點序號
+            url: "/concept_lic_cp_serial_number.html"
+          - title: 限制
+            url: "/concept_lic_cp_restrictions.html"
+          - title: 效益摘要
+            url: "/concept_lic_cp_benefits.html"
+        - title: 容量層級與容量池
+          url: "/concept_lic_cp_compare_ct.html"
+    - title: 購買授權
       entries:
       - title: 授權工作流程
         url: "/concept_lic_workflow.html"
       - title: 容量層級
-        url: "/task_lic_acquire_ct.html"
+        entries:
+        - title: 授權大小的考量因素
+          url: "/sizing-capacity-tier-license.html"
+        - title: 取得授權
+          url: "/task_lic_acquire_ct.html"
       - title: 容量資源池
-        url: "/task_lic_acquire_cp.html"
+        entries:
+        - title: 授權大小的考量因素
+          url: "/sizing-capacity-pool-license.html"
+        - title: 取得授權
+          url: "/task_lic_acquire_cp.html"
     - title: 功能ONTAP
       url: "/reference_lic_ontap_features.html"
   - title: 安裝

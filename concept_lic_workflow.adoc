@@ -25,5 +25,12 @@ summary: 您可以依照工作流程來購買及套用授權以進行ONTAP Selec
 
 image:purchased_license_workflow.png["說明用於購買及安裝正式作業ONTAP Select 的儲存授權部署程序。"]
 
+.下一步是什麼？
+了解 ONTAP Select 授權容量規劃的注意事項：
+
+* link:sizing-capacity-tier-license.html["Capacity Tiers 授權"]
+* link:sizing-capacity-pool-license.html["容量池授權"]
+
+
 .相關資訊
-link:task_adm_licenses.html["不需要授權ONTAP Select"]
+link:task_adm_licenses.html["了解如何管理 ONTAP Select 授權"]

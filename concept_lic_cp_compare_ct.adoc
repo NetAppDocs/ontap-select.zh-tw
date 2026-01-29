@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
 keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
-summary: 容量資源池與容量層授權模式之間有幾種差異。 
+summary: Capacity Tiers 和 Capacity Pools 授權模式之間存在幾個差異。 
 ---
-= 比較 ONTAP Select 容量資源池和容量層授權
+= 比較 ONTAP Select 容量層級和容量池授權
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -21,13 +21,13 @@ summary: 容量資源池與容量層授權模式之間有幾種差異。
 |  | 容量層級 | 容量資源池 
 
 
-| 授權序號 | 由NetApp產生並指派給節點的九位數 | NetApp 產生九位數並指派給容量資源池 
+| 授權序號 | NetApp 產生九個數字並將它們分配給一個節點 | NetApp 產生九位數字並將其分配給容量池。 
 
 
 | 授權鎖定 | 鎖定ONTAP Select 至節點 | 鎖定至License Manager執行個體 
 
 
-| 授權期間 | 永久（不需續約） | 根據購買情況固定持續時間（需要續約） 
+| 授權期間 | 永久（不需續約） | 根據購買的固定期限（需要續約） 
 
 
 | 資料Aggregate的租用期間 | 不適用 | 一小時到七天 
@@ -52,4 +52,10 @@ summary: 容量資源池與容量層授權模式之間有幾種差異。
 
 
 | 強制：授權已過期 | 不適用 | 是（無寬限期） 
+
+
+| 最低授權 | 1 TiB | 2 TiB 
+
+
+| 最大管理空間 | 每個節點 400 TiB | 每個節點 400 TiB 
 |===

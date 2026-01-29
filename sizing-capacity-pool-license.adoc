@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-pool-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: Capacity Tiers 授權是基於每個節點管理的底層磁碟容量，而非節點、HA-pair 或叢集的可用容量。每個 Capacity Tiers 授權都分配給一個特定容量的個別節點序號，且需要隨附的支援合約。 
+---
+= ONTAP Select 容量池授權容量規劃注意事項
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+容量池授權的授權容量以完整 TiB 為單位，最小值為 2 TiB。授權容量的計算方法是將可用空間量乘以開銷係數。單節點叢集和多節點（基於 HA 配對）叢集的開銷係數有所不同：
+
+* 單節點叢集的開銷係數為 1.13
+* 多節點叢集的開銷係數為 2.67
+
+
+您需要根據可用空間計算授權容量，以確保您的部署有足夠的容量。
+
+[cols="25,30,45"]
+|===
+| 說明 | 單節點 | HA 配對或 HA 與單節點的混合 
+
+
+| 可用空間 | 20 TiB | 單節點叢集 10 TiB，HA 配對 20 TiB 
+
+
+| 授權空間 | 23 TiB（20 x 1.13 = 22.6，向上取整到下一個完整 TiB） | 54 TiB（20 x 2.67 = 53.4，向上取整到下一個整數 TiB） 
+
+
+| 每個節點的最大可用空間 *注意*：每個節點或 HA 對的最大管理空間為 400 TiB | 353 TiB（400 / 1.13）  a| 
+每個單節點叢集：
+
+74 TiB ［（400 / 2）/ 2.67］
+
+每個 HA 對叢集：
+
+148 TiB（2 x 74）
+
+|===
+.接下來
+link:task_lic_acquire_cp.html["取得 ONTAP Select 的容量集區授權"]
