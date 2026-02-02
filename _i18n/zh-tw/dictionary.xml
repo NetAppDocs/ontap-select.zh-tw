@@ -955,8 +955,6 @@
   <block id="cea548261425f3d897f63b97e936d640" category="list-text">配置您的集合體</block>
   <block id="c644c0897d8dc8d07dc010b0a5d1b341" category="paragraph">如果您決定不安裝儲存容量的授權檔案、作為部署ONTAP Select 此叢集的一部分、則必須在使用購買授權執行的叢集寬限期到期之前、取得並安裝授權檔案。</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">您可以使用命令列介面、就地升級現有的部署公用程式虛擬機器。</block>
-  <block id="a8601f098fd28588686f1b5ce31da2a1" category="list-text">選取所需的升級套件版本。</block>
-  <block id="def8f653fff47640d3bcce40244c6331" category="list-text">選取並下載適當的套件、視環境需求回應所有提示。</block>
   <block id="2b4b559d53be4bdb64aeeae26870beb2" category="paragraph">此工作說明將檔案上傳至部署虛擬機器的一種方法。可能還有其他更適合您環境的選項。</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">升級檔案儲存在管理使用者的主目錄中。</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">使用適當的目錄路徑和檔案名稱執行升級：</block>
@@ -1131,8 +1129,6 @@
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">所有Python指令碼都會在單一模組中使用通用的Python類別。</block>
   <block id="66cebfc655fc14a70cafa6f4ef31ce39" category="doc">通用支援模組</block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。</block>
-  <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">選取所需的套件版本。</block>
-  <block id="a0ce89b8db68d7f3e4fb721f6bf6c751" category="list-text">選取並下載適當的套件、視需要回應所有提示。</block>
   <block id="780f7110b279a0cc42242a48431ab5bd" category="list-text">安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能</block>
   <block id="536f68587c52377d3e98807b214c5de8" category="list-text">網路遮罩</block>
   <block id="e1abf8f6b13a06faf59bfd3d015dd968" category="list-text">閘道（路由器）的IP位址</block>
@@ -1141,9 +1137,7 @@
   <block id="44bd913515358cfa80f997ed9a93595a" category="list-text">DNS搜尋網域</block>
   <block id="33df7e8f977ae61500cd225ae6453cd6" category="list-text">存取vSphere用戶端並登入。</block>
   <block id="c7b5afc9e76543d6c823b8732fde22cc" category="list-text">瀏覽至階層中的適當位置、然後選取*部署OVF範本*。</block>
-  <block id="3186b86d87a207cefd5620929256fbd0" category="list-text">選取OVA檔案並完成「部署OVF範本」精靈、選取適合您環境的選項。</block>
   <block id="c400d3339e8bc65ccc2657e3aee763be" category="paragraph">您必須定義系統管理員帳戶的密碼。登入部署公用程式時、您必須提供此密碼。</block>
-  <block id="1d7370ec51f294f5948f3cc2550b812a" category="list-text">按一下*主控台*索引標籤、即可存取ESXi主機設定Shell並監控開機程序。</block>
   <block id="4b6e5972b38c860adc515c05d7100df8" category="list-text">等待下列提示：</block>
   <block id="08dc93d24cbfbbfd880b1bb1ccc94728" category="paragraph">主機名稱：</block>
   <block id="be35756ada0a94e987f82992b890a61a" category="list-text">輸入主機名稱、然後按* Enter *。</block>
@@ -1658,12 +1652,10 @@
   <block id="ce67a35e2666266e6a9e7288354fd9a4" category="list-text">使用VMware HA的共享外部儲存設備</block>
   <block id="b614c74d2cb757efa92f133270c9370e" category="list-text">VMware vSAN</block>
   <block id="a514a9aaf234389cd9d113b2f73243b6" category="admonition">如果您使用vSAN、則必須擁有VMware vSAN ROBO授權。</block>
-  <block id="6738f098cd2bba79a1109b07a6b3a4e3" category="summary">您可以在ONTAP Select 部署管理公用程式的執行個體中新增一個鏡像。安裝映像之後、您可以在部署ONTAP Select 一個叢集時使用它。</block>
   <block id="ff2a9bd49048e73baaf69d5e3097f161" category="paragraph">在新增ONTAP Select 任何要部署的更新版影像之前、您應該先移除任何不需要的影像。</block>
   <block id="7e0a8cfbb81693d645b2e510efe248df" category="admonition">您只能使用ONTAP Select 比部署公用程式執行個體隨附的原始版本更早的版本來新增一個版本的不一致映像。在ONTAP Select NetApp提供更新版本的支援時、新增更新版本的功能並不受支援。</block>
   <block id="807ad9e65833a6b39b8d8286e8b783f8" category="paragraph">若要開始在ONTAP Select Deploy公用程式執行個體中新增ImageImage的程序、您必須從NetApp支援網站下載安裝映像。將此鏡像格式化為ONTAP Select 單一壓縮檔案。</block>
   <block id="219698a1df9fbd3c16f4a498102fbc3e" category="paragraph">擷取ONTAP Select 完鏡像後、您必須將檔案上傳至部署虛擬機器。</block>
-  <block id="2a5d9f3f5564baf37e1d1a8cf1a3b68c" category="paragraph">您必須在本機工作站上提供安裝映像檔。您也必須擁有部署系統管理員使用者帳戶的密碼。</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">步驟</block>
   <block id="1c654c4358e2d4003c74f40926274452" category="paragraph">節點安裝檔案儲存在管理使用者的主目錄中。</block>
   <block id="1c6a034b63f5d95f8ce563a77103fb05" category="paragraph">您必須知道安裝映像檔位於Deploy公用程式虛擬機器的哪個目錄。假設檔案位於系統管理員的主目錄中。</block>
@@ -1864,11 +1856,6 @@
   <block id="30cf2dd94fe579c8d10145706d2803f2" category="admonition">您無法使用部署管理公用程式來升級現有ONTAP Select 的各個節點。部署公用程式只能用來建立新ONTAP Select 的叢集。</block>
   <block id="debe5df850e1b90f9e0e1e836af7a573" category="section-title">一般程序</block>
   <block id="6faefe32fa9943fbdd41223aa8a6c274" category="paragraph">在較高層級、您應該使用下列步驟來升級現有ONTAP Select 的節點。</block>
-  <block id="e105a9c27bf2d9ddd5067b411d434cd6" category="list-text">瀏覽至NetApp支援網站的下載頁面。</block>
-  <block id="68f9ff06ec00760816a8852081d652a9" category="inline-link">NetApp支援下載</block>
-  <block id="332fd48f854bf692aea555e091e1b3cc" category="paragraph"><block ref="332fd48f854bf692aea555e091e1b3cc" category="inline-link-rx"></block></block>
-  <block id="eea1cec828c419810e082867558ec301" category="list-text">按一下「* ONTAP Select 不含節點升級*」。</block>
-  <block id="a864f71b844955db4e27746202712f1b" category="list-text">選取並下載適當的升級映像、視需要回應所有提示。</block>
   <block id="c09b5be4c2da04f4040eef1878f258aa" category="inline-link">部分9文件ONTAP</block>
   <block id="27ac4f41a6a95e6d95afb9eb1af5bba3" category="summary">您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視訊主控台。</block>
   <block id="349f27a15a1aba59be9538487e4a6304" category="paragraph">您可能需要存取虛擬機器主控台來疑難排解問題、或是NetApp支援部門要求您這麼做。</block>
@@ -2484,7 +2471,6 @@
   <block id="cfa6562e428e1a648631dac061567897" category="paragraph">確認您的系統符合下列需求：</block>
   <block id="80c9c2739b6086de81c8ec7262f87af8" category="list-text">用於基本驗證的 Openssl 版本 1.0.2 至 3.0</block>
   <block id="03018e3ee63fad9b70308ee5184022f9" category="list-text">線上憑證狀態傳輸協定（ OCSP ）驗證的公用網際網路存取</block>
-  <block id="940949e444a7d7ca33644736f8b10bcd" category="list-text">從 NetApp 支援網站 的產品下載頁面取得下列檔案：</block>
   <block id="0b27918290ff5323bea1e3b78a9cf04e" category="cell">檔案</block>
   <block id="249111a1c7f415853c625e0755631d11" category="cell"><block ref="008c7b6d630fe84ef2d584c45f088cb2" prefix="" category="inline-code"></block></block>
   <block id="e4069d9d0927b15ac9a4b5a57f151285" category="cell">用於驗證簽名的公開金鑰。</block>
@@ -2496,7 +2482,6 @@
   <block id="4e4e408ba11d90a1648acdc6230e66d0" category="cell"><block ref="20db26963ac3dc0b119aa4c781855701" prefix="" category="inline-code"></block></block>
   <block id="51efe37fbdc37f9d0c55c657a430d296" category="cell">SHA-256 演算法會遭到雜湊、然後由遠端支援代理程式（ RSA ）使用簽署<block ref="b6ad60ee94a07b2ba8c24c883ec70503" prefix=" " category="inline-code"></block> 安裝程式的金鑰和簽名。</block>
   <block id="1f463ad70f232a0c4114c51cb2a44a5a" category="list-text">確認<block ref="20db26963ac3dc0b119aa4c781855701" prefix=" " category="inline-code"></block> 檔案正在使用相關的憑證和驗證命令。</block>
-  <block id="134cfba28fd247854afe7ce4d31767ad" category="list-text">使用下列命令驗證簽名：</block>
   <block id="db05ec33127afb72e99fdef2dd7e222b" category="section-title">設定 MFA</block>
   <block id="aef6d7448e31d21fcd5e57734fa1fb88" category="paragraph">從 ONTAP Select 9.13.1 開始、 ONTAP Select Deploy 系統管理員帳戶支援多因素驗證（ MFA ）：</block>
   <block id="b43e5dc621bb5f7a6746a0bf53636924" category="inline-link-macro">ONTAP Select 使用 YubKey 個人身分驗證（ PIV ）或快速身分識別線上（ FIDO2 ）驗證來部署 CLI MFA 登入</block>
@@ -2553,7 +2538,6 @@
   <block id="306a97cf9f5c4fb1198deb28baf7cf94" category="list-text">儲存 VM 災難恢復（ SVM DR ）</block>
   <block id="c38c45e0a73411d375d048ee41944853" category="list-text">符合法規SnapLock</block>
   <block id="b22e984a3a8e13089712aab13bd49e4f" category="paragraph">不可以該VMware使用獨立的持續磁碟機、ONTAP Select 這些磁碟機不受VMware快照的限制。唯一支援的 ONTAP Select 備份方法是 SnapMirror 或 SnapVault 。</block>
-  <block id="0778e2d9c54386153e2e52bad4129abe" category="doc">登入以使用 SSH 部署</block>
   <block id="0ef79c5150efdedf5079964981d01a0f" category="section-title">刪除 ONTAP Select 叢集</block>
   <block id="483c848cf08aacd19acb4d0b41190eb1" category="inline-link-macro">增加儲存容量</block>
   <block id="fdd1d325ffe2bc60f1cb8023f18ff770" category="paragraph">請參閱 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
@@ -2561,7 +2545,6 @@
   <block id="a86b0aeeb47174a94a9b648d015c71d1" category="admonition">您也可以 <block ref="ea53b27a388cf53d44c3f702619eab0e" category="inline-link-macro-rx"></block>。</block>
   <block id="cf86e8b21059cea7afe42d59893ab1bb" category="inline-link-macro">新增要部署的 ONTAP Select 映像</block>
   <block id="f300769ad7ade3ee1597c88f58750b97" category="doc">升級 ONTAP Select 節點</block>
-  <block id="2e17a67d810d937603511ac8eb9044c5" category="paragraph">在升級ONTAP Select 一個節點之前、請檢閱版本說明以取得更多資訊和任何必要程序。</block>
   <block id="2a883d1fe3d932e9f2fc25c99deaa4b9" category="inline-link-macro">ONTAP 升級總覽</block>
   <block id="46928a27773a23230df6e5bda4c3aeb9" category="section-title">還原 ONTAP Select 節點</block>
   <block id="140182c4500e816e4313b2abddef452d" category="paragraph">您無法將 ONTAP Select 節點還原為原先安裝的版本。例如：</block>
@@ -2637,7 +2620,6 @@
   <block id="f47ad6e4bc9bad323a7e49da78e990bc" category="doc">調整 ONTAP Select 叢集節點的大小</block>
   <block id="afe2fb2999af41d32655dc1f20500f66" category="list-text">從 ONTAP Select 9.9.1 開始、 ONTAP Select 僅支援來自 Intel Xeon Sandy Bridge 或更新版本的 CPU 機型。</block>
   <block id="0fa9a0b98f503373d1e8310c7c58315c" category="cell">ONTAP Select 的產品安裝執行檔。</block>
-  <block id="ccbbd15600c60abef8f9d734d84b4a4e" category="paragraph"><block ref="ccbbd15600c60abef8f9d734d84b4a4e" category="inline-link-macro-rx"></block></block>
   <block id="2d288e7805c1ececa65188f89defd9ce" category="admonition">API v3版本與舊版API不相容。上有新的 API 程序<block ref="d0140e6551623cc2284467774c9abf91" category="inline-link-rx"></block>。</block>
   <block id="7b2b79b3670795398d15d8b845f9018a" category="section-title">取得 YobiKey PIV 或 FIDO2 公開金鑰</block>
   <block id="7b52eae9ffa5eadcc0fc79391b99411f" category="section-title">在 ONTAP Select Deploy 中設定公開金鑰</block>
@@ -2659,8 +2641,6 @@
   <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">工作流程 1 建立叢集</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">瞭解指令碼</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">NetApp 支援網站</block>
-  <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">存取 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用網頁瀏覽器、並從「下載」功能表中選擇 * 「下載 * 」。</block>
-  <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">向下捲動並選取 * ONTAP Select Deploy Upgrade* 。</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">檢閱終端使用者授權合約（ EULA ）、然後選取 * 接受並繼續 * 。</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">您可以存取執行 ONTAP Select 的 Hypervisor 虛擬機器的視訊主控台。</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。</block>
@@ -2962,11 +2942,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">如需 ONTAP Select 和授權續約的詳細資訊、請參閱中的「授權、安裝、升級及還原」一節 <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">ONTAP Select 叢集網路組態是否可以在安裝後變更？</block>
   <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">ONTAP Select 部署網路組態是否可以在安裝後變更？</block>
-  <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">ONTAP Select Deploy 管理公用程式是根據開放式虛擬化格式（ OVF ）標準、封裝為虛擬機器（ VM ）。單一壓縮檔案具有後置字元<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>。VM 提供 ONTAP Select 節點的部署伺服器和安裝映像。</block>
-  <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">存取 <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> 使用網頁瀏覽器登入。</block>
-  <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">從菜單中選擇 * 下載 * ，然後從下拉菜單中選擇 * 下載 * 。</block>
-  <block id="ab0ffe542101d39137dce2c19869d545" category="list-text">在 [ 下載 ] 頁面上，選取 [ 所有產品 A-Z ] 底下的字母 *O* 。</block>
-  <block id="a896447aac9deddba0f8b7bc142c079f" category="list-text">向下捲動並選取 * ONTAP Select * 。</block>
   <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請檢閱必要條件、然後選取 * 確定 * 繼續。</block>
   <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">只有 ESXi 支援調整大小至大型執行個體類型。</block>
   <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">由於可能需要在每個拓撲所需的不同 NIC 群組組組態之間轉換、因此不支援在執行中叢集上的單一連結和多個連結拓撲之間進行轉換。</block>
@@ -3221,7 +3196,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">您擁有註冊的 NetApp 支援網站帳戶</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>。</block>
   <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">部署虛擬機器之後，請選取新的虛擬機器。如果尚未根據您對部署精靈的輸入來開啟電源，請手動開啟電源。</block>
-  <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">如果這是第一次登入，但您並未使用 vCenter 提供的精靈來安裝部署，請在出現提示時提供下列組態資訊：</block>
   <block id="c2fffdb7e5db1a96deec5901fd1a882b" category="list-text">選取頁面頂端的 * 管理 * 索引標籤。</block>
   <block id="7f73b891b6f89493a9a42f78c96dfbde" category="list-text">選取 * 授權 * ，然後選取 * 容量層 * 。</block>
   <block id="ac058bee21b19fb7d5683b470b430bce" category="list-text">（可選）選擇 *Filter* 並限制顯示的許可證。</block>
@@ -3599,10 +3573,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="305009997eb17ffe0901beb32fdc2040" category="paragraph">在準備叢集擴充時，新的 ESXi 和 KVM 主機會被加入到清單中，並指派新節點的詳細資訊。在開始叢集擴展程序之前，網路預檢查會驗證所選的內部網路。</block>
   <block id="1c53d6d4916415921dddecf6128580f3" category="list-text">為第四個 HA 對選擇以下高可用性 (HA) 對配置詳細資訊：</block>
   <block id="1baec4831214642ebba2ccfdd8a785df" category="list-text">提供ONTAP憑證，然後選擇*擴展叢集*。</block>
-  <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">您可以使用 ONTAP ONTAP Select ONTAP Select Deploy 實用程式虛擬機器。</block>
-  <block id="37d4c938e6c31c7ec9166448ac3458f3" category="paragraph">確保在升級期間不使用ONTAP Select Deploy 執行任何其他任務。有關升級ONTAP Select Deploy 實用程式的資訊和限制，請參閱目前發行說明。</block>
-  <block id="db1b7c6bff7b0da47260c4e758478bf5" category="section-title">步驟 1：下載軟體包</block>
-  <block id="c81ba5c62604d6722d8975fb55e13972" category="paragraph">要開始升級過程，ONTAP Select從<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>。升級包格式為單一壓縮檔。</block>
   <block id="1bd278b7a759195dc2c65f644c38efc6" category="section-title">步驟 2：將軟體包上傳到ONTAP Select Deploy 虛擬機</block>
   <block id="58d35d75d5ec4b24d42607d4bf519bb0" category="paragraph">下載軟體包後，您需要將檔案上傳到ONTAP Select Deploy 虛擬機器。</block>
   <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">此任務介紹了一種將檔案上傳到ONTAP Select Deploy 虛擬機器的方法。可能還有其他選項更適合您的環境。</block>
@@ -3753,10 +3723,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="12702c2f8c71548bcc7c156da7d7e810" category="paragraph">如果使用本機硬體 RAID 控制器，則必須至少建立一個資料儲存 (ESX) 或一個<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>在每個節點上，系統資料以及根節點和資料聚合。您必須在配置ONTAP Select節點的過程中連接儲存池。</block>
   <block id="d79e665d74455e96fa5fff08009d57ce" category="paragraph">如果使用軟體 RAID，則必須建立至少一個資料儲存 (ESX) 或一個<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>確保系統資料可用，並確保 SSD 磁碟機可用於根目錄和資料聚合。您必須在配置ONTAP Select節點的過程中連接儲存池和磁碟。</block>
   <block id="374fcbe92413e77c7fc7cda40bfb3be6" category="section-title">步驟 1：下載安裝鏡像</block>
-  <block id="42cd2a8efe7c9aac811d923637a0f193" category="list-text">使用網頁瀏覽器造訪NetApp支援網站，然後選擇「支援快速連結」。</block>
-  <block id="6168f6eb3f1b81ec759f515fdd7bab98" category="list-text">在“熱門任務”下選擇“下載軟體”，然後登入網站。</block>
-  <block id="84791eb50904d5d426f95112ce50d397" category="list-text">選擇“尋找您的產品”。</block>
-  <block id="676522edf33055c4e8da85feed945dc5" category="list-text">在「其他可用軟體」下，選擇「部署升級」、「節點升級」、「鏡像安裝」。</block>
   <block id="4ec4ff4105057abcf44071cf2a8f84b6" category="section-title">步驟 2：將安裝鏡像上傳到 Deploy 平台</block>
   <block id="3ad5852905f7d86a4b551630b78bec6f" category="list-text">在本機工作站的命令 shell 中，將映像檔上傳到 Deploy 虛擬機，如下範例所示：</block>
   <block id="9c0d19167b1e62192d344c74670ab607" category="section-title">步驟 3：新增安裝鏡像</block>
@@ -3849,7 +3815,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bae2221cd26cec7b066734cfd0888c05" category="paragraph">您可以訪問<block ref="b88c41ab6f0bacccf3a706fd6b4f9780" category="inline-link-macro-rx"></block>查看目前版本詳情。</block>
   <block id="8fce0c649f4d72f417cda254112e0124" category="list-text">對於 ESX 主機，ONTAP Select 9.7 或更高版本以及受支援的 Deploy 管理實用程式</block>
   <block id="14d3f202c8554a54e4a6f4f52aa78fb3" category="list-text">對於 KVM 主機，需要ONTAP Select 9.17.1 或更高版本以及受支援的部署管理實用程式。</block>
-  <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">向下捲動並按一下 * ONTAP Select*。</block>
   <block id="bb68cf2408900213fd35084701d5c32c" category="paragraph">您可以從 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。若要從ONTAP Select Deploy 9.15.1 或更早版本升級，請查看ONTAP Select版本的發行說明。</block>
   <block id="b69fcb807e0b12e6b52ca8806f85c011" category="paragraph">增加或減少現有ONTAP Select叢集（適用於 ESXi 和 KVM 虛擬機器管理程式主機）的叢集大小。對於這兩種主機類型，您可以以 4 到 12 個節點為增量增加或減少叢集大小。</block>
   <block id="a0b486320d46bfa4e7a315349c3d059b" category="list-text">從單節點或雙節點叢集擴展到六節點、八節點、十節點或十二節點叢集。</block>
@@ -3866,9 +3831,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="7ceba9002504861c21a7c60ab97ce4d0" category="list-text"><block ref="7ceba9002504861c21a7c60ab97ce4d0" category="inline-link-macro-rx"></block></block>
   <block id="05e40b852405f8fbe510662799c939d2" category="inline-link-macro">CDEPLOY-4025： ONTAP Select DeployGUI：在執行 RHEL10/Rocky 10 的主機上，叢集建立頁面中 SWR 的儲存池和儲存磁碟不可見</block>
   <block id="5b121e358e0c7c08ef9cd2f6ed82464f" category="list-text"><block ref="5b121e358e0c7c08ef9cd2f6ed82464f" category="inline-link-macro-rx"></block></block>
-  <block id="b3511106033b4eaf52fa527685aee9bf" category="paragraph">Rocky Linux (KVM) 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
-  <block id="fc0e52e7a743e546179c3376db422db0" category="list-text">KVM 可在 Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6 版本上運行</block>
-  <block id="5701e65b5391163c34edb9efc807ee5f" category="list-text">Rocky Linux 10.0、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
   <block id="1d635a2bfb4e1fe570efdeb7e95a39b1" category="summary">請求存取以下載ONTAP Select評估軟體。</block>
   <block id="14a6da11ffa9cf53251b9ff57d86f2e3" category="doc">存取ONTAP Select評估軟體</block>
   <block id="fe359189fa4d670313b3429fe242de5a" category="inline-link-macro">ONTAP Select評估軟體</block>
@@ -3919,7 +3881,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="35f9f1c9a9790bd3fc497db798819083" category="section-title">步驟 3：部署虛擬機</block>
   <block id="a84a05d08c99af325673887887ed8fdb" category="paragraph">使用 OVF VM 映像安裝並啟動ONTAP Select Deploy VM。作為安裝過程的一部分，您需要設定網路介面以使用 DHCP 或靜態 IP 設定。</block>
   <block id="7e5f2ca43da3004f8d3d7bae3edb7bae" category="section-title">步驟 4：Sign inDeploy Web 介面</block>
-  <block id="619fea79d54cac08622de23d5f1d57d5" category="paragraph">Sign inWeb 使用者介面以確認部署實用程式可用並執行初始配置。</block>
   <block id="97b3aadab6e4066f1f4afb183a83298c" category="sidebar">試試ONTAP Select</block>
   <block id="3ff87e54e9b20339b68f24cf241f05b0" category="sidebar">訪問評估軟體</block>
   <block id="276d590b2be111ae083f54bd5b504fe8" category="paragraph">ONTAP Select支援使用標準和分散式 vSwitch 配置。分散式虛擬交換器支援鏈路聚合結構（LACP）。鏈路聚合是一種常見的網路結構，用於聚合多個實體適配器的頻寬。LACP 是一個廠商中立的標準。它為網路端點提供了一個開放協議，將多組實體網路連接埠捆綁到一個邏輯通道中。ONTAP Select可以與配置為鏈路聚合組 (LAG) 的連接埠組一起使用。但是， NetApp建議將各個實體連接埠用作簡單的上行鏈路（幹線）端口，以避免 LAG 配置。在這些情況下，標準虛擬交換器和分散式虛擬交換器的最佳實務是相同的。</block>
@@ -3931,10 +3892,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="23063442dbfdc1f0a8618060853d7bce" category="paragraph">當使用兩個高速（25/40Gb）網路卡時，建議的連接埠組配置在概念上與使用四個 10Gb 適配器的配置非常相似。即使只使用兩個實體適配器，也應該使用四個連接埠組。連接埠群組分配如下：</block>
   <block id="9bc25e03ceb7e341916e8e6cca6a827b" category="paragraph">以下範例展示了 vSwitch 的配置以及負責處理多節點ONTAP Select叢集內部和外部通訊服務的兩個連接埠群組。如果網路中斷，外部網路可以使用內部網路 VMNIC，因為內部網路 VMNIC 屬於此連接埠群組，並且配置為備用模式。外部網路的情況則恰恰相反。在網路中斷期間，對於ONTAP Select VM 的正確故障轉移而言，在兩個連接埠組之間交替使用活動 VMNIC 和備用 VMNIC 至關重要。</block>
   <block id="bad767c4cc128e0a2a4e8d23a72bdbce" category="admonition">LACP 要求將上游交換器連接埠配置為連接埠通道。在分散式 vSwitch 上啟用此配置之前，請確保已正確配置啟用 LACP 的連接埠通道。</block>
-  <block id="666e2d64cc00d0a8b97b0fd56b7dd1f8" category="paragraph">在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式的軟體 RAID 工作流程有一些限制。如需詳細資訊，請參閱下列知識庫文章：</block>
   <block id="fd03a137fae70421c1edc03522f9a111" category="paragraph">Red Hat Enterprise Linux 64 位元（KVM）10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
-  <block id="4c593fb6a6971787a6c1b21b1778dbf1" category="paragraph">*注意*:在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主機上,KVM 虛擬機器管理程式的軟體 RAID 工作流程有限制。如需更多資訊,請參閱以下知識庫文章:</block>
-  <block id="cc11bdf4f5765009cf63440bceecaf71" category="list-text">從 ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux（RHEL）10.1、10.0、9.7 和 9.6 以及 Rocky Linux 10.0 和 9.6 支援 KVM 虛擬機器管理程式。</block>
   <block id="9f67ae0fbf0ec858c854905b95acf153" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6 上的 KVM</block>
   <block id="02d99372e9e1eb54a9dddd0b08891357" category="list-text">Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7、9.6、9.5、9.4、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="d65f97fb1a167a35c6951233420ba74d" category="list-text">Red Hat Enterprise Linux (RHEL) 64 位元 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
@@ -4054,4 +4012,54 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="3b32ccaa0766722aa2afed59d3051ca8" category="sidebar">購買授權</block>
   <block id="9be9343d8314647310e47876ae581a39" category="sidebar">授權大小的考量因素</block>
   <block id="f207357dde5b74df08cbece4e6ecc93d" category="sidebar">取得授權</block>
+  <block id="e9acce0d3652d40c91f9bd7e814291c0" category="inline-link-macro">NetApp 支援網站下載</block>
+  <block id="17838336399b2e69627cea0614c17f30" category="list-text">存取 <block ref="8e92c016cc209b5ea10cc71b5bfe5577" category="inline-link-macro-rx"></block> 頁面。</block>
+  <block id="102500ba079e1f102bac567290d3e053" category="list-text">向下捲動並選擇 *ONTAP Select Image*。</block>
+  <block id="1ccd2fe0ab425cd480daec44d7c332ba" category="list-text">選擇所需的安裝映像版本。</block>
+  <block id="b0ccaa273cbf1ac7308b75b9c7fd6d4e" category="list-text">選擇並下載適當的 *ONTAP Select Image Upgrade* 套件。視需要回應所有提示。</block>
+  <block id="1a8d41e65cef4d345c50298a70f79734" category="inline-link-macro">發行說明</block>
+  <block id="b7a85c17919c6d783689e1a6530de3d7" category="paragraph">在升級 ONTAP Select 節點之前，請查看 <block ref="3dda619db99e14ba32fb3b3389030b7d" category="inline-link-macro-rx"></block> 以取得其他資訊和任何必要的程序。</block>
+  <block id="bf159becb82fac20415db1b695308945" category="paragraph">Rocky Linux (KVM) 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
+  <block id="f16085e2960ce67f0152bfa786bc2c84" category="list-text">ONTAP Select 產品下載選項的更新</block>
+  <block id="b5993ee67ee45c2b4a002d556ac6eef4" category="list-text">NetApp 支援網站上的 ONTAP Select 產品下載選項隨著 ONTAP Select 9.18.1 版本的發布將變更為 *ONTAP Select Deploy* 和 *ONTAP Select Image*。這兩個新的產品下載選項將取代先前的四個選項，如下表所示：</block>
+  <block id="258b030fd9d8536d96ad2ea29b1f1f5b" category="cell">先前產品下載選項</block>
+  <block id="01ed5dadeb59dcf70821bb6cfcca823b" category="cell">新產品下載選項</block>
+  <block id="c878ab6b03f2e21c7ddaab60666fe9c7" category="cell">如需更多資訊，請前往…</block>
+  <block id="0fcfd1d06aa4a00c5f6fec474f6f1c06" category="cell">ONTAP Select 映像安裝</block>
+  <block id="65d8989162e041cfdb5373e9d5f90a01" category="cell">ONTAP Select 映像</block>
+  <block id="daa5867d7c0f09c140622ae0bc6ab1fd" category="cell">ONTAP Select Deploy 升級</block>
+  <block id="5922d941fc08a3cbcc408274f92d86e5" category="cell"><block ref="5922d941fc08a3cbcc408274f92d86e5" category="inline-link-macro-rx"></block></block>
+  <block id="5048172a57085779b0d43a0be3872dc8" category="cell">ONTAP Select 節點升級</block>
+  <block id="d228516350120c9cc4d55069f100cc11" category="inline-link-macro">升級 ONTAP Select 節點</block>
+  <block id="97ea190c2e3ce90f52a63364b67dcef9" category="cell"><block ref="97ea190c2e3ce90f52a63364b67dcef9" category="inline-link-macro-rx"></block></block>
+  <block id="bf40684242d22732e87ac0716a947f3f" category="admonition">產品下載變更也適用於 ONTAP Select 9.17.1、9.16.1、9.15.1 和 9.14.1。</block>
+  <block id="e342911175fb54ab7198aeaf9378ba80" category="list-text">從 ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux (RHEL) 10.1、10.0、9.7 和 9.6 以及 Rocky Linux 10.1、10.0、9.7 和 9.6 支援 KVM 虛擬機器管理程式。</block>
+  <block id="f5bbe572ad2fdd6b30f8297ec74c9ee1" category="paragraph">在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.1 和 10.0 主機上，KVM 虛擬機器管理程式的軟體 RAID 工作流程有一些限制。如需更多資訊，請參閱以下知識庫文章：</block>
+  <block id="77c3f1eb72717033f409425f67ee4a6d" category="list-text">KVM on Rocky Linux 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
+  <block id="f1200e5ffcff7a7cc8b8ea25410cc78a" category="list-text">Rocky Linux 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.9、8.8、8.7 和 8.6</block>
+  <block id="ab0efa1679a96e82121715180bb36a1d" category="summary">將 ONTAP Select 映像新增至 Deploy 管理實用程式執行個體。安裝完成後，即可在部署 ONTAP Select 叢集時使用它。</block>
+  <block id="91dd9283705750f9fe7e837b0a40349f" category="paragraph">將 ONTAP Select 映像新增至 Deploy 管理實用程式執行個體。映像安裝完成後，即可在部署 ONTAP Select 叢集時使用。</block>
+  <block id="c887723161d2b70aba693fc5b80ea33b" category="list-text">選擇並下載對應的 *ONTAP Select Image Install* 軟體包。根據需要回應所有提示。</block>
+  <block id="04574480371a2b80422d880e51839d84" category="paragraph">請確認您的本機工作站上已存在安裝映像檔。您還必須擁有 Deploy 管理員使用者帳戶的密碼。</block>
+  <block id="71b6b56cdf9a8f06858b086466ade95e" category="paragraph">使用 ONTAP Select Deploy 實用程式 CLI 就地升級現有的 ONTAP Select Deploy 實用程式虛擬機器。</block>
+  <block id="893d0216a6847b8a50f3efc04d175542" category="paragraph">確認在升級過程中 ONTAP Select Deploy 未執行任何其他任務。有關升級 ONTAP Select Deploy 實用程式的相關資訊和限制，請參閱<block ref="3dda619db99e14ba32fb3b3389030b7d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a935f72e89684cc4e1e44be3fa93301b" category="section-title">步驟 1：下載升級套件</block>
+  <block id="9c7dbffc228f5e20cfc38dd2e9d52183" category="paragraph">若要開始升級過程，請從 NetApp 支援網站下載 ONTAP Select Deploy 升級檔案。升級套件以單一壓縮檔案的形式提供。</block>
+  <block id="c7de263deca2f546c4c7b9417bbb6aec" category="list-text">向下捲動並選擇 *ONTAP Select Deploy*。</block>
+  <block id="224ba05e3cb699bfc71537bae00db024" category="list-text">選擇所需的 ONTAP Select 版本。</block>
+  <block id="edef4f12cb19840bbbb69b8757b99015" category="list-text">選擇並下載適當的 *ONTAP Select Deploy Upgrade* 套件。視需要回應所有提示。</block>
+  <block id="1ace48b65c22215b19f774b3df5f35bc" category="paragraph">ONTAP Select Deploy 管理實用程式以虛擬機器（VM）的形式打包，並基於開放虛擬化格式（OVF）標準。單一壓縮檔案帶有<block ref="586ba478b7ebec665f3df120799b6c2e" prefix=" " category="inline-code"></block> ESXi 主機專用後綴和<block ref="fe0b8e90d35ee4c0d89c53587e2d402e" prefix=" " category="inline-code"></block> KVM 主機專用後綴。此虛擬機器提供 Deploy 伺服器和 ONTAP Select 節點的安裝映像。</block>
+  <block id="1b889c4574d56e52bb5c7740f68139d2" category="list-text">選擇並下載適當的 *ONTAP Select Deploy Install* 套件。視需要回應所有提示。</block>
+  <block id="3f5028687bfdb0f40e4748a9cf9f5076" category="list-text">請從 NetApp 支援網站的產品下載頁面取得以下檔案：</block>
+  <block id="f754a351095ccdb252bb15b2152c09f3" category="list-text">驗證簽名：</block>
+  <block id="5029ec7f3dcb7c58660c1d47f8dce6c3" category="list-text">選擇 OVA 檔案並完成 Deploy OVF Template 精靈。選擇適合您環境的選項。</block>
+  <block id="77b39f7b1e60aa5d2af3e45d47ff1adf" category="list-text">選擇 *Console* 標籤以存取 ESXi 主機設定 shell 並監控開機程序。</block>
+  <block id="b976538163f8bd7f20f37762f79adba6" category="list-text">如果選擇靜態配置、請提供所有必要的網路配置資訊。</block>
+  <block id="896f4c4fdd4e61c33a930415e20d88d3" category="paragraph">Sign in Web 使用者介面以確認 Deploy 公用程式可用並執行初始組態。</block>
+  <block id="a88f396cb1d0d25e4d7b5bc9e25d3617" category="paragraph-title">接下來：</block>
+  <block id="4452a56e6eb6220413b5f5ed2b39c2eb" category="paragraph"><block ref="4452a56e6eb6220413b5f5ed2b39c2eb" category="inline-link-macro-rx"></block></block>
+  <block id="186a0749125d9c043615b75ece89e1b9" category="inline-link-macro">了解如何使用 SSH 登入 Deploy</block>
+  <block id="3127e7fd2160f6fce263d627cbcb5a4d" category="list-text"><block ref="3127e7fd2160f6fce263d627cbcb5a4d" category="inline-link-macro-rx"></block></block>
+  <block id="53e65bd37d1e95a079cd2ec376ccf900" category="inline-link-macro">了解如何部署 ONTAP Select 叢集的 90 天評估執行個體</block>
+  <block id="f5f0f7b9b906ffe1f1af3b3d9bc2a475" category="list-text"><block ref="f5f0f7b9b906ffe1f1af3b3d9bc2a475" category="inline-link-macro-rx"></block></block>
 </blocks>
