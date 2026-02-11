@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas, vmware esxi, 
+keywords: plan, planning, vnas, vmware esxi, external storage 
 summary: 您應該考慮幾個與使用 VMware ESXi 相關的規劃問題。 
 ---
-= ONTAP Select VMware ESXi 需求
+= VMware ESXi 對 ONTAP Select 的外部儲存需求
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -53,9 +53,9 @@ CAUTION: 設定主機或執行儲存新增作業時、您必須為VMware vSAN或
 
 == 最佳實務做法
 
-請參閱可用的VMware文件、並遵循針對ESXi主機所識別的適用最佳實務做法。此外：
+請查閱 VMware 文件，並遵循針對 ESXi 主機所識別的適用最佳實務做法。此外：
 
 * 針對ONTAP Select VMware vSAN和外部儲存設備定義專屬的網路連接埠、頻寬和vSwitch組態（使用iSCSI或NFS時為VMware vSAN和一般儲存陣列流量）
 * 設定容量選項以限制儲存使用率（ONTAP Select 無法使用外部vNAS資料存放區的全部容量）
-* 確保所有一般的外部儲存陣列盡可能使用可用的備援和HA功能
+* 確認所有通用外部儲存陣列盡可能使用可用的冗餘和 HA 功能
 
