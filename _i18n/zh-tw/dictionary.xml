@@ -2019,16 +2019,6 @@
   <block id="6ead2b5cc2e9a07c3c837cd527eae680" category="section-title">四節點叢集內的單一節點</block>
   <block id="0e17d1b8e444a58b17e21b8d633cf3c9" category="paragraph">下圖說明ONTAP Select 四節點叢集內單一物件叢集虛擬機器的典型網路組態。有兩個獨立的網路：ONTAP內部和ONTAP外部。</block>
   <block id="ab818ab7a96525155b780ef59003cf8c" category="paragraph"><block ref="ab818ab7a96525155b780ef59003cf8c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c44b5d59bfc3b0196028c522c56aa989" category="paragraph">vSwitch是核心Hypervisor元件、用於支援內部和外部網路的連線能力。在設定每個Hypervisor vSwitch時、您應該考量幾件事。</block>
-  <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">將負載平衡原則設定為「根據來源虛擬連接埠ID進行路由」。</block>
-  <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">vSwitch屬性）</block>
-  <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">設定vSwitch使用巨型框架（9000 MTU）。</block>
-  <block id="e954024be7362eabbc9a349d62fdd4d4" category="list-text">在vSwitch上設定內部流量的連接埠群組（ONTAP內部）：</block>
-  <block id="a75b88570c3f7c89c4fc7aa2f4ab0862" category="list-text">連接埠群組指派給ONTAP Select 用於叢集、HA互連和鏡射流量的E0c-e0g虛擬網路介面卡。</block>
-  <block id="98a4f6885e7d5c14cf8637949d2c7084" category="list-text">連接埠群組應位於不可路由的VLAN上、因為此網路應為私有網路。您應該將適當的VLAN標記新增至連接埠群組、以納入考量。</block>
-  <block id="1d73953b34ca84fbbf679a9071108259" category="list-text">連接埠群組的負載平衡、容錯回復及容錯移轉順序設定應與vSwitch相同。</block>
-  <block id="b7760ca7d6bf308d66b54dafb201dee0" category="list-text">在vSwitch上設定外部流量的連接埠群組（ONTAP外部）：</block>
-  <block id="cc60c471b3f7c93bb39710ddf02f3de5" category="list-text">連接埠群組指派給ONTAP Select 用於資料和管理流量的E0A-e0c虛擬網路介面卡。</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">版本資訊</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
   <block id="5f42eee1bf54c8d4553c2d542932b451" category="sidebar">商業使用案例</block>
@@ -2298,7 +2288,6 @@
   <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">此參數控制長時間執行命令的行為。如果設定、命令會在前景執行、並在作業發生時顯示相關的事件訊息。</block>
   <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
-  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">將兩個介面卡標示為「主動」或將一個介面卡標示為「主動」、另一個標示為「待命」。</block>
   <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。</block>
   <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">參考平台的效能資訊。</block>
   <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">參考平台</block>
@@ -3307,16 +3296,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1abfe64fc729ead26726164b794bcc72" category="paragraph">下圖展示了單節點叢集和四節點叢集使用的ONTAP Select網路。</block>
   <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">四節點集群</block>
   <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">下圖展示了一個包含兩個網路的四節點集群。內部網路可在節點之間進行通訊、以支援ONTAP 叢集網路服務。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。</block>
-  <block id="c3a20bbad365631eadc5b2dca8f640b3" category="section-title">步驟3：設定Open vSwitch</block>
-  <block id="d1beebffe274c5b13d29f2fbfaa10b06" category="paragraph">以下步驟適用於典型網路環境中具有兩個實體連接埠（2x10Gb）的 ESXi 主機的 vSwitch 設定。</block>
-  <block id="720708f411d277d77845e1db4cee83de" category="inline-link-macro">配置 vSwitch 並將兩個連接埠分配給 vSwitch</block>
-  <block id="f07356480e3047e35b4cb99dbcc748e2" category="list-text"><block ref="2076eeb99e46600240fb1d963411bb31" category="inline-link-macro-rx"></block>。</block>
-  <block id="bf87bb05f214f1b9f8546e218338fb13" category="inline-link-macro">使用兩個連接埠建立 NIC 團隊</block>
-  <block id="32d6da19d2584fe97eb75d6418af8ca3" category="list-text"><block ref="4d5b30272096305aaf5c4ffdca2a1db5" category="inline-link-macro-rx"></block>。</block>
-  <block id="5a9f02bdaab74c00379f1d1e19fe6c57" category="list-text">將「容錯回復」設定設為「是」。</block>
-  <block id="f2456bc45004bdf347023d01536a2379" category="paragraph"><block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9c0cdffd9a10aa81c87d6972a4d9f884" category="list-text">連接埠群組可以位於可路由的VLAN上。根據網路環境，您還應該新增適當的 VLAN 標籤或設定 VLAN 中繼的連接埠群組。</block>
-  <block id="fae4bee7c370d0d0391b8ef189079d46" category="list-text">連接埠組的負載平衡、故障回復和故障轉移順序設定應與 vSwitch 相同。</block>
   <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">準備部署ONTAP Select節點的每個 KVM 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
   <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">ONTAP Select的 KVM 主機配置和準備清單</block>
   <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">準備部署ONTAP Select節點的每個 KVM 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
@@ -3799,7 +3778,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1a09fd5b1a162aaf184e47b77eb3825d" category="paragraph">租約期限為一小時至七天，視使用者配置而定。</block>
   <block id="5c51dc3fcfdd9653809e90fa3948c2f4" category="list-text">入門指南頁面</block>
   <block id="7102680d0af5da00746abf5266571291" category="paragraph">首次登入時，Deploy 會顯示此頁面。您也可以開啟頁面右上角的下拉框，選擇 *Getting Started* 來顯示此頁面。LLID 會顯示在「新增授權」部分。</block>
-  <block id="ad0f17488057d0a4f5ef95d80d34618e" category="paragraph">在頁面頂部選擇 *Administration* 選項卡，然後選擇 *Systems* 和 *Settings*。</block>
   <block id="e4c7778b64e92f4500818df277754f2e" category="paragraph">每次建立、擴充或變更資料聚合時，ONTAP Select 節點都必須尋找或要求有效的容量租約。您可以使用先前請求中仍然有效的租約，也可以根據需要要求新的租約。ONTAP Select 節點找出容量池租約的步驟如下：</block>
   <block id="891663db017744be89f051ca6f5c115b" category="paragraph">ONTAP Select 叢集中所有擁有 Capacity Pool 授權的節點必須使用相同的 License Manager 執行個體。由於每個 Deploy 執行個體中只有一個 License Manager 執行個體，因此此限制重申了現有要求，即同一個 Deploy 執行個體必須管理叢集中的所有節點。</block>
   <block id="8e3654f44c6cb5c34c098c1ab6d7f533" category="paragraph">下表從左到右描述了節點序號的各個部分。</block>
@@ -3834,11 +3812,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">多節點叢集的開銷係數為 2.67</block>
   <block id="249a516ff48049712229714792dc7131" category="paragraph">您需要根據可用空間計算授權容量，以確保您的部署有足夠的容量。</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">單節點</block>
-  <block id="4a56ef223b95c874ab12ac4a78def040" category="cell">HA 配對或 HA 與單節點的混合</block>
   <block id="ee77295963ed13bed36e924ed72f669e" category="cell">可用空間</block>
   <block id="686d2bd292fa941724920d9f5764926c" category="cell">授權空間</block>
-  <block id="d89ec2e9b51f836e29d4d62e09ac58db" category="paragraph">每個單節點叢集：</block>
-  <block id="bb91092a841534c73b7475d3ab63802a" category="paragraph">每個 HA 對叢集：</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">接下來</block>
   <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">取得 ONTAP Select 的容量集區授權</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
@@ -4053,16 +4028,22 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="598d217f06b9250ad27a8198bb5c2a4b" category="cell">54 TB（20 x 2.67 = 53.4，向上取整到下一個整數 TB）</block>
   <block id="6694602e4cd7d0b05713de6bd31c888e" category="cell">每個節點的最大可用空間 *註*：每個節點或 HA 配對的最大管理空間為 400 TB</block>
   <block id="0ff836b729a9f331160a37a804c5f502" category="cell">353 TB（400 / 1.13）</block>
-  <block id="79a0d4f0660fe4b9a46b19e4fa18a314" category="paragraph">74 TB ［（400 / 2）/ 2.67］</block>
-  <block id="19aeb97207c21df691d50d8d0930aeba" category="paragraph">148 TB （2 x 74）</block>
   <block id="9ed860bf7c910e8f72592e603158fb1a" category="paragraph">Capacity Tiers 授權的授權容量以完整 TB 為單位，最小值為 1 TB。授權容量的計算方法是將可用空間量乘以額外負荷係數。單節點叢集和多節點（ HA 配對型）叢集的額外負荷係數有所不同：</block>
   <block id="1191f788083da9194f8eef9400d10898" category="cell">10 TB</block>
   <block id="f515aabc5719e9815156a5bba11b0271" category="cell">每個節點 5 TB HA 配對 10 TB</block>
   <block id="8ef83a850a4c3f98639c08c641ced5a0" category="cell">12 TB（10 x 1.13 = 11.3，向上取整到下一個整數 TB）</block>
   <block id="5c2813f14ac4d1fdac66648a550ead14" category="cell">兩個 14 TB 授權（5 x 2.67 = 13.35，向上取整到下一個完整 TB）</block>
-  <block id="985b1eaad72a330f5ac66444aa1cc872" category="list-text">雙節點：148 TB（2 x 74）</block>
-  <block id="42d74051003e55f5c33a72399e33ee7c" category="list-text">四節點：296 TB（4 x 74）</block>
-  <block id="cb7d5ca5e63133f9c3ddab01857677e1" category="list-text">六節點：444 TB（6 x 74）</block>
-  <block id="dd0cb9fad81cb887132c37097f5cc87f" category="list-text">八節點：592 TB（8 x 74）</block>
   <block id="7257bc0e5008e5606e49eb884e2bc425" category="list-text">對於 ESXi 主機、ONTAP Select 9.7 或更新版本以及受支援的 Deploy 管理公用程式</block>
+  <block id="eac3eeac664694b6433309da45a1300a" category="list-text">選擇頁面頂部的 *Administration* 選項卡，然後選擇 *Systems &amp; AutoSupport* 。</block>
+  <block id="200bbcb887da28e9cd489bc89afc5674" category="cell">HA 配對或 HA 配對與單節點的混合</block>
+  <block id="d1600869d5b424ddbc5e9e6b111e1551" category="paragraph">叢集中的每個單一節點：</block>
+  <block id="68fa7b3d2b5fa9a6405ba8b8886e16e6" category="paragraph">149 TB（400 / 2.67）</block>
+  <block id="867f936c72e1e7c832aeeeb86dfdad19" category="paragraph">叢集中每個 HA 配對：</block>
+  <block id="1ae9306d13e8652cea306cd8e0f2f998" category="paragraph">298 TB （2 x 149）</block>
+  <block id="24ebdf5291b487d72a9f72970d82108d" category="list-text">雙節點：298 TB（2 x 149）</block>
+  <block id="483679a22c6b3db76de43d55829178e0" category="list-text">四節點：596 TB（4 x 149）</block>
+  <block id="c7ba1f9c0cd7b8c5a7b2c67b9c3e7973" category="list-text">六節點：894 TB（6 x 149）</block>
+  <block id="4148985b49a3b29db1e703cf43b2866f" category="list-text">八節點：1,192 TB（8 x 149）</block>
+  <block id="01d09c7a6491e08b12c0b1b76615fe0d" category="list-text">十節點：1,490 TB（10 x 149）</block>
+  <block id="6c1b0c6ec4484bd2c7186af4f45ae51a" category="list-text">十二節點：1,788 TB（12 x 149）</block>
 </blocks>
