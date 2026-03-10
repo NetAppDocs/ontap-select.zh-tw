@@ -22,7 +22,7 @@ summary: 使用RAID SyncMirror 功能（RSM2）、鏡射集合體和寫入路徑
 
 此功能是以HA合作夥伴的概念為基礎打造而成。ONTAP透過使用支援RAID功能（RSMs）、將此架構延伸至非共享的市售伺服器世界、此功能可在叢集節點之間複寫資料區塊、並在HA配對之間提供兩份使用者資料複本。ONTAP Select SyncMirror ONTAP
 
-具有中介器的雙節點叢集可橫跨兩個資料中心。如需詳細資訊、請參閱一節 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["雙節點延伸HA MetroCluster （簡稱「架構SDS」）最佳實務做法"]。
+一個包含中間節點的雙節點叢集可以跨越兩個資料中心。如需更多資訊，請參閱 link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["雙節點延伸HA MetroCluster （簡稱「架構SDS」）最佳實務做法"] 章節。
 
 
 

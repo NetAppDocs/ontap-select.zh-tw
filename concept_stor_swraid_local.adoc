@@ -148,7 +148,7 @@ image:ST_21.jpg["將 ONTAP Select 磁碟與對應的 ESXi 磁碟進行匹配"]
 
 [role="tabbed-block"]
 ====
-.ESX
+.ESXi
 --
 [source, cli]
 ----

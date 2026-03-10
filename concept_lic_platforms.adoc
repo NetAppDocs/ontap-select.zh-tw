@@ -71,7 +71,7 @@ NOTE: 基於核心的虛擬機器 (KVM) 不支援大型執行個體類型。
 
 == 比較平台授權方案的硬體支援
 
-標準版、高級版和高級 XL 版授權支援多種硬體和軟體。有關硬體和軟體版本的最新信息，請參閱 link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。
+標準版、高級版和高級 XL 版授權支援多種硬體和軟體。有關硬體和軟體版本的最新資訊，請參閱 link:https://mysupport.netapp.com/matrix/["互通性對照表工具"^]。
 
 [role="tabbed-block"]
 ====

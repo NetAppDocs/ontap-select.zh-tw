@@ -37,13 +37,13 @@ ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
 * NVMe over TCP
 * 支援多租戶共享ONTAP
 * SS3 ONTAP
+* S3 SnapMirror
 * SnapLock Select
 +
 SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。如需更多資訊，請參閱link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock 文檔"^]。
 
-* S3 SnapMirror
 * SnapMirror
-* SnapMirror Cloud
+* SnapMirror 雲端
 * SnapRestore
 * SnapVault
 * 儲存 VM 災難恢復（ SVM DR ）

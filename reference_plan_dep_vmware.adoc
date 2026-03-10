@@ -32,7 +32,7 @@ ONTAP Select 和 ONTAP Select 部署管理均支援下列 Hypervisor ：
 
 
 
-NOTE: 如需支援平台的其他詳細資料、請參閱Hypervisor專屬規劃資訊和版本說明。
+NOTE: 有關支援平台的其他詳細資訊，請參閱特定虛擬機器管理程序的規劃資訊和 link:reference_release_notes.html["發行說明"]。
 
 .Hypervisor、適用於ONTAP Select 節點與管理公用程式
 部署管理公用程式和 ONTAP Select 節點都會以虛擬機器的形式執行。您選擇部署公用程式的Hypervisor與ONTAP Select 您選擇的適用於各個節點的Hypervisor無關。您可以在配對兩種產品時、享有完全的靈活度：

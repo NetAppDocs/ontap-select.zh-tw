@@ -136,7 +136,7 @@ VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFas
 
 您必須在ONTAP Select 每個支援外部網路和內部網路的各個支援主機上設定虛擬交換器（僅限多節點叢集）。在部署多節點叢集時、您應該測試內部叢集網路上的網路連線能力。
 
-若要深入瞭解如何在 Hypervisor 主機上設定 Open vSwitch 、請參閱 link:https://www.netapp.com/media/13134-tr4613.pdf["ONTAP Select on KVM 產品架構與最佳實務做法"^] 技術報告。
+要了解有關如何在虛擬機管理程式主機上配置 Open vSwitch 的更多信息，請參閱link:https://www.netapp.com/media/13134-tr4613.pdf["ONTAP Select on KVM 產品架構與最佳實務做法"^]技術報告。
 
 
 

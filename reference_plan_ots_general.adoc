@@ -33,7 +33,7 @@ Linux 伺服器配送:: 您應該擁有 ONTAP Select 部署所使用的特定 Li
 --
 
 
-如需準備 Linux 伺服器的詳細資訊、包括必要的組態和軟體套件、請參閱主機組態檢查清單。請參閱 Hypervisor 需求、以瞭解目前支援的 Linux 套裝作業系統。
+有關準備 Linux 伺服器的更多資訊，包括所需的組態和軟體套件，請參閱link:kvm-host-configuration-and-preparation-checklist.html["主機組態檢查清單"]。請參閱目前支援的 Linux 發行版的 Hypervisor 需求。
 
 KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM 環境中安裝和管理 ONTAP Select 時、您必須使用幾個 Linux CLI 命令：
 +
@@ -91,7 +91,7 @@ Hypervisor不受限制:: 支援不受Hypervisor限制的支援、包括不受支
 
 NOTE: 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 
-如需支援平台的其他詳細資料、請參閱Hypervisor專屬規劃資訊和版本說明。
+有關支援平台的其他詳細資訊，請參閱特定虛擬機器管理程序的規劃資訊和 link:reference_release_notes.html["發行說明"]。
 
 Hypervisor、適用於ONTAP Select 節點與管理公用程式:: 部署管理公用程式和ONTAP Select VMware節點都會以虛擬機器的形式執行。您選擇部署公用程式的Hypervisor與ONTAP Select 您選擇的適用於各個節點的Hypervisor無關。您可以在配對兩種產品時、享有完全的靈活度：
 +

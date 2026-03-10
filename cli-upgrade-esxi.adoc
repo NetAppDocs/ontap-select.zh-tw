@@ -47,10 +47,11 @@ TIP: 您應該選取使用部署管理公用程式的升級程序。
 +
 使用 Deploy 管理公用程式執行 ESXi 升級是更通用且更具彈性的選項。但是，有時可能會出現部署不可用或無法使用的情況。例如，早期版本的ONTAP Select和 Deploy 管理實用程式不支援升級到 ESXi 8.0。
 
-+
-如果您使用這些較早版本並嘗試升級、ONTAP Select 則無法將該虛擬機器開機的狀態也會保留下來。在此情況下、您必須選取不使用Deploy的升級程序。請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] 以取得更多資訊。
 
 
+
+
+如果您使用的是早期版本並嘗試升級，可能會導致 ONTAP Select 虛擬機器處於無法啟動的狀態。在這種情況下，您必須選擇不使用 Deploy 的升級流程。
 
 . *升級部署管理實用程式*
 +

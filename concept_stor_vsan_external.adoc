@@ -79,7 +79,7 @@ image:ST_14.jpg["多節點 VNAS 叢集的初始部署"]
 
 NOTE: 反親和性規則要求在 ESXi 叢集上啟用 DRS。
 
-請參閱下列範例、瞭解如何為ONTAP Select 哪些虛擬機器建立反關聯規則。如果ONTAP Select 這個叢集包含多個HA配對、則叢集中的所有節點都必須包含在此規則中。
+請參考以下範例，了解如何為 ONTAP Select VM 建立反親和性規則。如果 ONTAP Select 叢集包含多個 HA 配對，則叢集中的所有節點都必須包含在此規則中。
 
 image:ST_15.jpg["VM/主機規則"]
 

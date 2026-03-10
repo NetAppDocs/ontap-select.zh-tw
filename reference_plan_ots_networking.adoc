@@ -23,7 +23,7 @@ summary: 您必須先正確設定Hypervisor網路、然後才能部署ONTAP Sele
 您必須在ONTAP Select 每個支援外部網路和內部網路的各個支援主機上設定虛擬交換器（僅限多節點叢集）。在部署多節點叢集時、您應該測試內部叢集網路上的網路連線能力。
 
 
-NOTE: 若要深入瞭解如何在Hypervisor主機上設定vSwitch及高速介面功能、請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 區段。
+NOTE: 要了解有關如何在虛擬機管理程式主機上配置 vSwitch 以及高速介面功能的更多信息，請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 部分。
 
 
 
@@ -72,7 +72,7 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 * NIC 2處於作用中狀態
 
 
-請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 一節以取得有關雙NIC部署的詳細資訊。
+有關雙網卡部署的更多資訊，請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 章節。
 
 
 
@@ -111,7 +111,7 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 * NIC 1、NIC 2、NIC 3處於待命狀態
 
 
-請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 一節以取得有關四個NIC部署的詳細資訊。
+有關四網卡部署的更多資訊，請參閱 link:concept_nw_concepts_chars.html["深入探討網路"] 章節。
 
 
 

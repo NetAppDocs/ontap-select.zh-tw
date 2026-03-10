@@ -150,7 +150,7 @@ image:ST_12.jpg["虛擬磁碟對實體磁碟的對應"]
 例如ONTAP Select 、某個對象可以指派31 TB的資料存放區或LUN（部署VM後的剩餘空間、以及系統和根磁碟的資源配置）。然後建立四個~7.75TB虛擬磁碟、並指派給適當ONTAP 的鏡射本機叢和鏡射叢。
 
 
-NOTE: 將容量新增至ONTAP Select 某個VMware可能會導致不同大小的VMDK。如需詳細資訊、請參閱一節 link:concept_stor_capacity_inc.html["增加儲存容量"]。不同FAS 於VMware系統、不同大小的VMDK可存在於同一個集合體中。在這些VMDK上使用RAID 0等量磁碟區、無論其大小為何、都能充分利用每個VMDK中的所有空間。ONTAP Select
+NOTE: 在 ONTAP Select 虛擬機器中新增容量可能會導致產生大小不同的 VMDK。詳情請參閱相關章節link:concept_stor_capacity_inc.html["增加儲存容量"]。與 FAS 系統不同，不同大小的 VMDK 可以存在於同一個集合體中。ONTAP Select 在這些 VMDK 之間使用 RAID 0 條帶化，因此無論每個 VMDK 的大小如何，都能充分利用其所有空間。
 
 
 
