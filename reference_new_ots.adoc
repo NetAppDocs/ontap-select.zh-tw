@@ -162,13 +162,13 @@ link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["
 
 == ONTAP Select 9.16.1
 
-更新的 NetApp 授權檔案支援:: 從 ONTAP Select 9.16.1 開始， NetApp 授權檔案（ NLF ）支援已更新。新的 NLF 格式包含 ARP ， ONTAP S3 和 S3 SnapMirror 功能的授權。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["深入瞭解"]。
+更新的 NetApp 授權檔案支援:: 從 ONTAP Select 9.16.1 開始，NetApp 授權檔案（NLF）支援已更新。新的 NLF 格式包含 ARP、ONTAP S3 和 S3 SnapMirror 功能的授權。link:reference_lic_ontap_features.html#enabled-ontap-features["深入瞭解"]。
 +
 --
 對於新的 ONTAP Select 9.16.1 部署，會自動套用新的 NLF 格式。當您將現有的 ONTAP Select 部署升級至 9.16.1 時，不會套用新的 NLF 格式。若要取得 ARP ， ONTAP S3 和 S3 SnapMirror 功能授權，您必須在升級後下載更新的 NLF 。如果您還原至 ONTAP Select 9.15.1 或更早版本，則必須重新安裝升級前所擁有的功能授權。
 
 --
-支援自主勒索軟體保護:: ONTAP Select 9.16.1 引進對自主勒索軟體保護（ ARP ）的支援。ONTAP Select 9.16.1 僅支援手動 ARP 更新，不支援自動更新。ONTAP Select 9.16.1 的 NLF 中包含 ARP 功能授權。link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["深入瞭解"]。
+支援自主勒索軟體保護:: ONTAP Select 9.16.1 引入了對自主勒索軟體防護（ARP）的支援。ONTAP Select 9.16.1 僅支援 ARP 的手動更新，不支援自動更新。ARP 功能授權包含在 ONTAP Select 9.16.1 的 NLF 中。link:reference_lic_ontap_features.html#enabled-ontap-features["深入瞭解"]。
 增強VMware ESXi支援:: ONTAP Select 9.16.1 支援 VMware ESXi 8.0 U3 。
 已更新 KVM Hypervisor 支援:: 從ONTAP Select 9.16.1 開始，RHEL 9.5 和 Rocky Linux 9.5 支援 KVM 虛擬機器管理程式。
 

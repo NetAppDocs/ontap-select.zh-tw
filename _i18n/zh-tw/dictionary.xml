@@ -2943,10 +2943,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8a4d972efa4a178e4f23653b4b6a1b69" category="paragraph">瞭解 ONTAP Select 支援版本的新功能和增強功能。</block>
   <block id="fa9e744025392ca74a15477f1e137192" category="section-title">ONTAP Select 9.16.1</block>
   <block id="6c1d79ac25f0c97bc720f88ff0f156e0" category="list-text">更新的 NetApp 授權檔案支援</block>
-  <block id="a1a2f3308f6033087cf20e84356aa4ac" category="list-text">從 ONTAP Select 9.16.1 開始， NetApp 授權檔案（ NLF ）支援已更新。新的 NLF 格式包含 ARP ， ONTAP S3 和 S3 SnapMirror 功能的授權。<block ref="b5ed3fe3b9ec5f0e955203c12216c0fe" category="inline-link-macro-rx"></block>。</block>
   <block id="9fc3a2fe374c89216150309f04d52677" category="paragraph">對於新的 ONTAP Select 9.16.1 部署，會自動套用新的 NLF 格式。當您將現有的 ONTAP Select 部署升級至 9.16.1 時，不會套用新的 NLF 格式。若要取得 ARP ， ONTAP S3 和 S3 SnapMirror 功能授權，您必須在升級後下載更新的 NLF 。如果您還原至 ONTAP Select 9.15.1 或更早版本，則必須重新安裝升級前所擁有的功能授權。</block>
   <block id="9ff1c34bad1597cf08ab1c4399ae7496" category="list-text">支援自主勒索軟體保護</block>
-  <block id="0d42d1fa24a02ff9cf9230752f2e8dbc" category="list-text">ONTAP Select 9.16.1 引進對自主勒索軟體保護（ ARP ）的支援。ONTAP Select 9.16.1 僅支援手動 ARP 更新，不支援自動更新。ONTAP Select 9.16.1 的 NLF 中包含 ARP 功能授權。<block ref="b5ed3fe3b9ec5f0e955203c12216c0fe" category="inline-link-macro-rx"></block>。</block>
   <block id="432f71c7f4f95547896f41e4d812805f" category="list-text">ONTAP Select 9.16.1 支援 VMware ESXi 8.0 U3 。</block>
   <block id="a011a191055a233d6e8de3b11aacb53c" category="doc">ONTAP Select 部署最佳實務做法摘要</block>
   <block id="5a4ab7845b9d12a7fe46ca9fb4f76647" category="doc">ONTAP Select 部署 Hypervisor 主機考量事項</block>
@@ -3185,7 +3183,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="69bbee1943d709d1872e201eef4b29a8" category="paragraph">支援僅軟體版本的功能、可將其部署為Hypervisor主機上的虛擬機器。ONTAP Select ONTAP它可輔助主流 FAS ， AFF 和 ASA ONTAP 產品套件，以及其他純軟體選項，例如 Cloud Volumes ONTAP 。</block>
   <block id="00a3caa2896a927e39b353d23b56eb2d" category="paragraph">ONTAP Select 可將內部磁碟機， NVMe ， SSD 或 HDD ，以及外部陣列儲存設備，轉換成靈活的儲存系統，並享有專用 ONTAP 儲存系統所提供的許多相同優勢。您也可以在新伺服器或現有的伺服器基礎架構上部署 ONTAP Select 。ONTAP Select 易於管理，並使用與 ONTAP 型解決方案相同的管理軟體，因此可降低營運成本和訓練需求。</block>
   <block id="8307546cfa4f0ccad4627a2dcd4f46fa" category="paragraph">ONTAP Select 採用兩種互補授權模式：容量層和完全靈活的容量資源池，可因應您的容量使用需求。這兩種授權模式都能讓您以最小 1TB 的增量來增加容量。例如，您可以從數 TB 開始，並隨著專案成長而動態增加容量。如果您使用容量資源池，則可以在專案完成時視需要重新分配容量。</block>
-  <block id="d88f78a3aeac7464dce1dfe85df34e06" category="paragraph">ONTAP Select 已整合至雲端管理架構，例如 VMware vSphere 。這有助於加速部署檔案服務，主目錄，軟體開發環境和應用程式測試等新專案。</block>
   <block id="39de1f5e6bbe7e17017c377d3305e9fd" category="paragraph">SnapMirror 軟體可讓您在混合雲的 ONTAP 儲存設備之間移動資料，以便您輕鬆地在想要的位置存取資料。例如，您可以快速建立環境來證明想法。之後，您可以將專案移至專用的儲存平台進行正式作業部署，或是在開發工作流程中，讓專案更容易在雲端中存取。</block>
   <block id="9c191e042a5bb50dde6bcacd73b9fc18" category="paragraph">透過軟體實作及交付IT服務、可讓系統管理員以先前無法實現的速度和敏捷度快速配置資源。隨著現代化資料中心移轉至軟體定義基礎架構（ SDI ）架構，您可以將最寶貴的 IT 資產與基礎實體基礎架構分離，提供靈活度，擴充性和程式設計能力。</block>
   <block id="cc0ffc2288900bd57ac4b3e354e5fb49" category="paragraph">介紹消費型授權模式。ONTAP Select在正式作業環境中部署 ONTAP Select 叢集時，您必須為每個節點或共享容量集區購買具有儲存容量的授權。使用Deploy公用程式時、您必須套用授權檔案、以建立叢集節點的儲存容量。</block>
@@ -3487,7 +3484,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="1b8fd93e725596cfcebcd993f635973a" category="cell">軟體 RAID 配置</block>
   <block id="612323f6c1e52e88287fea6fecdef4e1" category="cell">NVMe 驅動器...</block>
   <block id="0bbdf237a06a8d91581305ad9eaa40be" category="admonition">基於核心的虛擬機器 (KVM) 不支援大型執行個體類型。</block>
-  <block id="dd2fc3d451e43974d9ba6b2330d17e5b" category="list-text"><block ref="dd2fc3d451e43974d9ba6b2330d17e5b" category="inline-link-macro-rx"></block></block>
   <block id="89ee8792b4466624e22db7a555dbec1c" category="list-text"><block ref="89ee8792b4466624e22db7a555dbec1c" category="inline-link-macro-rx"></block></block>
   <block id="5d2c9e43b106e440a5e6622384e824eb" category="admonition">VMFS 開銷不為零（請參閱 VMware KB 1001618），並且嘗試使用資料儲存區報告為可用的整個空間會導致叢集建立作業期間出現虛假錯誤。</block>
   <block id="ab38846c124130820f8766b9794e5e9c" category="summary">虛擬 NAS (vNAS) 部署支援 vSAN 上的ONTAP Select叢集、某些 HCI 產品、 NetApp HCI技術以及外部陣列類型的資料儲存。這些配置的底層基礎架構提供了資料儲存的彈性。</block>
@@ -3640,7 +3636,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="62080c1e38d010ffa650c0549d2fd463" category="inline-link-macro">ONTAP Select 9.18.1 發行說明</block>
   <block id="bae2221cd26cec7b066734cfd0888c05" category="paragraph">您可以訪問<block ref="b88c41ab6f0bacccf3a706fd6b4f9780" category="inline-link-macro-rx"></block>查看目前版本詳情。</block>
   <block id="14d3f202c8554a54e4a6f4f52aa78fb3" category="list-text">對於 KVM 主機，需要ONTAP Select 9.17.1 或更高版本以及受支援的部署管理實用程式。</block>
-  <block id="bb68cf2408900213fd35084701d5c32c" category="paragraph">您可以從 ONTAP ONTAP Select ONTAP Select Deploy 9.18.1。若要從ONTAP Select Deploy 9.15.1 或更早版本升級，請查看ONTAP Select版本的發行說明。</block>
   <block id="b69fcb807e0b12e6b52ca8806f85c011" category="paragraph">增加或減少現有ONTAP Select叢集（適用於 ESXi 和 KVM 虛擬機器管理程式主機）的叢集大小。對於這兩種主機類型，您可以以 4 到 12 個節點為增量增加或減少叢集大小。</block>
   <block id="a0b486320d46bfa4e7a315349c3d059b" category="list-text">從單節點或雙節點叢集擴展到六節點、八節點、十節點或十二節點叢集。</block>
   <block id="459e1c3cb388ea595c42d32d54d432fb" category="list-text">從 6、8、10 或 12 個節點的群集收縮為 1 或 2 個節點的群集。</block>
@@ -4044,6 +4039,11 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="5c2e3f1b284a7eb8d03229a6f711a6d8" category="paragraph">有關 ONTAP Select 和授權續約的詳細資訊，請參閱 <block ref="244262621d739af44a70be8c211b652b" category="inline-link-macro-rx"></block> 中的授權、安裝、升級和還原章節。</block>
   <block id="d3687f9d5cbe754b85309258725912ba" category="paragraph">如果使用本機硬體 RAID 控制器，則必須在每個節點上至少建立一個資料存放區（ESXi）或一個 <block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>，用於系統資料以及根 Aggregate 和資料 Aggregate。您必須在設定 ONTAP Select 節點時附加儲存資源池。</block>
   <block id="01d8de06079a4b45d8794e7643ed43a1" category="paragraph">如果使用軟體 RAID，則必須建立至少一個資料儲存區（ESXi）或一個<block ref="7f40b177101a60800b4ff488a68c2a27" category="inline-link-macro-rx"></block>用於系統資料，並確保 SSD 磁碟機可用於根 Aggregate 和資料 Aggregate。您必須在設定 ONTAP Select 節點時附加儲存資源池和磁碟。</block>
-  <block id="42eb22aac2ec16baf500c0673430b7de" category="paragraph">確認在升級過程中 ONTAP Select Deploy 未用於執行任何其他任務。有關升級 ONTAP Select Deploy 實用程式的相關資訊和限制，請參閱<block ref="3dda619db99e14ba32fb3b3389030b7d" category="inline-link-macro-rx"></block>。</block>
   <block id="e7600c044897b1df8192df992376a5c1" category="paragraph">如果您安裝的是舊版的 ONTAP Select Deploy 管理公用程序，則應升級至最新版本。ONTAP Select 節點和 ONTAP Select Deploy 元件是獨立升級的。如需更多詳細資訊，請參閱 <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block>。</block>
+  <block id="5b6d4054ef7052cdbac6938952fde107" category="paragraph">ONTAP Select 已整合到 VMware vSphere 和 Kernel-based Virtual Machine（KVM）等雲端管理框架中。這有助於加速檔案服務、主目錄、軟體開發環境和應用程式測試等新專案的部署。</block>
+  <block id="056ac6d6b75fc8c083881fac056a5f00" category="list-text"><block ref="056ac6d6b75fc8c083881fac056a5f00" category="inline-link-macro-rx"></block></block>
+  <block id="242e2d9a4037c878b7c02d92920684a3" category="list-text">從 ONTAP Select 9.16.1 開始，NetApp 授權檔案（NLF）支援已更新。新的 NLF 格式包含 ARP、ONTAP S3 和 S3 SnapMirror 功能的授權。<block ref="6a143c7a682c120f755bb9e007744e73" category="inline-link-macro-rx"></block>。</block>
+  <block id="26b97e8272b5c629fb33f3f308a35b65" category="list-text">ONTAP Select 9.16.1 引入了對自主勒索軟體防護（ARP）的支援。ONTAP Select 9.16.1 僅支援 ARP 的手動更新，不支援自動更新。ARP 功能授權包含在 ONTAP Select 9.16.1 的 NLF 中。<block ref="6a143c7a682c120f755bb9e007744e73" category="inline-link-macro-rx"></block>。</block>
+  <block id="c15e1083b5e8b4f4973ba9286f3ec996" category="paragraph">您可以從 ONTAP Select Deploy 9.17.1 或 9.16.1 直接升級到 ONTAP Select Deploy 9.18.1。要從更早的版本（例如 ONTAP Select Deploy 9.15.1）升級，您必須先升級到 ONTAP Select Deploy 9.16.1 或 9.17.1，然後再升級到 ONTAP Select Deploy 9.18.1。</block>
+  <block id="8c58e4482a12bf26ee215d6f58f5c8a8" category="paragraph">確認在升級過程中 ONTAP Select Deploy 未用於執行任何其他任務。</block>
 </blocks>
