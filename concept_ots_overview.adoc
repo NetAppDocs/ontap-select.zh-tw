@@ -65,6 +65,23 @@ image:ots_architecture.png["說明ONTAP Select 以部署管理公用程式建立
 
 
 
+== FlexCache 使用 ONTAP Select 進行回寫
+
+ONTAP Select 支援具有回寫功能的 FlexCache 快取磁碟區。ONTAP Select 執行個體的整體效能與入門級 ONTAP 系統相當。
+
+使用 ONTAP Select 時，具有回寫功能的 FlexCache 快取磁碟區有以下要求：
+
+* 在中型（8 核心）或大型（16 核心）實例上使用 ONTAP Select。
+* 使用 NVMe 支援的固態硬碟。對於 ONTAP Select，SAS 支援的儲存裝置相較於 NVMe 支援的儲存裝置，效能較低。
+* 在開始部署之前，請先測試 ONTAP Select 的 FlexCache 回寫功能。對於大量小檔案，不建議使用 FlexCache 回寫功能。
+
+
+ONTAP Select 不支援在小型執行個體（4 核心）上使用回寫功能的 FlexCache 快取磁碟區。此外，ONTAP Select 不支援在小型、中型或大型執行個體上使用回寫功能的 FlexCache 來源磁碟區。
+
+link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["了解 ONTAP FlexCache 回寫功能"^]
+
+
+
 == 請比較 ONTAP Select 和 ONTAP 9
 
 以硬體為基礎ONTAP 的供應功能可提供ONTAP Select 企業級的儲存解決方案。不過、由於設計和實作方式各異、因此每個方案都能因應不同的業務需求和使用情境。在規劃ONTAP Select 一套解決方法部署之前、您應該先熟悉平台之間的主要差異。

@@ -14,7 +14,7 @@ summary: 在規劃 ONTAP Select 部署時，您應該考慮幾項 MetroCluster S
 
 
 [role="lead"]
-建立雙節點的叢集時、可選擇使用哪些組態選項。MetroCluster ONTAP Select這類似於遠端辦公室/分公司（ROBO）部署、但兩個節點之間的距離可達10公里這項強化的雙節點部署可提供額外的使用案例。在準備部署MetroCluster 環節中、您應該瞭解各項要求和限制。
+MetroCluster SDS 是建立雙節點 ONTAP Select 叢集時的一個配置選項。它類似於遠端辦公室/分支機構（ROBO）部署。這種增強型雙節點部署提供了更多使用案例場景。在準備部署 MetroCluster SDS 時，您應該了解其要求和限制。
 
 部署 MetroCluster SDS 之前、請確認符合下列需求。
 

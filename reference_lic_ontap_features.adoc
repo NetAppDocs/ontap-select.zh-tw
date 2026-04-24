@@ -29,6 +29,12 @@ ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
 * CIFS
 * 重複資料刪除與壓縮
 * FlexCache
++
+ONTAP Select 支援具有回寫功能的 FlexCache 快取磁碟區。不支援具有回寫功能的 FlexCache 來源磁碟區。
+
++
+link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["深入瞭解 FlexCache 與 ONTAP Select 的回寫功能"]
+
 * FlexClone
 * iSCSI
 * NDMP
@@ -40,7 +46,10 @@ ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
 * S3 SnapMirror
 * SnapLock Select
 +
-SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。如需更多資訊，請參閱link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock 文檔"^]。
+SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。
+
++
+link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["了解 ONTAP SnapLock"^]
 
 * SnapMirror
 * SnapMirror 雲端
@@ -67,6 +76,6 @@ NOTE: 使用 StorageGRID 時不需要 FabricPool 授權。
 
 
 .相關資訊
-* link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["比較功能與功能ONTAP Select ONTAP"]
-* link:https://mysupport.netapp.com/site/systems/master-license-keys["NetApp ONTAP -主要授權金鑰"^]
+* link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["請比較 ONTAP Select 和 ONTAP 9"]
+* link:https://mysupport.netapp.com/site/systems/master-license-keys["了解 NetApp ONTAP 主授權金鑰"^]
 
