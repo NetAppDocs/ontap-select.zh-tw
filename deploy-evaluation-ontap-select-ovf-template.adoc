@@ -46,7 +46,7 @@ image:prepare_ESXi_host_requirements.png["準備 ESXi 主機的需求"]
 . 使用下列其中一個選項選取主機：
 +
 ** 選取*檔案*>*部署OVF範本*。
-** 選擇 * 資料中心 * 。然後按一下滑鼠右鍵並選取 * 部署 OVF 範本 * 。
+** 選擇 *Datacenter* 。然後按一下滑鼠右鍵並選取 *Deploy OVF Template* 。
 
 
 . 在本地工作站上選擇 ONTAP Select 來源 OVA 檔案，然後選擇 * 下一步 * 。

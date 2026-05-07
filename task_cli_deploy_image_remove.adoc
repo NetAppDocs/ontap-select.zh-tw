@@ -45,7 +45,7 @@ shell bash
 ----
 ls -lh /opt/netapp/images
 ----
-. 您也可以選擇移除 Hypervisor 主機的 ONTAP Select 映像。
+. （選用）使用 hypervisor 主機移除 ONTAP Select 映像。
 +
 [role="tabbed-block"]
 ====

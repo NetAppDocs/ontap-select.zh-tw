@@ -79,10 +79,9 @@ NOTE: ESXi 7.0 GA 已停止提供服務。如果您有使用此版本的ONTAP Se
 
 您部署ONTAP Select 的實體Hypervisor主機必須符合多項硬體需求。只要符合最低硬體需求、您就可以選擇Hypervisor主機的任何平台。下列廠商提供支援的硬體平台：Cisco、Dell、HP、Fujitsu、Lenovo、 和Supermmicro.
 
+ONTAP Select 支援基於 Intel Xeon Sandy Bridge 和 Advanced Micro Devices (AMD) 處理器的 CPU 型號。
 
-NOTE: 從ONTAP Select 9.9.1 開始，僅支援基於 Intel Xeon Sandy Bridge 或更高版本的 CPU 型號。
-
-如需詳細資訊，請參閱 https://mysupport.netapp.com/matrix["互通性對照表工具， window=_blank"]。
+如需詳細資訊，請參閱 https://mysupport.netapp.com/matrix["互通性對照表工具"^]。
 
 
 
@@ -91,10 +90,9 @@ NOTE: 從ONTAP Select 9.9.1 開始，僅支援基於 Intel Xeon Sandy Bridge 或
 無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。
 
 .處理器
-支援的微處理器包括用於伺服器的 Intel Xeon 處理器，請參閱link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon處理器、window=_blank"]了解更多。
+支援的微處理器包括 Intel Xeon 伺服器處理器和 AMD 處理器。
 
-
-NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
+請參閱link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Intel Xeon 處理器"^]和link:https://www.amd.com/en/products/processors/server/epyc.html["AMD EPYC 伺服器 CPU"^]以取得更多資訊。
 
 .乙太網路組態
 根據叢集大小、有多種支援的乙太網路組態。
@@ -118,8 +116,6 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 
 根據節點執行個體類型、有多項額外的硬體需求。
 
-請參閱 link:concept_lic_platforms.html["瞭解平台授權方案"] 以取得更多資訊。
-
 [cols="a1,a2,a2,a2"]
 |===
 | 節點大小 | CPU 核心 | 記憶 | 所需的平台許可證產品 
@@ -135,3 +131,6 @@ NOTE: ONTAP Select 不支援進階 Micro 裝置（ AMD ）處理器。
 |===
 
 NOTE: 根據平台授權、還有額外的磁碟需求。請參閱 link:reference_plan_ots_storage.html["儲存與RAID"] 以取得更多資訊。
+
+.相關資訊
+瞭解 link:concept_lic_platforms.html["ONTAP Select 的平台授權產品"]

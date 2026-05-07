@@ -63,7 +63,7 @@ NOTE: 如果您只要部署叢集進行評估、可以跳過此步驟。
 .步驟
 . 在本機工作站的命令Shell中、使用sftp公用程式將授權檔案上傳至部署虛擬機器。
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -113,7 +113,7 @@ license show
 host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -130,7 +130,7 @@ host register -name 10.234.81.14 -hypervisor-type KVM -username root
 host show -name <FQDN|IP> -detailed
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -156,7 +156,7 @@ host show -name 10.234.81.14 -detailed
 credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -177,7 +177,7 @@ host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
 host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -192,7 +192,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 host show -name <FQDN|IP> -detailed
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -223,7 +223,7 @@ host show -name 10.234.81.14 -detailed
 cluster create -name <cluster_name> -node-count <count>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -236,7 +236,7 @@ cluster create -name test-cluster -node-count 1
 cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -280,7 +280,7 @@ node show -cluster-name <cluster_name>
 node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -300,7 +300,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -host-name 10.234.8
 host network show -host-name <FQDN|IP> -detailed
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -329,7 +329,7 @@ node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -manageme
 部署單節點叢集時，不需要內部網絡，應刪除「-internal-network」。
 
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -343,7 +343,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 node show -name <node_name> -cluster-name <cluster_name> -detailed
 ----
 +
-輸出範例
+範例輸出：
 
 +
 ....
@@ -372,7 +372,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 host storage pool show -host-name <FQDN|IP>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -392,7 +392,7 @@ node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-na
 如果包含“-capacity-limit”參數，請將值指定為 GB 或 TB。
 
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -407,7 +407,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 node storage pool show -cluster-name <cluster_name> -node-name <node_name>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -421,7 +421,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -435,7 +435,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]
@@ -462,7 +462,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 cluster deploy -name <cluster_name>
 ----
 +
-輸出範例
+範例輸出：
 
 +
 [listing]

@@ -64,8 +64,3 @@ Capacity Tiers 授權模式有幾項獨特的特性，包括：
 * ONTAP Select 叢集中的所有 ONTAP Select 節點共用相同的授權容量。這表示授權必須足夠大，以提供分配給叢集中所有節點的儲存空間。
 * 每個節點會自動從共享容量池中租用其本機資料集合體的儲存容量。
 
-
-.下一步是什麼？
-* link:concept_lic_platforms.html["瞭解 ONTAP Select 平台授權方案"]
-* link:concept_lic_cp_operation.html["深入了解 ONTAP Select Capacity Pools 授權模式"]
-

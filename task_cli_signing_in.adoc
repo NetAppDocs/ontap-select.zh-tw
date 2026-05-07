@@ -31,5 +31,5 @@ summary: 您需要使用SSH登入部署管理Shell。登入後、您可以發出
 ** Proxy URL（選用）
 
 
-. 鍵入*？*並按* Enter鍵以顯示可用的管理Shell命令清單。
+. 輸入 *?* 並選取 *Enter* 以顯示可用管理 shell 命令清單。
 

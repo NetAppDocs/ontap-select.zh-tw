@@ -23,6 +23,6 @@ summary: 所有API呼叫的詳細資料均以通用格式記錄及顯示在ONTAP
 您可以ONTAP Select 使用獨特的識別碼來擷取描述某個叢集的組態資訊。在此範例中、會傳回所有歸類為「廉價」的欄位。不過、最佳實務做法是、您只能要求所需的特定欄位。
 
 .步驟
-. 在主頁面上、捲動至底部、然後按一下「*叢集*」。
-. 按一下「* Get /cluster /｛cluster _id｝*」以顯示API呼叫的詳細資料、該API呼叫用於傳回ONTAP Select 有關某個叢集的資訊。
+. 在主頁上，捲動到底部並選擇 *Cluster*。
+. 選擇 *GET /clusters/{cluster_id}* 以顯示用於傳回 ONTAP Select 叢集相關資訊的 API 呼叫詳細資料。
 

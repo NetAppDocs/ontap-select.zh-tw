@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_usecase_robo.html 
-keywords: ontap select, ROBO, remote office/branch office 
+keywords: ontap select, ROBO, remote office, branch office 
 summary: 在ONTAP Select 遠端辦公室/分公司（ROBO）環境中部署支援功能、以支援小型辦公室、同時維持集中化的管理與控制。 
 ---
 = 在遠端辦公室和分公司使用 ONTAP Select

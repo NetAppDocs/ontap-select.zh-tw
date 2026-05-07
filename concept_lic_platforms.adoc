@@ -105,7 +105,19 @@ NOTE: 基於核心的虛擬機器 (KVM) 不支援大型執行個體類型。
 2+| 執行個體大小 | 小 | 中 | 大 
 
 
-2+| CPU 系列 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 | Intel Xeon E5-26xx v3 （ Haswell ）或更新版本 
+2+| CPU 系列  a| 
+Intel Xeon E5-26xx v3 （ Haswell ）或更新版本
+
+AMD EPYC Embedded 9004 或更新版本和 8004
+ a| 
+Intel Xeon E5-26xx v3 （ Haswell ）或更新版本
+
+AMD EPYC Embedded 9004 或更新版本和 8004
+ a| 
+Intel Xeon E5-26xx v3 （ Haswell ）或更新版本
+
+AMD EPYC Embedded 9004 或更新版本和 8004
+
 
 
 2+| ONTAP Select CPU/ 記憶體 | 4 個虛擬 CPU （ vCPU ） / 16 GB RAM | 8 個 vCPU / 64GB RAM | 16 個 vCPU / 128GB RAM 
@@ -177,4 +189,4 @@ Rocky Linux (KVM) 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、
 --
 ====
 .下一步是什麼？
-link:concept_lic_workflow.html["了解如何購買 ONTAP Select 授權"]
+瞭解 link:concept_lic_workflow.html["購買 ONTAP Select 授權"]

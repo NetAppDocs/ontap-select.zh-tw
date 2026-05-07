@@ -127,12 +127,12 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 +
 主機名稱：
 
-.. 輸入主機名稱、然後按* Enter *。
+.. 鍵入主機名稱並選擇 *Enter* 。
 .. 等待下列提示：
 +
 提供管理員使用者密碼：
 
-.. 輸入密碼並按* Enter *。
+.. 輸入密碼並選取 *Enter* 。
 .. 等待下列提示：
 +
 使用DHCP設定網路資訊？[n]：

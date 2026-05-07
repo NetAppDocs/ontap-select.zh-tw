@@ -20,7 +20,7 @@ summary: 您可以依照工作流程來購買及套用授權以進行ONTAP Selec
 
 九位數授權序號:: 序號適用於節點（容量階層）或儲存池（容量資源池）
 授權鎖定ID:: 使用 Capacity Pool 授權時，您必須擁有部署執行個體的授權鎖定 ID
-授權網站:: 您可以在不同的網站上取得容量層級和容量集區授權
+授權網站:: 您可以在不同的網站上取得 Capacity Tier 和 Capacity Pool 授權。
 
 
 image:purchased_license_workflow.png["說明用於購買及安裝正式作業ONTAP Select 的儲存授權部署程序。"]
