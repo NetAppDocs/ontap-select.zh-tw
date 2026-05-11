@@ -3921,9 +3921,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="3a7c61c685981e316491699fa430a141" category="list-text">SnapMirror 雲端</block>
   <block id="11afad06b7613110311cd1bf0ce33518" category="list-text">從 ONTAP Select 9.18.1 開始，Rocky Linux 10.1 支援 KVM Hypervisor。</block>
   <block id="8c4c7ec85ddc20b785383c7e3b83aaf3" category="list-text">支援 SnapMirror 雲端</block>
-  <block id="8e6364cfe908f51088b3ba968ff3a1ef" category="list-text">從 ONTAP Select 9.17.1 開始，ONTAP Select 支援 SnapMirror 雲端。SnapMirror 雲端是授權的 ONTAP 功能，當您部署 ONTAP Select 9.17.1 叢集或將現有 ONTAP Select 叢集升級至 9.17.1 版本時，預設會啟用此功能。</block>
-  <block id="138c7cd45c4194bbbdcc248c8d717a95" category="inline-link">了解 SnapMirror 雲端備份到物件儲存</block>
-  <block id="a674f1954e78adeee48a68d3b46f7329" category="paragraph"><block ref="e78089da9b0e2900996a3bebc3fd1588" category="inline-link-rx"></block>.</block>
   <block id="11c2c011b497aeb8d79ad57ac92e7cc5" category="list-text">從 ONTAP Select 9.17.1 開始，Red Hat Enterprise Linux（RHEL）10.1、10.0、9.7 和 9.6 以及 Rocky Linux 10.0、9.7 和 9.6 支援 KVM 虛擬機器管理程式。</block>
   <block id="666e2d64cc00d0a8b97b0fd56b7dd1f8" category="paragraph">在 RHEL 10.1 和 10.0 以及 Rocky Linux 10.0 主機上，KVM 虛擬機器管理程式的軟體 RAID 工作流程有一些限制。如需更多資訊，請參閱以下知識庫文章：</block>
   <block id="8e2010beca6ef5a4aa1af1a75a658891" category="list-text">如果您目前執行的 ONTAP Select Deploy 9.14.1 版本低於 9.14.1P2，則應盡快升級至 ONTAP Select Deploy 9.14.1P2。有關更多資訊，請參閱 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>。</block>
@@ -3970,8 +3967,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8e27ba9474a19cb9db424e02974a1138" category="inline-link-macro">深入瞭解 FlexCache 與 ONTAP Select 的回寫功能</block>
   <block id="9a079a12f3415657c4b643769a34e014" category="paragraph"><block ref="9a079a12f3415657c4b643769a34e014" category="inline-link-macro-rx"></block></block>
   <block id="38b80c13e49233a5fa3471c364fdc493" category="paragraph">SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。</block>
-  <block id="5641890857d855addbaf3e3074d37f96" category="inline-link-macro">了解 ONTAP SnapLock</block>
-  <block id="eef5b24d94b7497050fd72c30a339f6a" category="paragraph"><block ref="eef5b24d94b7497050fd72c30a339f6a" category="inline-link-macro-rx"></block></block>
   <block id="418abba3a088e4f2cf70e0dd10df26f7" category="list-text"><block ref="418abba3a088e4f2cf70e0dd10df26f7" category="inline-link-macro-rx"></block></block>
   <block id="3712f888ec8c939491ff4fe2129b3d6e" category="paragraph">MetroCluster SDS 是建立雙節點 ONTAP Select 叢集時的一個配置選項。它類似於遠端辦公室/分支機構（ROBO）部署。這種增強型雙節點部署提供了更多使用案例場景。在準備部署 MetroCluster SDS 時，您應該了解其要求和限制。</block>
   <block id="e16080ba1221020cf277f79a62c290d9" category="paragraph">請按照 <block ref="aa150fc2553a8a0c846847314bde8f61" category="inline-link-macro-rx"></block> 操作,並查看 <block ref="5f52a4a178eaea2e0c4812fd7a9f2757" category="inline-link-macro-rx"></block> 和 <block ref="b3b43e0c3f8f2e7f8b8f596dd2656645" category="inline-link-macro-rx"></block> 所需的資訊以了解更多資訊。</block>
@@ -4007,7 +4002,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="c6be59d8f4c6188156fe9d80753e59f8" category="inline-link-macro">VMware 虛擬機器管理程式與硬體注意事項</block>
   <block id="d68e21bf4e5582ed1019332f3cd04b09" category="list-text">從 ONTAP Select 9.19.1 開始，ONTAP Select 支援在 Kernel-Based Virtual Machine（KVM）和 ESXi Hypervisor 主機上使用 AMD 處理器。如需詳細資訊，請參閱<block ref="db422ba85aa25b901cf43f6d42795d78" category="inline-link-macro-rx"></block>。</block>
   <block id="3c833d1ee8d4e9669082a8240b31214c" category="list-text">ONTAP Select 9.17.1 為 KVM 虛擬機器管理程式主機上的 ONTAP Select 本機連接 NVMe 磁碟引進軟體 RAID 支援。</block>
-  <block id="5eea56b636200eece0ac62ded25f076a" category="list-text">從 ONTAP Select 9.17.1 開始，新部署會自動授權 SnapLock Select（包括防篡改 Snapshot 鎖定）。若要從 ONTAP Select 9.16.1 及更早版本升級，您可以從<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>免費下載 SnapLock Select 授權並手動套用。如需詳細資訊，請參閱<block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
   <block id="241b40bcae013c473d9644fea50dbf5c" category="list-text">從 ONTAP Select 9.16.1 開始，NetApp 授權檔案（NLF）支援已更新。新的 NLF 格式包含 ARP、ONTAP S3 和 S3 SnapMirror 功能的授權。<block ref="1c797fc87ce45f1ff9b7973693d40c4e" category="inline-link-macro-rx"></block>。</block>
   <block id="3afaa3f98df333db327702e79529e9a3" category="list-text">ONTAP Select 9.16.1 引入了對自主勒索軟體防護（ARP）的支援。ONTAP Select 9.16.1 僅支援 ARP 的手動更新，不支援自動更新。ARP 功能授權包含在 ONTAP Select 9.16.1 的 NLF 中。<block ref="1c797fc87ce45f1ff9b7973693d40c4e" category="inline-link-macro-rx"></block>。</block>
   <block id="e112325a6b51838d19891eba0316fee2" category="paragraph">ONTAP Select 支援基於 Intel Xeon Sandy Bridge 和 Advanced Micro Devices (AMD) 處理器的 CPU 型號。</block>
@@ -4064,4 +4058,12 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="022346328acf67e828e800f24e979488" category="list-text">輸入密碼並選取 *Enter* 。</block>
   <block id="65602a883b3293c14c5c6b3ed9367b58" category="sidebar">NetApp ONTAP Select 是一款軟體定義的儲存設備，您可以在執行 VMware ESXi 或 Kernel-based Virtual Machine（KVM）虛擬機管理程式的各種通用硬體伺服器上部署。它提供您建立靈活且可擴展私有雲基礎架構所需的敏捷性。本網站包含 ONTAP Select 9.19.1 的文件。</block>
   <block id="85b340552d2a4b137eb45059da3b6af2" category="sidebar">ONTAP Select 9.19.1 文件</block>
+  <block id="af30d81f9a8c2c0f5b25d08da7858ddc" category="inline-link-macro">ONTAP SnapLock</block>
+  <block id="4f187117101edb6221a27ad094532806" category="paragraph">瞭解 <block ref="e5be20e426588130203bae7a7e597f79" category="inline-link-macro-rx"></block></block>
+  <block id="b638d0f1dd4c80d3617cfefeec604c5d" category="inline-link-macro">開啟非技術支援案例</block>
+  <block id="7a3af7c91740e45930119ddce3bf0d83" category="paragraph">您需要 <block ref="edc9445a6277b18c79e0ada4e6ba9f5f" category="inline-link-macro-rx"></block> 以獲得 SnapMirror 雲端授權。</block>
+  <block id="d6e5e04c7b9c56d9515955d288b0e813" category="inline-link-macro">SnapMirror 雲端備份至物件儲存設備</block>
+  <block id="609570e1a92256aa3f9b774f7dbf24fc" category="paragraph">瞭解 <block ref="4ae01b68125388898638ecb3eb2e59b7" category="inline-link-macro-rx"></block></block>
+  <block id="d8818ebf9ca1095fb7a5372f4292243c" category="list-text">從 ONTAP Select 9.17.1 開始，ONTAP Select 支援 SnapMirror cloud。ONTAP Select 預設不提供 SnapMirror cloud 授權。部署 ONTAP Select 9.17.1 叢集或將現有 ONTAP Select 叢集升級至 9.17.1 版本時，您需要申請 SnapMirror cloud 授權。如需更多資訊，請參閱<block ref="721bf771faed6cfbdee5aa217f7b1ff8" category="inline-link-macro-rx"></block>。</block>
+  <block id="852cb5ef58dc20087f2fcb39137748a7" category="list-text">從 ONTAP Select 9.17.1 開始，新部署會自動授權 SnapLock Select（包括防篡改 Snapshot 鎖定）。若要從 ONTAP Select 9.16.1 及更早版本升級，您可以從<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>免費下載 SnapLock Select 授權並手動套用。如需更多資訊，請參閱<block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
 </blocks>
