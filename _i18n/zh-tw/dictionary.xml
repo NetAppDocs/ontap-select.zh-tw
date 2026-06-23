@@ -3979,7 +3979,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e7daae4075d5bdd9bde4cc68402fd1f2" category="paragraph">瞭解 <block ref="5c94a3679252eb07d0be97dec0ed51c6" category="inline-link-macro-rx"></block></block>
   <block id="d2c6d1556eab117f68181107e9862923" category="list-text">您可以在不同的網站上取得 Capacity Tier 和 Capacity Pool 授權。</block>
   <block id="0787a133742358e15f1408449a947498" category="list-text">雲端金鑰管理程式</block>
-  <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="list-text">內建金鑰管理程式</block>
   <block id="68ffa6029012ee771b596812c2486f1d" category="inline-link-macro">了解預設授權的 ONTAP 功能</block>
   <block id="c1be83a573684359d468165f04280ecd" category="list-text"><block ref="c1be83a573684359d468165f04280ecd" category="inline-link-macro-rx"></block></block>
   <block id="4aa87041681017f21c0b6f84ed445620" category="list-text">選擇 *Datacenter* 。然後按一下滑鼠右鍵並選取 *Deploy OVF Template* 。</block>
@@ -3989,15 +3988,12 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="7e5bcd8d0368abad77f3eac590f46667" category="list-text"><block ref="7e5bcd8d0368abad77f3eac590f46667" category="inline-link-macro-rx"></block></block>
   <block id="fd0dbd8bebcc43fead168f5622ddebfe" category="list-text">使用金鑰管理互通性協定 (KMIP) 進行外部金鑰管理</block>
   <block id="2e8dd933da455f97d0346b5dbf4a613e" category="inline-link-macro">啟用和設定外部金鑰管理</block>
-  <block id="a40ef6a439bb99559799ae603abe9f79" category="paragraph">ONTAP Select 僅支援外部金鑰管理。了解更多 <block ref="56cfa00fc3eb294dcd6bd0a608d346a4" category="inline-link-macro-rx"></block>。</block>
   <block id="cd5be0e2614d645c9518750113177f36" category="paragraph">ONTAP Select 支援 SVM DR 作為來源和目的地，最多支援 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本到版本 +2。例如，ONTAP Select 9.16.1 來源可以連接到目的地 ONTAP 版本 9.16.1、9.17.1 或 9.18.1。</block>
   <block id="2e40e79011d79ba775bc0fd15440b064" category="paragraph">對於任何未預設授權的 ONTAP 功能、您需要取得個別授權、包括：</block>
   <block id="40f6e07c12708670ebf0f73074ff7664" category="inline-link-macro">了解 NetApp ONTAP 主授權金鑰</block>
   <block id="afc27579825b6d622e6b65ba8caa43d7" category="list-text"><block ref="afc27579825b6d622e6b65ba8caa43d7" category="inline-link-macro-rx"></block></block>
   <block id="4012704160e9bfa02e6dbcc74ea22f57" category="section-title">ONTAP Select 9.19.1</block>
   <block id="ea6285edde5e13f5be6286758935545a" category="list-text">支援外部金鑰管理 (KMIP)</block>
-  <block id="6c2b4dc2c31ca50c43367aaf9462d51d" category="list-text">從 ONTAP Select 9.19.1 開始，ONTAP Select 支援使用金鑰管理互通協定（KMIP）進行外部金鑰管理。您可以在部署 ONTAP Select 9.19.1 叢集或將現有叢集升級到 ONTAP Select 9.19.1 後啟用外部金鑰管理。外部金鑰管理是 ONTAP Select 9.19.1 唯一支援的金鑰管理。如需詳細資訊、請參閱<block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
-  <block id="04feed8677ddf54d6bdaf64462c6a9af" category="paragraph">ONTAP Select 不支援雲端金鑰管理器或 ONTAP Onboard Key Manager。</block>
   <block id="49a93de28fa869cbe187cf5e8b63b039" category="list-text">支援 Advanced Micro Devices (AMD) 處理器</block>
   <block id="c6be59d8f4c6188156fe9d80753e59f8" category="inline-link-macro">VMware 虛擬機器管理程式與硬體注意事項</block>
   <block id="d68e21bf4e5582ed1019332f3cd04b09" category="list-text">從 ONTAP Select 9.19.1 開始，ONTAP Select 支援在 Kernel-Based Virtual Machine（KVM）和 ESXi Hypervisor 主機上使用 AMD 處理器。如需詳細資訊，請參閱<block ref="db422ba85aa25b901cf43f6d42795d78" category="inline-link-macro-rx"></block>。</block>
@@ -4066,4 +4062,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="609570e1a92256aa3f9b774f7dbf24fc" category="paragraph">瞭解 <block ref="4ae01b68125388898638ecb3eb2e59b7" category="inline-link-macro-rx"></block></block>
   <block id="d8818ebf9ca1095fb7a5372f4292243c" category="list-text">從 ONTAP Select 9.17.1 開始，ONTAP Select 支援 SnapMirror cloud。ONTAP Select 預設不提供 SnapMirror cloud 授權。部署 ONTAP Select 9.17.1 叢集或將現有 ONTAP Select 叢集升級至 9.17.1 版本時，您需要申請 SnapMirror cloud 授權。如需更多資訊，請參閱<block ref="721bf771faed6cfbdee5aa217f7b1ff8" category="inline-link-macro-rx"></block>。</block>
   <block id="852cb5ef58dc20087f2fcb39137748a7" category="list-text">從 ONTAP Select 9.17.1 開始，新部署會自動授權 SnapLock Select（包括防篡改 Snapshot 鎖定）。若要從 ONTAP Select 9.16.1 及更早版本升級，您可以從<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block>免費下載 SnapLock Select 授權並手動套用。如需更多資訊，請參閱<block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
+  <block id="ec0736970ae0e8ef44338bd9345f3951" category="paragraph">了解更多<block ref="56cfa00fc3eb294dcd6bd0a608d346a4" category="inline-link-macro-rx"></block>。</block>
+  <block id="93c62ab5c9e2a68e9993e9a6f79af3e0" category="list-text">從 ONTAP Select 9.19.1 開始，ONTAP Select 支援使用金鑰管理互通協定（KMIP）進行外部金鑰管理。您可以在部署 ONTAP Select 9.19.1 叢集或將現有叢集升級到 ONTAP Select 9.19.1 後啟用外部金鑰管理。如需更多資訊，請參閱 <block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
+  <block id="a53e97c2bb7494f6cd88d2ca9e3f6cfb" category="paragraph">ONTAP Select 不支援雲端金鑰管理程式。</block>
 </blocks>

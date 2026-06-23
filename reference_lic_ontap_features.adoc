@@ -30,7 +30,7 @@ ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
 * 重複資料刪除與壓縮
 * 使用金鑰管理互通性協定 (KMIP) 進行外部金鑰管理
 +
-ONTAP Select 僅支援外部金鑰管理。了解更多 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["啟用和設定外部金鑰管理"^]。
+了解更多link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["啟用和設定外部金鑰管理"^]。
 
 * FlexCache
 +

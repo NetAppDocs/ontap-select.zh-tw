@@ -137,7 +137,6 @@ NOTE: 從 ONTAP Select 9.16.1 開始，支援手動更新 ARP ， NetApp 授權�
 由於 ONTAP Select 使用的虛擬化環境、因此不支援 NIC 卸載功能。
 
 * NetApp儲存加密磁碟機
-* 內建金鑰管理程式
 * ONTAP 連接埠內容
 +
 不支援修改 ONTAP 連接埠的內容、包括速度、雙工和流量控制。
