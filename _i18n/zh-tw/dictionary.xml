@@ -114,8 +114,6 @@
   <block id="c345b09f8ba5f2ac2cd82288cfbed6f6" category="section-title">使用認證儲存區進行驗證</block>
   <block id="1ea2947dc8d9221eb1191bb16ac646e9" category="admonition">帳戶資訊會使用AES加密演算法和SHA-256雜湊演算法、安全地儲存在資料庫中。</block>
   <block id="cae10f600cbb13bc7d34a887977c79a8" category="paragraph">支援下列類型的認證：</block>
-  <block id="473ff5b444e8cefb39620100d2cc4834" category="list-text">用於驗證Hypervisor主機的主機、做為將ONTAP Select VMware ESXi節點直接部署至VMware ESXi的一部分</block>
-  <block id="f9c8e615168b7695f683bda1636a1fd7" category="list-text">vCenter用於驗證vCenter伺ONTAP Select 服器、以在VMware vCenter管理主機時、將VMware節點部署至ESXi</block>
   <block id="bf733d8a933c1601697f364223fc7ecb" category="section-title">存取</block>
   <block id="6bc6433efd5abd7e3ac98556742ca0e4" category="paragraph">認證存放區是在內部存取、做為使用部署執行一般管理工作的一部分、例如新增Hypervisor主機。您也可以透過部署Web使用者介面和CLI直接管理認證存放區。</block>
   <block id="3c868759d0863801160ccec7f31cd26a" category="section-title">通用授權特性</block>
@@ -597,7 +595,6 @@
   <block id="5105302096dd720ab813764e8580a00d" category="summary">在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。</block>
   <block id="8b93cc40161cdbd01ab9e18838bcb683" category="doc">VMware Hypervisor環境</block>
   <block id="080eeefb865f5c5b09e0ddbf462e23ba" category="section-title">ESXi主機伺服器硬體需求</block>
-  <block id="5e9e7152a56ac74f6432d3a1d1e9844a" category="paragraph">ESXi Hypervisor主機必須滿足幾項最低資源需求。您應確保ONTAP Select 部署了Sure的主機符合下列基本需求：</block>
   <block id="4832f452ca99a142c0e0db2c856d79e2" category="list-text">ESXi伺服器：</block>
   <block id="683c2567130f6a4546bb443f353cff0d" category="list-text">硬體與軟體必須為64位元</block>
   <block id="501ecbf501c47a3b1460cba563bd3cb2" category="list-text">必須遵循ONTAP Select 針對某個節點所定義的相同支援版本</block>
@@ -606,10 +603,7 @@
   <block id="2460c4c672fe5aa97bccda9a2c15381a" category="list-text">儲存設備（40 GB）</block>
   <block id="6571206ea0d72e18ca7e523cdfac9bf3" category="list-text">已啟用DHCP（也可以指派靜態IP位址）</block>
   <block id="66a0461d2d8cd670baf00d1c2bb16adb" category="section-title">網路連線能力</block>
-  <block id="1db683534b98bd41ba839804b8e68460" category="paragraph">您必須確定ONTAP Select 已設定好「物件部署」虛擬機器網路介面、並有單一管理IP位址。您可以使用DHCP動態指派IP位址、或手動設定靜態IP位址。</block>
   <block id="a8f60467940bda53d9db3f4b1f47ca5a" category="paragraph">根據您的部署決策、部署VM必須能夠連線至vCenter伺服器、ESXi Hypervisor主機及ONTAP Select 其管理的各個節點。您必須設定防火牆以允許所需的流量。</block>
-  <block id="ff263ddaf336b6dad768fdf733aba4d6" category="paragraph">部署使用VMware VIX API與vCenter伺服器和ESXi主機進行通訊。一開始、它會在TCP連接埠443上使用SOAP over SSL建立連線。之後、會在連接埠902上使用SSL開啟連線。此外、部署也會發出ping命令、以驗證您指定的IP位址是否有ESXi主機。</block>
-  <block id="0322e46fade696f2e31f29923f0e13e7" category="paragraph">部署也必須能夠ONTAP Select 使用下列傳輸協定、與支援的節點和叢集管理IP位址通訊：</block>
   <block id="62a5303a3a11fbd7213daedd9ed6e5b5" category="list-text">Ping命令（ICMP）</block>
   <block id="1c3f33b65f0aa5f84082196fb6960db5" category="list-text">SSH（連接埠22）</block>
   <block id="aa207eb499c333d25a27253addda9d90" category="list-text">SSL（連接埠443）</block>
@@ -3365,12 +3359,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="fb6ec34800c58ebc5bb6517ce0db74b8" category="list-text">從八個節點到六個節點</block>
   <block id="e9d1284d8df9151f9bec7a163cd5c363" category="list-text">在多節點叢集上支援 vSAN ESA</block>
   <block id="4ba59a7efee785c52f70cdae7fca55c3" category="list-text">從ONTAP Select 9.17.1 開始，對 vSAN Express 儲存架構 (ESA) 的支援擴展，以部署多節點叢集。此增強功能可讓您部署 vSAN ESA 配置。</block>
-  <block id="9f2987dffbb8cc07dc722392ca553e1e" category="paragraph">要執行內容庫操作，您需要存取額外的權限等級。如果您使用受限角色，這對於 vSAN ESA 部署是必要的。</block>
-  <block id="6146fd29f571a044684d201d9c796583" category="inline-link-macro">了解內容庫操作的存取權限級別</block>
-  <block id="23add99dd3b98f3716a4830bf3524c6e" category="paragraph"><block ref="0338668b24eba8707cba4da17831f4b6" category="inline-link-macro-rx"></block> 。</block>
-  <block id="2e4143d0df24451229cbcf21d106b6c5" category="section-title">ONTAP Select部署 VMware vCenter 伺服器注意事項</block>
   <block id="0cdb970631a712b516a9779c1d127d32" category="section-title">ESA 的 VMware vSphere 權限</block>
-  <block id="fe2a57ed0ddb8d9b57b737aff59f340b" category="paragraph">以下列出了在 vCenter 中建立和管理 vSAN Express 儲存架構 (ESA) 所需的 vSphere 內容庫的特定權限：</block>
   <block id="7fda80facd4b5302f2a2c887c2ecb595" category="list-text">新增庫項目</block>
   <block id="5ac2b813625b685d2cd86e5bbd2e2259" category="list-text">建立本地庫</block>
   <block id="036e7b8c4bda5955184609f09f458e15" category="list-text">刪除庫項目</block>
@@ -3431,7 +3420,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="26a1590332f300c4ec3aa0f686d62125" category="admonition">如果您有一個或多個活動的雙節點集群，則管理這些集群的ONTAP Select Deploy 虛擬機器必須始終處於運作狀態。如果ONTAP Select Deploy 虛擬機器停止運作或發生故障，則中介服務不可用，且雙節點叢集的 HA 功能將會遺失。</block>
   <block id="ed89295e41e84f73a1840cf9d0bc49c6" category="paragraph">您必須為ONTAP Select Deploy 管理公用程式指派靜態 IP 位址。此要求適用於管理一個或多個ONTAP Select雙節點叢集的所有ONTAP Select Deploy 實例。</block>
   <block id="ee1aadb3a9fa619eb12db5d1e58032b4" category="inline-link-macro">了解 vCenter 中 vSAN ESA 的 VMware vSphere 權限</block>
-  <block id="653a421852b6e9fc7e8da536351d6d57" category="paragraph"><block ref="653a421852b6e9fc7e8da536351d6d57" category="inline-link-macro-rx"></block></block>
   <block id="52628d9c0b40a3d081fa61332a7dbc30" category="section-title">步驟 1：設定主機</block>
   <block id="4b909310ad00915be4366c1fdc817ef6" category="paragraph">配置 ESXi 或 KVM 主機以識別磁碟機。</block>
   <block id="6fb98dfe0687afd13c6606a1e18796b4" category="section-title">步驟 2：安裝ONTAP Select Deploy 實用程式</block>
@@ -4065,4 +4053,19 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="ec0736970ae0e8ef44338bd9345f3951" category="paragraph">了解更多<block ref="56cfa00fc3eb294dcd6bd0a608d346a4" category="inline-link-macro-rx"></block>。</block>
   <block id="93c62ab5c9e2a68e9993e9a6f79af3e0" category="list-text">從 ONTAP Select 9.19.1 開始，ONTAP Select 支援使用金鑰管理互通協定（KMIP）進行外部金鑰管理。您可以在部署 ONTAP Select 9.19.1 叢集或將現有叢集升級到 ONTAP Select 9.19.1 後啟用外部金鑰管理。如需更多資訊，請參閱 <block ref="d74e51aab974d5584eeccb899c4795c8" category="inline-link-macro-rx"></block>。</block>
   <block id="a53e97c2bb7494f6cd88d2ca9e3f6cfb" category="paragraph">ONTAP Select 不支援雲端金鑰管理程式。</block>
+  <block id="115b70fb63fe464e7cf86f17b11f1d67" category="paragraph">若要執行內容庫操作，您需要存取額外的權限等級。如果您在 vSAN ESA 部署中使用受限角色，則必須擁有此存取權限。</block>
+  <block id="b1689d890e3bfdba864c509e65029ab6" category="inline-link-macro">了解內容庫操作的存取權限級別</block>
+  <block id="420c43a81b06eb199719986301b88739" category="paragraph"><block ref="349cc67b5cd523e4bbe7acd476212356" category="inline-link-macro-rx"></block>.</block>
+  <block id="31a9fcd92544b53d42e4000ae7c63c29" category="list-text">*主機*：用於在將 ONTAP Select 節點直接部署到 VMware ESXi 的過程中對 Hypervisor 主機進行驗證。</block>
+  <block id="9a5195b1ff4c19906bdb0971591f465c" category="list-text">*vCenter*：當主機由 VMware vCenter 管理時，在將 ONTAP Select 節點部署到 ESXi 的過程中，用於驗證 vCenter 伺服器。</block>
+  <block id="26185f28054346a59a9c3901db564d91" category="list-text">在 VMware ESXi 上執行的 Deploy 公用程式可以建立和管理 VMware ESXi 或 KVM 上的 ONTAP Select 叢集。</block>
+  <block id="f862ce787876275b8b041dd3b50bc344" category="list-text">在 KVM 上執行的 Deploy 公用程式可以在 VMware ESXi 或 KVM 上建立和管理 ONTAP Select 叢集。</block>
+  <block id="722c5f11159798669e97619a3674eb66" category="paragraph">您的 ESXi 虛擬機器管理程式主機必須符合若干最低資源需求。請檢查部署 ONTAP Select 的主機是否符合以下基本要求：</block>
+  <block id="cbdb21e82973d8b56af711a4e158e10d" category="paragraph">請檢查 ONTAP Select Deploy 虛擬機器網路介面是否已配置，並具有單一管理 IP 位址。您可以使用 DHCP 動態指派 IP 位址，也可以手動設定靜態 IP 位址。</block>
+  <block id="4677d18a24fcb2eb3f37347531f81229" category="paragraph">Deploy 使用 VMware VIX API 與 vCenter 伺服器和 ESXi 主機通訊。首先，它使用基於 SSL 的 SOAP 協定在 TCP 連接埠 443 上建立連線。之後，它會在連接埠 902 上使用 SSL 協定開啟連線。此外，Deploy 也會發出 PING 指令來驗證您指定的 IP 位址上是否存在 ESXi 主機。</block>
+  <block id="bb055e0f2f4e26b5aad8eaa467d4f3fa" category="paragraph">此外，Deploy 必須能夠使用以下協定與 ONTAP Select 節點和叢集管理 IP 位址進行通訊：</block>
+  <block id="645dbfc8ae0a73e8087fbcb0a997027f" category="section-title">VMware vCenter 伺服器注意事項</block>
+  <block id="3c877a9561264bd22f7ed715473c9258" category="paragraph">要在 vCenter 中建立和管理 vSAN Express Storage Architecture (ESA)，您需要以下 vSphere 內容庫權限：</block>
+  <block id="913b24f487842d48914e3794480e83cc" category="admonition">要存取內容庫權限，管理員需要授予您在 vCenter Server 中存取全域權限的權限。</block>
+  <block id="c0d2cde9a14e7d58e2ab5a38de5b380d" category="paragraph"><block ref="c0d2cde9a14e7d58e2ab5a38de5b380d" category="inline-link-macro-rx"></block></block>
 </blocks>

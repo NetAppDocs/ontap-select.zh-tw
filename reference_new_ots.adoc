@@ -138,9 +138,9 @@ ONTAP Select Deploy 和 ONTAP Select for ESXi 支援配置 ONTAP Select 單節�
 
 [NOTE]
 ====
-要執行內容庫操作，您需要存取額外的權限等級。如果您使用受限角色，這對於 vSAN ESA 部署是必要的。
+若要執行內容庫操作，您需要存取額外的權限等級。如果您在 vSAN ESA 部署中使用受限角色，則必須擁有此存取權限。
 
-link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["了解內容庫操作的存取權限級別"^] 。
+link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解內容庫操作的存取權限級別"].
 
 ====
 --

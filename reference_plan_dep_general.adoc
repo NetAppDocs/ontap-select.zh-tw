@@ -125,8 +125,8 @@ NOTE: 帳戶資訊會使用AES加密演算法和SHA-256雜湊演算法、安全�
 .認證類型
 支援下列類型的認證：
 
-* 用於驗證Hypervisor主機的主機、做為將ONTAP Select VMware ESXi節點直接部署至VMware ESXi的一部分
-* vCenter用於驗證vCenter伺ONTAP Select 服器、以在VMware vCenter管理主機時、將VMware節點部署至ESXi
+* *主機*：用於在將 ONTAP Select 節點直接部署到 VMware ESXi 的過程中對 Hypervisor 主機進行驗證。
+* *vCenter*：當主機由 VMware vCenter 管理時，在將 ONTAP Select 節點部署到 ESXi 的過程中，用於驗證 vCenter 伺服器。
 
 
 .存取
