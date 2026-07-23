@@ -18,6 +18,7 @@ summary: 您必須先正確設定Hypervisor網路、然後才能部署ONTAP Sele
 
 
 
+[[virtual-switch-options]]
 == 虛擬交換器選項
 
 您必須在ONTAP Select 每個支援外部網路和內部網路的各個支援主機上設定虛擬交換器（僅限多節點叢集）。在部署多節點叢集時、您應該測試內部叢集網路上的網路連線能力。
@@ -27,12 +28,14 @@ NOTE: 要了解有關如何在虛擬機管理程式主機上配置 vSwitch 以�
 
 
 
+[[upgrade-to-vmxnet3-esxi-only]]
 == 升級至 VMXNET3 （僅限 ESXi ）
 
 從使用Deploy 2.10開始ONTAP Select 使用VMware 9.5、VMXNET3是VMware ESXi上新叢集部署所隨附的預設網路驅動程式。如果您將舊版 ONTAP Select 節點升級至 9.5 版或更新版本、則不會自動升級驅動程式。
 
 
 
+[[cluster-mtu]]
 == 叢集MTU
 
 另有一個內部網路可用來連接ONTAP Select 多節點叢集中的各個節點。此網路的MTU大小通常為9000。然而、在某些情況下、此MTU尺寸太大、無法連接ONTAP Select 到連接到各個節點的網路。為了容納較小的框架、ONTAP Select 內部網路上使用的MTU大小可以介於7500-9000位元組之間。
@@ -49,6 +52,7 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 
 
 
+[[two-nic-host-with-standard-vswitch-esxi-only]]
 == 含標準 vSwitch 的雙 NIC 主機（僅限 ESXi ）
 
 為了在ONTAP Select 雙NIC組態中改善效能、您應該使用兩個連接埠群組來隔離內部和外部網路流量。本建議適用於下列特定組態：
@@ -76,6 +80,7 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 
 
 
+[[four-nic-host-with-standard-vswitch-esxi-only]]
 == 配備標準 vSwitch 的四 NIC 主機（僅限 ESXi ）
 
 為了在ONTAP Select 四NIC組態中改善效能、您應該使用四個連接埠群組來隔離內部和外部網路流量。本建議適用於下列特定組態：
@@ -115,6 +120,7 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 
 
 
+[[network-traffic-requirements]]
 == 網路流量需求
 
 您必須確保防火牆設定正確、以便讓網路流量能在ONTAP Select 整個部署環境的各個參與者之間流通。

@@ -18,6 +18,7 @@ summary: 如果由於某種原因而導致無法使用此功能、您將無法�
 
 
 
+[[prepare-to-recover-the-deploy-utility]]
 == 準備恢復部​​署實用程式
 
 在嘗試還原 Deploy 實用程式實例之前，您需要做好準備以確保成功。您必須熟悉若干行政程序並掌握所需資訊。
@@ -51,6 +52,8 @@ link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-t
 
 
 
+[[restore-a-deploy-utility-instance-using-a-configuration-backup]]
+[[restore-deploy-backup]]
 == 使用組態備份還原部署公用程式執行個體
 
 如果您有包含雙節點叢集的失敗部署公用程式執行個體備份、您可以將組態資料還原至新的部署虛擬機器執行個體。然後、您必須執行ONTAP Select 額外的組態來完成恢復、將兩個節點放在一個叢集內。
@@ -127,6 +130,8 @@ storage failover show
 
 
 
+[[reconfigure-and-recover-a-deploy-utility-instance]]
+[[restore-and-recover-deploy]]
 == 重新設定及恢復部署公用程式執行個體
 
 如果您沒有包含雙節點叢集的失敗部署公用程式實例的備份，請在新的部署虛擬機器中設定中介 iSCSI 目標和郵件信箱。然後，透過對ONTAP Select叢集中的兩個節點進行額外配置來完成復原。

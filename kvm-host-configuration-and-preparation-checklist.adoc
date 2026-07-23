@@ -21,6 +21,8 @@ NOTE: ONTAP Select Deploy 管理公用程式不會執行虛擬機器管理程式
 
 
 
+[[step-1-prepare-the-kvm-hypervisor-host]]
+[[prepare-linux-server]]
 == 步驟 1：準備 KVM 虛擬機器管理程式主機
 
 您需要準備部署ONTAP Select節點的每個 Linux KVM 伺服器。您也必須準備部署 ONTAP Select 部署管理公用程式的伺服器。
@@ -72,6 +74,7 @@ ONTAP Select 儲存資源池是一個邏輯資料容器、可將基礎實體儲�
 
 
 
+[[step-2-create-a-storage-pool]]
 == 步驟 2：建立儲存池
 
 在每個ONTAP Select節點上建立至少一個儲存池。如果您使用軟體 RAID 而非本機硬體 RAID 、則儲存磁碟會附加至根節點和資料集合體的節點。在這種情況下、您仍必須為系統資料建立儲存池。
@@ -137,6 +140,7 @@ virsh pool-list
 
 
 
+[[step-3-optionally-delete-a-storage-pool]]
 == 步驟 3：（選用）刪除儲存池
 
 當不再需要儲存池時，您可以刪除它。
@@ -224,6 +228,7 @@ pvremove <physical_volume_name>
 
 
 
+[[step-4-review-the-ontap-select-cluster-configuration]]
 == 步驟 4：檢查ONTAP Select叢集配置
 
 您可以將ONTAP Select 不完整的功能部署為多節點叢集或單節點叢集。在許多情況下，多節點叢集是首選，因為它具有額外的儲存容量和高可用性 (HA) 功能。
@@ -256,6 +261,7 @@ image:CHK_03.jpg["四節點叢集內的單一節點"]
 ====
 
 
+[[step-5-configure-open-vswitch]]
 == 步驟5：設定Open vSwitch
 
 使用 Open vSwitch 在每個 KVM 主機節點上設定一個軟體定義的交換器。

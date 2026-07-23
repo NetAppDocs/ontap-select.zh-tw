@@ -18,6 +18,7 @@ summary: 如果您在 VMware ESXi 上執行ONTAP Select ，則可以將 ESXi 軟
 
 
 
+[[prepare-to-upgrade-vmware-esxi]]
 == 準備升級 VMware ESXi
 
 在升級託管ONTAP Select叢集的虛擬機器管理程式上的 ESXi 軟體之前，請準備並選擇適合您環境的升級程式。
@@ -64,6 +65,7 @@ TIP: 您應該選取使用部署管理公用程式的升級程序。
 
 
 
+[[upgrade-a-single-node-cluster-using-deploy]]
 == 使用 Deploy 升級單節點叢集
 
 您可以將部署管理公用程式當作程序的一部分、來升級裝載ONTAP Select 一個VMware單節點叢集的VMware ESXi Hypervisor。
@@ -101,6 +103,7 @@ sdot-d200-011d true    true
 
 
 
+[[upgrade-a-multi-node-cluster-using-deploy]]
 == 使用 Deploy 升級多節點叢集
 
 您可以將部署管理公用程式當作程序的一部分、來升級裝載ONTAP Select 一個VMware多節點叢集的VMware ESXi Hypervisor。
@@ -155,6 +158,7 @@ sdot-d200-012d true true
 
 
 
+[[upgrade-a-single-node-cluster-without-deploy]]
 == 無需部署即可升級單節點叢集
 
 您無需ONTAP Select 使用部署管理公用程式、即可升級VMware ESXi Hypervisor、將其裝載於一個單節點叢集。
@@ -191,6 +195,7 @@ sdot-d200-011d true    true
 
 
 
+[[upgrade-a-multi-node-cluster-without-deploy]]
 == 無需部署即可升級多節點叢集
 
 無需ONTAP Select 使用部署管理公用程式、您就能升級裝載一個包含VMware ESXi多節點叢集的VMware ESXi Hypervisor。

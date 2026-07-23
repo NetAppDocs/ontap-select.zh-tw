@@ -29,6 +29,7 @@ summary: 建立ONTAP Select 完叢集後、您可以執行各種管理工作來�
 
 
 
+[[administer-ontap-select]]
 == 管理 ONTAP Select
 
 支援ONTAP Select 的過程包括許多不同的管理程序。此外、部署管理公用程式也有特定的程序。以下是其中最重要的程序。一般而言、全部都使用部署Web使用者介面。
@@ -38,6 +39,7 @@ NOTE: 您也可以 link:https://docs.netapp.com/us-en/ontap-select/task_cli_sign
 
 
 
+[[perform-additional-ontap-configuration]]
 == 執行其他 ONTAP 組態
 
 部署完一個叢集之後、您就可以設定及管理叢集、就像使用硬體型的作業系統一樣。ONTAP Select ONTAP例如、您可以使用 ONTAP 系統管理員或 ONTAP CLI 來設定 ONTAP Select 叢集。

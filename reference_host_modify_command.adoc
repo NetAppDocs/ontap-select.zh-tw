@@ -18,12 +18,14 @@ summary: 您可以使用host modify命令來修改含有ONTAP Select 此例項�
 
 
 
+[[syntax]]
 == 語法
 
 `host modify [-help] [-foreground] -name _name_ -mgmt-server _management_server_ [-username _username_]`
 
 
 
+[[required-parameters]]
 == 必要參數
 
 [cols="35,65"]
@@ -48,6 +50,7 @@ summary: 您可以使用host modify命令來修改含有ONTAP Select 此例項�
 |===
 
 
+[[optional-parameters]]
 == 選用參數
 
 [cols="35,65"]

@@ -23,6 +23,7 @@ summary: 尋找有關ONTAP Select 的常見問題的答案。
 ====
 
 
+[[general]]
 == 一般
 
 有幾個一般問題和答案。
@@ -55,6 +56,7 @@ NOTE: API v3版本與舊版API不相容。上有新的 API 程序 https://librar
 
 
 
+[[licenses-installation-upgrades-and-reverts]]
 == 授權、安裝、升級及還原
 
 關於授權、安裝、升級及還原、有幾個問題和答案。
@@ -125,6 +127,7 @@ CAUTION: 請勿嘗試修改授權檔案。這樣做會使安全金鑰失效、�
 
 
 
+[[storage]]
 == 儲存設備
 
 儲存設備有幾個問題和答案。
@@ -216,6 +219,7 @@ Select VM會繼承vSAN資料存放區儲存原則、而且不會限制FT/FTM設�
 
 
 
+[[vcenter]]
 == vCenter
 
 VMware vCenter有幾個問題與解答。
@@ -239,6 +243,7 @@ ONTAP Select Deploy 使用 VMware VIX API 與 vCenter 、 ESXi 主機或兩者�
 
 
 
+[[ha-and-clusters]]
 == HA和叢集
 
 有幾個問題和答案涉及HA配對和叢集。
@@ -300,6 +305,7 @@ NOTE: 不支援在不同類型的資料存放區之間進行儲存 vMotion 作�
 
 
 
+[[mediator-service]]
 == 中介服務
 
 與中介服務有關的問題與解答有幾個。

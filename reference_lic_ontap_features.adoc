@@ -21,6 +21,8 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 
 
 
+[[ontap-features-licensed-by-default]]
+[[licensed-ontap-features]]
 == 預設授權的 ONTAP 功能
 
 ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
@@ -56,6 +58,9 @@ SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 
 瞭解 link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^]
 
 * SnapMirror
++
+ONTAP Select 不支援非同步 SnapMirror 中的一致性群組。
+
 * SnapRestore
 * SnapVault
 * 儲存 VM 災難恢復（ SVM DR ）
@@ -66,6 +71,8 @@ ONTAP Select 支援 SVM DR 作為來源和目的地，最多支援 16 個關係�
 
 
 
+[[ontap-features-that-are-separately-licensed]]
+[[other-ontap-features]]
 == 個別授權的功能ONTAP
 
 對於任何未預設授權的 ONTAP 功能、您需要取得個別授權、包括：

@@ -18,6 +18,7 @@ summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾�
 
 
 
+[[required-linux-knowledge-and-skills-for-kvm]]
 == KVM 所需的 Linux 知識與技能
 
 採用 KVM Hypervisor 的 Linux 是一個複雜的環境、可以在其中運作。在 KVM 上部署 ONTAP Select 之前、您必須具備必要的知識和技能。
@@ -61,6 +62,7 @@ KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM
 
 
 
+[[cluster-size-and-related-considerations]]
 == 叢集大小及相關考量
 
 有幾個規劃問題與叢集大小有關、您應該考慮這些問題。
@@ -71,6 +73,7 @@ KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM
 
 
 
+[[hypervisor-host-considerations]]
 == Hypervisor 主機考量
 
 有幾個與Hypervisor主機相關的規劃問題、您應該考慮。
@@ -124,6 +127,7 @@ Hypervisor、適用於ONTAP Select 節點與管理公用程式:: 部署管理公
 
 
 
+[[storage-considerations]]
 == 儲存考量
 
 您應該考慮幾個與主機儲存有關的規劃問題。
@@ -156,6 +160,7 @@ NOTE: 此功能可與連接到該虛擬機器的資料磁碟總允許大小相�
 
 
 
+[[authentication-using-the-credential-store]]
 == 使用認證儲存區進行驗證
 
 ONTAP Select Deploy 認證儲存區是儲存帳戶資訊的資料庫。部署會使用帳戶認證來執行主機驗證、做為叢集建立與管理的一部分。您應該瞭解認證儲存區如何在規劃ONTAP Select 還原部署時使用。

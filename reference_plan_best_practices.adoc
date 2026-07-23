@@ -18,18 +18,21 @@ summary: 在規劃ONTAP Select 一套功能完整的部署時、您應該考慮�
 
 
 
+[[storage]]
 == 儲存設備
 
 您應該考慮下列儲存最佳實務做法。
 
 
 
+[[all-flash-or-generic-flash-arrays]]
 === All Flash或通用Flash陣列
 
 使用All Flash VSAN或一般Flash陣列進行的虛擬NAS（vNAS）部署、應遵循非SSD DAS儲存設備的最佳實務做法。ONTAP Select ONTAP Select
 
 
 
+[[external-storage]]
 === 外部儲存設備
 
 您應遵守下列建議：
@@ -41,12 +44,14 @@ summary: 在規劃ONTAP Select 一套功能完整的部署時、您應該考慮�
 
 
 
+[[hypervisor-core-hardware]]
 === Hypervisor核心硬體
 
 單ONTAP Select 一資訊區集合體中的所有磁碟機都應為相同類型。例如、您不應該在相同的集合體中混用HDD和SSD磁碟機。
 
 
 
+[[raid-controller]]
 === RAID控制器
 
 伺服器RAID控制器應設定為以回寫模式運作。如果發現寫入工作負載效能問題、請檢查控制器設定、確定未啟用寫入或寫入。
@@ -57,6 +62,7 @@ RAID控制器快取用於儲存所有傳入區塊變更、而不只是針對NVRA
 
 
 
+[[raid-groups]]
 === RAID群組
 
 最佳RAID群組大小為八到十二個磁碟機。每個RAID群組的磁碟機數量上限為24個。
@@ -69,6 +75,7 @@ RAID控制器快取用於儲存所有傳入區塊變更、而不只是針對NVRA
 
 
 
+[[vmware-esxi-hosts]]
 === VMware ESXi主機
 
 NetApp 建議使用 ESXi 8.0 或更高版本，並使用 NVMe 磁碟作為儲存系統磁碟的資料儲存區。此組態可為 NVRAM 分割區提供最佳效能。
@@ -84,54 +91,63 @@ NOTE: 在 ESXi 8.0 或更高版本上安裝時，無論系統磁碟位於 SSD �
 
 
 
+[[vmware-storage-vmotion]]
 === VMware Storage VMotion
 
 決定是否搭配ONTAP Select 使用VMware Storage VMotion搭配使用VMware節點時、新主機上的可用容量並非唯一的考量因素。基礎儲存類型、主機組態和網路功能應能維持與原始主機相同的工作負載。
 
 
 
+[[networking]]
 == 網路
 
 您應該考慮下列網路最佳實務做法。
 
 
 
+[[duplicate-mac-addresses]]
 === 重複的MAC位址
 
 為了避免多個部署執行個體指派重複的MAC位址、每個第2層網路應使用一個部署執行個體來建立或管理ONTAP Select 一個叢集或節點。
 
 
 
+[[ems-messages]]
 === EMS訊息
 
 應仔細監控不含EMS訊息的雙節點叢集、以指出儲存容錯移轉已停用。ONTAP Select這些訊息表示無法連線至中介服務、應立即修正。
 
 
 
+[[latency-between-nodes]]
 === 節點之間的延遲
 
 兩個節點之間的網路必須支援平均延遲5毫秒、並額外提供5毫秒的週期性不穩定性。在部署叢集之前、請使用 ONTAP Select 產品架構和最佳實務技術報告中所述的程序來測試網路。
 
 
 
+[[load-balancing]]
 === 負載平衡
 
 若要最佳化內部ONTAP Select 和外部的各個支援網路之間的負載平衡、請使用根據來源虛擬連接埠負載平衡原則的路由。
 
 
 
+[[multiple-layer-2-networks]]
 === 多個第2層網路
 
 如果資料流量跨越多個第2層網路、且需要使用VLAN連接埠、或是使用多個IPspace、則應使用VGT。
 
 
 
+[[physical-switch-configuration]]
 === 實體交換器組態
 
 VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFast。若未將交換器連接埠上的STP設為PortFast、ONTAP Select 可能會影響容許上行鏈路故障的功能。使用LACP時、LACP定時器應設定為快速（1秒）。負載平衡原則應根據連接埠群組的IP雜湊、以及LAG上的來源和目的地IP位址、以及TCP/IP連接埠和VLAN、設定為「路由」。
 
 
 
+[[virtual-switch-options-for-kvm]]
 === KVM 的虛擬交換器選項
 
 您必須在ONTAP Select 每個支援外部網路和內部網路的各個支援主機上設定虛擬交換器（僅限多節點叢集）。在部署多節點叢集時、您應該測試內部叢集網路上的網路連線能力。
@@ -140,12 +156,14 @@ VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFas
 
 
 
+[[ha]]
 == HA
 
 您應該考慮下列高可用度的最佳實務做法。
 
 
 
+[[deploy-backups]]
 === 部署備份
 
 定期備份 Deploy 設定資料（包括建立叢集後）是最佳實踐。這對於雙節點叢集尤其重要，因為備份中包含了中介器配置資料。
@@ -154,6 +172,7 @@ VMware建議在連接至ESXi主機的交換器連接埠上、將STP設為PortFas
 
 
 
+[[mirrored-aggregates]]
 === 鏡射Aggregate
 
 雖然需要有鏡射Aggregate才能提供主要Aggregate的最新（RPO 0）複本、但請注意、主要Aggregate不會在可用空間上執行不足。主集合體中的空間不足狀況可能會導致 ONTAP 刪除通用的 Snapshot 複本、作為儲存恢復的基礎。這是為了容納用戶端寫入作業而設計的。然而、在容錯回復時缺乏通用的Snapshot複本、需要ONTAP Select 由鏡射Aggregate執行完整的基礎。在無共享環境中、這項作業可能需要大量時間。
@@ -163,6 +182,7 @@ NOTE: NetApp 建議您至少保留 20% 的可用空間以容納鏡射的集合�
 
 
 
+[[nic-aggregation-teaming-and-failover]]
 === NIC集合體、群組和容錯移轉
 
 支援雙節點叢集的單一10Gb連結；不過、NetApp最佳實務做法是透過內部和外部網路上的NIC集合體或NIC群組來提供硬體備援。ONTAP Select ONTAP Select
@@ -175,6 +195,7 @@ NetApp 建議在 ESXi 和實體交換器上都將 LACP 模式設為主動。此�
 
 
 
+[[two-node-stretched-ha-metrocluster-sds-best-practices]]
 === 雙節點延伸HA MetroCluster （簡稱「架構SDS」）最佳實務做法
 
 在您建立MetroCluster Sf2 SDS之前、請使用ONTAP 「支援功能」連線檢查工具、確保兩個資料中心之間的網路延遲處於可接受的範圍內。

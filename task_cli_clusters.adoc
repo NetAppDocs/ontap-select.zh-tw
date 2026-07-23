@@ -18,6 +18,7 @@ summary: 您可以執行多項相關工作來管理ONTAP Select 一個叢集。
 
 
 
+[[back-up-the-ontap-select-deploy-configuration-data]]
 == 備份ONTAP Select Deploy 配置數據
 
 例如，部署叢集後，備份ONTAP Select Deploy 配置資料。資料將保存到加密檔案中，您可以將其下載到本機工作站。
@@ -54,6 +55,7 @@ deploy backup show -detailed
 
 
 
+[[delete-an-ontap-select-cluster]]
 == 刪除 ONTAP Select 叢集
 
 您可以在ONTAP Select 不再需要時刪除一個不需要的叢集。

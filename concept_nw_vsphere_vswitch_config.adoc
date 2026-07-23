@@ -38,6 +38,7 @@ NOTE: ONTAP Select 最多支援四個 vmnics 。
 
 
 
+[[standard-or-distributed-vswitch-and-four-physical-ports-per-node]]
 == 標準或分散式vSwitch、以及每個節點四個實體連接埠
 
 您可以在多節點叢集中為每個節點指派四個連接埠群組。每個連接埠群組都有一個作用中實體連接埠和三個待命實體連接埠，如下圖所示。
@@ -106,6 +107,7 @@ image:DDN_12.jpg["第2部分ONTAP Select ：內部連接埠群組"]
 |===
 
 
+[[standard-or-distributed-vswitch-and-two-physical-ports-per-node]]
 == 標準或分散式vSwitch、以及每個節點兩個實體連接埠
 
 當使用兩個高速（25/40Gb）網路卡時，建議的連接埠組配置在概念上與使用四個 10Gb 適配器的配置非常相似。即使只使用兩個實體適配器，也應該使用四個連接埠組。連接埠群組分配如下：
@@ -134,6 +136,7 @@ image:DDN_13.jpg["每個節點具有兩個實體連接埠的vSwitch"]
 
 
 
+[[distributed-vswitch-with-lacp]]
 == 採用LACP的分散式vSwitch
 
 在組態中使用分散式vSwitch時、可使用LACP（雖然這不是最佳實務做法）來簡化網路組態。唯一支援的LACP組態需要所有的vmnics都位於單一LAG中。上行鏈路實體交換器必須在通道中的所有連接埠上支援7,500到9、000之間的MTU大小。內部ONTAP Select 和外部的不確定網路應該在連接埠群組層級隔離。內部網路應使用不可路由（隔離）的VLAN。外部網路可使用VST、EST或VGT。

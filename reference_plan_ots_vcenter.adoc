@@ -21,12 +21,14 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 
 
 
+[[administrative-privileges]]
 == 管理權限
 
 建立及管理ONTAP Select 一個叢集所需的最低管理權限如下所示。
 
 
 
+[[datastore]]
 === 資料存放區
 
 * 配置空間
@@ -38,6 +40,7 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 
 
 
+[[host]]
 === 主機
 
 組態::
@@ -61,6 +64,7 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 
 
 
+[[network]]
 === 網路
 
 * 指派網路
@@ -68,6 +72,7 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 
 
 
+[[virtual-machine]]
 === 虛擬機器
 
 組態:: 類別中的所有權限。
@@ -78,6 +83,7 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 
 
 
+[[vapp]]
 === vApp
 
 類別中的所有權限。

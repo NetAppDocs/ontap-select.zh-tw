@@ -21,6 +21,7 @@ CAUTION: 除非NetApp支援部門指示、否則您不應直接修改ONTAP Selec
 
 
 
+[[hypervisor-independent]]
 == Hypervisor不受限制
 
 ONTAP Select 和 ONTAP Select Deploy 管理公用程式均獨立於 Hypervisor 。
@@ -64,6 +65,7 @@ NOTE: 有關支援平台的其他詳細資訊，請參閱特定虛擬機器管�
 
 
 
+[[vmware-hypervisor-environment]]
 == VMware Hypervisor環境
 
 在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。
@@ -106,6 +108,7 @@ Deploy 使用 VMware VIX API 與 vCenter 伺服器和 ESXi 主機通訊。首先
 
 
 
+[[vmware-vcenter-server-considerations]]
 == VMware vCenter 伺服器注意事項
 
 .ESA 的 VMware vSphere 權限

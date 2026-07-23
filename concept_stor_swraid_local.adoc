@@ -42,6 +42,7 @@ summary: 軟體RAID是一套RAID抽象層、實作於ONTAP 整套的功能。它
 ====
 
 
+[[software-raid-configuration-for-local-attached-storage]]
 == 本機附加儲存設備的軟體RAID組態
 
 使用軟體RAID時、不需要硬體RAID控制器是理想的選擇、但如果系統確實有現有的RAID控制器、則必須符合下列要求：
@@ -59,6 +60,7 @@ NOTE: 系統管理員必須追蹤ONTAP Select 哪些磁碟機正在由該名虛�
 
 
 
+[[ontap-select-virtual-and-physical-disks]]
 == 虛擬與實體磁碟ONTAP Select
 
 對於使用硬體RAID控制器的組態、實體磁碟備援是由RAID控制器提供。提供一個或多個VMDK、供VMware管理員設定資料集合體。ONTAP Select ONTAP這些VMDK採用RAID 0格式等量分佈、因為使用ONTAP VMware軟體RAID是備援的、效率不彰、而且由於硬體層級提供恢復功能、因此效率不彰。此外、用於系統磁碟的VMDK與用於儲存使用者資料的VMDK位於同一個資料存放區。
@@ -98,6 +100,7 @@ ONTAP軟體 RAID 支援下列 RAID 類型：RAID 4、RAID-DP 和RAID-TEC。這�
 
 
 
+[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
 == PassthThrough（DirectPath IO）裝置與原始裝置對應（RDM）
 
 ESXi 和 KVM 虛擬機器管理程式不支援將 NVMe 磁碟作為裸裝置對應（RDM）使用。若要讓 ONTAP Select 直接控制 NVMe 磁碟、您必須在 ESXi 或 KVM 中將這些磁碟機配置為直通裝置。將 NVMe 裝置配置為直通裝置需要伺服器 BIOS 的支援、而且您可能需要重新啟動主機。此外、每個主機可指派的直通裝置數量有限制、具體數量可能因平台而異。不過、ONTAP Deploy 將每個 ONTAP Select 節點的 NVMe 裝置數量限制為 14 個。這表示 NVMe 組態以犧牲總容量為代價、提供了非常高的 IOPS 密度（IOPS/TB）。或者、如果您需要具有更大儲存容量的高效能組態、建議的組態是使用較大的 ONTAP Select VM 大小、Intel Optane 卡作為系統磁碟、以及適量的 SSD 磁碟機進行資料儲存。
@@ -109,6 +112,7 @@ NOTE: 若要充分發揮NVMe效能、請考慮使用大ONTAP Select 尺寸的VMw
 
 
 
+[[physical-and-virtual-disk-provisioning]]
 == 實體與虛擬磁碟資源配置
 
 為了提供更精簡的使用者體驗、ONTAP 利用此功能、即可自動從指定的資料存放區（實體系統磁碟）配置系統（虛擬）磁碟、並將其附加至ONTAP Select 還原VM。這項作業會在初始設定期間自動執行、ONTAP Select 以便讓支援的不中斷虛擬機器能夠開機。系統會分割RDM、並自動建立根Aggregate。如果ONTAP Select 此節點是HA配對的一部分、則會自動將資料分割指派給本機儲存資源池和鏡射儲存資源池。這項指派會在叢集建立作業和儲存新增作業期間自動進行。
@@ -124,6 +128,7 @@ NOTE: 根Aggregate的RAID群組類型取決於可用的磁碟數目。支援：�
 
 
 
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
 == 將 ONTAP Select 磁碟與對應的 ESXi 或 KVM 磁碟相匹配
 
 通常將各個磁碟標示為NET x.y。ONTAP Select您可以使用下列ONTAP 的fuse命令來取得磁碟UUID：
@@ -165,6 +170,7 @@ cat /sys/block/<block_device_id>/device/wwid
 ====
 
 
+[[multiple-drive-failures-when-using-software-raid]]
 == 使用軟體RAID時發生多個磁碟機故障
 
 系統可能會遇到多個磁碟機同時處於故障狀態的情況。系統的行為取決於Aggregate RAID保護和故障磁碟機的數量。
@@ -244,6 +250,7 @@ disk show -broken
 ====
 
 
+[[virtualized-nvram]]
 == 虛擬化NVRAM
 
 NetApp FAS 產品技術系統通常裝有實體NVRAM PCI卡。此卡為高效能卡、內含非揮發性快閃記憶體、可大幅提升寫入效能。它藉由授予ONTAP 功能來立即認可傳入寫入回用戶端。它也可以在稱為「減少需求」的程序中、將修改過的資料區塊排程回較慢的儲存媒體。

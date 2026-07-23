@@ -18,6 +18,7 @@ summary: 探索ONTAP Select 特定儲存元件之前、請先探索適用於整�
 
 
 
+[[phases-of-storage-configuration]]
 == 儲存組態的各個階段
 
 下列是支援整個系統的主要組態階段ONTAP Select ：
@@ -51,12 +52,14 @@ summary: 探索ONTAP Select 特定儲存元件之前、請先探索適用於整�
 
 
 
+[[managed-versus-unmanaged-storage]]
 == 託管儲存設備與非託管儲存設備
 
 由功能性資料管理的儲存設備ONTAP Select 可直接由功能性資料管理系統存取及控制。同一Hypervisor主機上的任何其他儲存設備均為未受管理的儲存設備。
 
 
 
+[[homogeneous-physical-storage]]
 === 同質實體儲存設備
 
 所有組成ONTAP Select 「不受影響的」託管儲存設備的實體磁碟機都必須是同質的。也就是所有硬體必須與下列特性相同：
@@ -67,6 +70,7 @@ summary: 探索ONTAP Select 特定儲存元件之前、請先探索適用於整�
 
 
 
+[[illustration-of-the-local-storage-environment]]
 == 本機儲存環境的圖例
 
 每個Hypervisor主機都包含本機磁碟和ONTAP Select 其他可由支援的邏輯儲存元件。這些儲存元件會從實體磁碟以分層結構排列。
@@ -75,6 +79,7 @@ image:ST_01.jpg["本機儲存環境"]
 
 
 
+[[characteristics-of-the-local-storage-components]]
 === 本機儲存元件的特性
 
 有幾個概念適用於ONTAP Select 在整個環境中使用的本機儲存元件。在準備ONTAP Select 進行一套不一致的部署之前、您應該先熟悉這些概念。這些概念是根據類別來排列：RAID群組和LUN、儲存資源池和虛擬磁碟。
@@ -99,6 +104,7 @@ image:ST_01.jpg["本機儲存環境"]
 
 
 
+[[storage-pool-considerations]]
 === 儲存資源池考量
 
 在準備部署ONTAP Select 時、您應該注意幾個與儲存資源池有關的問題。
@@ -116,6 +122,7 @@ NOTE: 在VMware環境中、儲存資源池與VMware資料存放區同義。
 
 
 
+[[manage-the-virtual-disks-on-esxi]]
 === 管理 ESXi 上的虛擬磁碟
 
 在準備部署ONTAP Select 時、您應該注意幾個與虛擬磁碟有關的問題。
@@ -141,6 +148,7 @@ NOTE: 在VMware環境中、儲存資源池與VMware資料存放區同義。
 
 
 
+[[illustration-of-the-external-storage-environment-on-esxi]]
 == ESXi 上外部儲存環境的圖例
 
 利用此解決方案、支援使用位在Hypervisor主機外部儲存設備上的資料存放區。ONTAP Select ONTAP Select資料存放區可使用VMware vSAN透過網路存取、或直接從外部儲存陣列存取。
@@ -154,6 +162,7 @@ NOTE: 在VMware環境中、儲存資源池與VMware資料存放區同義。
 
 
 
+[[vsan-datastores]]
 === vSAN資料存放區
 
 每個ESXi主機都可以擁有一個或多個本機VMFS資料存放區。通常這些資料存放區只能由本機主機存取。不過、VMware vSAN可讓ESXi叢集中的每個主機共用叢集中的所有資料存放區、就像它們是本機一樣。下圖說明vSAN如何建立ESXi叢集中主機之間共用的資料存放區集區。
@@ -162,6 +171,7 @@ image:ST_02.jpg["ESXi叢集"]
 
 
 
+[[vmfs-datastore-on-external-storage-array]]
 === 外部儲存陣列上的VMFS資料存放區
 
 您可以建立位於外部儲存陣列上的VMFS資料存放區。儲存設備可使用多種不同的網路傳輸協定之一來存取。下圖說明使用iSCSI傳輸協定存取的外部儲存陣列上的VMFS資料存放區。
@@ -173,6 +183,7 @@ image:ST_03.jpg["ESXi Hypervisor主機"]
 
 
 
+[[nfs-datastore-on-external-storage-array]]
 === 外部儲存陣列上的NFS資料存放區
 
 您可以建立位於外部儲存陣列上的NFS資料存放區。使用NFS網路傳輸協定存取儲存設備。下圖說明透過NFS伺服器應用裝置存取的外部儲存設備上的NFS資料存放區。

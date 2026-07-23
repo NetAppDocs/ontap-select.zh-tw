@@ -21,6 +21,7 @@ NOTE: 由於實體RAID控制器為基礎磁碟機提供RAID分段功能、因此
 
 
 
+[[raid-controller-configuration-for-local-attached-storage]]
 == 本機附加儲存設備的RAID控制器組態
 
 所有提供ONTAP Select 支援儲存功能的本地附加磁碟、都必須位於RAID控制器後方。大部分的市售伺服器都有多種RAID控制器選項、可跨越多個價位、每個價位的功能層級各不相同。其目的是盡可能支援這些選項的數量、前提是這些選項符合控制器上的特定最低要求。
@@ -46,6 +47,7 @@ NOTE: 舊版 ESXi 的最大範圍和資料存放區大小為 64TB，這可能會
 
 
 
+[[raid-mode]]
 == RAID模式
 
 許多RAID控制器最多可支援三種操作模式、每種模式代表寫入要求所採用的資料路徑有顯著差異。這三種模式如下：
@@ -61,6 +63,7 @@ NOTE: 舊版 ESXi 的最大範圍和資料存放區大小為 64TB，這可能會
 
 
 
+[[local-disks-shared-between-ontap-select-and-os]]
 == 本地磁碟共享ONTAP Select 於支援支援的作業系統
 
 最常見的伺服器組態是所有本機連接的磁碟位於單一RAID控制器後方的組態。您應該配置至少兩個LUN：一個用於Hypervisor、一個ONTAP Select 用於搭配使用。
@@ -77,6 +80,7 @@ image:ST_08.jpg["伺服器LUN組態、僅使用RAID管理的磁碟"]
 
 
 
+[[local-disks-split-between-ontap-select-and-os]]
 == 本機磁碟在ONTAP Select 不支援的地方和作業系統之間分割
 
 伺服器廠商提供的其他可能組態包括使用多個RAID或磁碟控制器來設定系統。在此組態中、一組磁碟是由一個磁碟控制器管理、該磁碟控制器可能提供或可能不提供RAID服務。第二組磁碟由能夠提供RAID 5/6服務的硬體RAID控制器管理。
@@ -91,12 +95,14 @@ image:ST_09.jpg["混合式RAID/非RAID系統上的伺服器LUN組態"]
 
 
 
+[[multiple-luns]]
 == 多個LUN
 
 單一RAID群組/單一LUN組態必須變更的情況有兩種。使用NL-SAS或SATA磁碟機時、RAID群組大小不得超過12個磁碟機。此外、單一LUN可能會大於基礎Hypervisor儲存限制、無論是個別檔案系統範圍的最大大小或總儲存池的最大大小。然後必須將基礎實體儲存設備分割成多個LUN、才能成功建立檔案系統。
 
 
 
+[[vmware-vsphere-virtual-machine-file-system-limits]]
 == VMware vSphere虛擬機器檔案系統限制
 
 某些版本的 ESXi 上資料存放區的最大大小為 64TB 。
@@ -126,6 +132,7 @@ VMware不支援從VMFS 5就地升級至VMFS 6。因此、Storage VMotion是唯�
 
 
 
+[[ontap-select-virtual-disks]]
 == 虛擬磁碟ONTAP Select
 
 在其核心、ONTAP Select 透過ONTAP 一或多個儲存資源池配置的一組虛擬磁碟、呈現出一套功能完善的功能。提供一組虛擬磁碟、將其視為實體磁碟、而儲存堆疊的其餘部分則由Hypervisor抽象化。ONTAP下圖更詳細地顯示這種關係、強調實體RAID控制器、Hypervisor和ONTAP Select 不支援的VM之間的關係。
@@ -141,6 +148,7 @@ image:ST_12.jpg["虛擬磁碟對實體磁碟的對應"]
 
 
 
+[[virtual-disk-provisioning]]
 == 虛擬磁碟資源配置
 
 為了提供更精簡的使用者體驗、ONTAP Select 我們的「更新」管理工具ONTAP 「還原部署」會自動從相關的儲存資源池配置虛擬磁碟、並將其附加至ONTAP Select 「更新」VM。這項作業會在初始設定和儲存新增作業期間自動執行。如果ONTAP Select 此節點是HA配對的一部分、則虛擬磁碟會自動指派給本機和鏡射儲存資源池。
@@ -154,6 +162,7 @@ NOTE: 在 ONTAP Select 虛擬機器中新增容量可能會導致產生大小不
 
 
 
+[[virtualized-nvram]]
 == 虛擬化NVRAM
 
 NetApp FAS 支援系統通常裝有實體NVRAM PCI卡、這是一種高效能卡、內含非揮發性Flash記憶體。此卡可立即ONTAP 認可傳入寫入回用戶端的功能、大幅提升寫入效能。它也可以在稱為「減少需求」的程序中、將修改過的資料區塊排程回較慢的儲存媒體。
@@ -164,6 +173,7 @@ NVRAM 被放置在獨立的 VMDK 中。將 NVRAM 分割到單獨的 VMDK 中，�
 
 
 
+[[data-path-explained-nvram-and-raid-controller]]
 == 資料路徑說明：NVRAM和RAID控制器
 
 虛擬化NVRAM系統分割區與RAID控制器之間的互動、最好是在寫入要求進入系統時、透過資料路徑來強調顯示。

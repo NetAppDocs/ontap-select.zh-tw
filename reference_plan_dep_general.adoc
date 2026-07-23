@@ -18,6 +18,7 @@ summary: 在規劃安裝ONTAP Select 此功能時、您應該考慮幾項一般�
 
 
 
+[[pairing-the-deploy-utility-with-the-ontap-select-clusters]]
 == 將部署公用程式與ONTAP Select 整個叢集配對
 
 您可以在將部署公用程式的執行個體與ONTAP Select 叢集配對時、使用多種選項。
@@ -36,6 +37,7 @@ NOTE: 部署公用程式的一個執行個體最多可管理400 ONTAP Select 個
 
 
 
+[[requirements-related-to-the-kvm-environment]]
 == 與 KVM 環境相關的需求
 
 在 KVM Hypervisor 環境中安裝部署管理公用程式之前、您應該先檢閱基本需求、然後準備部署。
@@ -70,6 +72,7 @@ NOTE: 部署公用程式的一個執行個體最多可管理400 ONTAP Select 個
 
 
 
+[[required-configuration-information]]
 == 必要的組態資訊
 
 在您的部署規劃中、您應該先判斷必要的組態資訊、然後再安裝ONTAP Select 「整合部署」管理公用程式。
@@ -88,6 +91,7 @@ NOTE: 部署公用程式的一個執行個體最多可管理400 ONTAP Select 個
 
 
 
+[[optional-network-configuration-information]]
 == 選用的網路組態資訊
 
 部署虛擬機器預設是使用 DHCP 進行設定。不過、如果需要、您可以手動設定 VM 的網路介面。
@@ -115,6 +119,7 @@ NOTE: 部署公用程式的一個執行個體最多可管理400 ONTAP Select 個
 
 
 
+[[authentication-using-the-credential-store]]
 == 使用認證儲存區進行驗證
 
 ONTAP Select Deploy 認證儲存區是儲存帳戶資訊的資料庫。部署會使用帳戶認證來執行主機驗證、做為叢集建立與管理的一部分。您應該瞭解認證儲存區如何在規劃ONTAP Select 還原部署時使用。

@@ -30,6 +30,7 @@ NOTE: 評估許可證無法延長。90 天期滿後，許可證將失效，您�
 
 
 
+[[step-1-register-for-an-account]]
 == 第一步：註冊帳號
 
 如有需要，完成NetApp帳號註冊，並申請潛在客戶存取權限。
@@ -73,6 +74,7 @@ NOTE: 免費郵箱帳戶，例如 Gmail 或 Yahoo，是不可接受的。
 
 
 
+[[step-2-download-ontap-select-evaluation-software]]
 == 步驟 2：下載ONTAP Select評估軟體
 
 您的支援案例經審核批准後， NetApp支援團隊將透過您提供的電子郵件地址通知您。

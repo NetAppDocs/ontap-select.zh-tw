@@ -24,6 +24,7 @@ NOTE: 您只能使用ONTAP Select 比部署公用程式執行個體隨附的原�
 
 
 
+[[step-1-download-the-install-image]]
 == 步驟 1：下載安裝鏡像
 
 若要開始在ONTAP Select Deploy公用程式執行個體中新增ImageImage的程序、您必須從NetApp支援網站下載安裝映像。將此鏡像格式化為ONTAP Select 單一壓縮檔案。
@@ -38,6 +39,7 @@ NOTE: 您只能使用ONTAP Select 比部署公用程式執行個體隨附的原�
 
 
 
+[[step-2-upload-the-install-image-to-deploy]]
 == 步驟 2：將安裝鏡像上傳到 Deploy 平台
 
 擷取ONTAP Select 完鏡像後、您必須將檔案上傳至部署虛擬機器。
@@ -67,6 +69,7 @@ exit
 
 
 
+[[step-3-add-the-install-image]]
 == 步驟 3：新增安裝鏡像
 
 將ONTAP Select安裝映像新增至部署映像目錄，以便在部署新叢集時可以使用。
@@ -90,6 +93,7 @@ shell bash
 
 
 
+[[step-4-display-the-available-install-images]]
 == 步驟 4：顯示可用的安裝映像
 
 顯示部署新叢集時可用的ONTAP Select鏡像。

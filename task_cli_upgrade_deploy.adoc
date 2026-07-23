@@ -28,6 +28,7 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 
 
 
+[[step-1-download-the-upgrade-package]]
 == 步驟 1：下載升級套件
 
 若要開始升級過程，請從 NetApp 支援網站下載 ONTAP Select Deploy 升級檔案。升級套件以單一壓縮檔案的形式提供。
@@ -42,6 +43,7 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 
 
 
+[[step-2-upload-the-package-to-the-ontap-select-deploy-virtual-machine]]
 == 步驟 2：將軟體包上傳到ONTAP Select Deploy 虛擬機
 
 下載軟體包後，您需要將檔案上傳到ONTAP Select Deploy 虛擬機器。
@@ -65,6 +67,7 @@ scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide pas
 
 
 
+[[step-3-apply-the-upgrade-package]]
 == 步驟3：應用升級包
 
 將升級檔案上傳到ONTAP Select Deploy 虛擬機器後，即可套用升級。

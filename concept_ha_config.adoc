@@ -42,6 +42,7 @@ NOTE: 雙節點ONTAP Select 的叢集由一對HA配對和一位中介器組成�
 
 
 
+[[two-node-ha-versus-multi-node-ha]]
 == 雙節點HA與多節點HA的比較
 
 與 FAS 陣列不同，HA 配對中的 ONTAP Select 節點僅透過 IP 網路進行通訊。這意味著 IP 網路是單點故障（SPOF），因此防止網路分割和裂腦情況成為設計的重要層面。多節點叢集可以承受單節點故障，因為叢集仲裁可由三個或更多倖存節點建立。雙節點叢集依賴 ONTAP Deploy VM 託管的中介服務來達成相同的結果。
@@ -57,6 +58,7 @@ NOTE: 當用作該叢集的中介器時、支援功能可將虛擬機器整合�
 
 
 
+[[two-node-ha-versus-two-node-stretched-ha-metrocluster-sds]]
 == 雙節點HA與雙節點延伸HA（MetroCluster 不含雙節點）
 
 您可以將雙節點主動/主動式HA叢集延伸至更遠的距離、並可能將每個節點放置在不同的資料中心。雙節點叢集與雙節點延伸叢集（也稱為MetroCluster 「效益SDS」）之間的唯一區別、是節點之間的網路連線距離。

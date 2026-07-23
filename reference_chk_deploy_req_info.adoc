@@ -18,6 +18,7 @@ summary: 在VMware環境中安裝部署管理公用程式之前、請先檢閱�
 
 
 
+[[required-configuration-information]]
 == 必要的組態資訊
 
 在您的部署規劃中、您應該先判斷必要的組態資訊、然後再安裝ONTAP Select 「整合部署」管理公用程式。
@@ -40,6 +41,7 @@ summary: 在VMware環境中安裝部署管理公用程式之前、請先檢閱�
 |===
 
 
+[[optional-network-configuration-information]]
 == 選用的網路組態資訊
 
 部署虛擬機器預設使用DHCP進行設定。不過、如果需要、您可以手動設定虛擬機器的網路介面。

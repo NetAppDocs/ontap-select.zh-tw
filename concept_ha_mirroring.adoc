@@ -18,6 +18,7 @@ summary: 使用RAID SyncMirror 功能（RSM2）、鏡射集合體和寫入路徑
 
 
 
+[[synchronous-replication]]
 == 同步複寫
 
 此功能是以HA合作夥伴的概念為基礎打造而成。ONTAP透過使用支援RAID功能（RSMs）、將此架構延伸至非共享的市售伺服器世界、此功能可在叢集節點之間複寫資料區塊、並在HA配對之間提供兩份使用者資料複本。ONTAP Select SyncMirror ONTAP
@@ -26,6 +27,7 @@ summary: 使用RAID SyncMirror 功能（RSM2）、鏡射集合體和寫入路徑
 
 
 
+[[mirrored-aggregates]]
 == 鏡射Aggregate
 
 ONTAP Select叢集由 2 到 12 個節點組成。每個 HA 對包含兩個使用者資料副本，透過 IP 網路跨節點同步鏡像。這種鏡像對使用者是透明的，它是資料聚合的屬性，在資料聚合建立過程中會自動配置。
@@ -54,6 +56,7 @@ NOTE: 部署一個叢集時ONTAP Select 、系統上的所有虛擬磁碟都會�
 
 
 
+[[write-path]]
 == 寫入路徑
 
 在叢集節點之間同步鏡射資料區塊、以及在系統故障時不需遺失資料、對於傳入寫入透過ONTAP Select 叢集傳播時所採用的路徑、會造成重大影響。此程序包含兩個階段：

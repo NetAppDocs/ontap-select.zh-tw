@@ -20,6 +20,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 
 
 
+[[step-1-configure-the-host]]
 == 步驟 1：設定主機
 
 配置 ESXi 或 KVM 主機以識別磁碟機。
@@ -109,6 +110,7 @@ image:nvme_03.png["重新啟動此主機"]
 
 
 
+[[step-2-install-the-ontap-select-deploy-utility]]
 == 步驟 2：安裝ONTAP Select Deploy 實用程式
 
 主機準備好後，您可以安裝ONTAP Select Deploy 實用程式。 Deploy將引導您在新準備的主機上建立ONTAP Select儲存叢集。在此過程中，Deploy 會偵測到已配置為直通的 NVMe 驅動器，並自動選擇它們以用作ONTAP資料磁碟。您可以根據需要調整預設選擇。

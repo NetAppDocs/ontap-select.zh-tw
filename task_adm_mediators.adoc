@@ -18,6 +18,7 @@ summary: 每ONTAP Select 個包含兩個節點的叢集都由中介服務監控�
 
 
 
+[[view-the-status-of-the-mediator-service]]
 == 檢視中介服務的狀態
 
 您可以針對定義為ONTAP Select 「整合部署公用程式」的每個雙節點叢集、檢視協調器服務的狀態。

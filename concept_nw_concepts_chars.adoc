@@ -18,12 +18,14 @@ summary: 首先熟悉ONTAP Select 適用於整個過程的一般網路概念。�
 
 
 
+[[physical-networking]]
 == 實體網路
 
 實體網路主要透過ONTAP Select 提供底層的第二層交換基礎架構、來支援叢集式部署。與實體網路相關的組態包括Hypervisor主機和更廣泛的交換式網路環境。
 
 
 
+[[host-nic-options]]
 === 主機NIC選項
 
 每ONTAP Select 個物件Hypervisor主機都必須設定兩個或四個實體連接埠。您選擇的確切組態取決於多種因素、包括：
@@ -36,6 +38,7 @@ summary: 首先熟悉ONTAP Select 適用於整個過程的一般網路概念。�
 
 
 
+[[physical-switch-configuration]]
 === 實體交換器組態
 
 您必須確定實體交換器的組態支援ONTAP Select 進行物件部署。實體交換器與Hypervisor型虛擬交換器整合。您選擇的確切組態取決於多種因素。主要考量包括：
@@ -47,12 +50,14 @@ summary: 首先熟悉ONTAP Select 適用於整個過程的一般網路概念。�
 
 
 
+[[logical-networking]]
 == 邏輯網路
 
 使用兩個不同的邏輯網路、根據類型來分隔流量。ONTAP Select具體而言、流量可在叢集內的主機之間、以及儲存用戶端和叢集外的其他機器之間流通。Hypervisor管理的虛擬交換器有助於支援邏輯網路。
 
 
 
+[[internal-network]]
 === 內部網路
 
 透過多節點叢集部署、個別ONTAP Select 的元集節點會使用隔離的「內部」網路進行通訊。此網路不會在ONTAP Select 叢集節點外曝光或可用。
@@ -82,6 +87,7 @@ NOTE: 內部網路僅存在於多節點叢集。
 
 
 
+[[external-network]]
 === 外部網路
 
 外部網路負責處理ONTAP Select VMware叢集節點與外部儲存用戶端及其他機器之間的流量。外部網路是每個叢集部署的一部分、具有下列特性：
@@ -111,6 +117,7 @@ NOTE: 內部網路僅存在於多節點叢集。
 
 
 
+[[virtual-machine-networking-environment]]
 == 虛擬機器網路環境
 
 Hypervisor主機提供多項網路功能。

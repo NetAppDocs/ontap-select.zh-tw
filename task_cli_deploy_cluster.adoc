@@ -18,6 +18,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 
 
+[[step-1-prepare-for-the-deployment]]
 == 步驟 1：準備部署
 
 在 Hypervisor 上建立 ONTAP Select 叢集之前、您應該先瞭解必要的準備工作。
@@ -50,6 +51,7 @@ summary: 您可以使用ONTAP Select 隨附於解決方法開發管理公用程�
 
 
 
+[[step-2-upload-and-register-a-license-file]]
 == 步驟 2：上傳並註冊許可證文件
 
 取得具有儲存容量的授權檔案後、您必須將包含授權的檔案上傳至部署虛擬機器並加以註冊。
@@ -91,6 +93,7 @@ license show
 
 
 
+[[step-3-add-hypervisor-hosts]]
 == 步驟 3：新增虛擬機器管理程式主機
 
 您必須登錄ONTAP Select 每個執行此節點的Hypervisor主機。
@@ -204,6 +207,7 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
+[[step-4-create-and-configure-an-ontap-select-cluster]]
 == 步驟 4：建立並配置ONTAP Select集群
 
 您必須先建立ONTAP Select 再設定這個叢集。設定叢集之後、您可以設定個別節點。
@@ -253,6 +257,7 @@ cluster show -name <cluster_name> -detailed
 
 
 
+[[step-5-configure-an-ontap-select-node]]
 == 步驟 5：配置ONTAP Select節點
 
 您必須在ONTAP Select E驗 集叢中設定每個節點。
@@ -353,6 +358,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
+[[step-6-attach-storage-to-the-ontap-select-nodes]]
 == 步驟 6：將儲存連接到ONTAP Select節點
 
 配置ONTAP Select叢集中每個節點使用的儲存。每個節點必須一律至少指派一個儲存資源池。使用軟體RAID時、也必須為每個節點指派至少一個磁碟機。
@@ -446,6 +452,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
+[[step-7-deploy-an-ontap-select-cluster]]
 == 步驟 7：部署ONTAP Select集群
 
 設定叢集和節點之後、即可部署叢集。

@@ -26,6 +26,7 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 
 
 
+[[1-register-vcenter-server-credential]]
 == 1.登錄vCenter伺服器認證
 
 部署至由vCenter伺服器管理的ESXi主機時、您必須先新增認證、才能登錄主機。然後、部署管理公用程式就可以使用認證來驗證vCenter。
@@ -69,6 +70,7 @@ Json輸入（步驟01）::
 
 
 
+[[2-register-a-hypervisor-host]]
 == 2.註冊Hypervisor主機
 
 您必須新增Hypervisor主機、以便ONTAP Select 執行包含此節點的虛擬機器。
@@ -115,6 +117,7 @@ Json輸入（步驟02）::
 
 
 
+[[3-create-a-cluster]]
 == 3.建立叢集
 
 當您建立ONTAP Select 一個叢集時、系統會登錄基本的叢集組態、並透過部署自動產生節點名稱。
@@ -154,6 +157,7 @@ Json輸入（步驟03）::
 
 
 
+[[4-configure-the-cluster]]
 == 4.設定叢集
 
 在設定叢集時、您必須提供幾項屬性。
@@ -195,6 +199,7 @@ Json輸入（步驟04）::
 
 
 
+[[5-retrieve-the-node-name]]
 == 5.擷取節點名稱
 
 當建立叢集時、部署管理公用程式會自動產生節點識別碼和名稱。您必須先擷取指派的ID、才能設定節點。
@@ -225,6 +230,7 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERI
 
 
 
+[[6-configure-the-nodes]]
 == 6.設定節點
 
 您必須提供節點的基本組態、這是用來設定節點的三個API呼叫中的第一個。
@@ -263,6 +269,7 @@ Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機I
 
 
 
+[[7-retrieve-the-node-networks]]
 == 7.擷取節點網路
 
 您必須識別單節點叢集中節點所使用的資料和管理網路。內部網路不適用於單一節點叢集。
@@ -293,6 +300,7 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTER
 
 
 
+[[8-configure-the-node-networking]]
 == 8.設定節點網路
 
 您必須設定資料和管理網路。內部網路不適用於單一節點叢集。
@@ -329,6 +337,7 @@ Json輸入（步驟08）:: 您需要提供網路名稱。
 
 
 
+[[9-configure-the-node-storage-pool]]
 == 9.設定節點儲存資源池
 
 設定節點的最後一步是附加儲存資源池。您可以透過vSphere Web用戶端或透過部署REST API（選用）來判斷可用的儲存資源池。
@@ -367,6 +376,7 @@ Json輸入（步驟09）:: 集區容量為2 TB。
 
 
 
+[[10-deploy-the-cluster]]
 == 10.部署叢集
 
 設定叢集和節點之後、即可部署叢集。
