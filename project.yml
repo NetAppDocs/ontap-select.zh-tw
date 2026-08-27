@@ -221,11 +221,7 @@ sidebar:
       - title: 其他高可用度功能
         url: "/concept_ha_other.html"
     - title: 效能
-      entries:
-      - title: 效能總覽
-        url: "/concept_perf_general.html"
-      - title: FAS9.6效能ONTAP Select
-        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+      url: "/concept_perf_general.html"
   - title: 使用REST自動化
     entries:
     - title: 概念

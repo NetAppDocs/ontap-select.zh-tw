@@ -2206,73 +2206,6 @@
   <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">此參數控制長時間執行命令的行為。如果設定、命令會在前景執行、並在作業發生時顯示相關的事件訊息。</block>
   <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
-  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">效能資訊ONTAP Select ：效能資訊：優異的HA直接附加SSD儲存設備。</block>
-  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">參考平台的效能資訊。</block>
-  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">參考平台</block>
-  <block id="1046c015c70060135ed38c7cc90d8b86" category="paragraph">（優質XL）硬體（每個節點ONTAP Select ）</block>
-  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">Fujitsu PRIMERGY RX2540 M4：</block>
-  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">Intel（R）Xeon（R）Gold 6142b CPU、速度為2.6 GHz</block>
-  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32個實體核心（16 x 2個插槽）、64個邏輯核心</block>
-  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GB RAM</block>
-  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">每個主機的磁碟機：24個960GB SSD</block>
-  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">用戶端硬體</block>
-  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5個NFSv3 IBM 3550m4用戶端</block>
-  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">組態資訊</block>
-  <block id="644583ef81af3657d263540fe36659df" category="list-text">軟體RAID 1 x 9 + 2 RAID-DP（11個磁碟機）</block>
-  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5（ONTAP 位於EASEID中的RAID-0）/ RAID快取NVRAM</block>
-  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">沒有使用儲存效率功能（壓縮、重複資料刪除、Snapshot複本、SnapMirror等）</block>
-  <block id="8b753111757d995e14e8b502f0b060f5" category="paragraph">下表列出ONTAP Select 使用軟體RAID和硬體RAID、在高可用度（HA）的一對邊節點上針對讀寫工作負載所測量的處理量。效能測量是使用SIO負載產生工具進行。</block>
-  <block id="8f0b44fb88a1368b40ccf845bb51b622" category="admonition">這些效能數據均以ONTAP Select VMware 9.6為基礎。</block>
-  <block id="5f0987d7c836e13b5c975378b71cb33d" category="paragraph">*使用ONTAP Select 軟體RAID和硬體RAID*、在直接附加儲存（DAS）SSD上、單一節點（四節點中型執行個體的一部分）的效能結果</block>
-  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">連續讀取64KiB</block>
-  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">連續寫入64KiB</block>
-  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">隨機讀取8KiB</block>
-  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">隨機寫入8KiB</block>
-  <block id="e78425925b16cdbe3107734a56031c80" category="cell">隨機WR/ RD（50/50）8KiB</block>
-  <block id="b9f7179a485f0a08d3f620ea3027bc01" category="cell">採用DAS（SSD）軟體RAID的大型執行個體ONTAP Select</block>
-  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171億次</block>
-  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559億次</block>
-  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">954億次</block>
-  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">394-393MBps</block>
-  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">564 MBps</block>
-  <block id="729966193ad3771980bdca3507a1eaaf" category="cell">採用DAS（SSD）軟體RAID的中型執行個體ONTAP Select</block>
-  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090億美元</block>
-  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MBps</block>
-  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677億次</block>
-  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335億次</block>
-  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 3億次</block>
-  <block id="e4475fda14f8565f7c25947659d1c3d9" category="cell">採用DAS（SSD）硬體RAID的中型執行個體ONTAP Select</block>
-  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038億美元</block>
-  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520億分之一</block>
-  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578台MiBps</block>
-  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325迷你吧</block>
-  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399億次</block>
-  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">64K循序讀取</block>
-  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">詳細資料：</block>
-  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">SIO直接I/O已啟用</block>
-  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2個節點</block>
-  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">每個節點2個資料NIC</block>
-  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（8TB軟體RAID）</block>
-  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64個SIO處理程序、每個處理程序1個執行緒</block>
-  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">每個節點32個磁碟區</block>
-  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">每個處理器1個檔案；每個檔案為12000MB</block>
-  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">64K循序寫入</block>
-  <block id="0f298226345a9b3c58f0c3df3b00ab51" category="list-text">每個節點2個資料網路介面卡（NIC）</block>
-  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">每個節點1個資料集合體（2TB硬體RAID）、（4TB軟體RAID）</block>
-  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128個SIO處理程序、每個處理程序1個執行緒</block>
-  <block id="ebfa598c2ae4ecaca547d57ec9bcebda" category="list-text">每個節點的磁碟區數：32（硬體RAID）、16（軟體RAID）</block>
-  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">每個處理器1個檔案；每個檔案30720MB</block>
-  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">8K隨機讀取</block>
-  <block id="06f2713882df7e7a8c3ec49774af3f5d" category="list-text">每個節點2個資料NIC</block>
-  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64個SIO處理程序、每個處理程序8個執行緒</block>
-  <block id="37b92a84c96cf144d3d2f1ddd9e668dc" category="list-text">每個節點的磁碟區數：32個</block>
-  <block id="4af562d52353844c11ed213dc9654510" category="list-text">每個處理器1個檔案；每個檔案12228MB</block>
-  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">8K隨機寫入</block>
-  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">每個處理器有1個檔案；每個檔案為819MB</block>
-  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">8K隨機50%寫入50%讀取</block>
-  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">每個處理器64個SIO pro208執行緒</block>
-  <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">效能總覽</block>
-  <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">FAS9.6效能ONTAP Select</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">一般而言、當授權到期時、不會發生任何事。不過、您無法安裝不同的授權、因為節點與過期的授權相關聯。在續約授權之前、您不應執行任何會使Aggregate離線的動作、例如重新開機或容錯移轉作業。建議採取的行動是加速授權續約。</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 部署叢集重新整理失敗、並出現錯誤</block>
@@ -2838,7 +2771,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">ONTAP 連接埠內容</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">不支援修改 ONTAP 連接埠的內容、包括速度、雙工和流量控制。</block>
   <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">ONTAP Select 效能總覽</block>
-  <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">FAS9.6效能：優質HA直接附加SSD儲存設備ONTAP Select</block>
   <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">增加 ONTAP Select 儲存容量</block>
   <block id="180d14e1cfcab830c1ec4fafd5097838" category="doc">ONTAP Select 儲存設備：一般概念與特性</block>
   <block id="4c09693df54f78ec01dcfce83626b988" category="doc">ONTAP Select 儲存效率支援</block>
@@ -2912,7 +2844,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="563074de50ee7515467ef30a7a16a15d" category="paragraph">無論節點執行個體類型或授權項目為何、所有平台都有幾項常見的硬體需求。</block>
   <block id="f9f5faecdbf3b023cf5652fa18b8c4ee" category="list-text">您不需要從 NetApp 取得序號或儲存容量授權。</block>
   <block id="591ba54105fed20bc4bc8e31cee68eb3" category="list-text">您可以為使用者資料分配與購買的授權相同數量的儲存空間。</block>
-  <block id="10db4e06bde0886ecc0f97ce3a350d45" category="list-text">您無法將節點從評估版授權升級至購買的授權。</block>
   <block id="de68e769353f85803d50af3ad5192201" category="list-text">您只能使用 vCenter 帳戶來部署 OVF 範本。目前不支援直接安裝到 ESXi 主機。</block>
   <block id="1ec19b1e234462f154c2312b865baa14" category="paragraph">使用下列需求來準備部署 ONTAP Select 叢集的 ESXi 主機。平台說明是根據標準或小型執行個體類型組態，使用本機直接附加儲存（ DAS ）格式化，使用的是 VMFS-3 或 VMFS-3 檔案系統。</block>
   <block id="7564075dd4184b322f666087a8172ae7" category="inline-image-macro">準備 ESXi 主機的需求</block>
@@ -3654,7 +3585,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="120dfe55114bd18d238461d392d2851f" category="doc">ONTAP Select 容量池授權容量規劃注意事項</block>
   <block id="18bea776141012ab15d569765a0801f0" category="list-text">單節點叢集的開銷係數為 1.13</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">多節點叢集的開銷係數為 2.67</block>
-  <block id="249a516ff48049712229714792dc7131" category="paragraph">您需要根據可用空間計算授權容量，以確保您的部署有足夠的容量。</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">單節點</block>
   <block id="ee77295963ed13bed36e924ed72f669e" category="cell">可用空間</block>
   <block id="686d2bd292fa941724920d9f5764926c" category="cell">授權空間</block>
@@ -3663,9 +3593,7 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
   <block id="32f9dc8bfa4ac02c770716ebf1eaf2df" category="doc">ONTAP Select Capacity Tiers 授權容量規劃注意事項</block>
   <block id="c5915502bf73930e10d7d62d217a0adc" category="paragraph">容量層級授權是基於每個 ONTAP Select 節點所管理的底層磁碟容量，而非節點、HA 配對或叢集的可用容量。每個容量層級授權都分配給一個特定的節點序號，並對應一個指定的容量，且需要簽訂相應的支援合約。</block>
-  <block id="d7af2ad49563ae7106d8189ee369825b" category="paragraph">根據可用空間計算授權容量，以確保您的部署有足夠的容量。</block>
   <block id="5aabc9069557be7e4aeff466605cbc75" category="cell">單節點</block>
-  <block id="23561a5c65d75192f0c089566ae29f4a" category="paragraph">HA 對中的每個節點：</block>
   <block id="754bc948e75e62a589ebb57f97b00d1a" category="paragraph">在多節點叢集中，每個 HA 對：</block>
   <block id="68a88e5fe4c22c1950c0f9b28b07d5c6" category="inline-link-macro">取得 ONTAP Select 的容量層授權</block>
   <block id="a3da07f3b51f418f1d1a05b62b272ccb" category="paragraph"><block ref="a3da07f3b51f418f1d1a05b62b272ccb" category="inline-link-macro-rx"></block></block>
@@ -3788,7 +3716,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="a5fdda4a32aaa656687dc3ed4336767b" category="paragraph">您可以在多節點叢集中為每個節點指派四個連接埠群組。每個連接埠群組都有一個作用中實體連接埠和三個待命實體連接埠，如下圖所示。</block>
   <block id="383749e0c2b6120b7d3219465c253e8d" category="paragraph">當使用兩個實體連接埠（10Gb 或更低）時，每個連接埠組應配置一個活動適配器和一個備用適配器，二者配置方向相反。內部網路僅適用於多節點 ONTAP Select 叢集。對於單節點叢集，外部連接埠組中的兩個適配器均可配置為活動狀態。</block>
   <block id="fd5410072ea2a4b129708a2e752af2fb" category="paragraph">以下範例展示了 vSwitch 的組態，以及負責處理多節點 ONTAP Select 叢集內部和外部通訊服務的兩個連接埠群組。由於內部網路 VMNIC 屬於此連接埠群組並設定為待命模式，因此在網路中斷時，外部網路可以使用內部網路 VMNIC。外部網路的情況則相反。在兩個連接埠群組之間交替使用主動和待命 VMNIC，對於在網路中斷期間正確容錯移轉 ONTAP Select VM 至關重要。</block>
-  <block id="df46fd1cc3592c160ce26bd78c3e9761" category="list-text">ESXi 6.5U1</block>
   <block id="358d64cf39b6c9eced01e45fdfd7e797" category="paragraph">在容量新增作業期間，VMDK 的最大大小為 16TB。在叢集建立操作期間，VMDK 的最大大小仍為 8TB。ONTAP Deploy 會根據您的配置（單節點或多節點叢集）和新增的容量大小建立大小適當的 VMDK。但是，在叢集建立操作期間，每個 VMDK 的最大大小不應超過 8TB；在儲存新增作業期間，每個 VMDK 的最大大小不得超過 16TB。</block>
   <block id="a7c2d78e472b2fbe1b7627532aec0745" category="admonition">在 HA 配對中、將儲存設備新增至節點 1 時、節點的 HA 配對（節點 2 ）上也必須有相同數量的磁碟機可用。節點 1 上的單一儲存設備新增作業會同時使用本機磁碟機和遠端磁碟。也就是說、遠端磁碟機可確保節點 1 上的新儲存設備在節點 2 上進行複寫和保護。若要在節點 2 上新增本機可用的儲存設備、則必須在兩個節點上執行個別的儲存設備新增作業、且兩個節點上都必須有個別且相同數量的磁碟機可用。</block>
   <block id="90e04b1522b6ea952b583f994c8d3c8b" category="admonition">舊版 ESXi 的最大範圍和資料存放區大小為 64TB，這可能會影響支援這些大容量磁碟機所提供的總原始容量所需的 LUN 數量。</block>
@@ -3853,14 +3780,12 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="324bea2f11169e67c398f52f2473e586" category="doc">VMware ESXi 對 ONTAP Select 的外部儲存需求</block>
   <block id="75a86bcbac7e603bc4f5c0065d1a3a07" category="paragraph">請查閱 VMware 文件，並遵循針對 ESXi 主機所識別的適用最佳實務做法。此外：</block>
   <block id="84a80a698e14acfb3da1da2ebe7ef8c2" category="list-text">確認所有通用外部儲存陣列盡可能使用可用的冗餘和 HA 功能</block>
-  <block id="d29cfb45957918aefdd8d5c4b6faa886" category="paragraph">容量池授權的授權容量以完整 TB 為單位，最小值為 2 TB。授權容量的計算方法是將可用空間量乘以開銷係數。單節點叢集和多節點（基於 HA 配對）叢集的開銷係數有所不同：</block>
   <block id="b4c21a84e70314772f63f682c92e2bd5" category="cell">20 TB</block>
   <block id="f53c95b0502281ef3f4bc5968b571b0f" category="cell">單節點叢集 10 TB HA 對 20 TB</block>
   <block id="3860ef90e12d15d0420cb040ee51a64c" category="cell">23 TB（20 x 1.13 = 22.6，向上取整到下一個整數 TB）</block>
   <block id="598d217f06b9250ad27a8198bb5c2a4b" category="cell">54 TB（20 x 2.67 = 53.4，向上取整到下一個整數 TB）</block>
   <block id="6694602e4cd7d0b05713de6bd31c888e" category="cell">每個節點的最大可用空間 *註*：每個節點或 HA 配對的最大管理空間為 400 TB</block>
   <block id="0ff836b729a9f331160a37a804c5f502" category="cell">353 TB（400 / 1.13）</block>
-  <block id="9ed860bf7c910e8f72592e603158fb1a" category="paragraph">Capacity Tiers 授權的授權容量以完整 TB 為單位，最小值為 1 TB。授權容量的計算方法是將可用空間量乘以額外負荷係數。單節點叢集和多節點（ HA 配對型）叢集的額外負荷係數有所不同：</block>
   <block id="1191f788083da9194f8eef9400d10898" category="cell">10 TB</block>
   <block id="f515aabc5719e9815156a5bba11b0271" category="cell">每個節點 5 TB HA 配對 10 TB</block>
   <block id="8ef83a850a4c3f98639c08c641ced5a0" category="cell">12 TB（10 x 1.13 = 11.3，向上取整到下一個整數 TB）</block>
@@ -4070,4 +3995,14 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="972cc139ce081218935961184ceb872f" category="list-text">非同步 SnapMirror 中的一致性群組</block>
   <block id="2dd64bd29dd925332151bac56daee54d" category="list-text">SVM-Migrate</block>
   <block id="191cca9b69f6675fd704265efaee5cd4" category="paragraph">ONTAP Select 不支援非同步 SnapMirror 中的一致性群組。</block>
+  <block id="4b24c4ea95509e5cbdbe193ec75f463e" category="paragraph">容量池授權的授權容量以完整 TB 為單位，最小值為 2 TB。授權容量的計算方法是將可用空間量乘以例行成本係數。例行成本係數用於估算將從可用空間中扣除的 ONTAP Select 軟體例行成本容量，並適用於確定 NVMe、SSD、HDD 或虛擬磁碟機的 ONTAP Select 容量。單節點叢集與多節點（基於 HA 配對）叢集的例行成本係數有所不同：</block>
+  <block id="b3a8f80cb2ce78cbbf07a7817fabad7d" category="paragraph">您需要根據可用空間計算授權容量，以確保有足夠的容量來滿足您的部署。例如，您需要 20 TB 的可用容量用於 HA 配對（每個節點 10 TB）：</block>
+  <block id="863cc3c84b4e89fdd7579f92bb937ebc" category="list-text">對於 HA 配對，資料會在兩個節點之間複製以實現備援，因此，對於 HA 配對中的 20 TB 可用容量，每個節點需要 20 TB 的空間，以防其中一個節點離線。</block>
+  <block id="3e0455dedd9dea9911d6347cfe0aee63" category="list-text">係數 2.67 使每個節點的容量翻倍，並增加了 ONTAP Select 運作所需的例行成本容量（0.67）。</block>
+  <block id="e1b77540ab30a2b9d111bb1c6ae9524f" category="list-text">每個節點的授權容量為 27 TB (10 x 2.67 = 26.7)。對於 HA 配對，您需要兩個 27 TB 的授權才能擁有 20 TB 的可用容量。</block>
+  <block id="60a2cd8b21b5abdd1f9f570f98aead06" category="paragraph">容量層級授權的授權容量以 TB 為單位，最小值為 1 TB。授權容量的計算方法是將可用空間乘以例行成本係數。例行成本係數用於估算 ONTAP Select 軟體例行成本容量，該容量將從可用空間中扣除，並用於確定 NVMe、SSD、HDD 或虛擬磁碟機的 ONTAP Select 容量。單節點叢集和多節點（基於 HA 配對）叢集的例行成本係數有所不同：</block>
+  <block id="ab9e259cd278dabfae81423ce071874c" category="paragraph">您需要根據可用空間計算授權容量，以確保有足夠的容量來滿足您的部署。例如，您需要一個 HA 配對具備 10 TB 的可用容量（每個節點 5 TB）：</block>
+  <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">對於 HA 配對，資料會在兩個節點之間進行複製以實現備援，因此，對於 HA 配對中的 10 TB 可用容量，每個節點需要 10 TB 的空間，以防其中一個節點離線。</block>
+  <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">每個節點的授權容量為 14 TB（5 x 2.67 = 13.35）。對於 HA 配對，您需要兩個 14 TB 的授權才能擁有 10 TB 的可用容量。</block>
+  <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">HA 配對的每個節點：</block>
 </blocks>
