@@ -4,7 +4,7 @@ permalink: concept_adm_before.html
 keywords: administer, administering, web, before you begin 
 summary: 建立ONTAP Select 完叢集後、您可以執行各種管理工作來支援部署。需要注意的一般考量有幾個。 
 ---
-= 開始管理ONTAP Select 功能之前
+= 了解如何管理 ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

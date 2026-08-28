@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: 從ONTAP Select 9.15.1 開始，您可以增加或減少現有叢集的大小。 
 ---
-= 在 ESXi 或 KVM 主機上擴展或收縮ONTAP Select集群
+= 在 ESXi 或 KVM 主機上擴充或縮減 ONTAP Select 叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

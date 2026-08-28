@@ -4,7 +4,7 @@ permalink: legal-notices.html
 keywords: copyrights, notices, trademarks, patents, privacy 
 summary: 法律聲明提供版權聲明、商標、專利等存取權限。 
 ---
-= 法律聲明
+= ONTAP Select 的法律聲明
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

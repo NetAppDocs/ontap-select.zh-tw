@@ -4,7 +4,7 @@ permalink: sizing-capacity-tier-license.html
 keywords: license, licensing, Capacity Tiers, usable, space 
 summary: Capacity Tiers 授權是基於每個節點管理的底層磁碟容量，而非節點、HA-pair 或叢集的可用容量。每個 Capacity Tiers 授權都分配給一個特定容量的個別節點序號，且需要隨附的支援合約。 
 ---
-= ONTAP Select Capacity Tiers 授權容量規劃注意事項
+= 確定 ONTAP Select 的 Capacity Tiers 授權大小
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

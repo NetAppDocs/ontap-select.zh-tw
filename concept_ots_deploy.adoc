@@ -4,7 +4,7 @@ permalink: concept_ots_deploy.html
 keywords: ontap select deploy, deploy administration utility, deploy utility, functionality, accessing 
 summary: 使用「部署」管理公用程式來部署及管理各種叢集。ONTAP Select ONTAP Select 
 ---
-= 部署ONTAP Select
+= 了解 ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

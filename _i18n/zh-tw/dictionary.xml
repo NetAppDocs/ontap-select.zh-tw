@@ -505,7 +505,6 @@
   <block id="8b8ad71cb1f021d9c60ac3546c84a309" category="list-text">針對ONTAP Select VMware vSAN和外部儲存設備定義專屬的網路連接埠、頻寬和vSwitch組態（使用iSCSI或NFS時為VMware vSAN和一般儲存陣列流量）</block>
   <block id="eba94fc119b6edab65f52db7f8979bcc" category="list-text">設定容量選項以限制儲存使用率（ONTAP Select 無法使用外部vNAS資料存放區的全部容量）</block>
   <block id="f0d06352d26117769577e30b4e00ca4a" category="summary">您可以執行多項相關工作來管理ONTAP Select 一個叢集。</block>
-  <block id="c57ef2657d4baa07c3da17d9b8ee2e20" category="doc">叢集ONTAP Select</block>
   <block id="270415548e638f6227a9943760c4601e" category="paragraph">建立叢集之後、您可以視需要將其離線或上線。</block>
   <block id="dfff66df61854331286bf47398ed3c65" category="paragraph">建立叢集之後、它一開始會處於線上狀態。</block>
   <block id="6a83dbf406a55504c44ecbdb9a3f3c8b" category="paragraph">如果離線選項無法使用、表示叢集已處於離線狀態。</block>
@@ -870,7 +869,6 @@
   <block id="7d7d0d771e408e152fe9f59aa783a245" category="paragraph">叢集的授權升級可能需要數分鐘的時間。允許程序在離開頁面或進行任何其他變更之前完成。</block>
   <block id="58c19e610497280d55686885113b1e5a" category="paragraph">最初指派給評估部署每個節點的二十位數節點序號、會由用於升級的正式作業授權中的九位數序號所取代。</block>
   <block id="b73167eee5082eed4d7d4c53de18c738" category="summary">建立ONTAP Select 完叢集後、您可以執行各種管理工作來支援部署。需要注意的一般考量有幾個。</block>
-  <block id="1af7e96c06b83a1ff6aad6bd1d3d9fa0" category="doc">開始管理ONTAP Select 功能之前</block>
   <block id="0a4ded0e98055bab8bb8d671237cbb41" category="paragraph">一般而言、您可以使用部署Web介面執行的程序分為三類之一。</block>
   <block id="da70b9ce263d0deac21a9bdc090db697" category="paragraph">您可以ONTAP Select 使用下列支援的NetApp用戶端軟體連線至支援的解決方案：</block>
   <block id="32c236bbc7c47900f75310cfa59abd2a" category="list-text">OnCommand Insight</block>
@@ -1956,7 +1954,6 @@
   <block id="c1b060c144785f27389c5e134af018e1" category="sidebar">Hypervisor與硬體</block>
   <block id="392ef7332861d17c4a3770570a1a87a4" category="sidebar">雙節點叢集</block>
   <block id="40762683748106b1d1e0792d0c278678" category="sidebar">遠端辦公室和分公司</block>
-  <block id="6e000ad3ab759a6cf44e1c9a970752c4" category="sidebar">VMware環境</block>
   <block id="794df3791a8c800841516007427a2aa3" category="sidebar">授權</block>
   <block id="187e115b0c10602baa476f64acc86a80" category="sidebar">正式作業授權</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="sidebar">限制</block>
@@ -2351,8 +2348,6 @@
   <block id="dceaaeb84342d2c83b2b279b2eb057a8" category="paragraph">伺服器廠商瞭解客戶的需求和選擇各不相同、這點至關重要。因此、在購買實體伺服器時、在決定網路連線時、有許多選擇可供選擇。大多數的市售系統都隨附各種NIC選項、可提供單一連接埠和多連接埠選項、並可針對速度和處理量進行不同的排列。這包括支援 VMware ESX 的 25Gb/s 和 40Gb/s NIC 介面卡。</block>
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">您只能使用ONTAP Select 比部署執行個體所含原始版本更早的版本來新增一個版本不含任何資訊的鏡像。不支援在不同時更新部署的情況下新增 ONTAP Select 的較新版本。</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
-  <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">存取 ONTAP Select 視訊主控台</block>
-  <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">確認 ONTAP Select 節點之間的網路連線能力</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">初始叢集建立可用於建立ONTAP Select 一個佔用初始資料存放區部分或全部空間的不實叢集。第二個步驟是使用其他資料存放區執行一或多個容量新增作業、直到達到所需的總容量為止。本節將詳細說明此功能 <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>。</block>
   <block id="18249feda4b97af2b71cdf46188e1e4c" category="section-title">變更部署管理員密碼</block>
   <block id="39c422f1ba6768584ce2b5ea65c4f569" category="doc">使用 CLI 部署 ONTAP Select 叢集</block>
@@ -2369,7 +2364,6 @@
   <block id="2863feac8b058188a45f49deaf504ce8" category="section-title">使用 Deploy 升級多節點叢集</block>
   <block id="77313127f25a198a72521f0ce3437025" category="section-title">無需部署即可升級單節點叢集</block>
   <block id="4724841b242993261d4bc5bf0b22e4da" category="section-title">無需部署即可升級多節點叢集</block>
-  <block id="f47ad6e4bc9bad323a7e49da78e990bc" category="doc">調整 ONTAP Select 叢集節點的大小</block>
   <block id="afe2fb2999af41d32655dc1f20500f66" category="list-text">從 ONTAP Select 9.9.1 開始、 ONTAP Select 僅支援來自 Intel Xeon Sandy Bridge 或更新版本的 CPU 機型。</block>
   <block id="0fa9a0b98f503373d1e8310c7c58315c" category="cell">ONTAP Select 的產品安裝執行檔。</block>
   <block id="2d288e7805c1ececa65188f89defd9ce" category="admonition">API v3版本與舊版API不相容。上有新的 API 程序<block ref="d0140e6551623cc2284467774c9abf91" category="inline-link-rx"></block>。</block>
@@ -2387,10 +2381,8 @@
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">ONTAP Select 部落格</block>
   <block id="bafb5d4f7ed06fcf88f3e77fadecc81b" category="sidebar">ONTAP Select 社群</block>
   <block id="dd3d71b5f68ad8da8831a0b5ea514e35" category="sidebar">互通性對照表</block>
-  <block id="f2efd2b383af9a0515aa1f64f9691215" category="sidebar">調整叢集節點的大小</block>
   <block id="cdedd922b30b9f8699ea17f5d0045e3d" category="sidebar">升級至 VMFS6</block>
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">瞭解 API 呼叫</block>
-  <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">工作流程 1 建立叢集</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">瞭解指令碼</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">NetApp 支援網站</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">檢閱終端使用者授權合約（ EULA ）、然後選取 * 接受並繼續 * 。</block>
@@ -2731,24 +2723,16 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">您可以使用叢集縮減功能、將叢集大小從八節點叢集減少為六節點叢集。目前不支援從六個或八個節點叢集到一個、兩個或四個節點叢集的叢集收縮。<block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>。</block>
   <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">硬體與儲存考量</block>
   <block id="054e946fb0b83b6a666a6ad91e898f0a" category="doc">使用 ONTAP Select 的工作物件進行非同步處理</block>
-  <block id="1203a64f6c4121eab9dbc97f2336a51b" category="doc">使用瀏覽器存取 ONTAP Select 部署 API 之前</block>
-  <block id="d507d585a3bf4790d7db816f3a8055fe" category="doc">使用 Python 存取 ONTAP Select 部署 API 之前</block>
-  <block id="0efdd662738a644a15c7b4b5f469d2e9" category="doc">使用 ONTAP Select 部署 API 工作流程之前</block>
-  <block id="c0edc4a15c9a8f5add1ff16d8cb1a838" category="doc">如何存取 ONTAP Select 部署 API</block>
   <block id="fe0458f6f4e5f651de36cf8596142eb6" category="doc">ONTAP Select 部署 API 基本作業特性</block>
-  <block id="231ed5a6a889053c28b06cb17cb1e4ee" category="doc">用於部署和管理 ONTAP Select 叢集的 REST Web 服務基礎</block>
   <block id="b71dcac4419af40029253724c36ca33b" category="doc">ONTAP Select 的要求與回應 API 交易</block>
-  <block id="f8b6aa0580faab5529017cf022ac2d16" category="doc">瞭解 ONTAP Select 部署的 Python 指令碼</block>
   <block id="bbc20c2ea315836d08b392ce75c91d0b" category="doc">ONTAP Select 高可用度組態</block>
   <block id="c849264ebb01817c7925cd0a068007af" category="doc">ONTAP Select HA RSM 和鏡射的集合體</block>
-  <block id="ec8ac2a2aba486a14f418e0d73aa199d" category="doc">ONTAP Select HA 可強化資料保護</block>
   <block id="2f1f8f7609cf43a281fbca2068eb08b8" category="paragraph">高可用度（ HA ）磁碟心跳， HA 信箱， HA 心跳， HA 容錯移轉和 Giveback 工作，以強化資料保護。</block>
   <block id="55734e2f86357f8b0f60cd204e105d21" category="paragraph">您可以使用評估授權或購買的授權來部署 ONTAP Select 。您選擇的授權必須套用至 ONTAP Select 叢集中的每個節點，因此必須套用至整個叢集。如果您想要在ONTAP Select 決定購買之前先評估一下「版本」、就可以使用評估授權。評估版授權隨附ONTAP Select 於EView部署管理公用程式、並會在ONTAP Select 評估部署中自動套用至每個節點。</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">部署和支援評估叢集時，有幾個考量：</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">您只能將叢集用於評估用途。您不得在正式作業環境中使用具有評估授權的叢集。</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">在設定每個主機時，您應該使用 ONTAP Select Deploy 管理公用程式，如下所示：</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">設定以使用評估授權</block>
-  <block id="711f738f1281862e087807884aa5cd1c" category="doc">購買 ONTAP Select 授權時的工作流程</block>
   <block id="5a61239e15d4a26620f5d89e4b1a8f7f" category="doc">ONTAP Select 網路概念與特性</block>
   <block id="73a89e5a391bfad2dcfbcec41e378787" category="doc">ONTAP Select 資料與管理流量分離</block>
   <block id="f84037cae3830b722ecf096ad5fd58ef" category="doc">ONTAP Select 內部和外部網路</block>
@@ -2770,24 +2754,18 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e1822392dfeb820c1cca38e5e718a61f" category="paragraph">由於 ONTAP Select 使用的虛擬化環境、因此不支援 NIC 卸載功能。</block>
   <block id="6c9348bc5d04685460e6acda750ab989" category="list-text">ONTAP 連接埠內容</block>
   <block id="b360fb78c737d920cd251b2f7358f606" category="paragraph">不支援修改 ONTAP 連接埠的內容、包括速度、雙工和流量控制。</block>
-  <block id="fcc22b4e3de45bbac50b32226efb8e8c" category="doc">ONTAP Select 效能總覽</block>
-  <block id="5b7b913b9183b40db3cdac93dcffe3d9" category="doc">增加 ONTAP Select 儲存容量</block>
-  <block id="180d14e1cfcab830c1ec4fafd5097838" category="doc">ONTAP Select 儲存設備：一般概念與特性</block>
   <block id="4c09693df54f78ec01dcfce83626b988" category="doc">ONTAP Select 儲存效率支援</block>
-  <block id="e85029c6308bf8469ad5d2bf5ac5a6da" category="doc">ONTAP Select 本機附加儲存設備的硬體 RAID 服務</block>
   <block id="72270ae5ad1efa50cbda87b77a2b8c8d" category="inline-link-macro">在 ONTAP Select 軟體 RAID 組態中更換故障磁碟機</block>
   <block id="9e21cea65d2285f38de1d74bb5ebe82c" category="admonition">您無法從使用硬體 RAID 組態的 ONTAP Select VM 中分離虛擬磁碟。只有使用軟體 RAID 組態的 ONTAP Select VM 才支援分離磁碟。如需詳細資訊、請參閱 <block ref="2a48fe6fcfd810b54ef07e2d1e2a735b" category="inline-link-macro-rx"></block> 。</block>
   <block id="07c6a664d186f44a90042e2245e46aad" category="doc">適用於本機附加儲存設備的 ONTAP Select 軟體 RAID 組態服務</block>
   <block id="e263536030472b1b884032009157f00c" category="doc">ONTAP Select 術語和關鍵概念</block>
   <block id="b993d6b1ae8a2148a7be773127a7d668" category="doc">ONTAP Select 業務需求和使用情境</block>
   <block id="18ea6d668ccbbc1b64935d2ae14d9c63" category="doc">ONTAP Select 支援私有雲和資料中心</block>
-  <block id="567999f9c71634f001a831b733088bbc" category="doc">在遠端辦公室和分公司使用 ONTAP Select</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON ，用於建立 ONTAP Select 叢集的指令碼</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">新增 ONTAP Select 節點授權的指令碼</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">建立 ONTAP Select 叢集的指令碼</block>
   <block id="d066221405020e2f85c198e0b44e228b" category="doc">用於刪除 ONTAP Select 叢集的指令碼</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">調整 ONTAP Select 叢集節點大小的指令碼</block>
-  <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">工作流程 1 ：在 ESXi 上建立 ONTAP Select 單節點評估叢集</block>
   <block id="169dafc7979793a9e61147f233aa45c3" category="doc">ONTAP Select 部署公用程式安裝的必要資訊</block>
   <block id="cddb93cf729be75720f6155855c70d38" category="doc">修改用於 ONTAP Select 部署的主機管理伺服器</block>
   <block id="7ccffa1050dd38b57df1fa0990bb72a7" category="doc">部署後 ONTAP Select 叢集的初始狀態</block>
@@ -2812,8 +2790,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="834b02e64c437c938996a121579bbd87" category="list-text">VMware ESXi 8.0 U3</block>
   <block id="91aac4a7f60b41d08a32c5e3e97fd852" category="list-text">請盡可能確認所有外部儲存陣列都使用可用的備援和高可用度（ HA ）功能</block>
   <block id="e3527493b496eac4476a36800671c21b" category="summary">在規劃 ONTAP Select 部署時，您應該考慮幾項 MetroCluster SDS 的需求。</block>
-  <block id="61134acc5ec932d98d83e0b1968f4ba0" category="doc">準備 ONTAP Select MetroCluster SDS 部署</block>
-  <block id="42696bcb531049bc468130ae11afc8ee" category="doc">ONTAP Select 網路考量</block>
   <block id="42e12ad664d00b6d50a44dac72efaa21" category="doc">ONTAP Select 遠端和分公司部署</block>
   <block id="852ae4fc33b89c5131b8050b8ab9b9de" category="doc">ONTAP Select 儲存設備與 RAID 考量</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">ESXi 上的 ONTAP Select VMware vCenter 伺服器</block>
@@ -2821,7 +2797,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">管理 ONTAP Select 部署協調服務</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">更換故障的 ONTAP Select 軟體 RAID 磁碟機</block>
   <block id="d2d9b29d15ac79b034bfba1cc5f636be" category="doc">保護 ONTAP Select 部署安全</block>
-  <block id="7bce3fa777739691b187f554fac27625" category="doc">ONTAP Select 診斷與支援</block>
   <block id="ecc7a573e63ad51d6c5b87c50988984a" category="doc">使用 Storage VMotion 將 ONTAP Select 節點升級至 VMFS6</block>
   <block id="2d17a30222011fb034c3d9e239fbd264" category="doc">存取 ONTAP Select 部署文件頁面</block>
   <block id="4560429c3136b530a65edc28b99c356a" category="doc">瞭解並執行 ONTAP Select 部署 API 呼叫</block>
@@ -2834,7 +2809,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="70ea48dd9234010492aec1d6e7a0d297" category="sidebar">確認網路連線能力</block>
   <block id="4ce7782445b66c31b4b4d786806ae7a1" category="sidebar">管理中介服務</block>
   <block id="697112fb0ffb252e40d60a5a007943a2" category="sidebar">擴充或收縮叢集</block>
-  <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">存取 VM 視訊主控台</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">更換故障的軟體 RAID 磁碟機</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1 支援 VMware ESXi 8.0 U2 。</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3.</block>
@@ -2975,7 +2949,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="28ec4566b445eb67771a9a111611e502" category="cell">由 License Manager 針對使用 Capacity Pool 的每個節點所產生的八位數變數值</block>
   <block id="35892d48da3c4641520dc5f89430eeaa" category="list-text">您可以使用 Capacity Tier 授權，但不支援 Capacity Pool 授權</block>
   <block id="1538605c931beb7706c95917ca61c48d" category="summary">您可以在三個平台容量層級中的其中一個層級購買 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。</block>
-  <block id="4be94941d4ae435ad44487d075e7a367" category="doc">瞭解 ONTAP Select 平台授權方案</block>
   <block id="9cdcaf5a7aae0807b2a785f7d26f1f3f" category="paragraph">您可以購買標準，優質或優質 XL 等級的 ONTAP Select 容量層級或容量集區授權。這些授權產品決定了部署ONTAP Select 的主機功能。</block>
   <block id="2f2718c8a2f261e7775daae8fff84dbc" category="section-title">比較平台授權方案的硬體支援</block>
   <block id="06efa63cc6d93bbf842cc0f903057606" category="open-title">核心項目</block>
@@ -3043,7 +3016,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="4336ee0e2315cb2014ffbaddbb71d150" category="list-text">容量資源池授權模式是使用 Deploy 2.10 隨 ONTAP Select 9.5 一起推出。每個儲存容量集區都需要個別授權。Capacity Pool 授權會鎖定至 License Manager 執行個體（即部署執行個體），且必須根據購買條款進行續約。您可以在組織中授權及使用任意數量的容量集區。不過，由於容量集區是由 ONTAP Select 節點共用，因此通常需要的授權數量比容量層級授權少。</block>
   <block id="07dd1826d2d39d21b05b11f5f59d47dd" category="list-text">授權管理員是支援 Capacity Pool 授權的軟體元件。它目前是部署管理公用程式的一部分。LM會將儲存設備從ONTAP Select 其管理的共享資源池租賃給各個節點。_License Lock ID_是唯一識別每個LM執行個體的數字字串、因此是每個部署執行個體。您必須同時使用 Capacity Pool 授權序號和 LLID 來產生授權檔案。</block>
   <block id="43b16943d6d5ff73da96f41d29e4303d" category="paragraph"><block ref="43b16943d6d5ff73da96f41d29e4303d" category="inline-link-macro-rx"></block></block>
-  <block id="24d0d0c7fc9a3866a568dea751e3cd63" category="doc">瞭解 ONTAP Select 資料保護與效率</block>
   <block id="b489b293d6cbe8b86835d3cac8c315fb" category="section-title">Snapshot 資料保護</block>
   <block id="467385c0c4913cc96395e5493d47b3bc" category="paragraph">ONTAP Select 包含資料保護功能，包括快照和 SnapMirror 軟體。您可以快速將資料複寫到其他 ONTAP 儲存設備，無論是內部部署，遠端站台或雲端。如果您必須快速恢復資料， SnapRestore 軟體可以使用本機快照，在數秒內恢復整個檔案系統或資料磁碟區，無論檔案容量或數量為何。</block>
   <block id="787fb8fbafed37b77c3881f9e0c851a0" category="section-title">以軟體定義的儲存設備MetroCluster</block>
@@ -3091,7 +3063,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="82f452184fa717ab2fcdbde25eea3a2b" category="inline-link-macro">了解生產部署的許可證</block>
   <block id="74d4caeb059278dbd1c813ff422126a8" category="list-text"><block ref="74d4caeb059278dbd1c813ff422126a8" category="inline-link-macro-rx"></block></block>
   <block id="ac40d7358d4d4fc23aa16496ea43e162" category="summary">準備部署ONTAP Select節點的每個 ESXi 虛擬機器管理程式主機。準備主機時，請仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
-  <block id="48a140923c82edfd6e65489c46f2fd26" category="doc">ONTAP Select的 ESXi 主機配置和準備清單</block>
   <block id="cd4dd6c5342dd2939f0e0bdd97cfa640" category="paragraph">準備部署ONTAP Select節點的每個 ESXi 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
   <block id="6943ac53dc25f522d2ecc61d1df4d254" category="admonition">ONTAP Select Deploy 管理公用程式不會執行虛擬機器管理程式主機所需的網路和儲存配置。您必須在部署ONTAP Select叢集之前手動準備每個主機。</block>
   <block id="423f466fab8357286c6cf217990032a9" category="section-title">步驟 1：準備 ESXi 虛擬機器管理程式主機</block>
@@ -3110,7 +3081,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">四節點集群</block>
   <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">下圖展示了一個包含兩個網路的四節點集群。內部網路可在節點之間進行通訊、以支援ONTAP 叢集網路服務。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。</block>
   <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">準備部署ONTAP Select節點的每個 KVM 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
-  <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">ONTAP Select的 KVM 主機配置和準備清單</block>
   <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">準備部署ONTAP Select節點的每個 KVM 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。</block>
   <block id="70927fa219016e15d1c052484c1bd8b6" category="section-title">步驟 1：準備 KVM 虛擬機器管理程式主機</block>
   <block id="f815b88c3f2e295185a91f57bfa50353" category="paragraph">您需要準備部署ONTAP Select節點的每個 Linux KVM 伺服器。您也必須準備部署 ONTAP Select 部署管理公用程式的伺服器。</block>
@@ -3427,7 +3397,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="86069ab716d4c2ffd77a81bd3827427f" category="list-text">在本地工作站的命令提示字元中，使用<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>使用（安全複製協定）實用程式將映像檔上傳到ONTAP Select Deploy 虛擬機，如下範例所示：</block>
   <block id="52396dafee59debc72b8fccab2acb4c5" category="paragraph">範例命令：</block>
   <block id="3817e5dd56e94cb6952f7eb0ab2a6acd" category="summary">從ONTAP Select 9.15.1 開始，您可以增加或減少現有叢集的大小。</block>
-  <block id="b4ec4e16d52cf8a4ab8bd5925fba2631" category="doc">在 ESXi 或 KVM 主機上擴展或收縮ONTAP Select集群</block>
   <block id="7e6bf0ef053af206603d7df47832fbd5" category="inline-link-macro">確認ONTAP Select AutoSupport功能已配置</block>
   <block id="785cc01cf7efbfd5a1fd1d4863d9b83a" category="paragraph">集群部署完成後，<block ref="af0babf33c9640eb381afcb6484c80f3" category="inline-link-macro-rx"></block>進而<block ref="530c589d5a11589fc0cbd2126b61e792" category="inline-link-macro-rx"></block>。</block>
   <block id="b7f5f41e99a6f8c3c3a0c1843b24c17b" category="sidebar">升級 ESXi</block>
@@ -3544,7 +3513,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d65f97fb1a167a35c6951233420ba74d" category="list-text">Red Hat Enterprise Linux (RHEL) 64 位元 10.1、10.0、9.7、9.6、9.5、9.4、9.3、9.2、9.1、9.0、8.8、8.7 和 8.6</block>
   <block id="9619f591215dbfb1d346be6b36138040" category="paragraph">容量集中在一個中央池中，可以在組織內的多個節點之間共享。</block>
   <block id="7e440cfb9036689e833e4df17a0ae529" category="summary">Capacity Tiers 和 Capacity Pools 授權模式之間存在幾個差異。</block>
-  <block id="fee8461b7e8ddef9ec0ec4e060511b93" category="doc">比較 ONTAP Select 容量層級和容量池授權</block>
   <block id="446240bc49bf82cd1fa165cc8e5438c5" category="cell">NetApp 產生九個數字並將它們分配給一個節點</block>
   <block id="36fce331144baf1f211037348fdd68dc" category="cell">NetApp 產生九位數字並將其分配給容量池。</block>
   <block id="7775850407e0cb325d7561581f3925f0" category="cell">根據購買的固定期限（需要續約）</block>
@@ -3582,7 +3550,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="55ecb9826f7deb57441eeedae69c0a6d" category="inline-link-macro">了解如何管理 ONTAP Select 授權</block>
   <block id="e9cb552b57937edc77138a16fc98ada5" category="paragraph"><block ref="e9cb552b57937edc77138a16fc98ada5" category="inline-link-macro-rx"></block></block>
   <block id="f4f97ec2d091cfbe40253c1e9206cef4" category="summary">Capacity Tiers 授權是基於每個節點管理的底層磁碟容量，而非節點、HA-pair 或叢集的可用容量。每個 Capacity Tiers 授權都分配給一個特定容量的個別節點序號，且需要隨附的支援合約。</block>
-  <block id="120dfe55114bd18d238461d392d2851f" category="doc">ONTAP Select 容量池授權容量規劃注意事項</block>
   <block id="18bea776141012ab15d569765a0801f0" category="list-text">單節點叢集的開銷係數為 1.13</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">多節點叢集的開銷係數為 2.67</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">單節點</block>
@@ -3591,7 +3558,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">接下來</block>
   <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">取得 ONTAP Select 的容量集區授權</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
-  <block id="32f9dc8bfa4ac02c770716ebf1eaf2df" category="doc">ONTAP Select Capacity Tiers 授權容量規劃注意事項</block>
   <block id="c5915502bf73930e10d7d62d217a0adc" category="paragraph">容量層級授權是基於每個 ONTAP Select 節點所管理的底層磁碟容量，而非節點、HA 配對或叢集的可用容量。每個容量層級授權都分配給一個特定的節點序號，並對應一個指定的容量，且需要簽訂相應的支援合約。</block>
   <block id="5aabc9069557be7e4aeff466605cbc75" category="cell">單節點</block>
   <block id="754bc948e75e62a589ebb57f97b00d1a" category="paragraph">在多節點叢集中，每個 HA 對：</block>
@@ -3618,11 +3584,9 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="5ad7da60ec9981258981a60e93dca7dd" category="list-text">填寫 *License Generator* 頁面上的剩餘字段，包括 *Product Serial #*。</block>
   <block id="02fa13004899b54713212c43efd75d1b" category="paragraph">「產品序號」是 ONTAP Select 節點的序號。</block>
   <block id="85281ac8736ae43694fb2a98eed37831" category="paragraph">您可以選擇 *Download License* 或 *Email License*。</block>
-  <block id="457728d9249110c26fc907c7cbd93060" category="sidebar">了解評估授權</block>
   <block id="baf734525ec008b6cbc548f24ce32475" category="sidebar">了解生產授權</block>
   <block id="d3a14fe349c75db44b4f42be06485d39" category="sidebar">容量層級與容量池</block>
   <block id="3b32ccaa0766722aa2afed59d3051ca8" category="sidebar">購買授權</block>
-  <block id="9be9343d8314647310e47876ae581a39" category="sidebar">授權大小的考量因素</block>
   <block id="f207357dde5b74df08cbece4e6ecc93d" category="sidebar">取得授權</block>
   <block id="e9acce0d3652d40c91f9bd7e814291c0" category="inline-link-macro">NetApp 支援網站下載</block>
   <block id="17838336399b2e69627cea0614c17f30" category="list-text">存取 <block ref="8e92c016cc209b5ea10cc71b5bfe5577" category="inline-link-macro-rx"></block> 頁面。</block>
@@ -4005,4 +3969,44 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">對於 HA 配對，資料會在兩個節點之間進行複製以實現備援，因此，對於 HA 配對中的 10 TB 可用容量，每個節點需要 10 TB 的空間，以防其中一個節點離線。</block>
   <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">每個節點的授權容量為 14 TB（5 x 2.67 = 13.35）。對於 HA 配對，您需要兩個 14 TB 的授權才能擁有 10 TB 的可用容量。</block>
   <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">HA 配對的每個節點：</block>
+  <block id="374fd6d8cc46742d7f222ee4d0032d06" category="doc">ONTAP Select 資料保護和效率</block>
+  <block id="37e47edc52662df47ba4f7cb5426a905" category="doc">了解如何管理 ONTAP Select</block>
+  <block id="f0d342fa2629145fee40586516d069d4" category="doc">了解如何使用瀏覽器存取 ONTAP Select Deploy API</block>
+  <block id="bd922b949dfd0f5015ae892b074c86fe" category="doc">了解如何使用 Python 存取 ONTAP Select Deploy API</block>
+  <block id="830b37e1792571a94c8f2e142ec71e6f" category="doc">了解如何使用 ONTAP Select Deploy API 工作流程</block>
+  <block id="57c2192d371e5d6ffed970b8060cd9f5" category="doc">了解如何存取 ONTAP Select Deploy API</block>
+  <block id="60259b7656595391fda931689cb5cb7f" category="doc">了解用於部署和管理 ONTAP Select 叢集的 REST Web 服務</block>
+  <block id="604c5195cdcb73ac8392d4ed143900f5" category="doc">了解 ONTAP Select Deploy 的 Python 指令碼</block>
+  <block id="2f2d0dac4c403b493fb5e8532be94232" category="doc">ONTAP Select HA 的資料保護增強功能</block>
+  <block id="ac562c2dbd3b8631c53c5c4a091bb34f" category="doc">ONTAP Select 容量層級與容量集區授權比較</block>
+  <block id="b0b8cf0b3b07b2bf38733ca70970fe1a" category="doc">ONTAP Select 平台授權產品</block>
+  <block id="0e487a9412079574703cbaef01b17f23" category="doc">ONTAP Select 的授權購買工作流程</block>
+  <block id="aa75ac7723ea758193118b7d2dd533b9" category="doc">了解 ONTAP Select Deploy</block>
+  <block id="2dfbf69454cf0d709c2534496ca26479" category="doc">了解 ONTAP Select 的效能</block>
+  <block id="236f0c179844e96f0bbb83b11155c27e" category="doc">關於增加 ONTAP Select 儲存容量的考慮因素</block>
+  <block id="2f602e200eb803a080145dc400b89b38" category="doc">了解 ONTAP Select 的一般儲存設備特性</block>
+  <block id="b17d8f81c665435778657d2fbd01dfe2" category="doc">適用於具有本機附加儲存設備的 ONTAP Select 的硬體 RAID 服務</block>
+  <block id="f6c1e5144436a8b950313a679c0f951a" category="doc">ONTAP Select 適用於遠端和分支機構的使用案例</block>
+  <block id="3205b956a440a5064cc130d79ad166bc" category="doc">為 ONTAP Select 準備 ESXi 主機</block>
+  <block id="c1dc49d041aef30ada0e85f7632085ee" category="doc">為 ONTAP Select 準備 KVM 主機</block>
+  <block id="aed7657def5c64d964e831a2205c5b4e" category="doc">ONTAP Select 的法律聲明</block>
+  <block id="9416497f668ea2bfba48d9ebd6b67b29" category="doc">在 ESXi 上建立 ONTAP Select 單節點評估叢集</block>
+  <block id="e354af9228cee7b217b134d4a1a2e400" category="doc">ONTAP Select MetroCluster SDS 部署需求</block>
+  <block id="d07fdbe1aaea0a4d53b825b146643572" category="doc">ONTAP Select 連網需求</block>
+  <block id="5e1f16d2572c5a66822138bf9b7326ba" category="doc">確定 ONTAP Select 的容量集區授權大小</block>
+  <block id="c00ac1b18d84fff7bbf4760c9b4e23b0" category="doc">確定 ONTAP Select 的 Capacity Tiers 授權大小</block>
+  <block id="d2d0829938e88afff6042d0a5eac4e74" category="doc">調整 ONTAP Select 叢集節點大小</block>
+  <block id="4bf856dcf874a77bd96aff6e04aa7aef" category="doc">管理 ONTAP Select 診斷和支援</block>
+  <block id="6beca47bb8f34bb637db0116eee5c174" category="doc">存取 ONTAP Select 視訊控制台</block>
+  <block id="851f7bf9b2c883c2b30f957c8b6f8d6a" category="doc">確認 ONTAP Select 節點之間的網路連線</block>
+  <block id="ad18a17d3c6f3699e8114e6ba4d091df" category="doc">在 ESXi 或 KVM 主機上擴充或縮減 ONTAP Select 叢集</block>
+  <block id="5b8b5ae2deba1b6579e39def9460550a" category="sidebar">虛擬機器管理程式主機環境</block>
+  <block id="8b3398557c7fb55b263bf52bece82b68" category="sidebar">評估授權</block>
+  <block id="ad98307e279e8369c80fc498106160d2" category="sidebar">確定容量層授權大小</block>
+  <block id="11f5f4c2a5569d4e34b180729cd689bc" category="sidebar">確定 Capacity Pools 授權大小</block>
+  <block id="0d9029e785d6af991e53b31b279e9aa4" category="sidebar">管理叢集</block>
+  <block id="f86585270713788c4d391e92b289c1b7" category="sidebar">存取 VM 視訊主控台</block>
+  <block id="9f0562c731b8981f21e8a7ac75bd947f" category="sidebar">管理授權</block>
+  <block id="3ed621212c6f1b8569fd40f868bd89b6" category="sidebar">在 ESXi 上建立叢集</block>
+  <block id="b420f92a45e1d6fca9bee10cca41ea8e" category="sidebar">使用指令碼建立叢集</block>
 </blocks>

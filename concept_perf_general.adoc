@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: ONTAP Select 叢集的效能可能會因硬體組態而異。 
 ---
-= ONTAP Select 效能總覽
+= 了解 ONTAP Select 的效能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

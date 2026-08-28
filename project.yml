@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: 概念
     entries:
-    - title: 瞭解 ONTAP Select
+    - title: ONTAP Select
       url: "/concept_ots_overview.html"
     - title: 部署ONTAP Select
       url: "/concept_ots_deploy.html"
@@ -80,7 +80,7 @@ sidebar:
       entries:
       - title: 一般要求
         url: "/reference_plan_dep_general.html"
-      - title: VMware環境
+      - title: 虛擬機器管理程式主機環境
         url: "/reference_plan_dep_vmware.html"
     - title: 最佳實務做法
       url: "/reference_plan_best_practices.html"
@@ -88,7 +88,7 @@ sidebar:
     entries:
     - title: 選項
       entries:
-      - title: 了解評估授權
+      - title: 評估授權
         url: "/concept_lic_evaluation.html"
       - title: 正式作業授權
         entries:
@@ -114,13 +114,13 @@ sidebar:
         url: "/concept_lic_workflow.html"
       - title: 容量層級
         entries:
-        - title: 授權大小的考量因素
+        - title: 確定容量層授權大小
           url: "/sizing-capacity-tier-license.html"
         - title: 取得授權
           url: "/task_lic_acquire_ct.html"
       - title: 容量資源池
         entries:
-        - title: 授權大小的考量因素
+        - title: 確定 Capacity Pools 授權大小
           url: "/sizing-capacity-pool-license.html"
         - title: 取得授權
           url: "/task_lic_acquire_cp.html"
@@ -164,7 +164,7 @@ sidebar:
       url: "/task_adm_mediators.html"
     - title: 叢集
       entries:
-      - title: 叢集ONTAP Select
+      - title: 管理叢集
         url: "/task_adm_clusters.html"
       - title: 擴充或收縮叢集
         url: "/task_cluster_expansion_contraction.html"
@@ -172,13 +172,13 @@ sidebar:
       entries:
       - title: 存取 VM 視訊主控台
         url: "/task_adm_video_console.html"
-      - title: 調整叢集節點的大小
+      - title: 調整叢集節點大小
         url: "/task_adm_resize.html"
       - title: 更換故障的軟體 RAID 磁碟機
         url: "/task_adm_replace_drives_swraid.html"
       - title: 升級至 VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
-    - title: 授權
+    - title: 管理授權
       url: "/task_adm_licenses.html"
   - title: 深入探討
     entries:
@@ -248,7 +248,7 @@ sidebar:
       entries:
       - title: 開始之前
         url: "/concept_api_before_workflows.html"
-      - title: 工作流程 1 建立叢集
+      - title: 在 ESXi 上建立叢集
         url: "/reference_api_workflow01.html"
     - title: 使用Python存取
       entries:
@@ -258,7 +258,7 @@ sidebar:
         url: "/concept_api_understanding_scripts.html"
     - title: Python程式碼範例
       entries:
-      - title: 建立叢集
+      - title: 使用指令碼建立叢集
         url: "/reference_api_script_cc.html"
       - title: Json來建立叢集
         url: "/reference_api_json_cc.html"
@@ -280,7 +280,7 @@ sidebar:
       url: "/task_cli_security.html"
     - title: 網路連線能力
       url: "/task_cli_connectivity.html"
-    - title: 叢集
+    - title: 管理叢集
       url: "/task_cli_clusters.html"
     - title: 節點和主機
       entries:

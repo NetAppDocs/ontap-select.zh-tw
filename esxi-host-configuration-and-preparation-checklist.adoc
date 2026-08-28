@@ -4,7 +4,7 @@ permalink: esxi-host-configuration-and-preparation-checklist.html
 keywords: ontap select, pre-installation checklist, esxi, host preparation 
 summary: 準備部署ONTAP Select節點的每個 ESXi 虛擬機器管理程式主機。準備主機時，請仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。 
 ---
-= ONTAP Select的 ESXi 主機配置和準備清單
+= 為 ONTAP Select 準備 ESXi 主機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 當有硬體RAID控制器可用ONTAP Select 時、即可將RAID服務移至硬體控制器、以提升寫入效能、並防止實體磁碟機故障。因此ONTAP Select 、針對整個叢集內所有節點的RAID保護是由本機附加的RAID控制器提供、而非ONTAP 透過支援此功能的軟體RAID提供。 
 ---
-= ONTAP Select 本機附加儲存設備的硬體 RAID 服務
+= 適用於具有本機附加儲存設備的 ONTAP Select 的硬體 RAID 服務
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
