@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: reference_api_workflow01.html 
+permalink: reference_api_workflow.html 
 keywords: rest api, deploy rest api, rest, workflow, create cluster, curl, json 
-summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署單節點的VMware ESXi叢集。叢集是以評估授權所建立。 
+summary: 您可以在由 vCenter 管理的 VMware ESXi 主機上部署單節點 ONTAP Select 叢集。 
 ---
 = 在 ESXi 上建立 ONTAP Select 單節點評估叢集
 :hardbreaks:
@@ -18,18 +18,18 @@ summary: 您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署�
 
 叢集建立工作流程在下列情況下有所不同：
 
-* ESXi主機並非由vCenter（獨立主機）管理
-* 叢集內使用多個節點或主機
-* 叢集部署於已購買授權的正式作業環境中
-* 使用KVM Hypervisor而非VMware ESXi
+* ESXi 主機不受 vCenter（獨立式主機）代管。
+* 叢集中使用多個節點或主機。
+* 叢集已部署在正式作業環境中，並搭配已購買的授權。
+* 使用 KVM Hypervisor 取代 VMware ESXi。
 
 
 
 
-[[1-register-vcenter-server-credential]]
-== 1.登錄vCenter伺服器認證
+[[step-1-register-vcenter-server-credential]]
+== 步驟 1：註冊 vCenter 伺服器認證資料
 
-部署至由vCenter伺服器管理的ESXi主機時、您必須先新增認證、才能登錄主機。然後、部署管理公用程式就可以使用認證來驗證vCenter。
+部署至由 vCenter 伺服器代管的 ESXi 主機時，您必須在註冊主機之前新增認證資料。然後，Deploy 管理公用程式即可使用該認證資料向 vCenter 進行驗證。
 
 [cols="15,15,70"]
 |===
@@ -70,10 +70,10 @@ Json輸入（步驟01）::
 
 
 
-[[2-register-a-hypervisor-host]]
-== 2.註冊Hypervisor主機
+[[step-2-register-a-hypervisor-host]]
+== 步驟 2：註冊 Hypervisor 主機
 
-您必須新增Hypervisor主機、以便ONTAP Select 執行包含此節點的虛擬機器。
+新增一個 Hypervisor 主機，其中包含 ONTAP Select 節點的虛擬機器將在該主機上執行。
 
 [cols="15,15,70"]
 |===
@@ -117,10 +117,10 @@ Json輸入（步驟02）::
 
 
 
-[[3-create-a-cluster]]
-== 3.建立叢集
+[[step-3-create-a-cluster]]
+== 步驟 3：建立叢集
 
-當您建立ONTAP Select 一個叢集時、系統會登錄基本的叢集組態、並透過部署自動產生節點名稱。
+建立 ONTAP Select 叢集時，基本叢集組態會被註冊，Deploy 會自動產生節點名稱。
 
 [cols="15,15,70"]
 |===
@@ -129,7 +129,7 @@ Json輸入（步驟02）::
 
 | 叢集 | 貼文 | /叢集 
 |===
-捲髮:: 單一節點叢集的查詢參數node_count應設為1。
+捲髮:: 對於單節點叢集，應將查詢參數 node_count 設定為 1。
 
 
 [source, curl]
@@ -157,10 +157,10 @@ Json輸入（步驟03）::
 
 
 
-[[4-configure-the-cluster]]
-== 4.設定叢集
+[[step-4-configure-the-cluster]]
+== 步驟 4：設定叢集
 
-在設定叢集時、您必須提供幾項屬性。
+設定叢集時，您必須提供下列屬性。
 
 [cols="15,15,70"]
 |===
@@ -169,7 +169,7 @@ Json輸入（步驟03）::
 
 | 叢集 | 修補程式 | 叢集/｛cluster｝ 
 |===
-捲髮:: 您必須提供叢集ID。
+捲髮:: 請提供叢集 ID。
 
 
 [source, curl]
@@ -199,10 +199,10 @@ Json輸入（步驟04）::
 
 
 
-[[5-retrieve-the-node-name]]
-== 5.擷取節點名稱
+[[step-5-retrieve-the-node-name]]
+== 步驟 5：擷取節點名稱
 
-當建立叢集時、部署管理公用程式會自動產生節點識別碼和名稱。您必須先擷取指派的ID、才能設定節點。
+Deploy 管理公用程式會在建立叢集時自動產生節點識別碼和名稱。在設定節點之前，您需要擷取已指派的 ID。
 
 [cols="15,15,70"]
 |===
@@ -211,7 +211,7 @@ Json輸入（步驟04）::
 
 | 叢集 | 取得 | 叢集/｛cluster｝/節點 
 |===
-捲髮:: 您必須提供叢集ID。
+捲髮:: 請提供叢集 ID。
 
 
 [source, curl]
@@ -230,10 +230,10 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERI
 
 
 
-[[6-configure-the-nodes]]
-== 6.設定節點
+[[step-6-configure-the-nodes]]
+== 步驟 6：設定節點
 
-您必須提供節點的基本組態、這是用來設定節點的三個API呼叫中的第一個。
+提供節點的基本組態，這是用於設定節點的三個 API 呼叫中的第一個。
 
 [cols="15,15,70"]
 |===
@@ -242,14 +242,14 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERI
 
 | 叢集 | 路徑 | 叢集/｛cluster｝/節點/｛node_id｝ 
 |===
-捲髮:: 您必須提供叢集ID和節點ID。
+捲髮:: 請提供叢集 ID 和節點 ID。
 
 
 [source, curl]
 ----
 curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
 ----
-Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機ID。
+Json輸入（步驟06）:: 請提供 ONTAP Select 節點將執行的主機 ID。
 
 
 [source, json]
@@ -269,10 +269,10 @@ Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機I
 
 
 
-[[7-retrieve-the-node-networks]]
-== 7.擷取節點網路
+[[step-7-retrieve-the-node-networks]]
+== 步驟 7：擷取節點網路
 
-您必須識別單節點叢集中節點所使用的資料和管理網路。內部網路不適用於單一節點叢集。
+識別單節點叢集中節點所使用的資料與管理網路。單節點叢集不使用內部網路。
 
 [cols="15,15,70"]
 |===
@@ -281,7 +281,7 @@ Json輸入（步驟06）:: 您必須提供ONTAP Select 執行此節點的主機I
 
 | 叢集 | 取得 | 叢集/｛cluster｝/節點/｛node_id｝/網路 
 |===
-捲髮:: 您必須提供叢集ID和節點ID。
+捲髮:: 請提供叢集 ID 和節點 ID。
 
 
 [source, curl]
@@ -300,10 +300,10 @@ curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTER
 
 
 
-[[8-configure-the-node-networking]]
-== 8.設定節點網路
+[[step-8-configure-the-node-networking]]
+== 步驟 8：設定節點連網
 
-您必須設定資料和管理網路。內部網路不適用於單一節點叢集。
+設定資料網路和管理網路。單節點叢集不使用內部網路。
 
 
 NOTE: 發出下列API呼叫兩次、每個網路一次。
@@ -315,14 +315,14 @@ NOTE: 發出下列API呼叫兩次、每個網路一次。
 
 | 叢集 | 修補程式 | 叢集/｛cluster｝/節點/｛node_id｝/網路/｛network_id｝ 
 |===
-捲髮:: 您必須提供叢集ID、節點ID和網路ID。
+捲髮:: 請提供叢集 ID、節點 ID 和網路 ID。
 
 
 [source, curl]
 ----
 curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
 ----
-Json輸入（步驟08）:: 您需要提供網路名稱。
+Json輸入（步驟08）:: 請提供網路名稱。
 
 
 [source, json]
@@ -337,8 +337,8 @@ Json輸入（步驟08）:: 您需要提供網路名稱。
 
 
 
-[[9-configure-the-node-storage-pool]]
-== 9.設定節點儲存資源池
+[[step-9-configure-the-node-storage-pool]]
+== 步驟 9：設定節點儲存資源池
 
 設定節點的最後一步是附加儲存資源池。您可以透過vSphere Web用戶端或透過部署REST API（選用）來判斷可用的儲存資源池。
 
@@ -349,7 +349,7 @@ Json輸入（步驟08）:: 您需要提供網路名稱。
 
 | 叢集 | 修補程式 | 叢集/｛cluster｝/節點/｛node_id｝/網路/｛network_id｝ 
 |===
-捲髮:: 您必須提供叢集ID、節點ID和網路ID。
+捲髮:: 請提供叢集 ID、節點 ID 和網路 ID。
 
 
 [source, curl]
@@ -376,8 +376,8 @@ Json輸入（步驟09）:: 集區容量為2 TB。
 
 
 
-[[10-deploy-the-cluster]]
-== 10.部署叢集
+[[step-10-deploy-the-cluster]]
+== 步驟 10：部署叢集
 
 設定叢集和節點之後、即可部署叢集。
 
@@ -388,14 +388,14 @@ Json輸入（步驟09）:: 集區容量為2 TB。
 
 | 叢集 | 貼文 | 叢集/｛cluster｝/部署 
 |===
-捲髮:: 您必須提供叢集ID。
+捲髮:: 請提供叢集 ID。
 
 
 [source, curl]
 ----
 curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
 ----
-Json輸入（步驟10）:: 您必須提供ONTAP 該管理員帳戶的密碼。
+Json輸入（步驟10）:: 請提供 ONTAP 系統管理員帳戶的密碼。
 
 
 [source, json]

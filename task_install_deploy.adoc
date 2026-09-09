@@ -16,6 +16,9 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 [role="lead"]
 您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。
 
+.開始之前
+您已審閱 link:kvm-host-configuration-and-preparation-checklist.html["安裝前檢查清單"]。
+
 
 
 [[step-1-download-the-virtual-machine-image]]

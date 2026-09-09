@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 您可以使用ONTAP Select 隨附於「解決方法部署」管理公用程式的網路使用者介面來部署單節點ONTAP Select 或多節點的解決方法叢集。 
 ---
-= 部署ONTAP Select 一個叢集
+= 使用 Web UI 部署 ONTAP Select 叢集
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

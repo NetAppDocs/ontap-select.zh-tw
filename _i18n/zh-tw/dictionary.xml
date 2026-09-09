@@ -7,8 +7,6 @@
   <block id="f39c5431d2026e960c0f380a0c0c4ef9" category="summary">您可以使用工作流程程序來部署ONTAP Select 一個叢集。</block>
   <block id="43b13cac79173588a7f38f74b27f2a09" category="doc">安裝與部署工作流程ONTAP Select</block>
   <block id="f4e7ce7ba166f67f662306fe747a596e" category="paragraph">您可以使用下列工作流程來部署及管理ONTAP Select 一個叢集。</block>
-  <block id="2c3df213abea0ad1cb494572704542f9" category="inline-image-macro">說明部署ONTAP Select 一個叢集所需的完整工作流程。</block>
-  <block id="bc0723c49208cb7ede4ce6ea0a477957" category="paragraph"><block ref="bc0723c49208cb7ede4ce6ea0a477957" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">適用於雙NIC和四NIC組態的VMware VSwitch組態和負載平衡原則。ONTAP Select</block>
   <block id="10e7ad3863cdd2b48f9a7524784cedee" category="paragraph">本節說明在雙NIC和四NIC組態中應使用的vSwitch組態和負載平衡原則。</block>
@@ -234,11 +232,6 @@
   <block id="bb4535bc16c1e303453a76a7d6669910" category="paragraph"><block ref="bb4535bc16c1e303453a76a7d6669910" category="inline-image-macro-rx" type="image"></block></block>
   <block id="abba0f0dc82d61817731da74e40642c4" category="summary">您可以在ONTAP Select 由vCenter管理的VMware ESXi主機上部署單節點的VMware ESXi叢集。叢集是以評估授權所建立。</block>
   <block id="7c5309706c244a069f293270807d94f9" category="paragraph">叢集建立工作流程在下列情況下有所不同：</block>
-  <block id="31b7bb22df4e14e27e8d94676de87687" category="list-text">ESXi主機並非由vCenter（獨立主機）管理</block>
-  <block id="7f99b6195696eb3b2dd6306108e31199" category="list-text">叢集內使用多個節點或主機</block>
-  <block id="23792fd2201db7e4a90f1bb62205da33" category="list-text">叢集部署於已購買授權的正式作業環境中</block>
-  <block id="02a3feeefaee61409aecc3199ba633fd" category="section-title">1.登錄vCenter伺服器認證</block>
-  <block id="9769928a2568daa5e0ec428f55c04f89" category="paragraph">部署至由vCenter伺服器管理的ESXi主機時、您必須先新增認證、才能登錄主機。然後、部署管理公用程式就可以使用認證來驗證vCenter。</block>
   <block id="4c57667deb9cc4427f7e6a777e3de812" category="cell">HTTP動詞</block>
   <block id="ac70412e939d72a9234cdebb1af5867b" category="cell">路徑</block>
   <block id="507a3a88cebc46603ce2be8eaa924eee" category="cell">部署</block>
@@ -251,58 +244,35 @@
   <block id="29c2c02a361c9d7028472e5d92cd4a54" category="list-text">輸出</block>
   <block id="6fd18179e53fc3bd4a83e90c73684f11" category="list-text">位置回應標頭中的認證ID</block>
   <block id="a7b616ec1be656c2c3ef33dfd78bdb0c" category="list-text">工作物件</block>
-  <block id="deadfde1342a222716de788f93895dbf" category="section-title">2.註冊Hypervisor主機</block>
-  <block id="50f3b14b7fbed4611e83c75b3c9c20a3" category="paragraph">您必須新增Hypervisor主機、以便ONTAP Select 執行包含此節點的虛擬機器。</block>
   <block id="249694a485fc5d3289c38986b4f8e887" category="cell">叢集</block>
   <block id="88fc921d1f71318c5af975a07e0e8f04" category="cell">/主機</block>
   <block id="1aa20ebe456cad66e6129fab4a195837" category="list-text">Json輸入（步驟02）</block>
   <block id="d0dd05b272f8737bda5439adabfc6643" category="list-text">位置回應標頭中的主機ID</block>
-  <block id="39383035f281c71cce438511fe8d6c51" category="section-title">3.建立叢集</block>
-  <block id="ed384ac8f730609703afe369807f8250" category="paragraph">當您建立ONTAP Select 一個叢集時、系統會登錄基本的叢集組態、並透過部署自動產生節點名稱。</block>
   <block id="a8581617f4d06018ed83bcbb6d633f90" category="cell">/叢集</block>
-  <block id="e25498b7bd9652ce511f529df78712d4" category="list-text">單一節點叢集的查詢參數node_count應設為1。</block>
   <block id="dae34b91c860e5a604ac5d4f6afd92c5" category="list-text">Json輸入（步驟03）</block>
   <block id="2fe4167817733fec8e6ba1afddf78f1b" category="list-text">同步</block>
   <block id="1b8b8b0085eceb8bce188a5913d56143" category="list-text">位置回應標頭中的叢集ID</block>
-  <block id="3a35cc9294f17e216cdffe83bb91f788" category="section-title">4.設定叢集</block>
-  <block id="754c9eee1c8ef23ccd9076075bd78511" category="paragraph">在設定叢集時、您必須提供幾項屬性。</block>
   <block id="63bc9a3997d66d835d9f3ec29451407d" category="cell">修補程式</block>
   <block id="33faae66911153aa6d56f871c5f658a4" category="cell">叢集/｛cluster｝</block>
-  <block id="3b6e7b3175c0359d5497f22d0e5daabe" category="list-text">您必須提供叢集ID。</block>
   <block id="2ad2e34d4fd04283002befd67d1c29a8" category="list-text">Json輸入（步驟04）</block>
   <block id="6adf97f83acf6453d4a6a4b1070f3754" category="list-text">無</block>
-  <block id="4af02a1f5e0473ffb86727e2bd8b6b53" category="section-title">5.擷取節點名稱</block>
-  <block id="c26f06391fa4424822a3dbd199d9a64f" category="paragraph">當建立叢集時、部署管理公用程式會自動產生節點識別碼和名稱。您必須先擷取指派的ID、才能設定節點。</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
   <block id="42dce12ba7d8618ae5d2c83199fea8c7" category="cell">叢集/｛cluster｝/節點</block>
   <block id="26db382b78fbd183978d5f1aeb381a58" category="list-text">陣列會記錄每個以唯一ID和名稱描述單一節點的資料</block>
-  <block id="74cda71525f9aca3e46903d022234ad1" category="section-title">6.設定節點</block>
-  <block id="0a92566a847a42edd7244ec613900b3c" category="paragraph">您必須提供節點的基本組態、這是用來設定節點的三個API呼叫中的第一個。</block>
   <block id="5ffb5f0d0de78321df46fc7c93ca64a3" category="cell">路徑</block>
   <block id="af9a1e8be725824341f94f96e257b314" category="cell">叢集/｛cluster｝/節點/｛node_id｝</block>
-  <block id="e2b008addd29982e386d16b9228751e6" category="list-text">您必須提供叢集ID和節點ID。</block>
   <block id="8f026c595638e4f7dbd8326086a2c7cd" category="list-text">Json輸入（步驟06）</block>
-  <block id="9e2c6c95b203ef5d771d239c6ba5479b" category="list-text">您必須提供ONTAP Select 執行此節點的主機ID。</block>
-  <block id="e3ffa31f1d872665590b8b0eadc78e7a" category="section-title">7.擷取節點網路</block>
-  <block id="8637663f59921f4e94ab0db53688a62e" category="paragraph">您必須識別單節點叢集中節點所使用的資料和管理網路。內部網路不適用於單一節點叢集。</block>
   <block id="284ca1efd0632ffce3951fad1a5347c6" category="cell">叢集/｛cluster｝/節點/｛node_id｝/網路</block>
   <block id="e8d9bbe73b019b41c0089d3e7a4fb864" category="list-text">兩筆記錄的陣列、每筆記錄分別說明節點的單一網路、包括唯一ID和用途</block>
-  <block id="d20ec6b7f7f600c9fcccd6514729b723" category="section-title">8.設定節點網路</block>
-  <block id="fd044cc6dc8f7afdca50cedf9c5f9b6e" category="paragraph">您必須設定資料和管理網路。內部網路不適用於單一節點叢集。</block>
   <block id="7487fb99cf5d2185162c369e66dbc1f3" category="admonition">發出下列API呼叫兩次、每個網路一次。</block>
   <block id="16629bbbcf84e6c1fef245e6a9d19614" category="cell">叢集/｛cluster｝/節點/｛node_id｝/網路/｛network_id｝</block>
-  <block id="ff503073d5b79100c9a9f78b013ceb2a" category="list-text">您必須提供叢集ID、節點ID和網路ID。</block>
   <block id="5e18d7f3d51078ef553f70ee4289c0ad" category="list-text">Json輸入（步驟08）</block>
-  <block id="f35efe81d707c340d4ea2dfcb42b737f" category="list-text">您需要提供網路名稱。</block>
-  <block id="f4d85dee61b7e6ea8e579ded7b189205" category="section-title">9.設定節點儲存資源池</block>
   <block id="d5498e1eb1973de90900bb0d5c17cf3a" category="paragraph">設定節點的最後一步是附加儲存資源池。您可以透過vSphere Web用戶端或透過部署REST API（選用）來判斷可用的儲存資源池。</block>
   <block id="19702db757a0d71c55c74a9cd29e7adc" category="list-text">Json輸入（步驟09）</block>
   <block id="56c843bc5b42c39debe1aeb9c8cc5151" category="list-text">集區容量為2 TB。</block>
-  <block id="7342217632a904bd0e46f2ccc65f1b37" category="section-title">10.部署叢集</block>
   <block id="f11eb42db1edaa1e22748c9811162fc2" category="paragraph">設定叢集和節點之後、即可部署叢集。</block>
   <block id="365539463bcc61785d264265fdb0e583" category="cell">叢集/｛cluster｝/部署</block>
   <block id="33ba2ef8157bb8f83fe7476e84b76be7" category="list-text">Json輸入（步驟10）</block>
-  <block id="95ccb28342b6f78f3f3a3eb2dc5046d6" category="list-text">您必須提供ONTAP 該管理員帳戶的密碼。</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">*核心頻率*。一般而言、較高的頻率較為理想。</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">*單插槽與多插槽*。雖然不使用多插槽功能、但支援多插槽組態的Hypervisor負荷會在整體效能方面造成一定程度的差異。ONTAP Select</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">* RAID卡組態及相關Hypervisor驅動程式*。Hypervisor提供的預設驅動程式可能需要由硬體廠商驅動程式取代。</block>
@@ -1570,7 +1540,6 @@
   <block id="7f03910ef079fabe5de20f27a6c70a6c" category="paragraph">如果您要建立新的Aggregate、所需的磁碟機數量下限會因RAID類型和ONTAP Select 該節點是否屬於HA配對的一部分而有所不同。</block>
   <block id="a7422510d5a43585fa8699b39a3cb49e" category="paragraph">如果要將儲存設備新增至現有的Aggregate、則必須考量其他事項。假設RAID群組尚未達到最大限制、您可以將磁碟機新增至現有的RAID群組。在FAS 現有RAID群組中新增磁碟的傳統功能僅供使用、AFF 因此在新磁碟上建立熱點是可能的考量。此外、只能將資料分割區大小等於或大於相同的磁碟機新增至現有的RAID群組。如上所述、資料分割區大小與磁碟機原始大小不同。如果要新增的資料分割區大於現有的分割區、則新磁碟機的大小是適當的。換句話說、每個新磁碟機的一部分容量仍未使用。</block>
   <block id="7b0a69ff25da57918670458098c0bcb2" category="paragraph">也可以使用新磁碟機建立新的RAID群組、作為現有Aggregate的一部分。在此情況下、RAID群組大小應與現有的RAID群組大小相符。</block>
-  <block id="167b2e8c89f5ceb184efcaf133c27779" category="paragraph">您可以使用命令列介面、視需要變更部署虛擬機器管理員帳戶的密碼。</block>
   <block id="6946015929ad4f656738c88a1535f3e0" category="list-text">使用系統管理員帳戶登入部署公用程式CLI。</block>
   <block id="79f41a0e0ccd4b8ecf18041e9a81199d" category="list-text">變更密碼：「密碼修改」</block>
   <block id="82127225cef946e77040d2fd1420db6f" category="list-text">根據您的環境回應所有提示。</block>
@@ -2183,7 +2152,6 @@
   <block id="420170376a4067e246c6c8ab8f967e8c" category="list-text">關於支援VMware ESXi的ONTAP Select 問題、共有兩項關於支援VMware ESXi的變更。</block>
   <block id="9f4c0a8e21510ca1633a5494406686bc" category="list-text">支援ESXi 7.0（GA build 15843807及更新版本）</block>
   <block id="75907379a71ad8ffa5e06073ace36e0d" category="list-text">不再支援ESXi 6.0</block>
-  <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">使用KVM Hypervisor而非VMware ESXi</block>
   <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">在ROBO環境中、雙節點叢集所支援的相同VMware ESXi和KVM Hypervisor上可部署支援的SESSSDS。MetroCluster</block>
   <block id="18d733133eb14f6d577f2d278fac37a1" category="summary">您可以使用host modify命令來修改含有ONTAP Select 此例項的主機管理伺服器。</block>
   <block id="35f41fa38694b23a0654a4a8c0dd359b" category="doc">修改主機管理伺服器</block>
@@ -2878,7 +2846,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e0d52f0658828de62020550252885d55" category="admonition">資料 SVM 並非 ONTAP Select 叢集部署的一部分。它們必須在部署之後由叢集管理員建立。如需更多資訊、請參閱<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>。</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">叢集中包含的 SVM 類型</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
-  <block id="c19cab121a967e7d4e145437fee16c02" category="doc">ONTAP Select 部署的評估授權</block>
   <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">若要下載 ONTAP Select Deploy 管理公用程式，您需要下列項目：</block>
   <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">使用者登錄</block>
   <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">已註冊的 NetApp 支援網站帳戶。如果您沒有帳戶，請參閱<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>。</block>
@@ -4008,5 +3975,64 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="f86585270713788c4d391e92b289c1b7" category="sidebar">存取 VM 視訊主控台</block>
   <block id="9f0562c731b8981f21e8a7ac75bd947f" category="sidebar">管理授權</block>
   <block id="3ed621212c6f1b8569fd40f868bd89b6" category="sidebar">在 ESXi 上建立叢集</block>
-  <block id="b420f92a45e1d6fca9bee10cca41ea8e" category="sidebar">使用指令碼建立叢集</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一</block>
+  <block id="1f173698a3e113840cf9553b985e9546" category="inline-link-macro">規劃部署並準備環境</block>
+  <block id="0cc2d38d165374b11075a50884dde93e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="bc673aef44e914b83c5666dd028af37f" category="inline-link-macro-rx"></block></block>
+  <block id="1b41b6340b18d76e9ff9a54c63828d78" category="paragraph">請仔細檢視 ONTAP Select 節點、儲存設備、連網和 Hypervisor 環境的規劃要求。提前做好環境準備有助於避免部署問題。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">二</block>
+  <block id="cc22db77d107f09741fa3b7ec1dfa61c" category="inline-link-macro">安裝 ONTAP Select Deploy 管理公用程式</block>
+  <block id="43bd6e83b2610c63d18296819d73a492" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="e8a9f86a962282c92ed15932c183ff1d" category="inline-link-macro-rx"></block></block>
+  <block id="5d260d4875ba5a356fabaf8b69d208ca" category="paragraph">安裝用於部署和管理 ONTAP Select 叢集的公用程式。</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三</block>
+  <block id="f334973fb5e85ff16903f0c968258f7d" category="inline-link-macro">取得正式作業部署所需的授權</block>
+  <block id="5f4071ccc4084d66bbe7dca02bb1bef7" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="e24b225c8c6381e9e8b085283cb5723c" category="inline-link-macro-rx"></block></block>
+  <block id="db0054a77b83672bf97bb4cca8f4076a" category="paragraph">購買並套用正式作業部署所需的授權。您可以選擇 Capacity Tiers 和 Capacity Pools 授權模式。</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">四</block>
+  <block id="46baf0faaedb25a655515fb45f5ef17d" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 使用 ONTAP Select Deploy 管理公用程式部署 ONTAP Select 叢集</block>
+  <block id="ffdd01590185bffc27894f03a0680e5e" category="paragraph">使用 Deploy 公用程式建立您的 ONTAP Select 叢集：</block>
+  <block id="136efef2f6c6b6722e566469c42e337b" category="inline-link-macro">使用 Web 使用者介面進行部署</block>
+  <block id="3930fe336289bdb4c824f71731b70bb6" category="list-text"><block ref="3930fe336289bdb4c824f71731b70bb6" category="inline-link-macro-rx"></block></block>
+  <block id="0742a7e7cbd5a1bf660a2620b420473d" category="inline-link-macro">使用 CLI 進行部署</block>
+  <block id="03fdb68dc65659db9ce4c0a6ffd4022e" category="list-text"><block ref="03fdb68dc65659db9ce4c0a6ffd4022e" category="inline-link-macro-rx"></block></block>
+  <block id="3ea6dfab9abcbaca190ca2667c04b9d0" category="inline-link-macro">使用 REST API 進行部署</block>
+  <block id="0b7e3947d3e95cc2b3abf63714244284" category="list-text"><block ref="0b7e3947d3e95cc2b3abf63714244284" category="inline-link-macro-rx"></block></block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五</block>
+  <block id="127cf492d01f264c84434c9966dab61b" category="inline-link-macro">使用標準 NetApp 管理工具和介面管理 ONTAP Select 叢集</block>
+  <block id="d995c5b15b36edd802d5dc9df851b160" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="06b422eb1b8b5bb65bbe5a0ffd2323df" category="inline-link-macro-rx"></block></block>
+  <block id="26f55681ae754cf5ec42df871d9e2f99" category="paragraph">使用與管理其他 ONTAP 叢集相同的管理工具和介面來管理您的 ONTAP Select 叢集。</block>
+  <block id="e6864e34f4d65a499bfe53b736dc0378" category="summary">您可以在由 vCenter 管理的 VMware ESXi 主機上部署單節點 ONTAP Select 叢集。</block>
+  <block id="f3e678a96d419b6f1d5ddc7a3a5c3aa1" category="list-text">ESXi 主機不受 vCenter（獨立式主機）代管。</block>
+  <block id="7bc0a21d26b932446f22e4075a357bcc" category="list-text">叢集中使用多個節點或主機。</block>
+  <block id="ab016232a2168d39ea1f79753f39bb19" category="list-text">叢集已部署在正式作業環境中，並搭配已購買的授權。</block>
+  <block id="2ee94d7a102ab640bc8638a0339b8ffa" category="list-text">使用 KVM Hypervisor 取代 VMware ESXi。</block>
+  <block id="cf0b402ecf5ce15ffb6e61168e16d82a" category="section-title">步驟 1：註冊 vCenter 伺服器認證資料</block>
+  <block id="5dcb32c834696b60ade26eaf81f8c0e7" category="paragraph">部署至由 vCenter 伺服器代管的 ESXi 主機時，您必須在註冊主機之前新增認證資料。然後，Deploy 管理公用程式即可使用該認證資料向 vCenter 進行驗證。</block>
+  <block id="f7075096c94ef282f7b617acf686548e" category="section-title">步驟 2：註冊 Hypervisor 主機</block>
+  <block id="0d32ff2f78a8226f930ad070dbf2b200" category="paragraph">新增一個 Hypervisor 主機，其中包含 ONTAP Select 節點的虛擬機器將在該主機上執行。</block>
+  <block id="0e74e809efb314a0a4b5a6470000e851" category="section-title">步驟 3：建立叢集</block>
+  <block id="f6c3391efad448ecb42156687f5ace08" category="paragraph">建立 ONTAP Select 叢集時，基本叢集組態會被註冊，Deploy 會自動產生節點名稱。</block>
+  <block id="9e0b991cd101f73e8d35fa974c14073b" category="list-text">對於單節點叢集，應將查詢參數 node_count 設定為 1。</block>
+  <block id="67b5b9ac03e80a9ea13af4734b6e8bb8" category="section-title">步驟 4：設定叢集</block>
+  <block id="65bccd87fe447c8b6f21e500529f040c" category="paragraph">設定叢集時，您必須提供下列屬性。</block>
+  <block id="05bc8bdd11bde1948394238ffacb7a65" category="list-text">請提供叢集 ID。</block>
+  <block id="f58455cd4f740fe5fd905db7c8ac09a5" category="section-title">步驟 5：擷取節點名稱</block>
+  <block id="f442d0c2e46c79ced82e41a51f7ae76e" category="paragraph">Deploy 管理公用程式會在建立叢集時自動產生節點識別碼和名稱。在設定節點之前，您需要擷取已指派的 ID。</block>
+  <block id="4d256325483f73babecbb5bdbf2475d3" category="section-title">步驟 6：設定節點</block>
+  <block id="eea4406e3f3d1aae192a588f5339913a" category="paragraph">提供節點的基本組態，這是用於設定節點的三個 API 呼叫中的第一個。</block>
+  <block id="ab1c6b156393e1a7a7f16bd9e8be8a3a" category="list-text">請提供叢集 ID 和節點 ID。</block>
+  <block id="a02339a5ecf96045042cb434dd98c793" category="list-text">請提供 ONTAP Select 節點將執行的主機 ID。</block>
+  <block id="7d33e9e69f2d3f9e5d80a75eae0a6474" category="section-title">步驟 7：擷取節點網路</block>
+  <block id="52e1a0ea7e8e71a162ace6f44ce4a4ee" category="paragraph">識別單節點叢集中節點所使用的資料與管理網路。單節點叢集不使用內部網路。</block>
+  <block id="1580d3607e0c89c61eff40ae033a4679" category="section-title">步驟 8：設定節點連網</block>
+  <block id="7d153586804d7dfa9888ba97c6a79a8a" category="paragraph">設定資料網路和管理網路。單節點叢集不使用內部網路。</block>
+  <block id="4b82d47ca5bb53c796795ca888543f41" category="list-text">請提供叢集 ID、節點 ID 和網路 ID。</block>
+  <block id="85cd47c65f06e9c605003ee7dbbe51b6" category="list-text">請提供網路名稱。</block>
+  <block id="876e85f27d74bcaa396ff2a669d8d92a" category="section-title">步驟 9：設定節點儲存資源池</block>
+  <block id="fc9158ac69a933dcc872a55a00603008" category="section-title">步驟 10：部署叢集</block>
+  <block id="d9b35950bad487aa3680b88379c9a3a5" category="list-text">請提供 ONTAP 系統管理員帳戶的密碼。</block>
+  <block id="f5d566772171e02b234fa74a25218c5b" category="paragraph">您可以視需要使用命令列介面變更 Deploy 虛擬機器系統管理員帳戶的密碼，以確保 ONTAP Select 部署是安全的。</block>
+  <block id="9026f6c98a9723f3a17a4324a530f75e" category="doc">使用 Web UI 部署 ONTAP Select 叢集</block>
+  <block id="d8dbba8f3ce92ce5f07a5e0348eee10d" category="inline-link-macro">安裝前檢查清單</block>
+  <block id="cdf955804034c3c67f90a9fa2b26792d" category="paragraph">您已審閱 <block ref="1a659edfd1511c28d59e934c80be869d" category="inline-link-macro-rx"></block>。</block>
+  <block id="e16c906ba61aeeafbcb69e14b4357d15" category="sidebar">建立叢集的指令碼</block>
 </blocks>

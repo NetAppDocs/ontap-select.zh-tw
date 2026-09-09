@@ -16,4 +16,28 @@ summary: 您可以使用工作流程程序來部署ONTAP Select 一個叢集。
 [role="lead"]
 您可以使用下列工作流程來部署及管理ONTAP Select 一個叢集。
 
-image:deploy_workflow2.png["說明部署ONTAP Select 一個叢集所需的完整工作流程。"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] link:reference_plan_ots_general.html["規劃部署並準備環境"]
+[role="quick-margin-para"]
+請仔細檢視 ONTAP Select 節點、儲存設備、連網和 Hypervisor 環境的規劃要求。提前做好環境準備有助於避免部署問題。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] link:task_install_deploy.html["安裝 ONTAP Select Deploy 管理公用程式"]
+[role="quick-margin-para"]
+安裝用於部署和管理 ONTAP Select 叢集的公用程式。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] link:concept_lic_workflow.html["取得正式作業部署所需的授權"]
+[role="quick-margin-para"]
+購買並套用正式作業部署所需的授權。您可以選擇 Capacity Tiers 和 Capacity Pools 授權模式。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 使用 ONTAP Select Deploy 管理公用程式部署 ONTAP Select 叢集
+[role="quick-margin-para"]
+使用 Deploy 公用程式建立您的 ONTAP Select 叢集：
+
+[role="quick-margin-list"]
+* link:task_deploy_cluster.html["使用 Web 使用者介面進行部署"]
+* link:task_cli_deploy_cluster.html["使用 CLI 進行部署"]
+* link:reference_api_workflow.html["使用 REST API 進行部署"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] link:concept_adm_before.html["使用標準 NetApp 管理工具和介面管理 ONTAP Select 叢集"]
+[role="quick-margin-para"]
+使用與管理其他 ONTAP 叢集相同的管理工具和介面來管理您的 ONTAP Select 叢集。

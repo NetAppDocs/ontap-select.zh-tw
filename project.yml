@@ -249,7 +249,7 @@ sidebar:
       - title: 開始之前
         url: "/concept_api_before_workflows.html"
       - title: 在 ESXi 上建立叢集
-        url: "/reference_api_workflow01.html"
+        url: "/reference_api_workflow.html"
     - title: 使用Python存取
       entries:
       - title: 開始之前
@@ -258,7 +258,7 @@ sidebar:
         url: "/concept_api_understanding_scripts.html"
     - title: Python程式碼範例
       entries:
-      - title: 使用指令碼建立叢集
+      - title: 建立叢集的指令碼
         url: "/reference_api_script_cc.html"
       - title: Json來建立叢集
         url: "/reference_api_json_cc.html"

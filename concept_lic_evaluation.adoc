@@ -4,7 +4,7 @@ permalink: concept_lic_evaluation.html
 keywords: license, licensing, evaluation, upgrade license 
 summary: 如果您想要在ONTAP Select 決定購買之前先評估一下「版本」、就可以使用評估授權。評估版授權隨附ONTAP Select 於EView部署管理公用程式、並會在ONTAP Select 評估部署中自動套用至每個節點。 
 ---
-= ONTAP Select 部署的評估授權
+= 了解ONTAP Select部署的評估許可證
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
