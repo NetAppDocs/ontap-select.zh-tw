@@ -39,7 +39,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap/
     - title: ONTAP Select 部落格
       url: https://blog.netapp.com/tag/ontap-select/
-    - title: ONTAP Select 社群
-      url: https://community.netapp.com/t5/forums/filteredbylabelpage/board-id/data-ontap-discussions/label-name/ontap%20select
+    - title: ONTAP 社群
+      url: https://community.netapp.com/community/categories/ontap
     - title: 互通性對照表
       url: https://mysupport.netapp.com/matrix/

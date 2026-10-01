@@ -2347,7 +2347,6 @@
   <block id="6a66d4f800a8576eee650d6dd676dd9d" category="sidebar">使用 REST API</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
   <block id="5c7750df890d8a1ae46102a5c56d163d" category="sidebar">ONTAP Select 部落格</block>
-  <block id="bafb5d4f7ed06fcf88f3e77fadecc81b" category="sidebar">ONTAP Select 社群</block>
   <block id="dd3d71b5f68ad8da8831a0b5ea514e35" category="sidebar">互通性對照表</block>
   <block id="cdedd922b30b9f8699ea17f5d0045e3d" category="sidebar">升級至 VMFS6</block>
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">瞭解 API 呼叫</block>
@@ -4035,4 +4034,5 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d8dbba8f3ce92ce5f07a5e0348eee10d" category="inline-link-macro">安裝前檢查清單</block>
   <block id="cdf955804034c3c67f90a9fa2b26792d" category="paragraph">您已審閱 <block ref="1a659edfd1511c28d59e934c80be869d" category="inline-link-macro-rx"></block>。</block>
   <block id="e16c906ba61aeeafbcb69e14b4357d15" category="sidebar">建立叢集的指令碼</block>
+  <block id="9a2f5932020cd5f8335afc3f02118937" category="sidebar">ONTAP 社群</block>
 </blocks>
