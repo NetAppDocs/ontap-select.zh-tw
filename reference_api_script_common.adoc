@@ -187,5 +187,4 @@ class DeployRequests(object):
     def filter_headers(response):
         ''' Returns a filtered set of the response headers '''
         return {key: response.headers[key] for key in ['Location', 'request-id'] if key in response.headers}
-
 ----
