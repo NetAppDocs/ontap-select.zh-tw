@@ -93,13 +93,17 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 使用 OVF VM 映像安裝並啟動ONTAP Select Deploy VM。作為安裝過程的一部分，您需要設定網路介面以使用 DHCP 或靜態 IP 設定。
 
 .開始之前
+[role="tabbed-block"]
+====
+.ESXi
+--
 對於 ESXi Hypervisor 、您必須準備部署 ONTAP Select Deploy VM ：
 
 * 安裝VMware Client整合外掛程式或視需要執行類似的組態、即可在瀏覽器中啟用OVF功能
 * 如果您要動態指派 IP 位址給部署的虛擬機器、請在 VMware 環境中啟用 DHCP
 
 
-對於 ESXi 和 KVM Hypervisor 、您必須擁有在建立 VM 時要使用的組態資訊、包括 VM 名稱、外部網路和主機名稱。定義靜態網路組態時、您需要下列額外資訊：
+建立 VM 時，您必須擁有要使用的組態資訊，包括 VM 的名稱、外部網路和主機名稱。定義靜態網路組態時，您需要下列額外資訊：
 
 * 部署 VM 的 IP 位址
 * 網路遮罩
@@ -109,6 +113,21 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 * DNS搜尋網域
 
 
+--
+.KVM
+--
+對於 KVM 虛擬機器管理程序，建立 VM 時必須具備要使用的組態資訊，包括 VM 的名稱、外部網路和主機名稱。定義靜態網路組態時，您需要下列附加資訊：
+
+* 部署 VM 的 IP 位址
+* 網路遮罩
+* 閘道（路由器）的IP位址
+* 主要DNS伺服器的IP位址
+* 第二部DNS伺服器的IP位址
+* DNS搜尋網域
+
+
+--
+====
 .關於這項工作
 如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署 VM 的主控台來設定網路。
 

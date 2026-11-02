@@ -150,16 +150,19 @@ AMD EPYC Embedded 9004 或更新版本和 8004
 2+| 執行個體大小 | 小 | 中小型 | 小，中，大 
 
 
-2+| 具有硬體 RAID 控制器的本機 DAS | 8 到 60 個磁碟機 | 8 到 60 個磁碟機 | 8 到 60 個磁碟機 
+2+| 具有硬體 RAID 控制器的本機 DAS | 8 – 60 個磁碟機 | 8 – 60 個磁碟機 | 8 – 60 個磁碟機 
 
 
 2+| HDD （ SAS ， NL-SAS ， SATA ） | 不適用 | 4 – 60 個磁碟機 | 4 – 60 個磁碟機 
 
 
-2+| SSD （ SAS ） | 不適用 | 4 – 60 個磁碟機（僅限 SSD ） | 4 – 60 個磁碟機（僅限 SSD ） 
+2+| SSD （ SAS ） | 不適用 | 4 – 60 個磁碟機 | 4 – 60 個磁碟機 
 
 
-2+| 具有軟體 RAID 的本機 DAS | 不適用 | 適用的 | 4 - 14 個磁碟機（僅限 NVMe ） 
+2+| NVMe | 不適用 | 不適用 | 4 – 14 個磁碟機 
+
+
+2+| 具有軟體 RAID 的本機 DAS | 不適用 | 適用的 | 4 – 14 個硬碟（僅限 NVMe） 
 
 
 2+| 外部陣列 ^1^ 3+| 外部陣列上的資料存放區是透過 FC ， FCoE ， iSCSI 和 NFS 連線（ KVM 不支援 NFS ）。這些資料存放區可提供高可用度和恢復能力。 
@@ -176,7 +179,7 @@ AMD EPYC Embedded 9004 或更新版本和 8004
 2+| 軟體類型 3+| 說明 
 
 
-2+| Hypervisor 支援（ VMware ） 3+| VMware vSphere 9.0、VMware vSphere 8.0GA 及更新 1 至 3、VMware vSphere 7.0GA 及更新 1 至 3C 
+2+| Hypervisor 支援（ VMware ） 3+| VMware vSphere 9.1、9.0 VMware vSphere 8.0GA 及更新 1 至 3 
 
 
 2+| Hypervisor 支援（ KVM ）  a| 

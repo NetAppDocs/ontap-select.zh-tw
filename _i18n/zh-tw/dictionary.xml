@@ -2499,7 +2499,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">存放虛擬機器檔案的 Hypervisor 資料存放區識別碼（約需 40GB ）。</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">對於 ESXi Hypervisor 、您必須準備部署 ONTAP Select Deploy VM ：</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">如果您要動態指派 IP 位址給部署的虛擬機器、請在 VMware 環境中啟用 DHCP</block>
-  <block id="4ecc6637981131c676cdedcda970a661" category="paragraph">對於 ESXi 和 KVM Hypervisor 、您必須擁有在建立 VM 時要使用的組態資訊、包括 VM 名稱、外部網路和主機名稱。定義靜態網路組態時、您需要下列額外資訊：</block>
   <block id="d98fb3ce51b49ee9b9e8ea2645524f08" category="list-text">部署 VM 的 IP 位址</block>
   <block id="30e58d6b4fce06c690ff3897ae040f55" category="paragraph">如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署 VM 的主控台來設定網路。</block>
   <block id="922bafb0938c68773e29242e2675f0b9" category="paragraph">您所遵循的步驟取決於您是使用 ESXi 還是 KVM Hypervisor 。</block>
@@ -2943,13 +2942,10 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="e629ab9880aae245163ce498ab9e1389" category="cell">中小型</block>
   <block id="a09a88160dc1591cac42ba911581e599" category="cell">小，中，大</block>
   <block id="93c34d5f173f74aeed0b64401f2a6edc" category="cell">具有硬體 RAID 控制器的本機 DAS</block>
-  <block id="2feb1874507e2463194f3c757efe6209" category="cell">8 到 60 個磁碟機</block>
   <block id="7742d08808786c4493a46e06b5648ff9" category="cell">HDD （ SAS ， NL-SAS ， SATA ）</block>
   <block id="fea45fcfeb873048ff2e2be995d8cb77" category="cell">4 – 60 個磁碟機</block>
   <block id="bb878052f3499d534f13d06526b7d885" category="cell">SSD （ SAS ）</block>
-  <block id="25a5b17224d1f38c386742ec7cbc343b" category="cell">4 – 60 個磁碟機（僅限 SSD ）</block>
   <block id="d8e31ece33b3b9fb9373e996815932a7" category="cell">具有軟體 RAID 的本機 DAS</block>
-  <block id="a64e775634e2bf5c5e3f63f149af2601" category="cell">4 - 14 個磁碟機（僅限 NVMe ）</block>
   <block id="518c7a2538245dd75c6daac2212b8316" category="cell">外部陣列 ^1^</block>
   <block id="8731210144d2e5094fb4001b893115d2" category="cell">外部陣列上的資料存放區是透過 FC ， FCoE ， iSCSI 和 NFS 連線（ KVM 不支援 NFS ）。這些資料存放區可提供高可用度和恢復能力。</block>
   <block id="563a5726768d43a126f11bc13b3361dd" category="paragraph">^1^ 外部陣列傳輸協定支援反映了網路儲存連線能力。</block>
@@ -3272,7 +3268,6 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="a72643a79ec8e9d1d5c61ff835cabbeb" category="list-text">初始安裝的是ONTAP Select 9.16.1。</block>
   <block id="588a4431a3d49dda029dcc4161fc2be3" category="list-text">您可以將節點升級到版本 9.17.1，如果需要，再還原到版本 9.16.1。</block>
   <block id="c762418e7ca866adad88c4350fc20ef0" category="list-text">初始安裝的是ONTAP Select 9.17.1。</block>
-  <block id="7b5019dce3bb835acb62c31388f47aef" category="cell">VMware vSphere 9.0、VMware vSphere 8.0GA 及更新 1 至 3、VMware vSphere 7.0GA 及更新 1 至 3C</block>
   <block id="709b51c435c268c165dc26b6de6a856e" category="list-text">部署管理實用程式僅包含一個版本的ONTAP Select。其中包含的版本是發行時可用的最新版本。 ONTAPONTAP Select映像安裝功能可讓您將早期版本的ONTAP Select新增至 Deploy 公用程式實例中，然後在部署ONTAP Select叢集時使用該實例。看<block ref="9252191d0d6c29910ebabc98ee426eb0" category="inline-link-macro-rx"></block>。</block>
   <block id="d4859de543e918748cbd58f23dedb243" category="list-text">ONTAP Select 9.17.1 包含對 VMware ESXi 9.0 的支援。</block>
   <block id="bc70eaa4fe619d482b08c680b31e9639" category="paragraph">定期備份 Deploy 設定資料（包括建立叢集後）是最佳實踐。這對於雙節點叢集尤其重要，因為備份中包含了中介器配置資料。</block>
@@ -4035,4 +4030,14 @@ ESXi Hypervisor 主機或 Linux KVM 主機</block>
   <block id="cdf955804034c3c67f90a9fa2b26792d" category="paragraph">您已審閱 <block ref="1a659edfd1511c28d59e934c80be869d" category="inline-link-macro-rx"></block>。</block>
   <block id="e16c906ba61aeeafbcb69e14b4357d15" category="sidebar">建立叢集的指令碼</block>
   <block id="9a2f5932020cd5f8335afc3f02118937" category="sidebar">ONTAP 社群</block>
+  <block id="50ae596e882ccedcefde5c47743d7203" category="cell">8 – 60 個磁碟機</block>
+  <block id="70d9e3c68d42d6ec42ab792e06c44357" category="cell">NVMe</block>
+  <block id="09c766d054990e91a8bd7172378ef91f" category="cell">4 – 14 個磁碟機</block>
+  <block id="4afe31410695c2d966b3cab63555adc2" category="cell">4 – 14 個硬碟（僅限 NVMe）</block>
+  <block id="a993152ace9c48fc9ffe20e1239c701e" category="cell">VMware vSphere 9.1、9.0 VMware vSphere 8.0GA 及更新 1 至 3</block>
+  <block id="d6a844c0eee1b2460b68d5e1674ce3ee" category="list-text">ONTAP Select 9.19.1 包含對 VMware ESXi 9.1 的支援。</block>
+  <block id="7fad4e1ab4f0475552986341e454b657" category="list-text">VMware ESXi 9.1</block>
+  <block id="e95da606b42156a1d47560476c9088a5" category="list-text">ESXi 9.1</block>
+  <block id="05297b8670c42857ef0d5c0e4996e75c" category="paragraph">建立 VM 時，您必須擁有要使用的組態資訊，包括 VM 的名稱、外部網路和主機名稱。定義靜態網路組態時，您需要下列額外資訊：</block>
+  <block id="9db175ef7b9ec37a8ebe335363d8fbe5" category="paragraph">對於 KVM 虛擬機器管理程序，建立 VM 時必須具備要使用的組態資訊，包括 VM 的名稱、外部網路和主機名稱。定義靜態網路組態時，您需要下列附加資訊：</block>
 </blocks>

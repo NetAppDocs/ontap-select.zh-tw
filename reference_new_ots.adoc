@@ -29,6 +29,7 @@ ONTAP Select 不支援雲端金鑰管理程式。
 
 --
 支援 Advanced Micro Devices (AMD) 處理器:: 從 ONTAP Select 9.19.1 開始，ONTAP Select 支援在 Kernel-Based Virtual Machine（KVM）和 ESXi Hypervisor 主機上使用 AMD 處理器。如需詳細資訊，請參閱link:reference_plan_ots_hardware.html["VMware 虛擬機器管理程式與硬體注意事項"]。
+增強VMware ESXi支援:: ONTAP Select 9.19.1 包含對 VMware ESXi 9.1 的支援。
 
 
 

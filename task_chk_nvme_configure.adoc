@@ -39,6 +39,7 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 --
 以下虛擬機器管理程式版本支援 ESXi：
 
+** VMware ESXi 9.1
 ** VMware ESXi 9.0
 ** VMware ESXi 8.0 U3
 ** VMware ESXi 8.0 U2

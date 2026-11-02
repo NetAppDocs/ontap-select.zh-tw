@@ -55,6 +55,7 @@ ONTAP Select支援以下 KVM 虛擬機器管理程式版本：
 --
 ONTAP Select支援以下 ESXi 虛擬機器管理程式版本：
 
+* VMware ESXi 9.1
 * VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2
