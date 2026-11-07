@@ -139,7 +139,7 @@ image:DDN_13.jpg["每個節點具有兩個實體連接埠的vSwitch"]
 [[distributed-vswitch-with-lacp]]
 == 採用LACP的分散式vSwitch
 
-在組態中使用分散式vSwitch時、可使用LACP（雖然這不是最佳實務做法）來簡化網路組態。唯一支援的LACP組態需要所有的vmnics都位於單一LAG中。上行鏈路實體交換器必須在通道中的所有連接埠上支援7,500到9、000之間的MTU大小。內部ONTAP Select 和外部的不確定網路應該在連接埠群組層級隔離。內部網路應使用不可路由（隔離）的VLAN。外部網路可使用VST、EST或VGT。
+在組態中使用分散式 vSwitches 時，可以使用 LACP（儘管並非最佳實務做法）來簡化網路組態。唯一支援的 LACP 組態要求所有 VMNIC 都位於單一 LAG 中。上行實體交換器必須支援通路中所有連接埠的最大傳輸單元（MTU）大小在 7,500 到 9,000 之間。內部和外部 ONTAP Select 網路應在連接埠群組層級是隔離的。內部網路應使用不可路由（隔離的）VLAN。外部網路可以使用 VST、EST 或 VGT。
 
 下列範例顯示使用LACP的分散式vSwitch組態。
 

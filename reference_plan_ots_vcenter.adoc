@@ -89,4 +89,4 @@ NOTE: 您也需要管理ONTAP Select 部署了VMware的ESXi Hypervisor主機之v
 類別中的所有權限。
 
 .相關資訊
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 權限"]
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["了解 vCenter 中 vSAN ESA 的 VMware vSphere 權限"]

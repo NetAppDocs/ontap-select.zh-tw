@@ -19,6 +19,9 @@ summary: 如果您打算使用NVMe磁碟機搭配軟體RAID、則需要設定主
 在NVMe裝置上使用VMDirectPath I/O傳遞、以最大化資料效率。此設定可將磁碟機展示給ONTAP Select 整個物件虛擬機器、ONTAP 使其能夠直接透過PCI存取裝置。
 
 
+NOTE: ONTAP Select 支援在 Hyper-V 主機上將 NVMe 磁碟機作為 SCSI 磁碟。ONTAP Select 不支援在 Hyper-V 主機上將 NVMe 磁碟機作為獨立裝置指派（直通裝置）。
+
+
 
 [[step-1-configure-the-host]]
 == 步驟 1：設定主機

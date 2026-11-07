@@ -38,7 +38,7 @@ NOTE: 要了解有關如何在虛擬機管理程式主機上配置 vSwitch 以�
 [[cluster-mtu]]
 == 叢集MTU
 
-另有一個內部網路可用來連接ONTAP Select 多節點叢集中的各個節點。此網路的MTU大小通常為9000。然而、在某些情況下、此MTU尺寸太大、無法連接ONTAP Select 到連接到各個節點的網路。為了容納較小的框架、ONTAP Select 內部網路上使用的MTU大小可以介於7500-9000位元組之間。
+會使用分隔的內部網路來連接多節點叢集中的 ONTAP Select 節點。通常此網路的最大傳輸單元（MTU）大小為 9000。然而，在某些情況下，此 MTU 大小對於連接 ONTAP Select 節點的網路而言過大。為了容納較小的訊框，ONTAP Select 在內部網路上使用的 MTU 大小可介於 7500-9000 位元組的範圍內。
 
 MTU大小會顯示在叢集建立頁面的叢集詳細資料區段中。此值由部署管理公用程式決定、如下所示：
 
@@ -123,19 +123,35 @@ NOTE: 您可以根據網路設計、視需要手動設定叢集MTU值。
 [[network-traffic-requirements]]
 == 網路流量需求
 
-您必須確保防火牆設定正確、以便讓網路流量能在ONTAP Select 整個部署環境的各個參與者之間流通。
+您必須確保防火牆設定正確，以允許網路流量在 ONTAP Select 部署環境中的各個參與者之間流動。
 
 .參與者
 有幾位參與者或實體在ONTAP Select 進行內部部署時、會交換網路流量。這些內容將會介紹、然後用於網路流量需求的摘要說明中。
 
-* 部署ONTAP Select 功能部署管理公用程式
-* vSphere （僅限 ESXi ）
-vSphere 伺服器或 ESXi 主機、視叢集部署中的主機管理方式而定
+* 部署
++
+部署管理公用程式ONTAP Select
+
+* vSphere（限 ESXi）
++
+可以是 vSphere 伺服器或 ESXi 主機，取決於叢集部署中主機的代管方式
+
 * Hypervisor 伺服器
-ESXi Hypervisor 主機或 Linux KVM 主機
-* OTS節點ONTAP Select -一個不需要節點的節點
-* OTS叢集ONTAP Select 一個不一樣的叢集
-* 管理WS本機管理工作站
++
+ESXi Hypervisor 主機、Microsoft Hyper-V 主機或 Linux KVM 主機
+
+* 節點ONTAP Select
++
+ONTAP Select 節點
+
+* 叢集ONTAP Select
++
+ONTAP Select 叢集
+
+* 管理 WS
++
+本地管理工作站
+
 
 
 .網路流量需求摘要
@@ -143,7 +159,25 @@ ESXi Hypervisor 主機或 Linux KVM 主機
 
 [cols="20,20,35,25"]
 |===
-| 傳輸協定/連接埠 | ESXi / KVM | 方向 | 說明 
+| 傳輸協定/連接埠 | ESXi / Hyper-V / KVM | 方向 | 說明 
+
+
+| ICMP | ESXi、Hyper-V 或 KVM | 部署至Hypervisor伺服器 | Ping 
+
+
+| ICMP | ESXi、Hyper-V 或 KVM | 部署到每個 ONTAP Select 節點 | Ping 
+
+
+| SSH（22） | ESXi、Hyper-V 或 KVM | 管理 WS 至每個 ONTAP Select 節點 | 系統管理 
+
+
+| SSH（22） | KVM | 部署至 Hypervisor 伺服器節點 | 存取 Hypervisor 伺服器 
+
+
+| TLS（443） | ESXi、Hyper-V 或 KVM | 部署到 ONTAP Select 節點和叢集 | 存取ONTAP 功能 
+
+
+| TLS（443） | ESXi、Hyper-V 或 KVM | 每個要部署的 ONTAP Select 節點 | 存取部署（容量集區授權） 
 
 
 | TLS（443） | ESXi | 部署至 vCenter 伺服器（託管）或 ESXi （託管或非託管） | VMware VIX API 
@@ -152,23 +186,8 @@ ESXi Hypervisor 主機或 Linux KVM 主機
 | 902. | ESXi | 部署至vCenter伺服器（託管）或ESXi（非託管） | VMware VIX API 
 
 
-| ICMP | ESXi 或 KVM | 部署至Hypervisor伺服器 | Ping 
+| iSCSI（3260） | ESXi、Hyper-V 或 KVM | 每個要部署的 ONTAP Select 節點 | 中介器/信箱磁碟 
 
 
-| ICMP | ESXi 或 KVM | 部署至每個OTS節點 | Ping 
-
-
-| SSH（22） | ESXi 或 KVM | 將WS管理至每個OTS節點 | 系統管理 
-
-
-| SSH（22） | KVM | 部署至 Hypervisor 伺服器節點 | 存取 Hypervisor 伺服器 
-
-
-| TLS（443） | ESXi 或 KVM | 部署至OTS節點和叢集 | 存取ONTAP 功能 
-
-
-| TLS（443） | ESXi 或 KVM | 每個要部署的OTS節點 | 存取部署（容量集區授權） 
-
-
-| iSCSI（3260） | ESXi 或 KVM | 每個要部署的OTS節點 | 中介器/信箱磁碟 
+| WinRM HTTPS （5986） | Hyper-V | 部署至 Hypervisor 伺服器節點 | 存取 Hypervisor 伺服器 
 |===

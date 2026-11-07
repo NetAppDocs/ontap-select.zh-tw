@@ -18,6 +18,64 @@ summary: 規劃ONTAP Select 一套功能完整的部署時、您應該考慮幾�
 
 
 
+[[required-windows-knowledge-and-skills-for-hyper-v]]
+== Hyper-V 所需的 Windows 知識與技能
+
+搭載 Hyper-V Hypervisor 的 Windows Server 是複雜的環境。在 Hyper-V 上部署 ONTAP Select 之前，您必須具備必要的知識和技能。
+
+ONTAP Select Deploy 管理程式用於建立和管理 ONTAP Select 虛擬機器（VM）。您需要具備以下技能來準備 Deploy 管理的 Windows 主機，並確認該主機符合 ONTAP Select 的要求。
+
+Windows Server 管理:: 您應該具備 ONTAP Select 部署的 Windows Server 版本相關經驗。具體來說，您應該能夠執行下列任務：
++
+--
+* 安裝並更新 Windows Server
+* 確定已安裝的 Windows Server 版本並確認其受支援
+* 安裝並啟用伺服器角色和選用功能，包括 Hyper-V 角色
+* 使用 CLI 設定系統
+* 合理配置主機 CPU 和記憶體容量，確保在部署 ONTAP Select 節點後，主機仍有可用容量
+
+
+如需準備 Windows 伺服器的詳細資訊，包括所需的組態與軟體套件，請參閱 link:hyper-v-host-configuration-and-preparation-checklist.html["主機組態檢查清單"]。
+
+--
+Hyper-V 概念與管理:: 您應該熟悉虛擬化的基本概念以及 Hyper-V 平台。具體來說，您應該了解以下內容：
++
+--
+* 啟用 Hyper-V 角色如何改變主機上的連網和儲存設備
+* Hyper-V 如何向虛擬機器呈現儲存設備，包括虛擬硬碟和傳遞給虛擬機器的實體磁碟之間的差異
+* 如何檢視虛擬機器及其資源的組態和狀態
+
+
+
+NOTE: Deploy 管理公用程式會建立並管理 ONTAP Select VM。請勿使用 Hyper-V 管理員、容錯移轉叢集管理員或 PowerShell 來重新設定、建立檢查點、移轉或刪除 VM。
+
+--
+連網和虛擬交換器組態:: 您應該熟悉連網概念和網路交換器的組態。此外，您應該能夠在 Hyper-V 主機上執行下列任務：
++
+--
+* 規劃並建立外部虛擬交換器，並了解每個虛擬交換器如何繫結至實體網路介面卡
+* 驗證主機網路介面卡的連結狀態、速度和 IP 組態
+* 在主機和實體網路上設定一致的 VLAN 標記
+* 在實體網路介面卡上設定巨型訊框，並確定由此產生的最大傳輸單元（MTU）
+
+
+Deploy 管理公用程式使用主機上已存在的虛擬交換器，因此您需要在部署前規劃虛擬交換器佈局。例如，雙節點叢集需要 MTU 為 7500 到 9000 位元組的內部網路。
+
+--
+儲存設備管理:: 您應該能夠管理 Windows Server 上的磁碟和 Volume。具體來說，您應該能夠執行下列任務：
++
+--
+* 建立和調整 NTFS 或 ReFS Volume 的大小，並指派磁碟機代號
+* 確定實體磁碟的媒體類型、儲存設備傳輸協定（匯流排類型）和容量
+* 區分原始磁碟和已分割或已包含 Volume 的磁碟
+* 初始化供系統使用的原始磁碟
+
+
+--
+
+
+
+
 [[required-linux-knowledge-and-skills-for-kvm]]
 == KVM 所需的 Linux 知識與技能
 
@@ -34,7 +92,7 @@ Linux 伺服器配送:: 您應該擁有 ONTAP Select 部署所使用的特定 Li
 --
 
 
-有關準備 Linux 伺服器的更多資訊，包括所需的組態和軟體套件，請參閱link:kvm-host-configuration-and-preparation-checklist.html["主機組態檢查清單"]。請參閱目前支援的 Linux 發行版的 Hypervisor 需求。
+有關準備 Linux 伺服器的更多資訊，包括所需的組態和軟體套件，請參閱link:kvm-host-configuration-and-preparation-checklist.html["主機組態檢查清單"]。
 
 KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM 環境中安裝和管理 ONTAP Select 時、您必須使用幾個 Linux CLI 命令：
 +
@@ -79,32 +137,39 @@ KVM 部署與管理:: 您應該熟悉一般的虛擬化概念。此外、在 KVM
 有幾個與Hypervisor主機相關的規劃問題、您應該考慮。
 
 
-CAUTION: 除非NetApp支援部門指示、否則您不應直接修改ONTAP Select 某個物件虛擬機器的組態。只能透過部署管理公用程式來設定及修改虛擬機器。若在ONTAP Select 部署公用程式之外變更不需NetApp支援人員協助的情況下、可能會導致虛擬機器故障、使其無法使用。
+CAUTION: 除非獲得 NetApp 支援人員的指示，否則您不應直接修改 ONTAP Select 虛擬機器的組態。虛擬機器只能透過 Deploy 管理公用程式進行設定和修改。在沒有 NetApp 支援人員協助的情況下，於 Deploy 公用程式之外對 ONTAP Select 虛擬機器進行變更，可能會導致虛擬機器故障並使其無法使用。
 
 Hypervisor不受限制:: 支援不受Hypervisor限制的支援、包括不受支援的支援功能。ONTAP Select ONTAP Select這兩種系統管理程式均支援下列Hypervisor。
 +
 --
-* VMware ESXi
+* Microsoft Hyper-V
++
+
+NOTE: 從 ONTAP Select 9.20.1 開始，支援 Microsoft Hyper-V Hypervisor。
+
 * 核心型虛擬機器（KVM）
-
-
---
-
-
++
 
 NOTE: 從 ONTAP Select 9.14.1 開始、 KVM Hypervisor 的支援已恢復。以前、 ONTAP Select 9.10.1 中移除在 KVM Hypervisor 上部署新叢集的支援、並在 ONTAP Select 9.11.1 中移除對管理現有 KVM 叢集和主機的支援、但不包括離線或刪除。
 
+* VMware ESXi
+
+
+--
+
+
 有關支援平台的其他詳細資訊，請參閱特定虛擬機器管理程序的規劃資訊和 link:reference_release_notes.html["發行說明"]。
 
-Hypervisor、適用於ONTAP Select 節點與管理公用程式:: 部署管理公用程式和ONTAP Select VMware節點都會以虛擬機器的形式執行。您選擇部署公用程式的Hypervisor與ONTAP Select 您選擇的適用於各個節點的Hypervisor無關。您可以在配對兩種產品時、享有完全的靈活度：
+Hypervisor、適用於ONTAP Select 節點與管理公用程式:: Deploy 管理公用程式和 ONTAP Select 節點均以虛擬機器（VM）形式運作。您為 Deploy 公用程式所選擇的 Hypervisor 與為 ONTAP Select 節點所選的 Hypervisor 相互獨立。在配對這兩者時，您擁有完全的靈活度：
 +
 --
-* 部署在VMware ESXi上執行的公用程式、可在ONTAP Select VMware ESXi或KVM上建立及管理各種功能的叢集
-* 在KVM上執行的部署公用程式可在ONTAP Select VMware ESXi或KVM上建立及管理各種功能
+* 在 VMware ESXi 上執行的部署公用程式可以建立與管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
+* 在 Hyper-V 上執行的部署公用程式可以建立及管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
+* 在 KVM 上執行的部署公用程式可以建立與管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
 
 
 --
-每個主機一個或多個ONTAP Select 節點的實例:: 每ONTAP Select 個支援節點都會以專屬虛擬機器的形式執行。您可以在相同的Hypervisor主機上建立多個節點、但有下列限制：
+每個主機一個或多個ONTAP Select 節點的實例:: 每個 ONTAP Select 節點都作為專用的虛擬機器運作。您可以在同一台 Hypervisor 主機上建立多個節點，但需遵守下列限制：
 +
 --
 * 來自單ONTAP Select 一支援中心叢集的多個節點無法在同一部主機上執行。特定主機上的所有節點都必須來自不同ONTAP Select 的叢集。
@@ -153,7 +218,7 @@ RAID 類型:: 在ESXi上使用直接附加儲存設備（DAS）時、您應該�
 
 
 
-NOTE: 此功能可與連接到該虛擬機器的資料磁碟總允許大小相對應。ONTAP Select ONTAP Select
+NOTE: ONTAP Select 儲存容量對應於連接到 ONTAP Select VM 的資料磁碟的總允許大小。
 
 正式作業部署的授權模式:: 您必須為正式作業環境中部署的每個 ONTAP Select 叢集選取容量層級或容量集區授權模式。如需詳細資訊、請參閱_License一節。
 
@@ -163,17 +228,17 @@ NOTE: 此功能可與連接到該虛擬機器的資料磁碟總允許大小相�
 [[authentication-using-the-credential-store]]
 == 使用認證儲存區進行驗證
 
-ONTAP Select Deploy 認證儲存區是儲存帳戶資訊的資料庫。部署會使用帳戶認證來執行主機驗證、做為叢集建立與管理的一部分。您應該瞭解認證儲存區如何在規劃ONTAP Select 還原部署時使用。
+ONTAP Select Deploy 認證資料儲存區是一個保存帳戶資訊的資料庫。Deploy 使用帳戶認證資料來執行主機驗證，作為叢集建立和管理的一部分。在規劃 ONTAP Select 部署時，您應該感知認證資料儲存區的使用方式。
 
 
-NOTE: 帳戶資訊會使用進階加密標準（ AES ）加密演算法和 SHA-256 雜湊演算法、安全地儲存在資料庫中。
+NOTE: 帳戶資訊使用進階加密標準（AES）加密演算法和 SHA-256 雜湊演算法安全地儲存在資料庫中。
 
 認證類型:: 支援下列類型的認證：
 +
 --
 * 主機
 +
-* 主機 * 認證是用來驗證 Hypervisor 主機、作為將 ONTAP Select 節點直接部署到 ESXi 或 KVM 的一部分。
+*主機*認證資料用於在將 ONTAP Select 節點直接部署到 ESXi、Hyper-V 或 KVM 時驗證 Hypervisor 主機。
 
 * vCenter
 +

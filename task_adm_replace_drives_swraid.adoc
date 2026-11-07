@@ -28,10 +28,75 @@ NOTE: 移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都�
 
 [role="tabbed-block"]
 ====
+.ESXi
+--
+.步驟
+. 使用系統管理員帳戶登入ONTAP CLI。
+. 確定發生故障的磁碟機：
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+--
+.Hyper-V
+--
+.開始之前
+您必須知道 Hyper-V 主機上的 ONTAP Select 虛擬機器（VM）的名稱，以及 ONTAP Select 和 ONTAP Select Deploy 系統管理員帳戶認證資料。
+
+.關於這項工作
+只有當 ONTAP Select 節點在 Hyper-V 上執行並設定為使用軟體 RAID 時，才應使用此程序。在 Hyper-V 上，ONTAP Select 會為直通磁碟報告虛擬化序號，因此您需要透過目標位址而非序號來識別實體磁碟機。
+
+.步驟
+. 使用系統管理員帳戶登入 ONTAP Select CLI，並識別故障磁碟機：
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+----
+. [[record-lun-value]]顯示故障磁碟的目標位址：
++
+[source, cli]
+----
+<cluster name>::> disk show -fields serial,vmdisk-target-address
+----
++
+記錄故障磁碟的 `lun`值。此 `bus`值可識別承載直通磁碟的虛擬 SCSI 控制器。
+
+. （選用）顯示備用磁碟容量以及已分割的磁碟：
++
+[source, cli]
+----
+<cluster name>::> storage aggregate show-spare-disks
+----
+. 在 Hyper-V 主機上，顯示連接到 ONTAP Select VM 的磁碟：
++
+[source, cli]
+----
+PS C:\> Get-VMHardDiskDrive -VMName <vm_name>
+----
++
+直通磁碟是指報告磁碟編號的項目；帶有檔案路徑的項目是系統磁碟。故障磁碟是其 `ControllerLocation`與相符的項目。故障磁碟的 `DiskNumber`是 Windows 磁碟編號。
+
+. 顯示故障磁碟的實體識別：
++
+[source, cli]
+----
+PS C:\> Get-PhysicalDisk | Where-Object { [int]$_.DeviceId -eq <disk_number> } | Select-Object FriendlyName, SerialNumber, UniqueId, PhysicalLocation, MediaType, Size, HealthStatus, OperationalStatus
+----
+
+
+--
 .KVM
 --
 .開始之前
-您必須擁有 ONTAP Select 虛擬機器的 VM ID 、以及 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+您必須擁有 ONTAP Select VM 的 VM ID，以及 ONTAP Select 和 ONTAP Select Deploy 系統管理員帳戶認證資料。
 
 .關於這項工作
 只有當 ONTAP Select 節點在 KVM 上執行且設定為使用軟體 RAID 時、才應使用此程序。
@@ -39,9 +104,9 @@ NOTE: 移除故障磁碟機和新增磁碟機（標示為備援磁碟機）都�
 .步驟
 . 在 ONTAP Select CLI 中、識別要更換的磁碟：
 +
-.. 依虛擬機器中的序號、 UUID 或目標位址來識別磁碟。
+.. 透過序號、UUID 或虛擬機器中的目標位址識別磁碟：
 +
-[listing]
+[source, cli]
 ----
 disk show -fields serial,vmdisk-target-address,uuid
 ----
@@ -53,35 +118,18 @@ disk show -fields serial,vmdisk-target-address,uuid
 +
 .. 檢查系統裝置、搜尋磁碟序號或 UUID （磁碟名稱）：
 +
-[listing]
+[source, cli]
 ----
 find /dev/disk/by-id/<SN|ID>
 ----
-.. 檢查虛擬機器組態、搜尋目標位址：
+.. 檢查虛擬機器組態，尋找目標位址：
 +
-[listing]
+[source, cli]
 ----
 virsh dumpxml VMID
 ----
 
 
-
-
---
-.ESXi
---
-.步驟
-. 使用系統管理員帳戶登入ONTAP CLI。
-. 識別故障的磁碟機。
-+
-[listing]
-----
-<cluster name>::> storage disk show -container-type broken
-Usable Disk Container Container
-Disk Size Shelf Bay Type Type Name Owner
----------------- ---------- ----- --- ------- ----------- --------- --------
-NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
-----
 
 
 --
@@ -95,95 +143,6 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 
 [role="tabbed-block"]
 ====
-.使用部署的 KVM
---
-您可以將磁碟從 KVM 主機分離、以作為更換磁碟的一部分、或是在不再需要時。
-
-.開始之前
-您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
-
-.步驟
-. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
-. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
-. 在所需的 HA 配對或節點旁選擇 *+* 。
-+
-如果停用此選項、則部署目前正在重新整理儲存資訊。
-
-. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
-. 取消選取要從節點上分離的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存設備 * 來套用變更。
-. 選擇 * 是 * 以確認快顯視窗中的警告。
-. 選取要監控的叢集 * 事件 * 索引標籤、並確認卸除作業。
-+
-如果不再需要實體磁碟、您可以將其從主機中移除。
-
-
-
---
-.使用 CLI 的 KVM
---
-識別磁碟之後、請依照下列步驟進行。
-
-.步驟
-. 從虛擬機器分離磁碟：
-+
-.. 傾印組態。
-+
-[listing]
-----
-virsh dumpxml VMNAME > /PATH/disk.xml
-----
-.. 編輯檔案、並移除要從虛擬機器上分離的磁碟以外的所有項目。
-+
-磁碟的目標位址應與 ONTAP 中的 vmdisk-target-address 欄位相對應。
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-.. 分離磁碟。
-+
-[listing]
-----
-virsh detach-disk --persistent /PATH/disk.xml
-----
-
-
-. 更換實體磁碟：
-+
-您可以使用公用程式、例如 `ledctl locate=` 如有需要、可找到實體磁碟。
-
-+
-.. 從主機中取出磁碟。
-.. 選擇新磁碟、並在必要時將其安裝在主機中。
-
-
-. 編輯原始磁碟組態檔案、然後新增磁碟。
-+
-您應該視需要更新磁碟路徑和任何其他組態資訊。
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-
-
---
 .ESXi
 --
 .步驟
@@ -211,6 +170,95 @@ image:ST_26.jpg["警告"]
 
 
 --
+.使用 Deploy 的 Hyper-V 或 KVM
+--
+您可以將磁碟從 Hyper-V 或 KVM 主機分離，作為更換磁碟的一部分，或在不再需要磁碟時將其分離。
+
+.開始之前
+您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
+. 在所需的 HA 配對或節點旁選擇 *+* 。
++
+如果停用此選項、則部署目前正在重新整理儲存資訊。
+
+. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
+. 取消選取要從節點上分離的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存設備 * 來套用變更。
+. 選擇 * 是 * 以確認快顯視窗中的警告。
+. 選取要監控的叢集 * 事件 * 索引標籤、並確認卸除作業。
++
+如果不再需要實體磁碟、您可以將其從主機中移除。
+
+
+
+--
+.使用 CLI 的 KVM
+--
+識別磁碟之後、請依照下列步驟進行。
+
+.步驟
+. 將磁碟從虛擬機器中分離：
++
+.. 匯出組態：
++
+[source, cli]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. 編輯該檔案，移除要從虛擬機器分離的磁碟之外的所有內容。
++
+磁碟的目標位址應與 ONTAP 中的 vmdisk-target-address 欄位相對應。
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. 分離磁碟。
++
+[source, cli]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. 更換實體磁碟：
++
+您可以使用公用程式、例如 `ledctl locate=` 如有需要、可找到實體磁碟。
+
++
+.. 從主機中取出磁碟。
+.. 選擇新磁碟、並在必要時將其安裝在主機中。
+
+
+. 編輯原始磁碟組態檔案、然後新增磁碟。
++
+您應該視需要更新磁碟路徑和任何其他組態資訊。
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
 ====
 
 
@@ -221,50 +269,6 @@ image:ST_26.jpg["警告"]
 
 [role="tabbed-block"]
 ====
-.使用部署的 KVM
---
-.使用 Deploy 附加磁碟
-您可以將磁碟附加至 KVM 主機、作為更換磁碟或新增更多儲存容量的一部分。
-
-.開始之前
-您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
-
-新磁碟必須實際安裝在 KVM Linux 主機上。
-
-.步驟
-. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
-. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
-. 在所需的 HA 配對或節點旁選擇 *+* 。
-+
-如果停用此選項、則部署目前正在重新整理儲存資訊。
-
-. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
-. 選取要附加至節點的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存 * 以套用變更。
-. 選取 * 事件 * 標籤以監控並確認附加作業。
-. 檢查節點儲存組態、確認磁碟已附加。
-
-
---
-.使用 CLI 的 KVM
---
-識別並移除故障磁碟機之後、您可以附加新磁碟機。
-
-.步驟
-. 將新磁碟連接至虛擬機器。
-+
-[listing]
-----
-virsh attach-disk --persistent /PATH/disk.xml
-----
-
-
-.結果
-磁碟會指派為備援磁碟、可供 ONTAP Select 使用。磁碟可能需要一分鐘或更長的時間才能使用。
-
-.完成後
-由於節點組態已變更、因此您應該使用部署管理公用程式來執行叢集重新整理作業。
-
---
 .ESXi
 --
 .步驟
@@ -290,6 +294,50 @@ image:ST_30.jpg["儲存磁碟詳細資料"]
 image:ST_31.jpg["儲存磁碟詳細資料"]
 
 
+
+--
+.使用 Deploy 的 Hyper-V 或 KVM
+--
+.使用 Deploy 附加磁碟
+您可以將磁碟連接到 Hyper-V 或 KVM 主機，作為更換磁碟或增加儲存容量的一部分。
+
+.開始之前
+您必須擁有 ONTAP Select 和 ONTAP Select 部署系統管理員帳戶認證。
+
+新磁碟必須實際安裝在 KVM Linux 主機上。
+
+.步驟
+. 使用系統管理員帳戶登入部署公用程式Web使用者介面。
+. 選取頁面頂端的 * 叢集 * 索引標籤、然後從清單中選取所需的叢集。
+. 在所需的 HA 配對或節點旁選擇 *+* 。
++
+如果停用此選項、則部署目前正在重新整理儲存資訊。
+
+. 在 * 編輯節點儲存 * 頁面上選取 * 編輯儲存 * 。
+. 選取要附加至節點的磁碟、輸入 ONTAP 管理員認證、然後選取 * 編輯儲存 * 以套用變更。
+. 選取 * 事件 * 標籤以監控並確認附加作業。
+. 檢查節點儲存組態、確認磁碟已附加。
+
+
+--
+.使用 CLI 的 KVM
+--
+識別並移除故障磁碟機之後、您可以附加新磁碟機。
+
+.步驟
+. 將新磁碟連接至 VM：
++
+[source, cli]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.結果
+磁碟會指派為備援磁碟、可供 ONTAP Select 使用。磁碟可能需要一分鐘或更長的時間才能使用。
+
+.完成後
+由於節點組態已變更、因此您應該使用部署管理公用程式來執行叢集重新整理作業。
 
 --
 ====

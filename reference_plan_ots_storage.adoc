@@ -17,7 +17,7 @@ summary: 有幾個規劃問題與ONTAP Select 不支援的主機儲存有關、�
 有幾個規劃問題與ONTAP Select 不支援的主機儲存有關、您應該考慮這些問題。
 
 
-NOTE: 本文概述了 ESXi 和 KVM 主機的外部儲存支援資訊。如需更多資訊,請參閱 link:reference_plan_ots_vnas.html["VMware ESXi 需求"] 和 link:reference_plan_ots_kvm.html["KVM 需求"]。
+NOTE: 本文概述了 ESXi、Hyper-V 和 KVM 主機的儲存支援資訊。如需詳細資訊，請參閱 link:reference_plan_ots_vnas.html["VMware ESXi 外部儲存設備需求"]、link:plan-ots-hyper-v.html["Hyper-V 儲存設備需求"] 和 link:reference_plan_ots_kvm.html["KVM 外部儲存設備需求"]。
 
 
 

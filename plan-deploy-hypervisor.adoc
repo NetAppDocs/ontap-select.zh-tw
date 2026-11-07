@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: plan-deploy-hypervisor.html 
+keywords: plan, planning, ontap select deploy, vmware requirements 
+summary: 在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。 
+---
+= ONTAP Select 部署 Hypervisor 主機考量事項
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+有幾個與Hypervisor主機相關的規劃問題、您應該考慮。
+
+
+CAUTION: 除非獲得 NetApp 支援人員的指示，否則您不應直接修改 ONTAP Select 虛擬機器（VM）的組態。虛擬機器只能透過 Deploy 管理公用程式進行設定和修改。未經 NetApp 支援人員協助，在 Deploy 公用程式之外對 ONTAP Select 虛擬機器進行變更，可能會導致虛擬機器故障並使其無法使用。
+
+
+
+[[hypervisor-independent]]
+== Hypervisor不受限制
+
+ONTAP Select 和 ONTAP Select Deploy 管理公用程式均獨立於 Hypervisor 。
+
+ONTAP Select 和 ONTAP Select 部署管理均支援下列 Hypervisor ：
+
+* VMware ESXi
+* Microsoft Hyper-V
+* 核心型虛擬機器（KVM）
+
+
+
+NOTE: 有關支援平台的其他詳細資訊，請參閱特定虛擬機器管理程序的規劃資訊和 link:reference_release_notes.html["發行說明"]。
+
+.Hypervisor、適用於ONTAP Select 節點與管理公用程式
+Deploy 管理公用程式和 ONTAP Select 節點均以虛擬機器形式運作。您為 Deploy 公用程式所選擇的 Hypervisor 與為 ONTAP Select 節點所選的 Hypervisor 相互獨立。您可以完全靈活度組合這兩者：
+
+* 在 VMware ESXi 上執行的部署公用程式可以建立與管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
+* 在 Hyper-V 上執行的部署公用程式可以建立及管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
+* 在 KVM 上執行的部署公用程式可以建立與管理 VMware ESXi、Hyper-V 或 KVM 上的 ONTAP Select 叢集
+
+
+.每個主機一個或多個ONTAP Select 節點的實例
+每個 ONTAP Select 節點都作為專用的虛擬機器運作。您可以在同一台 Hypervisor 主機上建立多個節點，但需遵守下列限制：
+
+* 來自單ONTAP Select 一支援中心叢集的多個節點無法在同一部主機上執行。特定主機上的所有節點都必須來自不同ONTAP Select 的叢集。
+* 您必須使用外部儲存設備。
+* 如果您使用軟體RAID、則只能在ONTAP Select 主機上部署一個支援節點。
+
+
+.叢集內節點的Hypervisor一致性
+在一個叢集內的所有主機ONTAP Select 必須在Hypervisor軟體的相同版本和版本上執行。
+
+.每個主機上的實體連接埠數目
+您必須設定每個主機使用一個、兩個或四個實體連接埠。雖然您在設定網路連接埠時具有靈活度、但您應該盡可能遵循下列建議：
+
+* 單節點叢集中的主機應該有兩個實體連接埠。
+* 多節點叢集中的每個主機都應有四個實體連接埠
+
+
+.將 ONTAP Select 與 ONTAP 硬體型叢集整合
+您無法ONTAP Select 直接將某個節點新增至ONTAP 以硬體為基礎的叢集。不過、您可以選擇性地在ONTAP Select 一個叢集與一個硬體型ONTAP 的故障叢集之間建立叢集對等關係。
+
+
+
+[[hypervisor-environment]]
+== Hypervisor 環境
+
+在 Hypervisor 環境中安裝 Deploy 管理公用程式之前，您應該審查基本要求並做好部署準備。
+
+[role="tabbed-block"]
+====
+.ESXi
+--
+在ONTAP Select VMware環境中安裝「VMware部署」公用程式之前、您應該先考量VMware環境的幾項特定需求與限制。
+
+.硬體需求
+確認部署 ONTAP Select 的 ESXi Hypervisor 主機符合以下基本需求：
+
+* ESXi伺服器：
++
+** 硬體與軟體必須為64位元
+** 必須遵循ONTAP Select 針對某個節點所定義的相同支援版本
+
+
+* 虛擬CPU（2個）
+* 虛擬記憶體（4 GB）
+* 儲存設備（ 40GB ）
+* 已啟用動態主機設定協定（DHCP）（也可指派靜態 IP 位址）
+
+
+.網路連線能力
+請檢查 ONTAP Select Deploy VM 網路介面是否已設定並具有單一管理 IP 位址。您可以使用 DHCP 動態指派 IP 位址，也可以手動設定靜態 IP 位址。
+
+根據您的部署決策、部署VM必須能夠連線至vCenter伺服器、ESXi Hypervisor主機及ONTAP Select 其管理的各個節點。您必須設定防火牆以允許所需的流量。
+
+Deploy 使用 VMware VIX API 與 vCenter 伺服器和 ESXi 主機通訊。首先，它使用基於 SSL 的 SOAP 協定在 TCP 連接埠 443 上建立連線。之後，它會在連接埠 902 上使用 SSL 協定開啟連線。此外，Deploy 也會發出 PING 指令來驗證您指定的 IP 位址上是否存在 ESXi 主機。
+
+此外，Deploy 必須能夠使用以下協定與 ONTAP Select 節點和叢集管理 IP 位址進行通訊：
+
+* Ping命令（ICMP）
+* SSH（連接埠22）
+* SSL（連接埠443）
+
+
+.支援IP版本4
+僅支援IP第4版（IPV4）ONTAP Select 。不支援IP版本6（IPv6）。此限制會以ONTAP Select 下列方式影響到流通：
+
+* 您必須將 IPv4 位址指派給部署 VM 的管理 LIF 。
+* 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
+
+
+--
+.Hyper-V
+--
+在 Hyper-V 環境中安裝 ONTAP Select Deploy 公用程式之前，您應該考慮 Hyper-V 環境特有的幾項需求與限制。
+
+.硬體需求
+確認部署 ONTAP Select 的 Windows Hyper-V Hypervisor 主機符合下列基本需求：
+
+* Windows Server：
++
+** 硬體和軟體必須為 64 位元
+** 伺服器必須遵守為 ONTAP Select 節點所定義的相同支援版本
+
+
+* 虛擬CPU（2個）
+* 虛擬記憶體（ 4GB ）
+* 儲存設備（ 40GB ）
+* 動態主機設定協定 (DHCP) 已啟用（您也可以指派靜態 IP 位址）
+
+
+.網路連線能力
+確認 Deploy 虛擬機器網路介面已設定，並且可以連線至其管理的 ONTAP Select 主機。
+
+.支援IP版本4
+僅支援IP第4版（IPV4）ONTAP Select 。不支援IP版本6（IPv6）。此限制會以ONTAP Select 下列方式影響到流通：
+
+* 您必須將 IPv4 位址指派給部署 VM 的管理 LIF 。
+* 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
+
+
+.必要的組態資訊
+在您的部署規劃中、您應該先判斷必要的組態資訊、然後再安裝ONTAP Select 「整合部署」管理公用程式。
+
+[cols="1,2"]
+|===
+| 組態 | 說明 
+
+
+| 部署 VM 的名稱 | 用於 VM 的名稱。 
+
+
+| 主機名稱 | 安裝 Deploy 公用程式的 Windows Hyper-V Hypervisor 主機。 
+
+
+| 儲存池名稱 | 存放 VM 檔案的儲存池（約需 40GB ）。 
+
+
+| 虛擬機器的網路 | 連接部署 VM 的網路。 
+|===
+--
+.KVM
+--
+在 KVM 環境中安裝 ONTAP Select Deploy 實用程式之前，您應該考慮 Hypervisor 環境的一些特定要求和限制。
+
+.硬體需求
+確認部署 ONTAP Select 的 Linux KVM Hypervisor 主機符合下列基本需求：
+
+* Linux 伺服器：
++
+** 硬體和軟體必須為 64 位元
+** 伺服器必須遵守為 ONTAP Select 節點所定義的相同支援版本
+
+
+* 虛擬CPU（2個）
+* 虛擬記憶體（ 4GB ）
+* 儲存設備（ 40GB ）
+* 動態主機設定協定 (DHCP) 已啟用（您也可以指派靜態 IP 位址）
+
+
+.網路連線能力
+確認 Deploy 虛擬機器網路介面已設定，並且可以連線至其管理的 ONTAP Select 主機。
+
+.支援IP版本4
+僅支援IP第4版（IPV4）ONTAP Select 。不支援IP版本6（IPv6）。此限制會以ONTAP Select 下列方式影響到流通：
+
+* 您必須將 IPv4 位址指派給部署 VM 的管理 LIF 。
+* 「部署」無法建立ONTAP Select 設定為在ONTAP 整個過程中使用IPv6的動態節點。
+
+
+.必要的組態資訊
+在您的部署規劃中、您應該先判斷必要的組態資訊、然後再安裝ONTAP Select 「整合部署」管理公用程式。
+
+[cols="1,2"]
+|===
+| 組態 | 說明 
+
+
+| 部署 VM 的名稱 | 用於 VM 的名稱。 
+
+
+| 主機名稱 | 安裝 Deploy 工具的 Linux KVM Hypervisor 主機。 
+
+
+| 儲存池名稱 | 存放 VM 檔案的儲存池（約需 40GB ）。 
+
+
+| 虛擬機器的網路 | 連接部署 VM 的網路。 
+|===
+--
+====
+
+
+[[vmware-vcenter-server-considerations]]
+== VMware vCenter 伺服器注意事項
+
+.ESA 的 VMware vSphere 權限
+要在 vCenter 中建立和管理 vSAN Express Storage Architecture (ESA)，您需要以下 vSphere 內容庫權限：
+
+
+NOTE: 要存取內容庫權限，管理員需要授予您在 vCenter Server 中存取全域權限的權限。
+
+* 新增庫項目
+* 建立本地庫
+* 刪除庫項目
+* 刪除本機庫
+* 下載文件
+* 讀取儲存
+* 更新文件
+* 更新庫
+* 更新庫項目
+* 更新本地庫
+* 查看配置設定
+

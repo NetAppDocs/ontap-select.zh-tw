@@ -38,7 +38,7 @@ ESXi 和 KVM 主機不支援以下叢集擴充和收縮：
 [[hardware-and-storage-considerations]]
 == 硬體與儲存考量
 
-以下 KVM 和 ESXi 虛擬機器管理程式主機支援叢集擴充和收縮功能。
+以下 ESXi 和 KVM Hypervisor 主機支援叢集擴充和收縮功能。
 
 [role="tabbed-block"]
 ====

@@ -17,7 +17,7 @@ summary: 由於REST Web服務固有的靈活度、ONTAP Select 因此可以透�
 由於REST Web服務固有的靈活度、ONTAP Select 因此可以透過多種不同的方式存取《支援》API。
 
 
-NOTE: ONTAP Select Deploy 中所包含的 REST API 被指派了一個版本號碼。此 API 版本號與 Deploy 版本號無關。ONTAP Select 9.19.1 Deploy 管理公用程式包含 REST API 的版本 3。
+NOTE: ONTAP Select Deploy 中所包含的 REST API 被指派了一個版本號碼。此 API 版本號與 Deploy 版本號無關。ONTAP Select 9.20.1 Deploy 管理公用程式包含 REST API 的版本 3。
 
 
 

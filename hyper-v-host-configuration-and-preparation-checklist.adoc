@@ -1,0 +1,249 @@
+---
+sidebar: sidebar 
+permalink: hyper-v-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, hyper-v, host preparation 
+summary: 準備每個部署了 ONTAP Select 節點的 Hyper-V Hypervisor 主機。在準備主機時，請仔細評估部署環境，確保主機已正確設定，並準備好支援 ONTAP Select 叢集的部署。 
+---
+= 為 ONTAP Select 準備 Hyper-V 主機
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+準備部署 ONTAP Select 節點的每個 Hyper-V Hypervisor 主機。確保主機設定正確，並已準備好支援 ONTAP Select 叢集的部署。
+
+
+NOTE: ONTAP Select Deploy 管理公用程式不會執行虛擬機器管理程式主機所需的網路和儲存配置。您必須在部署ONTAP Select叢集之前手動準備每個主機。
+
+
+
+[[step-1-prepare-the-hyper-v-hypervisor-host]]
+[[prepare-hyper-v-server]]
+== 步驟 1：準備 Hyper-V Hypervisor 主機
+
+準備每個部署 ONTAP Select 節點的 Windows Hyper-V 伺服器。
+
+.關於這項工作
+有關如何執行這些步驟的更多資訊，請參閱 Windows 文件。
+
+.步驟
+. 安裝支援的 Windows Server 版本，並使用 Server Manager、Windows Admin Center 或 PowerShell 啟用 Hyper-V 角色。
+. 將 Windows 安裝到本機開機磁碟。請勿將 Windows 安裝到打算提供給 ONTAP Select 的磁碟上。
+. 請確認組態符合以下要求：
++
+** Windows Server 版本列為受支援。部署公用程式在主機註冊期間讀取產品名稱，並報告為不受支援的版本。
+** Hyper-V 角色已啟用。Deploy 公用程式會在主機註冊期間驗證這一點，如果該角色未啟用，則註冊失敗。
+** 主機 CPU 和記憶體容量足以滿足 Windows Server 的需求。部署公用程式在決定節點大小時，會為主機保留 2 個 CPU 核心和 8 GB 記憶體容量。
+
+
+
+
+
+
+[[step-2-provide-remote-management-access-for-deploy]]
+== 步驟 2：為 Deploy 提供遠端管理存取
+
+部署公用程式透過 Windows 遠端管理（WinRM）使用 HTTPS 和 PowerShell 遠端處理組態來管理主機。您需要設定 WinRM HTTPS 監聽器、相關聯的憑證和防火牆規則。
+
+.步驟
+. 啟用 WinRM HTTP：
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+. 驗證 WinRM 組態：
++
+[source, cli]
+----
+winrm enumerate winrm/config/listener
+----
+. 建立防火牆傳入規則以接受 HTTPS 連接埠 5986 上的網路連線：
++
+[source, cli]
+----
+New-NetFirewallRule -DisplayName "WinRM HTTPS" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 5986
+----
+. 設定相關憑證：
++
+[role="tabbed-block"]
+====
+.憑證可用
+--
+如果您在本機電腦憑證儲存區中已有有效憑證：
+
+.. 設定 PowerShell 遠端處理以使用憑證：
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+.. 設定 WinRM 以進行遠端管理：
++
+[source, cli]
+----
+winrm quickconfig -q
+----
+.. 驗證 WinRM HTTPS 監聽器組態：
++
+[source, cli]
+----
+winrm e winrm/config/listener
+----
+
+
+--
+.憑證無法使用
+--
+.. 產生自簽名憑證：
++
+[source, cli]
+----
+$cert = New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My
+----
+.. 將憑證綁定到 WinRM 監聽器：
++
+[source, cli]
+----
+New-WSManInstance -ResourceURI winrm/config/Listener -SelectorSet @{Transport='HTTPS';Address='*'} -ValueSet @{CertificateThumbprint=$cert.Thumbprint}
+----
+
+
+--
+====
+. 選取 *電腦設定* > *系統管理範本* > *Windows 元件* > *Windows 遠端管理（WinRM）* > *WinRM 服務* 來設定群組原則。
+. 請確認組態符合以下要求：
++
+** Deploy 虛擬機器（VM）可以透過 TCP 連接埠 5986 連線至 WinRM HTTPS 監聽器。Deploy 公用程式不使用 HTTP 或 TCP 連接埠 5985。
+** 有一個自簽憑證。Deploy 公用程式不會向憑證授權單位驗證憑證。
+** 用於註冊主機的帳戶擁有該主機的系統管理員權限。Deploy 公用程式使用 Kerberos 進行驗證。如果 Deploy 公用程式無法使用 Kerberos，則會退回至 NTLM。
+** 您已使用在 TCP 連接埠 5986 上回應的唯一名稱來註冊 Hyper-V 主機。Deploy 公用程式會使用已註冊的名稱來擷取憑證。
++
+
+NOTE: 部署公用程式會記錄憑證，並在每次後續連線時進行驗證。如果憑證被替換，與主機的連線將會失敗，您必須從部署公用程式中刪除該主機並重新註冊。
+
+
+
+
+
+
+
+[[step-3-prepare-the-host-storage]]
+== 步驟 3：準備主機儲存設備
+
+Hyper-V 主機上的儲存資源池是一個本機 Volume，用於存放 ONTAP Select VM 及其虛擬磁碟。
+
+.步驟
+. 使用磁碟管理、Server Manager 或 Windows Admin Center 建立本機 Volume。如需詳細資訊，請參閱 Microsoft 文件。
+. 為每個 ONTAP Select 節點建立至少一個儲存資源池。如需更多資訊，請參閱 Microsoft 文件。
++
+[NOTE]
+====
+** 使用軟體 RAID 時，需要建立儲存資源池。
+** 若要移除儲存資源池，請先刪除使用該儲存資源池的 ONTAP Select 叢集或節點，然後使用標準的 Windows 工具刪除 Volume。
+
+
+====
+. 確認 Volume 格式為 NTFS 或 ReFS，並且已指派磁碟機代號。Deploy 公用程式透過磁碟機代號識別儲存資源池。
++
+[NOTE]
+====
+** Deploy 公用程式會保留 2% 的 Volume 作為例行成本，並且可以從單一儲存資源池分配最多 64 TB 的空間。
+** 您無法將叢集共用磁碟區和 SMB 3.0 檔案共用用作 ONTAP Select 儲存資源池。
+** ONTAP Select 無法發現僅掛載到資料夾路徑的 Volume，因為它沒有磁碟機代號。
+
+
+====
+. 如果您使用軟體 RAID，您需要為 ONTAP Select 保留實體磁碟。Hyper-V 不支援 PCI 直通，因此磁碟會以直通實體磁碟的形式呈現給虛擬機器。實體磁碟必須符合下列需求：
++
+** 它們是 SSD 或 NVMe 磁碟，每個磁碟至少有 200 GB 的儲存設備。
+** 它們是沒有分割區、Volume 和磁碟機代號的原始磁碟。
+** 這些磁碟不屬於儲存空間資源池。
+** 磁碟保持線上。Deploy 公用程式在將磁碟連接至虛擬機器時，會將每個磁碟設為離線。
+
+
+. 單節點叢集至少需要三個磁碟來執行軟體 RAID，以及四或五個磁碟來執行軟體 RAID-DP。雙節點叢集需要六個磁碟來執行軟體 RAID，或十個磁碟來執行軟體 RAID-DP。ONTAP Select 每個節點最多支援 60 個直通磁碟。
++
+在註冊主機之前，請確認保留磁碟是否符合要求：
+
++
+[source, cli]
+----
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, BusType, Size
+----
++
+
+NOTE: 在 `Get-StoragePool`輸出中顯示為儲存空間資源池成員的磁碟會被 Deploy 公用程式排除，且無法用於軟體 RAID。
+
+
+
+
+
+[[step-4-review-the-ontap-select-cluster-configuration]]
+== 步驟 4：檢查ONTAP Select叢集配置
+
+您可以將 ONTAP Select 部署為雙節點叢集或四節點叢集，或是單節點叢集。在許多情況下，多節點叢集更佳，因為它提供額外儲存容量和高可用度（HA）功能。
+
+下圖說明了用於 ESXi 主機的單節點叢集和四節點叢集的ONTAP Select網路。
+
+[role="tabbed-block"]
+====
+.單節點叢集
+--
+下圖說明單節點叢集。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。
+
+image:CHK_01.jpg["顯示一個網路的單節點叢集"]
+
+--
+.四節點集群
+--
+下圖展示了一個包含兩個網路的四節點集群。內部網路可在節點之間進行通訊、以支援ONTAP 叢集網路服務。外部網路可傳輸用戶端、管理及跨叢集複寫流量（SnapMirror/SnapVault）。
+
+image:CHK_02.jpg["顯示兩個網路的四節點叢集"]
+
+--
+.四節點叢集內的單一節點
+--
+下圖展示了四節點叢集中單一 ONTAP Select 虛擬機器的典型網路組態。其中包含兩個分隔的網路：ONTAP 內部網路和 ONTAP 外部網路。
+
+image:CHK_03.jpg["四節點叢集內的單一節點"]
+
+--
+====
+
+
+[[step-5-prepare-the-networks]]
+== 步驟 5：準備網路
+
+ONTAP Select Deploy 透過 Hyper-V 虛擬交換器連接到實體網路。您需要在註冊主機之前建立虛擬交換器。
+
+.關於這項工作
+有關如何執行這些步驟的更多資訊，請參閱 Windows 文件。
+
+.步驟
+. 使用 Hyper-V 管理員、Windows Admin Center 或 PowerShell 中的虛擬交換器管理員來建立交換器。
++
+為 ONTAP Select 使用的每個實體介面卡建立一個外部虛擬交換器。單節點叢集至少需要一個介面卡，雙節點叢集至少需要兩個介面卡。
+
+. 在實體介面卡的進階屬性中設定巨型訊框。
+. 將一個實體介面卡綁定到每個虛擬交換器。
++
+
+NOTE: 不支援 NIC teaming 和 Switch Embedded Teaming。
+
+. 驗證每個上行鏈路是否為 `up`。
++
+
+NOTE: 上行鏈路為 `down`的外部虛擬交換器回報為無法使用。
+
+. 在實體交換器連接埠或管理作業系統介面卡上設定 VLAN 標記。部署公用程式會讀取正在使用的 VLAN，但不會指派 VLAN。
+. 雙節點叢集的內部網路需要 7500 到 9000 位元組的最大傳輸單元（MTU）。請在承載內部網路的介面卡上啟用巨型訊框。
++
+
+NOTE: Windows Server 報告的巨型訊框大小包含乙太網路標頭，因此設定為 9014 位元組的介面卡可提供 9000 位元組的 MTU。這就是 Deploy 公用程式解譯介面卡設定的 MTU 值的方式。當虛擬交換器與管理作業系統共享時，對應主機介面卡的 IP MTU 也會限制 Deploy 公用程式所報告的 MTU。
+
+

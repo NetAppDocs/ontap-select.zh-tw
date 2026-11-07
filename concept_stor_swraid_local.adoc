@@ -100,8 +100,8 @@ ONTAP軟體 RAID 支援下列 RAID 類型：RAID 4、RAID-DP 和RAID-TEC。這�
 
 
 
-[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
-== PassthThrough（DirectPath IO）裝置與原始裝置對應（RDM）
+[[passthrough-directpath-io-devices-versus-raw-device-maps-rdms]]
+== 直通（DirectPath IO）裝置與原始裝置對應（RDMs）
 
 ESXi 和 KVM 虛擬機器管理程式不支援將 NVMe 磁碟作為裸裝置對應（RDM）使用。若要讓 ONTAP Select 直接控制 NVMe 磁碟、您必須在 ESXi 或 KVM 中將這些磁碟機配置為直通裝置。將 NVMe 裝置配置為直通裝置需要伺服器 BIOS 的支援、而且您可能需要重新啟動主機。此外、每個主機可指派的直通裝置數量有限制、具體數量可能因平台而異。不過、ONTAP Deploy 將每個 ONTAP Select 節點的 NVMe 裝置數量限制為 14 個。這表示 NVMe 組態以犧牲總容量為代價、提供了非常高的 IOPS 密度（IOPS/TB）。或者、如果您需要具有更大儲存容量的高效能組態、建議的組態是使用較大的 ONTAP Select VM 大小、Intel Optane 卡作為系統磁碟、以及適量的 SSD 磁碟機進行資料儲存。
 
@@ -109,6 +109,9 @@ ESXi 和 KVM 虛擬機器管理程式不支援將 NVMe 磁碟作為裸裝置對�
 NOTE: 若要充分發揮NVMe效能、請考慮使用大ONTAP Select 尺寸的VMware。
 
 直通設備和 RDM 之間還有一個區別。 RDM可以對應到正在執行的虛擬機器。直通設備需要重新啟動虛擬機器。這意味著任何 NVMe 驅動器更換或容量擴展（驅動器添加）過程都需要重新啟動ONTAP Select虛擬機。驅動器更換和容量擴展（驅動器添加）操作由ONTAP Deploy 中的工作流程驅動。 ONTAPONTAP管理單節點叢集的ONTAP Select重新啟動以及 HA 對的故障轉移/故障復原。但是，請務必注意使用 SSD 資料磁碟機（無需ONTAP Select重新啟動/故障轉移）和使用 NVMe 資料磁碟機（需要ONTAP Select重新啟動/故障轉移）之間的差異。
+
+
+NOTE: ONTAP Select 支援在 Hyper-V Hypervisor 上將 NVMe 磁碟機作為 SCSI 磁碟。ONTAP Select 不支援在 Hyper-V Hypervisor 上將 NVMe 磁碟機作為離散裝置指派（直通裝置）。
 
 
 
@@ -128,8 +131,8 @@ NOTE: 根Aggregate的RAID群組類型取決於可用的磁碟數目。支援：�
 
 
 
-[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
-== 將 ONTAP Select 磁碟與對應的 ESXi 或 KVM 磁碟相匹配
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-hyper-v-or-kvm-disk]]
+== 將 ONTAP Select 磁碟與對應的 ESXi、Hyper-V 或 KVM 磁碟相匹配
 
 通常將各個磁碟標示為NET x.y。ONTAP Select您可以使用下列ONTAP 的fuse命令來取得磁碟UUID：
 
@@ -149,7 +152,7 @@ Plex: -This UID can be matched with the device UID displayed in the ‘storage d
 ----
 image:ST_21.jpg["將 ONTAP Select 磁碟與對應的 ESXi 磁碟進行匹配"]
 
-在 ESXi 或 KVM shell 中，您可以輸入下列命令來使給定實體磁碟（由其 naa.unique-id 標識）的 LED 閃爍。
+在 ESXi、Hyper-V 或 KVM shell 中，您可以輸入下列命令，讓特定實體磁碟（由其 naa.unique-id 識別）的 LED 閃爍。
 
 [role="tabbed-block"]
 ====
@@ -158,6 +161,13 @@ image:ST_21.jpg["將 ONTAP Select 磁碟與對應的 ESXi 磁碟進行匹配"]
 [source, cli]
 ----
 esxcli storage core device set -d <naa_id> -l=locator -L=<seconds>
+----
+--
+.Hyper-V
+--
+[source, cli]
+----
+Enable-PhysicalDiskIdentification -UniqueId <unique_id>
 ----
 --
 .KVM

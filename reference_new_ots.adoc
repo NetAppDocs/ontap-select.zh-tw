@@ -19,6 +19,23 @@ summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。
 
 
 
+[[ontap-select-9-20-1]]
+== ONTAP Select 9.20.1
+
+支援 Hyper-V Hypervisor:: 從 ONTAP Select 9.20.1 開始，您可以在執行 Windows Server 2025 和 Windows Server 2022 的 Microsoft Hyper-V Hypervisor 上部署 ONTAP Select 叢集。您可以使用 ONTAP Select Deploy 管理公用程式在支援的 Hyper-V 主機上設定和管理單節點、雙節點和四節點叢集。
++
+--
+* 了解link:plan-ots-hyper-v.html["Hyper-V 儲存設備需求"]
+* 了解link:hyper-v-host-configuration-and-preparation-checklist.html["Hyper-V 主機組態與準備清單"]
+* 瞭解 link:task_install_deploy.html["在 Hyper-V 主機上安裝 ONTAP Select Deploy"]
+
+
+--
+支援基於 TLS 的 NFS:: 從 ONTAP Select 9.20.1 開始，ONTAP Select 支援使用 CLI 透過 TLS 執行 NFS。不支援 System Manager。如需詳細資訊，請參閱 link:reference_lic_ontap_features.html#licensed-ontap-features["預設授權的 ONTAP 功能"]。
+
+
+
+
 [[ontap-select-9-19-1]]
 == ONTAP Select 9.19.1
 
@@ -28,7 +45,7 @@ summary: 目前版本包含 ONTAP Select 的幾項新功能或改良功能。
 ONTAP Select 不支援雲端金鑰管理程式。
 
 --
-支援 Advanced Micro Devices (AMD) 處理器:: 從 ONTAP Select 9.19.1 開始，ONTAP Select 支援在 Kernel-Based Virtual Machine（KVM）和 ESXi Hypervisor 主機上使用 AMD 處理器。如需詳細資訊，請參閱link:reference_plan_ots_hardware.html["VMware 虛擬機器管理程式與硬體注意事項"]。
+支援 Advanced Micro Devices (AMD) 處理器:: 從 ONTAP Select 9.19.1 開始，ONTAP Select 支援在 ESXi 和基於內核的虛擬機器（KVM）Hypervisor 主機上使用 AMD 處理器。如需詳細資訊，請參閱 link:reference_plan_ots_hardware.html["VMware 虛擬機器管理程式與硬體注意事項"]。
 增強VMware ESXi支援:: ONTAP Select 9.19.1 包含對 VMware ESXi 9.1 的支援。
 
 
@@ -78,7 +95,7 @@ ONTAP Select 產品下載選項的更新:: NetApp 支援網站上的 ONTAP Selec
 
 
 --
-link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
+link:task_cluster_expansion_contraction.html["了解叢集的擴展和收縮，以及支援的 ESXi 和 KVM Hypervisor 版本"]。
 
 --
 已更新 KVM Hypervisor 支援:: 從 ONTAP Select 9.18.1 開始，Rocky Linux 10.1 支援 KVM Hypervisor。
@@ -101,12 +118,12 @@ KVM 主機上本機連接的 NVMe 磁碟的軟體 RAID 支持:: ONTAP Select 9.1
 link:concept_stor_swraid_local.html["了解本地連接儲存的軟體 RAID 設定服務"] 。
 
 --
-支援KVM主機叢集擴容與縮容:: 從ONTAP Select 9.17.1 開始，基於核心的虛擬機器 (KVM) 和 ESXi 虛擬機器管理程式主機均支援叢集擴充和收縮功能。對於ONTAP Select 9.16.1 和 9.15.1，僅 ESXi 虛擬機器管理程式主機支援叢集擴充和收縮功能。
+支援KVM主機叢集擴容與縮容:: 從 ONTAP Select 9.17.1 開始，叢集擴充和收縮功能同時支援 ESXi 和基於內核的虛擬機器（KVM）Hypervisor 主機。對於 ONTAP Select 9.16.1 和 9.15.1，叢集擴充和收縮僅支援 ESXi Hypervisor 主機。
 +
 --
 您可以使用現有ONTAP Select叢集上的叢集擴展和收縮功能將叢集規模從六節點增加到八節點，或將叢集規模從八節點減少到六節點。
 
-link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
+link:task_cluster_expansion_contraction.html["了解叢集的擴展和收縮，以及支援的 ESXi 和 KVM Hypervisor 版本"]。
 
 --
 增強對 ESXi 主機上的叢集擴展和收縮的支持:: 從ONTAP Select 9.17.1 開始，ESXi 主機上的六節點叢集和十二節點叢集之間支援叢集擴展和收縮：
@@ -128,7 +145,7 @@ link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及�
 
 
 --
-link:task_cluster_expansion_contraction.html["了解叢集擴充和收縮以及支援的 KVM 和 ESXi 虛擬機器管理程式版本"] 。
+link:task_cluster_expansion_contraction.html["了解叢集的擴展和收縮，以及支援的 ESXi 和 KVM Hypervisor 版本"]。
 
 --
 支援 SnapMirror 雲端:: 從 ONTAP Select 9.17.1 開始，ONTAP Select 支援 SnapMirror cloud。ONTAP Select 預設不提供 SnapMirror cloud 授權。部署 ONTAP Select 9.17.1 叢集或將現有 ONTAP Select 叢集升級至 9.17.1 版本時，您需要申請 SnapMirror cloud 授權。如需更多資訊，請參閱link:reference_lic_ontap_features.html#other-ontap-features["個別授權的功能ONTAP"]。
@@ -144,7 +161,7 @@ ONTAP Select Deploy 和 ONTAP Select for ESXi 支援配置 ONTAP Select 單節�
 ====
 若要執行內容庫操作，您需要存取額外的權限等級。如果您在 vSAN ESA 部署中使用受限角色，則必須擁有此存取權限。
 
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["了解內容庫操作的存取權限級別"].
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["了解內容庫操作的存取權限級別"]。
 
 ====
 --
@@ -280,7 +297,7 @@ NetApp 強烈建議客戶規劃並執行從 ONTAP Select for KVM 到任何其他
 --
 * 叢集MTU
 +
-您必須手動將叢集MTU大小調整為8800、才能部署叢集以因應額外的負荷。VMware指南是在使用NSX T時允許使用200位元組的緩衝區
+您必須在部署叢集之前手動將叢集最大傳輸單元（MTU）大小調整為 8800，以因應額外的例行成本。VMware 建議在使用 NSX-T 時預留 200 位元組的緩衝區。
 
 * 網路4x10Gb組態
 +

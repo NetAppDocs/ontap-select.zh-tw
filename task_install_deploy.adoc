@@ -17,7 +17,12 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 您需要安裝ONTAP Select 「整合式」管理公用程式、並使用公用程式來建立ONTAP Select 一個「叢集」。
 
 .開始之前
-您已審閱 link:kvm-host-configuration-and-preparation-checklist.html["安裝前檢查清單"]。
+您已檢閱 Hypervisor 主機的安裝前檢查清單：
+
+* link:esxi-host-configuration-and-preparation-checklist.html["ESXi 主機清單"]
+* link:hyper-v-host-configuration-and-preparation-checklist.html["Hyper-V 主機檢查清單"]
+* link:kvm-host-configuration-and-preparation-checklist.html["KVM 主機檢查清單"]
+
 
 
 
@@ -30,7 +35,7 @@ summary: 您需要安裝ONTAP Select 「整合式」管理公用程式、並使�
 https://mysupport.netapp.com/site/user/registration["您擁有註冊的 NetApp 支援網站帳戶"^]。
 
 .關於這項工作
-ONTAP Select Deploy 管理實用程式以虛擬機器（VM）的形式打包，並基於開放虛擬化格式（OVF）標準。單一壓縮檔案帶有 `OVA` ESXi 主機專用後綴和 `TGZ` KVM 主機專用後綴。此虛擬機器提供 Deploy 伺服器和 ONTAP Select 節點的安裝映像。
+ONTAP Select Deploy 管理公用程式以基於開放式虛擬化格式（Open Virtualization Format）的虛擬機器（VM）形式打包。單一壓縮檔案具有適用於 ESXi 主機的 `ova`、適用於 Hyper-V 的 `vhdx.tgz`，以及適用於 KVM 主機的 `raw.tgz`後綴。此虛擬機器提供部署伺服器和 ONTAP Select 節點的安裝映像。
 
 .步驟
 . 存取 link:https://mysupport.netapp.com/site/downloads/["NetApp 支援網站下載"^] 頁面。
@@ -90,10 +95,15 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 [[step-3-deploy-the-virtual-machine]]
 == 步驟 3：部署虛擬機
 
-使用 OVF VM 映像安裝並啟動ONTAP Select Deploy VM。作為安裝過程的一部分，您需要設定網路介面以使用 DHCP 或靜態 IP 設定。
+在 Hypervisor 主機上建立 ONTAP Select Deploy 虛擬機器。
 
-.開始之前
 [role="tabbed-block"]
+====
+.ESXi
+--
+使用 OVF 虛擬機器映像在 ESXi 主機上安裝並啟動 ONTAP Select Deploy 虛擬機器。在安裝過程中，您會設定網路介面以使用 DHCP 或靜態 IP 組態。
+
+--
 ====
 .ESXi
 --
@@ -127,17 +137,12 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 --
+[]
 ====
 .關於這項工作
 如果您使用vSphere、則「部署OVF範本精靈」會提供表單、以提供所有部署組態資訊、包括網路組態。不過、如果您選擇不使用此表單、則可以改用部署 VM 的主控台來設定網路。
 
 .步驟
-您所遵循的步驟取決於您是使用 ESXi 還是 KVM Hypervisor 。
-
-[role="tabbed-block"]
-====
-.ESXi
---
 . 存取vSphere用戶端並登入。
 . 瀏覽至階層中的適當位置、然後選取*部署OVF範本*。
 . 選擇 OVA 檔案並完成 Deploy OVF Template 精靈。選擇適合您環境的選項。
@@ -169,8 +174,131 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 --
-.KVM
+
 --
+使用「新增虛擬機器精靈」在 Hyper-V 主機上安裝並啟動 ONTAP Select Deploy VM。
+
+.開始之前
+請確認 Hyper-V 主機符合下列要求：
+
+[cols="1,2"]
+|===
+| 要求 | 價值 
+
+
+| Hyper-V 角色 | 已安裝，包括 Hyper-V PowerShell 模組 
+
+
+| 虛擬機器世代 | 第一代 
+
+
+| vCPU | 2 
+
+
+| 記憶 | 4GB，靜態（動態記憶體容量已停用） 
+
+
+| 開機磁碟 | 連接到 IDE 控制器 0，位置 0 
+
+
+| 可用磁碟空間 | 用於儲存虛擬機器磁碟的 Volume 上至少需要 40GB 的空間 
+
+
+| 歸檔工具 | tar，包含在 Windows Server 2019 及更新版本中 
+|===
+請確認您擁有下列資訊：
+
+[cols="1,2"]
+|===
+| 資訊 | 說明 
+
+
+| 虛擬機器名稱 | 部署虛擬機器的名稱，例如 ONTAP-deploy-HV 
+
+
+| 虛擬交換器名稱 | 外部虛擬交換器的名稱，例如 ONTAP_Vswitch 
+
+
+| 實體網路卡名稱 | 連接至 Deploy 虛擬機器網路的主機網路介面卡 
+
+
+| VLAN ID | 僅當上游交換器連接埠需要有標籤的流量時才需要 
+
+
+| 主機名稱 | Deploy 虛擬機器的 FQDN 或簡短主機名稱 
+
+
+| 管理員密碼 | admin 帳戶的密碼，在首次開機時設定 
+|===
+定義靜態網路組態時，您需要下列附加資訊：
+
+* 部署 VM 的 IP 位址
+* 網路遮罩
+* 閘道（路由器）的IP位址
+* 主要DNS伺服器的IP位址
+* 第二部DNS伺服器的IP位址
+* DNS搜尋網域
+
+
+.關於這項工作
+建立外部虛擬交換器會短暫中斷實體網卡上的網路流量。如果您透過實體網卡遠端連線到主機，請使用帶外控制台（例如伺服器 BMC）或其他網路介面卡，以免失去存取。
+
+.步驟
+. 在 Hyper-V 管理員中，選擇 *新增* > *虛擬機器* 以開啟「新增虛擬機器精靈」。
+. 選取 *下一步*。
+. 輸入虛擬機器名稱，然後選擇 *下一步*。
+. 選擇 *第一代*，然後選擇 *下一步*。
++
+
+NOTE: ONTAP Select with Hyper-V 不支援第二代虛擬機器。
+
+. 輸入記憶體容量，然後選擇 *Next*。
++
+
+NOTE: 最低記憶體容量要求為 4GB。
+
+. 從下拉清單中選擇您的虛擬交換器，然後選擇 *下一步*。
+. 選擇 *使用現有虛擬硬碟* > *瀏覽*，然後找到並選擇  `vhdx.tgz` 映像檔案。
+. 選取 *下一步*。
+. 確認組態，然後選取 *完成*。
+. 如有需要、您可以使用 VM 主控台設定部署網路：
++
+.. 等待下列提示：
++
+[listing]
+----
+Host name :
+----
+.. 鍵入主機名稱並選擇 *Enter* 。
+.. 等待下列提示：
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. 鍵入 *n* 可定義靜態 IP 組態，或鍵入 *y* 使用 DHCP ，然後選取 *Enter* 。
+.. 如果您選擇靜態組態、請視需要提供所有網路組態資訊。
+
+
+
+
+--
+
+--
+使用 OVF 虛擬機器映像在 KVM 主機上安裝並啟動 ONTAP Select Deploy 虛擬機器。作為安裝程序的一部分，您設定網路介面以使用 DHCP 或靜態 IP 組態。
+
+.開始之前
+建立 VM 時，您必須擁有要使用的組態資訊，包括 VM 的名稱、外部網路和主機名稱。定義靜態網路組態時，您需要下列額外資訊：
+
+* 部署 VM 的 IP 位址
+* 網路遮罩
+* 閘道（路由器）的IP位址
+* 主要DNS伺服器的IP位址
+* 第二部DNS伺服器的IP位址
+* DNS搜尋網域
+
+
+.步驟
 . 在 Linux 伺服器登入 CLI ：
 +
 [listing]
@@ -220,6 +348,8 @@ Use DHCP to set networking information? [n]:
 
 
 --
+
+--
 ====
 
 
@@ -231,7 +361,7 @@ Sign in Web 使用者介面以確認 Deploy 公用程式可用並執行初始組
 .步驟
 . 使用IP位址或網域名稱、將瀏覽器指向Deploy公用程式：
 +
-https://<ip_address>/`
+`\https://<IP_address>/`
 
 . 提供系統管理員（admin）帳戶名稱和密碼並登入。
 . 如果顯示 * 歡迎使用 ONTAP Select * 快顯視窗、請檢閱必要條件、然後選取 * 確定 * 繼續。

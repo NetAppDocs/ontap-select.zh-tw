@@ -100,49 +100,6 @@ license show
 
 [role="tabbed-block"]
 ====
-.KVM
---
-您必須登錄要執行 ONTAP Select 節點的 Hypervisor 主機。在此過程中、部署管理公用程式會驗證至 KVM 主機。
-
-.關於這項工作
-如果需要多個虛擬機器管理程式主機，請使用此程序新增每個主機。
-
-.步驟
-. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
-. 註冊主機：
-+
-[source, cli]
-----
-host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
-----
-+
-範例輸出：
-
-+
-[listing]
-----
-host register -name 10.234.81.14 -hypervisor-type KVM -username root
-----
-+
-出現提示時、請提供主機帳戶的密碼。
-
-. 顯示主機的狀態、並確認已驗證：
-+
-[source, cli]
-----
-host show -name <FQDN|IP> -detailed
-----
-+
-範例輸出：
-
-+
-[listing]
-----
-host show -name 10.234.81.14 -detailed
-----
-
-
---
 .ESXi
 --
 在此過程中、部署管理公用程式會驗證到管理主機的vCenter伺服器、或直接驗證到ESXi獨立主機。
@@ -201,6 +158,60 @@ host show -name <FQDN|IP> -detailed
 ....
 host show -name 10.234.81.14 -detailed
 ....
+
+
+--
+.Hyper-V 或 KVM
+--
+您必須登錄要執行 ONTAP Select 節點的 Hypervisor 主機。在此過程中、部署管理公用程式會驗證至 KVM 主機。
+
+.關於這項工作
+如果需要多個虛擬機器管理程式主機，請使用此程序新增每個主機。
+
+.步驟
+. 以系統管理員帳戶使用SSH登入部署公用程式CLI。
+. 註冊主機：
++
+*Hyper-V*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type Hyper-V -username <Hyper-V_username>
+----
++
+*KVM*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
+----
++
+範例輸出：
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+出現提示時、請提供主機帳戶的密碼。
+
+. 顯示主機的狀態、並確認已驗證：
++
+[source, cli]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+範例輸出：
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
 
 
 --
@@ -315,14 +326,14 @@ host network show -host-name 10.234.81.14 -detailed
 +
 [role="tabbed-block"]
 ====
-.ESXi 主機
+.ESXi
 --
 [source, cli]
 ----
 node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -management-networks <network_name> -data-networks <network_name> -internal-network <network_name>
 ----
 --
-.KVM 主機
+.Hyper-V 或 KVM
 --
 [source, cli]
 ----

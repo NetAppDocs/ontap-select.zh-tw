@@ -14,7 +14,7 @@ summary: 準備部署ONTAP Select節點的每個 ESXi 虛擬機器管理程式�
 
 
 [role="lead"]
-準備部署ONTAP Select節點的每個 ESXi 虛擬機器管理程式主機。準備主機時，需要仔細評估部署環境，以確保主機已正確配置並準備好支援ONTAP Select叢集的部署。
+準備部署 ONTAP Select 節點的每台 ESXi Hypervisor 主機。確保主機設定正確，並已準備好支援 ONTAP Select 叢集的部署。
 
 
 NOTE: ONTAP Select Deploy 管理公用程式不會執行虛擬機器管理程式主機所需的網路和儲存配置。您必須在部署ONTAP Select叢集之前手動準備每個主機。

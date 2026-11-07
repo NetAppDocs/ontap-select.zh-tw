@@ -22,5 +22,5 @@ summary: 您可以存取ONTAP Select 執行VMware ESXi的ESXi虛擬機器的視�
 .步驟
 . 存取vSphere用戶端並登入。
 . 瀏覽至階層中的適當位置、找出ONTAP Select 該虛擬機器。
-. 在虛擬機器上按一下滑鼠右鍵，然後選取 *Open Console* 。
+. 以滑鼠右鍵按一下虛擬機器，然後選取 *開啟主控台*。
 

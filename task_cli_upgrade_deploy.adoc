@@ -16,7 +16,7 @@ summary: 您可以使用命令列介面、就地升級現有的部署公用程�
 [role="lead"]
 使用 ONTAP Select Deploy 實用程式 CLI 就地升級現有的 ONTAP Select Deploy 實用程式虛擬機器。
 
-您可以從 ONTAP Select Deploy 9.18.1 或 9.17.1 直接升級到 ONTAP Select Deploy 9.19.1。要從更早的版本（例如 ONTAP Select Deploy 9.16.1）升級，您必須先升級到 ONTAP Select Deploy 9.17.1 或 9.18.1，然後再升級到 ONTAP Select Deploy 9.19.1。
+您可以從 ONTAP Select Deploy 9.19.1 或 9.18.1 直接升級到 ONTAP Select Deploy 9.20.1。要從更早的版本（例如 ONTAP Select Deploy 9.17.1）升級，您必須先升級到 ONTAP Select Deploy 9.18.1 或 9.19.1，然後再升級到 ONTAP Select Deploy 9.20.1。
 
 [NOTE]
 ====

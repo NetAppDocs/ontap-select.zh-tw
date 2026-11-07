@@ -25,73 +25,98 @@ NOTE: 通常不支援含有硬體相依性的支援功能。ONTAP ONTAP Select
 [[licensed-ontap-features]]
 == 預設授權的 ONTAP 功能
 
-ONTAP Select 支援下列 ONTAP 功能，並依預設授權：
+ONTAP Select 支援以下 ONTAP 功能，且預設情況下已獲得授權。
 
-* 自主勒索軟體保護（ ARP ）（手動更新）
-* CIFS
-* 重複資料刪除與壓縮
-* 使用金鑰管理互通性協定 (KMIP) 進行外部金鑰管理
-+
-了解更多link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["啟用和設定外部金鑰管理"^]。
-
-* FlexCache
-+
-ONTAP Select 支援具有回寫功能的 FlexCache 快取磁碟區。不支援具有回寫功能的 FlexCache 來源磁碟區。
-
-+
-link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["深入瞭解 FlexCache 與 ONTAP Select 的回寫功能"]
-
-* FlexClone
-* iSCSI
-* NDMP
-* NetApp Volume Encryption（僅限非受限國家/地區）
-* NFS
-* NVMe over TCP
-* 支援多租戶共享ONTAP
-* SS3 ONTAP
-* S3 SnapMirror
-* SnapLock Select
-+
-SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。
-
-+
-瞭解 link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^]
-
-* SnapMirror
-+
-ONTAP Select 不支援非同步 SnapMirror 中的一致性群組。
-
-* SnapRestore
-* SnapVault
-* 儲存 VM 災難恢復（ SVM DR ）
-+
-ONTAP Select 支援 SVM DR 作為來源和目的地，最多支援 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本到版本 +2。例如，ONTAP Select 9.16.1 來源可以連接到目的地 ONTAP 版本 9.16.1、9.17.1 或 9.18.1。
+[cols="1,1,1"]
+|===
+| 功能 | 了解 | 附註 
 
 
+| 自主勒索軟體防護（ARP） | link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP 自主勒索軟體保護"^] | ONTAP Select 僅支援 ARP 手冊更新。 
 
+
+| CIFS | link:https://docs.netapp.com/us-en/ontap/smb-admin/index.html["ONTAP SMB"^] |  
+
+
+| 重複資料刪除與壓縮 | link:https://docs.netapp.com/us-en/ontap-restapi/storage_volumes_endpoint_overview.html["管理儲存設備 Volume"^] |  
+
+
+| 使用金鑰管理互通性協定 (KMIP) 進行外部金鑰管理 | link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["啟用與設定外部金鑰管理"^] |  
+
+
+| FlexCache | link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["ONTAP FlexCache 回寫"^] | ONTAP Select 支援具備回寫功能的 FlexCache 快取 Volume。*注意*：搭配 ONTAP Select 的 FlexCache 回寫功能有一些限制。如需詳細資訊，請參閱 link:concept_ots_overview.html#flexcache-write-back-with-ontap-select["FlexCache 使用 ONTAP Select 進行回寫"]。 
+
+
+| FlexClone | link:https://docs.netapp.com/us-en/ontap/volumes/flexclone-efficient-copies-concept.html["ONTAP FlexClone Volume"^] |  
+
+
+| iSCSI  a| 
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_credentials_endpoint_overview.html["管理 iSCSI 憑證"^]
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_services_endpoint_overview.html["管理 iSCSI 服務"^]
+* link:https://docs.netapp.com/us-en/ontap-restapi/protocols_san_iscsi_sessions_endpoint_overview.html["檢視 iSCSI 工作階段"^]
+
+|  
+
+
+| NDMP | link:https://docs.netapp.com/us-en/ontap/tape-backup/ndmp-management-concept.html["適用於 ONTAP FlexVol Volume 的 NDMP"^] |  
+
+
+| NetApp 磁碟區加密 | link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["ONTAP NetApp Volume 和彙總加密"^] | ONTAP Select 僅在非限制國家/地區支援 NetApp Volume 加密。 
+
+
+| NFS | link:https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["用於 NFS 協定的 ONTAP 檔案存取"^] |  
+
+
+| 基於 TLS 的 NFS | link:https://docs.netapp.com/us-en/ontap/nfs-admin/enable-nfs-over-tls-task.html["啟用基於 TLS 的 NFS"^] | ONTAP Select 支援透過 CLI 使用 NFS over TLS。不支援 System Manager。 
+
+
+| NVMe over TCP | link:https://docs.netapp.com/us-en/ontap-restapi/protocols_nvme_services_endpoint_overview.html["管理 NVMe 服務"^] |  
+
+
+| 支援多租戶共享ONTAP | link:https://docs.netapp.com/us-en/ontap/concepts/svm-use-cases-concept.html["ONTAP SVM 使用案例"^] |  
+
+
+| SS3 ONTAP | link:https://docs.netapp.com/us-en/ontap/s3-config/index.html["ONTAP S3 組態"^] |  
+
+
+| S3 SnapMirror | link:https://docs.netapp.com/us-en/ontap/s3-snapmirror/index.html["ONTAP SnapMirror S3"^] |  
+
+
+| SnapLock Select | link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^] | SnapLock Select 是 ONTAP SnapLock 專為 ONTAP Select 設計的實作，包含 SnapLock Enterprise。但不包含 SnapLock Compliance。 
+
+
+| SnapMirror | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["ONTAP SnapMirror 非同步災難恢復"^] | ONTAP Select 不支援非同步 SnapMirror 中的一致性群組。 
+
+
+| SnapRestore | link:https://docs.netapp.com/us-en/ontap/data-protection/restore-contents-volume-snapshot-task.html["從 ONTAP 快照恢復 Volume 的內容"^] |  
+
+
+| SnapMirror DR，歸檔（以前稱為 SnapVault） | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-workflow-concept.html["ONTAP SnapMirror 複寫工作流程"^] |  
+
+
+| 儲存 VM 災難恢復（ SVM DR ） | link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-svm-replication-concept.html["ONTAP SnapMirror SVM 複寫"^] | ONTAP Select 支援 SVM DR 作為來源和目的地，最多支援 16 個關係。SVM DR 支援僅限於使用來源 ONTAP 版本到版本 +2。例如，ONTAP Select 9.16.1 來源可以連接到目的地 ONTAP 版本 9.16.1、9.17.1 或 9.18.1。 
+|===
 
 
 [[ontap-features-that-are-separately-licensed]]
 [[other-ontap-features]]
 == 個別授權的功能ONTAP
 
-對於任何未預設授權的 ONTAP 功能、您需要取得個別授權、包括：
+您需要為下列 ONTAP Select 支援但預設未授權的 ONTAP 功能取得分隔的授權。
 
-* FabricPool
-+
-
-NOTE: 使用 StorageGRID 時不需要 FabricPool 授權。
-
-* SDS（不含高級授權）MetroCluster ONTAP Select
-* SnapMirror 雲端
-+
-您需要 link:https://mysupport.netapp.com/site/help["開啟非技術支援案例"^] 以獲得 SnapMirror 雲端授權。
-
-+
-瞭解 link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror 雲端備份至物件儲存設備"^]
+[cols="1,1,1"]
+|===
+| 功能 | 了解 | 附註 
 
 
+| FabricPool | link:https://docs.netapp.com/us-en/ontap/concepts/fabricpool-concept.html["ONTAP FabricPool"^] | 使用 StorageGRID 時不需要 FabricPool 授權。 
 
+
+| 部分SDS MetroCluster | link:https://docs.netapp.com/us-en/ontap/concepts/mcc-sds-ontap-select.html["適用於 ONTAP Select 的 MetroCluster SDS"^] | 這是 ONTAP Select 高級授權產品。 
+
+
+| SnapMirror 雲端 | link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror 雲端備份至物件儲存設備"^] | 您需要 link:https://mysupport.netapp.com/site/help["開啟非技術支援案例"^] 以獲得 SnapMirror 雲端授權。 
+|===
 .相關資訊
 * link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["請比較 ONTAP Select 和 ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["了解 NetApp ONTAP 主授權金鑰"^]
