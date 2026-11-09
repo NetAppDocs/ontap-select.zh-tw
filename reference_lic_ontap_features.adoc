@@ -112,7 +112,7 @@ ONTAP Select 支援以下 ONTAP 功能，且預設情況下已獲得授權。
 | FabricPool | link:https://docs.netapp.com/us-en/ontap/concepts/fabricpool-concept.html["ONTAP FabricPool"^] | 使用 StorageGRID 時不需要 FabricPool 授權。 
 
 
-| 部分SDS MetroCluster | link:https://docs.netapp.com/us-en/ontap/concepts/mcc-sds-ontap-select.html["適用於 ONTAP Select 的 MetroCluster SDS"^] | 這是 ONTAP Select 高級授權產品。 
+| 部分SDS MetroCluster | link:reference_plan_ots_mcc_sds.html["適用於 ONTAP Select 的 MetroCluster SDS"] | 這是 ONTAP Select 高級授權產品。 
 
 
 | SnapMirror 雲端 | link:https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["SnapMirror 雲端備份至物件儲存設備"^] | 您需要 link:https://mysupport.netapp.com/site/help["開啟非技術支援案例"^] 以獲得 SnapMirror 雲端授權。 

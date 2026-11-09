@@ -166,7 +166,7 @@ Deploy 使用 VMware VIX API 與 vCenter 伺服器和 ESXi 主機通訊。首先
 --
 .KVM
 --
-在 KVM 環境中安裝 ONTAP Select Deploy 實用程式之前，您應該考慮 Hypervisor 環境的一些特定要求和限制。
+在 KVM 環境中安裝 ONTAP Select Deploy 實用程式之前，您應該考慮 KVM Hypervisor 環境特有的幾項需求與限制。
 
 .硬體需求
 確認部署 ONTAP Select 的 Linux KVM Hypervisor 主機符合下列基本需求：
@@ -216,10 +216,10 @@ Deploy 使用 VMware VIX API 與 vCenter 伺服器和 ESXi 主機通訊。首先
 ====
 
 
+[[vmware-vsphere-privileges-for-esa]]
 [[vmware-vcenter-server-considerations]]
-== VMware vCenter 伺服器注意事項
+== ESA 的 VMware vSphere 權限
 
-.ESA 的 VMware vSphere 權限
 要在 vCenter 中建立和管理 vSAN Express Storage Architecture (ESA)，您需要以下 vSphere 內容庫權限：
 
 

@@ -191,7 +191,7 @@ ONTAP Select 支援在 Hyper-V Hypervisor 上將 NVMe 磁碟機作為 SCSI 磁�
 .支援vSAN或外部陣列類型的資料存放區嗎？ONTAP Select
 ONTAP Select Deploy 和 ONTAP Select for ESXi 支援使用 vSAN 或外部陣列類型的資料存放區作為其儲存資源池來配置 ONTAP Select 單節點叢集。
 
-ONTAP Select Deploy 和 ONTAP Select for KVM 支援使用外部陣列上的共享的邏輯儲存資源池類型來組態 ONTAP Select 單節點叢集。儲存資源池可以基於 iSCSI、FC/FCoE 和 NFS。不支援其他類型的儲存資源池。
+ONTAP Select Deploy 和 ONTAP Select for KVM 支援使用外部陣列上的共享的邏輯儲存資源池類型來組態 ONTAP Select 單節點叢集。儲存資源池可以基於 iSCSI 或 FC/FCoE。不支援其他類型的儲存資源池。
 
 支援共享儲存上的多節點 HA 叢集。
 
