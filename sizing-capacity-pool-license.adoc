@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: sizing-capacity-pool-license.html 
-keywords: license, licensing, Capacity Tiers, usable, space 
-summary: Capacity Tiers 授權是基於每個節點管理的底層磁碟容量，而非節點、HA-pair 或叢集的可用容量。每個 Capacity Tiers 授權都分配給一個特定容量的個別節點序號，且需要隨附的支援合約。 
+keywords: license, licensing, Capacity Pools, usable, space 
+summary: Capacity Pools 授權是基於每個節點代管的底層磁碟容量，而非節點、HA 配對或叢集的可用容量。每個 Capacity Pools 授權都分配給一個特定的節點序號，並指定容量，且需要相應的支援合約。 
 ---
 = 確定 ONTAP Select 的容量集區授權大小
 :hardbreaks:
@@ -14,13 +14,23 @@ summary: Capacity Tiers 授權是基於每個節點管理的底層磁碟容量�
 
 
 [role="lead"]
+根據可用空間和叢集組態例行成本來計算 ONTAP Select Capacity Pool 授權大小，以確保部署有足夠的授權容量。
+
+在決定 Capacity Pools 授權大小之前，您應該審查下列考量事項：
+
+* 在硬體 RAID （VMDK） 和軟體 RAID （NVMe 或 SSD） 組態中，授權使用量是根據分配給資料彙總的資料磁碟或資料分割區來計算。
+* ONTAP Select 將 RAID-DP 同位元檢查磁碟和分割區排除在授權使用量之外。您僅針對新增至彙總的資料分割區和磁碟取得授權
+* 備用磁碟機容量不計入彙總可用容量，也不使用授權容量。
+* 同位元檢查磁碟專用於資料保護。它們不為磁碟區和資料提供可用的儲存設備，也不計入可用容量。
+
+
 容量池授權的授權容量以完整 TB 為單位，最小值為 2 TB。授權容量的計算方法是將可用空間量乘以例行成本係數。例行成本係數用於估算將從可用空間中扣除的 ONTAP Select 軟體例行成本容量，並適用於確定 NVMe、SSD、HDD 或虛擬磁碟機的 ONTAP Select 容量。單節點叢集與多節點（基於 HA 配對）叢集的例行成本係數有所不同：
 
 * 單節點叢集的開銷係數為 1.13
 * 多節點叢集的開銷係數為 2.67
 
 
-您需要根據可用空間計算授權容量，以確保有足夠的容量來滿足您的部署。例如，您需要 20 TB 的可用容量用於 HA 配對（每個節點 10 TB）：
+您需要根據可用空間計算授權容量，以確保您有足夠的容量進行部署。例如，您需要為 HA 配對提供 20 TB 的可用容量（每個節點 10 TB）：
 
 * 對於 HA 配對，資料會在兩個節點之間複製以實現備援，因此，對於 HA 配對中的 20 TB 可用容量，每個節點需要 20 TB 的空間，以防其中一個節點離線。
 * 係數 2.67 使每個節點的容量翻倍，並增加了 ONTAP Select 運作所需的例行成本容量（0.67）。

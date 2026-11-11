@@ -3773,12 +3773,10 @@
   <block id="2dd64bd29dd925332151bac56daee54d" category="list-text">SVM-Migrate</block>
   <block id="191cca9b69f6675fd704265efaee5cd4" category="paragraph">ONTAP Select 不支援非同步 SnapMirror 中的一致性群組。</block>
   <block id="4b24c4ea95509e5cbdbe193ec75f463e" category="paragraph">容量池授權的授權容量以完整 TB 為單位，最小值為 2 TB。授權容量的計算方法是將可用空間量乘以例行成本係數。例行成本係數用於估算將從可用空間中扣除的 ONTAP Select 軟體例行成本容量，並適用於確定 NVMe、SSD、HDD 或虛擬磁碟機的 ONTAP Select 容量。單節點叢集與多節點（基於 HA 配對）叢集的例行成本係數有所不同：</block>
-  <block id="b3a8f80cb2ce78cbbf07a7817fabad7d" category="paragraph">您需要根據可用空間計算授權容量，以確保有足夠的容量來滿足您的部署。例如，您需要 20 TB 的可用容量用於 HA 配對（每個節點 10 TB）：</block>
   <block id="863cc3c84b4e89fdd7579f92bb937ebc" category="list-text">對於 HA 配對，資料會在兩個節點之間複製以實現備援，因此，對於 HA 配對中的 20 TB 可用容量，每個節點需要 20 TB 的空間，以防其中一個節點離線。</block>
   <block id="3e0455dedd9dea9911d6347cfe0aee63" category="list-text">係數 2.67 使每個節點的容量翻倍，並增加了 ONTAP Select 運作所需的例行成本容量（0.67）。</block>
   <block id="e1b77540ab30a2b9d111bb1c6ae9524f" category="list-text">每個節點的授權容量為 27 TB (10 x 2.67 = 26.7)。對於 HA 配對，您需要兩個 27 TB 的授權才能擁有 20 TB 的可用容量。</block>
   <block id="60a2cd8b21b5abdd1f9f570f98aead06" category="paragraph">容量層級授權的授權容量以 TB 為單位，最小值為 1 TB。授權容量的計算方法是將可用空間乘以例行成本係數。例行成本係數用於估算 ONTAP Select 軟體例行成本容量，該容量將從可用空間中扣除，並用於確定 NVMe、SSD、HDD 或虛擬磁碟機的 ONTAP Select 容量。單節點叢集和多節點（基於 HA 配對）叢集的例行成本係數有所不同：</block>
-  <block id="ab9e259cd278dabfae81423ce071874c" category="paragraph">您需要根據可用空間計算授權容量，以確保有足夠的容量來滿足您的部署。例如，您需要一個 HA 配對具備 10 TB 的可用容量（每個節點 5 TB）：</block>
   <block id="bd88bf77fede236871bbdaecddefca53" category="list-text">對於 HA 配對，資料會在兩個節點之間進行複製以實現備援，因此，對於 HA 配對中的 10 TB 可用容量，每個節點需要 10 TB 的空間，以防其中一個節點離線。</block>
   <block id="c0945522d1f6ae9ba28c16c4d8e24c38" category="list-text">每個節點的授權容量為 14 TB（5 x 2.67 = 13.35）。對於 HA 配對，您需要兩個 14 TB 的授權才能擁有 10 TB 的可用容量。</block>
   <block id="74b1b9052c3c702d9cea5b8cd980a547" category="paragraph">HA 配對的每個節點：</block>
@@ -4279,4 +4277,14 @@
   <block id="0b3fbf115b7bb8c3a3284542b9840849" category="paragraph">在 KVM 環境中安裝 ONTAP Select Deploy 實用程式之前，您應該考慮 KVM Hypervisor 環境特有的幾項需求與限制。</block>
   <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">ONTAP Select Deploy 和 ONTAP Select for KVM 支援使用外部陣列上的共享的邏輯儲存資源池類型來組態 ONTAP Select 單節點叢集。儲存資源池可以基於 iSCSI 或 FC/FCoE。不支援其他類型的儲存資源池。</block>
   <block id="bf1bf7b2d6495806e380ad07c5f6c4ac" category="cell"><block ref="bf1bf7b2d6495806e380ad07c5f6c4ac" category="inline-link-macro-rx"></block></block>
+  <block id="973e60ac87d2047ed8383fc1a9ccd1ab" category="summary">Capacity Pools 授權是基於每個節點代管的底層磁碟容量，而非節點、HA 配對或叢集的可用容量。每個 Capacity Pools 授權都分配給一個特定的節點序號，並指定容量，且需要相應的支援合約。</block>
+  <block id="77abd6d38068ade401e1cda5d6d4f4bf" category="paragraph">根據可用空間和叢集組態例行成本來計算 ONTAP Select Capacity Pool 授權大小，以確保部署有足夠的授權容量。</block>
+  <block id="fc16ee53985da42d5d6e0c02fdd5f183" category="paragraph">在決定 Capacity Pools 授權大小之前，您應該審查下列考量事項：</block>
+  <block id="afbbd458508df60809b6d4aec77f511e" category="list-text">在硬體 RAID （VMDK） 和軟體 RAID （NVMe 或 SSD） 組態中，授權使用量是根據分配給資料彙總的資料磁碟或資料分割區來計算。</block>
+  <block id="d8d5fad58568a0f0ba995cf205ca4b44" category="list-text">ONTAP Select 將 RAID-DP 同位元檢查磁碟和分割區排除在授權使用量之外。您僅針對新增至彙總的資料分割區和磁碟取得授權</block>
+  <block id="fca20405fb9c0582e499eb228377067f" category="list-text">備用磁碟機容量不計入彙總可用容量，也不使用授權容量。</block>
+  <block id="95970b7eb58e4eefe52eb37d1c8a622d" category="list-text">同位元檢查磁碟專用於資料保護。它們不為磁碟區和資料提供可用的儲存設備，也不計入可用容量。</block>
+  <block id="94d3cb7d191621094c7273b8f519cdcb" category="paragraph">您需要根據可用空間計算授權容量，以確保您有足夠的容量進行部署。例如，您需要為 HA 配對提供 20 TB 的可用容量（每個節點 10 TB）：</block>
+  <block id="914e50a7e70b439cfca1376c40659db4" category="paragraph">在確定 Capacity Tiers 授權大小之前，您應該審查下列考量：</block>
+  <block id="97a23d2070cc57242b398716549eaa47" category="paragraph">您需要根據可用空間計算授權容量，以確保您有足夠的容量進行部署。例如，您需要為 HA 配對提供 10 TB 的可用容量（每個節點 5 TB）：</block>
 </blocks>
