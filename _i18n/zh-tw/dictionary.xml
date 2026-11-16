@@ -855,25 +855,12 @@
   <block id="eebf6ea2ee46e8530008306b8870d60a" category="list-text">它僅支援SSD或NVMe（需要Premium XL授權）磁碟機、用於ONTAP 支援以供支援的實體根磁碟和資料磁碟。</block>
   <block id="c76e75604936e38a9f0ecb8870e09062" category="list-text">它需要獨立的系統磁碟、才能用於ONTAP Select 整個過程中的虛擬機器開機分割區。</block>
   <block id="fa246858b45dc233a0bdb89592ce5ecd" category="list-text">選擇獨立的磁碟（SSD或NVMe磁碟）、為系統磁碟建立資料存放區（在多節點設定中、可建立NVRAM、Boot/CF卡、coredump和資料管理器）。</block>
-  <block id="e706626e85410ea82090ae7851391f6a" category="list-text">術語服務磁碟和系統磁碟可互換使用。</block>
-  <block id="d5286ac0f0cb4a9ebadbf1e2284c0036" category="list-text">服務磁碟實體位於單一實體磁碟（統稱為服務/系統實體磁碟）上、從主機即可看到。該實體磁碟必須包含DAS資料存放區。在叢集部署期間、利用「部署」功能建立這些服務磁碟、以利實現不受故障的VM。ONTAP ONTAP Select</block>
-  <block id="8e06bfc0d19fc77ae0afdb8d915cba44" category="list-text">不可能在ONTAP Select 多個資料存放區或多個實體磁碟機之間進一步分隔出不支援的系統磁碟。</block>
   <block id="ae53f0b18ae561048e9e68da79653a2c" category="list-text">硬體RAID並未過時。</block>
-  <block id="60244f3ca85db5e7a5a991f8d7390183" category="section-title">本機附加儲存設備的軟體RAID組態</block>
-  <block id="44041c5e10d06ec4fea2969c916c19d5" category="paragraph">使用軟體RAID時、不需要硬體RAID控制器是理想的選擇、但如果系統確實有現有的RAID控制器、則必須符合下列要求：</block>
   <block id="7c075be1e0db241c27816a229098fd87" category="admonition">系統管理員必須追蹤ONTAP Select 哪些磁碟機正在由該名虛擬機器使用、並避免在主機上意外使用這些磁碟機。</block>
-  <block id="cf3ece53165fb12e6a62c8c31bb10b74" category="section-title">虛擬與實體磁碟ONTAP Select</block>
-  <block id="047a82130a722cc87d04ce1c3c768e41" category="paragraph">對於使用硬體RAID控制器的組態、實體磁碟備援是由RAID控制器提供。提供一個或多個VMDK、供VMware管理員設定資料集合體。ONTAP Select ONTAP這些VMDK採用RAID 0格式等量分佈、因為使用ONTAP VMware軟體RAID是備援的、效率不彰、而且由於硬體層級提供恢復功能、因此效率不彰。此外、用於系統磁碟的VMDK與用於儲存使用者資料的VMDK位於同一個資料存放區。</block>
-  <block id="c1aafe133c0b3ba98838fb81849a7116" category="paragraph">下圖更詳細地顯示這種關係、強調ONTAP Select 用來保存使用者資料的虛擬化磁碟與用來儲存使用者資料的實體磁碟之間的差異。</block>
-  <block id="cef8adb4c866583d14e938aa050f98d8" category="paragraph">*支援軟體RAID：使用虛擬化磁碟和RDM * ONTAP Select</block>
   <block id="9c6ce597c0c93e3268f8d2583b8cb7f0" category="inline-image-macro">軟件RAID：使用虛擬化的磁碟和RDM ONTAP Select</block>
   <block id="c9e9e00419c44ba1f3635807cbad6fdf" category="paragraph"><block ref="c9e9e00419c44ba1f3635807cbad6fdf" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3ed4b3ccfe42c1bf099f8a9afa7354d4" category="paragraph">系統磁碟（VMDK）位於同一個資料存放區和同一個實體磁碟上。虛擬NVRAM磁碟需要快速且持久的媒體。因此、僅支援NVMe和SSD類型的資料存放區。</block>
   <block id="71a360146fb162de0eac10c2e64c0d5e" category="inline-image-macro">支援NVMe磁碟的支援軟體RAID：使用虛擬化磁碟和傳遞裝置ONTAP Select</block>
   <block id="538c97540e657f23b7d18dc28e89ce28" category="paragraph"><block ref="538c97540e657f23b7d18dc28e89ce28" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6fc33fd5fc34cd4d0e1c573fe07dbfc6" category="paragraph">系統磁碟（VMDK）位於同一個資料存放區和同一個實體磁碟上。虛擬NVRAM磁碟需要快速且持久的媒體。因此、僅支援NVMe和SSD類型的資料存放區。在使用NVMe磁碟機進行資料時、基於效能考量、系統磁碟也應該是NVMe裝置。在All NVMe組態中、最適合使用系統磁碟的是Intel Optane卡。</block>
-  <block id="2171a187e31b22b36301174d9bf05b3a" category="admonition">在目前的版本中、ONTAP Select 不可能在多個資料存放區或多個實體磁碟機之間進一步分隔出系統磁碟。</block>
-  <block id="f318527ee8916e5ca47f3d5ed9945b54" category="paragraph">*單節點叢集*適用的RDD磁碟分割</block>
   <block id="fc8e2c1dda0465d080cba6462209023c" category="inline-image-macro">單節點叢集的RDD磁碟分割</block>
   <block id="7ac31542e221cec8982a853b92968209" category="paragraph"><block ref="7ac31542e221cec8982a853b92968209" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c1c3b52b9fafd2100a63b937535e0f3" category="paragraph">對於單一節點叢集、所有資料分割區都會用來儲存本機（作用中）資料。對於屬於HA配對一部分的節點、會使用一個資料分割區來儲存該節點的本機（作用中）資料、而第二個資料分割區則是用來鏡射HA對等端的作用中資料。</block>
@@ -1225,7 +1212,6 @@
   <block id="e8eaf97de142a452e4a7e36eb009d0dd" category="list-text">選取ONTAP Select 您要用於不支援的NVMe磁碟機。</block>
   <block id="64a4204188e36709c65fb1015fcfaee1" category="inline-image-macro">編輯PCI裝置可用度</block>
   <block id="370dbdfb395c46bb7a54ea411f17b869" category="paragraph"><block ref="370dbdfb395c46bb7a54ea411f17b869" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="60aec31b3251291387e46c00b45b67d4" category="admonition">您需要一個也有NVMe裝置備份的VMFS資料存放區、來裝載ONTAP Select 支援的VMware系統磁碟和虛擬NVRAM。在設定其他NVMe磁碟機以進行PCI傳遞時、請至少保留一個NVMe磁碟機可供此用途使用。</block>
   <block id="58b365b1fc9581d3607e3b5a4075921b" category="inline-image-macro">重新啟動此主機</block>
   <block id="0628d504dd961620b8a3eba11eb48696" category="paragraph"><block ref="0628d504dd961620b8a3eba11eb48696" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9e0dfa4dfcc314b7fbc0b7d29e510db2" category="admonition">每ONTAP Select 個節點最多支援14個NVMe裝置。</block>
@@ -3023,15 +3009,11 @@
   <block id="3ce3947b444d6f91f7a8b85b972fe58a" category="list-text">選擇*刷新*並確認主機的*類型*值為*ESX*或*KVM*。</block>
   <block id="f3a5d576716c34a4548a66aa3126c77d" category="sidebar">KVM 主機檢查清單</block>
   <block id="935f419c21e41ca992af1333488fd110" category="sidebar">ESXi 主機清單</block>
-  <block id="637c87a94a9976e074cd8762dd5e83ec" category="list-text">服務磁碟是ONTAP Select VM 內用於服務各種專案（例如叢集、啟動等）的虛擬磁碟 (VMDK)。</block>
   <block id="4cc17558d82286e7c9b33471e70c4844" category="list-text">您必須停用硬體 RAID 控制器，以便磁碟可以直接呈現給系統（JBOD）。通常，您可以在 RAID 控制器 BIOS 中進行此變更。</block>
-  <block id="a9f1943148bcf4e2c2dec30dea4ba389" category="list-text">或者，硬體 RAID 控制器應處於 SAS HBA 模式。例如，某些 BIOS 設定除了 RAID 之外還允許使用「AHCI」模式，您可以選擇啟用 JBOD 模式。這將啟用直通功能，以便實體磁碟機在主機上可以按原樣顯示。</block>
   <block id="c7aa49dbe6474688abf6e4f77a77963b" category="paragraph">根據控制器支援的最大驅動器數量，可能需要額外的控制器。在 SAS HBA 模式下，請確保 I/O 控制器 (SAS HBA) 至少支援 6Gbps 的速度。不過， NetApp建議使用 12Gbps 的速度。</block>
   <block id="e297f5e737877accfc734b4251306152" category="paragraph">不支援任何其他硬體 RAID 控制器模式或配置。例如，某些控制器允許 RAID 0 支持，這可以人為地啟用磁碟直通功能，但其後果可能不堪設想。支援的實體磁碟（僅限 SSD）大小在 200GB 到 16TB 之間。</block>
-  <block id="82a06c9df229016abb3c4375936e57a8" category="paragraph">使用軟體 RAID 時， ONTAP Deploy 會向ONTAP Select提供一組 VMDK 和實體磁碟原始設備對映 [RDM]（用於 SSD）以及直通或 DirectPath IO 設備（用於 NVMe）。</block>
   <block id="4c311f7693055e2e1706a01241eb5a8f" category="paragraph">每個資料磁碟分為三個部分：一個小的根分割區（條帶）和兩個大小相等的分割區，從而建立在ONTAP Select虛擬機器中可見的兩個資料磁碟。分區使用根資料 (RD2) 模式，如下圖所示，分別針對單節點叢集和高可用性 (HA) 對中的節點。</block>
   <block id="cfb747cea4702a4be972ef230ee7ba2d" category="paragraph"><block ref="44c29edb103a2872f519ad0c9a0fdaaa" prefix="" category="inline-code"></block>表示奇偶校驗驅動器， <block ref="e2fca8135c2fadca093abd79a6b1c0d2" prefix=" " category="inline-code"></block>表示雙奇偶校驗驅動器，且<block ref="5dbc98dcc983a70728bd082d1a47546e" prefix=" " category="inline-code"></block>表示備用驅動器。</block>
-  <block id="e95d355b6009270b0fb78de95e17b376" category="paragraph">ONTAP軟體 RAID 支援下列 RAID 類型：RAID 4、RAID-DP 和RAID-TEC。這些是FAS和AFF平台使用的相同 RAID 結構。對於根配置， ONTAP Select僅支援 RAID 4 和 RAID-DP。當使用RAID-TEC進行資料聚合時，整體保護是 RAID-DP。 ONTAPONTAP Select HA 使用無共享架構，將每個節點的配置複製到另一個節點。這意味著每個節點都必須儲存其根分區及其對等節點根分區的副本。資料磁碟有一個根分割區。這意味著資料磁碟的最小數量取決於ONTAP Select節點是否屬於 HA 對。</block>
   <block id="8512c0ed74c689714d6ae7ab7bcab8a7" category="paragraph">直通設備和 RDM 之間還有一個區別。 RDM可以對應到正在執行的虛擬機器。直通設備需要重新啟動虛擬機器。這意味著任何 NVMe 驅動器更換或容量擴展（驅動器添加）過程都需要重新啟動ONTAP Select虛擬機。驅動器更換和容量擴展（驅動器添加）操作由ONTAP Deploy 中的工作流程驅動。 ONTAPONTAP管理單節點叢集的ONTAP Select重新啟動以及 HA 對的故障轉移/故障復原。但是，請務必注意使用 SSD 資料磁碟機（無需ONTAP Select重新啟動/故障轉移）和使用 NVMe 資料磁碟機（需要ONTAP Select重新啟動/故障轉移）之間的差異。</block>
   <block id="9d249683d287246a4cfcd50471562c4d" category="paragraph">使用軟體 RAID 為ONTAP Select虛擬機器新增容量時，管理員必須考慮實體磁碟機的大小以及所需的磁碟機數量。有關詳細信息，請參閱<block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block> 。</block>
   <block id="9d99b1e4b1f697c0f5feafda2dee7123" category="paragraph">與FAS和AFF系統類似，您只能在現有 RAID 群組中新增容量相等或更大的磁碟機。容量更大的驅動器大小合適。如果您要建立新的 RAID 群組，則新 RAID 群組的大小應與現有 RAID 群組的大小相匹配，以確保整體聚合效能不會下降。</block>
@@ -3540,10 +3522,8 @@
   <block id="ecfa5b2c2f416735004bbecc7aae3d66" category="paragraph">某些版本的 ESXi 上資料存放區的最大大小為 64TB 。</block>
   <block id="1f0de09f405d31316f70685920310fcb" category="paragraph">NVRAM 被放置在獨立的 VMDK 中。將 NVRAM 分割到單獨的 VMDK 中，使得 ONTAP Select VM 能夠使用 vNVMe 驅動程式與其 NVRAM VMDK 進行通訊。此外，這也要求 ONTAP Select VM 使用硬體版本 13，該版本與 ESXi 8.0 及更高版本相容。</block>
   <block id="e4dfa775bd72ac616fe3a8bf63b13327" category="admonition">NVRAM 分割區位於獨立的 VMDK 檔案中。此 VMDK 檔案透過 ESXi 8.0 或更高版本中提供的 vNVME 驅動程式進行掛載。對於使用軟體 RAID 的 ONTAP Select 安裝而言，此變更尤其重要，因為此類安裝無法利用 RAID 控制器快取。</block>
-  <block id="e73c8bdb42ba39fc01cfc4f44eb59dbe" category="paragraph">*多節點叢集（HA 配對）的 RDD 磁碟分割*</block>
   <block id="0d1cd3826c99976140121149797365db" category="inline-image-macro">多節點叢集（ HA 配對）的 RDD 磁碟分割</block>
   <block id="82089a7d5e0786a51a09161cabba34f7" category="paragraph"><block ref="82089a7d5e0786a51a09161cabba34f7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="91b76b92c43f4bf4b92ab84eb2fb7a5e" category="paragraph">ESXi 和 KVM 虛擬機器管理程式不支援將 NVMe 磁碟作為裸裝置對應（RDM）使用。若要讓 ONTAP Select 直接控制 NVMe 磁碟、您必須在 ESXi 或 KVM 中將這些磁碟機配置為直通裝置。將 NVMe 裝置配置為直通裝置需要伺服器 BIOS 的支援、而且您可能需要重新啟動主機。此外、每個主機可指派的直通裝置數量有限制、具體數量可能因平台而異。不過、ONTAP Deploy 將每個 ONTAP Select 節點的 NVMe 裝置數量限制為 14 個。這表示 NVMe 組態以犧牲總容量為代價、提供了非常高的 IOPS 密度（IOPS/TB）。或者、如果您需要具有更大儲存容量的高效能組態、建議的組態是使用較大的 ONTAP Select VM 大小、Intel Optane 卡作為系統磁碟、以及適量的 SSD 磁碟機進行資料儲存。</block>
   <block id="4a99b78b8bee356a2a3329e5f0e6254d" category="inline-image-macro">將 ONTAP Select 磁碟與對應的 ESXi 磁碟進行匹配</block>
   <block id="1d79484f6a25be5cf5c76cee45ddd50e" category="paragraph"><block ref="1d79484f6a25be5cf5c76cee45ddd50e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4780d1ea9db455a95860420be711dd34" category="paragraph">vNAS 命名規則適用於所有不使用 DAS 的設定。對於多節點 ONTAP Select 叢集，這包括同一 HA 配對中的兩個 ONTAP Select 節點共享單一資料存放區（包括 vSAN 資料存放區）的架構。節點也可以安裝在來自相同共用外部陣列的不同資料存放區上。這可以提高陣列端的儲存效率，從而減少整個 ONTAP Select HA 配對的整體佔用空間。ONTAP Select vNAS 解決方案的架構與使用本機 RAID 控制器的 ONTAP Select on DAS 非常相似。也就是說，每個 ONTAP Select 節點都會繼續保留其 HA 合作夥伴的資料副本。ONTAP 儲存效率原則的範圍為節點。因此，陣列端的儲存效率更為理想，因為它們可能會套用至來自兩個 ONTAP Select 節點的資料集。</block>
@@ -3901,7 +3881,6 @@
   <block id="28f2f3019ca5fcfa77b110d8c2f2c86c" category="admonition">為確保叢集網路流量的最大處理量，此網路連接埠設定為使用最大傳輸單元（MTU）為 7500 至 9000 位元組的巨型訊框。為確保叢集正常運作，請驗證所有向 ONTAP Select 叢集節點提供內部網路服務的上游虛擬和實體交換器是否已啟用巨型訊框。</block>
   <block id="dc23653130ed62dd8362cb56e0db332b" category="paragraph">在組態中使用分散式 vSwitches 時，可以使用 LACP（儘管並非最佳實務做法）來簡化網路組態。唯一支援的 LACP 組態要求所有 VMNIC 都位於單一 LAG 中。上行實體交換器必須支援通路中所有連接埠的最大傳輸單元（MTU）大小在 7,500 到 9,000 之間。內部和外部 ONTAP Select 網路應在連接埠群組層級是隔離的。內部網路應使用不可路由（隔離的）VLAN。外部網路可以使用 VST、EST 或 VGT。</block>
   <block id="1cf90a2801818dee7b6d258e78aeed0b" category="paragraph">ONTAP Select 整合至雲端管理架構中，例如 VMware vSphere、Microsoft Hyper-V 及以核心為基礎的虛擬機器（KVM）。這有助於加速新專案的部署，例如檔案服務、主目錄、軟體開發環境和應用程式測試。</block>
-  <block id="7c74a39ff87dd7c7ec920f58bb13fbfe" category="section-title">直通（DirectPath IO）裝置與原始裝置對應（RDMs）</block>
   <block id="d5a22899289ebb210b9417100395cc14" category="admonition">ONTAP Select 支援在 Hyper-V Hypervisor 上將 NVMe 磁碟機作為 SCSI 磁碟。ONTAP Select 不支援在 Hyper-V Hypervisor 上將 NVMe 磁碟機作為離散裝置指派（直通裝置）。</block>
   <block id="2e5e2bf73be19909a4376bcff1b61264" category="section-title">將 ONTAP Select 磁碟與對應的 ESXi、Hyper-V 或 KVM 磁碟相匹配</block>
   <block id="a26caf02645178881185801f94db7a3b" category="paragraph">在 ESXi、Hyper-V 或 KVM shell 中，您可以輸入下列命令，讓特定實體磁碟（由其 naa.unique-id 識別）的 LED 閃爍。</block>
@@ -4278,13 +4257,46 @@
   <block id="6ec35a9fea619f9056b56a9cceaecd8a" category="paragraph">ONTAP Select Deploy 和 ONTAP Select for KVM 支援使用外部陣列上的共享的邏輯儲存資源池類型來組態 ONTAP Select 單節點叢集。儲存資源池可以基於 iSCSI 或 FC/FCoE。不支援其他類型的儲存資源池。</block>
   <block id="bf1bf7b2d6495806e380ad07c5f6c4ac" category="cell"><block ref="bf1bf7b2d6495806e380ad07c5f6c4ac" category="inline-link-macro-rx"></block></block>
   <block id="973e60ac87d2047ed8383fc1a9ccd1ab" category="summary">Capacity Pools 授權是基於每個節點代管的底層磁碟容量，而非節點、HA 配對或叢集的可用容量。每個 Capacity Pools 授權都分配給一個特定的節點序號，並指定容量，且需要相應的支援合約。</block>
-  <block id="77abd6d38068ade401e1cda5d6d4f4bf" category="paragraph">根據可用空間和叢集組態例行成本來計算 ONTAP Select Capacity Pool 授權大小，以確保部署有足夠的授權容量。</block>
   <block id="fc16ee53985da42d5d6e0c02fdd5f183" category="paragraph">在決定 Capacity Pools 授權大小之前，您應該審查下列考量事項：</block>
   <block id="afbbd458508df60809b6d4aec77f511e" category="list-text">在硬體 RAID （VMDK） 和軟體 RAID （NVMe 或 SSD） 組態中，授權使用量是根據分配給資料彙總的資料磁碟或資料分割區來計算。</block>
   <block id="d8d5fad58568a0f0ba995cf205ca4b44" category="list-text">ONTAP Select 將 RAID-DP 同位元檢查磁碟和分割區排除在授權使用量之外。您僅針對新增至彙總的資料分割區和磁碟取得授權</block>
   <block id="fca20405fb9c0582e499eb228377067f" category="list-text">備用磁碟機容量不計入彙總可用容量，也不使用授權容量。</block>
   <block id="95970b7eb58e4eefe52eb37d1c8a622d" category="list-text">同位元檢查磁碟專用於資料保護。它們不為磁碟區和資料提供可用的儲存設備，也不計入可用容量。</block>
-  <block id="94d3cb7d191621094c7273b8f519cdcb" category="paragraph">您需要根據可用空間計算授權容量，以確保您有足夠的容量進行部署。例如，您需要為 HA 配對提供 20 TB 的可用容量（每個節點 10 TB）：</block>
   <block id="914e50a7e70b439cfca1376c40659db4" category="paragraph">在確定 Capacity Tiers 授權大小之前，您應該審查下列考量：</block>
   <block id="97a23d2070cc57242b398716549eaa47" category="paragraph">您需要根據可用空間計算授權容量，以確保您有足夠的容量進行部署。例如，您需要為 HA 配對提供 10 TB 的可用容量（每個節點 5 TB）：</block>
+  <block id="1770993b7a0280127839425b9eea79fb" category="section-title">在具有硬體 RAID 控制器的系統中組態軟體 RAID</block>
+  <block id="61921521dff6e4ab7bb89bc5d75859d2" category="paragraph">使用軟體 RAID 時，理想情況下不需要硬體 RAID 控制器；但是，如果系統確實有現有的 RAID 控制器，則必須符合下列要求之一：</block>
+  <block id="9fbebd308a79717ea1cb7108ef6ca719" category="list-text">硬體 RAID 控制器必須處於 SAS HBA 模式。例如，某些 BIOS 組態除了 RAID 外，還允許使用「AHCI」模式，您可以選擇它來啟用 JBOD 模式。這樣可以實現直通，使實體磁碟機能夠直接被主機識別。</block>
+  <block id="4338e9bf7d6dc34de9f56deb43a41945" category="section-title">ONTAP Select 系統磁碟</block>
+  <block id="5ef4b7ceba15f905085a018dfbc85567" category="paragraph">系統磁碟是 ONTAP Select 虛擬機器內部使用的虛擬磁碟（VMDK），用於支援叢集、開機等各種項目。從主機的角度來看，系統磁碟實體上位於單一實體磁碟（統稱為系統實體磁碟）上。此實體磁碟（SSD 或 NVMe）必須包含 DAS 資料儲存區。</block>
+  <block id="92f6444e2fa0aa3d18479012c66b9085" category="paragraph">在叢集部署期間，ONTAP Deploy 會在 ONTAP Select VM 的專用 DAS 資料存放區上建立下列系統磁碟。</block>
+  <block id="83f7d5cb0ebb1f31159b8690dd77e6f4" category="cell">VMDK</block>
+  <block id="261addf78c7b2c961032b3dd08ba0b1f" category="cell">目的</block>
+  <block id="6f6cb72d544962fa333e2e34ce64f719" category="cell">大小</block>
+  <block id="eee65cc62cbc198cf90cd1f502ab78a7" category="cell">開機 / CF 卡</block>
+  <block id="6f6e63d50ee3fda10d779e0d7725a0fa" category="cell">開機裝置</block>
+  <block id="fd0af2e21c3a24ee7fcb3052afbb5fbd" category="cell">10 GB</block>
+  <block id="83168e6cb289d732cc78427b51f93153" category="cell">核心</block>
+  <block id="aa4e11737daeacacf3120521f7cc9561" category="cell">核心/使用者空間核心轉儲</block>
+  <block id="8bd830ab97c776e46b40d110a65eb0d3" category="cell">120 GB</block>
+  <block id="e3f3f58b597fba6fefb596c5ce76d468" category="cell">NVRAM</block>
+  <block id="fe9e7dd6b02410407def02ef8cf8e694" category="cell">虛擬化 NVRAM（vNVRAM）*注意*：vNVRAM 磁碟需要快速且耐用的媒體。因此，僅支援 NVMe 和 SSD 類型的資料儲存。</block>
+  <block id="974c2262615af73433567515efbb80e9" category="cell">4 GB</block>
+  <block id="3cdda3f641b50c665212e03a1c1fe8bc" category="paragraph">最佳實務做法是，系統磁碟的容量應小於資料磁碟機（SSD 使用裸設備對應（RDM），NVMe 使用 PCI 直通）。系統磁碟只需容納約 134 GB 的 VMDK 總實體佔用空間，再加上資料儲存的額外空間即可。</block>
+  <block id="4182260b31d10db18b02c6831e25afb0" category="paragraph">無法將系統磁碟進一步分隔到多個資料儲存區或多個實體磁碟機。它們必須位於單一實體系統磁碟上。您可以透過在 ONTAP Select 節點上執行以下命令檢視系統磁碟的相關資訊：<block ref="8a05620ff1bc901dd27a2900b8252433" prefix=" " category="inline-code"></block></block>
+  <block id="d31f704d56c27cafded74e08d82e7c5b" category="list-text">請勿變更 VMDK 屬性。例如，請勿將 <block ref="b6015aee178749457a14c559e4924fc3" prefix=" " category="inline-code"></block> 變更為 <block ref="36ea88c42525c5f42ebbe0fd38a893a5" prefix=" " category="inline-code"></block>。</block>
+  <block id="7764a66f4af3b914a005e4d33f12a82f" category="section-title">ONTAP Select 虛擬和實體磁碟組態</block>
+  <block id="2e93094a403057cc2b4e6c47f89f11f5" category="paragraph">對於採用硬體 RAID 控制器的組態，實體磁碟備援是由 RAID 控制器提供。系統會提供 ONTAP Select 一或多個資料磁碟，ONTAP 管理員可從中設定資料 Aggregate。這些 VMDK 會以 RAID 0 格式進行等量分割，因為硬體層級已提供恢復能力，使得使用 ONTAP 軟體 RAID 變成備援、缺乏效率且無效。此外，用於系統磁碟的 VMDK 與用於儲存使用者資料的 VMDK 位於相同的資料存放區中。</block>
+  <block id="93b719b42ff749cf45dfc7ad72d4387a" category="paragraph">使用軟體 RAID 時，ONTAP Deploy 會為 ONTAP Select 提供一組系統磁碟（VMDK）和實體磁碟 RDM（用於 SSD），以及 PCI 直通或 DirectPath IO 裝置（用於 NVMe）。下圖更詳細地顯示了 NVMe 和 SSD 磁碟機之間的關係，重點強調了用於 ONTAP Select VM 內部的虛擬化磁碟與用於儲存使用者資料的實體磁碟之間的差異。</block>
+  <block id="9a85c00c0c0e45a6415f30b41a1e9e90" category="list-text">將虛擬磁碟和 RDM 與 SSD 結合使用</block>
+  <block id="234e7f74078e5be41fb13c6169545757" category="paragraph">使用 Hypervisor RDM 將實體 SSD 資料磁碟機呈現給 VM，因此無需重新開機 ONTAP Select 即可動態新增和替換磁碟機。</block>
+  <block id="a213eb952db1a8823c97273f1809fed3" category="list-text">使用直通或 DirectPath IO 裝置與 NVMe</block>
+  <block id="e52b3fdde78bcf7768175fd2ed4f3f57" category="paragraph">使用 PCI 直通或 DirectPath I/O 繞過 Hypervisor 儲存堆疊，並將實體 NVMe 資料磁碟機直接指派給資料磁碟。此組態在新增或更換磁碟機時需要將 VM 重新開機。基於效能考量，當使用 NVMe 磁碟機儲存資料時，系統磁碟也應該是 NVMe 裝置。</block>
+  <block id="8716ccf0a7c2cbee0d4175f5a56d4542" category="admonition">您需要為專用 DAS 資料存放區準備一個未設定為 PCI 傳遞或 DirectPath I/O 的 NVMe 磁碟機。</block>
+  <block id="f9914ab7abc6157a294031749940a571" category="paragraph">ONTAP 軟體 RAID 支援以下 RAID 類型：RAID 4、RAID-DP 和 RAID-TEC。這些 RAID 結構與 FAS 和 AFF 平台使用的 RAID 結構相同。對於根目錄配置，ONTAP Select 僅支援 RAID 4 和 RAID-DP。當使用 RAID-TEC 進行資料 Aggregate 時，整體保護為 RAID-DP。ONTAP Select HA 採用無共享架構，將每個節點的組態複製到其他節點。這意味著每個節點必須儲存其根目錄分割區以及其對等節點根目錄分割區的複本。資料磁碟具有單一根目錄分割區。這意味著資料磁碟的最小數量取決於 ONTAP Select 節點是否屬於 HA 配對。</block>
+  <block id="4666862935a6d48d8b42a154ec388bf2" category="section-title">直通（DirectPath IO）裝置與 RDM</block>
+  <block id="a1d893460a24d839f4b7f8332d860bcf" category="paragraph">ESXi 和 KVM Hypervisor 不支援 NVMe 磁碟作為 RDM。若要讓 ONTAP Select 直接控制 NVMe 磁碟，您必須在 ESXi 或 KVM 中將這些磁碟機設定為直通裝置。將 NVMe 裝置設定為直通裝置需要伺服器 BIOS 的支援，並且可能需要重新開機主機。此外，每個主機可指派的直通裝置數量有限制，具體數量可能因平台而異。但是，ONTAP Deploy 將每個 ONTAP Select 節點的 NVMe 裝置數量限制為 14 個。這意味著 NVMe 組態雖然提供了非常高的 IOPS 密度（IOPS/TB），但會犧牲總容量。或者，如果您需要具有更大儲存容量的高效能組態，建議的組態為較大的 ONTAP Select 虛擬機器大小，並配備少量的 SSD 磁碟機作為資料儲存設備。</block>
+  <block id="8622ca0d9ffd714cc03e60e975384298" category="paragraph">根據可用空間和叢集組態例行成本計算 ONTAP Select 容量池授權大小，以確保您有足夠的授權容量來進行部署。</block>
+  <block id="d5e2b82d21e7424116f56f9ff6261ec6" category="paragraph">例如，您需要為 HA 配對提供 20 TB 的可用容量（每個節點 10 TB）：</block>
+  <block id="70fedd06921b63488eed310659ec0958" category="admonition">您需要一個同樣由 NVMe 裝置支援的 VMFS 資料存放區，以做為 ONTAP Select VM 系統磁碟和虛擬 NVRAM 的主機。在設定其他 NVMe 磁碟機以進行 PCI 直通時，請至少保留一個 NVMe 磁碟機供此用途使用。</block>
 </blocks>

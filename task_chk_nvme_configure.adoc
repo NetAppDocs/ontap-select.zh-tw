@@ -98,7 +98,7 @@ image:nvme_02.png["編輯PCI裝置可用度"]
 
 +
 
-NOTE: 您需要一個也有NVMe裝置備份的VMFS資料存放區、來裝載ONTAP Select 支援的VMware系統磁碟和虛擬NVRAM。在設定其他NVMe磁碟機以進行PCI傳遞時、請至少保留一個NVMe磁碟機可供此用途使用。
+NOTE: 您需要一個同樣由 NVMe 裝置支援的 VMFS 資料存放區，以做為 ONTAP Select VM 系統磁碟和虛擬 NVRAM 的主機。在設定其他 NVMe 磁碟機以進行 PCI 直通時，請至少保留一個 NVMe 磁碟機供此用途使用。
 
 .. 選擇“確定”。所選設備顯示“可用（待處理）”。
 
